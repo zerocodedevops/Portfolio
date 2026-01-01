@@ -1,5 +1,6 @@
+/* eslint-disable @typescript-eslint/no-deprecated */
 import { motion } from 'framer-motion';
-import { ExternalLink, Github, Folder } from 'lucide-react';
+import { ExternalLink, Folder } from 'lucide-react';
 import { SectionTitle, TechBadge, Card } from '@/components/ui';
 import { fadeInUp, staggerContainer } from '@/hooks/useScrollAnimation';
 
@@ -12,6 +13,7 @@ interface Project {
   demoUrl?: string;
   repoUrl?: string;
   featured?: boolean;
+  status?: 'Prototype' | 'Production' | 'Development';
 }
 
 const projects: Project[] = [
@@ -19,67 +21,137 @@ const projects: Project[] = [
     id: 1,
     title: 'E-Commerce Platform',
     description: 'Plataforma de comercio electrónico completa con carrito, pagos y panel de administración.',
+    image: '/assets/projects/thumbnails/ecommerce.png',
     tags: ['React', 'Node.js', 'MongoDB', 'Tailwind'],
     demoUrl: 'https://example.com',
     repoUrl: 'https://github.com/zerocodedevops',
+    status: 'Development',
   },
   {
     id: 2,
     title: 'AI Chat Assistant',
     description: 'Asistente de chat inteligente con integración de OpenAI y memoria contextual.',
+    image: '/assets/projects/thumbnails/ai-chat.png',
     tags: ['Next.js', 'TypeScript', 'OpenAI', 'Supabase'],
     demoUrl: 'https://example.com',
     repoUrl: 'https://github.com/zerocodedevops',
+    status: 'Development',
   },
   {
     id: 3,
     title: 'Task Management App',
     description: 'Aplicación de gestión de tareas con colaboración en tiempo real y notificaciones.',
+    image: '/assets/projects/thumbnails/task-manager.png',
     tags: ['React', 'Firebase', 'Tailwind', 'Framer Motion'],
     demoUrl: 'https://example.com',
     repoUrl: 'https://github.com/zerocodedevops',
+    status: 'Development',
   },
   {
     id: 4,
     title: 'Portfolio Dashboard',
     description: 'Dashboard analítico para visualizar métricas de portafolio de inversiones.',
+    image: '/assets/projects/thumbnails/dashboard.png',
     tags: ['React', 'TypeScript', 'Chart.js', 'Node.js'],
     repoUrl: 'https://github.com/zerocodedevops',
+    status: 'Development',
   },
   {
     id: 5,
     title: 'Weather App',
     description: 'Aplicación del clima con pronósticos detallados y mapas interactivos.',
+    image: '/assets/projects/thumbnails/weather.png',
     tags: ['React', 'TypeScript', 'API REST', 'Tailwind'],
     demoUrl: 'https://example.com',
+    status: 'Development',
   },
   {
     id: 6,
     title: 'Blog Platform',
     description: 'Plataforma de blog con CMS headless, markdown y optimización SEO.',
+    image: '/assets/projects/thumbnails/blog.png',
     tags: ['Next.js', 'MDX', 'Tailwind', 'Vercel'],
     demoUrl: 'https://example.com',
     repoUrl: 'https://github.com/zerocodedevops',
+    status: 'Development',
   },
 ];
 
-function ProjectCard({ project }: { project: Project }) {
+// Helper functions for status badge
+const getStatusStyles = (status: Project['status']) => {
+  switch (status) {
+    case 'Production':
+      return 'bg-green-500/10 text-green-400 border-green-500/20';
+    case 'Development':
+      return 'bg-blue-500/10 text-blue-400 border-blue-500/20';
+    default:
+      return 'bg-yellow-500/10 text-yellow-400 border-yellow-500/20';
+  }
+};
+
+const getStatusLabel = (status: Project['status']) => {
+  switch (status) {
+    case 'Production':
+      return 'En Producción';
+    case 'Development':
+      return 'En Desarrollo';
+    default:
+      return 'Prototipo';
+  }
+};
+
+const GithubIcon = ({ className }: { className?: string }) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    className={className}
+  >
+    <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4" />
+    <path d="M9 18c-4.51 2-5-2-7-2" />
+  </svg>
+);
+
+function ProjectCard({ project }: { readonly project: Project }) {
   return (
     <motion.div variants={fadeInUp}>
-      <Card className="h-full flex flex-col group">
-        {/* Image placeholder */}
-        <div className="aspect-video bg-gradient-to-br from-dark-700 to-dark-800 rounded-lg mb-4 overflow-hidden relative">
-          <div className="absolute inset-0 bg-gradient-to-br from-primary-500/10 to-accent-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-          <div className="absolute inset-0 flex items-center justify-center">
-            <Folder className="w-12 h-12 text-dark-600 group-hover:text-primary-500/50 transition-colors duration-300" />
-          </div>
+      <Card className="h-full flex flex-col group overflow-hidden">
+        {/* Image thumbnail */}
+        <div className="aspect-[16/10] bg-dark-900 rounded-lg mb-4 overflow-hidden relative group-hover:shadow-lg transition-all border border-dark-700/50">
+          {project.image ? (
+            <>
+              <img 
+                src={project.image} 
+                alt={project.title} 
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+              />
+              <div className="absolute inset-0 bg-dark-900/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                {project.demoUrl && <ExternalLink className="w-8 h-8 text-white" />}
+              </div>
+            </>
+          ) : (
+            <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-dark-700 to-dark-800">
+               <Folder className="w-12 h-12 text-dark-600 group-hover:text-primary-500/50 transition-colors duration-300" />
+            </div>
+          )}
         </div>
 
         {/* Content */}
         <div className="flex-1 flex flex-col">
-          <h3 className="heading-3 text-dark-100 mb-2 group-hover:text-primary-400 transition-colors">
-            {project.title}
-          </h3>
+          <div className="flex justify-between items-start mb-2">
+            <h3 className="heading-3 text-dark-100 group-hover:text-primary-400 transition-colors">
+              {project.title}
+            </h3>
+            {project.status && (
+              <span className={`text-[10px] px-2 py-0.5 rounded-full border uppercase font-medium tracking-wide whitespace-nowrap ${getStatusStyles(project.status)}`}>
+                {getStatusLabel(project.status)}
+              </span>
+            )}
+          </div>
           <p className="text-dark-400 text-sm mb-4 flex-1">
             {project.description}
           </p>
@@ -113,7 +185,7 @@ function ProjectCard({ project }: { project: Project }) {
                 className="flex items-center gap-2 text-sm text-dark-300 hover:text-primary-400 transition-colors"
                 whileHover={{ x: 3 }}
               >
-                <Github className="w-4 h-4" />
+                <GithubIcon className="w-4 h-4" />
                 Código
               </motion.a>
             )}

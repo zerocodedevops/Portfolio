@@ -1,4 +1,4 @@
-import { describe, it, expect, vi } from 'vitest';
+import { describe, it, expect } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import { Hero } from '@/components/sections/Hero';
 import { About } from '@/components/sections/About';
@@ -23,7 +23,8 @@ describe('Portfolio Sections Render', () => {
     );
     
     expect(screen.getByText(/Hola, soy/i)).toBeInTheDocument();
-    expect(screen.getByText(/Developer/i)).toBeInTheDocument();
+    expect(screen.getByText(/ZeroCode_DevOps/i)).toBeInTheDocument();
+    expect(screen.getByText(/Desarrollador Autodidacta/i)).toBeInTheDocument();
     expect(screen.getByText(/Contáctame/i)).toBeInTheDocument();
     expect(screen.getByText(/Ver GitHub/i)).toBeInTheDocument();
   });
@@ -35,8 +36,8 @@ describe('Portfolio Sections Render', () => {
       </TestWrapper>
     );
     
-    // expect(screen.getByText(/Sobre mí/i)).toBeInTheDocument();
-    expect(screen.getByText(/Desarrollador apasionado/i)).toBeInTheDocument();
+    expect(screen.getByText(/Sobre mí/i)).toBeInTheDocument();
+    expect(screen.getByText(/Desarrollador autodidacta potenciado por IA/i)).toBeInTheDocument();
   });
 
   it('Skills section renders with all categories', () => {
@@ -46,11 +47,11 @@ describe('Portfolio Sections Render', () => {
       </TestWrapper>
     );
     
-    // expect(screen.getByRole('heading', { level: 2, name: /Skills/i })).toBeInTheDocument();
+    expect(screen.getByRole('heading', { level: 2, name: /Skills/i })).toBeInTheDocument();
     expect(screen.getByText('Frontend')).toBeInTheDocument();
-    expect(screen.getByText('Backend')).toBeInTheDocument();
-    expect(screen.getByText('IA & ML')).toBeInTheDocument();
-    expect(screen.getByText('Herramientas')).toBeInTheDocument();
+    expect(screen.getByText('Backend & BaaS')).toBeInTheDocument();
+    expect(screen.getByText('Testing & QA')).toBeInTheDocument();
+    expect(screen.getByText('DevOps & Mobile')).toBeInTheDocument();
   });
 
   it('Projects section renders with project cards', () => {
@@ -60,7 +61,6 @@ describe('Portfolio Sections Render', () => {
       </TestWrapper>
     );
     
-    // expect(screen.getByText(/Proyectos/i)).toBeInTheDocument();
     expect(screen.getByText(/E-Commerce Platform/i)).toBeInTheDocument();
     expect(screen.getByText(/AI Chat Assistant/i)).toBeInTheDocument();
   });
@@ -72,7 +72,6 @@ describe('Portfolio Sections Render', () => {
       </TestWrapper>
     );
     
-    // expect(screen.getByText(/Contacto/i)).toBeInTheDocument();
     expect(screen.getByLabelText(/Nombre/i)).toBeInTheDocument();
     expect(screen.getByLabelText(/Email/i)).toBeInTheDocument();
     expect(screen.getByLabelText(/Asunto/i)).toBeInTheDocument();

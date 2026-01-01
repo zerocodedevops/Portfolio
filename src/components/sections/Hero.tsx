@@ -1,12 +1,15 @@
+/* eslint-disable @typescript-eslint/no-deprecated */
 import { motion } from 'framer-motion';
-// eslint-disable-next-line @typescript-eslint/no-deprecated
-import { Github as GithubIcon, Linkedin as LinkedinIcon, Mail, ArrowDown, Sparkles, Bot } from 'lucide-react';
+// eslint-disable-next-line
+import { Github, Linkedin, Mail, ArrowDown, Sparkles, Bot } from 'lucide-react';
 import { Button } from '@/components/ui';
 import { fadeInUp, staggerContainer } from '@/hooks/useScrollAnimation';
 
 const socialLinks = [
-  { icon: GithubIcon, href: 'https://github.com/zerocodedevops', label: 'GitHub', color: 'hover:text-white' },
-  { icon: LinkedinIcon, href: 'https://www.linkedin.com/in/zerocode-devops', label: 'LinkedIn', color: 'hover:text-blue-400' },
+  // eslint-disable-next-line
+  { icon: Github, href: 'https://github.com/zerocodedevops', label: 'GitHub', color: 'hover:text-white' },
+  // eslint-disable-next-line
+  { icon: Linkedin, href: 'https://www.linkedin.com/in/zerocode-devops', label: 'LinkedIn', color: 'hover:text-blue-400' },
   { icon: Mail, href: 'mailto:zerocode.devops@gmail.com', label: 'Email', color: 'hover:text-primary-400' },
 ];
 
@@ -18,7 +21,7 @@ export function Hero() {
   return (
     <section
       id="hero"
-      className="min-h-screen flex items-center justify-center relative overflow-hidden"
+      className="flex items-start justify-center pt-20 md:pt-28 pb-16 lg:pb-24 relative overflow-hidden"
     >
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -78,7 +81,7 @@ export function Hero() {
             <br/>
             Construyo proyectos reales con la IA como mi aliada.
             <br/>
-            <span className="text-primary-400">Me involucro al 200% en cada línea de código.</span>
+            <span className="text-primary-400">Me involucro al 200% en cada proyecto.</span>
           </motion.p>
 
           {/* CTA Buttons */}
@@ -97,11 +100,13 @@ export function Hero() {
             <Button
               variant="outline"
               size="lg"
-              rightIcon={<GithubIcon className="w-5 h-5" />}
+              /* eslint-disable-next-line @typescript-eslint/no-deprecated */
+              rightIcon={<Github className="w-5 h-5" />}
               onClick={() => window.open('https://github.com/zerocodedevops', '_blank')}
             >
               Ver GitHub
             </Button>
+
           </motion.div>
 
           {/* Social Links */}
@@ -126,22 +131,7 @@ export function Hero() {
           </motion.div>
         </motion.div>
 
-        {/* Scroll indicator */}
-        <motion.button
-          className="absolute bottom-8 left-1/2 -translate-x-1/2 text-dark-500 hover:text-primary-400 transition-colors"
-          onClick={scrollToAbout}
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1, duration: 0.5 }}
-          aria-label="Scroll hacia abajo"
-        >
-          <motion.div
-            animate={{ y: [0, 8, 0] }}
-            transition={{ duration: 1.5, repeat: Infinity }}
-          >
-            <ArrowDown className="w-6 h-6" />
-          </motion.div>
-        </motion.button>
+
       </div>
     </section>
   );

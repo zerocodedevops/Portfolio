@@ -1,7 +1,6 @@
-import { motion } from 'framer-motion';
-import { ExternalLink, Star, Zap, Users, FileCode, GitCommit, Database, Bot } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
 // eslint-disable-next-line @typescript-eslint/no-deprecated
-import { Github as GithubIcon } from 'lucide-react';
+import { ExternalLink, Star, Users, FileCode, GitCommit, Github as GithubIcon } from 'lucide-react';
 import { Button, TechBadge, SectionTitle } from '@/components/ui';
 import { fadeInUp, slideInLeft, slideInRight } from '@/hooks/useScrollAnimation';
 
@@ -33,7 +32,20 @@ autenticación por roles.`,
   repoUrl: 'https://github.com/zerocodedevops',
 };
 
+import { useState, useEffect } from 'react';
+
+const projectImages = Array.from({ length: 9 }, (_, i) => `/assets/projects/j-barranco/${i + 1}.png`);
+
 export function FeaturedProject() {
+  const [currentImage, setCurrentImage] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentImage((prev) => (prev + 1) % projectImages.length);
+    }, 3000);
+    return () => clearInterval(timer);
+  }, []);
+
   return (
     <section className="section relative overflow-hidden">
       {/* Background decoration */}
@@ -57,72 +69,37 @@ export function FeaturedProject() {
             whileInView="visible"
             viewport={{ once: true }}
           >
-            <div className="relative">
+            <div className="relative group">
               {/* Glow effect */}
-              <div className="absolute inset-0 bg-gradient-to-br from-primary-500/20 to-accent-500/20 rounded-2xl blur-xl" />
+              <div className="absolute inset-0 bg-gradient-to-br from-primary-500/20 to-accent-500/20 rounded-2xl blur-xl transition-all duration-500 group-hover:blur-2xl" />
               
-              {/* Main frame */}
-              <div className="relative bg-dark-800/80 backdrop-blur-xl rounded-2xl border border-dark-700/50 p-6 overflow-hidden">
-                {/* Window controls */}
-                <div className="flex items-center gap-2 mb-4">
-                  <div className="w-3 h-3 rounded-full bg-red-500" />
-                  <div className="w-3 h-3 rounded-full bg-yellow-500" />
-                  <div className="w-3 h-3 rounded-full bg-green-500" />
-                  <span className="ml-4 text-dark-500 text-sm font-mono">useDashboardStats.ts</span>
-                </div>
-                
-                {/* Code preview */}
-                <div className="font-mono text-xs sm:text-sm space-y-1 overflow-x-auto">
-                  <div className="text-dark-500">// Hook real del proyecto</div>
-                  <div>
-                    <span className="text-purple-400">import</span>
-                    <span className="text-dark-300"> {'{ '}</span>
-                    <span className="text-primary-400">useEffect, useState</span>
-                    <span className="text-dark-300"> {'}'} </span>
-                    <span className="text-purple-400">from</span>
-                    <span className="text-green-400"> "react"</span>
-                  </div>
-                  <div>
-                    <span className="text-purple-400">import</span>
-                    <span className="text-dark-300"> {'{ '}</span>
-                    <span className="text-primary-400">onSnapshot</span>
-                    <span className="text-dark-300"> {'}'} </span>
-                    <span className="text-purple-400">from</span>
-                    <span className="text-green-400"> "firebase/firestore"</span>
-                  </div>
-                  <div className="mt-2">
-                    <span className="text-purple-400">export function</span>
-                    <span className="text-yellow-400"> useDashboardStats</span>
-                    <span className="text-dark-300">() {'{'}</span>
-                  </div>
-                  <div className="pl-4">
-                    <span className="text-purple-400">const</span>
-                    <span className="text-dark-300"> [stats, setStats] = </span>
-                    <span className="text-yellow-400">useState</span>
-                    <span className="text-dark-300">({'{'}</span>
-                  </div>
-                  <div className="pl-8">
-                    <span className="text-primary-400">quejasPendientes</span>
-                    <span className="text-dark-300">: 0,</span>
-                  </div>
-                  <div className="pl-8">
-                    <span className="text-primary-400">solicitudesExtra</span>
-                    <span className="text-dark-300">: 0,</span>
-                  </div>
-                  <div className="pl-4">
-                    <span className="text-dark-300">{'})'}</span>
-                  </div>
-                  
-                  {/* AI Tooltip */}
-                  <div className="mt-3 p-3 bg-accent-500/10 border border-accent-500/30 rounded-lg">
-                    <div className="flex items-center gap-2 text-accent-400">
-                      <Bot className="w-4 h-4" />
-                      <span className="text-xs font-medium">Sugerencia IA</span>
-                    </div>
-                    <p className="text-dark-400 text-xs mt-1">
-                      Considera usar React.memo() para optimizar el renderizado...
-                    </p>
-                  </div>
+              {/* Main frame - Slideshow */}
+              <div className="relative bg-dark-900 border border-dark-700/50 rounded-2xl overflow-hidden shadow-2xl aspect-[16/10]">
+                <AnimatePresence mode="wait">
+                  <motion.img 
+                    key={currentImage}
+                    src={projectImages[currentImage]}
+                    alt={`ZeroCode Project Demo Slide ${currentImage + 1}`}
+                    className="absolute inset-0 w-full h-full object-fill"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.5 }}
+                  />
+                </AnimatePresence>
+
+                {/* Progress Indicators */}
+                <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-10 bg-dark-900/50 px-3 py-1.5 rounded-full backdrop-blur-sm border border-dark-700/30">
+                  {projectImages.map((_, idx) => (
+                    <button
+                      key={idx}
+                      onClick={() => setCurrentImage(idx)}
+                      className={`w-2 h-2 rounded-full transition-all ${
+                        idx === currentImage ? 'bg-primary-400 w-4' : 'bg-dark-500 hover:bg-dark-300'
+                      }`}
+                      aria-label={`Go to slide ${idx + 1}`}
+                    />
+                  ))}
                 </div>
               </div>
             </div>
@@ -148,6 +125,12 @@ export function FeaturedProject() {
             <p className="text-dark-400 text-sm sm:text-base mb-6 leading-relaxed">
               {featuredProject.description}
             </p>
+
+            <div className="mb-6 p-4 rounded-lg bg-primary-500/5 border border-primary-500/10">
+              <p className="text-sm text-dark-300 italic">
+                "Este sistema fue desarrollado <span className="text-primary-400 font-medium">sin formación previa</span>, guiado completamente por <span className="text-accent-400 font-medium">IA</span> y <span className="text-green-400 font-medium">validado en producción</span>."
+              </p>
+            </div>
 
             {/* Features list */}
             <ul className="space-y-2 mb-6">

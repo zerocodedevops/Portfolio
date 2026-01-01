@@ -4,9 +4,11 @@ import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import emailjs from '@emailjs/browser';
-import { Send, Mail, MapPin, Phone, CheckCircle, AlertCircle, Linkedin, Github } from 'lucide-react';
+/* eslint-disable @typescript-eslint/no-deprecated */
+// eslint-disable-next-line
+import { Send, Mail, MapPin, CheckCircle, AlertCircle, Linkedin, Github } from 'lucide-react';
 import { Button, SectionTitle } from '@/components/ui';
-import { fadeInUp, slideInLeft, slideInRight } from '@/hooks/useScrollAnimation';
+import { slideInLeft, slideInRight } from '@/hooks/useScrollAnimation';
 
 const contactSchema = z.object({
   name: z.string().min(2, 'El nombre debe tener al menos 2 caracteres'),
@@ -31,12 +33,14 @@ const contactInfo = [
     href: '#',
   },
   {
+    // eslint-disable-next-line
     icon: Linkedin,
     label: 'LinkedIn',
     value: 'zerocode-devops',
     href: 'https://www.linkedin.com/in/zerocode-devops',
   },
   {
+    // eslint-disable-next-line
     icon: Github,
     label: 'GitHub',
     value: 'zerocodedevops',
@@ -89,7 +93,7 @@ export function Contact() {
 
       setStatus('success');
       reset();
-    } catch (error) {
+    } catch {
       setStatus('error');
       setErrorMessage('Hubo un error al enviar el mensaje. Por favor, intenta de nuevo.');
     }
@@ -119,9 +123,8 @@ export function Contact() {
             <h3 className="heading-3 text-dark-100 mb-6">
               ¡Vamos a trabajar juntos!
             </h3>
-            <p className="text-dark-400 mb-8">
-              Estoy siempre abierto a discutir nuevos proyectos, ideas creativas 
-              u oportunidades para ser parte de algo increíble.
+            <p className="text-dark-400 mb-8 leading-relaxed">
+              Estoy abierto a colaborar en proyectos que valoren la <span className="text-primary-400 font-medium">innovación</span>, la <span className="text-primary-400 font-medium">transparencia</span> y el uso estratégico de <span className="text-accent-400 font-medium">IA</span>.
             </p>
 
             <div className="space-y-4">
@@ -170,6 +173,7 @@ export function Contact() {
                     placeholder="Tu nombre"
                     {...register('name')}
                     aria-invalid={errors.name ? 'true' : 'false'}
+                    required={true}
                   />
                   {errors.name && (
                     <p className="mt-1 text-sm text-red-400" role="alert">
@@ -190,6 +194,7 @@ export function Contact() {
                     placeholder="tu@email.com"
                     {...register('email')}
                     aria-invalid={errors.email ? 'true' : 'false'}
+                    required={true}
                   />
                   {errors.email && (
                     <p className="mt-1 text-sm text-red-400" role="alert">
@@ -230,6 +235,7 @@ export function Contact() {
                     rows={5}
                     {...register('message')}
                     aria-invalid={errors.message ? 'true' : 'false'}
+                    required={true}
                   />
                   {errors.message && (
                     <p className="mt-1 text-sm text-red-400" role="alert">

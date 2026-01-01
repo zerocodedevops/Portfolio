@@ -1,11 +1,18 @@
 import '@testing-library/jest-dom';
-import { vi } from 'vitest';
+import { vi, afterEach } from 'vitest';
+import { cleanup } from '@testing-library/react';
+import React from 'react';
 
-// Mock matchMedia for dark mode tests
+// Runs a cleanup after each test case
+afterEach(() => {
+  cleanup();
+});
+
+// Mock matchMedia
 Object.defineProperty(window, 'matchMedia', {
   writable: true,
   value: vi.fn().mockImplementation((query) => ({
-    matches: query === '(prefers-color-scheme: dark)',
+    matches: false,
     media: query,
     onchange: null,
     addListener: vi.fn(),
@@ -16,29 +23,29 @@ Object.defineProperty(window, 'matchMedia', {
   })),
 });
 
-// Mock scrollIntoView
-Element.prototype.scrollIntoView = vi.fn();
+// Mock ResizeObserver
+const ResizeObserverMock = vi.fn(() => ({
+  observe: vi.fn(),
+  unobserve: vi.fn(),
+  disconnect: vi.fn(),
+}));
+
+vi.stubGlobal('ResizeObserver', ResizeObserverMock);
 
 // Mock IntersectionObserver
-class IntersectionObserver {
-  observe = vi.fn();
-  disconnect = vi.fn();
-  unobserve = vi.fn();
-}
+const IntersectionObserverMock = vi.fn(() => ({
+  observe: vi.fn(),
+  unobserve: vi.fn(),
+  disconnect: vi.fn(),
+}));
 
-Object.defineProperty(window, 'IntersectionObserver', {
-  writable: true,
-  configurable: true,
-  value: IntersectionObserver,
-});
+vi.stubGlobal('IntersectionObserver', IntersectionObserverMock);
 
-Object.defineProperty(global, 'IntersectionObserver', {
-  writable: true,
-  configurable: true,
-  value: IntersectionObserver,
-});
+// Mock scrollTo
+window.scrollTo = vi.fn();
+Element.prototype.scrollIntoView = vi.fn();
 
-// Mock framer-motion to avoid visibility issues in tests
+// Mock framer-motion
 vi.mock('framer-motion', () => ({
   motion: {
     div: ({ children, ...props }: any) => <div {...props}>{children}</div>,
@@ -46,6 +53,8 @@ vi.mock('framer-motion', () => ({
     h2: ({ children, ...props }: any) => <h2 {...props}>{children}</h2>,
     h3: ({ children, ...props }: any) => <h3 {...props}>{children}</h3>,
     p: ({ children, ...props }: any) => <p {...props}>{children}</p>,
+    ul: ({ children, ...props }: any) => <ul {...props}>{children}</ul>,
+    li: ({ children, ...props }: any) => <li {...props}>{children}</li>,
     section: ({ children, ...props }: any) => <section {...props}>{children}</section>,
     header: ({ children, ...props }: any) => <header {...props}>{children}</header>,
     footer: ({ children, ...props }: any) => <footer {...props}>{children}</footer>,
@@ -53,6 +62,10 @@ vi.mock('framer-motion', () => ({
     a: ({ children, ...props }: any) => <a {...props}>{children}</a>,
     span: ({ children, ...props }: any) => <span {...props}>{children}</span>,
     img: ({ children, ...props }: any) => <img {...props} />,
+    form: ({ children, ...props }: any) => <form {...props}>{children}</form>,
+    label: ({ children, ...props }: any) => <label {...props}>{children}</label>,
+    input: ({ children, ...props }: any) => <input {...props}>{children} </input>,
+    textarea: ({ children, ...props }: any) => <textarea {...props}>{children}</textarea>,
   },
   useAnimation: () => ({ start: vi.fn(), set: vi.fn() }),
   useInView: () => true,

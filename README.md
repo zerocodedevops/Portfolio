@@ -12,12 +12,11 @@ fluidas, dark mode y despliegue automático en GitHub Pages.
 
 - 🎨 **Diseño Futurista**: Gradientes oscuros con acentos brillantes
   (cyan/purple)
-- 🌙 **Dark Mode**: Toggle con persistencia en localStorage
 - 🎭 **Animaciones**: Framer Motion para transiciones fluidas
 - 📱 **Responsive**: Diseño adaptable a todos los dispositivos
 - ♿ **Accesible**: ARIA labels, navegación por teclado
 - 📧 **Formulario de Contacto**: Integración con EmailJS
-- 🧪 **Tests**: Vitest + Testing Library
+- 🧪 **Tests**: Vitest (Unit) + Playwright (E2E)
 - 🚀 **CI/CD**: GitHub Actions + GitHub Pages
 
 ## 📂 Estructura del Proyecto
@@ -68,9 +67,10 @@ ZeroCode/
 │       └── index.css
 └── tests/
     ├── accessibility.test.tsx
-    ├── home.test.tsx
     ├── sections.test.tsx
     └── setup.ts
+├── tests-e2e/
+│   └── portfolio.spec.ts    # Tests E2E estrictos
 ```
 
 ## 🛠️ Instalación
@@ -99,8 +99,12 @@ npm run build        # Crear build de producción
 npm run preview      # Previsualizar build
 
 # Tests
+# Unit Tests (Vitest)
 npm run test         # Ejecutar tests en modo watch
 npm run test -- --run # Ejecutar tests una vez
+
+# E2E Tests (Playwright)
+npm run test:e2e     # Ejecutar tests end-to-end
 
 # Linting
 npm run lint         # Verificar código
@@ -166,8 +170,12 @@ El proyecto incluye 3 tipos de tests:
    renderizan correctamente
 2. **Accessibility Tests** (`accessibility.test.tsx`): Verifican aria-labels,
    labels de formularios
-3. **Dark Mode Tests** (`home.test.tsx`): Verifican toggle y persistencia del
-   tema
+3. **E2E Tests** (`tests-e2e/`): Verifican flujos completos de usuario (strict
+   mode)
+   - Navegación entre secciones
+   - Validación de formularios
+   - Enlaces sociales
+   - Accesibilidad crítica
 
 ```bash
 # Ejecutar todos los tests

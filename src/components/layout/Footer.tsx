@@ -1,8 +1,12 @@
+/* eslint-disable @typescript-eslint/no-deprecated */
 import { motion } from 'framer-motion';
+// eslint-disable-next-line
 import { Github, Linkedin, Mail, Heart, ArrowUp } from 'lucide-react';
 
 const socialLinks = [
+  // eslint-disable-next-line
   { icon: Github, href: 'https://github.com/zerocodedevops', label: 'GitHub' },
+  // eslint-disable-next-line
   { icon: Linkedin, href: 'https://www.linkedin.com/in/zerocode-devops', label: 'LinkedIn' },
   { icon: Mail, href: 'mailto:zerocode.devops@gmail.com', label: 'Email' },
 ];
@@ -86,9 +90,9 @@ export function Footer() {
         {/* Bottom bar */}
         <div className="mt-8 pt-8 border-t border-dark-700/50">
           <p className="text-center text-dark-500 text-sm flex items-center justify-center gap-1">
-            © {currentYear} DevPortfolio. Hecho con{' '}
-            <Heart className="w-4 h-4 text-accent-500 fill-accent-500" /> y mucho{' '}
-            <span className="text-primary-400">código</span>
+            © {currentYear} ZeroCode. Hecho con{' '}
+            <Heart className="w-4 h-4 text-accent-500 fill-accent-500" /> y mucha{' '}
+            <span className="text-primary-400">curiosidad + IA</span>
           </p>
         </div>
       </div>

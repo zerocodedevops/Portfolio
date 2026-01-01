@@ -6,13 +6,16 @@ import {
   Wrench,
   Smartphone,
   FileCode2,
-  Database,
   Cloud,
   Palette,
   GitBranch,
   Terminal,
   Zap,
-  Bot
+  Bot,
+  Brain,
+  MessageSquare,
+  Puzzle,
+  Search
 } from 'lucide-react';
 import { SectionTitle } from '@/components/ui';
 import { fadeInUp, staggerContainer } from '@/hooks/useScrollAnimation';
@@ -52,10 +55,10 @@ const skillCategories: SkillCategory[] = [
     color: 'from-orange-500 to-red-500',
     skills: [
       { name: 'Firebase', icon: <Cloud className="w-4 h-4" />, level: 95 },
-      { name: 'Supabase', icon: <Database className="w-4 h-4" />, level: 70 },
+      { name: 'Supabase', icon: <Server className="w-4 h-4" />, level: 70 },
       { name: 'Node.js', icon: <Terminal className="w-4 h-4" />, level: 75 },
       { name: 'Deno', icon: <Terminal className="w-4 h-4" />, level: 60 },
-      { name: 'Upstash Redis', icon: <Database className="w-4 h-4" />, level: 65 },
+      { name: 'Upstash Redis', icon: <Server className="w-4 h-4" />, level: 65 },
     ],
   },
   {
@@ -84,9 +87,22 @@ const skillCategories: SkillCategory[] = [
       { name: 'PWA/Workbox', icon: <Smartphone className="w-4 h-4" />, level: 80 },
     ],
   },
+  {
+    title: 'Soft Skills',
+    description: 'Habilidades humanas y mentalidad',
+    icon: <Brain className="w-6 h-6" />,
+    color: 'from-amber-500 to-yellow-500',
+    skills: [
+      { name: 'Aprendizaje Autónomo', icon: <Search className="w-4 h-4" />, level: 100 },
+      { name: 'Resolución de Problemas', icon: <Puzzle className="w-4 h-4" />, level: 100 },
+      { name: 'Comunicación', icon: <MessageSquare className="w-4 h-4" />, level: 95 },
+      { name: 'Adaptabilidad', icon: <Zap className="w-4 h-4" />, level: 95 },
+      { name: 'Pensamiento Crítico', icon: <Brain className="w-4 h-4" />, level: 90 },
+    ],
+  },
 ];
 
-function SkillBar({ skill, color }: { skill: Skill; color: string }) {
+function SkillBar({ skill, color }: { readonly skill: Skill; readonly color: string }) {
   return (
     <motion.div
       className="group"
@@ -114,7 +130,7 @@ function SkillBar({ skill, color }: { skill: Skill; color: string }) {
   );
 }
 
-function SkillCard({ category }: { category: SkillCategory }) {
+function SkillCard({ category }: { readonly category: SkillCategory }) {
   return (
     <motion.div
       className="card card-hover p-6"
@@ -150,7 +166,7 @@ export function Skills() {
       <div className="container-custom relative z-10">
         <SectionTitle
           title="Skills & Tecnologías"
-          subtitle="Stack real usado en proyectos, todo guiado con IA"
+          subtitle="Stack real usado en proyectos"
         />
 
         {/* AI Badge */}
@@ -166,6 +182,14 @@ export function Skills() {
             <span>Desarrollo asistido por Inteligencia Artificial</span>
           </div>
         </motion.div>
+
+        {/* Percentage Note */}
+        <motion.p 
+          className="text-center text-dark-400 text-sm max-w-2xl mx-auto mb-8 italic"
+          variants={fadeInUp}
+        >
+          * Los porcentajes reflejan mi <span className="text-primary-400 font-medium">nivel de autonomía</span> usando cada tecnología en proyectos reales.
+        </motion.p>
 
         <motion.div
           className="grid md:grid-cols-2 gap-6"

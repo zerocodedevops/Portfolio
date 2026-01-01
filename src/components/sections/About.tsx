@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { Code2, Rocket, Lightbulb, Heart } from 'lucide-react';
 import { SectionTitle } from '@/components/ui';
-import { fadeInUp, staggerContainer, slideInLeft, slideInRight } from '@/hooks/useScrollAnimation';
+import { fadeInUp, staggerContainer } from '@/hooks/useScrollAnimation';
 
 const highlights = [
   {
@@ -40,16 +40,16 @@ export function About() {
           subtitle="Un enfoque diferente al desarrollo"
         />
 
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="flex flex-col items-center gap-12 max-w-4xl mx-auto">
           {/* Image/Visual side */}
           <motion.div
-            className="relative"
-            variants={slideInLeft}
+            className="relative w-full max-w-md"
+            variants={fadeInUp}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
           >
-            <div className="relative aspect-square max-w-md mx-auto">
+            <div className="relative aspect-square">
               {/* Decorative frame */}
               <div className="absolute inset-0 bg-gradient-to-br from-primary-500/20 to-accent-500/20 rounded-3xl rotate-6 blur-sm" />
               <div className="absolute inset-0 bg-gradient-to-br from-primary-500/10 to-accent-500/10 rounded-3xl -rotate-3" />
@@ -67,40 +67,50 @@ export function About() {
 
           {/* Text side */}
           <motion.div
-            variants={slideInRight}
+            className="text-center"
+            variants={staggerContainer}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
           >
-            <h3 className="heading-3 text-dark-100 mb-4">
+            <motion.h3 variants={fadeInUp} className="heading-3 text-dark-100 mb-6">
               Desarrollador autodidacta potenciado por IA
-            </h3>
+            </motion.h3>
             
-            <div className="space-y-4 text-dark-400">
+            <motion.div variants={fadeInUp} className="space-y-6 text-dark-400 text-lg leading-relaxed">
               <p>
-                Soy transparente: <span className="text-primary-400 font-medium">no tengo formación académica 
-                específica ni experiencia laboral previa</span> en desarrollo de software. Lo que sí tengo 
-                es una pasión desbordante por la tecnología y una mentalidad de aprendizaje continuo.
+                No vengo del camino clásico del desarrollo y no pretendo aparentarlo. Mi fortaleza no está en memorizar sintaxis, sino en <span className="text-primary-400 font-medium">entender problemas, diseñar soluciones</span> y apoyarme en <span className="text-accent-400 font-medium">herramientas de Inteligencia Artificial</span> para <span className="text-primary-400 font-medium">convertir ideas en aplicaciones reales</span>.
               </p>
               
-              <p>
-                Todo lo que construyo lo hago <span className="text-accent-400 font-medium">en colaboración 
-                con herramientas de Inteligencia Artificial</span>. Veo la IA no como un atajo, sino como 
-                un mentor incansable que me permite aprender mientras creo, cuestionando cada línea de 
-                código y entendiendo el porqué de cada decisión.
-              </p>
+              <div className="inline-block text-left bg-dark-800/30 p-6 rounded-2xl border border-dark-700/30">
+                <p className="mb-4 font-medium text-dark-200">Trabajo con IA como un <span className="text-accent-400">colaborador técnico</span> que:</p>
+                <ul className="grid sm:grid-cols-2 gap-x-8 gap-y-2 list-disc list-inside text-dark-300">
+                  <li>Me guía en la parte de código</li>
+                  <li>Me ayuda a validar decisiones</li>
+                  <li>Me permite aprender mientras construyo</li>
+                  <li>Me da velocidad sin sacrificar comprensión</li>
+                </ul>
+              </div>
               
+              <p>
+                Mi enfoque es práctico: no soy un programador tradicional, pero sí soy alguien capaz de <span className="text-primary-400 font-medium">llevar un proyecto desde la idea hasta un producto funcional</span>, entendiendo cada paso del proceso y mejorando con cada iteración.
+              </p>
+
+              <p>
+                Creo en la <span className="text-primary-400 font-medium">transparencia</span>, en el <span className="text-accent-400 font-medium">aprendizaje continuo</span> y en aprovechar la tecnología para <span className="text-primary-400 font-medium">crear valor</span>.
+              </p>
+
               <p>
                 Mi verdadera fortaleza es el <span className="text-primary-400 font-medium">compromiso 
                 absoluto</span> con cada proyecto. Me involucro al 200%, obsesionándome con los detalles 
                 y no descansando hasta que el resultado supera las expectativas. Cada reto es una 
                 oportunidad de aprendizaje, y cada error es un paso hacia la mejora.
               </p>
-            </div>
+            </motion.div>
 
             {/* Highlights grid */}
             <motion.div
-              className="grid grid-cols-2 gap-4 mt-8"
+              className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-10"
               variants={staggerContainer}
               initial="hidden"
               whileInView="visible"
@@ -110,11 +120,11 @@ export function About() {
                 <motion.div
                   key={item.title}
                   variants={fadeInUp}
-                  className="p-4 rounded-xl bg-dark-800/30 border border-dark-700/50 hover:border-primary-500/30 transition-colors"
+                  className="p-4 rounded-xl bg-dark-800/30 border border-dark-700/50 hover:border-primary-500/30 transition-colors flex flex-col items-center justify-center text-center gap-2"
                 >
-                  <item.icon className="w-6 h-6 text-primary-400 mb-2" />
-                  <div className="text-lg font-semibold text-dark-100">{item.title}</div>
-                  <div className="text-sm text-dark-500">{item.description}</div>
+                  <item.icon className="w-6 h-6 text-primary-400" />
+                  <div className="font-semibold text-dark-100">{item.title}</div>
+                  <div className="text-xs text-dark-500">{item.description}</div>
                 </motion.div>
               ))}
             </motion.div>

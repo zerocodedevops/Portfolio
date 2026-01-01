@@ -8,11 +8,15 @@ export default [{
   languageOptions: {
     parser: tsparser,
     parserOptions: { ecmaVersion: 'latest', sourceType: 'module' },
-    globals: globals.browser,
+    globals: {
+      ...globals.browser,
+      React: 'readonly',
+    },
   },
   plugins: { '@typescript-eslint': tseslint },
   rules: {
     ...js.configs.recommended.rules,
+    'no-unused-vars': 'off',
     '@typescript-eslint/no-unused-vars': ['warn'],
   },
 }];
