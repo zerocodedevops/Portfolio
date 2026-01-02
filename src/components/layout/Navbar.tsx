@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 // eslint-disable-next-line
 import { Menu, X, Github, Linkedin, Mail, Sun, Moon } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { useTranslation } from 'react-i18next';
 
 const navLinks = [
   { label: 'Inicio', href: '#hero' },
@@ -22,6 +23,7 @@ const socialLinks = [
 ];
 
 export function Navbar() {
+  const { i18n } = useTranslation();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isLightMode, setIsLightMode] = useState(() => {
@@ -141,6 +143,36 @@ export function Navbar() {
                 <Sun className="w-5 h-5" />
               )}
             </motion.button>
+
+            {/* Language switcher */}
+            <div className="flex items-center gap-1 border border-dark-700 rounded-lg p-1">
+              <motion.button
+                onClick={() => i18n.changeLanguage('es')}
+                className={cn(
+                  "px-2 py-1 text-xs font-medium rounded transition-colors",
+                  i18n.language === 'es'
+                    ? "bg-primary-600 text-white"
+                    : "text-dark-400 hover:text-primary-400"
+                )}
+                whileTap={{ scale: 0.95 }}
+                aria-label="Cambiar a Español"
+              >
+                🇪🇸
+              </motion.button>
+              <motion.button
+                onClick={() => i18n.changeLanguage('en')}
+                className={cn(
+                  "px-2 py-1 text-xs font-medium rounded transition-colors",
+                  i18n.language === 'en'
+                    ? "bg-primary-600 text-white"
+                    : "text-dark-400 hover:text-primary-400"
+                )}
+                whileTap={{ scale: 0.95 }}
+                aria-label="Switch to English"
+              >
+                🇬🇧
+              </motion.button>
+            </div>
 
           </div>
 

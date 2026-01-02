@@ -4,6 +4,14 @@ import './styles/index.css';
 import { Providers } from './app/providers';
 import { Router } from './app/router';
 import { ErrorBoundary } from './components/ErrorBoundary';
+import { initGA, logPageView } from './lib/analytics';
+import './i18n/config';
+
+// Initialize Google Analytics
+if (import.meta.env.PROD) {
+  initGA();
+  logPageView();
+}
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>

@@ -1,0 +1,79 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "skills": "Skills",
+    "projects": "Projects",
+    "blog": "Thoughts",
+    "contact": "Contact"
+  },
+  "hero": {
+    "greeting": "Hi, I'm",
+    "name": "David G.",
+    "title": "AI-First Developer",
+    "subtitle": "I combine traditional development and Artificial Intelligence to build high-impact software.",
+    "cta": {
+      "projects": "View Projects",
+      "contact": "Get in Touch"
+    }
+  },
+  "about": {
+    "title": "About Me",
+    "subtitle": "Get to know my story",
+    "description": "I'm a developer passionate about technology and innovation. I specialize in creating solutions that combine the best of traditional development with Artificial Intelligence capabilities.",
+    "experience": "years of experience",
+    "projects": "completed projects",
+    "technologies": "mastered technologies"
+  },
+  "skills": {
+    "title": "Skills",
+    "subtitle": "Technologies I master",
+    "frontend": "Frontend",
+    "backend": "Backend",
+    "devops": "DevOps & Cloud",
+    "ai": "AI & ML"
+  },
+  "projects": {
+    "title": "Featured Projects",
+    "subtitle": "My most recent work",
+    "viewDemo": "View Demo",
+    "viewCode": "View Code",
+    "status": {
+      "production": "In Production",
+      "development": "In Development",
+      "prototype": "Prototype"
+    }
+  },
+  "blog": {
+    "title": "Thoughts",
+    "subtitle": "Reflections on the future of software development",
+    "readMore": "Read article",
+    "readTime": "read"
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "Let's talk about your next project",
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "message": "Message",
+      "send": "Send Message",
+      "sending": "Sending...",
+      "success": "Message sent successfully!",
+      "error": "Error sending message. Please try again."
+    }
+  },
+  "footer": {
+    "rights": "All rights reserved",
+    "madeWith": "Made with",
+    "by": "by"
+  },
+  "theme": {
+    "light": "Light Mode",
+    "dark": "Dark Mode"
+  },
+  "language": {
+    "es": "Español",
+    "en": "English"
+  }
+}

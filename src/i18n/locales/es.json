@@ -1,0 +1,79 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "about": "Sobre mí",
+    "skills": "Skills",
+    "projects": "Proyectos",
+    "blog": "Pensamientos",
+    "contact": "Contacto"
+  },
+  "hero": {
+    "greeting": "Hola, soy",
+    "name": "David G.",
+    "title": "Desarrollador AI-First",
+    "subtitle": "Combino desarrollo tradicional e Inteligencia Artificial para construir software de alto impacto.",
+    "cta": {
+      "projects": "Ver Proyectos",
+      "contact": "Contactar"
+    }
+  },
+  "about": {
+    "title": "Sobre mí",
+    "subtitle": "Conoce mi historia",
+    "description": "Soy un desarrollador apasionado por la tecnología y la innovación. Me especializo en crear soluciones que combinan lo mejor del desarrollo tradicional con las capacidades de la Inteligencia Artificial.",
+    "experience": "años de experiencia",
+    "projects": "proyectos completados",
+    "technologies": "tecnologías dominadas"
+  },
+  "skills": {
+    "title": "Skills",
+    "subtitle": "Tecnologías que domino",
+    "frontend": "Frontend",
+    "backend": "Backend",
+    "devops": "DevOps & Cloud",
+    "ai": "AI & ML"
+  },
+  "projects": {
+    "title": "Proyectos Destacados",
+    "subtitle": "Mi trabajo más reciente",
+    "viewDemo": "Ver Demo",
+    "viewCode": "Ver Código",
+    "status": {
+      "production": "En Producción",
+      "development": "En Desarrollo",
+      "prototype": "Prototipo"
+    }
+  },
+  "blog": {
+    "title": "Pensamientos",
+    "subtitle": "Reflexiones sobre el futuro del desarrollo de software",
+    "readMore": "Leer artículo",
+    "readTime": "lectura"
+  },
+  "contact": {
+    "title": "Contacto",
+    "subtitle": "Hablemos de tu próximo proyecto",
+    "form": {
+      "name": "Nombre",
+      "email": "Email",
+      "message": "Mensaje",
+      "send": "Enviar Mensaje",
+      "sending": "Enviando...",
+      "success": "¡Mensaje enviado con éxito!",
+      "error": "Error al enviar el mensaje. Inténtalo de nuevo."
+    }
+  },
+  "footer": {
+    "rights": "Todos los derechos reservados",
+    "madeWith": "Hecho con",
+    "by": "por"
+  },
+  "theme": {
+    "light": "Modo Claro",
+    "dark": "Modo Oscuro"
+  },
+  "language": {
+    "es": "Español",
+    "en": "English"
+  }
+}
