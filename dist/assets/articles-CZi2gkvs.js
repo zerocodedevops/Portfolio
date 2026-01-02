@@ -1,24 +1,19 @@
-import{c as e}from"./Card-BZk9mHfc.js";/**
+import{c as e}from"./index-EILkn9hz.js";import{C as a}from"./cpu-BSbr3WqS.js";/**
  * @license lucide-react v0.562.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
- */const a=[["path",{d:"M12 18V5",key:"adv99a"}],["path",{d:"M15 13a4.17 4.17 0 0 1-3-4 4.17 4.17 0 0 1-3 4",key:"1e3is1"}],["path",{d:"M17.598 6.5A3 3 0 1 0 12 5a3 3 0 1 0-5.598 1.5",key:"1gqd8o"}],["path",{d:"M17.997 5.125a4 4 0 0 1 2.526 5.77",key:"iwvgf7"}],["path",{d:"M18 18a4 4 0 0 0 2-7.464",key:"efp6ie"}],["path",{d:"M19.967 17.483A4 4 0 1 1 12 18a4 4 0 1 1-7.967-.517",key:"1gq6am"}],["path",{d:"M6 18a4 4 0 0 1-2-7.464",key:"k1g0md"}],["path",{d:"M6.003 5.125a4 4 0 0 0-2.526 5.77",key:"q97ue3"}]],o=e("brain",a);/**
+ */const o=[["path",{d:"M12 18V5",key:"adv99a"}],["path",{d:"M15 13a4.17 4.17 0 0 1-3-4 4.17 4.17 0 0 1-3 4",key:"1e3is1"}],["path",{d:"M17.598 6.5A3 3 0 1 0 12 5a3 3 0 1 0-5.598 1.5",key:"1gqd8o"}],["path",{d:"M17.997 5.125a4 4 0 0 1 2.526 5.77",key:"iwvgf7"}],["path",{d:"M18 18a4 4 0 0 0 2-7.464",key:"efp6ie"}],["path",{d:"M19.967 17.483A4 4 0 1 1 12 18a4 4 0 1 1-7.967-.517",key:"1gq6am"}],["path",{d:"M6 18a4 4 0 0 1-2-7.464",key:"k1g0md"}],["path",{d:"M6.003 5.125a4 4 0 0 0-2.526 5.77",key:"q97ue3"}]],s=e("brain",o);/**
  * @license lucide-react v0.562.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
- */const s=[["path",{d:"M8 2v4",key:"1cmpym"}],["path",{d:"M16 2v4",key:"4m81vk"}],["rect",{width:"18",height:"18",x:"3",y:"4",rx:"2",key:"1hopcy"}],["path",{d:"M3 10h18",key:"8toen8"}]],d=e("calendar",s);/**
+ */const r=[["path",{d:"M8 2v4",key:"1cmpym"}],["path",{d:"M16 2v4",key:"4m81vk"}],["rect",{width:"18",height:"18",x:"3",y:"4",rx:"2",key:"1hopcy"}],["path",{d:"M3 10h18",key:"8toen8"}]],d=e("calendar",r);/**
  * @license lucide-react v0.562.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
- */const r=[["path",{d:"m18 16 4-4-4-4",key:"1inbqp"}],["path",{d:"m6 8-4 4 4 4",key:"15zrgr"}],["path",{d:"m14.5 4-5 16",key:"e7oirm"}]],n=e("code-xml",r);/**
- * @license lucide-react v0.562.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */const t=[["path",{d:"M12 20v2",key:"1lh1kg"}],["path",{d:"M12 2v2",key:"tus03m"}],["path",{d:"M17 20v2",key:"1rnc9c"}],["path",{d:"M17 2v2",key:"11trls"}],["path",{d:"M2 12h2",key:"1t8f8n"}],["path",{d:"M2 17h2",key:"7oei6x"}],["path",{d:"M2 7h2",key:"asdhe0"}],["path",{d:"M20 12h2",key:"1q8mjw"}],["path",{d:"M20 17h2",key:"1fpfkl"}],["path",{d:"M20 7h2",key:"1o8tra"}],["path",{d:"M7 20v2",key:"4gnj0m"}],["path",{d:"M7 2v2",key:"1i4yhu"}],["rect",{x:"4",y:"4",width:"16",height:"16",rx:"2",key:"1vbyd7"}],["rect",{x:"8",y:"8",width:"8",height:"8",rx:"1",key:"z9xiuo"}]],i=e("cpu",t),c=[{id:1,title:'Por qué "AI-First" no es solo un Buzzword',excerpt:"Cómo la inteligencia artificial está redefiniendo la arquitectura de software, desde el diseño hasta el despliegue, y por qué los desarrolladores deben adaptarse.",date:"Ene 2026",readTime:"5 min",category:"Filosofía",image:"/assets/projects/thumbnails/blog.png",icon:o,content:`
+ */const n=[["path",{d:"m18 16 4-4-4-4",key:"1inbqp"}],["path",{d:"m6 8-4 4 4 4",key:"15zrgr"}],["path",{d:"m14.5 4-5 16",key:"e7oirm"}]],i=e("code-xml",n),c=[{id:1,title:'Por qué "AI-First" no es solo un Buzzword',excerpt:"Cómo la inteligencia artificial está redefiniendo la arquitectura de software, desde el diseño hasta el despliegue, y por qué los desarrolladores deben adaptarse.",date:"Ene 2026",readTime:"5 min",category:"Filosofía",image:"/assets/projects/thumbnails/blog.png",icon:s,content:`
       <p class="lead text-xl text-dark-200 mb-8">Vivimos en un <strong>punto de inflexión histórico</strong>. La programación tradicional, centrada obsesivamente en la sintaxis y la memorización de APIs, está dando paso a una nueva era inevitable: la <strong>Ingeniería AI-First</strong>.</p>
 
       <h2>El cambio de paradigma</h2>
@@ -42,7 +37,7 @@ import{c as e}from"./Card-BZk9mHfc.js";/**
       <p>La adopción de herramientas de IA no es opcional ni una moda pasajera. Aquellos desarrolladores que se resistan a este cambio "por purismo" se encontrarán compitiendo en clara desventaja contra ingenieros que, potenciados por la IA, pueden entregar valor diez veces más rápido.</p> 
 
       <p>El futuro no es "sin código" (No-Code), es <strong>"con código generado y supervisado por expertos"</strong>. Y esos expertos somos nosotros.</p>
-    `},{id:2,title:"Más allá de Copilot: Agentes Autónomos",excerpt:"La evolución de los asistentes de código hacia compañeros proactivos capaces de entender el contexto completo del negocio y tomar decisiones arquitectónicas.",date:"Dic 2025",readTime:"7 min",category:"Tecnología",image:"/assets/projects/thumbnails/ai-chat.png",icon:i,content:`
+    `},{id:2,title:"Más allá de Copilot: Agentes Autónomos",excerpt:"La evolución de los asistentes de código hacia compañeros proactivos capaces de entender el contexto completo del negocio y tomar decisiones arquitectónicas.",date:"Dic 2025",readTime:"7 min",category:"Tecnología",image:"/assets/projects/thumbnails/ai-chat.png",icon:a,content:`
       <p class="lead text-xl text-dark-200 mb-8">Github Copilot fue solo el comienzo, la punta del iceberg. El autocompletado inteligente es útil, sí, pero los <strong>Agentes Autónomos</strong> son la verdadera revolución que está por llegar a nuestros IDEs.</p>
 
       <h2>¿Qué es un Agente Autónomo en Desarrollo?</h2>
@@ -67,7 +62,7 @@ import{c as e}from"./Card-BZk9mHfc.js";/**
       <p>Por supuesto, delegar tanto poder conlleva riesgos. Un agente que "alucina" puede introducir bugs sutiles o vulnerabilidades de seguridad difíciles de detectar a simple vista.</p>
       
       <p>Por eso, el rol de <strong>Code Reviewer</strong> (revisor de código) es más crítico que nunca. Pasamos de ser los escritores del primer borrador a ser los <strong>editores jefes</strong>, responsables últimos de la calidad, la seguridad y la mantenibilidad de lo que nuestros agentes producen.</p>
-    `},{id:3,title:'El fin del "Boilerplate" en el Frontend',excerpt:"Analizando cómo las nuevas herramientas de generación de UI están eliminando el trabajo repetitivo y permitiéndonos centrarnos en la lógica de negocio pura.",date:"Nov 2025",readTime:"4 min",category:"Desarrollo",image:"/assets/projects/thumbnails/dashboard.png",icon:n,content:`
+    `},{id:3,title:'El fin del "Boilerplate" en el Frontend',excerpt:"Analizando cómo las nuevas herramientas de generación de UI están eliminando el trabajo repetitivo y permitiéndonos centrarnos en la lógica de negocio pura.",date:"Nov 2025",readTime:"4 min",category:"Desarrollo",image:"/assets/projects/thumbnails/dashboard.png",icon:i,content:`
       <p class="lead text-xl text-dark-200 mb-8">¿Cuántas veces has escrito el mismo componente de botón? ¿O la misma configuración de rutas en React Router? ¿O el mismo formulario de login? El <strong>"Boilerplate"</strong> (código repetitivo) ha sido la plaga que ha drenado la energía del desarrollo frontend durante años.</p>
 
       <h2>La era de la Generación Generativa de UI</h2>
@@ -93,4 +88,4 @@ import{c as e}from"./Card-BZk9mHfc.js";/**
       </ul>
 
       <p>El código visual se convierte en un <em>commodity</em>. La <strong>arquitectura y la experiencia</strong> de la aplicación es donde reside ahora el verdadero valor.</p>
-    `}];export{o as B,n as C,c as a,d as b};
+    `}];export{s as B,i as C,c as a,d as b};

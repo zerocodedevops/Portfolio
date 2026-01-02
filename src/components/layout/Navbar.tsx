@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 // eslint-disable-next-line
-import { Menu, X, Github, Linkedin, Mail } from 'lucide-react';
+import { Menu, X, Github, Linkedin, Mail, Sun, Moon } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 const navLinks = [
@@ -24,6 +24,11 @@ const socialLinks = [
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isLightMode, setIsLightMode] = useState(() => {
+    // Check localStorage or default to dark
+    const saved = localStorage.getItem('theme');
+    return saved === 'light';
+  });
 
   useEffect(() => {
     const handleScroll = () => {
@@ -32,6 +37,23 @@ export function Navbar() {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  useEffect(() => {
+    // Apply theme to document
+    if (isLightMode) {
+      document.documentElement.classList.remove('dark');
+      document.documentElement.classList.add('light');
+      localStorage.setItem('theme', 'light');
+    } else {
+      document.documentElement.classList.remove('light');
+      document.documentElement.classList.add('dark');
+      localStorage.setItem('theme', 'dark');
+    }
+  }, [isLightMode]);
+
+  const toggleTheme = () => {
+    setIsLightMode(!isLightMode);
+  };
 
   const handleNavClick = (href: string) => {
     setIsMobileMenuOpen(false);
@@ -105,6 +127,20 @@ export function Navbar() {
             </div>
 
             {/* Theme toggle */}
+            <motion.button
+              onClick={toggleTheme}
+              className="p-2 text-dark-400 hover:text-primary-400 transition-colors rounded-lg hover:bg-dark-800/50"
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.95 }}
+              aria-label={isLightMode ? 'Activar modo oscuro' : 'Activar modo claro'}
+              title={isLightMode ? 'Modo Oscuro' : 'Modo Claro'}
+            >
+              {isLightMode ? (
+                <Moon className="w-5 h-5" />
+              ) : (
+                <Sun className="w-5 h-5" />
+              )}
+            </motion.button>
 
           </div>
 

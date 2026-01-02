@@ -26,6 +26,19 @@
     min-height: 100vh;
   }
 
+  /* Light mode styles */
+  html.light body {
+    @apply bg-light-950 text-light-100;
+    background: linear-gradient(135deg, #f8fafc 0%, #e0e7ff 50%, #f8fafc 100%);
+    background-attachment: fixed;
+  }
+
+  html.light {
+    /* Override dark colors with light equivalents */
+    --bg-dark: #f8fafc;
+    --bg-dark-secondary: #e2e8f0;
+  }
+
   ::selection {
     @apply bg-primary-500/30 text-primary-200;
   }
@@ -45,6 +58,15 @@
 
   ::-webkit-scrollbar-thumb:hover {
     @apply bg-primary-500;
+  }
+
+  /* Light mode scrollbar */
+  html.light ::-webkit-scrollbar-track {
+    @apply bg-light-900;
+  }
+
+  html.light ::-webkit-scrollbar-thumb {
+    @apply bg-primary-600;
   }
 }
 

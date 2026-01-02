@@ -4,13 +4,15 @@ import { Hero, About, Skills, Projects, FeaturedProject, Blog, Contact } from '@
 export default function Home() {
   return (
     <Layout>
-      <Hero />
-      <About />
-      <Skills />
-      <FeaturedProject />
-      <Projects />
-      <Blog />
-      <Contact />
+      <div id="main-content">
+        <Hero />
+        <About />
+        <Skills />
+        <FeaturedProject />
+        <Projects />
+        <Blog />
+        <Contact />
+      </div>
     </Layout>
   );
 }

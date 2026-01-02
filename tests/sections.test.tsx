@@ -61,7 +61,7 @@ describe('Portfolio Sections Render', () => {
       </TestWrapper>
     );
     
-    expect(screen.getByText(/E-Commerce Platform/i)).toBeInTheDocument();
+    expect(screen.getByText(/DevOps Shop/i)).toBeInTheDocument();
     expect(screen.getByText(/AI Chat Assistant/i)).toBeInTheDocument();
   });
 

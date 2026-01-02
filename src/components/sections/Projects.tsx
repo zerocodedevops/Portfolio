@@ -19,13 +19,13 @@ interface Project {
 const projects: Project[] = [
   {
     id: 1,
-    title: 'E-Commerce Platform',
-    description: 'Plataforma de comercio electrónico completa con carrito, pagos y panel de administración.',
-    image: '/assets/projects/thumbnails/ecommerce.png',
-    tags: ['React', 'Node.js', 'MongoDB', 'Tailwind'],
-    demoUrl: 'https://example.com',
+    title: 'DevOps Shop',
+    description: 'Tienda online completa con Auth simulado, carrito persistente y checkout.',
+    image: '/assets/projects/thumbnails/ecommerce-preview.png',
+    tags: ['React', 'Redux', 'Stripe', 'Tailwind'],
+    demoUrl: '#/proyectos/ecommerce',
     repoUrl: 'https://github.com/zerocodedevops',
-    status: 'Development',
+    status: 'Prototype',
   },
   {
     id: 2,
@@ -117,27 +117,51 @@ const GithubIcon = ({ className }: { className?: string }) => (
 );
 
 function ProjectCard({ project }: { readonly project: Project }) {
+  const thumbnailContent = (() => {
+    if (!project.image) {
+      return (
+        <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-dark-700 to-dark-800">
+          <Folder className="w-12 h-12 text-dark-600 group-hover:text-primary-500/50 transition-colors duration-300" />
+        </div>
+      );
+    }
+
+    const imageContent = (
+      <>
+        <img
+          src={project.image}
+          alt={project.title}
+          loading="lazy"
+          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+        />
+        <div className="absolute inset-0 bg-dark-900/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+          {project.demoUrl && <ExternalLink className="w-8 h-8 text-white" />}
+        </div>
+      </>
+    );
+
+    if (project.demoUrl) {
+      return (
+        <a
+          href={project.demoUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="block w-full h-full cursor-pointer"
+        >
+          {imageContent}
+        </a>
+      );
+    }
+
+    return imageContent;
+  })();
+
   return (
     <motion.div variants={fadeInUp}>
       <Card className="h-full flex flex-col group overflow-hidden">
         {/* Image thumbnail */}
         <div className="aspect-[16/10] bg-dark-900 rounded-lg mb-4 overflow-hidden relative group-hover:shadow-lg transition-all border border-dark-700/50">
-          {project.image ? (
-            <>
-              <img 
-                src={project.image} 
-                alt={project.title} 
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-              />
-              <div className="absolute inset-0 bg-dark-900/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                {project.demoUrl && <ExternalLink className="w-8 h-8 text-white" />}
-              </div>
-            </>
-          ) : (
-            <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-dark-700 to-dark-800">
-               <Folder className="w-12 h-12 text-dark-600 group-hover:text-primary-500/50 transition-colors duration-300" />
-            </div>
-          )}
+          {thumbnailContent}
         </div>
 
         {/* Content */}
