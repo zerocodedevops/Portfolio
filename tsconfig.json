@@ -19,23 +19,49 @@
 			"@/*": [
 				"src/*"
 			],
+			"@zerovanity/*": [
+				"apps/zerovanity/src/*"
+			],
+			"@crypto/*": [
+				"apps/crypto/*"
+			],
+			"@ecommerce/*": [
+				"apps/ecommerce/*"
+			],
+			"@analytics/*": [
+				"apps/analytics/*"
+			],
+			"@zerodelay/*": [
+				"apps/zerodelay/src/*"
+			],
+			"@zero-chaos/*": [
+				"apps/zero-chaos/*"
+			],
 			"@salon/*": [
-				"src/features/projects/salon/src/*"
+				"apps/zerovanity/src/*"
 			]
 		}
 	},
 	"include": [
 		"src",
-		"tests"
+		"tests",
+		"apps"
 	],
 	"exclude": [
 		"node_modules",
 		"dist",
-		"src/features/projects/salon/src/app",
-		"src/features/projects/salon/src/middleware.ts",
-		"src/features/projects/salon/src/i18n",
-		"src/features/projects/salon/src/lib/prisma.ts",
-		"src/features/projects/reformas/app/routes.ts"
+		"apps/zerovanity/src/app",
+		"apps/zerovanity/src/middleware.ts",
+		"apps/zerovanity/src/i18n",
+		"apps/zerovanity/src/lib/prisma.ts",
+		"apps/zero-chaos/app/routes.ts",
+		"apps/zero-chaos/react-router.config.ts",
+		"apps/zero-chaos/vite.config.ts",
+		"apps/devops-shop/vite.config.ts",
+		"apps/zerodelay/vite.config.ts",
+		"apps/devops-shop/node_modules",
+		"apps/zerodelay/node_modules",
+		"apps/zerodelay/dist"
 	],
 	"references": [
 		{

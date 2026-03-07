@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "zerocode-devops"
+  },
+  "targets": {
+    "zerocode-devops": {
+      "hosting": {
+        "zerodelay": [
+          "zerodelay-mudanzas"
+        ]
+      }
+    }
+  }
+}

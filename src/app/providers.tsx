@@ -1,9 +1,9 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { type ReactNode, Suspense } from "react";
 import { HelmetProvider } from "react-helmet-async";
-import { CurrencyProvider } from "../features/projects/crypto/context/CurrencyContext";
-import { PortfolioProvider } from "../features/projects/crypto/context/PortfolioContext";
-import { WatchlistProvider } from "../features/projects/crypto/context/WatchlistContext";
+import { CurrencyProvider } from "@crypto/context/CurrencyContext";
+import { PortfolioProvider } from "@crypto/context/PortfolioContext";
+import { WatchlistProvider } from "@crypto/context/WatchlistContext";
 
 const queryClient = new QueryClient();
 

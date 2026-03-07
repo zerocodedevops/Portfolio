@@ -2,23 +2,23 @@ import { lazy, Suspense } from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { PageLoader } from "@/components/ui/PageLoader";
 import { PageTransition } from "@/components/ui/PageTransition";
-import { CurrencyProvider } from "@/features/projects/crypto/context/CurrencyContext";
+import { CurrencyProvider } from "@crypto/context/CurrencyContext";
 
 // Lazy Load Components
 const Home = lazy(() => import("@/features/home/Home"));
 const PymesService = lazy(() => import("@/features/services/PymesService"));
 const FreelanceMadrid = lazy(() => import("@/features/about/FreelanceMadrid"));
 const Pricing = lazy(() => import("@/features/pricing/Pricing"));
-const EcommerceApp = lazy(() => import("@/features/projects/ecommerce/routes"));
-const AnalyticsApp = lazy(() => import("@/features/projects/analytics/routes"));
-const SalonApp = lazy(() => import("@salon/routes"));
+const EcommerceApp = lazy(() => import("@ecommerce/routes"));
+const AnalyticsApp = lazy(() => import("@analytics/routes"));
+const SalonApp = lazy(() => import("@zerovanity/routes"));
 const CryptoApp = lazy(() =>
-	import("@/features/projects/crypto/pages/CryptoDashboard").then((m) => ({
+	import("@crypto/pages/CryptoDashboard").then((m) => ({
 		default: m.CryptoDashboard,
 	})),
 );
-const MediaApp = lazy(() => import("@/features/projects/mudanzas-coral/src/App"));
-const ReformsApp = lazy(() => import("@/features/projects/reformas/routes"));
+const MediaApp = lazy(() => import("@zerodelay/App"));
+const ReformsApp = lazy(() => import("@zero-chaos/routes"));
 const NotFound = lazy(() => import("@/features/misc/NotFound"));
 
 const router = createBrowserRouter(

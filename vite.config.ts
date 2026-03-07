@@ -31,8 +31,21 @@ export default defineConfig({
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url)),
+      '@zerovanity': fileURLToPath(
+        new URL('./apps/zerovanity/src', import.meta.url),
+      ),
+      '@crypto': fileURLToPath(new URL('./apps/crypto', import.meta.url)),
+      '@ecommerce': fileURLToPath(new URL('./apps/ecommerce', import.meta.url)),
+      '@analytics': fileURLToPath(new URL('./apps/analytics', import.meta.url)),
+      '@zerodelay': fileURLToPath(
+        new URL('./apps/zerodelay/src', import.meta.url),
+      ),
+      '@zero-chaos': fileURLToPath(
+        new URL('./apps/zero-chaos', import.meta.url),
+      ),
+      // Backward compat: zerovanity files still use @salon internally
       '@salon': fileURLToPath(
-        new URL('./src/features/projects/salon/src', import.meta.url),
+        new URL('./apps/zerovanity/src', import.meta.url),
       ),
     },
     dedupe: ['react', 'react-dom', 'react-router-dom'],
