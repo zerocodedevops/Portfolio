@@ -50,7 +50,7 @@ export default function SalonRoutes() {
 							<Route
 								index
 								element={
-									<Navigate to="/proyectos/salon/admin/dashboard" replace />
+									<Navigate to="/proyectos/zerovanity/admin/dashboard" replace />
 								}
 							/>
 							<Route path="dashboard" element={<AdminDashboard />} />

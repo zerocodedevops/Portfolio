@@ -50,7 +50,7 @@ export const ProjectsTemplate = () => {
                                             </span>
                                         ))}
                                     </div>
-                                    <CTAButton text="Quiero algo así" href="/proyectos/reformas/contacto" />
+                                    <CTAButton text="Quiero algo así" href="/proyectos/zero-chaos/contacto" />
                                 </div>
                                 <div className="space-y-6">
                                     <div className="grid grid-cols-2 gap-4">

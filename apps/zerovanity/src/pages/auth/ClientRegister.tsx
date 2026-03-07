@@ -37,7 +37,7 @@ export default function ClientRegister() {
 				.select()
 				.limit(1);
 
-			navigate("/proyectos/salon/client/bookings");
+			navigate("/proyectos/zerovanity/client/bookings");
 		} catch (err: any) {
 			setError(err.message);
 		} finally {
@@ -131,7 +131,7 @@ export default function ClientRegister() {
 					<div className="mt-6 text-center text-sm text-slate-500">
 						¿Ya tienes cuenta?{" "}
 						<Link
-							to="/proyectos/salon/login"
+							to="/proyectos/zerovanity/login"
 							className="text-amber-400 hover:text-amber-300 font-medium transition-colors"
 						>
 							Inicia Sesión

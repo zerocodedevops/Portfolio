@@ -202,7 +202,7 @@ export function BookingModal({ onClose }: Readonly<BookingModalProps>) {
 				});
 				// Optionally navigate to MyBookings if logged in
 				if (user) {
-					globalThis.location.href = "/proyectos/salon/client/bookings";
+					globalThis.location.href = "/proyectos/zerovanity/client/bookings";
 				}
 			}, 1000);
 		} catch (error: any) {

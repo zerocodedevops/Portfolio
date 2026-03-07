@@ -37,8 +37,8 @@ export const HomeTemplate = () => {
                             Especialistas en Madrid. Presupuesto cerrado por contrato y gestión técnica impecable. Convertimos tu obra en una inversión, no en un problema.
                         </p>
                         <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-6">
-                            <CTAButton text="Pide Presupuesto real" href="/proyectos/reformas/contacto" variant="primary" />
-                            <CTAButton text="Ver Proyectos" href="/proyectos/reformas/proyectos" variant="outline" />
+                            <CTAButton text="Pide Presupuesto real" href="/proyectos/zero-chaos/contacto" variant="primary" />
+                            <CTAButton text="Ver Proyectos" href="/proyectos/zero-chaos/proyectos" variant="outline" />
                         </div>
 
                         <div className="mt-16 flex items-center space-x-8">
@@ -91,7 +91,7 @@ export const HomeTemplate = () => {
                                 <p className="text-gray-500 mb-8 leading-relaxed">{servicio.shortDescription}</p>
                                 <div className="flex justify-between items-center">
                                     <span className="text-xs font-bold text-gray-400 uppercase tracking-widest">{servicio.priceFrom}</span>
-                                    <Link to={`/proyectos/reformas/${servicio.slug}`} className="text-[#D4A853] font-bold uppercase text-sm tracking-widest group-hover:translate-x-2 transition-transform">Ver más →</Link>
+                                    <Link to={`/proyectos/zero-chaos/${servicio.slug}`} className="text-[#D4A853] font-bold uppercase text-sm tracking-widest group-hover:translate-x-2 transition-transform">Ver más →</Link>
                                 </div>
                             </div>
                         ))}
@@ -112,7 +112,7 @@ export const HomeTemplate = () => {
                     </div>
                     <ProcessSteps />
                     <div className="mt-16">
-                        <CTAButton text="Descarga nuestra guía de proceso" href="/proyectos/reformas/contacto" variant="outline" />
+                        <CTAButton text="Descarga nuestra guía de proceso" href="/proyectos/zero-chaos/contacto" variant="outline" />
                     </div>
                 </div>
             </section>

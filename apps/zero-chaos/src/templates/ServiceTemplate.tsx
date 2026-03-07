@@ -27,7 +27,7 @@ export const ServiceTemplate = ({ service }: ServiceTemplateProps) => {
                         {service.shortDescription}
                     </p>
                     <div className="flex justify-center">
-                        <CTAButton text="Pide Presupuesto Gratis" href="/proyectos/reformas/contacto" />
+                        <CTAButton text="Pide Presupuesto Gratis" href="/proyectos/zero-chaos/contacto" />
                     </div>
                 </div>
             </section>
@@ -68,7 +68,7 @@ export const ServiceTemplate = ({ service }: ServiceTemplateProps) => {
                                 <li>Presupuesto en 24h/48h</li>
                                 <li>Garantía de 10 años</li>
                             </ul>
-                            <CTAButton text="Solicitar Visita" href="/proyectos/reformas/contacto" className="w-full" />
+                            <CTAButton text="Solicitar Visita" href="/proyectos/zero-chaos/contacto" className="w-full" />
                         </div>
                     </aside>
                 </div>

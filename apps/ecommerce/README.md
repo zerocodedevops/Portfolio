@@ -74,7 +74,7 @@ Este proyecto sigue los estándares más estrictos de desarrollo:
 
 ## 📂 Arquitectura
 
-El módulo vive en `src/features/projects/ecommerce` siguiendo el patrón
+El módulo vive en `apps/ecommerce` siguiendo el patrón
 **Feature-First**:
 
 - `/components`: UI específica del dominio.

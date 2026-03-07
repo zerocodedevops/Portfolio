@@ -96,7 +96,7 @@ const router = createBrowserRouter(
 			),
 		},
 		{
-			path: "/proyectos/salon/*",
+			path: "/proyectos/zerovanity/*",
 			element: (
 				<PageTransition>
 					<Suspense fallback={<PageLoader text="Loading Salon App..." />}>
@@ -106,7 +106,7 @@ const router = createBrowserRouter(
 			),
 		},
 		{
-			path: "/proyectos/zero-delay/*",
+			path: "/proyectos/zerodelay/*",
 			element: (
 				<PageTransition>
 					<Suspense fallback={<PageLoader text="Cargando Zero Delay..." />}>
@@ -116,7 +116,7 @@ const router = createBrowserRouter(
 			),
 		},
 		{
-			path: "/proyectos/reformas/*",
+			path: "/proyectos/zero-chaos/*",
 			element: (
 				<PageTransition>
 					<Suspense fallback={<PageLoader text="Abriendo Cero Caos..." />}>

@@ -17,11 +17,11 @@ export const Header = ({ clientName: _clientName }: HeaderProps) => {
     }, []);
 
     const navLinks = [
-        { name: "Integrales", href: "/proyectos/reformas/reformas-integrales-madrid" },
-        { name: "Cocinas", href: "/proyectos/reformas/reformas-cocinas-madrid" },
-        { name: "Baños", href: "/proyectos/reformas/reformas-banos-madrid" },
-        { name: "Proyectos", href: "/proyectos/reformas/proyectos" },
-        { name: "Sobre Nosotros", href: "/proyectos/reformas/sobre-nosotros" },
+        { name: "Integrales", href: "/proyectos/zero-chaos/reformas-integrales-madrid" },
+        { name: "Cocinas", href: "/proyectos/zero-chaos/reformas-cocinas-madrid" },
+        { name: "Baños", href: "/proyectos/zero-chaos/reformas-banos-madrid" },
+        { name: "Proyectos", href: "/proyectos/zero-chaos/proyectos" },
+        { name: "Sobre Nosotros", href: "/proyectos/zero-chaos/sobre-nosotros" },
     ];
 
     return (

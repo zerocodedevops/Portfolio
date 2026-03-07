@@ -59,7 +59,7 @@ const Footer = () => {
 						>
 							<li>
 								<Link
-									to="/proyectos/zero-delay"
+									to="/proyectos/zerodelay"
 									style={{
 										color: "#FFFFFF",
 										textDecoration: "none",
@@ -79,7 +79,7 @@ const Footer = () => {
 							</li>
 							<li>
 								<Link
-									to="/proyectos/zero-delay/servicios"
+									to="/proyectos/zerodelay/servicios"
 									style={{
 										color: "#FFFFFF",
 										textDecoration: "none",
@@ -99,7 +99,7 @@ const Footer = () => {
 							</li>
 							<li>
 								<Link
-									to="/proyectos/zero-delay/contacto"
+									to="/proyectos/zerodelay/contacto"
 									style={{
 										color: "#FFFFFF",
 										textDecoration: "none",
@@ -206,7 +206,7 @@ const Footer = () => {
 					<p>© 2026 Zero Delay Mudanzas. Todos los derechos reservados.</p>
 					<div style={{ display: "flex", gap: "1.5rem" }}>
 						<Link
-							to="/proyectos/zero-delay/aviso-legal"
+							to="/proyectos/zerodelay/aviso-legal"
 							style={{
 								color: "#FFFFFF",
 								textDecoration: "none",
@@ -222,7 +222,7 @@ const Footer = () => {
 							Aviso Legal
 						</Link>
 						<Link
-							to="/proyectos/zero-delay/privacidad"
+							to="/proyectos/zerodelay/privacidad"
 							style={{
 								color: "#FFFFFF",
 								textDecoration: "none",
@@ -238,7 +238,7 @@ const Footer = () => {
 							Privacidad
 						</Link>
 						<Link
-							to="/proyectos/zero-delay/cookies"
+							to="/proyectos/zerodelay/cookies"
 							style={{
 								color: "#FFFFFF",
 								textDecoration: "none",

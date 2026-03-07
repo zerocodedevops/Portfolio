@@ -13,7 +13,7 @@ export const BlogPostTemplate = ({ post }: BlogPostTemplateProps) => {
                 <div className="container mx-auto px-6 max-w-4xl">
                     <div className="mb-12 text-center">
                         <Link
-                            to="/proyectos/reformas/blog"
+                            to="/proyectos/zero-chaos/blog"
                             className="text-xs font-bold text-[#D4A853] uppercase tracking-widest mb-6 inline-block hover:underline"
                         >
                             ← Volver al Blog
@@ -50,7 +50,7 @@ export const BlogPostTemplate = ({ post }: BlogPostTemplateProps) => {
                             Cada reforma es un mundo. Cuéntanos tu proyecto y te daremos un presupuesto cerrado sin compromiso.
                         </p>
                         <Link
-                            to="/proyectos/reformas/contacto"
+                            to="/proyectos/zero-chaos/contacto"
                             className="bg-[#1C1C1E] text-white px-10 py-5 font-black uppercase tracking-tighter hover:bg-[#D4A853] transition-colors"
                         >
                             Pide Presupuesto Gratis

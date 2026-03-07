@@ -20,7 +20,7 @@ export const BarrioTemplate = ({ barrio }: BarrioTemplateProps) => {
                     <p className="text-lg text-gray-500 max-w-2xl mb-10 leading-relaxed">
                         {barrio.description} Conocemos perfectamente la normativa del {barrio.name} para agilizar licencias y permisos.
                     </p>
-                    <CTAButton text="Pide Presupuesto en 24h" href="/proyectos/reformas/contacto" />
+                    <CTAButton text="Pide Presupuesto en 24h" href="/proyectos/zero-chaos/contacto" />
                 </div>
             </section>
 

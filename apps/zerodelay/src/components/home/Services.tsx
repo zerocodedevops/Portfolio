@@ -10,25 +10,25 @@ const Services = () => {
 			id: 1,
 			title: "Mudanzas hogar",
 			image: hogarImg,
-			link: "/proyectos/zero-delay/servicios",
+			link: "/proyectos/zerodelay/servicios",
 		},
 		{
 			id: 2,
 			title: "Guardamuebles",
 			image: guardamueblesImg,
-			link: "/proyectos/zero-delay/servicios",
+			link: "/proyectos/zerodelay/servicios",
 		},
 		{
 			id: 3,
 			title: "Traslados de Oficinas",
 			image: oficinasImg,
-			link: "/proyectos/zero-delay/servicios",
+			link: "/proyectos/zerodelay/servicios",
 		},
 		{
 			id: 4,
 			title: "Grupajes",
 			image: grupajesImg,
-			link: "/proyectos/zero-delay/servicios",
+			link: "/proyectos/zerodelay/servicios",
 		},
 	];
 

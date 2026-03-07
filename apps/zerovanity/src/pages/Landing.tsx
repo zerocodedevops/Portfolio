@@ -111,7 +111,7 @@ export default function Landing() {
 
 				<div>
 					<Link
-						to="/proyectos/salon/auth/admin/login"
+						to="/proyectos/zerovanity/auth/admin/login"
 						className="px-6 py-2 border border-[#BF953F] text-[#BF953F] hover:bg-[#BF953F] hover:text-black transition-all duration-300 uppercase text-xs font-bold tracking-widest rounded-sm"
 					>
 						Acceso Admin

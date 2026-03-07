@@ -229,7 +229,7 @@ const Services = () => {
 
 								{/* CTA Button */}
 								<a
-									href="/proyectos/zero-delay/contacto"
+									href="/proyectos/zerodelay/contacto"
 									style={{
 										display: "inline-block",
 										padding: "1rem 2rem",
@@ -290,7 +290,7 @@ const Services = () => {
 						Contáctanos y cuéntanos tu caso.
 					</p>
 					<a
-						href="/proyectos/zero-delay/contacto"
+						href="/proyectos/zerodelay/contacto"
 						style={{
 							display: "inline-block",
 							padding: "1rem 2.5rem",

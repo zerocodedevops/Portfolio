@@ -8,7 +8,7 @@
 	],
 	"scripts": {
 		"dev": "vite",
-		"dev:reformas": "cd apps/reformas && npm run dev",
+		"dev:reformas": "cd apps/zero-chaos && npm run dev",
 		"build:portfolio": "vite build",
 		"build:zerodelay": "cd apps/zerodelay && npm run build && npx shx mkdir -p ../../dist/zerodelay && npx shx cp -r dist/* ../../dist/zerodelay/",
 		"build:devops-shop": "cd apps/devops-shop && npm run build && npx shx mkdir -p ../../dist/devops-shop && npx shx cp -r dist/* ../../dist/devops-shop/",

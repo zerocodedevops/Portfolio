@@ -99,7 +99,7 @@ export default function ReviewList({
 								<div className="flex text-yellow-400">
 									{Array.from({ length: 5 }).map((_, i) => (
 										<Star
-											key={`star-${i}`}
+											key={`${review.id}-star-${i}`}
 											className={`w-4 h-4 ${i < review.rating ? "fill-current" : "text-slate-200"}`}
 										/>
 									))}

@@ -7,7 +7,7 @@ export default function Barrio() {
     const barrio = barrios.find((b) => b.slug === barrioSlug);
 
     if (!barrio) {
-        return <Navigate to="/proyectos/reformas" replace />;
+        return <Navigate to="/proyectos/zero-chaos" replace />;
     }
 
     return <BarrioTemplate barrio={barrio} />;

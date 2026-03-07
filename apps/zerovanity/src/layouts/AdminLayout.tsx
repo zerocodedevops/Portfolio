@@ -7,19 +7,19 @@ export default function AdminLayout() {
 
 	const handleLogout = async () => {
 		await supabase.auth.signOut();
-		navigate("/proyectos/salon/auth/admin/login");
+		navigate("/proyectos/zerovanity/auth/admin/login");
 	};
 
 	const navItems = [
-		{ icon: LayoutDashboard, label: "Dashboard", to: "/proyectos/salon/admin" },
-		// { icon: Calendar, label: 'Agenda', to: '/proyectos/salon/admin/calendar' }, // Merged into Dashboard
+		{ icon: LayoutDashboard, label: "Dashboard", to: "/proyectos/zerovanity/admin" },
+		// { icon: Calendar, label: 'Agenda', to: '/proyectos/zerovanity/admin/calendar' }, // Merged into Dashboard
 		{
 			icon: Scissors,
 			label: "Servicios",
-			to: "/proyectos/salon/admin/services",
+			to: "/proyectos/zerovanity/admin/services",
 		},
-		{ icon: Users, label: "Equipo", to: "/proyectos/salon/admin/team" },
-		// { icon: Settings, label: 'Configuración', to: '/proyectos/salon/admin/settings' },
+		{ icon: Users, label: "Equipo", to: "/proyectos/zerovanity/admin/team" },
+		// { icon: Settings, label: 'Configuración', to: '/proyectos/zerovanity/admin/settings' },
 	];
 
 	return (
@@ -40,7 +40,7 @@ export default function AdminLayout() {
 						<NavLink
 							key={item.to}
 							to={item.to}
-							end={item.to === "/proyectos/salon/admin"}
+							end={item.to === "/proyectos/zerovanity/admin"}
 							className={({ isActive }) =>
 								`flex items-center space-x-3 px-4 py-3 rounded-lg mb-1 transition-all ${
 									isActive

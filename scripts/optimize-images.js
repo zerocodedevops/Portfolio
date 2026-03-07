@@ -8,7 +8,7 @@ const __dirname = path.dirname(__filename);
 
 const ASSETS_DIR = path.resolve(
 	__dirname,
-	"../src/features/projects/salon/src/assets",
+	"../apps/zerovanity/src/assets",
 );
 
 async function processDirectory(directory) {

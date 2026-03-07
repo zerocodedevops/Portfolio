@@ -22,7 +22,7 @@ export default function ClientLogin() {
 			});
 
 			if (signInError) throw signInError;
-			navigate("/proyectos/salon/client/bookings");
+			navigate("/proyectos/zerovanity/client/bookings");
 		} catch (err: any) {
 			setError(
 				err.message === "Invalid login credentials"
@@ -105,7 +105,7 @@ export default function ClientLogin() {
 					<div className="mt-6 text-center text-sm text-slate-500">
 						¿No tienes cuenta?{" "}
 						<Link
-							to="/proyectos/salon/register"
+							to="/proyectos/zerovanity/register"
 							className="text-amber-400 hover:text-amber-300 font-medium transition-colors"
 						>
 							Regístrate

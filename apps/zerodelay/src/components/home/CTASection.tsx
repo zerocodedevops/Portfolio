@@ -40,7 +40,7 @@ const CTASection = () => {
 					}}
 				>
 					<Link
-						to="/proyectos/zero-delay/contacto"
+						to="/proyectos/zerodelay/contacto"
 						style={{
 							padding: "1.25rem 2.5rem",
 							backgroundColor: "#4CAF50",

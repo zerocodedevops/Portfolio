@@ -22,7 +22,7 @@ export const BlogTemplate = () => {
                         {blogPosts.map((post) => (
                             <Link
                                 key={post.id}
-                                to={`/proyectos/reformas/blog/${post.slug}`}
+                                to={`/proyectos/zero-chaos/blog/${post.slug}`}
                                 className="group bg-white border border-gray-200 overflow-hidden hover:shadow-2xl transition-all duration-500"
                             >
                                 <div className="aspect-video bg-gray-200 relative overflow-hidden">

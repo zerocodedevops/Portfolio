@@ -30,38 +30,38 @@ function App() {
 		<Router>
 			<Routes>
 				{/* Landing: Defines the main entry point for the salon project */}
-				<Route path="/proyectos/salon" element={<Landing />} />
+				<Route path="/proyectos/zerovanity" element={<Landing />} />
 
 				{/* Root Redirect: If user lands on localhost:5173/ redirect to project */}
-				<Route path="/" element={<Navigate to="/proyectos/salon" replace />} />
+				<Route path="/" element={<Navigate to="/proyectos/zerovanity" replace />} />
 
 				{/* Client Auth */}
 				<Route
-					path="/proyectos/salon/auth/client/login"
+					path="/proyectos/zerovanity/auth/client/login"
 					element={<ClientLogin />}
 				/>
 				<Route
-					path="/proyectos/salon/auth/client/register"
+					path="/proyectos/zerovanity/auth/client/register"
 					element={<ClientRegister />}
 				/>
 
 				{/* Client Portal */}
-				<Route path="/proyectos/salon/client" element={<ClientLayout />}>
+				<Route path="/proyectos/zerovanity/client" element={<ClientLayout />}>
 					<Route path="bookings" element={<MyBookings />} />
 					<Route
 						index
-						element={<Navigate to="/proyectos/salon/client/bookings" replace />}
+						element={<Navigate to="/proyectos/zerovanity/client/bookings" replace />}
 					/>
 				</Route>
 
 				{/* Admin Auth */}
 				<Route
-					path="/proyectos/salon/auth/admin/login"
+					path="/proyectos/zerovanity/auth/admin/login"
 					element={<AdminLogin />}
 				/>
 
 				{/* Admin Routes (Protected) */}
-				<Route path="/proyectos/salon/admin" element={<RequireAuth />}>
+				<Route path="/proyectos/zerovanity/admin" element={<RequireAuth />}>
 					<Route element={<AdminLayout />}>
 						<Route path="dashboard" element={<AdminDashboard />} />
 						<Route path="services" element={<ServicesPage />} />
@@ -70,7 +70,7 @@ function App() {
 						<Route
 							index
 							element={
-								<Navigate to="/proyectos/salon/admin/dashboard" replace />
+								<Navigate to="/proyectos/zerovanity/admin/dashboard" replace />
 							}
 						/>
 					</Route>
@@ -79,15 +79,15 @@ function App() {
 				{/* Helper Redirects for easy access */}
 				<Route
 					path="/admin"
-					element={<Navigate to="/proyectos/salon/admin" replace />}
+					element={<Navigate to="/proyectos/zerovanity/admin" replace />}
 				/>
 				<Route
 					path="/login"
-					element={<Navigate to="/proyectos/salon/auth/client/login" replace />}
+					element={<Navigate to="/proyectos/zerovanity/auth/client/login" replace />}
 				/>
 
 				{/* Fallback */}
-				<Route path="*" element={<Navigate to="/proyectos/salon" replace />} />
+				<Route path="*" element={<Navigate to="/proyectos/zerovanity" replace />} />
 			</Routes>
 			<Toaster position="bottom-right" theme="dark" />
 		</Router>

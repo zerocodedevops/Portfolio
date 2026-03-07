@@ -11,7 +11,7 @@ export default function AdminLogin() {
 	const navigate = useNavigate();
 	const location = useLocation();
 
-	const from = location.state?.from?.pathname || "/proyectos/salon/admin";
+	const from = location.state?.from?.pathname || "/proyectos/zerovanity/admin";
 
 	const handleLogin = async (e: React.FormEvent) => {
 		e.preventDefault();

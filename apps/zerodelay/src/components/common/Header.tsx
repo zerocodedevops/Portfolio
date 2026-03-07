@@ -29,10 +29,10 @@ const Header = () => {
 	}, []);
 
 	const navLinks = [
-		{ to: "/proyectos/zero-delay", label: "QUIENES SOMOS" },
-		{ to: "/proyectos/zero-delay/servicios", label: "SERVICIOS" },
-		{ to: "/proyectos/zero-delay/blog", label: "BLOG" },
-		{ to: "/proyectos/zero-delay/contacto", label: "CONTACTO" },
+		{ to: "/proyectos/zerodelay", label: "QUIENES SOMOS" },
+		{ to: "/proyectos/zerodelay/servicios", label: "SERVICIOS" },
+		{ to: "/proyectos/zerodelay/blog", label: "BLOG" },
+		{ to: "/proyectos/zerodelay/contacto", label: "CONTACTO" },
 	];
 
 	const handleMouseOver = (e: React.MouseEvent<HTMLElement> | React.FocusEvent<HTMLElement>) => {
@@ -102,7 +102,7 @@ const Header = () => {
 						{/* Right - Social + CTA */}
 						<div style={{ display: "flex", alignItems: "center", gap: "1rem" }}>
 							<Link
-								to="/proyectos/zero-delay/contacto"
+								to="/proyectos/zerodelay/contacto"
 								style={{
 									padding: "0.5rem 1.5rem",
 									background:
@@ -394,7 +394,7 @@ const Header = () => {
 				>
 					{/* Logo */}
 					<Link
-						to="/proyectos/zero-delay"
+						to="/proyectos/zerodelay"
 						style={{
 							display: "flex",
 							alignItems: "center",
@@ -576,7 +576,7 @@ const Header = () => {
 							</Link>
 						))}
 						<Link
-							to="/proyectos/zero-delay/contacto"
+							to="/proyectos/zerodelay/contacto"
 							onClick={() => setIsMobileMenuOpen(false)}
 							style={{
 								padding: "0.75rem 1.5rem",

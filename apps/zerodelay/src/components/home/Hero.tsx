@@ -101,7 +101,7 @@ const Hero = () => {
 					}}
 				>
 					<Link
-						to="/proyectos/zero-delay/contacto"
+						to="/proyectos/zerodelay/contacto"
 						style={{
 							padding: "1.25rem 3rem",
 							background: "linear-gradient(135deg, #4CAF50 0%, #45A049 100%)",
@@ -128,7 +128,7 @@ const Hero = () => {
 						Pide Presupuesto
 					</Link>
 					<Link
-						to="/proyectos/zero-delay/servicios"
+						to="/proyectos/zerodelay/servicios"
 						style={{
 							padding: "1.25rem 3rem",
 							backgroundColor: "transparent",

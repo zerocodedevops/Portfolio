@@ -28,10 +28,10 @@ export const Footer = ({ clientName, phone, address, email }: FooterProps) => {
                 <div>
                     <h4 className="text-lg font-bold uppercase mb-6 tracking-wide">Servicios</h4>
                     <ul className="space-y-3 text-sm text-gray-400">
-                        <li><Link to="/proyectos/reformas/reformas-integrales-madrid" className="hover:text-[#D4A853]">Reformas Integrales</Link></li>
-                        <li><Link to="/proyectos/reformas/reformas-cocinas-madrid" className="hover:text-[#D4A853]">Reformas de Cocinas</Link></li>
-                        <li><Link to="/proyectos/reformas/reformas-banos-madrid" className="hover:text-[#D4A853]">Reformas de Baños</Link></li>
-                        <li><Link to="/proyectos/reformas/proyectos" className="hover:text-[#D4A853]">Proyectos Antes/Después</Link></li>
+                        <li><Link to="/proyectos/zero-chaos/reformas-integrales-madrid" className="hover:text-[#D4A853]">Reformas Integrales</Link></li>
+                        <li><Link to="/proyectos/zero-chaos/reformas-cocinas-madrid" className="hover:text-[#D4A853]">Reformas de Cocinas</Link></li>
+                        <li><Link to="/proyectos/zero-chaos/reformas-banos-madrid" className="hover:text-[#D4A853]">Reformas de Baños</Link></li>
+                        <li><Link to="/proyectos/zero-chaos/proyectos" className="hover:text-[#D4A853]">Proyectos Antes/Después</Link></li>
                     </ul>
                 </div>
 
@@ -39,10 +39,10 @@ export const Footer = ({ clientName, phone, address, email }: FooterProps) => {
                 <div>
                     <h4 className="text-lg font-bold uppercase mb-6 tracking-wide">Zonas</h4>
                     <ul className="space-y-3 text-sm text-gray-400">
-                        <li><Link to="/proyectos/reformas/reformas-madrid/salamanca" className="hover:text-[#D4A853]">Bº Salamanca</Link></li>
-                        <li><Link to="/proyectos/reformas/reformas-madrid/chamberi" className="hover:text-[#D4A853]">Chamberí</Link></li>
-                        <li><Link to="/proyectos/reformas/reformas-madrid/pozuelo" className="hover:text-[#D4A853]">Pozuelo de Alarcón</Link></li>
-                        <li><Link to="/proyectos/reformas/reformas-madrid/majadahonda" className="hover:text-[#D4A853]">Majadahonda</Link></li>
+                        <li><Link to="/proyectos/zero-chaos/reformas-madrid/salamanca" className="hover:text-[#D4A853]">Bº Salamanca</Link></li>
+                        <li><Link to="/proyectos/zero-chaos/reformas-madrid/chamberi" className="hover:text-[#D4A853]">Chamberí</Link></li>
+                        <li><Link to="/proyectos/zero-chaos/reformas-madrid/pozuelo" className="hover:text-[#D4A853]">Pozuelo de Alarcón</Link></li>
+                        <li><Link to="/proyectos/zero-chaos/reformas-madrid/majadahonda" className="hover:text-[#D4A853]">Majadahonda</Link></li>
                     </ul>
                 </div>
 

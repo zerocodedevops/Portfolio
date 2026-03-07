@@ -61,7 +61,7 @@ export default function RequireAuth() {
 	if (!isAuthorized) {
 		return (
 			<Navigate
-				to="/proyectos/salon/auth/admin/login"
+				to="/proyectos/zerovanity/auth/admin/login"
 				state={{ from: location }}
 				replace
 			/>

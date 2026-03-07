@@ -13,7 +13,7 @@ export default function ClientLayout() {
 				data: { user },
 			} = await supabase.auth.getUser();
 			if (!user) {
-				navigate("/proyectos/salon/login");
+				navigate("/proyectos/zerovanity/login");
 			} else {
 				setUser(user);
 			}
@@ -23,7 +23,7 @@ export default function ClientLayout() {
 
 	const handleLogout = async () => {
 		await supabase.auth.signOut();
-		navigate("/proyectos/salon");
+		navigate("/proyectos/zerovanity");
 	};
 
 	return (
@@ -41,7 +41,7 @@ export default function ClientLayout() {
 
 				<nav className="flex items-center gap-6">
 					<NavLink
-						to="/proyectos/salon/client/bookings"
+						to="/proyectos/zerovanity/client/bookings"
 						className={({ isActive }) =>
 							`text-sm font-medium transition-colors ${isActive ? "text-amber-400" : "text-slate-400 hover:text-slate-200"}`
 						}
@@ -71,14 +71,14 @@ export default function ClientLayout() {
 			{/* Mobile Bottom Nav */}
 			<nav className="md:hidden fixed bottom-0 left-0 right-0 bg-slate-900 border-t border-slate-800 px-6 py-3 flex justify-between z-50">
 				<NavLink
-					to="/proyectos/salon"
+					to="/proyectos/zerovanity"
 					className="flex flex-col items-center gap-1 text-slate-500"
 				>
 					<Home className="w-5 h-5" />
 					<span className="text-[10px]">Inicio</span>
 				</NavLink>
 				<NavLink
-					to="/proyectos/salon/client/bookings"
+					to="/proyectos/zerovanity/client/bookings"
 					className={({ isActive }) =>
 						`flex flex-col items-center gap-1 ${isActive ? "text-amber-400" : "text-slate-500"}`
 					}
