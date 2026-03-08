@@ -1,0 +1,6 @@
+{
+  "artifactType":  "ARTIFACT_TYPE_IMPLEMENTATION_PLAN",
+  "summary":  "Plan to consolidate all sub-projects into apps/ as regular directories: convert submodules, move features, rename directories, update all import paths and build configuration.",
+  "updatedAt":  "2026-03-07T18:25:58.277213200Z",
+  "version":  "1"
+}

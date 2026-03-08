@@ -1,0 +1,64 @@
+# Walkthrough: Audit Remediation
+
+All 4 audit commands now pass cleanly:
+
+| Command | Before | After |
+|---------|--------|-------|
+| `npm run build:portfolio` | ❌ Fails | ✅ Exit 0 |
+| `npm run type-check` | ❌ 3 errors | ✅ Exit 0 |
+| `npm run lint` | ❌ 30 errors, 10 warnings | ✅ 0 errors, exit 0 |
+| `npm run test -- --run` | ✅ 23/23 | ✅ 23/23 |
+
+---
+
+## Fixes Applied
+
+### Critical (Audit Findings 1-3)
+
+#### [router.tsx](file:///c:/Users/dgper/Proyectos/ZeroCode/src/app/router.tsx)
+- Reformatted the `MediaApp` lazy import (cosmetic — the path was actually valid)
+
+#### [PriceAlerts.tsx](file:///c:/Users/dgper/Proyectos/ZeroCode/src/features/projects/crypto/components/PriceAlerts.tsx)
+- Moved [toggleAlert](file:///c:/Users/dgper/Proyectos/ZeroCode/src/features/projects/crypto/components/PriceAlerts.tsx#32-37) declaration **before** the `useEffect` that references it
+
+#### [ConfirmationStep.tsx](file:///c:/Users/dgper/Proyectos/ZeroCode/src/features/projects/salon/src/components/booking/steps/ConfirmationStep.tsx)
+- Moved [confirmBooking](file:///c:/Users/dgper/Proyectos/ZeroCode/src/features/projects/salon/src/components/booking/steps/ConfirmationStep.tsx#19-39) declaration **before** the `useEffect` that references it
+
+#### [MagneticButton.tsx](file:///c:/Users/dgper/Proyectos/ZeroCode/src/components/ui/MagneticButton.tsx)
+- Added guard clause: `const rect = ref.current?.getBoundingClientRect(); if (!rect) return;`
+
+### High Priority (Audit Findings 4-5)
+
+#### [eslint.config.js](file:///c:/Users/dgper/Proyectos/ZeroCode/eslint.config.js)
+
+> [!WARNING]
+> The previous model created a [.eslintignore](file:///c:/Users/dgper/Proyectos/ZeroCode/.eslintignore) file, but this project uses **ESLint flat config** which silently ignores [.eslintignore](file:///c:/Users/dgper/Proyectos/ZeroCode/.eslintignore). I fixed this by adding a global `ignores` block directly in [eslint.config.js](file:///c:/Users/dgper/Proyectos/ZeroCode/eslint.config.js).
+
+- Added global `ignores` for `src/dataconnect-generated/**` (eliminates 18 false-positive errors)
+- Added Node globals config for [vite.config.ts](file:///c:/Users/dgper/Proyectos/ZeroCode/apps/zerodelay/vite.config.ts), [vitest.config.ts](file:///c:/Users/dgper/Proyectos/ZeroCode/apps/zerodelay/vitest.config.ts), [playwright.config.ts](file:///c:/Users/dgper/Proyectos/ZeroCode/apps/zerodelay/playwright.config.ts) (eliminates 8 `process`/`__dirname` errors)
+- Configured `@typescript-eslint/no-unused-vars` to ignore `_`-prefixed variables
+
+#### [prisma.ts](file:///c:/Users/dgper/Proyectos/ZeroCode/src/features/projects/salon/src/lib/prisma.ts)
+- Changed `process.env.NODE_ENV` → `import.meta.env.MODE` (file already excluded from tsc)
+
+### Issues Fixed from Previous Model
+
+> [!CAUTION]
+> The previous model introduced a **runtime crash** by passing `loaderData={{ barrio: "" }}` to the Barrio component. This would have failed at runtime when trying to access `barrio.name` on an empty string.
+
+#### [reformas-madrid.$barrio.tsx](file:///c:/Users/dgper/Proyectos/ZeroCode/src/features/projects/reformas/app/routes/reformas-madrid.$barrio.tsx)
+- **Rewrote entirely**: removed React Router v7 framework conventions (`loaderData`, `MetaFunction`, `loader` export) and replaced with standard SPA pattern using `useParams()` from react-router-dom
+- Component now resolves barrio data from URL params at render time, with a `<Navigate>` redirect for invalid slugs
+
+#### [routes.tsx](file:///c:/Users/dgper/Proyectos/ZeroCode/src/features/projects/reformas/routes.tsx)
+- Reverted the broken `loaderData={{ barrio: "" }}` hack — Barrio now uses `useParams` internally
+
+#### [tsconfig.json](file:///c:/Users/dgper/Proyectos/ZeroCode/tsconfig.json)
+- Excluded dead [reformas/app/routes.ts](file:///c:/Users/dgper/Proyectos/ZeroCode/src/features/projects/reformas/app/routes.ts) (React Router v7 framework config) from type-checking
+
+### Medium Priority (Audit Finding 6)
+
+#### Unused Variables
+- [ReviewList.tsx](file:///c:/Users/dgper/Proyectos/ZeroCode/src/features/projects/ecommerce/components/ReviewList.tsx): Added `refreshTrigger` to `useEffect` deps (was a bug — reviews weren't refreshing)
+- [ClientRegister.tsx](file:///c:/Users/dgper/Proyectos/ZeroCode/src/features/projects/salon/src/pages/auth/ClientRegister.tsx): Prefixed unused `profileError` → `_profileError`
+- [HomeTemplate.tsx](file:///c:/Users/dgper/Proyectos/ZeroCode/src/features/projects/reformas/src/templates/HomeTemplate.tsx): Added missing `description` prop to [SchemaLocalBusiness](file:///c:/Users/dgper/Proyectos/ZeroCode/src/features/projects/reformas/src/core/seo/SchemaLocalBusiness.tsx#13-50)

@@ -1,0 +1,30 @@
+# Task: Monorepo Consolidation
+
+- [/] Phase 1: Git Submodule Removal
+  - [ ] Deinit & remove devops-shop submodule
+  - [ ] Deinit & remove zerodelay submodule
+  - [ ] Deinit & remove mudanzas-coral submodule
+  - [ ] Re-add contents as regular directories
+- [ ] Phase 2: Move & Rename Directories
+  - [ ] Rename apps/reformas → apps/zero-chaos
+  - [ ] Move salon → apps/zerovanity
+  - [ ] Move crypto → apps/crypto
+  - [ ] Move ecommerce → apps/ecommerce
+  - [ ] Move analytics → apps/analytics
+  - [ ] Delete src/features/projects/
+- [ ] Phase 3: Update Import Paths
+  - [ ] router.tsx
+  - [ ] providers.tsx
+  - [ ] shopService.ts
+  - [ ] handlers.ts
+  - [ ] All @salon → @zerovanity references
+- [ ] Phase 4: Update Config Files
+  - [ ] vite.config.ts aliases
+  - [ ] tsconfig.json paths + include
+  - [ ] package.json build scripts
+  - [ ] eslint.config.js
+- [ ] Phase 5: Verify
+  - [ ] type-check
+  - [ ] build
+  - [ ] lint
+  - [ ] tests

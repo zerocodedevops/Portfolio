@@ -1,0 +1,144 @@
+# Monorepo Consolidation: All Sub-Projects → `apps/`
+
+Move every sub-project into `apps/` as a regular directory. Eliminate all submodules and the `mudanzas-coral` alias.
+
+## Target Structure
+
+```
+apps/
+├── devops-shop/    (was submodule → regular dir)
+├── zerodelay/      (was submodule → regular dir, absorbs mudanzas-coral)
+├── zero-chaos/     (rename from reformas)
+├── zerovanity/     (move from src/features/projects/salon)
+├── crypto/         (move from src/features/projects/crypto)
+├── ecommerce/      (move from src/features/projects/ecommerce)
+├── analytics/      (move from src/features/projects/analytics)
+```
+
+`src/features/projects/` will be **deleted entirely** after migration.
+
+---
+
+## Proposed Changes
+
+### Phase 1: Git Submodule Removal
+
+Remove all 3 submodules and convert to regular directories.
+
+#### Submodules to remove:
+| Submodule | Path | Repo |
+|---|---|---|
+| devops-shop | `apps/devops-shop` | DevOps.Shop.git |
+| zerodelay | `apps/zerodelay` | ZeroDelay.git |
+| mudanzas-coral | `src/features/projects/mudanzas-coral` | Portfolio.git |
+
+**Commands:**
+```
+git submodule deinit -f apps/devops-shop apps/zerodelay src/features/projects/mudanzas-coral
+git rm -f apps/devops-shop apps/zerodelay src/features/projects/mudanzas-coral
+rm -rf .git/modules/apps/devops-shop .git/modules/apps/zerodelay .git/modules/src/features/projects/mudanzas-coral
+```
+Then re-add the content as regular directories (copy from cached content or re-clone).
+
+---
+
+### Phase 2: Move & Rename Directories
+
+| From | To | Action |
+|---|---|---|
+| `apps/reformas` | `apps/zero-chaos` | Rename |
+| `src/features/projects/salon` | `apps/zerovanity` | Move (strip `.git`) |
+| `src/features/projects/crypto` | `apps/crypto` | Move (strip `.git`) |
+| `src/features/projects/ecommerce` | `apps/ecommerce` | Move |
+| `src/features/projects/analytics` | `apps/analytics` | Move |
+| `src/features/projects/mudanzas-coral` | _(deleted)_ | Content absorbed by `apps/zerodelay` |
+
+After this phase, `src/features/projects/` is deleted.
+
+---
+
+### Phase 3: Update Import Paths
+
+#### [MODIFY] [router.tsx](file:///c:/Users/dgper/Proyectos/ZeroCode/src/app/router.tsx)
+Every lazy import currently uses `@/features/projects/*`. Update all to use new aliases:
+```diff
+-import { CurrencyProvider } from "@/features/projects/crypto/context/CurrencyContext";
++import { CurrencyProvider } from "@crypto/context/CurrencyContext";
+-const EcommerceApp = lazy(() => import("@/features/projects/ecommerce/routes"));
++const EcommerceApp = lazy(() => import("@ecommerce/routes"));
+-const AnalyticsApp = lazy(() => import("@/features/projects/analytics/routes"));
++const AnalyticsApp = lazy(() => import("@analytics/routes"));
+-const CryptoApp = lazy(() => import("@/features/projects/crypto/pages/CryptoDashboard")...
++const CryptoApp = lazy(() => import("@crypto/pages/CryptoDashboard")...
+-const MediaApp = lazy(() => import("@/features/projects/mudanzas-coral/src/App"));
++const MediaApp = lazy(() => import("@zerodelay/App"));
+-const ReformsApp = lazy(() => import("@/features/projects/reformas/routes"));
++const ReformsApp = lazy(() => import("@zero-chaos/routes"));
+```
+`@salon` → rename alias to `@zerovanity` (same path resolution, new name)
+
+#### [MODIFY] [providers.tsx](file:///c:/Users/dgper/Proyectos/ZeroCode/src/app/providers.tsx)
+Update crypto import path.
+
+#### [MODIFY] [shopService.ts](file:///c:/Users/dgper/Proyectos/ZeroCode/src/services/shopService.ts)
+Update ecommerce import path.
+
+#### [MODIFY] [handlers.ts](file:///c:/Users/dgper/Proyectos/ZeroCode/src/mocks/handlers.ts)
+Update analytics import path.
+
+#### Cross-project internal imports
+Files inside `salon/`, `crypto/`, `ecommerce/` that use `@salon/*` or relative paths will continue to work since we'll update the aliases.
+
+---
+
+### Phase 4: Update Config Files
+
+#### [MODIFY] [vite.config.ts](file:///c:/Users/dgper/Proyectos/ZeroCode/vite.config.ts)
+Add aliases for all apps:
+```ts
+alias: {
+  '@': './src',
+  '@zerovanity': './apps/zerovanity/src',
+  '@crypto': './apps/crypto',
+  '@ecommerce': './apps/ecommerce',
+  '@analytics': './apps/analytics',
+  '@zerodelay': './apps/zerodelay/src',
+  '@zero-chaos': './apps/zero-chaos',
+}
+```
+
+#### [MODIFY] [tsconfig.json](file:///c:/Users/dgper/Proyectos/ZeroCode/tsconfig.json)
+- Update `include` to add `apps` directory
+- Update `paths` to match vite aliases
+- Remove old exclusions referencing `src/features/projects/salon`
+
+#### [MODIFY] [package.json](file:///c:/Users/dgper/Proyectos/ZeroCode/package.json)
+Update build scripts for renamed directories.
+
+#### [MODIFY] [eslint.config.js](file:///c:/Users/dgper/Proyectos/ZeroCode/eslint.config.js)
+Update ignored paths if needed.
+
+---
+
+### Phase 5: Cleanup
+- Delete `src/features/projects/` (should be empty)
+- Delete `.eslintignore` (was a no-op with flat config anyway)
+- Delete `.gitmodules` (no more submodules)
+- Remove any `.git` folders inside moved dirs
+
+---
+
+## Verification Plan
+
+### Automated
+```bash
+npm run type-check   # All import paths resolve
+npm run build:portfolio  # Vite build succeeds
+npm run lint         # No new errors
+npm run test -- --run  # All 23 tests pass
+```
+
+### Manual
+- Verify `git status` shows no submodules
+- Verify `apps/` contains all 7 directories as regular folders
+- Verify `src/features/projects/` no longer exists
