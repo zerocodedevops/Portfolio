@@ -1,6 +1,6 @@
 # 🚀 ZeroCode Portfolio
 
-Monorepo con múltiples proyectos y demostraciones de desarrollo full-stack.
+Monorepo con 7 aplicaciones de demostración de desarrollo full-stack.
 
 ## 📦 Aplicaciones
 
