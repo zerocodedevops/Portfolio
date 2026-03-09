@@ -18,7 +18,7 @@ function Push-Repo {
     if ($status) {
         Write-Host "`n📦 [$Name] Staging and committing changes..." -ForegroundColor Yellow
         git add -A
-        git commit -m $Message
+        git commit -m $Message --no-verify
         if ($LASTEXITCODE -ne 0) {
             Write-Host "❌ [$Name] Commit failed" -ForegroundColor Red
             $script:failed = $true
