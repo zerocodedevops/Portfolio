@@ -88,3 +88,7 @@ test-output.txt
 desktop.ini
 Thumbs.db
 .vercel
+
+# Lint Reports
+*.lint-report.txt
+*.lint-report.json

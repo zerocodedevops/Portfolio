@@ -7,32 +7,32 @@
     /* Ash Gray Palette */
     --background: 220 15% 10%; /* Dark Ash Gray */
     --foreground: 220 10% 98%;
-    
+
     --card: 220 15% 13%; /* Lighter Ash */
     --card-foreground: 0 0% 98%;
- 
+
     --popover: 220 15% 10%;
     --popover-foreground: 0 0% 98%;
- 
+
     --primary: 46 83% 58%; /* Rich Gold */
     --primary-foreground: 240 5.9% 10%;
- 
+
     --secondary: 240 3.7% 15.9%;
     --secondary-foreground: 0 0% 98%;
- 
+
     --muted: 240 3.7% 15.9%;
     --muted-foreground: 240 5% 64.9%;
- 
+
     --accent: 240 3.7% 15.9%;
     --accent-foreground: 0 0% 98%;
- 
+
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
- 
+
     --border: 240 3.7% 15.9%;
     --input: 240 3.7% 15.9%;
     --ring: 240 4.9% 83.9%;
- 
+
     --radius: 0.3rem;
   }
 }
@@ -51,17 +51,19 @@
   .text-gradient-gold {
     @apply bg-clip-text text-transparent bg-gradient-to-r from-[#BF953F] via-[#FCF6BA] to-[#B38728];
   }
-  
+
   .border-gradient-gold {
-    border-image: linear-gradient(to right, #BF953F, #FCF6BA, #B38728) 1;
+    border-image: linear-gradient(to right, #bf953f, #fcf6ba, #b38728) 1;
   }
 
   .font-baroque {
     font-family: var(--font-heading);
   }
-  
+
   .glass-card {
     @apply bg-[#1a1c23]/60 backdrop-blur-xl border border-white/5 shadow-2xl;
-    box-shadow: 0 0 0 1px rgba(191, 149, 63, 0.1), 0 20px 40px -20px rgba(0, 0, 0, 0.7);
+    box-shadow:
+      0 0 0 1px rgba(191, 149, 63, 0.1),
+      0 20px 40px -20px rgba(0, 0, 0, 0.7);
   }
 }

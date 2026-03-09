@@ -57,11 +57,13 @@ Este proyecto sigue los estándares más estrictos de desarrollo:
 ## ⚙️ Instalación y Uso
 
 1. **Variables de Entorno**: Asegúrate de tener `.env` en la raíz:
+
    ```env
    VITE_STRIPE_PUBLIC_KEY=pk_test_... # Tu clave pública de Stripe
    ```
 
 2. **Ejecutar**:
+
    ```bash
    npm run dev
    ```

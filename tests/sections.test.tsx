@@ -11,75 +11,75 @@ import i18n from "./setup";
 
 // Wrapper component for tests
 const TestWrapper = ({ children }: { children: React.ReactNode }) => (
-	<MemoryRouter>
-		<I18nextProvider i18n={i18n}>{children}</I18nextProvider>
-	</MemoryRouter>
+  <MemoryRouter>
+    <I18nextProvider i18n={i18n}>{children}</I18nextProvider>
+  </MemoryRouter>
 );
 
 describe("Portfolio Sections Render", () => {
-	it("Hero section renders with main heading", () => {
-		render(
-			<TestWrapper>
-				<Hero />
-			</TestWrapper>,
-		);
+  it("Hero section renders with main heading", () => {
+    render(
+      <TestWrapper>
+        <Hero />
+      </TestWrapper>,
+    );
 
-		// Updated heading: "Diseño Web para Pymes y Autónomos en Madrid"
-		expect(screen.getByText(/Pymes y Autónomos/i)).toBeInTheDocument();
-		expect(
-			screen.getByText(/Disponible para nuevos proyectos/i),
-		).toBeInTheDocument();
-	});
+    // Updated heading: "Diseño Web para Pymes y Autónomos en Madrid"
+    expect(screen.getByText(/Pymes y Autónomos/i)).toBeInTheDocument();
+    expect(
+      screen.getByText(/Disponible para nuevos proyectos/i),
+    ).toBeInTheDocument();
+  });
 
-	it("About section renders with correct content", () => {
-		render(
-			<TestWrapper>
-				<About />
-			</TestWrapper>,
-		);
+  it("About section renders with correct content", () => {
+    render(
+      <TestWrapper>
+        <About />
+      </TestWrapper>,
+    );
 
-		// "Sobre" and "Mí" are in separate elements, so match partial text
-		expect(screen.getByText(/Sobre/i)).toBeInTheDocument();
-		expect(screen.getByText(/AI-First Development/i)).toBeInTheDocument();
-	});
+    // "Sobre" and "Mí" are in separate elements, so match partial text
+    expect(screen.getByText(/Sobre/i)).toBeInTheDocument();
+    expect(screen.getByText(/AI-First Development/i)).toBeInTheDocument();
+  });
 
-	it("Skills section renders with heading and content", () => {
-		render(
-			<TestWrapper>
-				<Skills />
-			</TestWrapper>,
-		);
+  it("Skills section renders with heading and content", () => {
+    render(
+      <TestWrapper>
+        <Skills />
+      </TestWrapper>,
+    );
 
-		expect(
-			screen.getByRole("heading", { level: 2, name: /Habilidades/i }),
-		).toBeInTheDocument();
-		expect(screen.getByText("Soft Skills")).toBeInTheDocument();
-	});
+    expect(
+      screen.getByRole("heading", { level: 2, name: /Habilidades/i }),
+    ).toBeInTheDocument();
+    expect(screen.getByText("Soft Skills")).toBeInTheDocument();
+  });
 
-	it("Projects section renders with project cards", () => {
-		render(
-			<TestWrapper>
-				<Projects />
-			</TestWrapper>,
-		);
+  it("Projects section renders with project cards", () => {
+    render(
+      <TestWrapper>
+        <Projects />
+      </TestWrapper>,
+    );
 
-		expect(screen.getByText(/DevOps Shop/i)).toBeInTheDocument();
-		expect(screen.getByText(/AI Chat Assistant/i)).toBeInTheDocument();
-	});
+    expect(screen.getByText(/DevOps Shop/i)).toBeInTheDocument();
+    expect(screen.getByText(/AI Chat Assistant/i)).toBeInTheDocument();
+  });
 
-	it("Contact section renders with form fields", () => {
-		render(
-			<TestWrapper>
-				<Contact />
-			</TestWrapper>,
-		);
+  it("Contact section renders with form fields", () => {
+    render(
+      <TestWrapper>
+        <Contact />
+      </TestWrapper>,
+    );
 
-		expect(screen.getByLabelText(/Nombre/i)).toBeInTheDocument();
-		expect(screen.getByLabelText(/Email/i)).toBeInTheDocument();
-		expect(screen.getByLabelText(/Asunto/i)).toBeInTheDocument();
-		expect(screen.getByLabelText(/Mensaje/i)).toBeInTheDocument();
-		expect(
-			screen.getByRole("button", { name: /Enviar mensaje/i }),
-		).toBeInTheDocument();
-	});
+    expect(screen.getByLabelText(/Nombre/i)).toBeInTheDocument();
+    expect(screen.getByLabelText(/Email/i)).toBeInTheDocument();
+    expect(screen.getByLabelText(/Asunto/i)).toBeInTheDocument();
+    expect(screen.getByLabelText(/Mensaje/i)).toBeInTheDocument();
+    expect(
+      screen.getByRole("button", { name: /Enviar mensaje/i }),
+    ).toBeInTheDocument();
+  });
 });

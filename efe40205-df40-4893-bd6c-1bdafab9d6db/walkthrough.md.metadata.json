@@ -1,6 +1,0 @@
-{
-  "artifactType":  "ARTIFACT_TYPE_WALKTHROUGH",
-  "summary":  "Final walkthrough of the monorepo consolidation. Documents the relocation of all 7 apps to `apps/`, the rebranding of Zero Delay, the configuration of NPM Workspaces, and the full verification of the build and test suites. All submodules have been removed and replaced with standard folders.",
-  "updatedAt":  "2026-03-07T18:47:36.848888200Z",
-  "version":  "3"
-}

@@ -5,21 +5,21 @@ import react from "@vitejs/plugin-react";
 import { defineConfig } from "vite";
 
 export default defineConfig({
-	plugins: [react()],
-	test: {
-		environment: "jsdom",
-		setupFiles: ["./tests/setup.tsx"],
-		globals: true,
-		exclude: [
-			"**/node_modules/**",
-			"**/dist/**",
-			"**/tests-e2e/**",
-			"apps/zerodelay/**",
-		],
-	},
-	resolve: {
-		alias: {
-			"@": fileURLToPath(new URL("./src", import.meta.url)),
-		},
-	},
+  plugins: [react()],
+  test: {
+    environment: "jsdom",
+    setupFiles: ["./tests/setup.tsx"],
+    globals: true,
+    exclude: [
+      "**/node_modules/**",
+      "**/dist/**",
+      "**/tests-e2e/**",
+      "apps/zerodelay/**",
+    ],
+  },
+  resolve: {
+    alias: {
+      "@": fileURLToPath(new URL("./src", import.meta.url)),
+    },
+  },
 });

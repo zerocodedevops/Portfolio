@@ -1,0 +1,31 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "catalog": "Catálogo",
+    "cart": "Cesta",
+    "login": "Entrar",
+    "logout": "Salir"
+  },
+  "catalog": {
+    "title": "Catálogo",
+    "subtitle": "Descubre nuestros productos destacados",
+    "search": "Buscar productos...",
+    "voiceSearch": "Escuchando...",
+    "category": {
+      "all": "Todas las categorías"
+    },
+    "noResults": "No se encontraron productos que coincidan con tu búsqueda."
+  },
+  "cart": {
+    "title": "Tu Cesta",
+    "empty": "Tu cesta está vacía",
+    "emptyDesc": "¡Descubre nuestros productos y empieza a comprar!",
+    "continue": "Seguir comprando",
+    "subtotal": "Subtotal",
+    "checkout": "Tramitar Pedido"
+  },
+  "common": {
+    "loading": "Cargando...",
+    "error": "Ha ocurrido un error"
+  }
+}

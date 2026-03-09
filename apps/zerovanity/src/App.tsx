@@ -1,8 +1,8 @@
 import {
-	Navigate,
-	Route,
-	BrowserRouter as Router,
-	Routes,
+  Navigate,
+  Route,
+  BrowserRouter as Router,
+  Routes,
 } from "react-router-dom";
 import { Toaster } from "sileo";
 import "sileo/styles.css";
@@ -26,72 +26,82 @@ import Landing from "./pages/Landing";
 // import Bookings from './pages/admin/Bookings'; // Removed until component exists
 
 function App() {
-	return (
-		<Router>
-			<Routes>
-				{/* Landing: Defines the main entry point for the salon project */}
-				<Route path="/proyectos/zerovanity" element={<Landing />} />
+  return (
+    <Router>
+      <Routes>
+        {/* Landing: Defines the main entry point for the salon project */}
+        <Route path="/proyectos/zerovanity" element={<Landing />} />
 
-				{/* Root Redirect: If user lands on localhost:5173/ redirect to project */}
-				<Route path="/" element={<Navigate to="/proyectos/zerovanity" replace />} />
+        {/* Root Redirect: If user lands on localhost:5173/ redirect to project */}
+        <Route
+          path="/"
+          element={<Navigate to="/proyectos/zerovanity" replace />}
+        />
 
-				{/* Client Auth */}
-				<Route
-					path="/proyectos/zerovanity/auth/client/login"
-					element={<ClientLogin />}
-				/>
-				<Route
-					path="/proyectos/zerovanity/auth/client/register"
-					element={<ClientRegister />}
-				/>
+        {/* Client Auth */}
+        <Route
+          path="/proyectos/zerovanity/auth/client/login"
+          element={<ClientLogin />}
+        />
+        <Route
+          path="/proyectos/zerovanity/auth/client/register"
+          element={<ClientRegister />}
+        />
 
-				{/* Client Portal */}
-				<Route path="/proyectos/zerovanity/client" element={<ClientLayout />}>
-					<Route path="bookings" element={<MyBookings />} />
-					<Route
-						index
-						element={<Navigate to="/proyectos/zerovanity/client/bookings" replace />}
-					/>
-				</Route>
+        {/* Client Portal */}
+        <Route path="/proyectos/zerovanity/client" element={<ClientLayout />}>
+          <Route path="bookings" element={<MyBookings />} />
+          <Route
+            index
+            element={
+              <Navigate to="/proyectos/zerovanity/client/bookings" replace />
+            }
+          />
+        </Route>
 
-				{/* Admin Auth */}
-				<Route
-					path="/proyectos/zerovanity/auth/admin/login"
-					element={<AdminLogin />}
-				/>
+        {/* Admin Auth */}
+        <Route
+          path="/proyectos/zerovanity/auth/admin/login"
+          element={<AdminLogin />}
+        />
 
-				{/* Admin Routes (Protected) */}
-				<Route path="/proyectos/zerovanity/admin" element={<RequireAuth />}>
-					<Route element={<AdminLayout />}>
-						<Route path="dashboard" element={<AdminDashboard />} />
-						<Route path="services" element={<ServicesPage />} />
-						<Route path="team" element={<StylistsPage />} />
-						{/* <Route path="bookings" element={<Bookings />} /> */}
-						<Route
-							index
-							element={
-								<Navigate to="/proyectos/zerovanity/admin/dashboard" replace />
-							}
-						/>
-					</Route>
-				</Route>
+        {/* Admin Routes (Protected) */}
+        <Route path="/proyectos/zerovanity/admin" element={<RequireAuth />}>
+          <Route element={<AdminLayout />}>
+            <Route path="dashboard" element={<AdminDashboard />} />
+            <Route path="services" element={<ServicesPage />} />
+            <Route path="team" element={<StylistsPage />} />
+            {/* <Route path="bookings" element={<Bookings />} /> */}
+            <Route
+              index
+              element={
+                <Navigate to="/proyectos/zerovanity/admin/dashboard" replace />
+              }
+            />
+          </Route>
+        </Route>
 
-				{/* Helper Redirects for easy access */}
-				<Route
-					path="/admin"
-					element={<Navigate to="/proyectos/zerovanity/admin" replace />}
-				/>
-				<Route
-					path="/login"
-					element={<Navigate to="/proyectos/zerovanity/auth/client/login" replace />}
-				/>
+        {/* Helper Redirects for easy access */}
+        <Route
+          path="/admin"
+          element={<Navigate to="/proyectos/zerovanity/admin" replace />}
+        />
+        <Route
+          path="/login"
+          element={
+            <Navigate to="/proyectos/zerovanity/auth/client/login" replace />
+          }
+        />
 
-				{/* Fallback */}
-				<Route path="*" element={<Navigate to="/proyectos/zerovanity" replace />} />
-			</Routes>
-			<Toaster position="bottom-right" theme="dark" />
-		</Router>
-	);
+        {/* Fallback */}
+        <Route
+          path="*"
+          element={<Navigate to="/proyectos/zerovanity" replace />}
+        />
+      </Routes>
+      <Toaster position="bottom-right" theme="dark" />
+    </Router>
+  );
 }
 
 export default App;

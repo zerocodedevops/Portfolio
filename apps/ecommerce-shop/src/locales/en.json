@@ -1,0 +1,31 @@
+{
+  "nav": {
+    "home": "Home",
+    "catalog": "Catalog",
+    "cart": "Cart",
+    "login": "Login",
+    "logout": "Logout"
+  },
+  "catalog": {
+    "title": "Catalog",
+    "subtitle": "Discover our featured products",
+    "search": "Search products...",
+    "voiceSearch": "Listening...",
+    "category": {
+      "all": "All categories"
+    },
+    "noResults": "No products found matching your search."
+  },
+  "cart": {
+    "title": "Your Cart",
+    "empty": "Your cart is empty",
+    "emptyDesc": "Discover our products and start shopping!",
+    "continue": "Continue shopping",
+    "subtotal": "Subtotal",
+    "checkout": "Checkout"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "An error occurred"
+  }
+}

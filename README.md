@@ -1,143 +1,73 @@
-# 🚀 ZeroCode Crypto Dashboard
+# ZeroCode DevOps Monorepo
 
-> **La Experiencia Definitiva de Seguimiento de Criptomonedas en Tiempo Real**
+Welcome to the ZeroCode DevOps Monorepo. This repository houses the main developer portfolio, along with a suite of complete applications that demonstrate various capabilities: E-commerce workflows, realtime dashboards, crypto tracking, and more.
 
-![License](https://img.shields.io/badge/license-MIT-blue.svg)
-![React](https://img.shields.io/badge/React-18-61DAFB?logo=react&logoColor=black)
-![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?logo=typescript&logoColor=white)
-![Vite](https://img.shields.io/badge/Vite-5-646CFF?logo=vite&logoColor=white)
-![Tailwind](https://img.shields.io/badge/Tailwind_CSS-3-38B2AC?logo=tailwind-css&logoColor=white)
-![PWA](https://img.shields.io/badge/PWA-Ready-purple)
+## Architecture & Structure
 
-**ZeroCode Crypto** es un dashboard de criptomonedas de vanguardia y alto
-rendimiento, construido para la web moderna. Aprovecha la potencia de
-**WebSockets** para datos en tiempo real, capacidades **PWA** para una
-experiencia nativa, y una interfaz **Glassmorphism** impresionante que establece
-un nuevo estándar.
+This is a Vite-powered monorepo, orchestrating multiple independent applications from a single source of truth.
 
----
+```text
+/
+├── apps/                  # Independent workspaces (applications)
+│   ├── analytics          # Dashboard & metrics application
+│   ├── crypto             # Realtime websocket crypto tracking
+│   ├── devops-shop        # E-commerce application
+│   ├── ecommerce          # E-commerce alternative / modules
+│   ├── zero-chaos         # Home renovation landing & service app
+│   ├── zerodelay          # Shipping service platform
+│   └── zerovanity         # Salon booking application
+├── db/                    # Database schemas and scripts
+│   └── schema/            # SQL init and logic scripts
+├── src/                   # Main Portfolio application source code
+│   ├── app/               # Main layout and routing
+│   ├── components/        # Shared portfolio components
+│   ├── features/          # Portfolio feature modules
+│   └── ...
+├── SCRIPTS.md             # Documentation for package.json scripts
+├── CONTRIBUTING.md        # Testing strategies and Git workflow
+└── package.json           # Root workspace and monorepo scripts
+```
 
-## ✨ Características Principales
+## Entry Point
 
-### 🔥 Motor de Datos en Tiempo Real
+The root application is the **Main Developer Portfolio**.
 
-- **Feed WebSocket en Vivo**: Conexión directa a streams de Binance para
-  actualizaciones de precio inferiores a un segundo.
-- **Fallback Inteligente**: Degradación elegante a la API REST de CoinGecko si
-  los WebSockets no están disponibles.
-- **Rendimiento Optimizado**: Caché inteligente y actualizaciones por lotes para
-  minimizar re-renderizados.
+- The entry point for the portfolio is **`public/index.html`**, which bootstraps `src/main.tsx`.
+- The apps inside `apps/` have their own nested `index.html` entry points.
 
-### 📊 Analíticas Profesionales
+## Firebase Deployment Targets
 
-- **Gráficos Interactivos**: Potenciados por `Recharts` con tooltips
-  personalizados y comportamiento responsive.
-- **Mapa de Calor del Mercado**: Visualiza la dominancia del mercado y las
-  tendencias de un vistazo.
-- **Comparadores Avanzados**: Comparación de activos lado a lado con métricas
-  críticas (Rango, Cap, Vol, suministro).
+The monolithic structure deploys to different Firebase Hosting targets based on the application:
 
-### 💼 Gestión de Portafolio
+- **Portfolio (Root)**: Deploys to `zerocode-portfolio`
+- **Zerodelay**: Deploys to its designated target via `firebase.json` configuration
+- **DevOps Shop**: Deploys to its designated target via `firebase.json` configuration
+- **Zero Chaos**: Deploys to its designated target via `firebase.json` configuration
 
-- **Seguimiento de Transacciones**: Registra Compras/Ventas con cálculo
-  automático de base de costo.
-- **Resumen de Tenencias**: Evaluación en tiempo real del valor total de tu
-  portafolio.
-- **Persistencia Local**: Almacenamiento seguro en el navegador (sin necesidad
-  de servidor).
+_Check `firebase.json` and `.firebaserc` for the exact hosting configurations mappings per site._
 
-### 🌍 Global y Accesible
+## Quick Start
 
-- **Internacionalización (i18n)**: Soporte nativo para 6 monedas/idiomas (EN,
-  ES, FR, DE, IT, PT).
-- **Accesibilidad Primero**: HTML semántico, etiquetas ARIA y soporte de
-  navegación por teclado.
-- **Certificado PWA**: Instalable en móvil/escritorio, código capaz de funcionar
-  offline.
-
----
-
-## 🛠️ Stack Tecnológico
-
-- **Core**: React 18, TypeScript, Vite
-- **Estilos**: Tailwind CSS, Framer Motion (Animaciones)
-- **Estado/Lógica**: Context API, Custom Hooks
-- **Visualización de Datos**: Recharts
-- **Iconos**: Lucide React
-- **Utils**: date-fns, i18next
-- **Build**: Target ESNext, soporte Top-level await
-
----
-
-## 🚀 Inicio Rápido
-
-### Prerrequisitos
-
-- Node.js 18+
-- npm o yarn
-
-### Instalación
+### Installation
 
 ```bash
-# 1. Clonar el repositorio
-git clone https://github.com/zerocodedevops/Cripto.git
-
-# 2. Navegar al directorio
-cd Cripto
-
-# 3. Instalar dependencias
+git clone https://github.com/zerocodedevops/Portfolio.git
+cd Portfolio
 npm install
+```
 
-# 4. Iniciar Servidor de Desarrollo
+### Running the Portfolio
+
+```bash
 npm run dev
 ```
 
-### Build de Producción
+For more details on running individual apps, testing, and formatting, see [SCRIPTS.md](./SCRIPTS.md).
 
-```bash
-# Crear build optimizado para producción
-npm run build
+## Tools Configuration
 
-# Previsualizar localmente
-npm run preview
-```
+This project enforces strict code quality:
 
----
-
-## 📱 Progressive Web App (PWA)
-
-Este proyecto está totalmente configurado como una PWA.
-
-- **Instalable**: Añadir a la Pantalla de Inicio en iOS/Android.
-- **Soporte Offline**: Service Workers almacenan en caché activos críticos.
-- **Manifest**: Soporte completo de metadatos (Iconos, Pantallas de carga,
-  Colores de tema).
-
----
-
-## 🛡️ Calidad de Código ("Tolerancia Cero")
-
-Este repositorio mantiene estándares de calidad estrictos:
-
-- **Linting**: Configuración estricta de ESLint (0 advertencias toleradas).
-- **Seguridad de Tipos**: Cumplimiento total de TypeScript (chequeos `noEmit`).
-- **Arquitectura**: Estructura de carpetas modular por "Features" para
-  escalabilidad.
-
----
-
-## 🤝 Contribución
-
-¡Las contribuciones son bienvenidas! Por favor lee el
-[CONTRIBUTING.md](CONTRIBUTING.md) para detalles sobre nuestro código de
-conducta y el proceso para enviar pull requests.
-
-1. Haz un Fork
-2. Crea tu rama (`git checkout -b feature/funcionalidad-increible`)
-3. Haz Commit de tus cambios (`git commit -m 'Añadir funcionalidad increíble'`)
-4. Haz Push a la rama (`git push origin feature/funcionalidad-increible`)
-5. Abre un Pull Request
-
----
-
-**Creado con ❤️ por [ZeroCode DevOps](https://github.com/zerocodedevops)**
+- **ESLint & Prettier**: Used for core logic linting and code formatting.
+- **Biome**: Experimental integration for high-performance formatting and linting.
+- **Vitest & Playwright**: Unit and E2E testing standard. Check `CONTRIBUTING.md` for guidelines.
