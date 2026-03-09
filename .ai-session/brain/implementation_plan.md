@@ -1,0 +1,32 @@
+# Corrección de Scripts de Sincronización Monorepo
+
+## Problema
+
+Los scripts `push-all.ps1` y `sync.ps1` fallan al intentar acceder a rutas de submódulos antiguos (`apps/devops-shop`, `apps/zerodelay`, etc.) que ya no existen o han sido integrados en el repositorio raíz.
+
+## Cambios Propuestos
+
+### Scripts de PowerShell
+
+#### [MODIFY] [push-all.ps1](file:///c:/Users/dgper/Proyectos/ZeroCode/scripts/push-all.ps1)
+
+- Eliminar la lógica de iteración por submódulos.
+- Realizar una única operación de `git add / commit / push` desde la raíz.
+- Mantener la exportación automática de la sesión de la IA (`export-session.ps1`).
+
+#### [MODIFY] [sync.ps1](file:///c:/Users/dgper/Proyectos/ZeroCode/scripts/sync.ps1)
+
+- Eliminar el comando `git submodule update`.
+- Mantener el `git pull` de la raíz, `npm install` y la importación de la sesión de la IA (`import-session.ps1`).
+
+## Plan de Verificación
+
+### Pruebas Automatizadas
+
+1. **Ejecutar exportación manual**: `pwsh scripts/export-session.ps1` para verificar que la carpeta `.ai-session` es válida.
+2. **Simular Push**: Ejecutar `npm run push-all "test commit"` y verificar que no hay errores de "Path not found".
+3. **Simular Sync**: Ejecutar `npm run sync` y verificar que el proceso termina con éxito sin errores de submódulos.
+
+### Verificación Manual
+
+- Observar la salida de la consola para confirmar que los mensajes intermedios son claros y no reportan fallos en rutas inexistentes.

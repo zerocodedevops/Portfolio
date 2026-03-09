@@ -1,0 +1,5 @@
+{
+  "artifactType":  "ARTIFACT_TYPE_IMPLEMENTATION_PLAN",
+  "summary":  "Plan para corregir y simplificar los scripts de sincronización (push-all y sync) tras la eliminación de submódulos.",
+  "updatedAt":  "2026-03-09T22:43:20.323001300Z"
+}

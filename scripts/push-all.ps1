@@ -1,4 +1,4 @@
-# push-all.ps1 — Commit and push all repos in one command
+# push-all.ps1 — Commit and push the monorepo in one command
 # Usage: pwsh scripts/push-all.ps1 "your commit message"
 
 param(
@@ -7,60 +7,40 @@ param(
 )
 
 $rootDir = Split-Path -Parent $PSScriptRoot
-$failed = $false
 
-function Push-Repo {
-    param([string]$Name, [string]$Path)
-
-    Push-Location $Path
-
-    $status = git status --porcelain
-    if ($status) {
-        Write-Host "`n📦 [$Name] Staging and committing changes..." -ForegroundColor Yellow
-        git add -A
-        git commit -m $Message --no-verify
-        if ($LASTEXITCODE -ne 0) {
-            Write-Host "❌ [$Name] Commit failed" -ForegroundColor Red
-            $script:failed = $true
-            Pop-Location
-            return
-        }
-    }
-    else {
-        Write-Host "`n✔️  [$Name] No changes to commit" -ForegroundColor DarkGray
-    }
-
-    # Always try to push (in case there are unpushed commits)
-    Write-Host "🚀 [$Name] Pushing to GitHub..." -ForegroundColor Cyan
-    git push origin main
-    if ($LASTEXITCODE -ne 0) {
-        Write-Host "❌ [$Name] Push failed" -ForegroundColor Red
-        $script:failed = $true
-    }
-    else {
-        Write-Host "✅ [$Name] Done!" -ForegroundColor Green
-    }
-
-    Pop-Location
-}
-
-Write-Host "`n🔄 Pushing all repos with message: `"$Message`"" -ForegroundColor Cyan
+Write-Host "`n🔄 Pushing monorepo with message: `"$Message`"" -ForegroundColor Cyan
 
 # 0. Export AI Session to the repository
 pwsh (Join-Path $PSScriptRoot "export-session.ps1")
 
-# 1. Push submodules first (so root tracks updated commits)
-Push-Repo "DevOps.Shop"     "$rootDir\apps\devops-shop"
-Push-Repo "ZeroDelay"       "$rootDir\apps\zerodelay"
-Push-Repo "Mudanzas Coral"  "$rootDir\src\features\projects\mudanzas-coral"
+# 1. Commit and Push root repository
+Push-Location $rootDir
 
-# 2. Push root repo last (will include updated submodule refs)
-Push-Repo "Portfolio"       $rootDir
+$status = git status --porcelain
+if ($status) {
+    Write-Host "`n📦 Staging and committing changes..." -ForegroundColor Yellow
+    git add -A
+    git commit -m $Message --no-verify
+    if ($LASTEXITCODE -ne 0) {
+        Write-Host "❌ Commit failed" -ForegroundColor Red
+        Pop-Location
+        exit 1
+    }
+}
+else {
+    Write-Host "`n✔️  No changes to commit" -ForegroundColor DarkGray
+}
 
-if ($failed) {
-    Write-Host "`n⚠️  Some repos had errors. Check the output above." -ForegroundColor Red
+Write-Host "🚀 Pushing to GitHub (Portfolio)..." -ForegroundColor Cyan
+git push origin main
+if ($LASTEXITCODE -ne 0) {
+    Write-Host "❌ Push failed" -ForegroundColor Red
+    Pop-Location
     exit 1
 }
 else {
-    Write-Host "`n🎉 All repos pushed successfully!" -ForegroundColor Green
+    Write-Host "✅ Done!" -ForegroundColor Green
 }
+
+Pop-Location
+Write-Host "`n🎉 Monorepo pushed successfully!" -ForegroundColor Green
