@@ -1,0 +1,26 @@
+# Architectural Improvements Checklist
+
+## Phase 1: Cleanup
+
+- [x] Delete UUID directories (`7f12a854-*/`, `efe40205-*/`)
+- [x] Delete empty/tool directories (`.agent/`, `.cursor/`)
+- [x] Delete obsolete lint reports (`*.txt`, `*.json`, `*.md`)
+- [x] Update [.gitignore](file:///c:/Users/dgper/Proyectos/ZeroCode/.gitignore) to ignore lint reports
+
+## Phase 2: Reorganization
+
+- [x] Create `db/schema/` and move `*.sql` files
+- [x] Move `src/dataconnect-generated/` outside of `src/` to `.generated/`
+- [x] Rename apps in `apps/` for naming consistency (Requires extensive refactoring of imports and configs)
+
+## Phase 3: Documentation
+
+- [x] Create `SCRIPTS.md` to document package.json scripts
+- [x] Update `README.md` with clear structure and entry points
+- [x] Document Firebase deployment targets
+
+## Phase 4: Decisions & Policy
+
+- [x] Consolidate tools config (Biome vs ESLint/Prettier)
+- [x] Document testing structure
+- [x] Expand `.env.example`

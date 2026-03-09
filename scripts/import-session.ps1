@@ -1,63 +1,33 @@
-# import-session.ps1 — Read and restore the latest session state from Google Drive
-# Usage: pwsh scripts/import-session.ps1 [-List]
+# import-session.ps1 — Read and restore the session state from the local repository
+# Usage: pwsh scripts/import-session.ps1
 
-param(
-    [switch]$List
-)
-
-$driveBase = "G:\Mi unidad\ZeroCode\conversaciones"
+$rootDir = Split-Path -Parent $PSScriptRoot
 $localBrainBase = "$env:USERPROFILE\.gemini\antigravity\brain"
+$sessionFolder = Join-Path $rootDir ".ai-session"
+$remoteBrain = Join-Path $sessionFolder "brain"
 
-if (-not (Test-Path $driveBase)) {
-    Write-Host "`n❌ Google Drive folder not found: $driveBase" -ForegroundColor Red
-    exit 1
-}
-
-# Get session folders (new format: folders containing .md and brain/)
-# Also support old format for listing if needed, but primary focus is folders.
-$sessions = Get-ChildItem $driveBase | Where-Object { $_.PSIsContainer } | Sort-Object LastWriteTime -Descending
-
-if ($sessions.Count -eq 0) {
-    Write-Host "`n⚠️  No exported sessions found." -ForegroundColor Yellow
+if (-not (Test-Path $remoteBrain)) {
+    Write-Host "`n⚠️ No exported session found in .ai-session/brain." -ForegroundColor Yellow
     exit 0
 }
 
-if ($List) {
-    Write-Host "`n📋 Available sessions ($($sessions.Count)):`n" -ForegroundColor Cyan
-    $i = 1
-    foreach ($s in $sessions) {
-        $date = $s.LastWriteTime.ToString("dd/MM/yyyy HH:mm")
-        Write-Host "  $i. $($s.Name) ($date)" -ForegroundColor ($i -eq 1 ? "Green" : "White")
-        $i++
-    }
-    return
-}
-
-$latest = $sessions[0]
-$summaryFile = Get-ChildItem $latest.FullName -Filter "*.md" | Select-Object -First 1
-
-Write-Host "`n📄 Importing session: $($latest.Name)" -ForegroundColor Cyan
-Write-Host "   Date: $($latest.LastWriteTime.ToString('dd/MM/yyyy HH:mm'))" -ForegroundColor DarkGray
+Write-Host "`n📄 Importing AI session from repository..." -ForegroundColor Cyan
 
 # 1. Restore Brain State
+# Identify the most recent conversation brain folder (active conversation)
 $localBrain = Get-ChildItem $localBrainBase | Where-Object { $_.PSIsContainer -and $_.Name -match "^[a-f0-9-]{36}$" } | Sort-Object LastWriteTime -Descending | Select-Object -First 1
-$remoteBrain = Join-Path $latest.FullName "brain"
 
-if ($localBrain -and (Test-Path $remoteBrain)) {
+if ($localBrain) {
     Write-Host "`n🧠 Syncing brain context to current conversation: $($localBrain.Name)" -ForegroundColor Magenta
-    # Copy contents of remote brain to local brain (overwrite existing task.md, etc.)
+    # Clean local brain first (optional, but safer for consistency)
+    Remove-Item -Path "$($localBrain.FullName)\*" -Recurse -Force -ErrorAction SilentlyContinue
+    
+    # Copy contents of repo brain to local brain
     Copy-Item -Path "$remoteBrain\*" -Destination $localBrain.FullName -Recurse -Force
     Write-Host "✅ Brain internal state restored!" -ForegroundColor Green
 }
 else {
-    Write-Host "`n⚠️  Could not restore brain state. Remote brain missing or no active local conversation found." -ForegroundColor Yellow
-}
-
-# 2. Show Summary
-if ($summaryFile) {
-    Write-Host "`n$($("─" * 60))" -ForegroundColor DarkGray
-    Get-Content $summaryFile.FullName -Raw -Encoding UTF8
-    Write-Host "$("─" * 60)" -ForegroundColor DarkGray
+    Write-Host "`n❌ Could not restore brain state. No active local conversation found." -ForegroundColor Red
 }
 
 Write-Host "`n💡 The AI code assistant now has all the context from the previous session." -ForegroundColor Yellow

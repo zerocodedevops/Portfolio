@@ -46,6 +46,9 @@ function Push-Repo {
 
 Write-Host "`n🔄 Pushing all repos with message: `"$Message`"" -ForegroundColor Cyan
 
+# 0. Export AI Session to the repository
+pwsh (Join-Path $PSScriptRoot "export-session.ps1")
+
 # 1. Push submodules first (so root tracks updated commits)
 Push-Repo "DevOps.Shop"     "$rootDir\apps\devops-shop"
 Push-Repo "ZeroDelay"       "$rootDir\apps\zerodelay"

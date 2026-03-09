@@ -35,7 +35,7 @@ This document explains the purpose of each script defined in the root `package.j
 
 These PowerShell scripts manage repository state and synchronization:
 
-- **`sync`**: (`scripts/sync.ps1`) Syncs local changes.
-- **`push-all`**: (`scripts/push-all.ps1`) Commits and pushes the root repository alongside the nested app repositories.
-- **`export-session`**: (`scripts/export-session.ps1`) Exports current IDE or terminal session state.
-- **`import-session`**: (`scripts/import-session.ps1`) Restores session state.
+- **`sync`**: (`scripts/sync.ps1`) Sincroniza todos los repositorios (pull y actualización de submódulos), instala dependencias y **restaura automáticamente la sesión de la IA** desde el repositorio.
+- **`push-all`**: (`scripts/push-all.ps1`) Exporta la sesión actual de la IA al repositorio, añade, commitea y sube todos los repositorios locales a GitHub en una sola operación.
+- **`export-session`**: (`scripts/export-session.ps1`) Exporta manualmente el estado del "cerebro" (brain) y la sesión de la IA a la carpeta `.ai-session/` del repositorio.
+- **`import-session`**: (`scripts/import-session.ps1`) Importa manualmente el estado de la sesión de la IA desde `.ai-session/` a la base de datos local de la conversación activa.

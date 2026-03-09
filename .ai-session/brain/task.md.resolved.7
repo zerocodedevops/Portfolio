@@ -1,0 +1,25 @@
+# Reestructuración Exhaustiva del Monorepo
+
+## CRÍTICO (Prioridad Alta)
+
+- [x] Eliminar todos los archivos de reporte/lint (`final_*.txt`, [lint_report.txt](file:///c:/Users/dgper/Proyectos/ZeroCode/lint_report.txt), etc)
+- [x] Eliminar directorios UUID vacíos (`7f12a854-*/`, `efe40205-*/`)
+- [x] Eliminar/Mover `api/`, `dataconnect/`, `openspec/`, `.agent/`, `.cursor/`
+- [x] Reescribir [README.md](file:///c:/Users/dgper/Proyectos/ZeroCode/README.md) principal con la tabla de apps
+- [x] Crear [docs/ARCHITECTURE.md](file:///c:/Users/dgper/Proyectos/ZeroCode/docs/ARCHITECTURE.md)
+- [x] Crear [docs/SETUP.md](file:///c:/Users/dgper/Proyectos/ZeroCode/docs/SETUP.md)
+- [x] Crear `docs/PROJECT_PLANNING.md` (si procede)
+- [x] Actualizar [.gitignore](file:///c:/Users/dgper/Proyectos/ZeroCode/.gitignore) con exclusiones exhaustivas
+
+## IMPORTANTE (Prioridad Media)
+
+- [x] Migrar scripts SQL a `database/migrations/` (antes lo pusimos en `db/schema`, hay que moverlo)
+- [x] Asegurar que `dataconnect-generated` esté en `.gitignore`
+- [x] Centralizar configuración de dependencias y scripts en `package.json` raíz (añadir turbo, dependencias compartidas)
+- [x] Consolidar herramientas de calidad y eliminar redundancias (Biome)
+
+## MEJORAS (Prioridad Baja - A tratar)
+
+- [ ] Mover dependencias específicas al `package.json` de cada app
+- [ ] Estandarizar estructuras internas de `apps/*/`
+- [ ] Setup `turbo` para builds monorepo

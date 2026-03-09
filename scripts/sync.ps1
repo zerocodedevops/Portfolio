@@ -18,3 +18,6 @@ Write-Host "`n📦 Installing dependencies..." -ForegroundColor Yellow
 npm install
 
 Write-Host "`n✅ Everything is up to date!" -ForegroundColor Green
+
+# 3. Import AI Session from the repository
+pwsh (Join-Path $PSScriptRoot "import-session.ps1")

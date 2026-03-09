@@ -1,0 +1,7 @@
+# Task Checklist
+
+- [ ] Identify the source of Truth for repository visibility [/]
+- [ ] Locate the UI component rendering the "Public" badge [/]
+- [ ] Create implementation plan to mark all repositories as private [ ]
+- [ ] Update data source or hardcoded values [ ]
+- [ ] Verify changes in UI [ ]
