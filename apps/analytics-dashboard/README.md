@@ -1,60 +1,20 @@
-# 📊 Dashboard Analítico (Project 2)
+# 📈 Analytics Dashboard
 
-Un dashboard profesional diseñado con enfoque en visualización de datos,
-rendimiento y arquitectura limpia.
+![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
+![Recharts](https://img.shields.io/badge/Recharts-%2322BC66.svg?style=for-the-badge&logo=Recharts&logoColor=white)
+![Zustand](https://img.shields.io/badge/Zustand-%2320232a.svg?style=for-the-badge&logo=react&logoColor=yellow)
 
-## ⚙️ Stack & Herramientas
+Plataforma de inteligencia de negocio (BI) e inferencia analítica, desarrollada para centralizar y emitir informes gráficos enriquecidos y precisos.
 
-- **Visualización**: `recharts` (Gráficas responsivas y customizables).
-- **Data Fetching**: `@tanstack/react-query` v5 (Caché, Auto-refetch, Loading
-  states).
-- **Mocking**: `msw` (Mock Service Worker) interceptando peticiones a nivel de
-  red (browser & node).
-- **Utilities**: `date-fns` para manipulación de fechas.
+## 📊 Capacidades Clave
 
-## 🚀 Funcionalidades
+- **Renderizado de Gráficos Nativos:** Integración a fondo con `recharts` para barras, líneas, y dispersiones interactivas en tiempo real.
+- **Exportación de Documentos:** Reportes ejecutivos descargables en PNG o convertibles a PDF (`recharts-to-png`).
+- **Estado Súper-Ligero:** Manejo de variables globales analíticas con `zustand`, evitando la sobrecarga de Redux.
 
-### 1. Visualizaciones Clave
+## 🚀 Despliegue Local
 
-- **KPI Cards**: Métricas principales con indicadores de tendencia (↑/↓).
-- **Sales Trend**: Gráfico de líneas doble (Ventas vs Ingresos).
-- **Revenue Distribution**: Gráfico de tarta interactivo.
-- **Conversion Funnel**: Gráfico de barras horizontal/vertical.
-
-### 2. Interactividad
-
-- **Filtros Globales**: Control de Rango de Fechas (7d/30d/90d) y Segmento
-  (Mobile/Desktop).
-- **Loading Skeletons**: Feedback visual durante la carga de datos.
-- **Error Handling**: Gestión robusta de fallos de API.
-
-## 🛠️ Endpoints Mock simulados (MSW)
-
-| Endpoint                   | Método | Descripción                              | Params             |
-| -------------------------- | ------ | ---------------------------------------- | ------------------ |
-| `/api/analytics/dashboard` | GET    | Retorna todas las métricas del dashboard | `range`, `segment` |
-
-### Ejemplo de Respuesta Mock
-
-```json
-{
-  "kpi": { "totalSales": { "value": "$12k", "trend": "up" } },
-  "salesTrend": [{ "date": "2024-01-01", "sales": 1200 }],
-  "revenueByDevice": [{ "device": "Mobile", "value": 45 }]
-}
+```bash
+cd apps/analytics-dashboard
+npm run dev
 ```
-
-## 🧪 Testing (Strict Mode)
-
-- **Unit**: Renderizado de componentes aislados (`vitest` + `testing-library`).
-- **Integration**: `dashboard.test.tsx` verifica que:
-  - Los datos se cargan y muestran correctamente.
-  - Los filtros disparan nuevas peticiones.
-  - El manejo de errores funciona (simulando 500 con MSW).
-
-## 📦 Cómo ejecutar
-
-El worker de MSW se inicia automáticamente en modo desarrollo (`npm run dev`).
-No requiere backend real.
-
-Para producción, simplemente reemplaza la URL en `useDashboardMetrics.ts`.
