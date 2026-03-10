@@ -1,32 +1,26 @@
-# Corrección de Scripts de Sincronización Monorepo
+# Restore Missing Data Connect Configuration
 
-## Problema
+The IDE is reporting a missing `dataconnect.yaml` error. Investigation shows that the `/services/dataconnect` directory is missing, but it is an intended part of the project architecture and a service named `zerocode` exists on the Firebase backend in `us-east4`.
 
-Los scripts `push-all.ps1` y `sync.ps1` fallan al intentar acceder a rutas de submódulos antiguos (`apps/devops-shop`, `apps/zerodelay`, etc.) que ya no existen o han sido integrados en el repositorio raíz.
+## Proposed Changes
 
-## Cambios Propuestos
+### Data Connect Service
 
-### Scripts de PowerShell
+#### [NEW] [dataconnect.yaml](file:///c:/Users/dgper/Proyectos/ZeroCode/services/dataconnect/dataconnect.yaml)
 
-#### [MODIFY] [push-all.ps1](file:///c:/Users/dgper/Proyectos/ZeroCode/scripts/push-all.ps1)
+Create the main configuration file linking to the backend service.
 
-- Eliminar la lógica de iteración por submódulos.
-- Realizar una única operación de `git add / commit / push` desde la raíz.
-- Mantener la exportación automática de la sesión de la IA (`export-session.ps1`).
+#### [NEW] [schema.gql](file:///c:/Users/dgper/Proyectos/ZeroCode/services/dataconnect/schema/schema.gql)
 
-#### [MODIFY] [sync.ps1](file:///c:/Users/dgper/Proyectos/ZeroCode/scripts/sync.ps1)
+Create a basic schema file.
 
-- Eliminar el comando `git submodule update`.
-- Mantener el `git pull` de la raíz, `npm install` y la importación de la sesión de la IA (`import-session.ps1`).
+#### [NEW] [connector.yaml](file:///c:/Users/dgper/Proyectos/ZeroCode/services/dataconnect/connector/connector.yaml)
 
-## Plan de Verificación
+Create a default connector configuration pointing to the local SDK directory used by the portfolio app.
 
-### Pruebas Automatizadas
+## Verification Plan
 
-1. **Ejecutar exportación manual**: `pwsh scripts/export-session.ps1` para verificar que la carpeta `.ai-session` es válida.
-2. **Simular Push**: Ejecutar `npm run push-all "test commit"` y verificar que no hay errores de "Path not found".
-3. **Simular Sync**: Ejecutar `npm run sync` y verificar que el proceso termina con éxito sin errores de submódulos.
+### Manual Verification
 
-### Verificación Manual
-
-- Observar la salida de la consola para confirmar que los mensajes intermedios son claros y no reportan fallos en rutas inexistentes.
+- Check if the IDE error "Could not find dataconnect.yaml" disappears.
+- Run `firebase dataconnect:services:list` again to ensure local and remote are synced.

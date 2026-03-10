@@ -1,0 +1,38 @@
+# Walkthrough - Fix CI Test Command
+
+I have fixed the error in the Git CI workflow where `turbo` was failing because of an unexpected argument `--run`.
+
+## Changes Made
+
+### CI Workflow
+
+- [ci.yml](file:///c:/Users/dgper/Proyectos/ZeroCode/.github/workflows/ci.yml)
+  - Updated the test command from `npm test -- --run` to `npm test -- -- --run`.
+  - This ensures that the first `--` is for `npm`, and the second `--` is for `turbo` to pass arguments to the underlying task.
+
+## Verification
+
+The error message specifically stated:
+
+```
+ERROR unexpected argument '--run' found
+tip: to pass '--run' as a value, use '-- --run'
+Usage: turbo run [OPTIONS] [TASKS]... [-- <PASS_THROUGH_ARGS>...]
+```
+
+By adding the extra `--`, the command now correctly follows the `turbo run [tasks] -- [args]` format required for pass-through arguments, which resolves the "unexpected argument" error.
+
+## Restored Data Connect Configuration
+
+I have restored the missing `services/dataconnect` configuration files.
+
+### Changes Made
+
+- [dataconnect.yaml](file:///c:/Users/dgper/Proyectos/ZeroCode/services/dataconnect/dataconnect.yaml): Linked the project to the existing `zerocode` service in `us-east4`.
+- [schema.gql](file:///c:/Users/dgper/Proyectos/ZeroCode/services/dataconnect/schema/schema.gql): Created a basic schema file.
+- [connector.yaml](file:///c:/Users/dgper/Proyectos/ZeroCode/services/dataconnect/connector/connector.yaml): Configured the default connector to generate the SDK in the location expected by the portfolio app.
+
+### Verification
+
+- Ran `firebase dataconnect:services:list` to confirm that the local configuration is correctly recognized and synced with the backend service.
+- This resolves the IDE error "Could not find dataconnect.yaml".

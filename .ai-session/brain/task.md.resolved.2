@@ -1,26 +1,9 @@
-# Architectural Improvements Checklist
+# Task: Fix CI Test Command
+- [x] Fix CI command in [.github/workflows/ci.yml](file:///c:/Users/dgper/Proyectos/ZeroCode/.github/workflows/ci.yml)
+- [x] Verify fix by checking turbo command structure
 
-## Phase 1: Cleanup
-
-- [x] Delete UUID directories (`7f12a854-*/`, `efe40205-*/`)
-- [x] Delete empty/tool directories (`.agent/`, `.cursor/`)
-- [x] Delete obsolete lint reports (`*.txt`, `*.json`, `*.md`)
-- [x] Update [.gitignore](file:///c:/Users/dgper/Proyectos/ZeroCode/.gitignore) to ignore lint reports
-
-## Phase 2: Reorganization
-
-- [x] Create `db/schema/` and move `*.sql` files
-- [x] Move `src/dataconnect-generated/` outside of `src/` to `.generated/`
-- [ ] Rename apps in `apps/` for naming consistency (Requires extensive refactoring of imports and configs)
-
-## Phase 3: Documentation
-
-- [ ] Create `SCRIPTS.md` to document package.json scripts
-- [ ] Update `README.md` with clear structure and entry points
-- [ ] Document Firebase deployment targets
-
-## Phase 4: Decisions & Policy
-
-- [ ] Consolidate tools config (Biome vs ESLint/Prettier)
-- [ ] Document testing structure
-- [ ] Expand `.env.example`
+# Task: Restore Missing Data Connect Configuration
+- [/] Create `services/dataconnect` directory structure
+- [ ] Create `dataconnect.yaml` linked to backend service `zerocode`
+- [ ] Create `schema/schema.gql` and `connector/connector.yaml`
+- [ ] Verify that IDE error disappears

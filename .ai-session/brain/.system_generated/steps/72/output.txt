@@ -1,0 +1,143 @@
+# Environment Information
+
+Project Directory: c:\Users\dgper\Proyectos\ZeroCode
+Project Config Path: c:\Users\dgper\Proyectos\ZeroCode\firebase.json
+Active Project ID: zerocode-devops (alias: default)
+Gemini in Firebase Terms of Service: <NOT ACCEPTED>
+Billing Enabled: No
+Authenticated User: zerocode.devops@gmail.com
+Detected App IDs: <NONE>
+Available Project Aliases (format: '[alias]: [projectId]'): 
+
+default: zerocode-devops
+
+
+firebase.json contents:
+
+```json
+{
+  "hosting": {
+    "public": "dist",
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+    "redirects": [
+      {
+        "source": "/paginas-web-pymes-autonomos",
+        "destination": "/desarrollo-web-pymes-madrid",
+        "type": 301
+      }
+    ],
+    "rewrites": [
+      {
+        "source": "/zerodelay",
+        "destination": "/shipping-service/index.html"
+      },
+      {
+        "source": "/zerodelay/**",
+        "destination": "/shipping-service/index.html"
+      },
+      {
+        "source": "/reformas",
+        "destination": "/reformas/index.html"
+      },
+      {
+        "source": "/reformas/**",
+        "destination": "/reformas/index.html"
+      },
+      {
+        "source": "/devops-shop",
+        "destination": "/ecommerce-shop/index.html"
+      },
+      {
+        "source": "/devops-shop/**",
+        "destination": "/ecommerce-shop/index.html"
+      },
+      {
+        "source": "/proyectos/reformas",
+        "destination": "/index.html"
+      },
+      {
+        "source": "/proyectos/reformas/**",
+        "destination": "/index.html"
+      },
+      {
+        "source": "/proyectos/zero-delay",
+        "destination": "/index.html"
+      },
+      {
+        "source": "/proyectos/zero-delay/**",
+        "destination": "/index.html"
+      },
+      {
+        "source": "/desarrollo-web-pymes-madrid",
+        "destination": "/index.html"
+      },
+      {
+        "source": "/desarrollo-web-pymes-madrid/**",
+        "destination": "/index.html"
+      },
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ],
+    "headers": [
+      {
+        "source": "**",
+        "headers": [
+          {
+            "key": "Content-Security-Policy",
+            "value": "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://apis.google.com https://js.stripe.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com https://r2cdn.perplexity.ai; img-src 'self' data: https://firebasestorage.googleapis.com https://www.google-analytics.com https://www.googletagmanager.com https://coin-images.coingecko.com https://vwdsnolwerskjjhmrsut.supabase.co; connect-src 'self' https://www.google-analytics.com https://identitytoolkit.googleapis.com https://securetoken.googleapis.com https://firestore.googleapis.com https://api.emailjs.com https://www.googletagmanager.com https://api.coingecko.com https://pro-api.coingecko.com https://coin-images.coingecko.com wss://stream.binance.com:443 https://vwdsnolwerskjjhmrsut.supabase.co; frame-src 'self' https://zerocode-devops.web.app https://www.googletagmanager.com https://js.stripe.com https://hooks.stripe.com;"
+          },
+          {
+            "key": "X-Content-Type-Options",
+            "value": "nosniff"
+          },
+          {
+            "key": "X-Frame-Options",
+            "value": "DENY"
+          },
+          {
+            "key": "X-XSS-Protection",
+            "value": "1; mode=block"
+          },
+          {
+            "key": "Referrer-Policy",
+            "value": "strict-origin-when-cross-origin"
+          },
+          {
+            "key": "Permissions-Policy",
+            "value": "geolocation=(), microphone=(), camera=()"
+          }
+        ]
+      },
+      {
+        "source": "**/*.@(jpg|jpeg|gif|png|webp|svg|ico)",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "public, max-age=31536000, immutable"
+          }
+        ]
+      },
+      {
+        "source": "**/*.@(js|css)",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "public, max-age=31536000, immutable"
+          }
+        ]
+      }
+    ]
+  },
+  "emulators": {
+    "dataconnect": {
+      "dataDir": "services/dataconnect/.dataconnect/pgliteData"
+    }
+  },
+  "dataconnect": {
+    "source": "services/dataconnect"
+  }
+}
+
+```

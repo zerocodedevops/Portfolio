@@ -1,11 +1,11 @@
-# Creación de Documentación (READMEs) Espectacular
+# Task: Fix CI Test Command
 
-- [x] Mejorar el [README.md](file:///c:/Users/dgper/Proyectos/ZeroCode/README.md) principal del repositorio.
-- [x] Analizar y reescribir [apps/portfolio/README.md](file:///c:/Users/dgper/Proyectos/ZeroCode/apps/portfolio/README.md).
-- [x] Analizar y reescribir [apps/crypto/README.md](file:///c:/Users/dgper/Proyectos/ZeroCode/apps/crypto/README.md).
-- [x] Analizar y reescribir [apps/ecommerce-shop/README.md](file:///c:/Users/dgper/Proyectos/ZeroCode/apps/ecommerce-shop/README.md) (antes devops-shop).
-- [x] Analizar y reescribir [apps/analytics-dashboard/README.md](file:///c:/Users/dgper/Proyectos/ZeroCode/apps/analytics-dashboard/README.md) (antes analytics).
-- [x] Analizar y reescribir [apps/shipping-service/README.md](file:///c:/Users/dgper/Proyectos/ZeroCode/apps/shipping-service/README.md) (antes zerodelay).
-- [x] Analizar y reescribir [apps/home-renovation/README.md](file:///c:/Users/dgper/Proyectos/ZeroCode/apps/home-renovation/README.md) (antes zero-chaos).
-- [x] Analizar y reescribir [apps/zerovanity/README.md](file:///c:/Users/dgper/Proyectos/ZeroCode/apps/zerovanity/README.md) (App de Salón de Belleza).
-- [x] Analizar y reescribir [apps/ecommerce/README.md](file:///c:/Users/dgper/Proyectos/ZeroCode/apps/ecommerce/README.md) (App de e-commerce secundaria).
+- [x] Fix CI command in [.github/workflows/ci.yml](file:///c:/Users/dgper/Proyectos/ZeroCode/.github/workflows/ci.yml)
+- [x] Verify fix by checking turbo command structure
+
+# Task: Restore Missing Data Connect Configuration
+
+- [x] Create `services/dataconnect` directory structure
+- [x] Create `dataconnect.yaml` linked to backend service `zerocode`
+- [x] Create `schema/schema.gql` and `connector/connector.yaml`
+- [x] Verify that IDE error disappears

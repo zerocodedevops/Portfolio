@@ -1,0 +1,7 @@
+specVersion: "v1alpha"
+serviceId: "zerocode"
+location: "us-east4"
+schema:
+  source: "./schema"
+connectorDirs:
+  - "./connector"

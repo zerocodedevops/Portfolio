@@ -1,27 +1,16 @@
-# Corrección de Scripts de Sincronización Monorepo
+# Fix CI Test Command
 
-## Problema
-Los scripts [push-all.ps1](file:///c:/Users/dgper/Proyectos/ZeroCode/scripts/push-all.ps1) y [sync.ps1](file:///c:/Users/dgper/Proyectos/ZeroCode/scripts/sync.ps1) fallan al intentar acceder a rutas de submódulos antiguos (`apps/devops-shop`, `apps/zerodelay`, etc.) que ya no existen o han sido integrados en el repositorio raíz.
+The CI workflow is failing because `turbo` does not recognize the `--run` argument passed via `npm test -- --run`. In turbo, pass-through arguments must be preceded by an additional `--`.
 
-## Cambios Propuestos
+## Proposed Changes
 
-### Scripts de PowerShell
+### CI Workflow
 
-#### [MODIFY] [push-all.ps1](file:///c:/Users/dgper/Proyectos/ZeroCode/scripts/push-all.ps1)
-- Eliminar la lógica de iteración por submódulos.
-- Realizar una única operación de `git add / commit / push` desde la raíz.
-- Mantener la exportación automática de la sesión de la IA ([export-session.ps1](file:///c:/Users/dgper/Proyectos/ZeroCode/scripts/export-session.ps1)).
+#### [MODIFY] [ci.yml](file:///c:/Users/dgper/Proyectos/ZeroCode/.github/workflows/ci.yml)
 
-#### [MODIFY] [sync.ps1](file:///c:/Users/dgper/Proyectos/ZeroCode/scripts/sync.ps1)
-- Eliminar el comando `git submodule update`.
-- Mantener el `git pull` de la raíz, `npm install` y la importación de la sesión de la IA ([import-session.ps1](file:///c:/Users/dgper/Proyectos/ZeroCode/scripts/import-session.ps1)).
+Change `npm test -- --run` to `npm test -- -- --run` to ensure `turbo` correctly passes the `--run` flag to the underlying test runner.
 
-## Plan de Verificación
+## Verification Plan
 
-### Pruebas Automatizadas
-1. **Ejecutar exportación manual**: `pwsh scripts/export-session.ps1` para verificar que la carpeta `.ai-session` es válida.
-2. **Simular Push**: Ejecutar `npm run push-all "test commit"` y verificar que no hay errores de "Path not found".
-3. **Simular Sync**: Ejecutar `npm run sync` y verificar que el proceso termina con éxito sin errores de submódulos.
-
-### Verificación Manual
-- Observar la salida de la consola para confirmar que los mensajes intermedios son claros y no reportan fallos en rutas inexistentes.
+### Manual Verification
+- Verify that `turbo run test -- --run` is the intended command structure for passing arguments to sub-tasks in a turbo monorepo.
