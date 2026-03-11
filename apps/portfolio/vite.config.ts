@@ -48,6 +48,12 @@ export default defineConfig({
       '@home-renovation': fileURLToPath(
         new URL('../home-renovation', import.meta.url),
       ),
+      '@zerodelay': fileURLToPath(
+        new URL('../shipping-service/src', import.meta.url),
+      ),
+      '@zero-chaos': fileURLToPath(
+        new URL('../home-renovation', import.meta.url),
+      ),
       // Backward compat: zerovanity files still use @salon internally
       '@salon': fileURLToPath(new URL('../zerovanity/src', import.meta.url)),
     },

@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import 'sileo/styles.css';
+import 'sileo/dist/styles.css';
 import './styles/index.css';
 import { Providers } from './app/providers';
 import { Router } from './app/router';

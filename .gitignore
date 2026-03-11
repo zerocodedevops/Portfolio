@@ -31,7 +31,6 @@ fresh_*.txt
 lint_*.txt
 
 # Build output
-dist/
 dist-ssr/
 build/
 *.local
@@ -74,4 +73,3 @@ test-output.txt
 # System
 desktop.ini
 Thumbs.db
-.vercel

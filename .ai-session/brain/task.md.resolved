@@ -9,3 +9,8 @@
 - [x] Create `dataconnect.yaml` linked to backend service `zerocode`
 - [x] Create `schema/schema.gql` and `connector/connector.yaml`
 - [x] Verify that IDE error disappears
+
+# Task: Fix Turborepo PackageManager Error
+- [x] Add `packageManager` field to root `package.json`
+- [/] Reinstall dependencies (clean install)
+- [ ] Run build to verify

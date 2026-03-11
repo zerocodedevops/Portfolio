@@ -1,8 +1,7 @@
 # Default Schema for Data Connect
 
-# Add your type definitions here
 type User @table {
-  id: String! @primaryKey
+  id: String!
   email: String!
   username: String!
 }
