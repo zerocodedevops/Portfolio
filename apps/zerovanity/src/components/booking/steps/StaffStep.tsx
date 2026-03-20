@@ -1,10 +1,11 @@
 import { Button } from "@zerovanity/components/ui/button";
 import { useBookingStore } from "@zerovanity/store/useBookingStore";
 import { motion } from "framer-motion";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, User } from "lucide-react";
+import type { StaffMember } from "../../../../types";
 import { useTranslation } from "react-i18next";
 
-export default function StaffStep({ staff }: Readonly<{ staff: any[] }>) {
+export default function StaffStep({ staff }: Readonly<{ staff: StaffMember[] }>) {
   const { t } = useTranslation();
   const { setStaff, setStep } = useBookingStore();
 

@@ -59,7 +59,7 @@ export default function MyBookings() {
     booking,
     isPast,
   }: {
-    booking: any;
+    booking: import("../../../types").Booking;
     isPast?: boolean;
   }) => (
     <div

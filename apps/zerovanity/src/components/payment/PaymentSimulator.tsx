@@ -1,3 +1,4 @@
+import type { PaymentDetails } from "../../types";
 import {
   AlertCircle,
   CheckCircle,
@@ -9,7 +10,7 @@ import { useState } from "react";
 
 interface PaymentSimulatorProps {
   amount: number;
-  onSuccess: (paymentDetails: any) => void;
+  onSuccess: (paymentDetails: PaymentDetails) => void;
   onCancel: () => void;
 }
 
@@ -30,7 +31,7 @@ export default function PaymentSimulator({
   });
 
   const formatCardNumber = (value: string) => {
-    const v = value.replace(/\s+/g, "").replace(/[^0-9]/gi, "");
+    const v = value.replaceAll(/\s+/g, "").replaceAll(/\D/g, "");
     const matches = v.match(/\d{4,16}/g);
     const match = matches?.[0] || "";
     const parts = [];
@@ -51,7 +52,7 @@ export default function PaymentSimulator({
       setCardData((prev) => ({ ...prev, [name]: formatCardNumber(value) }));
     } else if (name === "expiry") {
       // Simple logic for expiry formatting (MM/YY)
-      let formatted = value.replace(/[^0-9]/g, "");
+      let formatted = value.replaceAll(/\D/g, "");
       if (formatted.length > 2) {
         formatted = `${formatted.substring(0, 2)}/${formatted.substring(2, 4)}`;
       }
@@ -81,11 +82,10 @@ export default function PaymentSimulator({
       // Wait a moment before calling onSuccess to show the success state
       setTimeout(() => {
         onSuccess({
-          id: `sim_${Math.random().toString(36).substr(2, 9)}`,
-          status: "paid",
+          cardLast4: cardData.number.slice(-4),
           amount: amount,
-          method: "card",
-          last4: cardData.number.slice(-4),
+          currency: "EUR",
+          timestamp: new Date().toISOString(),
         });
       }, 1500);
     }, 2000);
@@ -138,11 +138,12 @@ export default function PaymentSimulator({
 
       <form onSubmit={handleSubmit} className="space-y-4">
         <div>
-          <label className="block text-slate-400 text-xs uppercase font-bold mb-1.5">
+          <label htmlFor="cardNumber" className="block text-slate-400 text-xs uppercase font-bold mb-1.5">
             Número de Tarjeta
           </label>
           <div className="relative">
             <input
+              id="cardNumber"
               name="number"
               type="text"
               maxLength={19}
@@ -158,10 +159,11 @@ export default function PaymentSimulator({
 
         <div className="grid grid-cols-2 gap-4">
           <div>
-            <label className="block text-slate-400 text-xs uppercase font-bold mb-1.5">
+            <label htmlFor="cardExpiry" className="block text-slate-400 text-xs uppercase font-bold mb-1.5">
               Expiración
             </label>
             <input
+              id="cardExpiry"
               name="expiry"
               type="text"
               maxLength={5}
@@ -173,10 +175,11 @@ export default function PaymentSimulator({
             />
           </div>
           <div>
-            <label className="block text-slate-400 text-xs uppercase font-bold mb-1.5">
+            <label htmlFor="cardCvc" className="block text-slate-400 text-xs uppercase font-bold mb-1.5">
               CVC
             </label>
             <input
+              id="cardCvc"
               name="cvc"
               type="text"
               maxLength={3}
@@ -190,10 +193,11 @@ export default function PaymentSimulator({
         </div>
 
         <div>
-          <label className="block text-slate-400 text-xs uppercase font-bold mb-1.5">
+          <label htmlFor="cardName" className="block text-slate-400 text-xs uppercase font-bold mb-1.5">
             Nombre del Titular
           </label>
           <input
+            id="cardName"
             name="name"
             type="text"
             value={cardData.name}

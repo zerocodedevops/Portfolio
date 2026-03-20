@@ -60,7 +60,7 @@ export const BookingService = {
 
   updateBookingStatus: async (
     id: string,
-    status: any,
+    status: Booking["status"],
   ): Promise<{ success: boolean; error?: string }> => {
     await new Promise((resolve) => setTimeout(resolve, 500));
     const idx = MOCK_BOOKINGS.findIndex((b) => b.id === id);
@@ -73,7 +73,7 @@ export const BookingService = {
 
   updateBookingDetails: async (
     id: string,
-    data: any,
+    data: { date: Date; time?: string; staffId?: string; serviceId?: string },
   ): Promise<{ success: boolean; error?: string }> => {
     await new Promise((resolve) => setTimeout(resolve, 500));
     const idx = MOCK_BOOKINGS.findIndex((b) => b.id === id);

@@ -1,5 +1,7 @@
 // Mock implementation for Vite Client
 
+import type { AvailabilitySchedule } from "../../types";
+
 export async function getAdminStaff() {
   return [
     {
@@ -28,7 +30,7 @@ export async function toggleStaffStatus(staffId: string, isActive: boolean) {
 
 export async function updateAvailability(
   staffId: string,
-  availabilityData: any[],
+  availabilityData: AvailabilitySchedule[],
 ) {
   console.log("Mock: updateAvailability", staffId, availabilityData);
   return { success: true };

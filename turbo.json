@@ -9,6 +9,14 @@
                 "dist/**",
                 ".next/**",
                 "build/**"
+            ],
+            "inputs": [
+                "$TURBO_DEFAULT$",
+                ".env*"
+            ],
+            "env": [
+                "VITE_*",
+                "REACT_APP_*"
             ]
         },
         "lint": {

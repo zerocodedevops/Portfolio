@@ -6,7 +6,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 
 interface StaffListProps {
-  staff: any[];
+  staff: import("../../../types").StaffMember[];
 }
 
 import { sileo } from "sileo";
@@ -81,7 +81,7 @@ export default function StaffList({ staff: initialStaff }: StaffListProps) {
               Servicios
             </p>
             <div className="flex flex-wrap gap-2">
-              {member.services.map((s: any) => (
+              {member.services?.map((s: import("../../../types").ServiceItem) => (
                 <span
                   key={s.id}
                   className="text-xs px-2 py-1 bg-white/5 rounded-sm text-neutral-300 border border-white/5"

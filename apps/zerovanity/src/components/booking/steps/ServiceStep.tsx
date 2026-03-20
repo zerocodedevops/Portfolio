@@ -1,12 +1,14 @@
+```typescript
 import { Button } from "@zerovanity/components/ui/button";
 import { useBookingStore } from "@zerovanity/store/useBookingStore";
 import { motion } from "framer-motion";
 import { ArrowLeft, Check } from "lucide-react";
+import type { ServiceItem } from "../../../../types";
 import { useTranslation } from "react-i18next";
 
 export default function ServiceStep({
   services,
-}: Readonly<{ services: any[] }>) {
+}: Readonly<{ services: ServiceItem[] }>) {
   const { t } = useTranslation();
   const { selectedCategory, setService, setStep } = useBookingStore();
 

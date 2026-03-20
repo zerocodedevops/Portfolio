@@ -12,11 +12,11 @@
     "rewrites": [
       {
         "source": "/zerodelay",
-        "destination": "/shipping-service/index.html"
+        "destination": "/zerodelay/index.html"
       },
       {
         "source": "/zerodelay/**",
-        "destination": "/shipping-service/index.html"
+        "destination": "/zerodelay/index.html"
       },
       {
         "source": "/reformas",
@@ -28,11 +28,11 @@
       },
       {
         "source": "/devops-shop",
-        "destination": "/ecommerce-shop/index.html"
+        "destination": "/devops-shop/index.html"
       },
       {
         "source": "/devops-shop/**",
-        "destination": "/ecommerce-shop/index.html"
+        "destination": "/devops-shop/index.html"
       },
       {
         "source": "/proyectos/reformas",

@@ -1,6 +1,7 @@
 "use client";
 import { Button } from "@zerovanity/components/ui/button";
 import { getAvailableSlots } from "@zerovanity/features/booking/actions";
+import type { TimeSlot } from "../../../../types";
 import { useBookingStore } from "@zerovanity/store/useBookingStore";
 import { motion } from "framer-motion";
 import { ArrowLeft, Clock } from "lucide-react";
@@ -36,7 +37,7 @@ export default function DateStep() {
     }
   };
 
-  const handleSlotSelect = async (slot: any) => {
+  const handleSlotSelect = async (slot: TimeSlot) => {
     // Construct date from selectedDate and slot.time ("HH:mm")
     const dateTimeString = `${selectedDate}T${slot.time}`;
     const d = new Date(dateTimeString);

@@ -21,7 +21,7 @@ export default function AvailabilityEditor({
   initialSchedule,
 }: {
   staffId: string;
-  initialSchedule: any[];
+  initialSchedule: import("../../../types").AvailabilitySchedule[];
 }) {
   const [schedule, setSchedule] = useState(initialSchedule);
   const [isSaving, setIsSaving] = useState(false);

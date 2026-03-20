@@ -1,10 +1,11 @@
 import { Edit2, Loader2, Plus, Trash2, User } from "lucide-react";
 import { sileo } from "sileo";
+import type { StaffMember } from "../../../types";
 import { useEffect, useState } from "react";
 import { supabase } from "@/lib/supabase";
 
 export default function StylistsPage() {
-  const [stylists, setStylists] = useState<any[]>([]);
+  const [stylists, setStylists] = useState<StaffMember[]>([]);
   const [loading, setLoading] = useState(true);
   const [editingId, setEditingId] = useState<string | null>(null);
   const [editForm, setEditForm] = useState<any>({});
@@ -30,7 +31,7 @@ export default function StylistsPage() {
     fetchStylists();
   }, []);
 
-  const handleEdit = (stylist: any) => {
+  const handleEdit = (stylist: StaffMember) => {
     setEditingId(stylist.id);
     setEditForm(stylist);
     setIsCreating(false);

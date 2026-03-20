@@ -13,8 +13,19 @@ export interface CartState {
   isOpen: boolean;
 }
 
+const loadCartState = () => {
+  try {
+    const item = localStorage.getItem("ecommerce_cart");
+    return item ? JSON.parse(item) : [];
+  } catch (error) {
+    console.error("Error parsing cart data from localStorage", error);
+    localStorage.removeItem("ecommerce_cart");
+    return [];
+  }
+};
+
 const initialState: CartState = {
-  items: JSON.parse(localStorage.getItem("ecommerce_cart") || "[]"),
+  items: loadCartState(),
   isOpen: false,
 };
 

@@ -42,17 +42,24 @@ export default function CatalogPage() {
   const [isListening, setIsListening] = useState(false);
 
   const handleVoiceSearch = () => {
-    const SpeechRecognition =
-      (globalThis as any).SpeechRecognition ||
-      (globalThis as any).webkitSpeechRecognition;
+    // Web Speech API - not in all TS DOM libs
+    interface SpeechRecognitionLike {
+      lang: string;
+      start(): void;
+      onresult: ((event: { results: { 0: { 0: { transcript: string } } } }) => void) | null;
+      onerror: (() => void) | null;
+      onend: (() => void) | null;
+    }
+    const Ctor = (globalThis as Record<string, unknown>).SpeechRecognition as (new () => SpeechRecognitionLike) | undefined
+      ?? (globalThis as Record<string, unknown>).webkitSpeechRecognition as (new () => SpeechRecognitionLike) | undefined;
 
-    if (SpeechRecognition) {
-      const recognition = new SpeechRecognition();
+    if (Ctor) {
+      const recognition = new Ctor();
       recognition.lang = "es-ES";
       recognition.start();
       setIsListening(true);
 
-      recognition.onresult = (event: any) => {
+      recognition.onresult = (event) => {
         const transcript = event.results[0][0].transcript;
         setSearch(transcript);
         setIsListening(false);

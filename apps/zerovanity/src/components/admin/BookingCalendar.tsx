@@ -6,7 +6,10 @@ import {
   dateFnsLocalizer,
   type View,
   Views,
+  type EventProps,
+  type ToolbarProps,
 } from "react-big-calendar";
+import type { Booking } from "../../../types";
 import "react-big-calendar/lib/css/react-big-calendar.css";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { supabase } from "@/lib/supabase";
@@ -25,9 +28,10 @@ const localizer = dateFnsLocalizer({
 });
 
 interface BookingCalendarProps {
-  readonly bookings?: any[];
+  readonly bookings?: Booking[];
+  readonly events?: import("react-big-calendar").Event[];
   readonly className?: string;
-  readonly onSelectBooking?: (booking: any) => void;
+  readonly onSelectBooking?: (booking: Booking) => void;
   readonly onRefresh?: () => void;
 }
 
@@ -50,7 +54,7 @@ const messages = {
   showMore: (total: number) => `+${total} más`,
 };
 
-const CustomToolbar = (toolbar: any) => {
+const CustomToolbar = (toolbar: ToolbarProps) => {
   const goToBack = () => {
     toolbar.onNavigate("PREV");
   };
@@ -124,7 +128,7 @@ const CustomToolbar = (toolbar: any) => {
 };
 
 // Custom Event Component - only shows title without time
-const CustomEvent = ({ event }: any) => {
+const CustomEvent = ({ event }: EventProps) => {
   return (
     <div style={{ height: "100%", width: "100%", overflow: "hidden" }}>
       <span>{event.title}</span>

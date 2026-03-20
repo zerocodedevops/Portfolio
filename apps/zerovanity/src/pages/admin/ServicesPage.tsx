@@ -1,11 +1,12 @@
 import { Edit2, Loader2, Save, X } from "lucide-react";
 import { sileo } from "sileo";
 import { useEffect, useState } from "react";
-import { supabase } from "@/lib/supabase";
+import { supabase } from "../../../../portfolio/src/lib/supabase";
 import SyncPricesButton from "../../components/admin/SyncPricesButton";
+import type { ServiceItem } from "../../types";
 
 export default function ServicesPage() {
-  const [services, setServices] = useState<any[]>([]);
+  const [services, setServices] = useState<ServiceItem[]>([]);
   const [loading, setLoading] = useState(true);
   const [editingId, setEditingId] = useState<string | null>(null);
   const [editForm, setEditForm] = useState<any>({});
@@ -30,7 +31,7 @@ export default function ServicesPage() {
     fetchServices();
   }, []);
 
-  const handleEdit = (service: any) => {
+  const handleEdit = (service: ServiceItem) => {
     setEditingId(service.id);
     setEditForm(service);
   };

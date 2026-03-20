@@ -96,7 +96,7 @@ export default function AdminDashboard() {
               ?.map((id: string) => servicesMap.get(id))
               .filter(Boolean) || [];
           const serviceNames = bookingServices
-            .map((s: any) => s.title)
+            .map((s: import("../types").ServiceItem) => s.title)
             .join(", ");
 
           // Parse duration strings to minutes
@@ -113,12 +113,12 @@ export default function AdminDashboard() {
           };
 
           const totalDuration = bookingServices.reduce(
-            (acc: number, curr: any) =>
+            (acc: number, curr: import("../types").Booking) =>
               acc + parseDuration(curr.duration || ""),
             0,
           );
           const totalPrice = bookingServices.reduce(
-            (acc: number, curr: any) => acc + (curr.price || 0),
+            (acc: number, curr: import("../types").ServiceItem) => acc + (curr.price || 0),
             0,
           );
 

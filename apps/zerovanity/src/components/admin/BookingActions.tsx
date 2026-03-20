@@ -3,17 +3,12 @@
 import { sileo } from "sileo";
 
 import { BookingService } from "@zerovanity/services/bookingService";
-import {
-  CheckCircle,
-  Edit,
-  MoreHorizontal,
-  Trash2,
-  XCircle,
-} from "lucide-react";
+import { CheckCircle, Edit, MoreHorizontal, Trash2, XCircle, Clock } from "lucide-react";
+import type { Booking, BookingStatus } from "../../../types";
 import { useState } from "react";
 import BookingEditModal from "./BookingEditModal";
 
-export default function BookingActions({ booking }: { readonly booking: any }) {
+export default function BookingActions({ booking }: { readonly booking: Booking }) {
   const [isOpen, setIsOpen] = useState(false);
   const [isEditOpen, setIsEditOpen] = useState(false);
 
@@ -42,7 +37,7 @@ export default function BookingActions({ booking }: { readonly booking: any }) {
     // Explicit cast because DB type is strict but component might pass uppercase
     await BookingService.updateBookingStatus(
       bookingId,
-      status.toLowerCase() as any,
+      status.toUpperCase() as BookingStatus,
     );
     setIsOpen(false);
     globalThis.location.reload();

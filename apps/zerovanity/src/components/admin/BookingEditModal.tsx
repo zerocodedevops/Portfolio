@@ -8,10 +8,11 @@ import {
   User,
   X,
 } from "lucide-react";
+import type { Booking } from "../../../types";
 import { useEffect, useState } from "react";
 
 interface EditModalProps {
-  readonly booking: any;
+  readonly booking: Booking;
   readonly isOpen: boolean;
   readonly onClose: () => void;
 }

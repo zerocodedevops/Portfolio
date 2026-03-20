@@ -1,5 +1,7 @@
 // Mock implementation for Vite Client
 
+import type { Booking } from "../../types";
+
 export interface TimeSlot {
   time: string;
   available: boolean;
@@ -30,7 +32,7 @@ export async function createBooking(data: {
   staffId?: string;
   date: Date;
 }): Promise<
-  { success: true; booking: any } | { success: false; error: string }
+  { success: true; booking: Partial<Booking> } | { success: false; error: string }
 > {
   console.log("Mock: createBooking", data);
   return {
@@ -38,6 +40,11 @@ export async function createBooking(data: {
     booking: {
       id: `MOCK-${Math.random().toString(36).substr(2, 9)}`,
       ...data,
+      date: data.date.toISOString(),
+      status: "PENDING",
+      user: { name: "", email: "" },
+      staff: { name: "", id: data.staffId || "" },
+      service: { name: "", id: data.serviceId, price: 0, duration: 0 }
     },
   };
 }

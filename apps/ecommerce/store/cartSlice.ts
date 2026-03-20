@@ -21,8 +21,19 @@ export interface CartState {
   status: "idle" | "loading" | "succeeded" | "failed";
 }
 
+const loadCartState = () => {
+  try {
+    const item = localStorage.getItem("ecommerce_cart");
+    return item ? JSON.parse(item) : [];
+  } catch (error) {
+    console.error("Error parsing cart data from localStorage", error);
+    localStorage.removeItem("ecommerce_cart");
+    return [];
+  }
+};
+
 const initialState: CartState = {
-  items: JSON.parse(localStorage.getItem("ecommerce_cart") || "[]"),
+  items: loadCartState(),
   isOpen: false,
   status: "idle",
 };
@@ -33,7 +44,7 @@ export const syncCartWithCloud = createAsyncThunk(
   async (username: string, { getState }) => {
     try {
       // 1. Get Local Cart
-      const state = getState() as any;
+      const state = getState() as { cart: CartState };
       const localItems: CartItem[] = state.cart.items;
 
       if (!username) return localItems;

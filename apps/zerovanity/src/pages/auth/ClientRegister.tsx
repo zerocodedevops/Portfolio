@@ -38,7 +38,7 @@ export default function ClientRegister() {
         .limit(1);
 
       navigate("/proyectos/zerovanity/client/bookings");
-    } catch (err: any) {
+    } catch (err: unknown) {
       setError(err.message);
     } finally {
       setLoading(false);

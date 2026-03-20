@@ -23,7 +23,7 @@ export default function ClientLogin() {
 
       if (signInError) throw signInError;
       navigate("/proyectos/zerovanity/client/bookings");
-    } catch (err: any) {
+    } catch (err: unknown) {
       setError(
         err.message === "Invalid login credentials"
           ? "Email o contraseña incorrectos"

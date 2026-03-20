@@ -6,13 +6,14 @@ import ConfirmationStep from "@zerovanity/components/booking/steps/ConfirmationS
 import DateStep from "@zerovanity/components/booking/steps/DateStep";
 import ServiceStep from "@zerovanity/components/booking/steps/ServiceStep";
 import StaffStep from "@zerovanity/components/booking/steps/StaffStep";
+import type { ServiceItem, StaffMember } from "../../../types";
 import { useBookingStore } from "@zerovanity/store/useBookingStore";
 import { AnimatePresence, motion } from "framer-motion";
 
 export default function BookingWizard({
   services,
   staff,
-}: Readonly<{ services: any[]; staff: any[] }>) {
+}: Readonly<{ services: ServiceItem[]; staff: StaffMember[] }>) {
   const { step } = useBookingStore();
 
   // Calculate distinct categories

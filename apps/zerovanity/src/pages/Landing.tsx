@@ -1,3 +1,4 @@
+/// <reference path="../vite-env.d.ts" />
 // Blog Images
 import blogBalayage from "@zerovanity/assets/blog/blog-balayage.png";
 import blogHaircut from "@zerovanity/assets/blog/blog-haircut-myth.png";
@@ -403,7 +404,7 @@ function FeatureCard({
   title,
   desc,
   delay,
-}: Readonly<{ icon: any; title: string; desc: string; delay: number }>) {
+}: Readonly<{ icon: JSX.Element; title: string; desc: string; delay: number }>) {
   return (
     <div
       className={`p-6 border border-white/5 bg-white/[0.02] hover:bg-white/[0.05] transition-colors rounded-sm animate-in fade-in slide-in-from-bottom-8 duration-1000 fill-mode-backwards`}

@@ -73,7 +73,7 @@ export function BookingModal({ onClose }: Readonly<BookingModalProps>) {
 
         // Transform flat services to nested catalog
         const grouped = servicesData.reduce(
-          (acc: any, service: ServiceItem) => {
+          (acc: number, service: ServiceItem) => {
             if (!acc[service.category]) {
               acc[service.category] = [];
             }
@@ -102,7 +102,7 @@ export function BookingModal({ onClose }: Readonly<BookingModalProps>) {
         if (stylistsError) throw stylistsError;
 
         // Map DB keys to UI interface if needed (image_url -> image)
-        const mappedStylists = stylistsData.map((s: any) => ({
+        const mappedStylists = stylistsData.map((s: import("../types").StaffMember) => ({
           ...s,
           image: s.image_url,
         }));
@@ -205,7 +205,7 @@ export function BookingModal({ onClose }: Readonly<BookingModalProps>) {
           globalThis.location.href = "/proyectos/zerovanity/client/bookings";
         }
       }, 1000);
-    } catch (error: any) {
+    } catch (error: unknown) {
       console.error("Booking error:", error);
       sileo.error({
         title: "Error al reservar",

@@ -10,7 +10,7 @@ interface Review {
   rating: number;
   comment: string;
   imageUrl?: string;
-  createdAt: any;
+  createdAt: { seconds: number; nanoseconds: number };
 }
 
 interface ReviewListProps {

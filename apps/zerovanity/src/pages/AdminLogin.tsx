@@ -29,7 +29,7 @@ export default function AdminLogin() {
         throw error;
       }
       navigate(from, { replace: true });
-    } catch (err: any) {
+    } catch (err: unknown) {
       setError(err.message || "Error al iniciar sesión");
     } finally {
       setLoading(false);

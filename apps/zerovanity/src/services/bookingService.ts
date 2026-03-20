@@ -7,9 +7,9 @@ export const BookingService = {
 
       if (error) throw error;
       return { success: true };
-    } catch (error: any) {
+    } catch (error: unknown) {
       console.error("Error deleting booking:", error);
-      return { success: false, error: error.message };
+      return { success: false, error: error instanceof Error ? error.message : "Unknown error" };
     }
   },
 
@@ -25,9 +25,9 @@ export const BookingService = {
 
       if (error) throw error;
       return { success: true };
-    } catch (error: any) {
+    } catch (error: unknown) {
       console.error("Error updating status:", error);
-      return { success: false, error: error.message };
+      return { success: false, error: error instanceof Error ? error.message : "Unknown error" };
     }
   },
 
@@ -42,7 +42,7 @@ export const BookingService = {
       const day = String(data.date.getDate()).padStart(2, "0");
       const formattedDate = `${year}-${month}-${day}`;
 
-      const payload: any = {
+      const payload: Record<string, string> = {
         date: formattedDate,
         time: data.time,
       };
@@ -59,9 +59,9 @@ export const BookingService = {
 
       if (error) throw error;
       return { success: true };
-    } catch (error: any) {
+    } catch (error: unknown) {
       console.error("Error updating booking:", error);
-      return { success: false, error: error.message };
+      return { success: false, error: error instanceof Error ? error.message : "Unknown error" };
     }
   },
 
