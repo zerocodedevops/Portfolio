@@ -32,18 +32,27 @@
         "../ecommerce-shop/*"
       ],
       "@analytics/*": [
-        "../analytics-dashboard/*"
+        "../analytics/*"
       ],
       "@shipping-service/*": [
-        "../shipping-service/src/*"
+        "../zerodelay/src/*"
       ],
       "@home-renovation/*": [
-        "../home-renovation/*"
+        "../zero-chaos/*"
+      ],
+      "@zerodelay/*": [
+        "../zerodelay/src/*"
+      ],
+      "@zero-chaos/*": [
+        "../zero-chaos/*"
+      ],
+      "@devops-shop/*": [
+        "../devops-shop/*"
       ],
       "@salon/*": [
         "../zerovanity/src/*"
       ]
-    }
+    },
   },
   "include": [
     "src",
@@ -53,14 +62,14 @@
   "exclude": [
     "node_modules",
     "dist",
-    "../home-renovation/app/routes.ts",
-    "../home-renovation/react-router.config.ts",
-    "../home-renovation/vite.config.ts",
-    "../ecommerce-shop/vite.config.ts",
-    "../shipping-service/vite.config.ts",
-    "../ecommerce-shop/node_modules",
-    "../shipping-service/node_modules",
-    "../shipping-service/dist"
+    "../zero-chaos/app/routes.ts",
+    "../zero-chaos/react-router.config.ts",
+    "../zero-chaos/vite.config.ts",
+    "../devops-shop/vite.config.ts",
+    "../zerodelay/vite.config.ts",
+    "../devops-shop/node_modules",
+    "../zerodelay/node_modules",
+    "../zerodelay/dist"
   ],
   "references": [
     {

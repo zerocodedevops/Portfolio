@@ -1,0 +1,36 @@
+import fs from "node:fs";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
+import sharp from "sharp";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+const ASSETS_DIR = path.resolve(__dirname, "../apps/zerovanity/src/assets");
+
+async function processDirectory(directory: string): Promise<void> {
+  const files = fs.readdirSync(directory);
+
+  for (const file of files) {
+    const fullPath = path.join(directory, file);
+    const stat = fs.statSync(fullPath);
+
+    if (stat.isDirectory()) {
+      await processDirectory(fullPath);
+    } else if (/\.(png|jpg|jpeg)$/i.test(file)) {
+      const webpPath = fullPath.replace(/\.(png|jpg|jpeg)$/i, ".webp");
+      console.log(`Converting: ${file} -> ${path.basename(webpPath)}`);
+
+      try {
+        await sharp(fullPath).webp({ quality: 85 }).toFile(webpPath);
+      } catch (err) {
+        console.error(`Error converting ${file}:`, err);
+      }
+    }
+  }
+}
+
+console.log(`Scanning directory: ${ASSETS_DIR}`);
+processDirectory(ASSETS_DIR).then(() => {
+  console.log("Image optimization complete.");
+});

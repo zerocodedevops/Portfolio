@@ -1,4 +1,5 @@
 import { lazy } from "react";
+import { Route, Routes } from "react-router-dom";
 
 const CryptoDashboard = lazy(() =>
   import("./pages/CryptoDashboard").then((m) => ({
@@ -6,9 +7,10 @@ const CryptoDashboard = lazy(() =>
   })),
 );
 
-export const cryptoRoutes = [
-  {
-    path: "/proyectos/crypto",
-    element: <CryptoDashboard />,
-  },
-];
+export default function CryptoRoutes() {
+  return (
+    <Routes>
+      <Route path="/" element={<CryptoDashboard />} />
+    </Routes>
+  );
+}

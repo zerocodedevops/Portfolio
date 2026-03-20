@@ -5,253 +5,172 @@ import { Github, Linkedin, Mail, Terminal } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { TypeAnimation } from 'react-type-animation';
 import { trackEvent } from '@/lib/analytics';
-
-const socialLinks = [
-  // eslint-disable-next-line
-  { icon: Github, href: 'https://github.com/zerocodedevops', label: 'GitHub' },
-  // eslint-disable-next-line
-  {
-    icon: Linkedin,
-    href: 'https://www.linkedin.com/in/zerocode-devops',
-    label: 'LinkedIn',
-  },
-  { icon: Mail, href: 'mailto:zerocode.devops@gmail.com', label: 'Email' },
-];
+import { Button } from '@/components/ui';
+import { fadeInUp, staggerContainer } from '@/hooks/useScrollAnimation';
 
 export function Hero() {
   const { t } = useTranslation();
 
-  const scrollToSection = (id: string) => {
-    const element = document.querySelector(id);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
+  const handleSocialClick = (platform: string) => {
+    trackEvent('Social', 'Click', platform);
   };
+
+  const socialLinks = [
+    {
+      name: 'GitHub',
+      icon: <Github className="w-5 h-5" />,
+      url: 'https://github.com/zerocodedevops',
+      color: 'hover:text-white hover:bg-dark-800',
+    },
+    {
+      name: 'LinkedIn',
+      icon: <Linkedin className="w-5 h-5" />,
+      url: 'https://www.linkedin.com/in/zerocode-devops',
+      color: 'hover:text-white hover:bg-blue-600',
+    },
+    {
+      name: 'Email',
+      icon: <Mail className="w-5 h-5" />,
+      url: 'mailto:admin@zerocode-devops.com',
+      color: 'hover:text-white hover:bg-primary-500',
+    },
+  ];
 
   return (
     <section
-      id="hero"
-      className="relative flex items-start overflow-hidden pt-32 pb-20"
-      data-testid="hero-section"
+      id="home"
+      className="relative min-h-screen flex items-center pt-20 overflow-hidden"
     >
-      {/* Background Elements (Simplified from reference without Particles) */}
-      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary-500/20 rounded-full blur-[128px] pointer-events-none" />
-      <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-accent-500/20 rounded-full blur-[128px] pointer-events-none" />
+      {/* Background with patterns */}
+      <div className="absolute inset-0 z-0">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(17,24,39,1),rgba(3,7,18,1))]" />
+        <div className="absolute top-0 left-0 w-full h-full bg-[url('/grid.svg')] bg-center [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)] opacity-20" />
 
-      {/* Grid Pattern */}
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(6,182,212,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(6,182,212,0.03)_1px,transparent_1px)] bg-[size:60px_60px] [mask-image:radial-gradient(ellipse_60%_60%_at_50%_50%,black_40%,transparent_100%)]" />
+        {/* Animated Orbs */}
+        <div className="absolute top-1/4 -left-20 w-80 h-80 bg-primary-500/10 rounded-full blur-[100px] animate-pulse" />
+        <div className="absolute bottom-1/4 -right-20 w-80 h-80 bg-accent-500/10 rounded-full blur-[100px] animate-pulse" style={{ animationDelay: '2s' }} />
+      </div>
 
-      <div className="container-custom relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Left Content */}
+      <div className="container-custom relative z-10 w-full">
+        <motion.div
+          variants={staggerContainer}
+          initial="hidden"
+          animate="visible"
+          className="max-w-4xl mx-auto text-center"
+        >
+          {/* Badge */}
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, ease: 'easeOut' }}
+            variants={fadeInUp}
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-dark-800/50 border border-dark-700/50 text-dark-300 text-sm font-medium mb-8 backdrop-blur-sm"
           >
-            {/* Status Badge */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2 }}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-green-500/10 border border-green-500/20 text-green-400 text-sm font-medium mb-8"
-            >
-              <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75" />
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500" />
-              </span>
-              {t('hero.available', 'Disponible para nuevos proyectos')}
-            </motion.div>
+            <span className="relative flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75" />
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500" />
+            </span>
+            {t('hero.badge')}
+          </motion.div>
 
-            {/* Main Heading */}
-            <motion.h1
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3 }}
-              className="font-outfit font-bold text-4xl sm:text-5xl lg:text-6xl text-white leading-tight mb-6"
-            >
-              Diseño Web para{' '}
-              <span className="text-gradient">Pymes y Autónomos</span> en Madrid
-            </motion.h1>
+          {/* Title */}
+          <motion.h1
+            variants={fadeInUp}
+            className="font-outfit font-bold text-5xl md:text-7xl lg:text-8xl text-white mb-8 tracking-tight"
+          >
+            {t('hero.title1')}{' '}
+            <span className="text-gradient inline-block">
+              {t('hero.title2')}
+            </span>
+          </motion.h1>
 
-            {/* Typing Animation */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.4 }}
-              className="flex items-center gap-3 text-xl md:text-2xl text-dark-400 mb-6"
-            >
-              <Terminal className="w-5 h-5 text-primary-400" />
+          {/* Subtitle with Type Animation */}
+          <motion.div
+            variants={fadeInUp}
+            className="text-xl md:text-2xl text-dark-300 mb-12 font-medium flex flex-col sm:flex-row items-center justify-center gap-2"
+          >
+            <span className="opacity-80">{t('hero.im')}</span>
+            <div className="h-8 md:h-9 text-white font-bold bg-dark-800/30 px-4 py-1 rounded-lg border border-dark-700/50">
               <TypeAnimation
                 sequence={[
-                  'Más Clientes',
+                  'Senior FullStack Engineer',
                   2000,
-                  'Webs que Venden',
+                  'AI Solutions Architect',
                   2000,
-                  'Diseño con IA',
+                  'DevOps Specialist',
                   2000,
-                  'Desarrollo Ágil',
+                  'Creative Developer',
                   2000,
                 ]}
                 wrapper="span"
                 speed={50}
                 repeat={Infinity}
-                className="font-mono text-primary-300"
+                className="text-primary-400"
               />
-            </motion.div>
-
-            {/* Description */}
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.5 }}
-              className="text-dark-400 text-lg leading-relaxed mb-12 max-w-lg"
-            >
-              Ayudo a pequeños negocios a digitalizarse con webs profesionales,
-              creadas desde cero con Inteligencia Artificial para maximizar la
-              calidad y velocidad.
-              <br />
-              <span className="text-white font-medium">
-                Diseño de alto impacto
-              </span>{' '}
-              en{' '}
-              <span className="text-accent-400 font-medium">tiempo récord</span>{' '}
-              gracias a un proceso AI-First.
-            </motion.p>
-
-            {/* CTA Buttons & Social Links */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.6 }}
-              className="flex flex-wrap items-center gap-4 mb-2 lg:mb-20 lg:ml-[78px]"
-            >
-              <motion.button
-                onClick={() => {
-                  scrollToSection('#contact');
-                  trackEvent('Hero', 'Click', 'Contact');
-                }}
-                className="px-8 py-3.5 bg-primary-500 text-white font-bold rounded-full hover:bg-primary-400 transition-colors duration-200 shadow-glow hover:shadow-lg"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <span className="flex items-center gap-2">
-                  <Mail className="w-5 h-5" />
-                  {t('hero.cta.contact', 'Contáctame')}
-                </span>
-              </motion.button>
-
-              {/* Social Links */}
-              <div className="flex items-center gap-3">
-                {socialLinks.map((social, index) => (
-                  <motion.a
-                    key={social.label}
-                    href={social.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="p-3 rounded-xl bg-dark-800/50 border border-dark-700 text-dark-400 hover:text-primary-400 hover:border-primary-500/50 hover:shadow-glow transition-all duration-300"
-                    whileHover={{ y: -3, scale: 1.1 }}
-                    whileTap={{ scale: 0.95 }}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.7 + index * 0.1 }}
-                    aria-label={social.label}
-                  >
-                    <social.icon className="w-5 h-5" />
-                  </motion.a>
-                ))}
-              </div>
-            </motion.div>
-          </motion.div>
-
-          {/* Right Content - Code Visual */}
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-            className=""
-          >
-            <div className="relative">
-              {/* Glow Effect */}
-              <div className="absolute inset-0 bg-gradient-to-br from-primary-500/30 to-accent-500/30 rounded-2xl blur-3xl opacity-30" />
-
-              {/* Code Window */}
-              <div className="relative bg-dark-900/80 backdrop-blur-xl border border-dark-700 rounded-2xl overflow-hidden shadow-2xl">
-                {/* Window Header */}
-                <div className="flex items-center gap-2 px-4 py-3 bg-dark-800/50 border-b border-dark-700">
-                  <div className="w-3 h-3 rounded-full bg-red-500/80" />
-                  <div className="w-3 h-3 rounded-full bg-yellow-500/80" />
-                  <div className="w-3 h-3 rounded-full bg-green-500/80" />
-                  <span className="ml-2 text-dark-500 text-sm font-mono">
-                    developer.js
-                  </span>
-                </div>
-
-                {/* Code Content */}
-                <div className="p-6 font-mono text-sm leading-loose">
-                  <div className="flex gap-4">
-                    <span className="text-dark-600 select-none">1</span>
-                    <span>
-                      <span className="text-accent-400">const</span>{' '}
-                      <span className="text-primary-300">developer</span>{' '}
-                      <span className="text-white">=</span> {'{'}
-                    </span>
-                  </div>
-                  <div className="flex gap-4">
-                    <span className="text-dark-600 select-none">2</span>
-                    <span className="pl-6">
-                      <span className="text-primary-300">name</span>
-                      <span className="text-white">:</span>{' '}
-                      <span className="text-green-400">"David G."</span>
-                      <span className="text-white">,</span>
-                    </span>
-                  </div>
-                  <div className="flex gap-4">
-                    <span className="text-dark-600 select-none">3</span>
-                    <span className="pl-6">
-                      <span className="text-primary-300">role</span>
-                      <span className="text-white">:</span>{' '}
-                      <span className="text-green-400">
-                        "Fullstack Developer"
-                      </span>
-                      <span className="text-white">,</span>
-                    </span>
-                  </div>
-                  <div className="flex gap-4">
-                    <span className="text-dark-600 select-none">4</span>
-                    <span className="pl-6">
-                      <span className="text-primary-300">approach</span>
-                      <span className="text-white">:</span>{' '}
-                      <span className="text-green-400">"AI-First"</span>
-                      <span className="text-white">,</span>
-                    </span>
-                  </div>
-                  <div className="flex gap-4">
-                    <span className="text-dark-600 select-none">5</span>
-                    <span className="pl-6">
-                      <span className="text-primary-300">passion</span>
-                      <span className="text-white">:</span>{' '}
-                      <span className="text-yellow-400">Infinity</span>
-                      <span className="text-white">,</span>
-                    </span>
-                  </div>
-                  <div className="flex gap-4">
-                    <span className="text-dark-600 select-none">6</span>
-                    <span className="pl-6">
-                      <span className="text-primary-300">available</span>
-                      <span className="text-white">:</span>{' '}
-                      <span className="text-accent-400">true</span>
-                    </span>
-                  </div>
-                  <div className="flex gap-4">
-                    <span className="text-dark-600 select-none">7</span>
-                    <span>{'}'}</span>
-                  </div>
-                </div>
-              </div>
             </div>
           </motion.div>
-        </div>
+
+          {/* CTAs */}
+          <motion.div
+            variants={fadeInUp}
+            className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16"
+          >
+            <Button
+              href="#contact"
+              variant="primary"
+              size="lg"
+              className="w-full sm:w-auto min-w-[200px]"
+            >
+              {t('hero.cta.primary')}
+            </Button>
+            <Button
+              href="#projects"
+              variant="outline"
+              size="lg"
+              className="w-full sm:w-auto min-w-[200px]"
+            >
+              {t('hero.cta.secondary')}
+            </Button>
+          </motion.div>
+
+          {/* Social Links */}
+          <motion.div
+            variants={fadeInUp}
+            className="flex items-center justify-center gap-6"
+          >
+            {socialLinks.map((link) => (
+              <a
+                key={link.name}
+                href={link.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => handleSocialClick(link.name)}
+                className={`p-3 rounded-xl border border-dark-700/50 bg-dark-900/30 text-dark-400 transition-all ${link.color} hover:scale-110`}
+                title={link.name}
+              >
+                {link.icon}
+              </a>
+            ))}
+            <div className="w-px h-8 bg-dark-700 mx-2" />
+            <a
+              href="#about"
+              className="flex items-center gap-2 text-dark-400 hover:text-primary-400 text-sm font-medium transition-colors"
+            >
+              <Terminal className="w-4 h-4" />
+              <span>Scroll to explore</span>
+            </a>
+          </motion.div>
+        </motion.div>
+      </div>
+
+      {/* Decorative Wave Bottom */}
+      <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-none z-10 rotate-180">
+        <svg
+          data-name="Layer 1"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1200 120"
+          preserveAspectRatio="none"
+          className="relative block w-full h-[60px] fill-dark-950"
+        >
+          <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"></path>
+        </svg>
       </div>
     </section>
   );

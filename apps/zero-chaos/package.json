@@ -1,0 +1,46 @@
+{
+  "name": "zero-chaos",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "react-router dev",
+    "build": "react-router build",
+    "start": "react-router-serve ./build/server/index.js",
+    "typecheck": "react-router typegen && tsc",
+    "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "format": "prettier --write \"src/**/*.{ts,tsx,css}\"",
+    "deploy": "npm run build && firebase deploy --only hosting:reformas"
+  },
+  "dependencies": {
+    "@hookform/resolvers": "^5.2.2",
+    "@react-router/node": "^7.1.0",
+    "@react-router/serve": "^7.1.0",
+    "isbot": "^5.1.17",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-hook-form": "^7.51.5",
+    "react-router": "^7.1.0",
+    "zod": "^3.2.8"
+  },
+  "devDependencies": {
+    "@react-router/dev": "^7.1.0",
+    "@tailwindcss/postcss": "^4.0.0",
+    "@types/node": "^22.0.0",
+    "@types/react": "^18.3.0",
+    "@types/react-dom": "^18.3.0",
+    "@vitejs/plugin-react": "^5.1.1",
+    "autoprefixer": "^10.4.27",
+    "eslint": "^9.4.0",
+    "eslint-plugin-react": "^7.34.1",
+    "eslint-plugin-react-hooks": "^4.6.2",
+    "eslint-plugin-react-refresh": "^0.4.7",
+    "globals": "^15.3.0",
+    "postcss": "^8.5.8",
+    "tailwindcss": "^4.0.0",
+    "typescript": "^5.9.3",
+    "vite": "^7.2.4",
+    "vitest": "^4.0.18",
+    "vite-tsconfig-paths": "^5.1.4"
+  }
+}
