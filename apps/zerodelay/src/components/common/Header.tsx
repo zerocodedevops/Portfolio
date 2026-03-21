@@ -29,10 +29,10 @@ const Header = () => {
   }, []);
 
   const navLinks = [
-    { to: '/proyectos/zerodelay', label: 'QUIENES SOMOS' },
-    { to: '/proyectos/zerodelay/servicios', label: 'SERVICIOS' },
-    { to: '/proyectos/zerodelay/blog', label: 'BLOG' },
-    { to: '/proyectos/zerodelay/contacto', label: 'CONTACTO' },
+    { to: '/', label: 'QUIENES SOMOS' },
+    { to: '/servicios', label: 'SERVICIOS' },
+    { to: '/blog', label: 'BLOG' },
+    { to: '/contacto', label: 'CONTACTO' },
   ];
 
   const handleMouseOver = (
@@ -106,7 +106,7 @@ const Header = () => {
             {/* Right - Social + CTA */}
             <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
               <Link
-                to="/proyectos/zerodelay/contacto"
+                to="/contacto"
                 style={{
                   padding: '0.5rem 1.5rem',
                   background:
@@ -398,7 +398,7 @@ const Header = () => {
         >
           {/* Logo */}
           <Link
-            to="/proyectos/zerodelay"
+            to="/"
             style={{
               display: 'flex',
               alignItems: 'center',
@@ -488,7 +488,7 @@ const Header = () => {
                 91 262 27 12
               </a>
               <a
-                href="mailto:info@madrimudanzas.com"
+                href="mailto:info@zerodelay.es"
                 style={{
                   fontSize: '0.875rem',
                   color: '#2196F3',
@@ -496,7 +496,7 @@ const Header = () => {
                   marginTop: '0.25rem',
                 }}
               >
-                ✉ info@madrimudanzas.com
+                ✉ info@zerodelay.es
               </a>
             </div>
           )}
@@ -580,7 +580,7 @@ const Header = () => {
               </Link>
             ))}
             <Link
-              to="/proyectos/zerodelay/contacto"
+              to="/contacto"
               onClick={() => setIsMobileMenuOpen(false)}
               style={{
                 padding: '0.75rem 1.5rem',

@@ -6,8 +6,8 @@ export default defineConfig({
   plugins: [react(), tailwindcss()],
   base: "/devops-shop/",
   server: {
-    port: 3000,
-    open: true,
+    port: 5175,
+    strictPort: true,
   },
   build: {
     outDir: "dist",

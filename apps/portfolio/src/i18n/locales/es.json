@@ -8,17 +8,18 @@
     "contact": "Contacto"
   },
   "hero": {
-    "available": "Disponible para nuevos proyectos",
-    "greeting": "Hola, soy David G.",
-    "name": "(ZeroCode_DevOps)",
-    "role": "Desarrollador Autodidacta",
-    "aiPowered": "Potenciado por IA",
-    "description1": "Sin formación tradicional, pero con pasión infinita.",
-    "description2": "Construyo proyectos reales con la IA como mi aliada.",
-    "description3": "Me involucro al 200% en cada proyecto.",
+    "badge": "Disponible para nuevos proyectos",
+    "title1": "Diseño Web para Pymes y",
+    "title2": "Autónomos en Madrid",
+    "description": "Ayudo a pequeños negocios a digitalizarse con webs profesionales, creadas desde cero con Inteligencia Artificial para maximizar la calidad y velocidad. Diseño de alto impacto en tiempo récord gracias a un proceso AI-First.",
+    "typing": {
+      "clients": ">_ Más Clientes",
+      "webs": ">_ Webs que Venden",
+      "ai": ">_ IA que Optimiza"
+    },
     "cta": {
-      "contact": "Contáctame",
-      "github": "Ver GitHub"
+      "primary": "Contáctame",
+      "secondary": "Ver Proyectos"
     }
   },
   "featuredProject": {

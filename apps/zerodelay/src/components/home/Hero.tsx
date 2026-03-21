@@ -32,9 +32,9 @@ const Hero = () => {
             letterSpacing: '-0.02em',
           }}
         >
-          mudanzas
+          <span style={{ color: '#2196F3', fontWeight: '800' }}>Zero Delay</span>
           <br />
-          <span style={{ fontWeight: '800' }}>profesionales</span>
+          mudanzas <span style={{ fontWeight: '800' }}>profesionales</span>
         </h1>
 
         {/* Badges */}
@@ -101,7 +101,7 @@ const Hero = () => {
           }}
         >
           <Link
-            to="/proyectos/zerodelay/contacto"
+            to="/contacto"
             style={{
               padding: '1.25rem 3rem',
               background: 'linear-gradient(135deg, #4CAF50 0%, #45A049 100%)',
@@ -128,7 +128,7 @@ const Hero = () => {
             Pide Presupuesto
           </Link>
           <Link
-            to="/proyectos/zerodelay/servicios"
+            to="/servicios"
             style={{
               padding: '1.25rem 3rem',
               backgroundColor: 'transparent',

@@ -141,10 +141,10 @@ const Footer = () => {
               <li style={{ fontSize: '0.875rem', opacity: 0.9 }}>
                 📞{' '}
                 <a
-                  href="tel:911234567"
+                  href="tel:912622712"
                   style={{ color: '#FFFFFF', textDecoration: 'none' }}
                 >
-                  91 123 45 67
+                  91 262 27 12
                 </a>
               </li>
               <li style={{ fontSize: '0.875rem', opacity: 0.9 }}>

@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 const Services = () => {
   const services = [
     {
@@ -123,7 +124,7 @@ const Services = () => {
             }}
           >
             Soluciones completas de mudanza adaptadas a tus necesidades.
-            Experiencia, profesionalid y cero demoras.
+            Experiencia, profesionalidad y cero demoras.
           </p>
         </div>
       </section>
@@ -228,8 +229,8 @@ const Services = () => {
                 </ul>
 
                 {/* CTA Button */}
-                <a
-                  href="/proyectos/zerodelay/contacto"
+                <Link
+                  to="/contacto"
                   style={{
                     display: 'inline-block',
                     padding: '1rem 2rem',
@@ -253,7 +254,7 @@ const Services = () => {
                   }}
                 >
                   Solicitar Presupuesto
-                </a>
+                </Link>
               </div>
             </div>
           </div>
@@ -289,8 +290,8 @@ const Services = () => {
             Ofrecemos soluciones personalizadas para cualquier tipo de mudanza.
             Contáctanos y cuéntanos tu caso.
           </p>
-          <a
-            href="/proyectos/zerodelay/contacto"
+          <Link
+            to="/contacto"
             style={{
               display: 'inline-block',
               padding: '1rem 2.5rem',
@@ -310,7 +311,7 @@ const Services = () => {
             }
           >
             Contactar Ahora
-          </a>
+          </Link>
         </div>
       </section>
     </div>

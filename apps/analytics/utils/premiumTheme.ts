@@ -6,7 +6,7 @@ export const premiumColors = {
   brand: {
     primary: "#B6A1E5", // Lavender
     secondary: "#A8C69F", // Mint/Sage
-    tertiary: "#EBA896", // Peach/Coral
+    tertiary: "#EBA896", // Peach
     quaternary: "#F2D091", // Muted Yellow
   },
 
@@ -22,7 +22,7 @@ export const premiumColors = {
   accent: {
     lavender: "#B6A1E5",
     sage: "#A8C69F",
-    coral: "#EBA896",
+    peach: "#EBA896",
     amber: "#F2D091",
     white: "#FFFFFF",
     grey: "#8E8E93",

@@ -8,6 +8,10 @@
     "contact": "Contact"
   },
   "hero": {
+    "badge": "Available for new projects",
+    "title1": "Digital Strategy with",
+    "title2": "Extraordinary Passion",
+    "im": "Hi, I'm David G., your",
     "available": "Available for new projects",
     "greeting": "Hi, I'm David G.",
     "name": "(ZeroCode_DevOps)",
@@ -17,6 +21,8 @@
     "description2": "I build real projects with AI as my ally.",
     "description3": "I commit 200% to every project.",
     "cta": {
+      "primary": "Contact Me",
+      "secondary": "View Projects",
       "contact": "Contact Me",
       "github": "View GitHub"
     }

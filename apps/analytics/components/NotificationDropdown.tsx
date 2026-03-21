@@ -61,7 +61,7 @@ export function NotificationDropdown({
       case "warning":
         return <TrendingUp className="w-3 h-3 text-peach-400" />;
       case "alert":
-        return <AlertTriangle className="w-3 h-3 text-coral-400" />;
+        return <AlertTriangle className="w-3 h-3 text-peach-400" />;
       default:
         return <Info className="w-3 h-3 text-lavender-400" />;
     }

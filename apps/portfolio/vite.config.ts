@@ -9,6 +9,24 @@ const dirname = path.dirname(fileURLToPath(import.meta.url));
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react(), tailwindcss()],
+  server: {
+    port: 5173,
+    strictPort: true,
+    proxy: {
+      '/zerodelay': {
+        target: 'http://localhost:5174',
+        changeOrigin: true,
+      },
+      '/devops-shop': {
+        target: 'http://localhost:5175',
+        changeOrigin: true,
+      },
+      '/reformas': {
+        target: 'http://localhost:5176',
+        changeOrigin: true,
+      },
+    },
+  },
   resolve: {
     alias: {
       '@': path.resolve(dirname, './src'),

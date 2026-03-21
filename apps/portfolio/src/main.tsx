@@ -7,7 +7,7 @@ import { Router } from './app/router';
 import { ErrorBoundary } from './components/ErrorBoundary';
 // import { Toaster } from 'sileo';
 // import { initGA, logPageView } from './lib/analytics';
-// import './i18n/config';
+import './i18n/config';
 
 const rootElement = document.getElementById('root');
 if (!rootElement) throw new Error('Root element not found');

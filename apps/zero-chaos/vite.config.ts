@@ -7,6 +7,7 @@ export default defineConfig({
   plugins: [
     tailwindcss() as unknown as PluginOption,
     reactRouter() as unknown as PluginOption,
+    // tsconfigPaths() is causing warnings in Vite 6, but we'll keep it for now if needed
     tsconfigPaths() as unknown as PluginOption,
   ],
   base: "/reformas/",
@@ -14,7 +15,7 @@ export default defineConfig({
     dedupe: ["react", "react-dom"],
   },
   server: {
-    port: 5174,
+    port: 5176,
     host: "127.0.0.1",
     strictPort: true,
   },

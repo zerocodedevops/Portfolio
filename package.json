@@ -6,8 +6,8 @@
     "apps/*"
   ],
   "scripts": {
-    "dev": "vite",
-    "dev:all": "turbo run dev",
+    "dev": "turbo run dev",
+    "dev:portfolio": "turbo run dev --filter=portfolio-app",
     "build": "npm run build:all && npm run copy:all",
     "build:all": "turbo run build",
     "copy:all": "npx shx rm -rf dist && npx shx mkdir -p dist/zerodelay dist/devops-shop dist/reformas && npx shx cp -r apps/portfolio/dist/* dist/ && npx shx cp -r apps/zerodelay/dist/* dist/zerodelay/ && npx shx cp -r apps/devops-shop/dist/* dist/devops-shop/ && npx shx cp -r apps/zero-chaos/build/client/* dist/reformas/",

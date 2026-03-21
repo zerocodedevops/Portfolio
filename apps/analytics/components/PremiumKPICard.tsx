@@ -43,7 +43,7 @@ export function PremiumKPICard({
 
   const getTrendColor = () => {
     if (kpi.trend === "up") return premiumColors.brand.secondary; // Muted Sage
-    if (kpi.trend === "down") return premiumColors.brand.tertiary; // Peach/Coral
+    if (kpi.trend === "down") return premiumColors.brand.tertiary; // Peach
     return premiumColors.accent.lavender;
   };
 

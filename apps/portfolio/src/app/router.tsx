@@ -21,6 +21,30 @@ const router = createBrowserRouter(
       ),
     },
     {
+      path: '/desarrollo-web-pymes-madrid',
+      element: (
+        <Suspense fallback={<PageLoader text="Cargando Servicios..." />}>
+          <Home />
+        </Suspense>
+      ),
+    },
+    {
+      path: '/disenador-web-freelance-madrid',
+      element: (
+        <Suspense fallback={<PageLoader text="Sobre Mí..." />}>
+          <Home />
+        </Suspense>
+      ),
+    },
+    {
+      path: '/precios-paginas-web',
+      element: (
+        <Suspense fallback={<PageLoader text="Consultando Precios..." />}>
+          <Home />
+        </Suspense>
+      ),
+    },
+    {
       path: '/proyectos/zerovanity/*',
       element: (
         <Suspense fallback={<PageLoader text="Loading Salon App..." />}>
