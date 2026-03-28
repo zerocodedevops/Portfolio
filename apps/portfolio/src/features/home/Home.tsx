@@ -15,14 +15,12 @@ export default function Home() {
   const { pathname } = useLocation();
 
   useEffect(() => {
-    // Logic to scroll to sections based on SEO paths
-    if (pathname === '/desarrollo-web-pymes-madrid') {
-      document.getElementById('skills')?.scrollIntoView({ behavior: 'smooth' });
-    } else if (pathname === '/disenador-web-freelance-madrid') {
+    // Logic to scroll to sections based on paths
+    if (pathname === '/disenador-web-freelance-madrid') {
       document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' });
     } else if (pathname === '/precios-paginas-web') {
       document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
-    } else if (pathname === '/') {
+    } else {
       globalThis.scrollTo({ top: 0, behavior: 'smooth' });
     }
   }, [pathname]);

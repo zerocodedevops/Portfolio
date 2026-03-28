@@ -3,6 +3,8 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { PageLoader } from '@/components/ui/PageLoader';
 
 const Home = lazy(() => import('@/features/home/Home'));
+const PymesService = lazy(() => import('@/features/services/PymesService'));
+const Pricing = lazy(() => import('@/features/pricing/Pricing'));
 const SalonApp = lazy(() => import('@zerovanity/routes'));
 const CryptoApp = lazy(() => import('@crypto/routes'));
 const EcommerceApp = lazy(() => import('@devops-shop/src/routes'));
@@ -15,7 +17,15 @@ const router = createBrowserRouter(
     {
       path: '/',
       element: (
-        <Suspense fallback={<PageLoader text="Loading Home..." />}>
+        <Suspense fallback={<PageLoader text="Cargando..." />}>
+          <PymesService />
+        </Suspense>
+      ),
+    },
+    {
+      path: '/portfolio',
+      element: (
+        <Suspense fallback={<PageLoader text="Cargando Portfolio..." />}>
           <Home />
         </Suspense>
       ),
@@ -24,7 +34,7 @@ const router = createBrowserRouter(
       path: '/desarrollo-web-pymes-madrid',
       element: (
         <Suspense fallback={<PageLoader text="Cargando Servicios..." />}>
-          <Home />
+          <PymesService />
         </Suspense>
       ),
     },
@@ -40,7 +50,7 @@ const router = createBrowserRouter(
       path: '/precios-paginas-web',
       element: (
         <Suspense fallback={<PageLoader text="Consultando Precios..." />}>
-          <Home />
+          <Pricing />
         </Suspense>
       ),
     },
