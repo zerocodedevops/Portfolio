@@ -114,7 +114,7 @@ export function Contact() {
   };
 
   return (
-    <section id="contact" className="section relative">
+    <section id="contact" className="relative pb-16 lg:pb-24 pt-8 lg:pt-12">
       {/* Background decoration */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute bottom-0 left-1/4 w-1/2 h-1/2 bg-gradient-radial from-primary-500/5 to-transparent blur-3xl" />

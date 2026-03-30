@@ -8,12 +8,12 @@ export default function Pricing() {
   return (
     <Layout>
       <Seo
-        title="Precios y Packs de Páginas Web"
-        description="¿Cuánto cuesta una web? Descubre nuestros packs para autónomos y pymes. Transparencia total y calidad profesional. Desde 700€."
-        keywords="precio diseño web, tarifas web autonomos, presupuesto web pyme"
+        title="Precios de Diseño Web para Pymes | Madrid"
+        description="Packs de páginas web para autónomos y pymes en Madrid. Funcionales, sin sorpresas y enfocadas a conseguir clientes. Presupuesto desde 700€."
+        keywords="precios diseño web madrid, web pymes madrid, presupuesto autonomos web"
       />
 
-      <div className="pt-32 pb-40">
+      <div className="pt-16 pb-40">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -33,40 +33,61 @@ export default function Pricing() {
           <div className="grid md:grid-cols-2 gap-8 mb-32 max-w-5xl mx-auto">
             <PricingCard
               icon={User}
-              title="Pack Básico"
+              title="Web Esencial"
               price="700€"
-              originalPrice="1.760€"
-              description="Todo lo esencial para una presencia web profesional y legal."
+              originalPrice="1.200€"
+              featured={true}
+              description="La tarjeta de visita digital perfecta para arrancar tu presencia local con fuerza."
               features={[
-                'Página de Inicio',
-                'Servicios',
-                'Contacto',
-                'Ubicación y Horarios',
-                'Diseño "Responsive"',
-                'Certificado SSL (HTTPS)',
-                'Hosting (1 año)',
-                'Dominio (1 año)',
-                'Soporte Técnico Averías (1 año)',
-                'RGPD Completo (4 Productos)',
+                'Diseño de Inicio, Servicios y Contacto',
+                'Botón directo a WhatsApp / Llamada',
+                'Mapa de Google (SEO Local básico)',
+                '100% Adaptada a Móviles',
+                'Textos Legales y Cookies (RGPD)',
+                'Dominio y Hosting rápido (1 año)',
+                'Certificado de Seguridad (Candado SSL)',
               ]}
+              ctaText="Me interesa esta opción"
             />
             <PricingCard
               icon={Building2}
-              title="Pack Silver"
+              title="Web Profesional"
               price="1.400€"
-              originalPrice="2.940€"
-              featured={true}
-              description="Web completa optimizada con diseño profesional y SEO Google."
+              originalPrice="2.500€"
+              description="La máquina de captar clientes para tu negocio local. Optimizada para posicionar en Google en tu sector."
               features={[
-                'Todo del Pack Básico',
-                'Nuestro Equipo',
-                'Enlace a WhatsApp y RR.SS.',
-                'SEO Google',
-                'Optimización Velocidad',
-                'Email Corporativo',
-                'Actualización Mensual (1 año)',
+                'Todo lo incluido en la Web Esencial',
+                'Secciones extra: Equipo, Testimonios',
+                'SEO On-Page Avanzado (Más visibilidad)',
+                'Velocidad de carga relámpago (optimizada para Core Web Vitals)',
+                'Cuentas de Email Profesional (@empresa.es)',
+                'Soporte directo por teléfono (1 año)',
+                'Cambios y actualizaciones incluidas (1 año)',
               ]}
+              ctaText="Quiero esta web para captar clientes"
             />
+          </div>
+
+          {/* Bloque de inclusiones generales */}
+          <div className="max-w-4xl mx-auto mb-16">
+            <h2 className="text-2xl font-bold text-white mb-8 text-center">Todo lo que siempre está incluido</h2>
+            <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
+              <div className="p-6 bg-dark-900 border border-dark-800 rounded-2xl text-center">
+                <Check className="w-8 h-8 text-primary-500 mx-auto mb-3" />
+                <h4 className="text-white font-bold mb-2">Trato Cercano Local</h4>
+                <p className="text-sm text-dark-400">Si estás en Madrid, nos tomamos un café o llamamos directamente. Sin tickets ni esperas.</p>
+              </div>
+              <div className="p-6 bg-dark-900 border border-dark-800 rounded-2xl text-center">
+                <Check className="w-8 h-8 text-primary-500 mx-auto mb-3" />
+                <h4 className="text-white font-bold mb-2">Formación Básica</h4>
+                <p className="text-sm text-dark-400">Te enseño en un video cómo entrar a cambiar un texto o una foto tú mismo, sin depender de mí.</p>
+              </div>
+              <div className="p-6 bg-dark-900 border border-dark-800 rounded-2xl text-center">
+                <Check className="w-8 h-8 text-primary-500 mx-auto mb-3" />
+                <h4 className="text-white font-bold mb-2">Mantenimiento Inicial</h4>
+                <p className="text-sm text-dark-400">Pequeños cambios y ajustes técnicos cubiertos durante los primeros meses para tu total tranquilidad.</p>
+              </div>
+            </div>
           </div>
 
           <div className="max-w-4xl mx-auto bg-dark-900/30 border border-dark-800 p-10 rounded-3xl">
@@ -87,6 +108,8 @@ export default function Pricing() {
                   En ZeroCode dedicamos horas a cada proyecto para asegurar que
                   tu inversión sea rentable. No estás comprando "píxeles", estás
                   comprando una <strong>estrategia de negocio</strong>.
+                  <br /><br />
+                  <span className="text-xs opacity-70 italic">* Nota: El desarrollo de Tiendas Online (eCommerce) es un servicio opcional y se presupuesta de forma independiente según el catálogo de productos.</span>
                 </p>
               </div>
             </div>
@@ -119,6 +142,7 @@ function PricingCard({
   description,
   features,
   featured = false,
+  ctaText,
 }: any) {
   return (
     <motion.div
@@ -156,11 +180,19 @@ function PricingCard({
         ))}
       </ul>
 
-      <button
-        className={`w-full py-4 rounded-xl font-bold transition-all ${featured ? 'bg-primary-600 hover:bg-primary-500 text-white' : 'bg-dark-800 hover:bg-dark-700 text-white'}`}
-      >
-        Elegir este plan
-      </button>
+        <button
+          onClick={() => {
+            const el = document.getElementById('contact');
+            if (el) {
+              el.scrollIntoView({ behavior: 'smooth' });
+            } else {
+              globalThis.location.href = '/#contact';
+            }
+          }}
+          className={`w-full py-4 rounded-xl font-bold transition-all ${featured ? 'bg-primary-600 hover:bg-primary-500 text-white' : 'bg-dark-800 hover:bg-dark-700 text-white'}`}
+        >
+          {ctaText || 'Elegir este plan'}
+        </button>
     </motion.div>
   );
 }

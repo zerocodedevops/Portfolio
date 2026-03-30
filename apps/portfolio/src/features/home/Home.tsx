@@ -12,24 +12,24 @@ import { Skills } from '@/components/sections/Skills';
 import { staggerContainer } from '@/hooks/useScrollAnimation';
 
 export default function Home() {
-  const { pathname } = useLocation();
+  const { pathname, hash } = useLocation();
 
   useEffect(() => {
-    // Logic to scroll to sections based on paths
-    if (pathname === '/disenador-web-freelance-madrid') {
-      document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' });
-    } else if (pathname === '/precios-paginas-web') {
-      document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+    // Scroll to top on root path change, or to section if hash exists
+    if (hash) {
+      setTimeout(() => {
+        document.querySelector(hash)?.scrollIntoView({ behavior: 'smooth' });
+      }, 150);
     } else {
       globalThis.scrollTo({ top: 0, behavior: 'smooth' });
     }
-  }, [pathname]);
+  }, [pathname, hash]);
 
   return (
     <Layout>
       <Seo 
-        title="Diseño y Desarrollo de Productos Digitales (SaaS & Web Apps)" 
-        description="David G. - AI-First Fullstack Developer especializado en la creación de productos digitales de alta calidad a velocidad extrema usando Inteligencia Artificial." 
+        title="Diseñador Web Freelance en Madrid | Páginas para Pymes" 
+        description="Ayudo a pymes y autónomos en Madrid a conseguir más clientes mediante páginas web rápidas, optimizadas para Google y orientadas a ventas." 
       />
       <motion.div
         variants={staggerContainer}

@@ -7,8 +7,6 @@ import {
   Mail,
   Menu,
   MessageCircle,
-  Moon,
-  Sun,
   X,
 } from 'lucide-react';
 import { useEffect, useState } from 'react';
@@ -37,14 +35,8 @@ export function Navbar() {
   const { i18n } = useTranslation();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [isLightMode, setIsLightMode] = useState(() => {
-    // Check localStorage or default to dark
-    const saved = localStorage.getItem('theme');
-    return saved === 'light';
-  });
 
   const navLinks = [
-    { label: 'Servicios', href: '/desarrollo-web-pymes-madrid' },
     { label: 'Sobre Mí', href: '/disenador-web-freelance-madrid' },
     { label: 'Proyectos', href: '#projects' },
     { label: 'Blog', href: '#blog' },
@@ -61,21 +53,11 @@ export function Navbar() {
   }, []);
 
   useEffect(() => {
-    // Apply theme to document
-    if (isLightMode) {
-      document.documentElement.classList.remove('dark');
-      document.documentElement.classList.add('light');
-      localStorage.setItem('theme', 'light');
-    } else {
-      document.documentElement.classList.remove('light');
-      document.documentElement.classList.add('dark');
-      localStorage.setItem('theme', 'dark');
-    }
-  }, [isLightMode]);
-
-  const toggleTheme = () => {
-    setIsLightMode(!isLightMode);
-  };
+    // Force dark theme
+    document.documentElement.classList.remove('light');
+    document.documentElement.classList.add('dark');
+    localStorage.setItem('theme', 'dark');
+  }, []);
 
   const handleNavClick = (href: string) => {
     setIsMobileMenuOpen(false);
@@ -84,11 +66,7 @@ export function Navbar() {
       if (element) {
         element.scrollIntoView({ behavior: 'smooth' });
       } else {
-        navigate('/');
-        // Give time for the home page to load/scroll
-        setTimeout(() => {
-          document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' });
-        }, 100);
+        navigate('/disenador-web-freelance-madrid' + href);
       }
     } else {
       navigate(href);
@@ -101,8 +79,8 @@ export function Navbar() {
       className={cn(
         'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
         isScrolled
-          ? 'bg-dark-900/80 backdrop-blur-xl border-b border-dark-700/50 py-3'
-          : 'bg-transparent py-5',
+          ? 'bg-dark-900/80 backdrop-blur-xl border-b border-dark-700/50 py-[7px]'
+          : 'bg-transparent py-[15px]',
       )}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
@@ -173,27 +151,6 @@ export function Navbar() {
               ))}
             </div>
 
-            {/* Theme toggle */}
-            <motion.button
-              onClick={() => {
-                const newTheme = isLightMode ? 'dark' : 'light';
-                toggleTheme();
-                trackEvent('UI', 'toggle_theme', newTheme);
-              }}
-              className="p-2 text-dark-400 hover:text-primary-400 transition-colors rounded-lg hover:bg-dark-800/50"
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.95 }}
-              aria-label={
-                isLightMode ? 'Activar modo oscuro' : 'Activar modo claro'
-              }
-              title={isLightMode ? 'Modo Oscuro' : 'Modo Claro'}
-            >
-              {isLightMode ? (
-                <Moon className="w-5 h-5" />
-              ) : (
-                <Sun className="w-5 h-5" />
-              )}
-            </motion.button>
 
             {/* Language switcher */}
             <div className="flex items-center gap-1 border border-dark-700 rounded-lg p-1">

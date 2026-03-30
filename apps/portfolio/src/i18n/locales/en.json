@@ -141,7 +141,8 @@
     },
     "links": {
       "demo": "Demo",
-      "code": "Code"
+      "code": "Code",
+      "visit": "Visit Site"
     },
     "items": {
       "1": {
@@ -165,14 +166,21 @@
       "7": {
         "description": "Cryptocurrency analytics dashboard with real-time data, interactive charts and market heatmap."
       },
-      "8": {
-        "description": "Premium beauty salon website features with fluid animations, interactive gallery and responsive design. Migrated to React + Vite."
-      },
-      "9": {
-        "description": "Modern website for a moving company aimed at capturing leads. Features a quote calculator, service showcase, and a clean, responsive design optimized for conversions."
+      "11": {
+        "description": "Professional corporate website for a cleaning company in Madrid. Specialized in community and office services, with responsive design and high loading speed for local SEO.",
+        "result": "More direct requests from communities and offices"
       },
       "10": {
-        "description": "Lead generation machine for the home renovation sector in Madrid. Premium architecture with static site generation (SSG) and extreme local SEO optimization."
+        "description": "Lead generation machine for the home renovation sector in Madrid. Premium architecture with static site generation (SSG) and extreme local SEO optimization.",
+        "result": "Improved visibility in Madrid City Center"
+      },
+      "9": {
+        "description": "Modern website for a moving company aimed at capturing leads. Features a quote calculator, service showcase, and a clean, responsive design optimized for conversions.",
+        "result": "Increased local bookings through the website"
+      },
+      "8": {
+        "description": "Premium beauty salon website features with fluid animations, interactive gallery and responsive design. Migrated to React + Vite.",
+        "result": "More online bookings without phone calls"
       }
     }
   },
@@ -226,6 +234,31 @@
         "category": "Development",
         "title": "The End of \"Boilerplate\" in Frontend",
         "excerpt": "Analyzing how new UI generation tools are eliminating repetitive work and allowing us to focus on pure business logic."
+      },
+      "4": {
+        "category": "Strategy",
+        "title": "Why your Small Business needs more than just Instagram",
+        "excerpt": "Discover how a professional website multiplies your chances of appearing on Google Maps and generating real trust with your clients."
+      },
+      "5": {
+        "category": "Local SEO",
+        "title": "The Perfect Domain for your Business in Madrid",
+        "excerpt": "Keys to choosing a domain name that helps your local positioning and is easy for your customers to remember."
+      },
+      "6": {
+        "category": "Local Business",
+        "title": "Basic guide for your local business in Madrid to show up on Google (no technical jargon)",
+        "excerpt": "Learn the minimum steps your business must take to appear when your neighbors search for your services."
+      },
+      "7": {
+        "category": "Practical Guide",
+        "title": "What should a professional website for an SME in Madrid have?",
+        "excerpt": "The essential checklist that differentiates a website that is just \"there\" from one that generates real customers."
+      },
+      "8": {
+        "category": "Tips",
+        "title": "Typical mistakes that make freelancers and SMEs lose customers on their website",
+        "excerpt": "Is your website not working? Check if you are making any of these common mistakes that scare away your visitors."
       }
     }
   },

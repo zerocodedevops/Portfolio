@@ -11,6 +11,9 @@ const EcommerceApp = lazy(() => import('@devops-shop/src/routes'));
 const AnalyticsApp = lazy(() => import('@analytics/routes'));
 const MediaApp = lazy(() => import('@zerodelay/App'));
 const ReformsApp = lazy(() => import('@zero-chaos/routes'));
+const CaseStudy = lazy(() => import('@/features/projects/CaseStudy'));
+const TechBlog = lazy(() => import('@/features/blog/TechBlog'));
+const BlogPost = lazy(() => import('@/features/blog/BlogPost'));
 
 const router = createBrowserRouter(
   [
@@ -99,6 +102,30 @@ const router = createBrowserRouter(
       element: (
         <Suspense fallback={<PageLoader text="Abriendo Cero Caos..." />}>
           <ReformsApp />
+        </Suspense>
+      ),
+    },
+    {
+      path: '/casos-de-exito/:slug',
+      element: (
+        <Suspense fallback={<PageLoader text="Cargando Caso de Estudio..." />}>
+          <CaseStudy />
+        </Suspense>
+      ),
+    },
+    {
+      path: '/tech',
+      element: (
+        <Suspense fallback={<PageLoader text="Cargando Laboratorio Técnico..." />}>
+          <TechBlog />
+        </Suspense>
+      ),
+    },
+    {
+      path: '/blog/:id',
+      element: (
+        <Suspense fallback={<PageLoader text="Abriendo artículo..." />}>
+          <BlogPost />
         </Suspense>
       ),
     },

@@ -243,7 +243,7 @@ export function Skills() {
       <div className="container-custom relative z-10">
         <div className="text-center mb-16">
           <h2 className="font-outfit font-bold text-3xl sm:text-4xl lg:text-5xl text-white mb-4">
-            Habilidades <span className="text-gradient">& Tecnologías</span>
+            {t('skills.title')}
           </h2>
           <p className="text-xl text-dark-300 font-medium mb-8">
             {t('skills.subtitle')}
@@ -256,7 +256,7 @@ export function Skills() {
             whileInView="visible"
             viewport={{ once: true }}
           >
-            <div className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-dark-800/80 border border-neon-purple/30 text-neon-purple shadow-lg shadow-neon-purple/10 backdrop-blur-sm transition-all hover:scale-105">
+            <div className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-dark-800/80 border border-primary-500/30 text-primary-400 shadow-lg shadow-primary-500/10 backdrop-blur-sm transition-all hover:scale-105">
               <Bot className="w-5 h-5" />
               <span className="font-medium tracking-wide">
                 {t('skills.aiBadge')}
@@ -264,6 +264,51 @@ export function Skills() {
             </div>
           </motion.div>
         </div>
+
+        {/* Business Value Section */}
+        <motion.div 
+          className="max-w-4xl mx-auto bg-dark-900/40 border border-dark-800 rounded-3xl p-8 mb-16"
+          variants={fadeInUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+        >
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="text-center md:text-left">
+              <div className="w-12 h-12 rounded-full bg-primary-500/10 text-primary-500 flex items-center justify-center mx-auto md:mx-0 mb-4">
+                <Zap className="w-6 h-6" />
+              </div>
+              <h3 className="text-lg font-bold text-white mb-2">Velocidad Extrema</h3>
+              <p className="text-dark-400 text-sm">Carga rápida para no perder clientes impacientes y mejorar la experiencia de usuario.</p>
+            </div>
+            <div className="text-center md:text-left">
+              <div className="w-12 h-12 rounded-full bg-green-500/10 text-green-500 flex items-center justify-center mx-auto md:mx-0 mb-4">
+                <Cloud className="w-6 h-6" />
+              </div>
+              <h3 className="text-lg font-bold text-white mb-2">Estabilidad Total</h3>
+              <p className="text-dark-400 text-sm">Tu web no se caerá en los peores momentos. Arquitectura sólida a prueba de picos de tráfico.</p>
+            </div>
+            <div className="text-center md:text-left">
+              <div className="w-12 h-12 rounded-full bg-blue-500/10 text-blue-500 flex items-center justify-center mx-auto md:mx-0 mb-4">
+                <Terminal className="w-6 h-6" />
+              </div>
+              <h3 className="text-lg font-bold text-white mb-2">SEO Integrado</h3>
+              <p className="text-dark-400 text-sm">Desarrollo limpio desde las bases para que Google entienda y priorice tu negocio local.</p>
+            </div>
+          </div>
+        </motion.div>
+
+        {/* Tech Stack Accordion wrapper */}
+        <details className="group max-w-5xl mx-auto">
+          <summary className="flex items-center justify-between cursor-pointer list-none p-6 rounded-2xl bg-dark-900 border border-dark-800 hover:border-dark-700 transition-colors mb-8">
+            <h3 className="text-xl font-bold text-white flex items-center gap-3">
+              <Code2 className="w-6 h-6 text-dark-400" />
+              Para Techies / CTOs curiosos
+            </h3>
+            <span className="text-primary-500 font-bold group-open:rotate-180 transition-transform duration-300">▼</span>
+          </summary>
+          
+          <div className="pt-4">
 
         {/* Top Section: Radar & Soft Skills */}
         <div className="grid lg:grid-cols-2 gap-8 mb-12">
@@ -375,6 +420,9 @@ export function Skills() {
             <SkillCard key={category.key} category={category} />
           ))}
         </motion.div>
+        
+        </div>
+        </details>
       </div>
     </section>
   );

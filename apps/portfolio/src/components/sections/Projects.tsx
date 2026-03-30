@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-deprecated */
 import { motion } from 'framer-motion';
 import { ExternalLink, Folder } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
@@ -12,6 +11,7 @@ import projectTask from '@/assets/projects/project-task-management.webp';
 import projectWeather from '@/assets/projects/project-weather.webp';
 import projectZeroDelay from '@/assets/projects/ZeroDelay.webp';
 import projectZeroChaos from '@/assets/projects/zero-chaos.png';
+import projectJBarranco from '@/assets/projects/jbarranco.png';
 import { Card, TechBadge } from '@/components/ui';
 import { fadeInUp, staggerContainer } from '@/hooks/useScrollAnimation';
 import { trackEvent } from '@/lib/analytics';
@@ -28,8 +28,42 @@ interface Project {
   status?: 'Prototype' | 'Production' | 'Development';
 }
 
-const projects: Project[] = [
-  // PROTOTYPES - Functional demos
+export const pymeProjects: Project[] = [
+  {
+    id: 11,
+    title: 'J.Barranco - Limpiezas en Madrid',
+    image: projectJBarranco,
+    tags: ['Servicios', 'SEO Local', 'Pymes'],
+    demoUrl: 'https://jbarrancolimpieza.com',
+    status: 'Production',
+  },
+  {
+    id: 10,
+    title: 'ZeroChaos - Reformas Integrales',
+    image: projectZeroChaos,
+    tags: ['Construcción', 'SEO Local', 'Alta Conversión'],
+    demoUrl: '/casos-de-exito/reformas-zerochaos',
+    status: 'Production',
+  },
+  {
+    id: 9,
+    title: 'ZeroDelay - Empresa de Mudanzas',
+    image: projectZeroDelay,
+    tags: ['Logística', 'Formularios Ágiles', 'Multi-paso'],
+    demoUrl: '/casos-de-exito/mudanzas-zerodelay',
+    status: 'Production',
+  },
+  {
+    id: 8,
+    title: 'ZeroVanity - Salón de Belleza',
+    image: projectSalon,
+    tags: ['Estética', 'Reservas', 'Galería Visual'],
+    demoUrl: '/casos-de-exito/peluqueria-zerovanity',
+    status: 'Production',
+  },
+];
+
+export const techProjects: Project[] = [
   {
     id: 1,
     title: 'DevOps Shop',
@@ -58,26 +92,6 @@ const projects: Project[] = [
     status: 'Prototype',
   },
   {
-    id: 9,
-    title: 'Zero Delay Mudanzas',
-    image: projectZeroDelay,
-    tags: ['React', 'Tailwind CSS', 'Vite', 'Responsive'],
-    demoUrl: '/proyectos/zerodelay',
-    repoUrl: 'https://github.com/zerocodedevops',
-    status: 'Development',
-  },
-  {
-    id: 10,
-    title: 'Zero Chaos',
-    image: projectZeroChaos,
-    tags: ['React Router v7', 'Tailwind v4', 'Vite', 'SSG'],
-    demoUrl: '/proyectos/zero-chaos',
-    repoUrl: 'https://github.com/zerocodedevops',
-    status: 'Production',
-  },
-
-  // IN DEVELOPMENT - Coming soon
-  {
     id: 2,
     title: 'AI Chat Assistant',
     image: projectAiChat,
@@ -93,15 +107,6 @@ const projects: Project[] = [
     tags: ['React', 'Firebase', 'Tailwind', 'Framer Motion'],
     demoUrl: 'https://example.com',
     repoUrl: 'https://github.com/zerocodedevops',
-    status: 'Development',
-  },
-  {
-    id: 8,
-    title: 'Zero Vanity',
-    image: projectSalon,
-    tags: ['React', 'Tailwind', 'Vite', 'Framer Motion'],
-    demoUrl: '/proyectos/zerovanity',
-    repoUrl: 'https://github.com/zerocodedevops/ZeroVanity',
     status: 'Development',
   },
   {
@@ -216,6 +221,15 @@ function ProjectCard({
     return <div className="w-full h-full cursor-pointer">{imageContent}</div>;
   })();
 
+  const getLinkLabel = () => {
+    if (project.demoUrl?.includes('casos-de-exito')) {
+      return 'Ver Caso de Estudio';
+    }
+    return project.status === 'Production' 
+      ? t('projects.links.visit') 
+      : t('projects.links.demo');
+  };
+
   return (
     <motion.div variants={fadeInUp}>
       <Card
@@ -241,9 +255,15 @@ function ProjectCard({
               </span>
             )}
           </div>
-          <p className="text-dark-400 text-sm mb-4 flex-1">
+          <p className="text-dark-400 text-sm mb-3 flex-1">
             {t(`projects.items.${project.id}.description`)}
           </p>
+          {t(`projects.items.${project.id}.result`) !== `projects.items.${project.id}.result` && (
+            <div className="flex items-center gap-1.5 mb-4 text-xs text-green-400">
+              <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
+              {t(`projects.items.${project.id}.result`)}
+            </div>
+          )}
 
           {/* Tags */}
           <div className="flex flex-wrap gap-2 mb-4">
@@ -257,7 +277,7 @@ function ProjectCard({
             {project.demoUrl && (
               <motion.a
                 href={project.demoUrl}
-                target="_blank"
+                target={project.demoUrl.includes('casos-de-exito') ? '_self' : '_blank'}
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 text-sm text-dark-300 hover:text-primary-400 transition-colors"
                 whileHover={{ x: 3 }}
@@ -267,7 +287,7 @@ function ProjectCard({
                 }}
               >
                 <ExternalLink className="w-4 h-4" />
-                {t('projects.links.demo')}
+                {getLinkLabel()}
               </motion.a>
             )}
             {project.repoUrl && (
@@ -306,30 +326,59 @@ export function Projects() {
       <div className="container-custom relative z-10">
         <div className="text-center mb-16">
           <h2 className="font-outfit font-bold text-3xl sm:text-4xl lg:text-5xl text-white mb-4">
-            <span className="text-gradient">Productos Digitales</span>
+            <span className="text-gradient">Proyectos para Pymes</span> en Madrid
           </h2>
           <p className="text-xl text-dark-300 font-medium mb-12">
-            Una selección de proyectos que demuestran mis habilidades
+            Páginas web diseñadas específicamente para atraer clientes locales y aumentar la facturación.
           </p>
-
-          {/* Section for Featured / SaaS if needed, or just part of the flow */}
         </div>
 
         <motion.div
-          className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
+          className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-24"
           variants={staggerContainer}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.1 }}
         >
-          {projects.map((project) => (
+          {pymeProjects.map((project) => (
             <ProjectCard
               key={project.id}
               project={project}
-              onClick={() => setSelectedProject(project)}
+              onClick={() => {
+                if(project.demoUrl) globalThis.location.href = project.demoUrl;
+              }}
             />
           ))}
         </motion.div>
+
+        {/* Laboratorio Técnico */}
+        <details className="group max-w-5xl mx-auto border-t border-dark-800 pt-10">
+          <summary className="flex items-center justify-between cursor-pointer list-none !outline-none">
+            <div>
+              <h3 className="text-2xl font-bold text-white mb-2">Laboratorio Técnico & Startups</h3>
+              <p className="text-dark-400 text-sm">Proyectos SaaS, Dashboards y aplicaciones web complejas.</p>
+            </div>
+            <span className="text-primary-500 font-bold group-open:rotate-180 transition-transform duration-300 bg-dark-800 p-2 rounded-full">▼</span>
+          </summary>
+          
+          <div className="pt-10">
+            <motion.div
+              className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
+              variants={staggerContainer}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.1 }}
+            >
+              {techProjects.map((project) => (
+                <ProjectCard
+                  key={project.id}
+                  project={project}
+                  onClick={() => setSelectedProject(project)}
+                />
+              ))}
+            </motion.div>
+          </div>
+        </details>
       </div>
 
       <ProjectDetailModal
