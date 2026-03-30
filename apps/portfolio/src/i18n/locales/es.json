@@ -9,17 +9,17 @@
   },
   "hero": {
     "badge": "Disponible para nuevos proyectos",
-    "title1": "Diseño Web para Pymes y",
-    "title2": "Autónomos en Madrid",
-    "description": "Ayudo a pequeños negocios a digitalizarse con webs profesionales, creadas desde cero con Inteligencia Artificial para maximizar la calidad y velocidad. Diseño de alto impacto en tiempo récord gracias a un proceso AI-First.",
+    "title1": "Diseñador Web Freelance",
+    "title2": "en Madrid para Pymes",
+    "description": "Ayudo a autónomos y pequeñas empresas a conseguir más clientes con páginas web profesionales, rápidas y optimizadas para Google. Dejo atrás la jerga técnica para crear webs que venden y generan negocio real.",
     "typing": {
       "clients": ">_ Más Clientes",
-      "webs": ">_ Webs que Venden",
-      "ai": ">_ IA que Optimiza"
+      "webs": ">_ Más Reservas",
+      "ai": ">_ Más Llamadas"
     },
     "cta": {
-      "primary": "Contáctame",
-      "secondary": "Ver Proyectos"
+      "primary": "Quiero una web que venda",
+      "secondary": "Casos de Éxito"
     }
   },
   "featuredProject": {
@@ -50,46 +50,46 @@
     }
   },
   "about": {
-    "title": "Sobre mí",
-    "subtitle": "Menos fricción, más impacto",
-    "role": "AI-First Developer | Calidad Excepcional a Velocidad Radical",
+    "title": "Sobre Mí",
+    "subtitle": "Resultados reales para negocios de Madrid",
+    "role": "Diseñador Web Freelance | Páginas orientadas a ventas locales",
     "description": {
-      "p1": "No vengo del camino clásico del desarrollo y no pretendo aparentarlo. \nMi fortaleza no está en memorizar sintaxis, sino en <1>entender problemas, diseñar soluciones</1> y apoyarme en <3>herramientas de Inteligencia Artificial</3> para <5>convertir ideas en aplicaciones reales</5>. \n\nAplico el principio de la <1>Navaja de Ockham</1> al desarrollo de software moderno. \nSi una tarea puede ser resuelta instantáneamente por la IA, hacerla manualmente es multiplicar el esfuerzo sin necesidad.",
-      "boxTitle": "Mi perfil es una fusión de <1>ingeniería experta</1> y dominio de la IA generativa que:",
+      "p1": "Mi especialidad no es solo escribir código, sino <1>entender tu negocio</1> y crear herramientas digitales que atraigan a tu cliente ideal en Madrid. Combino <3>diseño moderno</3> y <5>carga ultra rápida</5> para que tu empresa destaque frente a la competencia de tu barrio o sector.",
+      "boxTitle": "¿Por qué confiar en mí para tu web?",
       "boxList": {
-        "item1": "Elimina la complejidad técnica intermedia",
-        "item2": "Va directamente de la intención al resultado",
-        "item3": "Garantiza un código final limpio y escalable",
-        "item4": "Genera soluciones de nivel superior"
+        "item1": "Trato directo y honesto, sin intermediarios ni agencias lentas.",
+        "item2": "Enfoque en resultados: diseño para conseguir llamadas y leads.",
+        "item3": "Tiempos de entrega ágiles gracias a herramientas de vanguardia.",
+        "item4": "SEO técnico impecable para que Google te tome en serio."
       },
-      "p2": "Mi enfoque es práctico: no soy un programador tradicional, pero sí soy alguien capaz de <1>llevar un proyecto desde la idea hasta un producto funcional</1>, entendiendo cada paso del proceso y mejorando con cada iteración. No se trata solo de escribir código, sino de <1>orquestar soluciones inteligentes</1>.",
-      "p3": "Mi verdadera fortaleza es el <1>compromiso absoluto</1> con cada proyecto. Me involucro al 200%, obsesionándome con los detalles y no descansando hasta que el resultado supera las expectativas.",
-      "p4": "Cada reto es una oportunidad de aprendizaje, y cada error es un paso hacia la mejora."
+      "p2": "No te hablaré de lenguajes de programación complejos a menos que te interese. Mi objetivo es que tengas una página web fácil de gestionar, que <1>no se rompa</1> y que convierta visitas en <1>clientes reales</1>.",
+      "p3": "Me involucro al 200% con cada cliente. Diseñaremos juntos una estrategia digital que funcione para tu presupuesto y tus <1>objetivos comerciales inmediatos</1>.",
+      "p4": "Vivo y trabajo en Madrid, así que siempre estoy disponible para hablar de tu proyecto."
     },
     "highlights": {
       "passion": {
-        "title": "Pasión",
-        "description": "Entusiasta al 200%"
+        "title": "Velocidad",
+        "description": "Entregas súper rápidas"
       },
       "ai": {
-        "title": "IA como aliada",
-        "description": "Desarrollo asistido por IA"
+        "title": "Vanguardia",
+        "description": "Tecnología moderna"
       },
       "autodidact": {
-        "title": "Autodidacta",
-        "description": "Aprendizaje continuo"
+        "title": "Local",
+        "description": "Servicio en Madrid"
       },
       "commitment": {
-        "title": "Compromiso",
-        "description": "Involucrado en cada detalle"
+        "title": "Comercial",
+        "description": "Enfoque en tus ventas"
       }
     }
   },
   "skills": {
-    "title": "Skills & Tecnologías",
-    "subtitle": "Stack real usado en proyectos",
-    "aiBadge": "Desarrollo asistido por Inteligencia Artificial",
-    "disclaimer": "* Las etiquetas reflejan mi <1>nivel de autonomía</1> usando cada tecnología en proyectos reales.",
+    "title": "Por qué la tecnología importa",
+    "subtitle": "Menos problemas, más negocio",
+    "aiBadge": "Desarrollo moderno para resultados inmediatos",
+    "disclaimer": "* Estas son las herramientas que garantizan <1>rapidez, seguridad y posicionamiento SEO</1> en tu web.",
     "levels": {
       "expert": "Experto",
       "advanced": "Avanzado",
@@ -136,7 +136,8 @@
     },
     "links": {
       "demo": "Demo",
-      "code": "Código"
+      "code": "Código",
+      "visit": "Ver Web"
     },
     "items": {
       "1": {
@@ -160,14 +161,21 @@
       "7": {
         "description": "Dashboard analítico de criptomonedas con datos en tiempo real, gráficos interactivos y market heatmap."
       },
-      "8": {
-        "description": "Sitio web premium para salón de belleza con animaciones fluidas, galería interactiva y diseño responsive. Migrado a React + Vite."
-      },
-      "9": {
-        "description": "Sitio web moderno para empresa de mudanzas orientado a la captación de leads con presentación de servicios y un diseño limpio y responsive optimizado para conversiones."
+      "11": {
+        "description": "Sitio web corporativo para empresa de limpieza en Madrid. Enfoque en servicios de comunidades y oficinas, con diseño responsive y alta velocidad de carga para SEO local.",
+        "result": "Más solicitudes directas de comunidades y oficinas"
       },
       "10": {
-        "description": "Máquina de captación de leads para el sector de reformas en Madrid. Arquitectura premium con generación de sitios estáticos (SSG) y optimización SEO local extrema."
+        "description": "Máquina de captación de leads para el sector de reformas en Madrid. Arquitectura premium con generación de sitios estáticos (SSG) y optimización SEO local extrema.",
+        "result": "Mejor visibilidad en Madrid y zona sur-este"
+      },
+      "9": {
+        "description": "Sitio web moderno para empresa de mudanzas orientado a la captación de leads con presentación de servicios y un diseño limpio y responsive optimizado para conversiones.",
+        "result": "Aumento de contrataciones locales por la web"
+      },
+      "8": {
+        "description": "Sitio web premium para salón de belleza con animaciones fluidas, galería interactiva y diseño responsive. Migrado a React + Vite.",
+        "result": "Más reservas online sin llamadas"
       }
     }
   },
@@ -221,6 +229,16 @@
         "category": "Desarrollo",
         "title": "El fin del \"Boilerplate\" en el Frontend",
         "excerpt": "Analizando cómo las nuevas herramientas de generación de UI están eliminando el trabajo repetitivo y permitiéndonos centrarnos en la lógica de negocio pura."
+      },
+      "4": {
+        "category": "Estrategia",
+        "title": "Por qué tu Pyme necesita algo más que Instagram",
+        "excerpt": "Descubre cómo una web profesional multiplica tus posibilidades de aparecer en Google Maps y generar confianza real en tus clientes."
+      },
+      "5": {
+        "category": "SEO Local",
+        "title": "El Dominio Perfecto para tu Negocio en Madrid",
+        "excerpt": "Claves para elegir un nombre de dominio que ayude a tu posicionamiento local y sea fácil de recordar para tus clientes."
       }
     }
   },

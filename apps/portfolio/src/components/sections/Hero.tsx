@@ -39,7 +39,7 @@ export function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center pt-20 overflow-hidden"
+      className="relative min-h-screen flex items-center pt-10 overflow-hidden"
     >
       {/* Background with patterns */}
       <div className="absolute inset-0 z-0">
@@ -52,6 +52,21 @@ export function Hero() {
       </div>
 
       <div className="container-custom relative z-10 w-full">
+        <motion.div
+          variants={fadeInUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="text-center mb-16"
+        >
+          <h2 className="font-outfit font-bold text-3xl sm:text-4xl lg:text-5xl text-white mb-6">
+            Sobre <span className="text-gradient">Mí</span>
+          </h2>
+          <p className="text-xl text-dark-300 font-medium">
+            Un desarrollador diferente con un enfoque innovador
+          </p>
+        </motion.div>
+
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Content Left */}
           <motion.div

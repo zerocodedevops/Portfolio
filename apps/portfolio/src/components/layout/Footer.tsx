@@ -1,11 +1,8 @@
-/* eslint-disable @typescript-eslint/no-deprecated */
 import { motion } from 'framer-motion';
-// eslint-disable-next-line @typescript-eslint/no-deprecated
 import {
   ArrowUp,
   Code2,
   Github as GithubIcon,
-  Heart,
   Linkedin as LinkedinIcon,
   Mail,
   MessageCircle,
@@ -14,13 +11,11 @@ import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 
 const socialLinks = [
-  // eslint-disable-next-line @typescript-eslint/no-deprecated
   {
     icon: GithubIcon,
     href: 'https://github.com/zerocodedevops',
     label: 'GitHub',
   }, // NOSONAR
-  // eslint-disable-next-line @typescript-eslint/no-deprecated
   {
     icon: LinkedinIcon, // NOSONAR
     href: 'https://www.linkedin.com/in/zerocode-devops',
@@ -37,7 +32,6 @@ export function Footer() {
   const footerLinks = [
     { label: 'Inicio', href: '/' },
     { label: 'Sobre Mí', href: '/disenador-web-freelance-madrid' },
-    { label: 'Servicios', href: '/desarrollo-web-pymes-madrid' },
     { label: 'Precios', href: '/precios-paginas-web' },
     { label: 'Contacto', href: '#contact' },
   ];
@@ -78,7 +72,7 @@ export function Footer() {
         <ArrowUp className="w-5 h-5" />
       </motion.button>
 
-      <div className="container-custom py-12">
+      <div className="container-custom py-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
           {/* Logo and tagline */}
           <div className="text-center md:text-left">
@@ -143,196 +137,57 @@ export function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="mt-8 pt-8 border-t border-dark-700/50">
-          <p className="text-center text-dark-500 text-sm flex items-center justify-center gap-1">
-            © {currentYear} ZeroCode. {t('footer.madeWith')}{' '}
-            <Heart className="w-4 h-4 text-accent-500 fill-accent-500" />{' '}
-            {t('footer.by')}{' '}
-            <span className="text-primary-400">{t('footer.curiosity')}</span>
+        <div className="mt-6 pt-6 border-t border-dark-700/50">
+          <p className="text-center text-dark-500 text-xs flex items-center justify-center gap-2">
+            © {currentYear} ZeroCode • Hecho con curiosidad + IA
           </p>
 
           {/* SEO Keywords */}
-          <div className="mt-4 flex flex-wrap justify-center gap-x-3 gap-y-2 text-xs text-dark-600">
-            <a
-              href="/desarrollo-web-pymes-madrid"
-              className="hover:text-primary-400 transition-colors font-semibold"
-              onClick={(e) => {
-                e.preventDefault();
-                navigate('/desarrollo-web-pymes-madrid');
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-              }}
-            >
-              Desarrollo Web Pymes Madrid
-            </a>
-            <span>|</span>
-            <a
-              href="https://wa.me/34912622712"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-primary-400 transition-colors"
-            >
-              Contratar Diseñador Web
-            </a>
-            <span>|</span>
-            <a
-              href="mailto:admin@zerocode-devops.com"
-              className="hover:text-primary-400 transition-colors"
-            >
-              Contratar Programador Web
-            </a>
-            <span>|</span>
-            <a
-              href="https://wa.me/34912622712"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-primary-400 transition-colors"
-            >
-              Creación de Páginas Web
-            </a>
-            <span>|</span>
-            <a
-              href="mailto:admin@zerocode-devops.com"
-              className="hover:text-primary-400 transition-colors"
-            >
-              Creación de Páginas Web Madrid
-            </a>
-            <span>|</span>
-            <a
-              href="https://wa.me/34912622712"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-primary-400 transition-colors"
-            >
-              Desarrollo Web a Medida
-            </a>
-            <span>|</span>
-            <a
-              href="mailto:admin@zerocode-devops.com"
-              className="hover:text-primary-400 transition-colors"
-            >
-              Desarrollo Web Freelance
-            </a>
-            <span>|</span>
-            <a
-              href="https://wa.me/34912622712"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-primary-400 transition-colors"
-            >
-              Desarrollo Web Madrid
-            </a>
-            <span>|</span>
-            <a
-              href="mailto:admin@zerocode-devops.com"
-              className="hover:text-primary-400 transition-colors"
-            >
-              Diseño UX/UI
-            </a>
-            <span>|</span>
-            <a
-              href="https://wa.me/34912622712"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-primary-400 transition-colors"
-            >
-              Diseño de Tiendas Online
-            </a>
-            <span>|</span>
-            <a
-              href="mailto:admin@zerocode-devops.com"
-              className="hover:text-primary-400 transition-colors"
-            >
-              Diseño Web Freelance Madrid
-            </a>
-            <span>|</span>
-            <a
-              href="https://wa.me/34912622712"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-primary-400 transition-colors"
-            >
-              Diseño Web para Autónomos
-            </a>
-            <span>|</span>
-            <a
-              href="mailto:admin@zerocode-devops.com"
-              className="hover:text-primary-400 transition-colors"
-            >
-              Diseño Web para Pymes
-            </a>
-            <span>|</span>
-            <a
-              href="https://wa.me/34912622712"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-primary-400 transition-colors"
-            >
-              Diseño Web Profesional
-            </a>
-            <span>|</span>
-            <a
-              href="mailto:admin@zerocode-devops.com"
-              className="hover:text-primary-400 transition-colors"
-            >
-              Diseñador Web en Madrid
-            </a>
-            <span>|</span>
-            <a
-              href="https://wa.me/34912622712"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-primary-400 transition-colors"
-            >
-              Diseñador Web para Empresas
-            </a>
-            <span>|</span>
-            <a
-              href="mailto:admin@zerocode-devops.com"
-              className="hover:text-primary-400 transition-colors"
-            >
-              Especialista en Diseño Web
-            </a>
-            <span>|</span>
-            <a
-              href="https://wa.me/34912622712"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-primary-400 transition-colors"
-            >
-              Mantenimiento Web Profesional
-            </a>
-            <span>|</span>
-            <a
-              href="mailto:admin@zerocode-devops.com"
-              className="hover:text-primary-400 transition-colors"
-            >
-              Programador Web Freelance
-            </a>
-            <span>|</span>
-            <a
-              href="https://wa.me/34912622712"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-primary-400 transition-colors"
-            >
-              Programador Web para Autónomos
-            </a>
-            <span>|</span>
-            <a
-              href="mailto:admin@zerocode-devops.com"
-              className="hover:text-primary-400 transition-colors"
-            >
-              Programador Web en Madrid
-            </a>
-            <span>|</span>
-            <a
-              href="https://wa.me/34912622712"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-primary-400 transition-colors"
-            >
-              Servicios de Diseño Web
-            </a>
+          <div className="mt-4 text-center border-t border-dark-800/10 pt-4">
+            <p className="text-dark-500 text-xs mb-2">
+              Servicios de diseño y desarrollo web en Madrid para pymes y autónomos:
+            </p>
+            <div className="flex flex-wrap justify-center gap-x-4 gap-y-2 text-xs text-dark-600">
+              <a 
+                href="/desarrollo-web-pymes-madrid" 
+                className="hover:text-primary-400 transition-colors font-medium border-b border-transparent hover:border-primary-400/30 pb-0.5"
+                onClick={(e) => { e.preventDefault(); handleNavClick('/desarrollo-web-pymes-madrid'); }}
+              >
+                Desarrollo Web Pymes Madrid
+              </a>
+              <span className="opacity-30">•</span>
+              <a 
+                href="/desarrollo-web-pymes-madrid" 
+                className="hover:text-primary-400 transition-colors border-b border-transparent hover:border-primary-400/30 pb-0.5"
+                onClick={(e) => { e.preventDefault(); handleNavClick('/desarrollo-web-pymes-madrid'); }}
+              >
+                Diseño Web para Autónomos
+              </a>
+              <span className="opacity-30">•</span>
+              <a 
+                href="/desarrollo-web-pymes-madrid" 
+                className="hover:text-primary-400 transition-colors border-b border-transparent hover:border-primary-400/30 pb-0.5"
+                onClick={(e) => { e.preventDefault(); handleNavClick('/desarrollo-web-pymes-madrid'); }}
+              >
+                Diseño Web para Pymes
+              </a>
+              <span className="opacity-30">•</span>
+              <a 
+                href="/disenador-web-freelance-madrid" 
+                className="hover:text-primary-400 transition-colors border-b border-transparent hover:border-primary-400/30 pb-0.5"
+                onClick={(e) => { e.preventDefault(); handleNavClick('/disenador-web-freelance-madrid'); }}
+              >
+                Diseño Web Freelance Madrid
+              </a>
+              <span className="opacity-30">•</span>
+              <a 
+                href="/precios-paginas-web" 
+                className="hover:text-primary-400 transition-colors border-b border-transparent hover:border-primary-400/30 pb-0.5"
+                onClick={(e) => { e.preventDefault(); handleNavClick('/precios-paginas-web'); }}
+              >
+                Mantenimiento Web Profesional
+              </a>
+            </div>
           </div>
         </div>
       </div>

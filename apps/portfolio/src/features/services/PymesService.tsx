@@ -7,6 +7,9 @@ import {
   MapPin,
   BarChart3,
   Search,
+  ArrowDownRight,
+  ArrowRight,
+  User,
 } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { Seo } from '@/components/common/SEO';
@@ -16,12 +19,7 @@ export default function PymesService() {
   const navigate = useNavigate();
 
   const handleCtaClick = () => {
-    navigate('/');
-    setTimeout(() => {
-      document
-        .querySelector('#contact')
-        ?.scrollIntoView({ behavior: 'smooth' });
-    }, 100);
+    navigate('/disenador-web-freelance-madrid#contact');
   };
 
   return (
@@ -54,7 +52,7 @@ export default function PymesService() {
         }}
       />
 
-      <div className="pt-32 pb-20 bg-dark-950 text-dark-100">
+      <div className="pt-[10px] pb-20 bg-dark-950 text-dark-100">
         <div className="container-custom">
           {/* Hero Section / H1 */}
           <header className="max-w-4xl mx-auto text-center mb-20">
@@ -63,18 +61,21 @@ export default function PymesService() {
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5 }}
             >
+              <span className="inline-block text-primary-400 font-bold uppercase tracking-wider text-sm mb-4">
+                Diseñador web freelance especializado en pymes y autónomos de Madrid
+              </span>
               <h1 className="text-3xl md:text-5xl font-extrabold text-white mb-6 leading-tight">
                 Desarrollo web profesional para{' '}
                 <span className="text-gradient">
                   pymes y autónomos en Madrid
                 </span>
               </h1>
-              <p className="text-xl text-dark-400 mb-8 max-w-2xl mx-auto">
+              <p className="text-xl text-dark-400 mb-8 max-w-3xl mx-auto">
                 Soluciones reales para autónomos y pequeñas empresas que
-                necesitan resultados, no complicaciones. Impulsa tu presencia
-                local hoy.
+                necesitan resultados, no complicaciones; sin tecnicismos ni líos
+                técnicos. Impulsa tu presencia local hoy.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <div className="flex flex-col sm:flex-row justify-center gap-4">
                 <button
                   onClick={handleCtaClick}
                   className="px-8 py-4 bg-primary-600 hover:bg-primary-500 text-white font-bold rounded-2xl shadow-glow transition-all flex items-center justify-center gap-2"
@@ -83,11 +84,18 @@ export default function PymesService() {
                   Solicita presupuesto gratis
                 </button>
                 <button
-                  onClick={handleCtaClick}
+                  onClick={() => {
+                    const el = document.getElementById('projects');
+                    if (el) {
+                      el.scrollIntoView({ behavior: 'smooth' });
+                    } else {
+                      navigate('/portfolio#projects');
+                    }
+                  }}
                   className="px-8 py-4 bg-dark-800 hover:bg-dark-700 text-white font-bold rounded-2xl border border-dark-700 transition-all flex items-center justify-center gap-2"
                 >
-                  <MapPin className="w-5 h-5 text-accent-500" />
-                  Consulta con nuestro experto en Madrid
+                  Ver proyectos
+                  <ArrowRight className="w-5 h-5" />
                 </button>
               </div>
             </motion.div>
@@ -110,11 +118,11 @@ export default function PymesService() {
                   <div className="grid sm:grid-cols-2 gap-6">
                     <BenefitCard
                       title="Visibilidad 24/7"
-                      desc="Tu negocio local en Madrid (ya sea en el Centro o en Chamberí) nunca cierra. Capta leads mientras duermes."
+                      desc="Tu negocio local en Madrid (ya sea en la capital o en Rivas Vaciamadrid) nunca cierra. Capta leads mientras duermes."
                     />
                     <BenefitCard
                       title="Autoridad de Marca"
-                      desc="Una página web profesional proyecta la seriedad que tus clientes buscan en el barrio de Salamanca o Retiro."
+                      desc="Una página web profesional proyecta la seriedad que tus clientes buscan en Pozuelo, Majadahonda o Las Rozas."
                     />
                     <BenefitCard
                       title="Diseño Responsive"
@@ -139,10 +147,10 @@ export default function PymesService() {
                   <FeatureListItem text="Diseño web responsive para negocios" />
                   <FeatureListItem text="Optimización técnica (Performance)" />
                   <FeatureListItem text="SEO On-Page para Google" />
-                  <FeatureListItem text="Tienda online para pymes (eCommerce)" />
+                  <FeatureListItem text="Tienda online para pymes (eCommerce) - Opcional" />
                   <FeatureListItem text="Código limpio y optimizado con IA" />
                   <FeatureListItem text="Automatización de recepción de consultas" />
-                  <FeatureListItem text="Velocidad de carga relámpago" />
+                  <FeatureListItem text="Velocidad de carga relámpago (optimizada para Core Web Vitals)" />
                 </div>
               </section>
 
@@ -157,22 +165,38 @@ export default function PymesService() {
                   funcionalidades específicas de cada proyecto de{' '}
                   <strong>páginas web para autónomos Madrid</strong>.
                 </p>
-                <div className="grid md:grid-cols-3 gap-6">
+                <div className="grid md:grid-cols-2 gap-6">
                   <PriceCard
-                    level="Landing Pages"
-                    price="Desde 500€"
-                    bestFor="Campañas específicas y captación de leads"
+                    level="Web Esencial"
+                    price="700€"
+                    bestFor="La tarjeta digital perfecta para arrancar tu presencia local en Google."
                   />
                   <PriceCard
-                    level="Web Corporativa"
-                    price="Desde 1.200€"
-                    bestFor="Pequeñas y medianas empresas con imagen de marca"
+                    level="Web Profesional"
+                    price="1.400€"
+                    bestFor="La máquina de captar clientes para tu negocio local. Optimizada para posicionar en tu sector y convertir visitas en clientes."
                   />
-                  <PriceCard
-                    level="Tienda Online (eCommerce)"
-                    price="Desde 2.500€"
-                    bestFor="Pymes que quieren vender sus productos 24/7"
-                  />
+                </div>
+                <div className="mt-6 text-center">
+                  <button
+                    onClick={() => {
+                      navigate('/precios-paginas-web');
+                      globalThis.scrollTo({ top: 0, behavior: 'smooth' });
+                    }}
+                    className="group inline-flex items-center gap-2 text-primary-400 hover:text-primary-300 font-medium transition-all"
+                  >
+                    Ver detalles completos de planes y servicios
+                    <ArrowDownRight className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                  </button>
+                </div>
+                <div className="flex justify-center mt-10">
+                  <button
+                    onClick={handleCtaClick}
+                    className="px-8 py-4 bg-primary-600 hover:bg-primary-500 text-white font-bold rounded-2xl shadow-glow transition-all flex items-center justify-center gap-2"
+                  >
+                    <Phone className="w-5 h-5" />
+                    Solicita presupuesto gratis
+                  </button>
                 </div>
               </section>
 
@@ -185,10 +209,49 @@ export default function PymesService() {
                   <p>
                     Para un <strong>diseño web Madrid pymes</strong> exitoso
                     debes fijarte en la transparencia, el portfolio real y el
-                    enfoque en ventas, no solo estética. La proximidad en
-                    barrios como Chamberí o Arganzuela permite una mejor
-                    comunicación.
+                    enfoque en ventas. Por eso trabajo siempre con{' '}
+                    <strong>
+                      contratos claros y presupuestos cerrados
+                    </strong>, eliminando sorpresas o "letras pequeñas". Además, la
+                    proximidad en zonas como Rivas, Coslada o San Fernando
+                    permite una mejor comunicación y confianza mutua.
                   </p>
+                </div>
+              </section>
+
+              {/* Sección ¿Quién está detrás? */}
+              <section className="bg-gradient-to-br from-primary-500/5 to-accent-500/5 p-8 rounded-3xl border border-dark-800">
+                <div className="flex flex-col md:flex-row gap-8 items-center">
+                  <div className="w-24 h-24 rounded-2xl bg-dark-800 flex items-center justify-center border border-primary-500/30 shadow-glow shrink-0">
+                    <User className="w-12 h-12 text-primary-500" />
+                  </div>
+                  <div className="space-y-4">
+                    <h2 className="text-2xl font-bold text-white">
+                      ¿Quién está detrás de ZeroCode?
+                    </h2>
+                    <p className="text-dark-400 text-lg leading-relaxed">
+                      Hola, soy <strong>David</strong>, arquitecto web freelance.
+                      Vivo y trabajo en <strong>Madrid (Rivas)</strong>, lo que me
+                      permite ofrecerte un trato directo y cercano que ninguna
+                      agencia impersonal puede igualar. Mi objetivo no es solo
+                      hacerte una web, sino que tu tecnología trabaje para traerte
+                      más clientes cada día.
+                    </p>
+                    <div className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-dark-300">
+                      <span className="flex items-center gap-2 italic">
+                        <CheckCircle className="w-4 h-4 text-primary-500" />{' '}
+                        Trato directo
+                      </span>
+                      <span className="flex items-center gap-2 italic">
+                        <CheckCircle className="w-4 h-4 text-primary-500" />{' '}
+                        Enfoque en negocio
+                      </span>
+                      <span className="flex items-center gap-2 italic">
+                        <CheckCircle className="w-4 h-4 text-primary-500" />{' '}
+                        Soporte continuo
+                      </span>
+                    </div>
+                  </div>
                 </div>
               </section>
 
@@ -200,15 +263,40 @@ export default function PymesService() {
                 </h2>
                 <div className="grid sm:grid-cols-2 gap-8">
                   <TestimonialCard
-                    name="Cafetería El Barrio"
-                    location="Chamberí"
-                    text="ZeroCode entendió perfectamente lo que necesitábamos. Nuestra web ahora carga al instante y hemos notado un aumento del 30% en reservas locales."
+                    name="Caso tipo: Cafetería"
+                    location="Rivas Vaciamadrid"
+                    text="ZeroCode entendió perfectamente lo que necesitábamos. Nuestra web ahora carga al instante y hemos notado un aumento claro en las reservas locales."
                   />
                   <TestimonialCard
-                    name="Consultoría Madrid"
-                    location="Retiro"
+                    name="Caso tipo: Consultoría"
+                    location="Coslada"
                     text="La web corporativa que diseñaron ha elevado nuestra imagen profesional. El trato directo en Madrid facilita mucho las cosas."
                   />
+                </div>
+                <div className="mt-6 text-center">
+                  <button
+                    onClick={() => {
+                      const el = document.getElementById('projects');
+                      if (el) {
+                        el.scrollIntoView({ behavior: 'smooth' });
+                      } else {
+                        navigate('/portfolio#projects');
+                      }
+                    }}
+                    className="group inline-flex items-center gap-2 text-primary-400 hover:text-primary-300 font-medium transition-all text-sm"
+                  >
+                    Ver más proyectos reales
+                    <ArrowDownRight className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                  </button>
+                </div>
+                <div className="flex justify-center mt-10">
+                  <button
+                    onClick={handleCtaClick}
+                    className="px-8 py-4 bg-primary-600 hover:bg-primary-500 text-white font-bold rounded-2xl shadow-glow transition-all flex items-center justify-center gap-2"
+                  >
+                    <Phone className="w-5 h-5" />
+                    Solicita presupuesto gratis
+                  </button>
                 </div>
               </section>
 
@@ -220,7 +308,7 @@ export default function PymesService() {
                 <div className="space-y-6">
                   <FaqItem
                     q="¿Cuánto tarda en estar lista?"
-                    a="Una creación de página web autónomos Madrid suele tardar entre 2 y 4 semanas, dependiendo del contenido."
+                    a="Crear una página web para autónomos en Madrid suele tardar entre 2 y 4 semanas, dependiendo del contenido."
                   />
                   <FaqItem
                     q="¿Tengo que saber de informática para gestionar mi web?"
@@ -232,54 +320,72 @@ export default function PymesService() {
                   />
                   <FaqItem
                     q="¿Por qué necesito una web si ya tengo redes sociales?"
-                    a="Porque tu web es tuya. Las redes son prestadas. Un desarrollo de tiendas online para pymes te da control total."
+                    a="Porque tu web es tuya. Las redes son prestadas. Pueden cambiar reglas, alcance o incluso cerrar tu cuenta sin avisar. Un desarrollo propio te da el control total de tu negocio."
                   />
                 </div>
               </section>
             </div>
 
             {/* Sidebar / Stats & Advice */}
-            <aside className="space-y-8 sticky top-32">
-              <div className="bg-gradient-to-br from-primary-600 to-accent-600 p-8 rounded-3xl text-white shadow-glow">
-                <h3 className="text-2xl font-bold mb-4">Estadísticas Clave</h3>
-                <div className="space-y-6">
-                  <div>
-                    <span className="text-4xl font-bold">88%</span>
-                    <p className="text-sm opacity-90">
-                      de consumidores investigan online antes de comprar
-                      localmente.
+            <aside className="sticky top-[68px]">
+              <div className="bg-dark-900/40 border border-dark-800 p-6 rounded-[2rem] space-y-6">
+                <h2 className="text-2xl font-bold text-white leading-tight">
+                  Por qué es importante una buena web para tu negocio en Madrid
+                </h2>
+
+                <div className="space-y-[18px]">
+                  {/* Estadísticas Clave */}
+                  <div className="bg-gradient-to-br from-primary-600/20 to-accent-600/20 p-[18px] rounded-2xl border border-white/5">
+                    <h3 className="text-lg font-bold text-white mb-3">
+                      Estadísticas Clave
+                    </h3>
+                    <div className="space-y-3">
+                      <div>
+                        <span className="text-3xl font-bold text-primary-400">
+                          88%
+                        </span>
+                        <p className="text-xs text-dark-300 mt-1">
+                          de consumidores investigan online antes de comprar
+                          localmente.
+                        </p>
+                      </div>
+                      <div>
+                        <span className="text-3xl font-bold text-accent-400">
+                          53%
+                        </span>
+                        <p className="text-xs text-dark-300 mt-1">
+                          abandona una web que tarda más de 3 segundos en
+                          cargar.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Consejo SEO Técnico */}
+                  <div className="p-3 rounded-xl border border-dark-700/50 bg-dark-800/30">
+                    <h3 className="text-sm font-bold text-white mb-[6px] flex items-center gap-2">
+                      <Search className="w-4 h-4 text-primary-400" />
+                      Consejo SEO Técnico
+                    </h3>
+                    <p className="text-dark-400 text-xs leading-relaxed">
+                      Optimiza tus "Core Web Vitals". Un buen{' '}
+                      <strong>servicio de diseño web</strong> garantiza que
+                      Google favorezca tu sitio.
                     </p>
                   </div>
-                  <div>
-                    <span className="text-4xl font-bold">53%</span>
-                    <p className="text-sm opacity-90">
-                      abandona una web que tarda más de 3 segundos en cargar.
+
+                  {/* Presencia en Madrid */}
+                  <div className="p-3 rounded-xl border border-dark-700/50 bg-dark-800/30">
+                    <h3 className="text-sm font-bold text-white mb-[6px] flex items-center gap-2">
+                      <MapPin className="w-4 h-4 text-accent-400" />
+                      Presencia en Madrid
+                    </h3>
+                    <p className="text-dark-400 text-xs">
+                      Damos servicio en: Madrid Capital, Rivas Vaciamadrid, Coslada, San Fernando de Henares, Arganda del Rey, Pozuelo, Aravaca, Majadahonda, Las Rozas y alrededores (online para el
+                      resto de España).
                     </p>
                   </div>
                 </div>
-              </div>
-
-              <div className="bg-dark-900 border border-dark-800 p-6 rounded-3xl">
-                <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
-                  <Search className="w-5 h-5 text-primary-400" />
-                  Consejo SEO Técnico
-                </h3>
-                <p className="text-dark-400 text-sm leading-relaxed">
-                  Optimiza tus "Core Web Vitals". Un buen{' '}
-                  <strong>servicios de diseño web</strong> garantiza que Google
-                  favorezca tu sitio.
-                </p>
-              </div>
-
-              <div className="bg-dark-900 border border-dark-800 p-6 rounded-3xl">
-                <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
-                  <MapPin className="w-5 h-5 text-accent-400" />
-                  Presencia en Madrid
-                </h3>
-                <p className="text-dark-400 text-sm">
-                  Damos servicio en: Centro, Salamanca, Chamberí, Retiro,
-                  Tetuán, Moncloa, Arganzuela y más.
-                </p>
               </div>
             </aside>
           </div>
@@ -289,7 +395,7 @@ export default function PymesService() {
   );
 }
 
-function BenefitCard({ title, desc }: { title: string; desc: string }) {
+function BenefitCard({ title, desc }: Readonly<{ title: string; desc: string }>) {
   return (
     <div className="p-5 rounded-2xl bg-dark-900 border border-dark-800 hover:border-primary-500/50 transition-all">
       <h4 className="font-bold text-white mb-2">{title}</h4>
@@ -298,7 +404,7 @@ function BenefitCard({ title, desc }: { title: string; desc: string }) {
   );
 }
 
-function FeatureListItem({ text }: { text: string }) {
+function FeatureListItem({ text }: Readonly<{ text: string }>) {
   return (
     <li className="flex items-center gap-2 text-dark-300">
       <CheckCircle className="w-5 h-5 text-primary-500 shrink-0" />
@@ -311,11 +417,11 @@ function PriceCard({
   level,
   price,
   bestFor,
-}: {
+}: Readonly<{
   level: string;
   price: string;
   bestFor: string;
-}) {
+}>) {
   return (
     <div className="p-6 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 transition-all">
       <span className="text-xs text-primary-400 font-bold uppercase tracking-wider">
@@ -327,7 +433,7 @@ function PriceCard({
   );
 }
 
-function FaqItem({ q, a }: { q: string; a: string }) {
+function FaqItem({ q, a }: Readonly<{ q: string; a: string }>) {
   return (
     <div className="p-6 rounded-2xl bg-dark-900 border border-dark-800">
       <h4 className="text-lg font-bold text-white mb-2">{q}</h4>
@@ -340,11 +446,11 @@ function TestimonialCard({
   name,
   location,
   text,
-}: {
+}: Readonly<{
   name: string;
   location: string;
   text: string;
-}) {
+}>) {
   return (
     <div className="bg-dark-900/40 p-6 rounded-2xl border border-dark-800 relative">
       <div className="absolute top-4 right-6 text-primary-500/20 text-6xl font-serif">
@@ -352,9 +458,8 @@ function TestimonialCard({
       </div>
       <p className="text-dark-300 italic mb-6 relative z-10">{text}</p>
       <div>
-        <div className="font-bold text-white">{name}</div>
         <div className="text-xs text-dark-500 flex items-center gap-1">
-          <MapPin className="w-3 h-3" /> {location}, Madrid
+          <MapPin className="w-3 h-3 text-primary-500/70" /> {name}, {location} (Madrid)
         </div>
       </div>
     </div>

@@ -11,6 +11,7 @@ export interface Article {
   date: string;
   readTime: string;
   category: string;
+  type: 'business' | 'tech';
   image: string;
   icon: React.ElementType;
   content: string; // HTML content
@@ -25,6 +26,7 @@ export const articles: Article[] = [
     date: 'Ene 2026',
     readTime: '5 min',
     category: 'Filosofía',
+    type: 'tech',
     image: blogAiFirst,
     icon: Brain,
     content: `
@@ -42,6 +44,7 @@ export const articles: Article[] = [
     date: 'Dic 2025',
     readTime: '7 min',
     category: 'Tecnología',
+    type: 'tech',
     image: blogAgents,
     icon: Cpu,
     content: `
@@ -59,6 +62,7 @@ export const articles: Article[] = [
     date: 'Nov 2025',
     readTime: '4 min',
     category: 'Desarrollo',
+    type: 'tech',
     image: blogFrontend,
     icon: Code2,
     content: `
@@ -66,6 +70,42 @@ export const articles: Article[] = [
 
       <h2>La era de la Generación Generativa de UI</h2>
       <p>Herramientas emergentes como <strong>v0.dev</strong> o <strong>Bolt.new</strong> nos permiten describir una interfaz en lenguaje natural y obtener el código React/Tailwind listo para producción en segundos.</p>
+    `,
+  },
+  {
+    id: 4,
+    title: 'Por qué tu Pyme necesita algo más que Instagram',
+    excerpt:
+      'Descubre cómo una web profesional multiplica tus posibilidades de aparecer en Google Maps y generar confianza real en tus clientes.',
+    date: 'Mar 2026',
+    readTime: '4 min',
+    category: 'Estrategia',
+    type: 'business',
+    image: blogAiFirst,
+    icon: Brain,
+    content: `
+      <p class="lead text-xl text-dark-200 mb-8">Un perfil en redes sociales es un buen comienzo, pero <strong>no es tu casa, es un local alquilado</strong>. El algoritmo puede cambiar mañana y hundir tu visibilidad.</p>
+
+      <h2>Controla tu Negocio</h2>
+      <p>Una página web profesional trabaja para ti 24/7. Capta clientes locales en Google, da seguridad a quienes te buscan y te diferencia inmediatamente de los competidores que solo tienen un "link en bio".</p>
+    `,
+  },
+  {
+    id: 5,
+    title: 'El Dominio Perfecto para tu Negocio en Madrid',
+    excerpt:
+      'Claves para elegir un nombre de dominio que ayude a tu posicionamiento local y sea fácil de recordar para tus clientes.',
+    date: 'Mar 2026',
+    readTime: '3 min',
+    category: 'SEO Local',
+    type: 'business',
+    image: blogFrontend,
+    icon: Code2,
+    content: `
+      <p class="lead text-xl text-dark-200 mb-8">Elegir el nombre de tu web es tan importante como elegir el local físico de tu negocio. Debe ser corto, fácil de pronunciar y relevante para tu sector en Madrid.</p>
+
+      <h2>Consejos Rápidos</h2>
+      <p>Prioriza el uso de palabras clave locales si tu negocio es puramente madrileño y busca siempre la extensión .com o .es si te diriges al público español.</p>
     `,
   },
 ];

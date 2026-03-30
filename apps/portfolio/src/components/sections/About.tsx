@@ -12,20 +12,7 @@ export function About() {
       </div>
 
       <div className="container-custom relative z-10">
-        <motion.div
-          variants={fadeInUp}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          className="text-center mb-12"
-        >
-          <h2 className="font-outfit font-bold text-3xl sm:text-4xl lg:text-5xl text-white mb-6">
-            Sobre <span className="text-gradient">Mí</span>
-          </h2>
-          <p className="text-xl text-dark-300 font-medium">
-            Un desarrollador diferente con un enfoque innovador
-          </p>
-        </motion.div>
+
 
         <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
           {/* Left Column: DevOps Profile Card */}
@@ -82,10 +69,10 @@ export function About() {
                   </div>
                   <div className="bg-dark-800/50 rounded-2xl p-5 border border-dark-700/50 hover:border-primary-500/30 transition-colors group/item">
                     <div className="text-3xl font-bold text-amber-400 mb-1 group-hover/item:scale-110 transition-transform origin-left">
-                      Quick
+                      Lanzamiento
                     </div>
                     <div className="text-sm text-dark-400 font-medium">
-                      Lanzamiento
+                      Rápido
                     </div>
                   </div>
                 </div>

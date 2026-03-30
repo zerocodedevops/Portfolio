@@ -7,18 +7,36 @@ import { Card } from '@/components/ui';
 import { articles } from '@/data/articles';
 import { fadeInUp, staggerContainer } from '@/hooks/useScrollAnimation';
 
-export function Blog() {
+interface BlogProps {
+  type?: 'business' | 'tech' | 'all';
+}
+
+export function Blog({ type = 'business' }: BlogProps) {
   const { t } = useTranslation();
+
+  const filteredArticles = type === 'all' 
+    ? articles 
+    : articles.filter(article => article.type === type);
 
   return (
     <section id="blog" className="section relative">
       <div className="container-custom relative z-10">
         <div className="text-center mb-16">
           <h2 className="font-outfit font-bold text-3xl sm:text-4xl lg:text-5xl text-white mb-6">
-            Últimas <span className="text-gradient">Reflexiones</span>
+            {type === 'business' ? (
+              <>
+                <span className="text-gradient">Guías Prácticas</span> para tu Web
+              </>
+            ) : (
+              <>
+                Últimas <span className="text-gradient">Reflexiones</span> Técnicas
+              </>
+            )}
           </h2>
           <p className="text-xl text-dark-300 font-medium mb-12">
-            Pensamientos sobre desarrollo, IA y el futuro de la tecnología
+            {type === 'business' 
+              ? 'Consejos para sacar más partido a tu presencia digital en Madrid.'
+              : 'Pensamientos sobre desarrollo, IA y el futuro de la tecnología'}
           </p>
         </div>
 
@@ -29,7 +47,7 @@ export function Blog() {
           whileInView="visible"
           viewport={{ once: true, amount: 0.1 }}
         >
-          {articles.map((article) => (
+          {filteredArticles.map((article) => (
             <motion.div key={article.id} variants={fadeInUp}>
               <Link to={`/blog/${article.id}`} className="block h-full">
                 <Card className="h-full flex flex-col group cursor-pointer hover:bg-dark-800/80 transition-colors border border-dark-700/50 overflow-hidden">
