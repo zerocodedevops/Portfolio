@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-deprecated */
 import { motion } from 'framer-motion';
 import { ArrowRight, Calendar } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
@@ -8,7 +7,7 @@ import { articles } from '@/data/articles';
 import { fadeInUp, staggerContainer } from '@/hooks/useScrollAnimation';
 
 interface BlogProps {
-  type?: 'business' | 'tech' | 'all';
+  readonly type?: 'business' | 'tech' | 'all';
 }
 
 export function Blog({ type = 'business' }: BlogProps) {
@@ -41,7 +40,7 @@ export function Blog({ type = 'business' }: BlogProps) {
         </div>
 
         <motion.div
-          className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
+          className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
           variants={staggerContainer}
           initial="hidden"
           whileInView="visible"
@@ -82,7 +81,7 @@ export function Blog({ type = 'business' }: BlogProps) {
                       <span>{article.readTime} de lectura</span>
                     </div>
 
-                    <h3 className="text-xl font-bold text-white mb-3 group-hover:text-cyan-400 transition-colors leading-tight">
+                    <h3 className="text-xl font-bold text-white mb-3 group-hover:text-cyan-400 transition-colors leading-tight line-clamp-2">
                       {t(`blog.items.${article.id}.title`) || article.title}
                     </h3>
 

@@ -62,28 +62,29 @@ export default function PymesService() {
         }}
       />
 
-      <div className="pt-[10px] pb-20 bg-dark-950 text-dark-100">
+      <div className="pt-12 md:pt-24 pb-16 md:pb-32 bg-dark-950 text-dark-100">
         <div className="container-custom">
           {/* Hero Section / H1 */}
-          <header className="max-w-[1200px] mx-auto text-center mb-20 md:whitespace-nowrap">
+          <header className="max-w-5xl mx-auto text-center mb-12 md:mb-32">
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5 }}
             >
-              <div className="flex justify-center mb-5">
-                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-accent-500/10 border border-accent-500/20 text-accent-400 text-xs font-bold uppercase tracking-wider backdrop-blur-sm">
-                  <Brain className="w-4 h-4" />
+              <div className="flex justify-center mb-6">
+                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-dark-800/50 border border-dark-700/50 text-dark-300 text-[10px] font-semibold uppercase tracking-widest backdrop-blur-sm">
+                  <Brain className="w-3 h-3" />
                   Código limpio y optimizado con IA
                 </span>
               </div>
-              <span className="inline-block text-primary-400 font-bold uppercase tracking-wider text-sm mb-4 whitespace-normal">
+              <span className="inline-block text-primary-400 font-bold uppercase tracking-wider text-sm mb-4">
                 ¿Buscas contratar diseñador web freelance Madrid?
               </span>
-              <h1 className="text-3xl md:text-5xl lg:text-[56px] font-extrabold text-white mb-6 leading-tight whitespace-normal md:whitespace-nowrap">
+              <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-[56px] font-extrabold text-white mb-6 leading-tight">
                 {heroVariant === 'A' ? (
                   <>
                     El diseñador web para{' '}
+                    <br className="hidden sm:block" />
                     <span className="text-gradient">
                       pymes en Madrid
                     </span>
@@ -91,19 +92,20 @@ export default function PymesService() {
                 ) : (
                   <>
                     Más clientes locales con una web{' '}
+                    <br className="hidden sm:block" />
                     <span className="text-gradient">
                       rápida y optimizada
                     </span>
                   </>
                 )}
               </h1>
-              <div className="text-xl text-dark-400 mb-8 max-w-full mx-auto space-y-2 whitespace-normal md:whitespace-nowrap">
+              <div className="text-lg md:text-xl text-dark-400 mb-10 w-full mx-auto space-y-2 md:whitespace-nowrap">
                 <span className="block">Si quieres crear página web para tu negocio sin complicaciones, estás en el lugar correcto.</span>
                 <span className="block">Ofrecemos soluciones reales para autónomos y pequeñas empresas.</span>
                 <span className="block">Impulsa tu presencia local hoy.</span>
               </div>
-              <div className="flex flex-col sm:flex-row justify-center sm:items-start gap-4">
-                <div className="flex flex-col">
+              <div className="flex flex-col sm:flex-row justify-center sm:items-start gap-3 sm:gap-4">
+                <div className="flex flex-col w-full sm:w-auto">
                   <button
                     onClick={handleCtaClick}
                     className="px-8 py-4 bg-primary-600 hover:bg-primary-500 text-white font-bold rounded-2xl shadow-glow transition-all flex items-center justify-center gap-2 w-full"
@@ -111,34 +113,36 @@ export default function PymesService() {
                     <Phone className="w-5 h-5" />
                     Solicita presupuesto gratis
                   </button>
-                  <span className="text-[11px] text-dark-400 mt-2.5 flex items-center justify-center gap-1.5 font-medium">
+                  <span className="text-[11px] text-dark-400 mt-2 flex items-center justify-center gap-1.5 font-medium">
                     <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse"></span>
-                    Respuesta en menos de 24h
+                    <span>Respuesta en menos de 24h</span>
                   </span>
                 </div>
-                <button
-                  onClick={() => {
-                    const el = document.getElementById('projects');
-                    if (el) {
-                      el.scrollIntoView({ behavior: 'smooth' });
-                    } else {
-                      navigate('/portfolio#projects');
-                    }
-                  }}
-                  className="px-8 py-4 bg-dark-800 hover:bg-dark-700 text-white font-bold rounded-2xl border border-dark-700 transition-all flex items-center justify-center gap-2"
-                >
-                  Ver proyectos
-                  <ArrowRight className="w-5 h-5" />
-                </button>
+                <div className="flex flex-col justify-start w-full sm:w-auto">
+                  <button
+                    onClick={() => {
+                      const el = document.getElementById('projects');
+                      if (el) {
+                        el.scrollIntoView({ behavior: 'smooth' });
+                      } else {
+                        navigate('/portfolio#projects');
+                      }
+                    }}
+                    className="px-6 py-4 bg-transparent hover:bg-dark-800 text-dark-300 hover:text-white font-medium rounded-2xl border border-dark-700 transition-all flex items-center justify-center gap-2 w-full"
+                  >
+                    Ver proyectos
+                    <ArrowRight className="w-4 h-4" />
+                  </button>
+                </div>
               </div>
             </motion.div>
           </header>
 
-          <div className="grid lg:grid-cols-3 gap-12 items-start">
-            <div className="lg:col-span-2 space-y-16">
+          <div className="max-w-6xl mx-auto grid lg:grid-cols-3 gap-12 lg:gap-20 items-start">
+            <div className="lg:col-span-2 space-y-12 md:space-y-32">
               {/* Sección Beneficios */}
               <section>
-                <h2 className="text-3xl font-bold text-white mb-8 flex items-center gap-3">
+                <h2 className="text-2xl sm:text-3xl font-bold text-white mb-8 flex items-center gap-3">
                   <BarChart3 className="text-primary-500" />
                   Beneficios de tener una web optimizada para SEO y conversión
                 </h2>
@@ -173,12 +177,12 @@ export default function PymesService() {
               </section>
 
               {/* Problemas que resolvemos (Existing Section Integrated) */}
-              <section className="bg-dark-900/50 p-8 rounded-3xl border border-dark-800">
-                <h2 className="text-3xl font-bold text-white mb-8 flex items-center gap-3">
-                  <Zap className="text-accent-500" />
+              <section className="bg-dark-900/50 p-8 md:p-10 rounded-3xl border border-dark-800">
+                <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4 flex items-center gap-3">
+                  <Zap className="text-accent-500 shrink-0" />
                   ¿Qué incluye un desarrollo web profesional?
                 </h2>
-                <div className="grid sm:grid-cols-2 gap-x-8 gap-y-4">
+                <ul className="grid sm:grid-cols-2 gap-x-8 gap-y-5 mt-8">
                   <FeatureListItem text="Arquitectura web escalable y modular" />
                   <FeatureListItem text="Diseño web responsive para negocios" />
                   <FeatureListItem text="Optimización técnica (Performance)" />
@@ -187,20 +191,20 @@ export default function PymesService() {
                   <FeatureListItem text="Código limpio y optimizado con IA" />
                   <FeatureListItem text="Automatización de recepción de consultas" />
                   <FeatureListItem text="Velocidad de carga relámpago (optimizada para Core Web Vitals)" />
-                </div>
+                </ul>
               </section>
 
               {/* Sección Precios */}
               <section>
-                <h2 className="text-3xl font-bold text-white mb-8 flex items-center gap-3">
+                <h2 className="text-2xl sm:text-3xl font-bold text-white mb-8 flex items-center gap-3">
                   <ShieldCheck className="text-green-500" />
                   Presupuesto y precio de página web para empresa en Madrid
                 </h2>
-                <p className="text-dark-400 mb-8 italic text-sm">
+                <p className="text-dark-400 mb-12 italic text-sm">
                   *Nota: Pedir un <strong>presupuesto página web Madrid</strong> es gratis.
                   Estos costes son una base y varían a la hora de <strong>hacer página web para mi empresa Madrid</strong> según tus necesidades.
                 </p>
-                <div className="grid md:grid-cols-2 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
                   <PriceCard
                     level="Web Esencial"
                     price="700€"
@@ -215,48 +219,30 @@ export default function PymesService() {
                       'Dominio y Hosting rápido (1 año)',
                       'Certificado de Seguridad (Candado SSL)',
                     ]}
+                    onCtaClick={handleCtaClick}
                   />
                   <PriceCard
                     level="Web Profesional"
                     price="1.400€"
+                    featured={false}
                     bestFor="La máquina de captar clientes para tu negocio local. Optimizada para posicionar en Google en tu sector."
                     features={[
                       'Todo lo incluido en la Web Esencial',
                       'Secciones extra: Equipo, Testimonios',
                       'SEO On-Page Avanzado (Más visibilidad)',
-                      'Velocidad de carga relámpago (optimizada para Core Web Vitals)',
+                      'Velocidad de carga relámpago (Core Web Vitals)',
                       'Cuentas de Email Profesional (@empresa.es)',
                       'Soporte directo por teléfono (1 año)',
                       'Cambios y actualizaciones incluidas (1 año)',
                     ]}
+                    onCtaClick={handleCtaClick}
                   />
-                </div>
-                <div className="mt-6 text-center">
-                  <button
-                    onClick={() => {
-                      navigate('/precios-paginas-web');
-                      globalThis.scrollTo({ top: 0, behavior: 'smooth' });
-                    }}
-                    className="group inline-flex items-center gap-2 text-primary-400 hover:text-primary-300 font-medium transition-all"
-                  >
-                    Ver detalles completos de planes y servicios
-                    <ArrowDownRight className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-                  </button>
-                </div>
-                <div className="flex justify-center mt-10">
-                  <button
-                    onClick={handleCtaClick}
-                    className="px-8 py-4 bg-primary-600 hover:bg-primary-500 text-white font-bold rounded-2xl shadow-glow transition-all flex items-center justify-center gap-2"
-                  >
-                    <Phone className="w-5 h-5" />
-                    Solicita presupuesto gratis
-                  </button>
                 </div>
               </section>
 
               {/* Sección Proveedor */}
               <section>
-                <h2 className="text-3xl font-bold text-white mb-6">
+                <h2 className="text-2xl sm:text-3xl font-bold text-white mb-6">
                   Cómo elegir un proveedor de desarrollo web en Madrid
                 </h2>
                 <div className="prose prose-invert max-w-none text-dark-400">
@@ -274,16 +260,17 @@ export default function PymesService() {
               </section>
 
               {/* Sección ¿Quién está detrás? */}
-              <section className="bg-gradient-to-br from-primary-500/5 to-accent-500/5 p-8 rounded-3xl border border-dark-800">
-                <div className="flex flex-col md:flex-row gap-8 items-center">
-                  <div className="w-24 h-24 rounded-2xl bg-dark-800 flex items-center justify-center border border-primary-500/30 shadow-glow shrink-0">
-                    <User className="w-12 h-12 text-primary-500" />
+              <section className="bg-gradient-to-br from-primary-500/5 to-accent-500/5 p-8 md:p-10 rounded-3xl border border-dark-800">
+                <div className="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-8 md:gap-12 items-center">
+                  <div className="aspect-square w-full max-w-[280px] mx-auto md:max-w-none rounded-3xl bg-dark-800/80 flex items-center justify-center border border-primary-500/30 shadow-glow relative overflow-hidden group">
+                    <div className="absolute inset-0 bg-primary-500/10 group-hover:bg-primary-500/20 transition-colors duration-500" />
+                    <User className="w-24 h-24 text-primary-500 relative z-10" />
                   </div>
-                  <div className="space-y-4">
-                    <h2 className="text-2xl font-bold text-white">
+                  <div className="space-y-6 text-center md:text-left">
+                    <h2 className="text-2xl sm:text-3xl font-bold text-white">
                       ¿Quién está detrás de ZeroCode?
                     </h2>
-                    <p className="text-dark-400 text-lg leading-relaxed">
+                    <p className="text-dark-300 text-lg md:text-xl leading-relaxed">
                       Hola, soy <strong>David</strong>, arquitecto web freelance.
                       Vivo y trabajo en <strong>Madrid (Rivas)</strong>, lo que me
                       permite ofrecerte un trato directo y cercano que ninguna
@@ -291,17 +278,17 @@ export default function PymesService() {
                       hacerte una web, sino que tu tecnología trabaje para traerte
                       más clientes cada día.
                     </p>
-                    <div className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-dark-300">
-                      <span className="flex items-center gap-2 italic">
-                        <CheckCircle className="w-4 h-4 text-primary-500" />{' '}
+                    <div className="flex flex-col sm:flex-row flex-wrap gap-x-6 gap-y-3 text-sm text-dark-300 justify-center md:justify-start pt-2">
+                      <span className="flex items-center justify-center md:justify-start gap-2 italic">
+                        <CheckCircle className="w-5 h-5 text-primary-500 shrink-0" />
                         Trato directo
                       </span>
-                      <span className="flex items-center gap-2 italic">
-                        <CheckCircle className="w-4 h-4 text-primary-500" />{' '}
+                      <span className="flex items-center justify-center md:justify-start gap-2 italic">
+                        <CheckCircle className="w-5 h-5 text-primary-500 shrink-0" />
                         Enfoque en negocio
                       </span>
-                      <span className="flex items-center gap-2 italic">
-                        <CheckCircle className="w-4 h-4 text-primary-500" />{' '}
+                      <span className="flex items-center justify-center md:justify-start gap-2 italic">
+                        <CheckCircle className="w-5 h-5 text-primary-500 shrink-0" />
                         Soporte continuo
                       </span>
                     </div>
@@ -311,7 +298,7 @@ export default function PymesService() {
 
               {/* Sección Casos de Éxito */}
               <section className="border-t border-dark-800 pt-16">
-                <h2 className="text-3xl font-bold text-white mb-8 flex items-center gap-3">
+                <h2 className="text-2xl sm:text-3xl font-bold text-white mb-8 flex items-center gap-3">
                   <CheckCircle className="text-green-500" />
                   Casos de éxito y testimonios locales en Madrid
                 </h2>
@@ -356,10 +343,10 @@ export default function PymesService() {
 
               {/* FAQ Section */}
               <section>
-                <h2 className="text-3xl font-bold text-white mb-8 text-center sm:text-left">
+                <h2 className="text-2xl sm:text-3xl font-bold text-white mb-8 text-center sm:text-left">
                   Preguntas frecuentes (FAQ)
                 </h2>
-                <div className="space-y-6">
+                <div className="space-y-4">
                   <FaqItem
                     q="¿Cuánto cuesta contratar un diseñador web para mi empresa en Madrid?"
                     a="El precio de una página web para empresa puede variar. Un diseño web profesional parte de 700€, pudiendo llegar a 1.400€ o más si tu negocio necesita integraciones complejas o SEO local avanzado."
@@ -401,31 +388,31 @@ export default function PymesService() {
 
                 <div className="space-y-[18px]">
                   {/* Estadísticas Clave */}
-                  <div className="bg-gradient-to-br from-primary-600/20 to-accent-600/20 p-[18px] rounded-2xl border border-white/5">
-                    <h3 className="text-lg font-bold text-white mb-3">
+                  <div className="bg-gradient-to-br from-primary-600/20 to-accent-600/20 p-8 rounded-3xl border border-white/5 mt-16 text-center">
+                    <h3 className="text-xl font-bold text-white mb-10">
                       Estadísticas Clave
                     </h3>
-                    <div className="space-y-3">
-                      <div>
-                        <span className="text-3xl font-bold text-primary-400">
+                    <div className="grid grid-cols-1 gap-8 divide-y divide-white/10">
+                      <div className="pb-8">
+                        <span className="block text-5xl font-extrabold text-primary-400 mb-2">
                           88%
                         </span>
-                        <p className="text-xs text-dark-300 mt-1">
+                        <p className="text-sm text-dark-300 leading-relaxed px-4">
                           de consumidores investigan online antes de comprar
                           localmente.
                         </p>
                       </div>
-                      <div>
-                        <span className="text-3xl font-bold text-accent-400">
+                      <div className="pt-8">
+                        <span className="block text-5xl font-extrabold text-accent-400 mb-2">
                           53%
                         </span>
-                        <p className="text-xs text-dark-300 mt-1">
-                          abandona una web que tarda más de 3 segundos en
+                        <p className="text-sm text-dark-300 leading-relaxed px-4">
+                          abandona una web local que tarda más de 3s en
                           cargar.
                         </p>
                       </div>
                     </div>
-                    <p className="text-[10px] text-dark-500 mt-3 italic">
+                    <p className="text-xs text-dark-500 mt-8 italic">
                       Fuente: estudios de comportamiento de usuarios en buscadores.
                     </p>
                   </div>
@@ -444,14 +431,23 @@ export default function PymesService() {
                   </div>
 
                   {/* Presencia en Madrid */}
-                  <div className="p-3 rounded-xl border border-dark-700/50 bg-dark-800/30">
-                    <h3 className="text-sm font-bold text-white mb-[6px] flex items-center gap-2">
-                      <MapPin className="w-4 h-4 text-accent-400" />
+                  <div className="p-6 rounded-3xl border border-dark-700/50 bg-dark-800/30">
+                    <h3 className="text-sm font-bold text-white mb-5 flex items-center justify-center gap-2">
+                      <MapPin className="w-4 h-4 text-accent-400 shrink-0" />
                       Presencia en Madrid
                     </h3>
-                    <p className="text-dark-400 text-xs">
-                      Damos servicio en: Madrid Capital, Rivas Vaciamadrid, Coslada, San Fernando de Henares, Arganda del Rey, Pozuelo, Aravaca, Majadahonda, Las Rozas y alrededores (online para el
-                      resto de España).
+                    <ul className="grid grid-cols-2 gap-3 text-left">
+                      <li className="flex items-center gap-2 text-xs text-dark-300"><div className="w-1.5 h-1.5 rounded-full bg-primary-500"/>Madrid Capital</li>
+                      <li className="flex items-center gap-2 text-xs text-dark-300"><div className="w-1.5 h-1.5 rounded-full bg-primary-500"/>Rivas Vaciamadrid</li>
+                      <li className="flex items-center gap-2 text-xs text-dark-300"><div className="w-1.5 h-1.5 rounded-full bg-primary-500"/>Coslada</li>
+                      <li className="flex items-center gap-2 text-xs text-dark-300"><div className="w-1.5 h-1.5 rounded-full bg-primary-500"/>San Fernando</li>
+                      <li className="flex items-center gap-2 text-xs text-dark-300"><div className="w-1.5 h-1.5 rounded-full bg-primary-500"/>Arganda del Rey</li>
+                      <li className="flex items-center gap-2 text-xs text-dark-300"><div className="w-1.5 h-1.5 rounded-full bg-primary-500"/>Pozuelo y Aravaca</li>
+                      <li className="flex items-center gap-2 text-xs text-dark-300"><div className="w-1.5 h-1.5 rounded-full bg-primary-500"/>Majadahonda</li>
+                      <li className="flex items-center gap-2 text-xs text-dark-300"><div className="w-1.5 h-1.5 rounded-full bg-primary-500"/>Las Rozas</li>
+                    </ul>
+                    <p className="text-[11px] text-dark-500 mt-5 italic text-center">
+                      *Online para el resto de España.
                     </p>
                   </div>
                 </div>
@@ -476,18 +472,18 @@ export default function PymesService() {
 
 function BenefitCard({ title, desc }: Readonly<{ title: string; desc: string }>) {
   return (
-    <div className="p-5 rounded-2xl bg-dark-900 border border-dark-800 hover:border-primary-500/50 transition-all">
-      <h4 className="font-bold text-white mb-2">{title}</h4>
-      <p className="text-sm text-dark-400">{desc}</p>
+    <div className="p-6 rounded-2xl bg-dark-800/50 border border-dark-700/50 hover:border-primary-500/50 transition-all">
+      <h4 className="font-bold text-white mb-3 text-lg">{title}</h4>
+      <p className="text-sm text-dark-400 leading-relaxed">{desc}</p>
     </div>
   );
 }
 
 function FeatureListItem({ text }: Readonly<{ text: string }>) {
   return (
-    <li className="flex items-center gap-2 text-dark-300">
-      <CheckCircle className="w-5 h-5 text-primary-500 shrink-0" />
-      <span>{text}</span>
+    <li className="flex items-start gap-3 text-dark-300">
+      <CheckCircle className="w-5 h-5 text-primary-500 shrink-0 mt-0.5" />
+      <span className="leading-tight">{text}</span>
     </li>
   );
 }
@@ -498,48 +494,62 @@ function PriceCard({
   bestFor,
   features = [],
   featured = false,
+  onCtaClick,
 }: Readonly<{
   level: string;
   price: string;
   bestFor: string;
   features?: string[];
   featured?: boolean;
+  onCtaClick?: () => void;
 }>) {
   return (
-    <div className={`p-6 rounded-2xl border transition-all flex flex-col relative ${featured
-      ? 'bg-primary-500/5 border-primary-500 shadow-glow'
-      : 'bg-white/5 border-white/10 hover:bg-white/10'
+    <div className={`p-8 rounded-3xl border transition-all flex flex-col relative h-full ${featured
+      ? 'bg-dark-800 border-primary-500/50 shadow-2xl scale-100 md:scale-105 z-10'
+      : 'bg-dark-900 border-dark-800 hover:border-dark-700 mt-0 md:mt-4 mb-0 md:mb-4'
       }`}>
       {featured && (
-        <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-0.5 bg-primary-500 text-white text-[10px] font-bold rounded-full uppercase tracking-wider">
+        <div className="absolute -top-4 left-6 px-4 py-1.5 bg-primary-600 text-white text-[11px] font-bold rounded-full uppercase tracking-widest shadow-glow">
           Más Popular
         </div>
       )}
-      <span className="text-xs text-primary-400 font-bold uppercase tracking-wider">
+      <h3 className="text-sm text-primary-400 font-bold uppercase tracking-wider">
         {level}
-      </span>
-      <div className="text-3xl font-bold text-white my-2">{price}</div>
-      <p className="text-sm text-dark-400 mb-6">{bestFor}</p>
+      </h3>
+      <div className="text-4xl md:text-5xl font-extrabold text-white my-4">{price}</div>
+      <p className="text-sm text-dark-400 mb-8 leading-relaxed h-[42px]">{bestFor}</p>
 
       {features.length > 0 && (
-        <ul className="space-y-3 mb-2 flex-grow">
+        <ul className="space-y-4 mb-10 flex-grow">
           {features.map((feature) => (
-            <li key={feature} className="flex items-start gap-3 text-dark-300 text-xs">
-              <CheckCircle className="w-4 h-4 text-primary-500 shrink-0 mt-0.5" />
-              <span>{feature}</span>
+            <li key={feature} className="flex items-start gap-3 text-dark-300 text-sm">
+              <CheckCircle className="w-5 h-5 text-primary-500 shrink-0 mt-0.5" />
+              <span className="leading-tight">{feature}</span>
             </li>
           ))}
         </ul>
       )}
+      <button
+        onClick={onCtaClick}
+        className={`w-full py-4 rounded-xl font-bold transition-all flex items-center justify-center gap-2 mt-auto ${featured 
+          ? 'bg-primary-600 hover:bg-primary-500 text-white shadow-glow' 
+          : 'bg-dark-800 hover:bg-dark-700 text-white border border-dark-700'
+        }`}
+      >
+        <Phone className="w-4 h-4" />
+        Solicita presupuesto gratis
+      </button>
     </div>
   );
 }
 
 function FaqItem({ q, a }: Readonly<{ q: string; a: string }>) {
   return (
-    <div className="p-6 rounded-2xl bg-dark-900 border border-dark-800">
-      <h4 className="text-lg font-bold text-white mb-2">{q}</h4>
-      <p className="text-dark-400 leading-relaxed text-sm">{a}</p>
+    <div className="p-6 rounded-2xl bg-dark-800/40 border border-dark-700/50 hover:border-dark-700 transition-colors">
+      <h4 className="text-lg font-bold text-white mb-3">{q}</h4>
+      <p className="text-dark-300 leading-relaxed text-sm">
+        {a}
+      </p>
     </div>
   );
 }
@@ -554,15 +564,14 @@ function TestimonialCard({
   text: string;
 }>) {
   return (
-    <div className="bg-dark-900/40 p-6 rounded-2xl border border-dark-800 relative">
-      <div className="absolute top-4 right-6 text-primary-500/20 text-6xl font-serif">
-        "
+    <div className="bg-dark-800/40 p-8 rounded-3xl border border-dark-700/50 relative flex flex-col h-full">
+      <div className="text-primary-500/20 text-6xl font-serif mb-2 leading-none">
+        &ldquo;
       </div>
-      <p className="text-dark-300 italic mb-6 relative z-10">{text}</p>
-      <div>
-        <div className="text-xs text-dark-500 flex items-center gap-1">
-          <MapPin className="w-3 h-3 text-primary-500/70" /> {name}, {location} (Madrid)
-        </div>
+      <p className="text-dark-200 text-lg font-medium italic mb-8 relative z-10 flex-grow">{text}</p>
+      <div className="mt-auto pt-6 border-t border-dark-700/50">
+        <div className="text-sm font-bold text-white">{name}</div>
+        <div className="text-xs text-dark-400 mt-1">{location} (Madrid)</div>
       </div>
     </div>
   );
