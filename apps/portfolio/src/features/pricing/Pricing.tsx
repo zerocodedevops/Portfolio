@@ -36,7 +36,10 @@ export default function Pricing() {
               title="Web Esencial"
               price="700€"
               originalPrice="1.200€"
+<<<<<<< HEAD
               featured={true}
+=======
+>>>>>>> 605311ad28871f19e42fddd05b1259e9ad95b7c3
               description="La tarjeta de visita digital perfecta para arrancar tu presencia local con fuerza."
               features={[
                 'Diseño de Inicio, Servicios y Contacto',
@@ -54,6 +57,10 @@ export default function Pricing() {
               title="Web Profesional"
               price="1.400€"
               originalPrice="2.500€"
+<<<<<<< HEAD
+=======
+              featured={true}
+>>>>>>> 605311ad28871f19e42fddd05b1259e9ad95b7c3
               description="La máquina de captar clientes para tu negocio local. Optimizada para posicionar en Google en tu sector."
               features={[
                 'Todo lo incluido en la Web Esencial',

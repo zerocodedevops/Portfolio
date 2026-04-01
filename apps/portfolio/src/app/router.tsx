@@ -13,7 +13,10 @@ const MediaApp = lazy(() => import('@zerodelay/App'));
 const ReformsApp = lazy(() => import('@zero-chaos/routes'));
 const CaseStudy = lazy(() => import('@/features/projects/CaseStudy'));
 const TechBlog = lazy(() => import('@/features/blog/TechBlog'));
+<<<<<<< HEAD
 const BlogPost = lazy(() => import('@/features/blog/BlogPost'));
+=======
+>>>>>>> 605311ad28871f19e42fddd05b1259e9ad95b7c3
 
 const router = createBrowserRouter(
   [
@@ -121,6 +124,7 @@ const router = createBrowserRouter(
         </Suspense>
       ),
     },
+<<<<<<< HEAD
     {
       path: '/blog/:id',
       element: (
@@ -129,6 +133,8 @@ const router = createBrowserRouter(
         </Suspense>
       ),
     },
+=======
+>>>>>>> 605311ad28871f19e42fddd05b1259e9ad95b7c3
   ],
   {
     future: {

@@ -244,6 +244,7 @@
         "category": "Local SEO",
         "title": "The Perfect Domain for your Business in Madrid",
         "excerpt": "Keys to choosing a domain name that helps your local positioning and is easy for your customers to remember."
+<<<<<<< HEAD
       },
       "6": {
         "category": "Local Business",
@@ -259,6 +260,8 @@
         "category": "Tips",
         "title": "Typical mistakes that make freelancers and SMEs lose customers on their website",
         "excerpt": "Is your website not working? Check if you are making any of these common mistakes that scare away your visitors."
+=======
+>>>>>>> 605311ad28871f19e42fddd05b1259e9ad95b7c3
       }
     }
   },

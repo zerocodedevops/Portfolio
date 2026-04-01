@@ -28,7 +28,11 @@ export const articles: Article[] = [
     readTime: '5 min',
     category: 'Filosofía',
     type: 'tech',
+<<<<<<< HEAD
     image: imgAiArchitecture,
+=======
+    image: blogAiFirst,
+>>>>>>> 605311ad28871f19e42fddd05b1259e9ad95b7c3
     icon: Brain,
     content: `
       <p class="lead text-xl text-dark-200 mb-8">Vivimos en un <strong>punto de inflexión histórico</strong>. La programación tradicional, centrada obsesivamente en la sintaxis y la memorización de APIs, está dando paso a una nueva era inevitable: la <strong>Ingeniería AI-First</strong>.</p>
@@ -46,7 +50,11 @@ export const articles: Article[] = [
     readTime: '7 min',
     category: 'Tecnología',
     type: 'tech',
+<<<<<<< HEAD
     image: imgAutonomousAgents,
+=======
+    image: blogAgents,
+>>>>>>> 605311ad28871f19e42fddd05b1259e9ad95b7c3
     icon: Cpu,
     content: `
       <p class="lead text-xl text-dark-200 mb-8">Github Copilot fue solo el comienzo, la punta del iceberg. El autocompletado inteligente es útil, sí, pero los <strong>Agentes Autónomos</strong> son la verdadera revolución que está por llegar a nuestros IDEs.</p>
@@ -64,7 +72,11 @@ export const articles: Article[] = [
     readTime: '4 min',
     category: 'Desarrollo',
     type: 'tech',
+<<<<<<< HEAD
     image: imgFrontendMagic,
+=======
+    image: blogFrontend,
+>>>>>>> 605311ad28871f19e42fddd05b1259e9ad95b7c3
     icon: Code2,
     content: `
       <p class="lead text-xl text-dark-200 mb-8">¿Cuántas veces has escrito el mismo componente de botón? ¿O la misma configuración de rutas en React Router? ¿O el mismo formulario de login? El <strong>"Boilerplate"</strong> (código repetitivo) ha sido la plaga que ha drenado la energía del desarrollo frontend durante años.</p>
@@ -74,6 +86,7 @@ export const articles: Article[] = [
     `,
   },
   {
+<<<<<<< HEAD
     id: 6,
     title: 'Cómo destacar tu negocio de Madrid en Google',
     excerpt:
@@ -158,6 +171,8 @@ export const articles: Article[] = [
     `,
   },
   {
+=======
+>>>>>>> 605311ad28871f19e42fddd05b1259e9ad95b7c3
     id: 4,
     title: 'Por qué tu Pyme necesita algo más que Instagram',
     excerpt:
@@ -166,7 +181,11 @@ export const articles: Article[] = [
     readTime: '4 min',
     category: 'Estrategia',
     type: 'business',
+<<<<<<< HEAD
     image: imgGoogleMaps,
+=======
+    image: blogAiFirst,
+>>>>>>> 605311ad28871f19e42fddd05b1259e9ad95b7c3
     icon: Brain,
     content: `
       <p class="lead text-xl text-dark-200 mb-8">Un perfil en redes sociales es un buen comienzo, pero <strong>no es tu casa, es un local alquilado</strong>. El algoritmo puede cambiar mañana y hundir tu visibilidad.</p>
@@ -184,7 +203,11 @@ export const articles: Article[] = [
     readTime: '3 min',
     category: 'SEO Local',
     type: 'business',
+<<<<<<< HEAD
     image: imgFrontendMagic,
+=======
+    image: blogFrontend,
+>>>>>>> 605311ad28871f19e42fddd05b1259e9ad95b7c3
     icon: Code2,
     content: `
       <p class="lead text-xl text-dark-200 mb-8">Elegir el nombre de tu web es tan importante como elegir el local físico de tu negocio. Debe ser corto, fácil de pronunciar y relevante para tu sector en Madrid.</p>
@@ -193,6 +216,7 @@ export const articles: Article[] = [
       <p>Prioriza el uso de palabras clave locales si tu negocio es puramente madrileño y busca siempre la extensión .com o .es si te diriges al público español.</p>
     `,
   },
+<<<<<<< HEAD
   {
     id: 8,
     title: 'Errores web que te hacen perder clientes',
@@ -226,4 +250,6 @@ export const articles: Article[] = [
       <p>No te preocupes, todos tienen solución. Lo importante es ser consciente y actuar. Una web bien hecha no es un gasto: es la inversión que más clientes te va a traer este año.</p>
     `,
   },
+=======
+>>>>>>> 605311ad28871f19e42fddd05b1259e9ad95b7c3
 ];
