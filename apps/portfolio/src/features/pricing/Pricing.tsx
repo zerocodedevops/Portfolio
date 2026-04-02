@@ -36,10 +36,7 @@ export default function Pricing() {
               title="Web Esencial"
               price="700€"
               originalPrice="1.200€"
-<<<<<<< HEAD
               featured={true}
-=======
->>>>>>> 605311ad28871f19e42fddd05b1259e9ad95b7c3
               description="La tarjeta de visita digital perfecta para arrancar tu presencia local con fuerza."
               features={[
                 'Diseño de Inicio, Servicios y Contacto',
@@ -57,10 +54,7 @@ export default function Pricing() {
               title="Web Profesional"
               price="1.400€"
               originalPrice="2.500€"
-<<<<<<< HEAD
-=======
-              featured={true}
->>>>>>> 605311ad28871f19e42fddd05b1259e9ad95b7c3
+              featured={false}
               description="La máquina de captar clientes para tu negocio local. Optimizada para posicionar en Google en tu sector."
               features={[
                 'Todo lo incluido en la Web Esencial',
@@ -175,31 +169,33 @@ function PricingCard({
       </div>
       <p className="text-dark-400 text-sm mb-8">{description}</p>
 
-      <ul className="space-y-4 mb-10 flex-grow">
-        {features.map((feature: string) => (
-          <li
-            key={feature}
-            className="flex items-center gap-3 text-dark-300 text-sm"
-          >
-            <Check className="w-4 h-4 text-primary-500 shrink-0" />
-            <span>{feature}</span>
-          </li>
-        ))}
-      </ul>
+      {features && (
+        <ul className="space-y-4 mb-10 flex-grow">
+          {features.map((feature: string) => (
+            <li
+              key={feature}
+              className="flex items-center gap-3 text-dark-300 text-sm"
+            >
+              <Check className="w-4 h-4 text-primary-500 shrink-0" />
+              <span>{feature}</span>
+            </li>
+          ))}
+        </ul>
+      )}
 
-        <button
-          onClick={() => {
-            const el = document.getElementById('contact');
-            if (el) {
-              el.scrollIntoView({ behavior: 'smooth' });
-            } else {
-              globalThis.location.href = '/#contact';
-            }
-          }}
-          className={`w-full py-4 rounded-xl font-bold transition-all ${featured ? 'bg-primary-600 hover:bg-primary-500 text-white' : 'bg-dark-800 hover:bg-dark-700 text-white'}`}
-        >
-          {ctaText || 'Elegir este plan'}
-        </button>
+      <button
+        onClick={() => {
+          const el = document.getElementById('contact');
+          if (el) {
+            el.scrollIntoView({ behavior: 'smooth' });
+          } else {
+            globalThis.location.href = '/#contact';
+          }
+        }}
+        className={`w-full py-4 rounded-xl font-bold transition-all ${featured ? 'bg-primary-600 hover:bg-primary-500 text-white' : 'bg-dark-800 hover:bg-dark-700 text-white'}`}
+      >
+        {ctaText || 'Elegir este plan'}
+      </button>
     </motion.div>
   );
 }

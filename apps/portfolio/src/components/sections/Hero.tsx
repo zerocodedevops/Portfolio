@@ -1,11 +1,11 @@
-/* eslint-disable @typescript-eslint/no-deprecated */
 import { motion } from 'framer-motion';
-import { Github, Linkedin, Mail, Terminal, Send, ArrowRight } from 'lucide-react';
+import { Mail, Terminal, Send, ArrowRight } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { TypeAnimation } from 'react-type-animation';
 import { trackEvent } from '@/lib/analytics';
 import { Button } from '@/components/ui';
 import { CodeWindow } from '@/components/ui/CodeWindow';
+import { GithubIcon, LinkedinIcon } from '@/components/ui/BrandIcons';
 import { fadeInUp, staggerContainer } from '@/hooks/useScrollAnimation';
 
 export function Hero() {
@@ -18,14 +18,14 @@ export function Hero() {
   const socialLinks = [
     {
       name: 'GitHub',
-      icon: <Github className="w-5 h-5" />,
+      icon: <GithubIcon className="w-5 h-5" />,
       url: 'https://github.com/zerocodedevops',
       color: 'hover:text-white hover:bg-dark-800',
     },
     {
       name: 'LinkedIn',
-      icon: <Linkedin className="w-5 h-5" />,
-      url: 'https://www.linkedin.com/in/zerocode-devops',
+      icon: <LinkedinIcon className="w-5 h-5" />,
+      url: 'https://www.linkedin.com/in/dgpercero',
       color: 'hover:text-white hover:bg-blue-600',
     },
     {
@@ -59,9 +59,9 @@ export function Hero() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="font-outfit font-bold text-3xl sm:text-4xl lg:text-5xl text-white mb-6">
+          <p className="font-outfit font-bold text-3xl sm:text-4xl lg:text-5xl text-white mb-6">
             Sobre <span className="text-gradient">Mí</span>
-          </h2>
+          </p>
           <p className="text-xl text-dark-300 font-medium">
             Un desarrollador diferente con un enfoque innovador
           </p>

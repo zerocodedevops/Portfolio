@@ -1,15 +1,14 @@
-/* eslint-disable @typescript-eslint/no-deprecated */
 import { motion } from 'framer-motion';
 import {
   ExternalLink,
   FileCode,
   GitCommit,
-  Github as GithubIcon,
   Star,
   Users,
 } from 'lucide-react';
 import { Trans, useTranslation } from 'react-i18next';
 import { Button, TechBadge } from '@/components/ui';
+import { GithubIcon } from '@/components/ui/BrandIcons';
 import {
   fadeInUp,
   slideInLeft,
@@ -119,16 +118,7 @@ export function FeaturedProject() {
             <div className="mb-6 p-4 rounded-lg bg-primary-500/5 border border-primary-500/10">
               <p className="text-sm text-dark-300 italic">
                 <Trans i18nKey="featuredProject.quote">
-                  "Este sistema fue desarrollado{' '}
-                  <span className="text-primary-400 font-medium">
-                    sin formación previa
-                  </span>
-                  , guiado completamente por{' '}
-                  <span className="text-accent-400 font-medium">IA</span> y{' '}
-                  <span className="text-green-400 font-medium">
-                    validado en producción
-                  </span>
-                  ."
+                  "Este sistema fue desarrollado <span className="text-primary-400 font-medium">sin formación previa</span>, guiado completamente por <span className="text-accent-400 font-medium">IA</span> y <span className="text-green-400 font-medium">validado en producción</span>."
                 </Trans>
               </p>
             </div>

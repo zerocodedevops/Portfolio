@@ -1,8 +1,12 @@
 import { motion } from 'framer-motion';
 import { Bot, Globe, MapPin, Zap } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import { fadeInUp, staggerContainer } from '@/hooks/useScrollAnimation';
+import { SectionTitle } from '@/components/ui/SectionTitle';
 
 export function About() {
+  const { t } = useTranslation();
+
   return (
     <section id="about" className="section relative overflow-hidden">
       {/* Background decoration */}
@@ -12,7 +16,11 @@ export function About() {
       </div>
 
       <div className="container-custom relative z-10">
-
+        <SectionTitle
+          title={t('about.title')}
+          subtitle={t('about.subtitle')}
+          className="mb-20"
+        />
 
         <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
           {/* Left Column: DevOps Profile Card */}

@@ -1,9 +1,6 @@
-/* eslint-disable @typescript-eslint/no-deprecated */
 import { AnimatePresence, motion } from 'framer-motion';
 import {
   Code2,
-  Github as GithubIcon, // NOSONAR
-  Linkedin as LinkedinIcon, // NOSONAR
   Mail,
   Menu,
   MessageCircle,
@@ -14,15 +11,16 @@ import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 import { trackEvent } from '@/lib/analytics';
 import { cn } from '@/lib/utils';
+import { GithubIcon, LinkedinIcon } from '@/components/ui/BrandIcons';
 
 const socialLinks = [
   {
     icon: GithubIcon,
     href: 'https://github.com/zerocodedevops',
     label: 'GitHub',
-  }, // NOSONAR
+  },
   {
-    icon: LinkedinIcon, // NOSONAR
+    icon: LinkedinIcon,
     href: 'https://www.linkedin.com/in/zerocode-devops',
     label: 'LinkedIn',
   },
@@ -40,6 +38,7 @@ export function Navbar() {
     { label: 'Sobre Mí', href: '/disenador-web-freelance-madrid' },
     { label: 'Proyectos', href: '#projects' },
     { label: 'Blog', href: '#blog' },
+    { label: 'Tech', href: 'https://zerocode-devops.com/tech' },
     { label: 'Precios', href: '/precios-paginas-web' },
     { label: 'Contacto', href: '#contact' },
   ];
@@ -61,6 +60,10 @@ export function Navbar() {
 
   const handleNavClick = (href: string) => {
     setIsMobileMenuOpen(false);
+    if (href.startsWith('http')) {
+      globalThis.window.location.href = href;
+      return;
+    }
     if (href.startsWith('#')) {
       const element = document.querySelector(href);
       if (element) {

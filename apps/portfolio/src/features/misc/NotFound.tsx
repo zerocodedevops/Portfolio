@@ -1,7 +1,6 @@
 import { motion } from 'framer-motion';
 import { AlertTriangle, Home } from 'lucide-react';
 import { Link } from 'react-router-dom';
-// eslint-disable-next-line
 import { Button } from '@/components/ui';
 
 export default function NotFound() {

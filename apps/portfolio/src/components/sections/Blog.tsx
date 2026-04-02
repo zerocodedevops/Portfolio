@@ -7,11 +7,7 @@ import { articles } from '@/data/articles';
 import { fadeInUp, staggerContainer } from '@/hooks/useScrollAnimation';
 
 interface BlogProps {
-<<<<<<< HEAD
   readonly type?: 'business' | 'tech' | 'all';
-=======
-  type?: 'business' | 'tech' | 'all';
->>>>>>> 605311ad28871f19e42fddd05b1259e9ad95b7c3
 }
 
 export function Blog({ type = 'business' }: BlogProps) {

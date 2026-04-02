@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "vite",
     "dev:reformas": "cd ../zero-chaos && npm run dev",
-    "build": "vite build",
+    "build": "npm run sitemap && vite build",
+    "sitemap": "node scripts/generate-sitemap.mjs",
     "preview": "vite preview",
     "lint": "eslint .",
     "type-check": "tsc --noEmit",

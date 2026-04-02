@@ -2,11 +2,6 @@ import { motion } from 'framer-motion';
 import {
   ArrowUp,
   Code2,
-<<<<<<< HEAD
-=======
-  Github as GithubIcon,
-  Linkedin as LinkedinIcon,
->>>>>>> 605311ad28871f19e42fddd05b1259e9ad95b7c3
   Mail,
   MessageCircle,
 } from 'lucide-react';
@@ -54,11 +49,7 @@ const socialLinks = [
     icon: GithubIcon,
     href: 'https://github.com/zerocodedevops',
     label: 'GitHub',
-<<<<<<< HEAD
   },
-=======
-  }, // NOSONAR
->>>>>>> 605311ad28871f19e42fddd05b1259e9ad95b7c3
   {
     icon: LinkedinIcon,
     href: 'https://www.linkedin.com/in/zerocode-devops',
@@ -75,11 +66,16 @@ export function Footer() {
   const footerLinks = [
     { label: 'Inicio', href: '/' },
     { label: 'Sobre Mí', href: '/disenador-web-freelance-madrid' },
+    { label: 'Tech', href: 'https://zerocode-devops.com/tech' },
     { label: 'Precios', href: '/precios-paginas-web' },
     { label: 'Contacto', href: '#contact' },
   ];
 
   const handleNavClick = (href: string) => {
+    if (href.startsWith('http')) {
+      globalThis.window.location.href = href;
+      return;
+    }
     if (href.startsWith('#')) {
       const element = document.querySelector(href);
       if (element) {
@@ -115,11 +111,7 @@ export function Footer() {
         <ArrowUp className="w-5 h-5" />
       </motion.button>
 
-<<<<<<< HEAD
       <div className="container-custom py-12 md:py-16">
-=======
-      <div className="container-custom py-8">
->>>>>>> 605311ad28871f19e42fddd05b1259e9ad95b7c3
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
           {/* Logo and tagline */}
           <div className="text-center md:text-left">
@@ -164,50 +156,38 @@ export function Footer() {
             ))}
           </div>
 
-          {/* Social links */}
-          <div className="flex justify-center md:justify-end gap-4">
-            {socialLinks.map((social) => (
-              <motion.a
-                key={social.label}
-                href={social.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-2 rounded-lg bg-dark-800/50 text-dark-400 hover:text-primary-400 hover:bg-dark-700/50 transition-all"
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.95 }}
-                aria-label={social.label}
-              >
-                <social.icon className="w-5 h-5" />
-              </motion.a>
-            ))}
-          </div>
+          { socialLinks.length > 0 && (
+            <div className="flex justify-center md:justify-end gap-4">
+              {socialLinks.map((social) => (
+                <motion.a
+                  key={social.label}
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-2 rounded-lg bg-dark-800/50 text-dark-400 hover:text-primary-400 hover:bg-dark-700/50 transition-all"
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.95 }}
+                  aria-label={social.label}
+                >
+                  <social.icon className="w-5 h-5" />
+                </motion.a>
+              ))}
+            </div>
+          )}
         </div>
 
         {/* Bottom bar */}
-<<<<<<< HEAD
         <div className="mt-12 pt-8 border-t border-dark-700/50">
           <p className="text-center text-dark-500 text-sm flex items-center justify-center gap-2">
-=======
-        <div className="mt-6 pt-6 border-t border-dark-700/50">
-          <p className="text-center text-dark-500 text-xs flex items-center justify-center gap-2">
->>>>>>> 605311ad28871f19e42fddd05b1259e9ad95b7c3
             © {currentYear} ZeroCode • Hecho con curiosidad + IA
           </p>
 
           {/* SEO Keywords */}
-<<<<<<< HEAD
           <div className="mt-8 text-center border-t border-dark-800/20 pt-6">
             <p className="text-dark-600 text-[10px] mb-3 uppercase tracking-wider font-bold">
               Servicios de diseño y desarrollo web en Madrid para pymes y autónomos:
             </p>
             <div className="flex flex-wrap justify-center gap-x-4 gap-y-2 text-[11px] text-dark-600/70">
-=======
-          <div className="mt-4 text-center border-t border-dark-800/10 pt-4">
-            <p className="text-dark-500 text-xs mb-2">
-              Servicios de diseño y desarrollo web en Madrid para pymes y autónomos:
-            </p>
-            <div className="flex flex-wrap justify-center gap-x-4 gap-y-2 text-xs text-dark-600">
->>>>>>> 605311ad28871f19e42fddd05b1259e9ad95b7c3
               <a 
                 href="/desarrollo-web-pymes-madrid" 
                 className="hover:text-primary-400 transition-colors font-medium border-b border-transparent hover:border-primary-400/30 pb-0.5"
@@ -247,7 +227,6 @@ export function Footer() {
               >
                 Mantenimiento Web Profesional
               </a>
-<<<<<<< HEAD
               <span className="opacity-30">•</span>
               <a 
                 href="/desarrollo-web-pymes-madrid" 
@@ -256,8 +235,6 @@ export function Footer() {
               >
                 Páginas Web para Empresas Madrid
               </a>
-=======
->>>>>>> 605311ad28871f19e42fddd05b1259e9ad95b7c3
             </div>
           </div>
         </div>

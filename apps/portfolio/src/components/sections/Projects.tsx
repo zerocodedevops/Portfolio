@@ -1,6 +1,10 @@
 import { motion } from 'framer-motion';
-import { ExternalLink, Folder } from 'lucide-react';
+import {
+  ExternalLink,
+  Folder,
+} from 'lucide-react';
 import { useTranslation } from 'react-i18next';
+import { lazy, Suspense, useState } from 'react';
 import projectAiChat from '@/assets/projects/project-ai-chat.webp';
 import projectBlog from '@/assets/projects/project-blog.webp';
 import projectCrypto from '@/assets/projects/project-crypto-dashboard.webp';
@@ -15,11 +19,17 @@ import projectJBarranco from '@/assets/projects/jbarranco.png';
 import { Card, TechBadge } from '@/components/ui';
 import { fadeInUp, staggerContainer } from '@/hooks/useScrollAnimation';
 import { trackEvent } from '@/lib/analytics';
+import { SectionTitle } from '@/components/ui/SectionTitle';
+
+const ProjectDetailModal = lazy(() =>
+  import('../ProjectDetailModal').then((m) => ({
+    default: m.ProjectDetailModal,
+  })),
+);
 
 interface Project {
   id: number;
   title: string;
-  // description: string; // Removed as it will be translated
   image?: string;
   tags: string[];
   demoUrl?: string;
@@ -128,7 +138,6 @@ export const techProjects: Project[] = [
   },
 ];
 
-// Helper functions for status badge
 const getStatusStyles = (status: Project['status']) => {
   switch (status) {
     case 'Production':
@@ -136,7 +145,7 @@ const getStatusStyles = (status: Project['status']) => {
     case 'Development':
       return 'bg-blue-500/10 text-blue-400 border-blue-500/20';
     default:
-      return 'bg-amber-500/10 text-amber-500 border-amber-500/20'; // Changed to match "Prototype" orange/amber look
+      return 'bg-amber-500/10 text-amber-500 border-amber-500/20';
   }
 };
 
@@ -156,13 +165,6 @@ const GithubIcon = ({ className }: { readonly className?: string }) => (
   </svg>
 );
 
-import { useState } from 'react';
-import { ProjectDetailModal } from '../ProjectDetailModal';
-
-// ... (existing imports)
-
-// ... (existing helper functions)
-
 function ProjectCard({
   project,
   onClick,
@@ -179,13 +181,11 @@ function ProjectCard({
       case 'Development':
         return t('projects.status.development');
       default:
-        // Use translation but fallback to Prototype for now
         return 'PROTOTYPE';
     }
   };
 
   const thumbnailContent = (() => {
-    // ... (keep usage of project.image)
     if (!project.image) {
       return (
         <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-dark-700 to-dark-800 cursor-pointer">
@@ -194,8 +194,8 @@ function ProjectCard({
       );
     }
 
-    const imageContent = (
-      <>
+    return (
+      <div className="w-full h-full cursor-pointer relative">
         <img
           src={project.image}
           alt={project.title}
@@ -203,8 +203,7 @@ function ProjectCard({
           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
           referrerPolicy="no-referrer"
         />
-        <div className="absolute inset-0 bg-dark-900/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4">
-          {/* Add View Case Study Button overlay */}
+        <div className="absolute inset-0 bg-dark-900/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
           <button
             onClick={(e) => {
               e.stopPropagation();
@@ -215,18 +214,16 @@ function ProjectCard({
             Ver Detalles
           </button>
         </div>
-      </>
+      </div>
     );
-    // Use div instead of button to avoid nested button warning
-    return <div className="w-full h-full cursor-pointer">{imageContent}</div>;
   })();
 
   const getLinkLabel = () => {
     if (project.demoUrl?.includes('casos-de-exito')) {
       return 'Ver Caso de Estudio';
     }
-    return project.status === 'Production' 
-      ? t('projects.links.visit') 
+    return project.status === 'Production'
+      ? t('projects.links.visit')
       : t('projects.links.demo');
   };
 
@@ -236,12 +233,10 @@ function ProjectCard({
         className="h-full flex flex-col group overflow-hidden cursor-pointer hover:border-primary-500/30 transition-colors"
         onClick={onClick}
       >
-        {/* Image thumbnail */}
         <div className="aspect-[16/10] bg-dark-900 rounded-lg mb-4 overflow-hidden relative group-hover:shadow-lg transition-all border border-dark-700/50">
           {thumbnailContent}
         </div>
 
-        {/* Content */}
         <div className="flex-1 flex flex-col">
           <div className="flex justify-between items-start mb-2">
             <h3 className="heading-3 text-dark-100 group-hover:text-primary-400 transition-colors">
@@ -249,7 +244,9 @@ function ProjectCard({
             </h3>
             {project.status && (
               <span
-                className={`text-[10px] px-2 py-0.5 rounded-full border uppercase font-medium tracking-wide whitespace-nowrap ${getStatusStyles(project.status)}`}
+                className={`text-[10px] px-2 py-0.5 rounded-full border uppercase font-medium tracking-wide whitespace-nowrap ${getStatusStyles(
+                  project.status,
+                )}`}
               >
                 {getStatusLabel(project.status)}
               </span>
@@ -258,26 +255,27 @@ function ProjectCard({
           <p className="text-dark-400 text-sm mb-3 flex-1">
             {t(`projects.items.${project.id}.description`)}
           </p>
-          {t(`projects.items.${project.id}.result`) !== `projects.items.${project.id}.result` && (
+          {t(`projects.items.${project.id}.result`) !==
+            `projects.items.${project.id}.result` && (
             <div className="flex items-center gap-1.5 mb-4 text-xs text-green-400">
               <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
               {t(`projects.items.${project.id}.result`)}
             </div>
           )}
 
-          {/* Tags */}
           <div className="flex flex-wrap gap-2 mb-4">
             {project.tags.map((tag) => (
               <TechBadge key={tag} tech={tag} />
             ))}
           </div>
 
-          {/* Links - Stop Propagation to prevent modal opening when clicking links? */}
           <div className="flex gap-3">
             {project.demoUrl && (
               <motion.a
                 href={project.demoUrl}
-                target={project.demoUrl.includes('casos-de-exito') ? '_self' : '_blank'}
+                target={
+                  project.demoUrl.includes('casos-de-exito') ? '_self' : '_blank'
+                }
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 text-sm text-dark-300 hover:text-primary-400 transition-colors"
                 whileHover={{ x: 3 }}
@@ -314,24 +312,21 @@ function ProjectCard({
 }
 
 export function Projects() {
+  const { t } = useTranslation();
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
   return (
     <section id="projects" className="section relative">
-      {/* Background decoration */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-1/2 right-0 w-1/3 h-1/2 bg-gradient-radial from-accent-500/5 to-transparent" />
       </div>
 
       <div className="container-custom relative z-10">
-        <div className="text-center mb-16">
-          <h2 className="font-outfit font-bold text-3xl sm:text-4xl lg:text-5xl text-white mb-4">
-            <span className="text-gradient">Proyectos para Pymes</span> en Madrid
-          </h2>
-          <p className="text-xl text-dark-300 font-medium mb-12">
-            Páginas web diseñadas específicamente para atraer clientes locales y aumentar la facturación.
-          </p>
-        </div>
+        <SectionTitle
+          title={t('projects.title')}
+          subtitle={t('projects.subtitle')}
+          className="mb-16"
+        />
 
         <motion.div
           className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-24"
@@ -345,22 +340,31 @@ export function Projects() {
               key={project.id}
               project={project}
               onClick={() => {
-                if(project.demoUrl) globalThis.location.href = project.demoUrl;
+                if (project.demoUrl?.includes('casos-de-exito')) {
+                   globalThis.location.href = project.demoUrl;
+                } else {
+                   setSelectedProject(project);
+                }
               }}
             />
           ))}
         </motion.div>
 
-        {/* Laboratorio Técnico */}
         <details className="group max-w-5xl mx-auto border-t border-dark-800 pt-10">
           <summary className="flex items-center justify-between cursor-pointer list-none !outline-none">
             <div>
-              <h3 className="text-2xl font-bold text-white mb-2">Laboratorio Técnico & Startups</h3>
-              <p className="text-dark-400 text-sm">Proyectos SaaS, Dashboards y aplicaciones web complejas.</p>
+              <h3 className="text-2xl font-bold text-white mb-2">
+                Laboratorio Técnico & Startups
+              </h3>
+              <p className="text-dark-400 text-sm">
+                Proyectos SaaS, Dashboards y aplicaciones web complejas.
+              </p>
             </div>
-            <span className="text-primary-500 font-bold group-open:rotate-180 transition-transform duration-300 bg-dark-800 p-2 rounded-full">▼</span>
+            <span className="text-primary-500 font-bold group-open:rotate-180 transition-transform duration-300 bg-dark-800 p-2 rounded-full">
+              ▼
+            </span>
           </summary>
-          
+
           <div className="pt-10">
             <motion.div
               className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
@@ -381,10 +385,12 @@ export function Projects() {
         </details>
       </div>
 
-      <ProjectDetailModal
-        project={selectedProject}
-        onClose={() => setSelectedProject(null)}
-      />
+      <Suspense fallback={null}>
+        <ProjectDetailModal
+          project={selectedProject}
+          onClose={() => setSelectedProject(null)}
+        />
+      </Suspense>
     </section>
   );
 }
