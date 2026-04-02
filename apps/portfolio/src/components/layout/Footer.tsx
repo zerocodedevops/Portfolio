@@ -66,9 +66,14 @@ export function Footer() {
   const footerLinks = [
     { label: 'Inicio', href: '/' },
     { label: 'Sobre Mí', href: '/disenador-web-freelance-madrid' },
-    { label: 'Tech', href: 'https://zerocode-devops.com/tech' },
     { label: 'Precios', href: '/precios-paginas-web' },
     { label: 'Contacto', href: '#contact' },
+  ];
+
+  const resourceLinks = [
+    { label: 'Tech Blog', href: 'https://zerocode-devops.com/tech' },
+    { label: 'Proyectos', href: '#projects' },
+    { label: 'Mantenimiento', href: '/precios-paginas-web' },
   ];
 
   const handleNavClick = (href: string) => {
@@ -112,7 +117,7 @@ export function Footer() {
       </motion.button>
 
       <div className="container-custom py-12 md:py-16">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 items-start">
           {/* Logo and tagline */}
           <div className="text-center md:text-left">
             <div className="mb-6 md:mb-0 w-full">
@@ -139,21 +144,45 @@ export function Footer() {
           </div>
 
           {/* Navigation links */}
-          <div className="flex flex-wrap justify-center gap-6">
-            {footerLinks.map((link) => (
-              <motion.a
-                key={link.label}
-                href={link.href}
-                className="text-dark-400 hover:text-primary-400 transition-colors text-xs font-medium"
-                whileHover={{ y: -2 }}
-                onClick={(e) => {
-                  e.preventDefault();
-                  handleNavClick(link.href);
-                }}
-              >
-                {link.label}
-              </motion.a>
-            ))}
+          <div className="flex flex-col gap-4">
+            <h4 className="text-white font-bold text-sm uppercase tracking-wider">Navegación</h4>
+            <div className="flex flex-col gap-2">
+              {footerLinks.map((link) => (
+                <motion.a
+                  key={link.label}
+                  href={link.href}
+                  className="text-dark-400 hover:text-primary-400 transition-colors text-xs font-medium"
+                  whileHover={{ x: 2 }}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleNavClick(link.href);
+                  }}
+                >
+                  {link.label}
+                </motion.a>
+              ))}
+            </div>
+          </div>
+
+          {/* Resources links */}
+          <div className="flex flex-col gap-4">
+            <h4 className="text-white font-bold text-sm uppercase tracking-wider">Recursos</h4>
+            <div className="flex flex-col gap-2">
+              {resourceLinks.map((link) => (
+                <motion.a
+                  key={link.label}
+                  href={link.href}
+                  className="text-dark-400 hover:text-primary-400 transition-colors text-xs font-medium"
+                  whileHover={{ x: 2 }}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleNavClick(link.href);
+                  }}
+                >
+                  {link.label}
+                </motion.a>
+              ))}
+            </div>
           </div>
 
           { socialLinks.length > 0 && (

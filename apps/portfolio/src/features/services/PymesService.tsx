@@ -1,3 +1,4 @@
+import React, { lazy, Suspense } from 'react';
 import { motion } from 'framer-motion';
 import {
   CheckCircle,
@@ -15,8 +16,8 @@ import {
 import { useNavigate } from 'react-router-dom';
 import { Seo } from '@/components/common/SEO';
 import { Layout } from '@/components/layout';
-import { Blog } from '@/components/sections/Blog';
-import { Contact } from '@/components/sections/Contact';
+const Blog = lazy(() => import('@/components/sections/Blog').then(m => ({ default: m.Blog })));
+const Contact = lazy(() => import('@/components/sections/Contact').then(m => ({ default: m.Contact })));
 import { useABTest } from '@/hooks/useABTest';
 
 export default function PymesService() {
@@ -478,14 +479,18 @@ export default function PymesService() {
         </div>
 
         {/* Formulario de Contacto en la misma página */}
-        <div className="border-t border-dark-800 pt-10 pb-8">
-          <Contact />
-        </div>
+        <Suspense fallback={<div className="h-96 animate-pulse bg-dark-900/50 rounded-3xl" />}>
+          <div className="border-t border-dark-800 pt-10 pb-8">
+            <Contact />
+          </div>
+        </Suspense>
 
         {/* Blog / Guías de Negocio */}
-        <section className="border-t border-dark-800 pt-20">
-          <Blog type="business" />
-        </section>
+        <Suspense fallback={<div className="h-96 animate-pulse bg-dark-900/50 rounded-3xl" />}>
+          <section className="border-t border-dark-800 pt-20">
+            <Blog type="business" />
+          </section>
+        </Suspense>
       </div>
     </Layout>
   );
@@ -494,7 +499,7 @@ export default function PymesService() {
 function BenefitCard({ title, desc }: Readonly<{ title: string; desc: string }>) {
   return (
     <div className="p-6 rounded-2xl bg-dark-800/50 border border-dark-700/50 hover:border-primary-500/50 transition-all">
-      <h4 className="font-bold text-white mb-3 text-lg">{title}</h4>
+      <h3 className="font-bold text-white mb-3 text-lg">{title}</h3>
       <p className="text-sm text-dark-400 leading-relaxed">{desc}</p>
     </div>
   );
@@ -567,7 +572,7 @@ function PriceCard({
 function FaqItem({ q, a }: Readonly<{ q: string; a: string }>) {
   return (
     <div className="p-6 rounded-2xl bg-dark-800/40 border border-dark-700/50 hover:border-dark-700 transition-colors">
-      <h4 className="text-lg font-bold text-white mb-3">{q}</h4>
+      <h3 className="text-lg font-bold text-white mb-3">{q}</h3>
       <p className="text-dark-300 leading-relaxed text-sm">
         {a}
       </p>

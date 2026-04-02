@@ -1,5 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800&family=Montserrat:wght@300;400;500;600&display=swap');
+@font-face {
+  font-family: 'Inter';
+  src: url('../assets/fonts/Inter-Variable.woff2') format('woff2-variations');
+  font-weight: 100 900;
+  font-display: swap;
+  font-style: normal;
+}
+
 
 @import "tailwindcss";
 
@@ -24,7 +30,7 @@
   --color-dark-700: #334155;
   --color-dark-600: #475569;
   --color-dark-500: #64748b;
-  --color-dark-400: #aebad0;
+  --color-dark-400: #cbd5e1; /* Increased contrast for better readability */
   --color-dark-300: #cbd5e1;
   --color-dark-200: #e2e8f0;
   --color-dark-100: #f1f5f9;
@@ -85,12 +91,8 @@
   --border: 220 15% 20%;
   --input: 220 15% 20%;
   --ring: 46 83% 58%;
-
-  /* Typography Overrides */
-  --font-heading: 'Cinzel', serif;
-  --font-body: 'Montserrat', sans-serif;
-  font-family: var(--font-body); /* Apply body font by default */
 }
+
 
 /* Base styles */
 @layer base {

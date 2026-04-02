@@ -29,8 +29,8 @@
       content="
         default-src 'self';
         script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://js.stripe.com;
-        style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
-        font-src 'self' https://fonts.gstatic.com https://r2cdn.perplexity.ai;
+        style-src 'self' 'unsafe-inline';
+        font-src 'self' https://r2cdn.perplexity.ai;
         img-src 'self' data: https: blob: https://*.stripe.com https://images.pexels.com https://*.pexels.com;
         frame-src 'self' https://js.stripe.com https://hooks.stripe.com;
         connect-src 'self' 
@@ -42,8 +42,6 @@
           https://coin-images.coingecko.com
           https://api.stripe.com
           https://m.stripe.network
-          https://fonts.googleapis.com
-          https://fonts.gstatic.com
           wss://stream.binance.com:443
           https://vwdsnolwerskjjhmrsut.supabase.co
           https://api.emailjs.com
@@ -52,6 +50,7 @@
         form-action 'self';
       "
     />
+
 
     <meta
       name="description"
@@ -94,23 +93,6 @@
     />
 
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-
-    <!-- Preconnect and Preload Fonts -->
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      rel="preload"
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
-      as="style"
-      onload="
-        this.onload = null;
-        this.rel = 'stylesheet';
-      "
-    />
-    <noscript
-      ><link
-        rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
-    /></noscript>
 
     <title>
       Diseño y Desarrollo de Productos Digitales (SaaS & Web Apps) | ZeroCode
