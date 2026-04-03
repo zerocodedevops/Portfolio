@@ -151,7 +151,7 @@ function PricingCard({
       className={`relative p-8 rounded-3xl border ${featured ? 'border-primary-500 bg-primary-500/5 shadow-glow' : 'border-dark-800 bg-dark-950'} flex flex-col`}
     >
       {featured && (
-        <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 bg-primary-500 text-white text-sm font-bold rounded-full">
+        <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 bg-primary-600 text-white text-sm font-bold rounded-full">
           Más popular
         </div>
       )}

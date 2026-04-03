@@ -10,7 +10,7 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary-600: #0891b2;
+  --color-primary-600: #0369a1;
   --color-primary-500: #06b6d4;
   --color-primary-400: #22d3ee;
   --color-primary-300: #67e8f9;
@@ -162,9 +162,9 @@
   }
 
   .btn-primary {
-    @apply bg-gradient-to-r from-primary-500 to-primary-600 text-dark-950 font-bold
-      hover:from-primary-400 hover:to-primary-500 hover:shadow-glow
-      focus:ring-primary-500;
+    @apply bg-primary-600 text-white font-bold
+      hover:bg-[#075985] hover:shadow-glow
+      focus:ring-primary-500 border border-transparent;
   }
 
   .btn-accent {

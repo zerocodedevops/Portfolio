@@ -370,7 +370,7 @@ export function PricingConfigurator() {
             )}
           >
             {id === 'silver' && (
-              <div className="absolute top-4 right-4 px-3 py-1 bg-primary-500 text-white text-[10px] font-bold rounded-full uppercase tracking-tighter shadow-lg shadow-primary-500/20">
+              <div className="absolute top-4 right-4 px-3 py-1 bg-primary-600 text-white text-[10px] font-bold rounded-full uppercase tracking-tighter shadow-lg shadow-primary-500/20">
                 Popular
               </div>
             )}
