@@ -189,7 +189,7 @@ function ProjectCard({
     if (!project.image) {
       return (
         <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-dark-700 to-dark-800 cursor-pointer">
-          <Folder className="w-12 h-12 text-dark-600 group-hover:text-primary-500/50 transition-colors duration-300" />
+          <Folder className="w-12 h-12 text-dark-400 group-hover:text-primary-500/50 transition-colors duration-300" />
         </div>
       );
     }

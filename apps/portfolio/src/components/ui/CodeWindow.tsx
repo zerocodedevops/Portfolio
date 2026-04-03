@@ -45,7 +45,7 @@ export function CodeWindow() {
         <div className="p-6 font-mono text-sm sm:text-base leading-relaxed overflow-x-auto">
           {codeLines.map((line, i) => (
             <div key={i} className="flex gap-4">
-              <span className="text-dark-600 select-none w-5 text-right">{i + 1}</span>
+              <span className="text-dark-400 select-none w-5 text-right">{i + 1}</span>
               <span className={`${line.indent ? 'pl-4' : ''}`}>
                 {line.text.split(' ').map((word, j) => (
                   <span key={j} className={line.color}>{word}{j < line.text.split(' ').length - 1 ? ' ' : ''}</span>

@@ -43,10 +43,10 @@ export default function PymesService() {
           '@context': 'https://schema.org',
           '@type': 'LocalBusiness',
           name: 'ZeroCode',
-          image: 'https://zerocode-devops.web.app/og-image.png',
+          image: 'https://zerocode-devops.com/og-image.png',
           '@id':
-            'https://zerocode-devops.web.app/desarrollo-web-pymes-madrid/#localbusiness',
-          url: 'https://zerocode-devops.web.app/desarrollo-web-pymes-madrid',
+            'https://zerocode-devops.com/desarrollo-web-pymes-madrid/#localbusiness',
+          url: 'https://zerocode-devops.com/desarrollo-web-pymes-madrid',
           telephone: '+34 912 622 712',
           address: {
             '@type': 'PostalAddress',
@@ -434,7 +434,7 @@ export default function PymesService() {
                         </p>
                       </div>
                     </div>
-                    <p className="text-xs text-dark-500 mt-8 italic">
+                    <p className="text-xs text-dark-400 mt-8 italic">
                       Fuente: estudios de comportamiento de usuarios en buscadores.
                     </p>
                   </div>
@@ -468,7 +468,7 @@ export default function PymesService() {
                       <li className="flex items-center gap-2 text-xs text-dark-300"><div className="w-1.5 h-1.5 rounded-full bg-primary-500"/>Majadahonda</li>
                       <li className="flex items-center gap-2 text-xs text-dark-300"><div className="w-1.5 h-1.5 rounded-full bg-primary-500"/>Las Rozas</li>
                     </ul>
-                    <p className="text-[11px] text-dark-500 mt-5 italic text-center">
+                    <p className="text-[11px] text-dark-400 mt-5 italic text-center">
                       *Online para el resto de España.
                     </p>
                   </div>

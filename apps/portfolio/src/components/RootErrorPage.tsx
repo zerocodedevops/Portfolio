@@ -89,7 +89,7 @@ export function RootErrorPage() {
         {/* Technical details (only for devs) */}
         {import.meta.env.DEV && (
           <div className="mt-8 pt-6 border-t border-dark-800 text-left">
-            <p className="text-[10px] uppercase font-bold text-dark-500 mb-2">Technical Details</p>
+            <p className="text-[10px] uppercase font-bold text-dark-400 mb-2">Technical Details</p>
             <pre className="text-[10px] text-red-400 bg-black/30 p-3 rounded-lg overflow-auto max-h-32">
               {error instanceof Error ? error.stack : JSON.stringify(error, null, 2)}
             </pre>

@@ -143,7 +143,7 @@ export function FeaturedProject() {
 
             {/* Tech stack */}
             <div className="mb-6">
-              <p className="text-dark-500 text-sm mb-3">
+              <p className="text-dark-400 text-sm mb-3">
                 {t('featuredProject.stackTitle')}
               </p>
               <div className="flex flex-wrap gap-2">
@@ -160,7 +160,7 @@ export function FeaturedProject() {
                   <FileCode className="w-4 h-4" />
                   {featuredProject.stats.lines}
                 </div>
-                <div className="text-dark-500 text-xs">
+                <div className="text-dark-400 text-xs">
                   {t('featuredProject.stats.lines')}
                 </div>
               </div>
@@ -168,7 +168,7 @@ export function FeaturedProject() {
                 <div className="text-xl font-bold text-accent-400">
                   {featuredProject.stats.files}
                 </div>
-                <div className="text-dark-500 text-xs">
+                <div className="text-dark-400 text-xs">
                   {t('featuredProject.stats.files')}
                 </div>
               </div>
@@ -177,7 +177,7 @@ export function FeaturedProject() {
                   <Users className="w-4 h-4" />
                   {featuredProject.stats.components}
                 </div>
-                <div className="text-dark-500 text-xs">
+                <div className="text-dark-400 text-xs">
                   {t('featuredProject.stats.components')}
                 </div>
               </div>
@@ -186,7 +186,7 @@ export function FeaturedProject() {
                   <GitCommit className="w-4 h-4" />
                   {featuredProject.stats.commits}
                 </div>
-                <div className="text-dark-500 text-xs">
+                <div className="text-dark-400 text-xs">
                   {t('featuredProject.stats.commits')}
                 </div>
               </div>

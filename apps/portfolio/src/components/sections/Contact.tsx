@@ -358,7 +358,7 @@ export function Contact() {
               </div>
               <div className="p-5 space-y-3">
                 <div className="flex gap-3">
-                  <span className="text-dark-500 select-none">$</span>
+                  <span className="text-dark-400 select-none">$</span>
                   <span className="text-gray-300">echo $AVAILABILITY</span>
                 </div>
                 <div className="flex gap-3 pl-2">
@@ -368,7 +368,7 @@ export function Contact() {
                   </span>
                 </div>
                 <div className="flex gap-3 mt-4">
-                  <span className="text-dark-500 select-none">$</span>
+                  <span className="text-dark-400 select-none">$</span>
                   <span className="text-gray-300">echo $RESPONSE_TIME</span>
                 </div>
                 <div className="flex gap-3 pl-2">

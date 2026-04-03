@@ -379,7 +379,7 @@ export function PricingConfigurator() {
                 <Package className="w-6 h-6" />
               </div>
               <div className="text-right">
-                <span className="text-sm text-dark-500 line-through block font-medium opacity-60">
+                <span className="text-sm text-dark-400 line-through block font-medium opacity-60">
                   {pack.originalPrice}€
                 </span>
                 <div className="text-4xl font-bold text-white">
@@ -468,7 +468,7 @@ export function PricingConfigurator() {
                       {isSelected ? (
                         <Check className="w-4 h-4" />
                       ) : (
-                        <X className="w-3 h-3 text-dark-600" />
+                        <X className="w-3 h-3 text-dark-400" />
                       )}
                     </div>
                     <div className="flex-1">
@@ -482,7 +482,7 @@ export function PricingConfigurator() {
                           </span>
                         )}
                       </div>
-                      <p className="text-dark-500 text-[11px] leading-tight">
+                      <p className="text-dark-400 text-[11px] leading-tight">
                         {item.description}
                       </p>
                     </div>
@@ -508,7 +508,7 @@ export function PricingConfigurator() {
 
               <div className="flex items-center gap-6">
                 <div className="hidden sm:flex flex-col">
-                  <span className="text-dark-500 text-xs font-bold uppercase tracking-widest font-outfit">
+                  <span className="text-dark-400 text-xs font-bold uppercase tracking-widest font-outfit">
                     Opciones
                   </span>
                   <span className="text-white font-bold text-xl">
@@ -522,7 +522,7 @@ export function PricingConfigurator() {
                   </span>
                   <span className="text-white font-bold text-3xl font-outfit">
                     Presupuesto
-                    <span className="text-sm text-dark-500 ml-1 font-normal">
+                    <span className="text-sm text-dark-400 ml-1 font-normal">
                       {' '}
                       a Medida
                     </span>
@@ -579,7 +579,7 @@ export function PricingConfigurator() {
                 </h2>
                 <button
                   onClick={() => setIsModalOpen(false)}
-                  className="text-dark-500 hover:text-white transition-colors"
+                  className="text-dark-400 hover:text-white transition-colors"
                 >
                   <X className="w-6 h-6" />
                 </button>
@@ -588,7 +588,7 @@ export function PricingConfigurator() {
               <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
                 <div className="space-y-4">
                   <div className="relative">
-                    <User className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-dark-500" />
+                    <User className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-dark-400" />
                     <input
                       {...register('name')}
                       placeholder="Tu nombre completo"
@@ -602,7 +602,7 @@ export function PricingConfigurator() {
                   </div>
 
                   <div className="relative">
-                    <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-dark-500" />
+                    <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-dark-400" />
                     <input
                       {...register('email')}
                       placeholder="Email de contacto"
@@ -633,7 +633,7 @@ export function PricingConfigurator() {
                     </span>
                   </div>
                   <div className="flex justify-between text-xs">
-                    <span className="text-dark-500">
+                    <span className="text-dark-400">
                       Opciones seleccionadas:
                     </span>
                     <span className="text-primary-400">

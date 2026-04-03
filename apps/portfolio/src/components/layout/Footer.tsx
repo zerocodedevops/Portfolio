@@ -207,16 +207,16 @@ export function Footer() {
 
         {/* Bottom bar */}
         <div className="mt-12 pt-8 border-t border-dark-700/50">
-          <p className="text-center text-dark-500 text-sm flex items-center justify-center gap-2">
+          <p className="text-center text-dark-400 text-sm flex items-center justify-center gap-2">
             © {currentYear} ZeroCode • Hecho con curiosidad + IA
           </p>
 
           {/* SEO Keywords */}
           <div className="mt-8 text-center border-t border-dark-800/20 pt-6">
-            <p className="text-dark-600 text-[10px] mb-3 uppercase tracking-wider font-bold">
+            <p className="text-dark-400 text-[10px] mb-3 uppercase tracking-wider font-bold">
               Servicios de diseño y desarrollo web en Madrid para pymes y autónomos:
             </p>
-            <div className="flex flex-wrap justify-center gap-x-4 gap-y-2 text-[11px] text-dark-600/70">
+            <div className="flex flex-wrap justify-center gap-x-4 gap-y-2 text-[11px] text-dark-400">
               <a 
                 href="/desarrollo-web-pymes-madrid" 
                 className="hover:text-primary-400 transition-colors font-medium border-b border-transparent hover:border-primary-400/30 pb-0.5"

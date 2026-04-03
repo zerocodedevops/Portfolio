@@ -162,7 +162,7 @@ function PricingCard({
 
       <h3 className="text-2xl font-bold text-white mb-2">{title}</h3>
       <div className="flex items-baseline gap-2 mb-4">
-        <span className="text-sm text-dark-500 line-through">
+        <span className="text-sm text-dark-400 line-through">
           {originalPrice}
         </span>
         <span className="text-4xl font-bold text-white">{price}</span>
