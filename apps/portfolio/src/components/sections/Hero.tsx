@@ -1,15 +1,23 @@
+import { lazy, Suspense } from 'react';
 import { motion } from 'framer-motion';
 import { Mail, Terminal, Send, ArrowRight } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { TypeAnimation } from 'react-type-animation';
 import { trackEvent } from '@/lib/analytics';
 import { Button } from '@/components/ui';
-import { CodeWindow } from '@/components/ui/CodeWindow';
 import { GithubIcon, LinkedinIcon } from '@/components/ui/BrandIcons';
 import { fadeInUp, staggerContainer } from '@/hooks/useScrollAnimation';
+import { useMediaQuery } from '@/hooks/useMediaQuery';
+
+const CodeWindow = lazy(() =>
+  import('@/components/ui/CodeWindow').then((module) => ({
+    default: module.CodeWindow,
+  }))
+);
 
 export function Hero() {
   const { t } = useTranslation();
+  const isDesktop = useMediaQuery('(min-width: 1024px)');
 
   const handleSocialClick = (platform: string) => {
     trackEvent('Social', 'Click', platform);
@@ -54,7 +62,7 @@ export function Hero() {
       <div className="container-custom relative z-10 w-full">
         <motion.div
           variants={fadeInUp}
-          initial="hidden"
+          initial={isDesktop ? 'hidden' : 'visible'}
           whileInView="visible"
           viewport={{ once: true }}
           className="text-center mb-16"
@@ -71,7 +79,7 @@ export function Hero() {
           {/* Content Left */}
           <motion.div
             variants={staggerContainer}
-            initial="hidden"
+            initial={isDesktop ? 'hidden' : 'visible'}
             animate="visible"
             className="text-left"
           >
@@ -179,7 +187,11 @@ export function Hero() {
 
           {/* Visual Right - Code Window */}
           <div className="hidden lg:block">
-            <CodeWindow />
+            {isDesktop && (
+              <Suspense fallback={null}>
+                <CodeWindow />
+              </Suspense>
+            )}
           </div>
         </div>
       </div>

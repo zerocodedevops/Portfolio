@@ -151,6 +151,8 @@
   }
 }
 
+
+
 /* Components */
 @layer components {
   /* Buttons */
@@ -225,6 +227,13 @@
     @apply bg-gradient-to-r from-primary-400 via-accent-400 to-primary-400
       bg-clip-text text-transparent bg-[length:200%_auto]
       animate-[gradient_3s_linear_infinite];
+  }
+
+  @media (max-width: 1023px) {
+    .text-gradient {
+      animation: none !important;
+      background-size: 100% 100% !important;
+    }
   }
 
   /* Glow effects */

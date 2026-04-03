@@ -16,13 +16,18 @@ import {
 import { useNavigate } from 'react-router-dom';
 import { Seo } from '@/components/common/SEO';
 import { Layout } from '@/components/layout';
+import { useABTest } from '@/hooks/useABTest';
+import { useMediaQuery } from '@/hooks/useMediaQuery';
+import { useUserInteraction } from '@/hooks/useUserInteraction';
+
 const Blog = lazy(() => import('@/components/sections/Blog').then(m => ({ default: m.Blog })));
 const Contact = lazy(() => import('@/components/sections/Contact').then(m => ({ default: m.Contact })));
-import { useABTest } from '@/hooks/useABTest';
 
 export default function PymesService() {
   const navigate = useNavigate();
   const heroVariant = useABTest('hero_h1_madrid');
+  const isDesktop = useMediaQuery('(min-width: 1024px)');
+  const hasInteracted = useUserInteraction();
 
   const handleCtaClick = () => {
     const contactSection = document.getElementById('contact');
@@ -68,7 +73,7 @@ export default function PymesService() {
           {/* Hero Section / H1 */}
           <header className="max-w-5xl mx-auto text-center mb-12 md:mb-32">
             <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
+              initial={isDesktop ? { opacity: 0, scale: 0.95 } : { opacity: 1, scale: 1 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5 }}
             >
@@ -139,9 +144,11 @@ export default function PymesService() {
             </motion.div>
           </header>
 
-          <div className="max-w-6xl mx-auto grid lg:grid-cols-3 gap-12 lg:gap-20 items-start">
-            <div className="lg:col-span-2 space-y-12 md:space-y-32">
-              {/* Sección Beneficios */}
+          {(isDesktop || hasInteracted) && (
+            <>
+              <div className="max-w-6xl mx-auto grid lg:grid-cols-3 gap-12 lg:gap-20 items-start">
+                <div className="lg:col-span-2 space-y-12 md:space-y-32">
+                  {/* Sección Beneficios */}
               <section>
                 <h2 className="text-2xl sm:text-3xl font-bold text-white mb-8 flex items-center gap-3">
                   <BarChart3 className="text-primary-500" />
@@ -476,22 +483,24 @@ export default function PymesService() {
               </div>
             </aside>
           </div>
-        </div>
 
-        {/* Formulario de Contacto en la misma página */}
-        <Suspense fallback={<div className="h-96 animate-pulse bg-dark-900/50 rounded-3xl" />}>
-          <div className="border-t border-dark-800 pt-10 pb-8">
-            <Contact />
-          </div>
-        </Suspense>
+          {/* Formulario de Contacto en la misma página */}
+          <Suspense fallback={<div className="h-96 animate-pulse bg-dark-900/50 rounded-3xl" />}>
+            <div className="border-t border-dark-800 pt-10 pb-8">
+              <Contact />
+            </div>
+          </Suspense>
 
-        {/* Blog / Guías de Negocio */}
-        <Suspense fallback={<div className="h-96 animate-pulse bg-dark-900/50 rounded-3xl" />}>
-          <section className="border-t border-dark-800 pt-20">
-            <Blog type="business" />
-          </section>
-        </Suspense>
-      </div>
+          {/* Blog / Guías de Negocio */}
+          <Suspense fallback={<div className="h-96 animate-pulse bg-dark-900/50 rounded-3xl" />}>
+            <section className="border-t border-dark-800 pt-20">
+              <Blog type="business" />
+            </section>
+          </Suspense>
+        </>
+      )}
+        </div> {/* closing container-custom */}
+      </div> {/* closing pt-12... div */}
     </Layout>
   );
 }
