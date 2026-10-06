@@ -6,9 +6,9 @@ export default function Contact() {
         Si te interesa colaborar en remoto, escríbeme a{' '}
         <a
           className="text-brand.accent underline"
-          href="mailto:zerocode.devops@gmail.com"
+          href="mailto:admin@zerocode-devops.com"
         >
-          zerocode.devops@gmail.com
+          admin@zerocode-devops.com
         </a>{' '}
         o conecta por LinkedIn.
       </p>

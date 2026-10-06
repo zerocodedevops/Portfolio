@@ -14,8 +14,8 @@ import projectSalon from '@/assets/projects/project-salon.webp';
 import projectTask from '@/assets/projects/project-task-management.webp';
 import projectWeather from '@/assets/projects/project-weather.webp';
 import projectZeroDelay from '@/assets/projects/ZeroDelay.webp';
-import projectZeroChaos from '@/assets/projects/zero-chaos.png';
-import projectJBarranco from '@/assets/projects/jbarranco.png';
+import projectZeroChaos from '@/assets/projects/zero-chaos.webp';
+import projectJBarranco from '@/assets/projects/jbarranco.webp';
 import { Card, TechBadge } from '@/components/ui';
 import { fadeInUp, staggerContainer } from '@/hooks/useScrollAnimation';
 import { trackEvent } from '@/lib/analytics';
@@ -36,6 +36,7 @@ interface Project {
   repoUrl?: string;
   featured?: boolean;
   status?: 'Prototype' | 'Production' | 'Development';
+  isDemo?: boolean;
 }
 
 export const pymeProjects: Project[] = [
@@ -51,7 +52,7 @@ export const pymeProjects: Project[] = [
     id: 10,
     title: 'ZeroChaos - Reformas Integrales',
     image: projectZeroChaos,
-    tags: ['Construcción', 'SEO Local', 'Alta Conversión'],
+    tags: ['Construcción', 'SEO local', 'Diseño responsive'],
     demoUrl: '/casos-de-exito/reformas-zerochaos',
     status: 'Production',
   },
@@ -65,11 +66,12 @@ export const pymeProjects: Project[] = [
   },
   {
     id: 8,
-    title: 'ZeroVanity - Salón de Belleza',
+    title: 'ZeroVanity - Demo para peluquería y estética',
     image: projectSalon,
-    tags: ['Estética', 'Reservas', 'Galería Visual'],
+    tags: ['Peluquería y estética', 'Reservas (demo)', 'Galería visual'],
     demoUrl: '/casos-de-exito/peluqueria-zerovanity',
-    status: 'Production',
+    status: 'Development',
+    isDemo: true,
   },
 ];
 
@@ -106,7 +108,6 @@ export const techProjects: Project[] = [
     title: 'AI Chat Assistant',
     image: projectAiChat,
     tags: ['Next.js', 'TypeScript', 'OpenAI', 'Supabase'],
-    demoUrl: 'https://example.com',
     repoUrl: 'https://github.com/zerocodedevops',
     status: 'Development',
   },
@@ -115,7 +116,6 @@ export const techProjects: Project[] = [
     title: 'Task Management App',
     image: projectTask,
     tags: ['React', 'Firebase', 'Tailwind', 'Framer Motion'],
-    demoUrl: 'https://example.com',
     repoUrl: 'https://github.com/zerocodedevops',
     status: 'Development',
   },
@@ -124,7 +124,6 @@ export const techProjects: Project[] = [
     title: 'Weather App',
     image: projectWeather,
     tags: ['React', 'TypeScript', 'API REST', 'Tailwind'],
-    demoUrl: 'https://example.com',
     status: 'Development',
   },
   {
@@ -132,7 +131,6 @@ export const techProjects: Project[] = [
     title: 'Blog Platform',
     image: projectBlog,
     tags: ['Next.js', 'MDX', 'Tailwind', 'Vercel'],
-    demoUrl: 'https://example.com',
     repoUrl: 'https://github.com/zerocodedevops',
     status: 'Development',
   },
@@ -261,6 +259,12 @@ function ProjectCard({
               <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
               {t(`projects.items.${project.id}.result`)}
             </div>
+          )}
+
+          {project.isDemo && (
+            <p className="mb-4 rounded-lg border border-amber-500/30 bg-amber-500/5 p-3 text-xs text-amber-200">
+              Demo interactiva en desarrollo. No representa un servicio de reservas operativo ni resultados de un cliente.
+            </p>
           )}
 
           <div className="flex flex-wrap gap-2 mb-4">

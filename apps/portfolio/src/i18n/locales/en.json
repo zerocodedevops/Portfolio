@@ -8,24 +8,36 @@
     "contact": "Contact"
   },
   "hero": {
-    "badge": "Available for new projects",
-    "title1": "Digital Strategy with",
-    "title2": "Extraordinary Passion",
-    "im": "Hi, I'm David G., your",
-    "available": "Available for new projects",
-    "greeting": "Hi, I'm David G.",
-    "name": "(ZeroCode_DevOps)",
-    "role": "Self-Taught Developer",
-    "aiPowered": "AI-Powered",
-    "description1": "No traditional training, but infinite passion.",
-    "description2": "I build real projects with AI as my ally.",
-    "description3": "I commit 200% to every project.",
+    "badge": "Web design for freelancers & SMEs · Online across Spain",
+    "title1": "Your custom professional website,",
+    "title2": "from €400.",
+    "description": "Websites crafted to win real clients. Bring your idea, or let me propose the visual direction. 100% online, wherever you are in Spain.",
+    "details": {
+      "price": "From €400",
+      "custom": "100% custom design",
+      "online": "100% online across Spain"
+    },
     "cta": {
-      "primary": "Contact Me",
-      "secondary": "View Projects",
-      "contact": "Contact Me",
-      "github": "View GitHub"
-    }
+      "primary": "Request a quote",
+      "whatsapp": "Chat on WhatsApp"
+    },
+    "whatsappMessage": "Hi, I'd like to learn more about a website for my business.",
+    "preview": {
+      "label": "custom design sample",
+      "nav1": "Services",
+      "nav2": "Reviews",
+      "navCta": "Book / Contact",
+      "eyebrow": "100% bespoke proposal",
+      "headline": "More presence, more trust, more clients.",
+      "description": "Structure designed for freelancers and small businesses looking to stand out with their own style, speed, and zero tech hassle.",
+      "button": "Learn more",
+      "footer": "Optimized for Google and mobile",
+      "status": "Custom design",
+      "priceLabel": "Transparent investment",
+      "price": "From €400",
+      "disclaimer": "Visual example of a custom website adapted to each business."
+    },
+    "scroll": "See how I work"
   },
   "featuredProject": {
     "title": "Featured Project",
@@ -292,7 +304,9 @@
       "submit": "Send Message",
       "sending": "Sending...",
       "success": "Message sent successfully! I'll reply soon.",
-      "error": "Error sending message. Please try again."
+      "error": "Error sending message. Please try again.",
+      "errorTitle": "Message could not be sent",
+      "notConfigured": "The form is unavailable right now. You can email me directly."
     }
   },
   "footer": {

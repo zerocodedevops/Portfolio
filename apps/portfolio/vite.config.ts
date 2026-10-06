@@ -8,6 +8,8 @@ const dirname = path.dirname(fileURLToPath(import.meta.url));
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  // The shared EmailJS configuration is kept in the monorepo root .env.
+  envDir: path.resolve(dirname, '../..'),
   plugins: [react(), tailwindcss()],
   server: {
     port: 5173,

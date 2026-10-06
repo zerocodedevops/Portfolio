@@ -1,76 +1,36 @@
 import { AnimatePresence, motion } from 'framer-motion';
-import {
-  Code2,
-  Mail,
-  Menu,
-  MessageCircle,
-  X,
-} from 'lucide-react';
+import { Menu, MessageCircle, X } from 'lucide-react';
 import { useEffect, useState } from 'react';
-import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
-import { trackEvent } from '@/lib/analytics';
 import { cn } from '@/lib/utils';
-import { GithubIcon, LinkedinIcon } from '@/components/ui/BrandIcons';
+import logoZero from '@/assets/zerocode-horizontal.webp';
 
-const socialLinks = [
-  {
-    icon: GithubIcon,
-    href: 'https://github.com/zerocodedevops',
-    label: 'GitHub',
-  },
-  {
-    icon: LinkedinIcon,
-    href: 'https://www.linkedin.com/in/zerocode-devops',
-    label: 'LinkedIn',
-  },
-  { icon: Mail, href: 'mailto:zerocode.devops@gmail.com', label: 'Email' },
-  { icon: MessageCircle, href: 'https://wa.me/34912622712', label: 'WhatsApp' },
+const navLinks = [
+  { label: 'Proceso', href: '#proceso' },
+  { label: 'Servicio', href: '#servicio' },
+  { label: 'Precio', href: '#inversion' },
+  { label: 'Sobre mí', href: '#sobre-mi' },
+  { label: 'Proyectos', href: '#projects' },
+  { label: 'Preguntas', href: '#preguntas' },
 ];
 
 export function Navbar() {
   const navigate = useNavigate();
-  const { i18n } = useTranslation();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  const navLinks = [
-    { label: 'Sobre Mí', href: '/disenador-web-freelance-madrid' },
-    { label: 'Proyectos', href: '#projects' },
-    { label: 'Blog', href: '#blog' },
-    { label: 'Tech', href: 'https://zerocode-devops.com/tech' },
-    { label: 'Precios', href: '/precios-paginas-web' },
-    { label: 'Contacto', href: '#contact' },
-  ];
-
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(globalThis.scrollY > 50);
-    };
-    globalThis.addEventListener('scroll', handleScroll);
+    const handleScroll = () => setIsScrolled(globalThis.scrollY > 24);
+    globalThis.addEventListener('scroll', handleScroll, { passive: true });
     return () => globalThis.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  useEffect(() => {
-    // Force dark theme
-    document.documentElement.classList.remove('light');
-    document.documentElement.classList.add('dark');
-    localStorage.setItem('theme', 'dark');
   }, []);
 
   const handleNavClick = (href: string) => {
     setIsMobileMenuOpen(false);
-    if (href.startsWith('http')) {
-      globalThis.window.location.href = href;
-      return;
-    }
     if (href.startsWith('#')) {
       const element = document.querySelector(href);
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
-      } else {
-        navigate('/disenador-web-freelance-madrid' + href);
-      }
+      if (element) element.scrollIntoView({ behavior: 'smooth' });
+      else { navigate(`/${href}`); }
     } else {
       navigate(href);
       globalThis.scrollTo({ top: 0, behavior: 'smooth' });
@@ -78,182 +38,14 @@ export function Navbar() {
   };
 
   return (
-    <motion.header
-      className={cn(
-        'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
-        isScrolled
-          ? 'bg-dark-900/80 backdrop-blur-xl border-b border-dark-700/50 py-[7px]'
-          : 'bg-transparent py-[15px]',
-      )}
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      transition={{ duration: 0.5 }}
-    >
-      <div className="container-custom">
-        <nav className="flex items-center justify-between">
-          {/* Logo */}
-          <motion.a
-            href="#hero"
-            className="flex items-center gap-2 group"
-            whileHover={{ scale: 1.05 }}
-            onClick={(e) => {
-              e.preventDefault();
-              handleNavClick('/');
-            }}
-          >
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-neon-cyan to-neon-purple flex items-center justify-center group-hover:shadow-glow transition-all duration-300">
-              <Code2 className="w-6 h-6 text-white" />
-            </div>
-            <span className="font-outfit font-bold text-xl text-white">
-              Zero<span className="text-neon-cyan">Code</span>
-            </span>
-          </motion.a>
-
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-8">
-            {navLinks.map((link) => (
-              <motion.a
-                key={link.href}
-                href={link.href}
-                className="text-dark-300 hover:text-primary-400 transition-colors text-sm font-medium"
-                whileHover={{ y: -2 }}
-                onClick={(e) => {
-                  e.preventDefault();
-                  handleNavClick(link.href);
-                }}
-              >
-                {link.label}
-              </motion.a>
-            ))}
-          </div>
-
-          {/* Right side actions */}
-          <div className="hidden md:flex items-center gap-4">
-            {/* Social links */}
-            <div className="flex items-center gap-2">
-              {socialLinks.map((social) => (
-                <motion.a
-                  key={social.label}
-                  href={social.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="p-2 text-dark-400 hover:text-primary-400 transition-colors"
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.95 }}
-                  aria-label={social.label}
-                  onClick={() =>
-                    trackEvent(
-                      'Social',
-                      `click_${social.label.toLowerCase()}`,
-                      'navbar',
-                    )
-                  }
-                >
-                  <social.icon className="w-5 h-5" />
-                </motion.a>
-              ))}
-            </div>
-
-
-            {/* Language switcher */}
-            <div className="flex items-center gap-1 border border-dark-700 rounded-lg p-1">
-              <motion.button
-                onClick={() => {
-                  i18n.changeLanguage('es');
-                  trackEvent('UI', 'change_language', 'es');
-                }}
-                className={cn(
-                  'px-2 py-1 text-xs font-medium rounded transition-colors',
-                  i18n.language === 'es'
-                    ? 'bg-primary-600 text-white'
-                    : 'text-dark-400 hover:text-primary-400',
-                )}
-                whileTap={{ scale: 0.95 }}
-                aria-label="Cambiar a Español"
-              >
-                ES
-              </motion.button>
-              <motion.button
-                onClick={() => {
-                  i18n.changeLanguage('en');
-                  trackEvent('UI', 'change_language', 'en');
-                }}
-                className={cn(
-                  'px-2 py-1 text-xs font-medium rounded transition-colors',
-                  i18n.language === 'en'
-                    ? 'bg-primary-600 text-white'
-                    : 'text-dark-400 hover:text-primary-400',
-                )}
-                whileTap={{ scale: 0.95 }}
-                aria-label="Switch to English"
-              >
-                EN
-              </motion.button>
-            </div>
-          </div>
-
-          {/* Mobile menu button */}
-          <motion.button
-            className="md:hidden p-2 text-dark-300"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            whileTap={{ scale: 0.95 }}
-            aria-label="Abrir menú"
-          >
-            {isMobileMenuOpen ? (
-              <X className="w-6 h-6" />
-            ) : (
-              <Menu className="w-6 h-6" />
-            )}
-          </motion.button>
-        </nav>
-      </div>
-
-      {/* Mobile menu */}
-      <AnimatePresence>
-        {isMobileMenuOpen && (
-          <motion.div
-            className="md:hidden absolute top-full left-0 right-0 bg-dark-900 backdrop-blur-xl border-b border-dark-700/50 origin-top overflow-hidden"
-            initial={{ opacity: 0, scaleY: 0 }}
-            animate={{ opacity: 1, scaleY: 1 }}
-            exit={{ opacity: 0, scaleY: 0 }}
-            transition={{ duration: 0.3 }}
-          >
-            <div className="container-custom py-6 flex flex-col gap-4">
-              {navLinks.map((link, index) => (
-                <motion.a
-                  key={link.href}
-                  href={link.href}
-                  className="text-dark-200 hover:text-primary-400 transition-colors text-lg font-medium py-2"
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: index * 0.1 }}
-                  onClick={(e) => {
-                    e.preventDefault();
-                    handleNavClick(link.href);
-                  }}
-                >
-                  {link.label}
-                </motion.a>
-              ))}
-
-              <div className="flex items-center gap-4 pt-4 border-t border-dark-700/50">
-                {socialLinks.map((social) => (
-                  <a
-                    key={social.label}
-                    href={social.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="p-2 text-dark-400 hover:text-primary-400 transition-colors"
-                    aria-label={social.label}
-                  >
-                    <social.icon className="w-5 h-5" />
-                  </a>
-                ))}
-              </div>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+    <motion.header initial={{ y: -72 }} animate={{ y: 0 }} transition={{ duration: 0.4 }} className={cn('fixed inset-x-0 top-0 z-50 border-b border-white/15 bg-[#001b41] text-white transition-shadow duration-300', isScrolled ? 'shadow-[0_8px_25px_rgba(0,27,65,.24)]' : '')}>
+      <div className="container-custom"><nav aria-label="Navegación principal" className="flex min-h-[70px] items-center justify-between gap-6">
+        <a href="/" className="flex shrink-0 items-center" onClick={(event)=>{event.preventDefault();handleNavClick('/');}} aria-label="ZeroCode, inicio"><img src={logoZero} alt="ZeroCode DevOps" className="h-[54px] w-[164px] object-cover object-center sm:h-[58px] sm:w-[174px]" fetchPriority="high"/></a>
+        <div className="hidden items-center gap-5 lg:flex xl:gap-7">{navLinks.map((link)=><a key={link.href} href={link.href} className="text-sm font-medium text-white/80 transition-colors hover:text-[#11c7e6]" onClick={(event)=>{event.preventDefault();handleNavClick(link.href);}}>{link.label}</a>)}</div>
+        <div className="hidden lg:block"><a href="#contact" className="inline-flex min-h-10 items-center gap-2 bg-transparent px-3 text-sm font-semibold text-white/85 transition-colors hover:bg-white/10 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#001b41]" onClick={(event)=>{event.preventDefault();handleNavClick('#contact');}}>Pedir presupuesto <span aria-hidden="true">↗</span></a></div>
+        <button className="rounded-md p-2 text-white transition hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#11c7e6] lg:hidden" onClick={()=>setIsMobileMenuOpen(!isMobileMenuOpen)} aria-expanded={isMobileMenuOpen} aria-label={isMobileMenuOpen?'Cerrar menú':'Abrir menú'}>{isMobileMenuOpen?<X className="h-6 w-6"/>:<Menu className="h-6 w-6"/>}</button>
+      </nav></div>
+      <AnimatePresence>{isMobileMenuOpen&&<motion.div initial={{opacity:0,y:-8}} animate={{opacity:1,y:0}} exit={{opacity:0,y:-8}} transition={{duration:.18}} className="absolute inset-x-0 top-full border-b border-white/15 bg-[#001b41] shadow-lg lg:hidden"><div className="container-custom flex flex-col gap-1 py-4">{navLinks.map((link)=><a key={link.href} href={link.href} className="py-3 font-medium text-white/85 transition-colors hover:text-[#11c7e6]" onClick={(event)=>{event.preventDefault();handleNavClick(link.href);}}>{link.label}</a>)}<a href="#contact" className="mt-2 inline-flex min-h-12 items-center justify-center gap-2 bg-transparent px-5 font-semibold text-white/90 transition hover:bg-white/10 hover:text-white" onClick={(event)=>{event.preventDefault();handleNavClick('#contact');}}>Pedir presupuesto <MessageCircle className="h-4 w-4"/></a></div></motion.div>}</AnimatePresence>
     </motion.header>
   );
 }

@@ -1,37 +1,19 @@
-import { lazy, Suspense, useState, useEffect } from 'react';
+import { lazy, Suspense, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-import { motion } from 'framer-motion';
 import { Layout } from '@/components/layout/Layout';
 import { Seo } from '@/components/common/SEO';
 import { Hero } from '@/components/sections/Hero';
-import { staggerContainer } from '@/hooks/useScrollAnimation';
-import { useMediaQuery } from '@/hooks/useMediaQuery';
-import { useUserInteraction } from '@/hooks/useUserInteraction';
+import {
+  HomeFaqSection,
+  HomeOfferSections,
+  HomeProcessSections,
+} from './HomeOfferSections';
+import { HomeProjectGallery } from './HomeProjectGallery';
 
-const About = lazy(() => import('@/components/sections/About').then((m) => ({ default: m.About })));
-const Blog = lazy(() => import('@/components/sections/Blog').then((m) => ({ default: m.Blog })));
 const Contact = lazy(() => import('@/components/sections/Contact').then((m) => ({ default: m.Contact })));
-const Projects = lazy(() => import('@/components/sections/Projects').then((m) => ({ default: m.Projects })));
-const Skills = lazy(() => import('@/components/sections/Skills').then((m) => ({ default: m.Skills })));
 
 export default function Home() {
   const { pathname, hash } = useLocation();
-  const isDesktop = useMediaQuery('(min-width: 1024px)');
-  const hasInteracted = useUserInteraction();
-  const [showAnimations, setShowAnimations] = useState(isDesktop);
-
-  useEffect(() => {
-    if (!isDesktop) {
-      const runAnimations = () => setShowAnimations(true);
-      if ('requestIdleCallback' in globalThis) {
-        const id = (globalThis as any).requestIdleCallback(runAnimations);
-        return () => (globalThis as any).cancelIdleCallback(id);
-      } else {
-        const id = globalThis.setTimeout(runAnimations, 100);
-        return () => globalThis.clearTimeout(id);
-      }
-    }
-  }, [isDesktop]);
 
   useEffect(() => {
     // Scroll to top on root path change, or to section if hash exists
@@ -44,32 +26,43 @@ export default function Home() {
     }
   }, [pathname, hash]);
 
-  const mobileInitial = showAnimations ? "hidden" : "visible";
-  const initialVariant = isDesktop ? "hidden" : mobileInitial;
-
   return (
     <Layout>
-      <Seo 
-        title="Diseñador Web Freelance en Madrid | Páginas para Pymes" 
-        description="Ayudo a pymes y autónomos en Madrid a conseguir más clientes mediante páginas web rápidas, optimizadas para Google y orientadas a ventas." 
+      <Seo
+        title="Diseño web para autónomos y pymes desde 400 € | ZeroCode"
+        description="Diseño web a medida para autónomos y pymes de toda España. Una página con Inicio y Contacto desde 400 €, con WhatsApp, adaptación móvil, dominio y hosting durante un año."
+        jsonLd={{
+          '@context': 'https://schema.org',
+          '@graph': [
+            {
+              '@type': 'Organization',
+              name: 'ZeroCode DevOps',
+              url: 'https://zerocode-devops.com/',
+              email: 'admin@zerocode-devops.com',
+              logo: 'https://zerocode-devops.com/logo-zerocode.webp',
+              areaServed: { '@type': 'Country', name: 'España' },
+            },
+            {
+              '@type': 'Service',
+              name: 'Diseño web a medida para autónomos y pymes',
+              provider: { '@type': 'Organization', name: 'ZeroCode DevOps' },
+              areaServed: { '@type': 'Country', name: 'España' },
+              description: 'Diseño de una página web con Inicio y Contacto, adaptada a móviles, con botón de WhatsApp, dominio y hosting durante un año y certificado SSL.',
+              offers: { '@type': 'Offer', price: '400', priceCurrency: 'EUR' },
+            },
+          ],
+        }}
       />
-      <motion.div
-        variants={staggerContainer}
-        initial={initialVariant}
-        animate="visible"
-        viewport={{ once: true }}
-      >
-        <Hero />
-        {(isDesktop || hasInteracted) && (
-          <Suspense fallback={null}>
-            <About />
-            <Skills />
-            <Projects />
-            <Blog />
-            <Contact />
-          </Suspense>
-        )}
-      </motion.div>
+      <main>
+      <Hero />
+      <HomeProcessSections />
+      <HomeOfferSections />
+      <HomeProjectGallery />
+      <HomeFaqSection />
+      <Suspense fallback={null}>
+        <Contact />
+      </Suspense>
+      </main>
     </Layout>
   );
 }

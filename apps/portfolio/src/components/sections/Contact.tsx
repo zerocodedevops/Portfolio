@@ -13,11 +13,7 @@ import { useForm } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
 import { z } from 'zod';
 import { Button } from '@/components/ui';
-import {
-  GithubIcon,
-  LinkedinIcon,
-  WhatsAppIcon,
-} from '@/components/ui/BrandIcons';
+import { WhatsAppIcon } from '@/components/ui/BrandIcons';
 import { slideInLeft, slideInRight } from '@/hooks/useScrollAnimation';
 import { sileo } from 'sileo';
 
@@ -27,6 +23,7 @@ export function Contact() {
     'idle' | 'loading' | 'success' | 'error'
   >('idle');
   const [errorMessage, setErrorMessage] = useState('');
+  const [fallbackMailto, setFallbackMailto] = useState('mailto:admin@zerocode-devops.com');
 
   const contactSchema = useMemo(
     () =>
@@ -55,6 +52,7 @@ export function Contact() {
   const onSubmit = async (data: ContactFormData) => {
     setStatus('loading');
     setErrorMessage('');
+    setFallbackMailto(`mailto:admin@zerocode-devops.com?subject=${encodeURIComponent(data.subject)}&body=${encodeURIComponent(`Nombre: ${data.name}\nCorreo: ${data.email}\n\n${data.message}`)}`);
 
     try {
       // EmailJS configuration
@@ -63,14 +61,13 @@ export function Contact() {
       const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
       if (!serviceId || !templateId || !publicKey) {
-        // For demo purposes, simulate success
-        await new Promise((resolve) => setTimeout(resolve, 1500));
-        sileo.success({
-          title: t('contact.form.success'),
-          description: 'En breve me pondré en contacto contigo.',
+        const message = t('contact.form.notConfigured');
+        setErrorMessage(message);
+        setStatus('error');
+        sileo.error({
+          title: t('contact.form.errorTitle'),
+          description: message,
         });
-        setStatus('success');
-        reset();
         return;
       }
 
@@ -103,20 +100,22 @@ export function Contact() {
   };
 
   return (
-    <section id="contact" className="relative pb-16 lg:pb-24 pt-8 lg:pt-12">
+    <section id="contact" className="relative bg-[#f3f7fa] py-20 sm:py-24">
       {/* Background decoration */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute bottom-0 left-1/4 w-1/2 h-1/2 bg-gradient-radial from-primary-500/5 to-transparent blur-3xl" />
       </div>
 
       <div className="container-custom relative z-10">
-        <div className="text-center mb-16">
-          <h2 className="font-outfit font-bold text-3xl sm:text-4xl lg:text-5xl text-white mb-6">
-            Hablemos de tu <span className="text-gradient">Proyecto</span>
+        <div className="mx-auto mb-12 max-w-5xl text-center">
+          <p className="mb-4 text-xs font-bold uppercase tracking-[0.19em] text-[#087cae]">Cuéntame tu idea</p>
+          <h2 className="font-outfit mb-5 text-3xl font-semibold tracking-tight text-[#071a35] sm:text-4xl">
+            Hablemos de tu proyecto
           </h2>
-          <p className="text-xl text-dark-300 font-medium max-w-2xl mx-auto">
-            ¿Tienes una idea en mente? Me encantaría escucharla
-          </p>
+          <div className="space-y-1 text-base leading-7 text-[#586a80]">
+            <p>Cuéntame qué necesita tu negocio.</p>
+            <p>Te responderé personalmente con los siguientes pasos.</p>
+          </div>
         </div>
 
         <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-12 items-start mt-8">
@@ -126,55 +125,49 @@ export function Contact() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            className="space-y-12"
+            className="space-y-8"
           >
             <div className="space-y-6">
-              <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white">
-                ¿Listo para colaborar?
+              <h3 className="font-outfit text-2xl font-semibold text-[#0a203d] sm:text-3xl">
+                Diseño web a medida desde 400 €
               </h3>
-              <p className="text-dark-300 text-lg leading-relaxed max-w-lg">
-                Estoy abierto a colaborar en proyectos que valoren la{' '}
-                <span className="text-primary-400 font-medium">innovación</span>
-                , la{' '}
-                <span className="text-primary-400 font-medium">
-                  transparencia
-                </span>{' '}
-                y el uso estratégico de{' '}
-                <span className="text-accent-400 font-medium">IA</span>.
-              </p>
+              <div className="space-y-2 text-base leading-7 text-[#586a80]">
+                <p>Trabajo online en toda España.</p>
+                <p>Puedes traer una idea definida o pedirme que proponga el diseño.</p>
+              </div>
               
-              <div className="flex items-center gap-4 p-4 rounded-2xl bg-dark-800/30 border border-dark-700/50 w-fit">
-                <div className="p-2.5 rounded-lg bg-primary-500/10 text-primary-400">
+              <div className="flex w-fit items-center gap-4 border border-[#d5e0e8] bg-white p-4">
+                <div className="bg-[#e5f7fc] p-2.5 text-[#087cae]">
                   <MapPin className="w-5 h-5" />
                 </div>
                 <div>
-                  <p className="text-dark-400 text-[10px] uppercase tracking-wider font-bold mb-0.5">
-                    Ubicación
+                  <p className="mb-0.5 text-[10px] font-bold uppercase tracking-wider text-[#718197]">
+                    Atención online
                   </p>
-                  <p className="text-white text-sm font-medium">Madrid, España</p>
+                  <p className="text-sm font-medium text-[#0b294a]">Toda España</p>
                 </div>
               </div>
             </div>
 
             {/* Contact form */}
-            <form onSubmit={handleSubmit(onSubmit)} className="card p-6 sm:p-8 bg-dark-800/10 border-dark-700/50">
+            <form onSubmit={handleSubmit(onSubmit)} className="border border-[#d5e0e8] bg-white p-6 sm:p-8">
               <div className="space-y-6">
                 {/* Name */}
                 <div className="flex flex-col">
-                  <label htmlFor="name" className="text-sm font-bold text-dark-200 mb-2">
+                  <label htmlFor="name" className="mb-2 text-sm font-bold text-[#263c56]">
                     {t('contact.form.name')}
                   </label>
                   <input
                     id="name"
                     type="text"
-                    className="input w-full p-4"
+                    className="w-full border border-[#cbd7e1] bg-white p-4 text-[#0b294a] placeholder:text-[#8291a2] focus:border-[#0789bd] focus:outline-none focus:ring-2 focus:ring-[#0789bd]/20"
                     placeholder={t('contact.form.placeholders.name')}
                     {...register('name')}
                     aria-invalid={errors.name ? 'true' : 'false'}
                     required={true}
                   />
                   {errors.name && (
-                    <p className="mt-2 text-sm text-red-400 font-medium" role="alert">
+                    <p className="mt-2 text-sm font-medium text-red-700" role="alert">
                       {errors.name.message}
                     </p>
                   )}
@@ -182,33 +175,54 @@ export function Contact() {
 
                 {/* Email */}
                 <div className="flex flex-col">
-                  <label htmlFor="email" className="text-sm font-bold text-dark-200 mb-2">
+                  <label htmlFor="email" className="mb-2 text-sm font-bold text-[#263c56]">
                     {t('contact.form.email')}
                   </label>
                   <input
                     id="email"
                     type="email"
-                    className="input w-full p-4"
+                    className="w-full border border-[#cbd7e1] bg-white p-4 text-[#0b294a] placeholder:text-[#8291a2] focus:border-[#0789bd] focus:outline-none focus:ring-2 focus:ring-[#0789bd]/20"
                     placeholder={t('contact.form.placeholders.email')}
                     {...register('email')}
                     aria-invalid={errors.email ? 'true' : 'false'}
                     required={true}
                   />
                   {errors.email && (
-                    <p className="mt-2 text-sm text-red-400 font-medium" role="alert">
+                    <p className="mt-2 text-sm font-medium text-red-700" role="alert">
                       {errors.email.message}
+                    </p>
+                  )}
+                </div>
+
+                {/* Subject */}
+                <div className="flex flex-col">
+                  <label htmlFor="subject" className="mb-2 text-sm font-bold text-[#263c56]">
+                    {t('contact.form.subject')}
+                  </label>
+                  <input
+                    id="subject"
+                    type="text"
+                    className="w-full border border-[#cbd7e1] bg-white p-4 text-[#0b294a] placeholder:text-[#8291a2] focus:border-[#0789bd] focus:outline-none focus:ring-2 focus:ring-[#0789bd]/20"
+                    placeholder={t('contact.form.placeholders.subject')}
+                    {...register('subject')}
+                    aria-invalid={errors.subject ? 'true' : 'false'}
+                    required
+                  />
+                  {errors.subject && (
+                    <p className="mt-2 text-sm font-medium text-red-700" role="alert">
+                      {errors.subject.message}
                     </p>
                   )}
                 </div>
 
                 {/* Message */}
                 <div className="flex flex-col">
-                  <label htmlFor="message" className="text-sm font-bold text-dark-200 mb-2">
+                  <label htmlFor="message" className="mb-2 text-sm font-bold text-[#263c56]">
                     {t('contact.form.message')}
                   </label>
                   <textarea
                     id="message"
-                    className="textarea w-full p-4"
+                    className="w-full border border-[#cbd7e1] bg-white p-4 text-[#0b294a] placeholder:text-[#8291a2] focus:border-[#0789bd] focus:outline-none focus:ring-2 focus:ring-[#0789bd]/20"
                     placeholder={t('contact.form.placeholders.message')}
                     rows={4}
                     {...register('message')}
@@ -216,7 +230,7 @@ export function Contact() {
                     required={true}
                   />
                   {errors.message && (
-                    <p className="mt-2 text-sm text-red-400 font-medium" role="alert">
+                    <p className="mt-2 text-sm font-medium text-red-700" role="alert">
                       {errors.message.message}
                     </p>
                   )}
@@ -257,7 +271,7 @@ export function Contact() {
                       className="flex items-center gap-2 p-4 rounded-lg bg-red-500/10 border border-red-500/30 text-red-400 mt-4"
                     >
                       <AlertCircle className="w-5 h-5 shrink-0" />
-                      <p className="text-sm font-medium">{errorMessage}</p>
+                      <div className="text-sm font-medium"><div className="space-y-1">{errorMessage.split(/(?<=\.)\s+/).map((sentence) => <p key={sentence}>{sentence}</p>)}</div><a className="mt-2 inline-block underline underline-offset-2" href={fallbackMailto}>Escríbeme directamente por correo</a></div>
                     </motion.div>
                   )}
                 </AnimatePresence>
@@ -273,21 +287,21 @@ export function Contact() {
             viewport={{ once: true }}
             className="space-y-8 lg:sticky lg:top-24"
           >
-            <div className="card p-6 sm:p-8 bg-dark-800/20 border-dark-700/50">
-              <h4 className="text-lg font-bold text-white mb-6">Canales Directos</h4>
+            <div className="border border-[#d5e0e8] bg-white p-6 sm:p-8">
+              <h4 className="font-outfit mb-6 text-lg font-semibold text-[#0b294a]">Escríbeme</h4>
               <div className="space-y-3">
                 <a
                   href="mailto:admin@zerocode-devops.com"
-                  className="flex items-center gap-4 p-4 rounded-2xl bg-dark-900/80 border border-dark-700/50 hover:border-primary-500/50 transition-all group"
+                  className="group flex items-center gap-4 border border-[#dce4eb] bg-white p-4 transition hover:border-[#0789bd]"
                 >
                   <div className="p-3 rounded-xl bg-primary-500/10 text-primary-400 group-hover:bg-primary-500 group-hover:text-white transition-colors">
                     <Mail className="w-5 h-5" />
                   </div>
                   <div>
-                    <p className="text-dark-400 text-[10px] uppercase tracking-wider font-bold mb-0.5">
+                    <p className="mb-0.5 text-[10px] font-bold uppercase tracking-wider text-[#718197]">
                       Email
                     </p>
-                    <p className="text-white text-sm font-medium">
+                    <p className="text-sm font-medium text-[#0b294a]">
                       admin@zerocode-devops.com
                     </p>
                   </div>
@@ -297,57 +311,24 @@ export function Contact() {
                   href="https://wa.me/34912622712"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-4 p-4 rounded-2xl bg-dark-900/80 border border-dark-700/50 hover:border-accent-500/50 transition-all group"
+                  className="group flex items-center gap-4 border border-[#dce4eb] bg-white p-4 transition hover:border-[#0789bd]"
                 >
                   <div className="p-3 rounded-xl bg-accent-500/10 text-accent-400 group-hover:bg-accent-500 group-hover:text-white transition-colors">
                     <WhatsAppIcon className="w-5 h-5" />
                   </div>
                   <div>
-                    <p className="text-dark-400 text-[10px] uppercase tracking-wider font-bold mb-0.5">
-                      WhatsApp Business
+                    <p className="mb-0.5 text-[10px] font-bold uppercase tracking-wider text-[#718197]">
+                      WhatsApp
                     </p>
-                    <p className="text-white text-sm font-medium">+34 912 622 712</p>
+                    <p className="text-sm font-medium text-[#0b294a]">Enviar un mensaje</p>
                   </div>
                 </a>
 
-                <a
-                  href="https://www.linkedin.com/in/zerocode-devops"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-4 p-4 rounded-2xl bg-dark-900/80 border border-dark-700/50 hover:border-blue-500/50 transition-all group"
-                >
-                  <div className="p-3 rounded-xl bg-blue-500/10 text-blue-400 group-hover:bg-blue-600 group-hover:text-white transition-colors">
-                    <LinkedinIcon className="w-5 h-5" />
-                  </div>
-                  <div>
-                    <p className="text-dark-400 text-[10px] uppercase tracking-wider font-bold mb-0.5">
-                      LinkedIn
-                    </p>
-                    <p className="text-white text-sm font-medium">zerocode-devops</p>
-                  </div>
-                </a>
-
-                <a
-                  href="https://github.com/zerocodedevops"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-4 p-4 rounded-2xl bg-dark-900/80 border border-dark-700/50 hover:border-gray-400/50 transition-all group"
-                >
-                  <div className="p-3 rounded-xl bg-gray-500/10 text-gray-400 group-hover:bg-gray-600 group-hover:text-white transition-colors">
-                    <GithubIcon className="w-5 h-5" />
-                  </div>
-                  <div>
-                    <p className="text-dark-400 text-[10px] uppercase tracking-wider font-bold mb-0.5">
-                      GitHub
-                    </p>
-                    <p className="text-white text-sm font-medium">zerocodedevops</p>
-                  </div>
-                </a>
               </div>
             </div>
 
             {/* Terminal snippet */}
-            <div className="rounded-2xl bg-dark-950/90 border border-dark-700/50 overflow-hidden font-mono text-sm leading-relaxed shadow-glow w-full max-w-full sm:max-w-[340px]">
+            <div className="hidden">
               <div className="flex items-center gap-2 px-4 py-3 border-b border-dark-800/80 bg-dark-900/80">
                 <div className="flex gap-1.5 mr-2">
                   <div className="w-3 h-3 rounded-full bg-red-500/80"></div>

@@ -4,5 +4,3 @@ Allow: /
 # Sitemap
 Sitemap: https://zerocode-devops.com/sitemap.xml
 
-# Crawl-delay for polite bots
-Crawl-delay: 1

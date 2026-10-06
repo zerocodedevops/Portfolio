@@ -1,29 +1,35 @@
-import React, { lazy, Suspense } from 'react';
+import { useEffect } from 'react';
 import { Phone, ArrowRight } from 'lucide-react';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { Seo } from '@/components/common/SEO';
 import { Layout } from '@/components/layout';
+import { Contact } from '@/components/sections/Contact';
+import { Blog } from '@/components/sections/Blog';
 import { useABTest } from '@/hooks/useABTest';
 import { useMediaQuery } from '@/hooks/useMediaQuery';
-import { useUserInteraction } from '@/hooks/useUserInteraction';
-
-const Blog = lazy(() => import('@/components/sections/Blog').then(m => ({ default: m.Blog })));
-const Contact = lazy(() => import('@/components/sections/Contact').then(m => ({ default: m.Contact })));
-const PymesContent = lazy(() => import('./components/PymesContent'));
-const PymesHeroDesktop = lazy(() => import('./components/PymesHeroDesktop'));
+import PymesContent from './components/PymesContent';
+import PymesHeroDesktop from './components/PymesHeroDesktop';
 
 export default function PymesService() {
   const navigate = useNavigate();
+  const { hash } = useLocation();
   const heroVariant = useABTest('hero_h1_madrid');
   const isDesktop = useMediaQuery('(min-width: 1024px)');
-  const hasInteracted = useUserInteraction();
+
+  useEffect(() => {
+    if (!hash) return;
+    const frame = requestAnimationFrame(() => {
+      document.querySelector(hash)?.scrollIntoView({ behavior: 'smooth' });
+    });
+    return () => cancelAnimationFrame(frame);
+  }, [hash]);
 
   const handleCtaClick = () => {
     const contactSection = document.getElementById('contact');
     if (contactSection) {
       contactSection.scrollIntoView({ behavior: 'smooth' });
     } else {
-      navigate('/disenador-web-freelance-madrid#contact');
+      navigate('/#contact');
     }
   };
 
@@ -35,23 +41,15 @@ export default function PymesService() {
         keywords="desarrollo web pymes madrid, paginas web autonomos madrid, diseño web madrid pymes, web para negocios locales madrid, desarrollo de tiendas online para pymes, creación de página web autónomos madrid"
         jsonLd={{
           '@context': 'https://schema.org',
-          '@type': 'LocalBusiness',
+          '@type': 'ProfessionalService',
           name: 'ZeroCode',
-          image: 'https://zerocode-devops.com/og-image.png',
-          '@id': 'https://zerocode-devops.com/desarrollo-web-pymes-madrid/#localbusiness',
+          image: 'https://zerocode-devops.com/og-image.webp',
+          '@id': 'https://zerocode-devops.com/desarrollo-web-pymes-madrid/#professionalservice',
           url: 'https://zerocode-devops.com/desarrollo-web-pymes-madrid',
           telephone: '+34 912 622 712',
-          address: {
-            '@type': 'PostalAddress',
-            streetAddress: 'Madrid, Spain',
-            addressLocality: 'Madrid',
-            postalCode: '28001',
-            addressCountry: 'ES',
-          },
-          geo: {
-            '@type': 'GeoCoordinates',
-            latitude: 40.416775,
-            longitude: -3.70379,
+          areaServed: {
+            '@type': 'City',
+            name: 'Madrid',
           },
         }}
       />
@@ -60,8 +58,7 @@ export default function PymesService() {
         <div className="container-custom">
           {/* Hero Section / H1 */}
           <header className="max-w-5xl mx-auto text-center mb-12 md:mb-32">
-            <Suspense fallback={<div className="h-20 animate-pulse bg-dark-900/50 rounded-2xl" />}>
-              {isDesktop ? (
+            {isDesktop ? (
                 <PymesHeroDesktop heroVariant={heroVariant} />
               ) : (
                 <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-[56px] font-extrabold text-white mb-6 leading-tight">
@@ -78,7 +75,6 @@ export default function PymesService() {
                   )}
                 </h1>
               )}
-            </Suspense>
 
             {/* Static Content (no motion used here) */}
             <div className="text-lg md:text-xl text-dark-400 mb-10 w-full mx-auto space-y-2 md:whitespace-nowrap">
@@ -120,32 +116,18 @@ export default function PymesService() {
             </div>
           </header>
 
-          {(isDesktop || hasInteracted) && (
-            <Suspense fallback={<div className="h-96 animate-pulse bg-dark-900/50 rounded-3xl" />}>
-              <PymesContent 
-                handleCtaClick={handleCtaClick} 
-              />
-            </Suspense>
-          )}
+          <PymesContent handleCtaClick={handleCtaClick} />
         </div>
 
         {/* Formulario de Contacto en la misma página */}
-        <Suspense fallback={<div className="h-96 animate-pulse bg-dark-900/50 rounded-3xl" />}>
-          {(isDesktop || hasInteracted) && (
-            <div className="border-t border-dark-800 pt-10 pb-8">
-              <Contact />
-            </div>
-          )}
-        </Suspense>
+        <div className="border-t border-dark-800 pt-10 pb-8">
+          <Contact />
+        </div>
 
         {/* Blog / Guías de Negocio */}
-        <Suspense fallback={<div className="h-96 animate-pulse bg-dark-900/50 rounded-3xl" />}>
-          {(isDesktop || hasInteracted) && (
-            <section className="border-t border-dark-800 pt-20">
-              <Blog type="business" />
-            </section>
-          )}
-        </Suspense>
+        <section className="border-t border-dark-800 pt-20">
+          <Blog type="business" />
+        </section>
       </div>
     </Layout>
   );

@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import furgoneta from '../../assets/furgoneta-zerodelay.png';
+import furgoneta from '../../assets/furgoneta-zerodelay.webp';
 
 const Hero = () => {
   return (

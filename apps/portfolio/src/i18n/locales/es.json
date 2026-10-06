@@ -8,19 +8,36 @@
     "contact": "Contacto"
   },
   "hero": {
-    "badge": "Disponible para nuevos proyectos",
-    "title1": "Diseñador Web Freelance",
-    "title2": "en Madrid para Pymes",
-    "description": "Ayudo a autónomos y pequeñas empresas a conseguir más clientes con páginas web profesionales, rápidas y optimizadas para Google. Dejo atrás la jerga técnica para crear webs que venden y generan negocio real.",
-    "typing": {
-      "clients": ">_ Más Clientes",
-      "webs": ">_ Más Reservas",
-      "ai": ">_ Más Llamadas"
+    "badge": "Diseño web para autónomos y pymes · Online en toda España",
+    "title1": "Tu web profesional a medida,",
+    "title2": "desde 400 €.",
+    "description": "Diseño páginas web pensadas para conseguir clientes reales. Si ya tienes una idea clara, la hago realidad; si no sabes por dónde empezar, propongo toda la dirección visual. 100% online y a tu ritmo en toda España.",
+    "details": {
+      "price": "Desde 400 €",
+      "custom": "Diseño 100 % a medida",
+      "online": "100 % online en toda España"
     },
     "cta": {
-      "primary": "Quiero una web que venda",
-      "secondary": "Casos de Éxito"
-    }
+      "primary": "Pedir presupuesto",
+      "whatsapp": "Contactar por WhatsApp"
+    },
+    "whatsappMessage": "Hola, quiero información sobre una web para mi negocio.",
+    "preview": {
+      "label": "ejemplo de diseño a medida",
+      "nav1": "Servicios",
+      "nav2": "Opiniones",
+      "navCta": "Pedir cita / Contacto",
+      "eyebrow": "Propuesta 100% personalizada",
+      "headline": "Más presencia, más confianza, más clientes.",
+      "description": "Estructura pensada para autónomos y pymes que quieren destacar con un estilo propio, velocidad y sin complicaciones técnicas.",
+      "button": "Saber más",
+      "footer": "Optimizado para Google y móvil",
+      "status": "Diseño a medida",
+      "priceLabel": "Inversión transparente",
+      "price": "Desde 400 €",
+      "disclaimer": "Ejemplo visual de una web a medida para autónomos y pymes."
+    },
+    "scroll": "Conoce cómo trabajo"
   },
   "featuredProject": {
     "title": "Proyecto Destacado",
@@ -287,7 +304,9 @@
       "submit": "Enviar Mensaje",
       "sending": "Enviando...",
       "success": "¡Mensaje enviado con éxito! Te responderé pronto.",
-      "error": "Hubo un error al enviar el mensaje. Por favor, intenta de nuevo."
+      "error": "Hubo un error al enviar el mensaje. Por favor, intenta de nuevo.",
+      "errorTitle": "No se pudo enviar el mensaje",
+      "notConfigured": "El formulario no está disponible ahora. Puedes escribirme directamente por correo."
     }
   },
   "footer": {

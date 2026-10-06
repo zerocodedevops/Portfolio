@@ -1,10 +1,9 @@
 import { lazy, Suspense } from 'react';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { createBrowserRouter, Navigate, RouterProvider } from 'react-router-dom';
 import { PageLoader } from '@/components/ui/PageLoader';
 import { RootErrorPage } from '@/components/RootErrorPage';
 
 const Home = lazy(() => import('@/features/home/Home'));
-const PymesService = lazy(() => import('@/features/services/PymesService'));
 const Pricing = lazy(() => import('@/features/pricing/Pricing'));
 const SalonApp = lazy(() => import('@zerovanity/routes'));
 const CryptoApp = lazy(() => import('@crypto/routes'));
@@ -13,8 +12,22 @@ const AnalyticsApp = lazy(() => import('@analytics/routes'));
 const MediaApp = lazy(() => import('@zerodelay/App'));
 const ReformsApp = lazy(() => import('@zero-chaos/routes'));
 const CaseStudy = lazy(() => import('@/features/projects/CaseStudy'));
-const TechBlog = lazy(() => import('@/features/blog/TechBlog'));
-const BlogPost = lazy(() => import('@/features/blog/BlogPost'));
+
+function VanityDemoApp() {
+  return (
+    <>
+      <SalonApp />
+      <details className="fixed bottom-4 right-4 z-[100] max-w-xs rounded-xl border border-amber-500/40 bg-dark-950/95 text-amber-100 shadow-xl">
+        <summary className="cursor-pointer px-4 py-2 text-sm font-semibold">
+          ZeroVanity · Demo en desarrollo
+        </summary>
+        <p className="px-4 pb-3 text-xs leading-relaxed">
+          Demo para peluquerías y centros de estética. No introduzcas datos personales; el sistema de reservas no está disponible.
+        </p>
+      </details>
+    </>
+  );
+}
 
 const router = createBrowserRouter(
   [
@@ -26,33 +39,21 @@ const router = createBrowserRouter(
           index: true,
           element: (
             <Suspense fallback={<PageLoader text="Cargando..." />}>
-              <PymesService />
+              <Home />
             </Suspense>
           ),
         },
         {
           path: 'portfolio',
-          element: (
-            <Suspense fallback={<PageLoader text="Cargando Portfolio..." />}>
-              <Home />
-            </Suspense>
-          ),
+          element: <Navigate to="/" replace />,
         },
         {
           path: 'desarrollo-web-pymes-madrid',
-          element: (
-            <Suspense fallback={<PageLoader text="Cargando Servicios..." />}>
-              <PymesService />
-            </Suspense>
-          ),
+          element: <Navigate to="/" replace />,
         },
         {
           path: 'disenador-web-freelance-madrid',
-          element: (
-            <Suspense fallback={<PageLoader text="Sobre Mí..." />}>
-              <Home />
-            </Suspense>
-          ),
+          element: <Navigate to="/#sobre-mi" replace />,
         },
         {
           path: 'precios-paginas-web',
@@ -66,7 +67,7 @@ const router = createBrowserRouter(
           path: 'proyectos/zerovanity/*',
           element: (
             <Suspense fallback={<PageLoader text="Loading Salon App..." />}>
-              <SalonApp />
+              <VanityDemoApp />
             </Suspense>
           ),
         },
@@ -120,19 +121,11 @@ const router = createBrowserRouter(
         },
         {
           path: 'tech',
-          element: (
-            <Suspense fallback={<PageLoader text="Cargando Laboratorio Técnico..." />}>
-              <TechBlog />
-            </Suspense>
-          ),
+          element: <Navigate to="/" replace />,
         },
         {
           path: 'blog/:id',
-          element: (
-            <Suspense fallback={<PageLoader text="Abriendo artículo..." />}>
-              <BlogPost />
-            </Suspense>
-          ),
+          element: <Navigate to="/" replace />,
         },
       ],
     },

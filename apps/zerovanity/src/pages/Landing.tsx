@@ -1,10 +1,10 @@
 /// <reference path="../vite-env.d.ts" />
 // Blog Images
-import blogBalayage from "@zerovanity/assets/blog/blog-balayage.png";
-import blogHaircut from "@zerovanity/assets/blog/blog-haircut-myth.png";
-import blogTreatment from "@zerovanity/assets/blog/blog-treatment.png";
-import blogVisagism from "@zerovanity/assets/blog/blog-visagism.png";
-import blogWash from "@zerovanity/assets/blog/blog-wash.png";
+import blogBalayage from "@zerovanity/assets/blog/blog-balayage.webp";
+import blogHaircut from "@zerovanity/assets/blog/blog-haircut-myth.webp";
+import blogTreatment from "@zerovanity/assets/blog/blog-treatment.webp";
+import blogVisagism from "@zerovanity/assets/blog/blog-visagism.webp";
+import blogWash from "@zerovanity/assets/blog/blog-wash.webp";
 import galleryLook1 from "@zerovanity/assets/gallery/gallery-look-1.webp";
 import galleryLook2 from "@zerovanity/assets/gallery/gallery-look-2.webp";
 import galleryLook3 from "@zerovanity/assets/gallery/gallery-look-3.webp";
@@ -39,6 +39,7 @@ import {
   X,
 } from "lucide-react";
 import { useState } from "react";
+import type { ReactElement } from "react";
 import { Link } from "react-router-dom";
 
 import { BookingModal } from "../components/BookingModal";
@@ -404,7 +405,7 @@ function FeatureCard({
   title,
   desc,
   delay,
-}: Readonly<{ icon: JSX.Element; title: string; desc: string; delay: number }>) {
+}: Readonly<{ icon: ReactElement; title: string; desc: string; delay: number }>) {
   return (
     <div
       className={`p-6 border border-white/5 bg-white/[0.02] hover:bg-white/[0.05] transition-colors rounded-sm animate-in fade-in slide-in-from-bottom-8 duration-1000 fill-mode-backwards`}

@@ -1,11 +1,11 @@
 import { Brain, Code2, Cpu, MapPin, CheckCircle, AlertTriangle } from 'lucide-react';
-import imgAiArchitecture from '@/assets/blog/blog-ai-architecture.png';
-import imgAutonomousAgents from '@/assets/blog/blog-autonomous-agents.png';
-import imgFrontendMagic from '@/assets/blog/blog-frontend-magic.png';
-import imgGoogleMaps from '@/assets/blog/blog-google-maps.png';
+import imgAiArchitecture from '@/assets/blog/blog-ai-architecture.webp';
+import imgAutonomousAgents from '@/assets/blog/blog-autonomous-agents.webp';
+import imgFrontendMagic from '@/assets/blog/blog-frontend-magic.webp';
+import imgGoogleMaps from '@/assets/blog/blog-google-maps.webp';
 import imgFrontendSketch from '@/assets/blog/blog-frontend.webp';
 import imgAuditRobot from '@/assets/blog/blog-agents.webp';
-import imgProjectJBarranco from '@/assets/projects/project-jbarranco.png';
+import imgProjectJBarranco from '@/assets/projects/project-jbarranco.webp';
 
 export interface Article {
   id: number;

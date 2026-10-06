@@ -1,61 +1,11 @@
 import { motion } from 'framer-motion';
-import {
-  ArrowUp,
-  Code2,
-  Mail,
-  MessageCircle,
-} from 'lucide-react';
+import { ArrowUp, Mail, MessageCircle } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
-
-const GithubIcon = ({ className }: { className?: string }) => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="24"
-    height="24"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="2"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-    className={className}
-  >
-    <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.2c3-.3 6-1.5 6-6.5a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 5 3 6.2 6 6.5a4.8 4.8 0 0 0-1 3.2v4" />
-  </svg>
-);
-
-const LinkedinIcon = ({ className }: { className?: string }) => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="24"
-    height="24"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="2"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-    className={className}
-  >
-    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
-    <rect width="4" height="12" x="2" y="9" />
-    <circle cx="4" cy="4" r="2" />
-  </svg>
-);
+import footerLogo from '@/assets/zerocode-horizontal.webp';
 
 const socialLinks = [
-  {
-    icon: GithubIcon,
-    href: 'https://github.com/zerocodedevops',
-    label: 'GitHub',
-  },
-  {
-    icon: LinkedinIcon,
-    href: 'https://www.linkedin.com/in/zerocode-devops',
-    label: 'LinkedIn',
-  },
-  { icon: Mail, href: 'mailto:zerocode.devops@gmail.com', label: 'Email' },
+  { icon: Mail, href: 'mailto:admin@zerocode-devops.com', label: 'Email' },
   { icon: MessageCircle, href: 'https://wa.me/34912622712', label: 'WhatsApp' },
 ];
 
@@ -65,20 +15,23 @@ export function Footer() {
 
   const footerLinks = [
     { label: 'Inicio', href: '/' },
-    { label: 'Sobre Mí', href: '/disenador-web-freelance-madrid' },
+    { label: 'Sobre mí', href: '/#sobre-mi' },
     { label: 'Precios', href: '/precios-paginas-web' },
     { label: 'Contacto', href: '#contact' },
   ];
 
   const resourceLinks = [
-    { label: 'Tech Blog', href: 'https://zerocode-devops.com/tech' },
     { label: 'Proyectos', href: '#projects' },
-    { label: 'Mantenimiento', href: '/precios-paginas-web' },
   ];
 
   const handleNavClick = (href: string) => {
-    if (href.startsWith('http')) {
+    if (href.startsWith('https://')) {
       globalThis.window.location.href = href;
+      return;
+    }
+    if (href.startsWith('/#')) {
+      navigate('/');
+      setTimeout(() => document.querySelector(href.slice(1))?.scrollIntoView({ behavior: 'smooth' }), 100);
       return;
     }
     if (href.startsWith('#')) {
@@ -104,11 +57,11 @@ export function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="relative bg-dark-900/50 border-t border-dark-700/50">
+    <footer className="relative border-t border-[#0b294a]/10 bg-[#071a35] text-white">
       {/* Scroll to top button */}
       <motion.button
         onClick={scrollToTop}
-        className="absolute -top-6 left-1/2 -translate-x-1/2 p-3 rounded-full bg-gradient-to-r from-primary-500 to-accent-500 text-white shadow-glow"
+        className="absolute -top-6 left-1/2 -translate-x-1/2 p-3 rounded-full bg-[#12b8e8] text-white shadow-glow"
         whileHover={{ scale: 1.1, y: -2 }}
         whileTap={{ scale: 0.95 }}
         aria-label={t('footer.scrollButton')}
@@ -117,9 +70,9 @@ export function Footer() {
       </motion.button>
 
       <div className="container-custom py-12 md:py-16">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 items-start">
+        <div className="grid grid-cols-1 gap-8 items-start md:grid-cols-2 xl:grid-cols-[minmax(0,1.5fr)_minmax(0,0.8fr)_minmax(0,0.8fr)_auto]">
           {/* Logo and tagline */}
-          <div className="text-center md:text-left">
+          <div className="text-center md:col-span-2 md:text-left xl:col-span-1">
             <div className="mb-6 md:mb-0 w-full">
               <motion.a
                 href="/"
@@ -130,15 +83,10 @@ export function Footer() {
                   handleNavClick('/');
                 }}
               >
-                <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-neon-cyan to-neon-purple flex items-center justify-center group-hover:shadow-glow transition-all duration-300">
-                  <Code2 className="w-6 h-6 text-white" />
-                </div>
-                <span className="font-outfit font-bold text-xl text-white">
-                  Zero<span className="text-neon-cyan">Code</span>
-                </span>
+                <img src={footerLogo} alt="ZeroCode DevOps" className="h-[70px] w-[210px] object-cover object-center" />
               </motion.a>
-              <p className="text-dark-400 mt-2 text-sm mx-auto md:mx-0 whitespace-nowrap">
-                Creando experiencias digitales únicas
+              <p className="text-dark-400 mt-2 mx-auto w-max max-w-none whitespace-nowrap text-[clamp(0.6rem,2.8vw,0.875rem)] leading-5 md:mx-0">
+                Diseño web a medida para autónomos y pymes de toda España
               </p>
             </div>
           </div>
@@ -208,64 +156,9 @@ export function Footer() {
         {/* Bottom bar */}
         <div className="mt-12 pt-8 border-t border-dark-700/50">
           <p className="text-center text-dark-400 text-sm flex items-center justify-center gap-2">
-            © {currentYear} ZeroCode • Hecho con curiosidad + IA
+            © {currentYear} ZeroCode • Hecho con curiosidad
           </p>
 
-          {/* SEO Keywords */}
-          <div className="mt-8 text-center border-t border-dark-800/20 pt-6">
-            <p className="text-dark-400 text-[10px] mb-3 uppercase tracking-wider font-bold">
-              Servicios de diseño y desarrollo web en Madrid para pymes y autónomos:
-            </p>
-            <div className="flex flex-wrap justify-center gap-x-4 gap-y-2 text-[11px] text-dark-400">
-              <a 
-                href="/desarrollo-web-pymes-madrid" 
-                className="hover:text-primary-400 transition-colors font-medium border-b border-transparent hover:border-primary-400/30 pb-0.5"
-                onClick={(e) => { e.preventDefault(); handleNavClick('/desarrollo-web-pymes-madrid'); }}
-              >
-                Desarrollo Web Pymes Madrid
-              </a>
-              <span className="opacity-30">•</span>
-              <a 
-                href="/desarrollo-web-pymes-madrid" 
-                className="hover:text-primary-400 transition-colors border-b border-transparent hover:border-primary-400/30 pb-0.5"
-                onClick={(e) => { e.preventDefault(); handleNavClick('/desarrollo-web-pymes-madrid'); }}
-              >
-                Diseño Web para Autónomos
-              </a>
-              <span className="opacity-30">•</span>
-              <a 
-                href="/desarrollo-web-pymes-madrid" 
-                className="hover:text-primary-400 transition-colors border-b border-transparent hover:border-primary-400/30 pb-0.5"
-                onClick={(e) => { e.preventDefault(); handleNavClick('/desarrollo-web-pymes-madrid'); }}
-              >
-                Diseño Web para Pymes
-              </a>
-              <span className="opacity-30">•</span>
-              <a 
-                href="/disenador-web-freelance-madrid" 
-                className="hover:text-primary-400 transition-colors border-b border-transparent hover:border-primary-400/30 pb-0.5"
-                onClick={(e) => { e.preventDefault(); handleNavClick('/disenador-web-freelance-madrid'); }}
-              >
-                Diseño Web Freelance Madrid
-              </a>
-              <span className="opacity-30">•</span>
-              <a 
-                href="/precios-paginas-web" 
-                className="hover:text-primary-400 transition-colors border-b border-transparent hover:border-primary-400/30 pb-0.5"
-                onClick={(e) => { e.preventDefault(); handleNavClick('/precios-paginas-web'); }}
-              >
-                Mantenimiento Web Profesional
-              </a>
-              <span className="opacity-30">•</span>
-              <a 
-                href="/desarrollo-web-pymes-madrid" 
-                className="hover:text-primary-400 transition-colors border-b border-transparent hover:border-primary-400/30 pb-0.5"
-                onClick={(e) => { e.preventDefault(); handleNavClick('/desarrollo-web-pymes-madrid'); }}
-              >
-                Páginas Web para Empresas Madrid
-              </a>
-            </div>
-          </div>
         </div>
       </div>
     </footer>

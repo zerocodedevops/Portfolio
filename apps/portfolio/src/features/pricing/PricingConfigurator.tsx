@@ -249,7 +249,7 @@ export function PricingConfigurator() {
     formState: { errors },
     reset,
   } = useForm<ContactFormData>({
-    resolver: zodResolver(contactSchema),
+    resolver: zodResolver(contactSchema as any),
   });
 
   const toggleSelection = (id: string) => {

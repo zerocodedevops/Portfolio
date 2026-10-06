@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom';
-import grupajesImg from '../../assets/Grupajes.png';
-import guardamueblesImg from '../../assets/Guardamuebles.png';
-import hogarImg from '../../assets/Hogares.png';
-import oficinasImg from '../../assets/Oficinas.png';
+import grupajesImg from '../../assets/Grupajes.webp';
+import guardamueblesImg from '../../assets/Guardamuebles.webp';
+import hogarImg from '../../assets/Hogares.webp';
+import oficinasImg from '../../assets/Oficinas.webp';
 
 const Services = () => {
   const services = [

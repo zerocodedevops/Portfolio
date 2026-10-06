@@ -53,6 +53,11 @@ export default function CaseStudy() {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-8">
               {project.title}
             </h1>
+            {project.isDemo && (
+              <p className="mb-8 rounded-xl border border-amber-500/30 bg-amber-500/5 p-4 text-amber-100">
+                Demo interactiva en desarrollo para peluquerías y centros de estética. No representa un servicio de reservas operativo ni resultados de un cliente.
+              </p>
+            )}
             
             <div className="aspect-video w-full rounded-3xl overflow-hidden bg-dark-900 border border-dark-800">
               {project.image && (
@@ -64,41 +69,29 @@ export default function CaseStudy() {
           {/* Content */}
           <div className="max-w-3xl mx-auto space-y-16">
             <section>
-              <h2 className="text-2xl font-bold text-white mb-4">El Desafío</h2>
+              <h2 className="text-2xl font-bold text-white mb-4">Necesidad que aborda</h2>
               <p className="text-dark-300 text-lg leading-relaxed">
-                El negocio necesitaba una presencia digital profesional enfocada en conversiones. Su objetivo principal era captar clientes locales en Madrid mediante búsquedas de Google, pero su antigua página era lenta y no estaba optimizada para dispositivos móviles ni para SEO local.
+                Una peluquería o centro de estética necesita presentar sus servicios con claridad y facilitar que las personas interesadas contacten o consulten disponibilidad desde el móvil.
               </p>
             </section>
 
             <section>
-              <h2 className="text-2xl font-bold text-white mb-4">Nuestra Solución</h2>
+              <h2 className="text-2xl font-bold text-white mb-4">Enfoque del proyecto</h2>
               <p className="text-dark-300 text-lg leading-relaxed mb-6">
-                Desarrollamos una <strong>plataforma ágil y orientada a conseguir leads</strong>. Rediseñamos la experiencia de usuario para hacer el contacto lo más sencillo posible, utilizando formularios de varios pasos, llamadas a la acción claras y conectividad directa con WhatsApp.
+                Esta página muestra cómo organizar la información del negocio y sus llamadas a la acción en una experiencia web pensada para clientes locales.
               </p>
               <ul className="list-disc list-inside text-dark-300 space-y-2">
-                <li>Diseño limpio y moderno enfocado a conversión.</li>
-                <li>Carga en menos de 1 segundo (Core Web Vitals "Good").</li>
-                <li>Estrategia de palabras clave para búsquedas en Madrid.</li>
-                <li>Diseño Mobile-First (el 80% de sus clientes buscan desde el móvil).</li>
+                <li>Presentación clara de servicios y especialidades.</li>
+                <li>Navegación adaptada a móviles.</li>
+                <li>Acceso visible a la información de contacto.</li>
               </ul>
             </section>
 
             <section className="bg-dark-900/50 p-8 rounded-3xl border border-dark-800">
               <h2 className="text-2xl font-bold text-white mb-4">Resultados</h2>
-              <div className="grid md:grid-cols-3 gap-6">
-                <div>
-                  <div className="text-3xl font-bold text-primary-500 mb-2">+45%</div>
-                  <div className="text-dark-400 text-sm">Aumento en leads mensuales</div>
-                </div>
-                <div>
-                  <div className="text-3xl font-bold text-primary-500 mb-2">{'< 1s'}</div>
-                  <div className="text-dark-400 text-sm">Tiempo de carga promedio</div>
-                </div>
-                <div>
-                  <div className="text-3xl font-bold text-primary-500 mb-2">Top 3</div>
-                  <div className="text-dark-400 text-sm">Posicionamiento local en Maps</div>
-                </div>
-              </div>
+              <p className="text-dark-300 text-lg leading-relaxed">
+                No se publican métricas de rendimiento ni resultados comerciales sin datos verificables del proyecto.
+              </p>
             </section>
 
             <div className="text-center pt-8">
