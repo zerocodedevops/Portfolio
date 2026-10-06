@@ -15,19 +15,22 @@ function generateSitemap() {
   console.log('🚀 Iniciando generación de sitemap.xml...');
 
   const staticRoutes = [
-    '/',
-    '/precios-paginas-web',
-    '/casos-de-exito/reformas-zerochaos',
-    '/casos-de-exito/mudanzas-zerodelay',
-    '/casos-de-exito/peluqueria-zerovanity',
+    { url: '/', priority: '1.0', changefreq: 'weekly' },
+    { url: '/precios-paginas-web', priority: '0.9', changefreq: 'weekly' },
+    { url: '/casos-de-exito/reformas-zerochaos', priority: '0.8', changefreq: 'monthly' },
+    { url: '/casos-de-exito/mudanzas-zerodelay', priority: '0.8', changefreq: 'monthly' },
+    { url: '/casos-de-exito/peluqueria-zerovanity', priority: '0.7', changefreq: 'monthly' },
   ];
 
-  const allRoutes = [...new Set(staticRoutes)];
+  const today = new Date().toISOString().split('T')[0];
 
   const sitemapXml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${allRoutes.map(url => `  <url>
-    <loc>${DOMAIN}${url}</loc>
+${staticRoutes.map(route => `  <url>
+    <loc>${DOMAIN}${route.url}</loc>
+    <lastmod>${today}</lastmod>
+    <changefreq>${route.changefreq}</changefreq>
+    <priority>${route.priority}</priority>
   </url>`).join('\n')}
 </urlset>`;
 
@@ -36,7 +39,7 @@ ${allRoutes.map(url => `  <url>
   fs.writeFileSync(outputPath, sitemapXml);
 
   console.log(`✅ Sitemap generado con éxito en: ${OUTPUT_FILE}`);
-  console.log(`📊 Total de URLs indexadas: ${allRoutes.length}`);
+  console.log(`📊 Total de URLs indexadas: ${staticRoutes.length}`);
 }
 
 try {
