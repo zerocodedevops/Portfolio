@@ -1,15 +1,7 @@
-import { LayoutDashboard, LogOut, Scissors, Users } from "lucide-react";
-import { NavLink, Outlet, useNavigate } from "react-router-dom";
-import { supabase } from "@/lib/supabase";
+import { LayoutDashboard, Scissors, Users } from "lucide-react";
+import { NavLink, Outlet } from "react-router-dom";
 
 export default function AdminLayout() {
-  const navigate = useNavigate();
-
-  const handleLogout = async () => {
-    await supabase.auth.signOut();
-    navigate("/proyectos/zerovanity/auth/admin/login");
-  };
-
   const navItems = [
     {
       icon: LayoutDashboard,
@@ -59,21 +51,15 @@ export default function AdminLayout() {
           ))}
         </nav>
 
-        <div className="p-4 border-t border-slate-800">
-          <button
-            onClick={handleLogout}
-            className="flex items-center w-full px-4 py-3 text-slate-400 hover:text-red-400 hover:bg-red-900/10 rounded-lg transition-colors"
-          >
-            <LogOut className="w-5 h-5 mr-3" />
-            Cerrar Sesión
-          </button>
+        <div className="p-4 border-t border-slate-800 text-xs text-amber-400">
+          Vista de demostración · Los cambios no se guardan
         </div>
       </aside>
 
       {/* Main Content */}
       <main className="flex-1 ml-64 p-8">
         <header className="flex justify-between items-center mb-8">
-          <h1 className="text-2xl font-bold">Dashboard</h1>
+          <h1 className="text-2xl font-bold">Dashboard · Simulación</h1>
           <div className="flex items-center gap-4">
             <div className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center border border-slate-700">
               <span className="font-bold text-amber-500">A</span>

@@ -143,7 +143,7 @@ function CheckoutForm() {
       </div>
 
       <Toast
-        message="¡Pago procesado con éxito! Gracias por tu compra."
+        message="Pago SIMULADO con éxito"
         type="success"
         isVisible={showToast}
         onClose={() => setShowToast(false)}

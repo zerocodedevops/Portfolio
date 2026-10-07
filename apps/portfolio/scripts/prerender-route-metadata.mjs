@@ -24,11 +24,6 @@ const staticPages = [
     title: 'Web para ZeroDelay, demo de mudanzas | ZeroCode',
     description: 'Explora el proyecto ZeroDelay, una demo web para servicios de mudanzas creada por ZeroCode.',
   },
-  {
-    path: '/casos-de-exito/peluqueria-zerovanity',
-    title: 'Demo Web para Peluquerías y Centros de Estética | ZeroCode',
-    description: 'Demo de ZeroVanity en desarrollo: una propuesta web para peluquerías y centros de estética.',
-  },
 ];
 
 function escapeHtml(value) {

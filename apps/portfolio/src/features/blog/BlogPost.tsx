@@ -114,7 +114,7 @@ export default function BlogPost() {
               </p>
               <div className="relative z-10 flex flex-col items-center">
                 <Link
-                  to={article.type === 'business' ? '/#contact' : '/disenador-web-freelance-madrid'}
+                  to={article.type === 'business' ? '/#contacto' : '/disenador-web-freelance-madrid'}
                   className="inline-flex items-center gap-2 bg-primary-600 hover:bg-primary-500 text-white px-8 py-4 rounded-full font-bold transition-all transform hover:-translate-y-1 hover:shadow-lg hover:shadow-primary-500/25"
                 >
                   Hablemos de tu proyecto
@@ -134,7 +134,7 @@ export default function BlogPost() {
               <div className="flex flex-col sm:flex-row items-center gap-4">
                 <span className="text-dark-400 text-sm font-medium">¿Tienes un proyecto en mente?</span>
                 <Link 
-                  to={article.type === 'business' ? '/#contact' : '/disenador-web-freelance-madrid'}
+                  to={article.type === 'business' ? '/#contacto' : '/disenador-web-freelance-madrid'}
                   className="text-primary-400 text-sm font-bold hover:text-primary-300 transition-colors"
                 >
                   Solicita presupuesto sin compromiso →

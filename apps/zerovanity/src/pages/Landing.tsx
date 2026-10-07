@@ -113,13 +113,17 @@ export default function Landing() {
 
         <div>
           <Link
-            to="/proyectos/zerovanity/auth/admin/login"
+            to="/proyectos/zerovanity/admin"
             className="px-6 py-2 border border-[#BF953F] text-[#BF953F] hover:bg-[#BF953F] hover:text-black transition-all duration-300 uppercase text-xs font-bold tracking-widest rounded-sm"
           >
-            Acceso Admin
+            Ver como Admin · Demo
           </Link>
         </div>
       </nav>
+
+      <div className="relative z-10 mx-auto -mt-4 max-w-7xl px-6 text-center text-xs text-neutral-500">
+        Demo interactiva: las reservas y el panel de administración son simulados. No introduzcas datos personales.
+      </div>
 
       {/* Hero Section */}
       <main className="relative z-10 w-full max-w-7xl mx-auto px-6 mt-16 md:mt-24 flex flex-col items-center text-center">
@@ -518,7 +522,7 @@ function BlogModal({
             ¿Te gustaría probar este servicio?
           </p>
           <Link
-            to="auth/login"
+            to="/proyectos/zerovanity/admin"
             className="inline-block px-8 py-3 border border-[#BF953F] text-[#BF953F] hover:bg-[#BF953F] hover:text-black transition-colors uppercase text-xs font-bold tracking-widest"
           >
             Reservar Cita Ahora

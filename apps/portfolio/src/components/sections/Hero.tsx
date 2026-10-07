@@ -46,7 +46,7 @@ export function Hero() {
               ))}
             </motion.ul>
             <motion.div variants={fadeInUp} className="mt-7 flex flex-wrap items-center gap-3">
-              <a href="#contact" className="group inline-flex min-h-12 items-center justify-center gap-2 bg-[#11c7e6] px-5 font-semibold text-[#001b41] transition hover:-translate-y-0.5 hover:bg-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#062856] active:scale-[0.98]">
+              <a href="#contacto" className="group inline-flex min-h-12 items-center justify-center gap-2 bg-[#11c7e6] px-5 font-semibold text-[#001b41] transition hover:-translate-y-0.5 hover:bg-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#062856] active:scale-[0.98]">
                 Pedir presupuesto <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
               </a>
               <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-12 items-center justify-center gap-2 border border-white/35 px-4 font-semibold text-white transition hover:border-white hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white active:scale-[0.98]">

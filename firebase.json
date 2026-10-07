@@ -1,6 +1,7 @@
 {
   "hosting": {
     "public": "dist",
+    "trailingSlash": false,
     "ignore": [
       "firebase.json",
       "**/.*",
@@ -39,6 +40,31 @@
       },
       {
         "source": "/blog/**",
+        "destination": "/",
+        "type": 301
+      },
+      {
+        "source": "/casos-de-exito/peluqueria-zerovanity",
+        "destination": "/",
+        "type": 301
+      },
+      {
+        "source": "/proyectos/crypto",
+        "destination": "/",
+        "type": 301
+      },
+      {
+        "source": "/proyectos/crypto/**",
+        "destination": "/",
+        "type": 301
+      },
+      {
+        "source": "/proyectos/analytics",
+        "destination": "/",
+        "type": 301
+      },
+      {
+        "source": "/proyectos/analytics/**",
         "destination": "/",
         "type": 301
       }
@@ -103,7 +129,7 @@
         "headers": [
           {
             "key": "Content-Security-Policy",
-            "value": "default-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests; script-src 'self' https://www.googletagmanager.com https://apis.google.com https://js.stripe.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com https://r2cdn.perplexity.ai; img-src 'self' data: blob: https://firebasestorage.googleapis.com https://www.google-analytics.com https://www.googletagmanager.com https://coin-images.coingecko.com https://vwdsnolwerskjjhmrsut.supabase.co https://images.unsplash.com https://images.pexels.com https://res.cloudinary.com; connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://stats.g.doubleclick.net https://identitytoolkit.googleapis.com https://securetoken.googleapis.com https://firestore.googleapis.com https://firebasestorage.googleapis.com https://api.emailjs.com https://www.googletagmanager.com https://api.coingecko.com https://pro-api.coingecko.com https://coin-images.coingecko.com https://api.stripe.com https://m.stripe.network wss://stream.binance.com:443 https://vwdsnolwerskjjhmrsut.supabase.co wss://vwdsnolwerskjjhmrsut.supabase.co; frame-src 'self' https://zerocode-devops.com https://zerocode-devops.web.app https://www.googletagmanager.com https://accounts.google.com https://js.stripe.com https://hooks.stripe.com;"
+            "value": "default-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests; script-src 'self' https://www.googletagmanager.com https://js.stripe.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: blob: https://www.google-analytics.com https://images.unsplash.com https://images.pexels.com https://res.cloudinary.com; connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://stats.g.doubleclick.net https://api.emailjs.com https://www.googletagmanager.com https://api.stripe.com https://m.stripe.network; frame-src 'self' https://www.googletagmanager.com https://js.stripe.com https://hooks.stripe.com;"
           },
           {
             "key": "X-Content-Type-Options",

@@ -14,7 +14,7 @@
     "lint": "turbo run lint",
     "lint:fix": "turbo run lint:fix",
     "format": "prettier --write .",
-    "type-check": "tsc --noEmit",
+    "type-check": "npm run type-check --workspace=portfolio-app",
     "test": "turbo run test",
     "clean": "turbo run clean && rm -rf node_modules dist",
     "db:migrate": "supabase migration up",

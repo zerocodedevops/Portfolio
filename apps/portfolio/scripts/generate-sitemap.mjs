@@ -19,7 +19,6 @@ function generateSitemap() {
     { url: '/precios-paginas-web', priority: '0.9', changefreq: 'weekly' },
     { url: '/casos-de-exito/reformas-zerochaos', priority: '0.8', changefreq: 'monthly' },
     { url: '/casos-de-exito/mudanzas-zerodelay', priority: '0.8', changefreq: 'monthly' },
-    { url: '/casos-de-exito/peluqueria-zerovanity', priority: '0.7', changefreq: 'monthly' },
   ];
 
   const today = new Date().toISOString().split('T')[0];

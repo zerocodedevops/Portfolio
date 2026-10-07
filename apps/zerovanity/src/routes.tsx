@@ -5,27 +5,8 @@ import { PageLoader } from "@/components/ui/PageLoader";
 // Pages
 const Landing = lazy(() => import("@zerovanity/pages/Landing"));
 
-// Admin Components (Lazy Loaded)
-const AdminLogin = lazy(() => import("@zerovanity/pages/AdminLogin"));
-const AdminLayout = lazy(() => import("@zerovanity/layouts/AdminLayout"));
-const AdminDashboard = lazy(() => import("@zerovanity/pages/AdminDashboard"));
-const AdminServices = lazy(
-  () => import("@zerovanity/pages/admin/ServicesPage"),
-);
-const AdminStylists = lazy(
-  () => import("@zerovanity/pages/admin/StylistsPage"),
-);
-const RequireAuth = lazy(
-  () => import("@zerovanity/components/auth/RequireAuth"),
-);
-
-// Client Components (Lazy Loaded)
-const ClientLayout = lazy(() => import("@zerovanity/layouts/ClientLayout"));
-const ClientLogin = lazy(() => import("@zerovanity/pages/auth/ClientLogin"));
-const ClientRegister = lazy(
-  () => import("@zerovanity/pages/auth/ClientRegister"),
-);
-const MyBookings = lazy(() => import("@zerovanity/pages/client/MyBookings"));
+// Admin demo console (no authentication or database connection)
+const DemoAdminPage = lazy(() => import("@zerovanity/pages/DemoAdminPage"));
 
 export default function SalonRoutes() {
   return (
@@ -41,40 +22,8 @@ export default function SalonRoutes() {
           {/* Public Landing */}
           <Route path="/" element={<Landing />} />
 
-          {/* Authentication */}
-          <Route path="/auth/admin/login" element={<AdminLogin />} />
-          <Route path="/auth/client/login" element={<ClientLogin />} />
-          <Route path="/auth/client/register" element={<ClientRegister />} />
-
-          {/* Client Portal */}
-          <Route path="/client" element={<ClientLayout />}>
-            <Route path="bookings" element={<MyBookings />} />
-            <Route index element={<Navigate to="bookings" replace />} />
-          </Route>
-
-          {/* Protected Admin Routes */}
-          <Route path="/admin" element={<RequireAuth />}>
-            <Route element={<AdminLayout />}>
-              <Route
-                index
-                element={
-                  <Navigate
-                    to="/proyectos/zerovanity/admin/dashboard"
-                    replace
-                  />
-                }
-              />
-              <Route path="dashboard" element={<AdminDashboard />} />
-              <Route path="services" element={<AdminServices />} />
-              <Route path="team" element={<AdminStylists />} />
-            </Route>
-          </Route>
-
-          {/* Redirect helper old admin login */}
-          <Route
-            path="/admin/login"
-            element={<Navigate to="/auth/admin/login" replace />}
-          />
+          {/* Admin demo console. It uses local mock data only. */}
+          <Route path="/admin/*" element={<DemoAdminPage />} />
 
           {/* Redirect unknown salon paths to landing */}
           <Route path="*" element={<Navigate to="" replace />} />

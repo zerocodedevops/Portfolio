@@ -117,7 +117,7 @@ export default function FreelanceMadrid() {
                       navigate('/');
                       setTimeout(() => {
                         document
-                          .querySelector('#contact')
+                          .querySelector('#contacto')
                           ?.scrollIntoView({ behavior: 'smooth' });
                       }, 100);
                     }}

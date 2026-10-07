@@ -5,11 +5,29 @@ import { Seo } from '@/components/common/SEO';
 import { Layout } from '@/components/layout';
 import { pymeProjects } from '@/components/sections/Projects';
 
+const caseDetails: Record<string, { title: string; description: string; need: string; approach: string; features: string[] }> = {
+  'reformas-zerochaos': {
+    title: 'Web para ZeroChaos, demo de reformas | ZeroCode',
+    description: 'Explora el proyecto ZeroChaos, una demo web para servicios de reformas creada por ZeroCode.',
+    need: 'Presentar servicios de reformas integrales y explicar cómo pedir un presupuesto.',
+    approach: 'La demo organiza las especialidades y el proceso de trabajo para que una persona pueda entender la propuesta y solicitar información.',
+    features: ['Secciones para distintos tipos de reforma', 'Explicación del proceso de trabajo', 'Formulario para solicitar presupuesto'],
+  },
+  'mudanzas-zerodelay': {
+    title: 'Web para ZeroDelay, demo de mudanzas | ZeroCode',
+    description: 'Explora el proyecto ZeroDelay, una demo web para servicios de mudanzas creada por ZeroCode.',
+    need: 'Reunir información sobre los servicios de mudanza y facilitar la solicitud de presupuesto.',
+    approach: 'La demo presenta los servicios y guía a la persona hacia el formulario de contacto y presupuesto.',
+    features: ['Información sobre servicios de mudanza', 'Contenido adaptado a móviles', 'Solicitud de presupuesto en varios pasos'],
+  },
+};
+
 export default function CaseStudy() {
   const { slug } = useParams();
   
   // Encontrar el proyecto basado en el slug (ej. "/casos-de-exito/mudanzas-zerodelay")
   const project = pymeProjects.find((p) => p.demoUrl?.endsWith(slug || ''));
+  const details = caseDetails[slug || ''];
   
   if (!project) {
     return (
@@ -25,8 +43,8 @@ export default function CaseStudy() {
   return (
     <Layout>
       <Seo
-        title={`Caso de Éxito: ${project.title}`}
-        description={`Descubre cómo ayudamos a ${project.title} a conseguir más clientes con una web optimizada.`}
+        title={details?.title ?? `Proyecto web: ${project.title} | ZeroCode`}
+        description={details?.description ?? `Conoce el proyecto web de ${project.title}.`}
       />
 
       <div className="pt-32 pb-40">
@@ -53,9 +71,9 @@ export default function CaseStudy() {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-8">
               {project.title}
             </h1>
-            {project.isDemo && (
+            {(project.isDemo || details) && (
               <p className="mb-8 rounded-xl border border-amber-500/30 bg-amber-500/5 p-4 text-amber-100">
-                Demo interactiva en desarrollo para peluquerías y centros de estética. No representa un servicio de reservas operativo ni resultados de un cliente.
+                Demo de portfolio. Muestra una propuesta de diseño y no representa resultados comerciales de un cliente.
               </p>
             )}
             
@@ -70,20 +88,14 @@ export default function CaseStudy() {
           <div className="max-w-3xl mx-auto space-y-16">
             <section>
               <h2 className="text-2xl font-bold text-white mb-4">Necesidad que aborda</h2>
-              <p className="text-dark-300 text-lg leading-relaxed">
-                Una peluquería o centro de estética necesita presentar sus servicios con claridad y facilitar que las personas interesadas contacten o consulten disponibilidad desde el móvil.
-              </p>
+              <p className="text-dark-300 text-lg leading-relaxed">{details?.need ?? `Este proyecto presenta una propuesta web para ${project.title}.`}</p>
             </section>
 
             <section>
               <h2 className="text-2xl font-bold text-white mb-4">Enfoque del proyecto</h2>
-              <p className="text-dark-300 text-lg leading-relaxed mb-6">
-                Esta página muestra cómo organizar la información del negocio y sus llamadas a la acción en una experiencia web pensada para clientes locales.
-              </p>
+              <p className="text-dark-300 text-lg leading-relaxed mb-6">{details?.approach ?? 'La página muestra una estructura web para presentar el proyecto y facilitar el contacto.'}</p>
               <ul className="list-disc list-inside text-dark-300 space-y-2">
-                <li>Presentación clara de servicios y especialidades.</li>
-                <li>Navegación adaptada a móviles.</li>
-                <li>Acceso visible a la información de contacto.</li>
+                {(details?.features ?? ['Presentación clara de la propuesta.', 'Navegación adaptada a móviles.', 'Acceso visible a la información de contacto.']).map((feature) => <li key={feature}>{feature}</li>)}
               </ul>
             </section>
 
@@ -102,7 +114,7 @@ export default function CaseStudy() {
                 className="inline-flex items-center gap-2 bg-primary-600 hover:bg-primary-500 text-white px-8 py-4 rounded-full font-bold transition-all transform hover:scale-105"
               >
                 <ExternalLink className="w-5 h-5" />
-                Ver la web en vivo
+                {details ? 'Ver la demo' : 'Ver la web en vivo'}
               </a>
             </div>
           </div>

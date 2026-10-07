@@ -17,7 +17,7 @@ export function Seo({
   url = globalThis.location?.href || import.meta.env.VITE_SITE_URL || 'https://zerocode-devops.com',
   jsonLd,
 }: Readonly<SEOProps>) {
-  const siteTitle = 'Diseño web para autónomos y pymes en toda España | ZeroCode';
+  const siteTitle = 'Diseño web para autónomos y pymes desde 400 € | ZeroCode';
   const siteUrl = import.meta.env.VITE_SITE_URL || 'https://zerocode-devops.com';
   const canonical = new URL(url || globalThis.location?.href || siteUrl, siteUrl);
   canonical.search = '';
@@ -26,18 +26,23 @@ export function Seo({
     canonical.pathname = canonical.pathname.replace(/\/+$/, '');
   }
   const canonicalUrl = canonical.toString();
+  const pageTitle = title === 'Home'
+    ? siteTitle
+    : title.endsWith('| ZeroCode')
+      ? title
+      : `${title} | ZeroCode`;
 
   return (
     <Helmet>
       {/* Basic */}
-      <title>{title === 'Home' ? siteTitle : `${title} | ZeroCode`}</title>
+      <title>{pageTitle}</title>
       <meta name="description" content={description} />
       {keywords && <meta name="keywords" content={keywords} />}
 
       {/* Open Graph */}
       <meta
         property="og:title"
-        content={title === 'Home' ? siteTitle : `${title} | ZeroCode`}
+        content={pageTitle}
       />
       <meta property="og:description" content={description} />
       <meta property="og:image" content={image} />
@@ -48,7 +53,7 @@ export function Seo({
       <meta name="twitter:card" content="summary_large_image" />
       <meta
         name="twitter:title"
-        content={title === 'Home' ? siteTitle : `${title} | ZeroCode`}
+        content={pageTitle}
       />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={image} />

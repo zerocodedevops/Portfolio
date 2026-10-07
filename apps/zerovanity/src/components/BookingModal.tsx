@@ -1,5 +1,4 @@
 import { AnimatePresence, motion } from "framer-motion";
-import { sileo } from "sileo";
 import {
   Calendar,
   Check,
@@ -7,15 +6,14 @@ import {
   ChevronLeft,
   ChevronRight,
   Clock,
-  Loader2,
   MessageSquare,
   User,
   X,
 } from "lucide-react";
-import { useEffect, useState } from "react";
-import { supabase } from "@/lib/supabase";
-import PaymentSimulator from "../components/payment/PaymentSimulator"; // Verify path
+import { useState } from "react";
 import type { Stylist } from "../data/stylists";
+import { STYLISTS } from "../data/stylists";
+import { SERVICE_CATALOG, type ServiceCategory } from "../data/services";
 
 interface BookingModalProps {
   onClose: () => void;
@@ -23,29 +21,13 @@ interface BookingModalProps {
 
 type BookingStep = 1 | 2 | 3 | 4;
 
-interface ServiceItem {
-  id: string;
-  title: string;
-  description?: string;
-  duration: string;
-  price: number; // Ensure price is mandatory or handled
-  category: string;
-}
-
-interface ServiceCategory {
-  id: string;
-  title: string;
-  services: ServiceItem[];
-}
-
 export function BookingModal({ onClose }: Readonly<BookingModalProps>) {
   const [step, setStep] = useState<BookingStep>(1);
 
   // Data State
-  const [catalog, setCatalog] = useState<ServiceCategory[]>([]);
-  const [stylistsList, setStylistsList] = useState<Stylist[]>([]);
-  const [isLoading, setIsLoading] = useState(true);
-  const [isSaving, setIsSaving] = useState(false);
+  const [catalog] = useState<ServiceCategory[]>(SERVICE_CATALOG);
+  const [stylistsList] = useState<Stylist[]>(STYLISTS);
+  const [simulationComplete, setSimulationComplete] = useState(false);
 
   // Selection State
   const [selectedServices, setSelectedServices] = useState<string[]>([]);
@@ -58,70 +40,6 @@ export function BookingModal({ onClose }: Readonly<BookingModalProps>) {
 
   // UI State
   const [openCategory, setOpenCategory] = useState<string | null>("color");
-
-  // Fetch Data on Mount
-  useEffect(() => {
-    async function fetchData() {
-      try {
-        // 1. Fetch Services
-        const { data: servicesData, error: servicesError } = await supabase
-          .from("services")
-          .select("*")
-          .order("category");
-
-        if (servicesError) throw servicesError;
-
-        // Transform flat services to nested catalog
-        const grouped = servicesData.reduce(
-          (acc: number, service: ServiceItem) => {
-            if (!acc[service.category]) {
-              acc[service.category] = [];
-            }
-            acc[service.category].push(service);
-            return acc;
-          },
-          {},
-        );
-
-        const newCatalog: ServiceCategory[] = Object.keys(grouped).map(
-          (key) => ({
-            id: key,
-            title: key.replace("-", " ").toUpperCase(),
-            services: grouped[key],
-          }),
-        );
-
-        setCatalog(newCatalog);
-
-        // 2. Fetch Stylists
-        const { data: stylistsData, error: stylistsError } = await supabase
-          .from("stylists")
-          .select("*")
-          .eq("available", true);
-
-        if (stylistsError) throw stylistsError;
-
-        // Map DB keys to UI interface if needed (image_url -> image)
-        const mappedStylists = stylistsData.map((s: import("../types").StaffMember) => ({
-          ...s,
-          image: s.image_url,
-        }));
-
-        setStylistsList(mappedStylists);
-      } catch (error) {
-        console.error("Error loading data:", error);
-        sileo.error({
-          title: "Error de carga",
-          description:
-            "Hubo un error cargando los datos del salón. Por favor intenta más tarde.",
-        });
-      } finally {
-        setIsLoading(false);
-      }
-    }
-
-    fetchData();
-  }, []);
 
   // Mock Date Generation (Next 7 days)
   const dates = Array.from({ length: 7 }, (_, i) => {
@@ -167,52 +85,10 @@ export function BookingModal({ onClose }: Readonly<BookingModalProps>) {
     if (step > 1) setStep((prev) => (prev - 1) as BookingStep);
   };
 
-  const handlePaymentSuccess = async () => {
+  const handlePaymentSuccess = () => {
     if (!selectedDate || !selectedTime) return;
 
-    setIsSaving(true);
-    try {
-      // Get user if logged in
-      const {
-        data: { user },
-      } = await supabase.auth.getUser();
-
-      const payload = {
-        service_ids: selectedServices,
-        stylist_id: selectedStylist ? selectedStylist.id : null,
-        date: selectedDate?.toISOString().split("T")[0] || "", // YYYY-MM-DD format
-        time: selectedTime,
-        customer_notes: specialRequests, // Only observations
-        guest_name: guestName || null,
-        guest_email: guestEmail || null,
-        status: "pending",
-        user_id: user ? user.id : null,
-      };
-
-      const { error } = await supabase.from("bookings").insert([payload]);
-
-      if (error) throw error;
-
-      // Wait a bit to show the "Payment Success" UI in the simulator before closing
-      setTimeout(() => {
-        onClose();
-        sileo.success({
-          title: "¡Cita reservada!",
-          description: "Tu reserva ha sido registrada correctamente.",
-        });
-        // Optionally navigate to MyBookings if logged in
-        if (user) {
-          globalThis.location.href = "/proyectos/zerovanity/client/bookings";
-        }
-      }, 1000);
-    } catch (error: unknown) {
-      console.error("Booking error:", error);
-      sileo.error({
-        title: "Error al reservar",
-        description: error.message,
-      });
-      setIsSaving(false); // Only stop saving on error to let user retry
-    }
+    setSimulationComplete(true);
   };
 
   const calculateTotal = () => {
@@ -233,14 +109,6 @@ export function BookingModal({ onClose }: Readonly<BookingModalProps>) {
     if (step === 3) return !selectedDate || !selectedTime;
     return false;
   };
-
-  if (isLoading) {
-    return (
-      <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-md">
-        <Loader2 className="animate-spin text-[#BF953F]" size={48} />
-      </div>
-    );
-  }
 
   return (
     <motion.div
@@ -269,7 +137,7 @@ export function BookingModal({ onClose }: Readonly<BookingModalProps>) {
                 {step === 1 && "Paso 1: Selecciona tus servicios"}
                 {step === 2 && "Paso 2: Elige a tu estilista"}
                 {step === 3 && "Paso 3: Fecha y Hora"}
-                {step === 4 && "Paso 4: Pago y Confirmación"}
+                {step === 4 && "Paso 4: Confirmar simulación"}
               </p>
             </div>
             <button
@@ -313,10 +181,10 @@ export function BookingModal({ onClose }: Readonly<BookingModalProps>) {
                     <User className="text-[#BF953F] mt-1" size={18} />
                     <div>
                       <h3 className="text-[#FCF6BA] font-bold text-sm uppercase tracking-wider">
-                        Tus Datos (Opcional si eres cliente)
+                        Datos de ejemplo · no guardados
                       </h3>
                       <p className="text-neutral-500 text-xs mt-1 leading-relaxed">
-                        Para recordarte la cita
+                        Usa datos ficticios. Este recorrido no crea una cita real ni almacena información.
                       </p>
                     </div>
                   </div>
@@ -576,7 +444,7 @@ export function BookingModal({ onClose }: Readonly<BookingModalProps>) {
               </motion.div>
             )}
 
-            {/* STEP 4: PAYMENT (NEW) */}
+            {/* STEP 4: DEMO CONFIRMATION — no payment details or network calls */}
             {step === 4 && (
               <motion.div
                 key="step-4"
@@ -586,24 +454,35 @@ export function BookingModal({ onClose }: Readonly<BookingModalProps>) {
                 transition={{ duration: 0.3 }}
                 className="space-y-6"
               >
-                <PaymentSimulator
-                  amount={calculateTotal()} // Pass calculated total
-                  onSuccess={handlePaymentSuccess}
-                  onCancel={() => setStep(3)}
-                />
+                {simulationComplete ? (
+                  <div className="space-y-5 rounded-sm border border-emerald-500/30 bg-emerald-500/5 p-8 text-center">
+                    <Check className="mx-auto text-emerald-400" size={38} />
+                    <h3 className="font-heading text-xl text-[#FCF6BA]">Simulación de reserva finalizada</h3>
+                    <p className="text-sm leading-relaxed text-neutral-300">El recorrido ha terminado correctamente. No se ha creado una cita real ni se han guardado datos.</p>
+                    <button type="button" onClick={onClose} className="w-full bg-[#BF953F] px-5 py-3 text-sm font-bold uppercase tracking-widest text-black hover:bg-[#d4a84d]">Cerrar</button>
+                  </div>
+                ) : (
+                  <div className="space-y-5 rounded-sm border border-[#BF953F]/30 bg-[#BF953F]/5 p-6 text-center">
+                    <Check className="mx-auto text-[#BF953F]" size={34} />
+                    <h3 className="font-heading text-xl text-[#FCF6BA]">Revisa tu cita de demostración</h3>
+                    <p className="text-sm leading-relaxed text-neutral-400">Servicio: {selectedServices.map((id) => catalog.flatMap((category) => category.services).find((service) => service.id === id)?.title).filter(Boolean).join(", ")}</p>
+                    <p className="text-sm text-neutral-400">{selectedDate?.toLocaleDateString("es-ES")} · {selectedTime} · {calculateTotal()} €</p>
+                    <p className="text-xs text-neutral-500">No introduzcas datos reales. La simulación no guarda información ni crea una reserva.</p>
+                    <button type="button" onClick={handlePaymentSuccess} className="w-full bg-[#BF953F] px-5 py-3 text-sm font-bold uppercase tracking-widest text-black hover:bg-[#d4a84d]">Finalizar simulación</button>
+                    <button type="button" onClick={() => setStep(3)} className="text-sm text-neutral-400 underline">Volver a fecha y hora</button>
+                  </div>
+                )}
               </motion.div>
             )}
           </AnimatePresence>
         </div>
 
         {/* Footer Navigation */}
-        {step <
-          4 /* Hide default footer in step 4 as PaymentSimulator has its own buttons */ && (
+        {step < 4 && (
           <div className="p-6 border-t border-white/10 bg-[#121212] relative z-10 flex justify-between items-center">
             {step > 1 ? (
               <button
                 onClick={handleBack}
-                disabled={isSaving}
                 className="flex items-center gap-2 text-neutral-400 hover:text-white transition-colors px-4 py-2 disabled:opacity-50"
               >
                 <ChevronLeft size={18} /> Atrás
@@ -624,10 +503,10 @@ export function BookingModal({ onClose }: Readonly<BookingModalProps>) {
 
               <button
                 onClick={handleNext}
-                disabled={isNextDisabled() || isSaving}
+                disabled={isNextDisabled()}
                 className="bg-[#BF953F] text-black px-6 py-3 rounded-sm font-bold uppercase tracking-widest text-xs hover:bg-[#d4a84d] transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
               >
-                {step === 3 ? "Ir a Pagan" : "Siguiente"}{" "}
+                {step === 3 ? "Revisar cita" : "Siguiente"}{" "}
                 <ChevronRight size={16} />
               </button>
             </div>

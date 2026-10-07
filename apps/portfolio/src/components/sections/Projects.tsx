@@ -10,7 +10,6 @@ import projectBlog from '@/assets/projects/project-blog.webp';
 import projectCrypto from '@/assets/projects/project-crypto-dashboard.webp';
 import projectDevOps from '@/assets/projects/project-devops-shop.webp';
 import projectPortfolio from '@/assets/projects/project-portfolio-dashboard.webp';
-import projectSalon from '@/assets/projects/project-salon.webp';
 import projectTask from '@/assets/projects/project-task-management.webp';
 import projectWeather from '@/assets/projects/project-weather.webp';
 import projectZeroDelay from '@/assets/projects/ZeroDelay.webp';
@@ -44,7 +43,7 @@ export const pymeProjects: Project[] = [
     id: 11,
     title: 'J.Barranco - Limpiezas en Madrid',
     image: projectJBarranco,
-    tags: ['Servicios', 'SEO Local', 'Pymes'],
+    tags: ['Servicios', 'Limpieza profesional', 'Pymes'],
     demoUrl: 'https://jbarrancolimpieza.com',
     status: 'Production',
   },
@@ -52,9 +51,10 @@ export const pymeProjects: Project[] = [
     id: 10,
     title: 'ZeroChaos - Reformas Integrales',
     image: projectZeroChaos,
-    tags: ['Construcción', 'SEO local', 'Diseño responsive'],
+    tags: ['Construcción', 'Reformas', 'Diseño adaptable'],
     demoUrl: '/casos-de-exito/reformas-zerochaos',
-    status: 'Production',
+    status: 'Prototype',
+    isDemo: true,
   },
   {
     id: 9,
@@ -62,15 +62,7 @@ export const pymeProjects: Project[] = [
     image: projectZeroDelay,
     tags: ['Logística', 'Formularios Ágiles', 'Multi-paso'],
     demoUrl: '/casos-de-exito/mudanzas-zerodelay',
-    status: 'Production',
-  },
-  {
-    id: 8,
-    title: 'ZeroVanity - Demo para peluquería y estética',
-    image: projectSalon,
-    tags: ['Peluquería y estética', 'Reservas (demo)', 'Galería visual'],
-    demoUrl: '/casos-de-exito/peluqueria-zerovanity',
-    status: 'Development',
+    status: 'Prototype',
     isDemo: true,
   },
 ];

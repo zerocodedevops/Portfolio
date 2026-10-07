@@ -29,7 +29,7 @@ export default function PymesService() {
     if (contactSection) {
       contactSection.scrollIntoView({ behavior: 'smooth' });
     } else {
-      navigate('/#contact');
+      navigate('/#contacto');
     }
   };
 

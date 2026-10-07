@@ -17,7 +17,7 @@ export function Footer() {
     { label: 'Inicio', href: '/' },
     { label: 'Sobre mí', href: '/#sobre-mi' },
     { label: 'Precios', href: '/precios-paginas-web' },
-    { label: 'Contacto', href: '#contact' },
+    { label: 'Contacto', href: '#contacto' },
   ];
 
   const resourceLinks = [
