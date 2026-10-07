@@ -6,7 +6,8 @@ import { RootErrorPage } from '@/components/RootErrorPage';
 const Home = lazy(() => import('@/features/home/Home'));
 const Pricing = lazy(() => import('@/features/pricing/Pricing'));
 const SalonApp = lazy(() => import('@zerovanity/routes'));
-const EcommerceApp = lazy(() => import('@devops-shop/src/routes'));
+// Mount the shop entry point so its Redux Provider wraps its routes.
+const EcommerceApp = lazy(() => import('@devops-shop/src/App'));
 const MediaApp = lazy(() => import('@zerodelay/App'));
 const ReformsApp = lazy(() => import('@zero-chaos/routes'));
 const CaseStudy = lazy(() => import('@/features/projects/CaseStudy'));

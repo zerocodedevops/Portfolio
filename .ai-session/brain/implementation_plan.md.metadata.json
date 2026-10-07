@@ -1,6 +1,6 @@
 {
-  "artifactType":  "ARTIFACT_TYPE_IMPLEMENTATION_PLAN",
-  "summary":  "Implementation plan to restore missing Data Connect configuration files.",
-  "updatedAt":  "2026-03-10T20:56:26.647644600Z",
-  "version":  "1"
+  "artifactType": "ARTIFACT_TYPE_IMPLEMENTATION_PLAN",
+  "summary": "Plan completo para construir la app domótica Mi Casa con React + Vite. Incluye estructura de archivos, componentes, pantallas y sistema de diseño.",
+  "updatedAt": "2026-07-04T12:29:32.624196300Z",
+  "requestFeedback": true
 }

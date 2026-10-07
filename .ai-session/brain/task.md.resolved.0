@@ -1,4 +1,0 @@
-# Task: Fix CI Test Command
-
-- [/] Fix CI command in [.github/workflows/ci.yml](file:///c:/Users/dgper/Proyectos/ZeroCode/.github/workflows/ci.yml)
-- [ ] Verify fix by checking turbo command structure
