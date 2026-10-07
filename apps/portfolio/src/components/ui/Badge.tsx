@@ -81,11 +81,6 @@ const techColors: Record<string, { bg: string; text: string; border: string }> =
       text: 'text-orange-400',
       border: 'border-orange-500/30',
     },
-    supabase: {
-      bg: 'bg-emerald-500/10',
-      text: 'text-emerald-400',
-      border: 'border-emerald-500/30',
-    },
     nextjs: {
       bg: 'bg-gray-500/10',
       text: 'text-gray-300',

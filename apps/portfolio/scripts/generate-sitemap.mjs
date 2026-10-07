@@ -17,6 +17,9 @@ function generateSitemap() {
   const staticRoutes = [
     { url: '/', priority: '1.0', changefreq: 'weekly' },
     { url: '/precios-paginas-web', priority: '0.9', changefreq: 'weekly' },
+    { url: '/aviso-legal', priority: '0.2', changefreq: 'yearly' },
+    { url: '/politica-de-privacidad', priority: '0.2', changefreq: 'yearly' },
+    { url: '/politica-de-cookies', priority: '0.2', changefreq: 'yearly' },
     { url: '/casos-de-exito/reformas-zerochaos', priority: '0.8', changefreq: 'monthly' },
     { url: '/casos-de-exito/mudanzas-zerodelay', priority: '0.8', changefreq: 'monthly' },
   ];

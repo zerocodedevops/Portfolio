@@ -89,8 +89,7 @@ const skillCategoriesData: SkillCategory[] = [
     icon: <Server className="w-6 h-6" />,
     color: 'from-orange-500 to-red-500',
     skills: [
-      { name: 'Firebase', icon: <Cloud className="w-4 h-4" />, level: 95 },
-      { name: 'Supabase', icon: <Server className="w-4 h-4" />, level: 70 },
+      { name: 'Firebase Hosting', icon: <Cloud className="w-4 h-4" />, level: 95 },
       { name: 'Node.js', icon: <Terminal className="w-4 h-4" />, level: 75 },
       { name: 'FastAPI', icon: <Terminal className="w-4 h-4" />, level: 70 },
       { name: 'MongoDB', icon: <Server className="w-4 h-4" />, level: 65 },

@@ -3,6 +3,7 @@ import { ArrowUp, Mail, MessageCircle } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 import footerLogo from '@/assets/zerocode-horizontal.webp';
+import { openCookieSettings } from '@/components/CookieConsent';
 
 const socialLinks = [
   { icon: Mail, href: 'mailto:admin@zerocode-devops.com', label: 'Email' },
@@ -22,6 +23,9 @@ export function Footer() {
 
   const resourceLinks = [
     { label: 'Proyectos', href: '#projects' },
+    { label: 'Aviso legal', href: '/aviso-legal' },
+    { label: 'Privacidad', href: '/politica-de-privacidad' },
+    { label: 'Cookies', href: '/politica-de-cookies' },
   ];
 
   const handleNavClick = (href: string) => {
@@ -158,6 +162,9 @@ export function Footer() {
           <p className="text-center text-dark-400 text-sm flex items-center justify-center gap-2">
             © {currentYear} ZeroCode • Hecho con curiosidad
           </p>
+          <div className="mt-4 flex flex-wrap justify-center gap-x-5 gap-y-2 text-xs text-dark-400">
+            <button className="underline underline-offset-2 hover:text-white" onClick={openCookieSettings} type="button">Configurar cookies</button>
+          </div>
 
         </div>
       </div>

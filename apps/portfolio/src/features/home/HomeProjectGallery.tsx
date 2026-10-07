@@ -5,7 +5,6 @@ const projects = [
   { name: 'ZeroChaos', sector: 'Reformas integrales', note: 'Demo web para presentar servicios y facilitar solicitudes de presupuesto.', href: '/casos-de-exito/reformas-zerochaos', mark: 'ZC', tone: 'from-[#e8e9df] to-[#f6f5ee]', image: '/assets/projects/thumbnails/project-zerochaos.webp', demo: true },
   { name: 'ZeroDelay', sector: 'Mudanzas', note: 'Demo web para explicar servicios y solicitar un presupuesto.', href: '/casos-de-exito/mudanzas-zerodelay', mark: 'ZD', tone: 'from-[#e2edf7] to-[#f3f7fa]', image: '/assets/projects/thumbnails/project-zerodelay.webp', demo: true },
   { name: 'ZeroVanity', sector: 'Peluquería y estética', note: 'Demo interactiva de una web para un salón, con recorrido de reserva simulado.', href: '/proyectos/zerovanity/', mark: 'ZV', tone: 'from-[#f2e4dd] to-[#faf6f2]', image: '/assets/projects/thumbnails/project-zerovanity.webp', demo: true },
-  { name: 'DevOps Shop', sector: 'Comercio online', note: 'Proyecto de tienda online con catálogo y proceso de compra de demostración.', href: '/proyectos/ecommerce/', mark: 'DS', tone: 'from-[#dce9f7] to-[#f2f6fb]', image: null, demo: true },
 ];
 
 export function HomeProjectGallery() {

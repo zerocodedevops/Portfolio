@@ -5,11 +5,9 @@ export default function Project() {
         Plataforma Empresarial Fullstack con IA
       </h2>
       <p className="mt-2">
-        Proyecto real que reúne administración, cliente y empleado con
-        dashboards, calendario, inventario, contabilidad, incidencias,
-        documentos (facturas, presupuestos, informes PDF) y CMS. Construido con
-        React, Node.js, Firebase y Supabase, utilizando IA para acelerar
-        desarrollo y documentación.
+        Demo de una plataforma para mostrar flujos de administración, calendario
+        y gestión de servicios. Los datos son de ejemplo y no se guardan ni se
+        envían a servicios externos.
       </p>
       <ul className="mt-4 list-disc pl-6">
         <li>Rutas protegidas por rol y carga perezosa de vistas.</li>

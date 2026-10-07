@@ -9,7 +9,7 @@ La **Aplicación Principal** que actúa como punto de encuentro unificado de car
 
 - **Animaciones Fluidas:** Impulsado por `framer-motion` para una experiencia de usuario premium.
 - **Multilenguaje (i18n):** Soporte de internacionalización a través de `react-i18next`.
-- **Integración Backend:** Conexión con _Supabase_ y auth administrado por _Firebase_.
+- **Demos:** Los ejemplos de proyectos usan datos de muestra y no se conectan a bases de datos.
 - **Rendimiento Extremo:** Bundling altamente optimizado en Vite, segmentando librerías pesadas en chunks.
 
 ## 🚀 Despliegue Local

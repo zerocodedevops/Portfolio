@@ -120,7 +120,7 @@
       },
       "backend": {
         "title": "Backend & BaaS",
-        "description": "Firebase y Supabase como pilares"
+        "description": "Firebase para alojamiento web"
       },
       "testing": {
         "title": "Testing & QA",

@@ -33,7 +33,6 @@ const featuredProject = {
     'Vite',
     'Tailwind',
     'Firebase',
-    'Supabase',
     'Capacitor',
   ],
   stats: {

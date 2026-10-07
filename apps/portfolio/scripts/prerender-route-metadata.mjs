@@ -10,9 +10,24 @@ const templatePath = path.join(distDirectory, 'index.html');
 
 const staticPages = [
   {
+    path: '/aviso-legal',
+    title: 'Aviso legal | ZeroCode DevOps',
+    description: 'Datos del titular, condiciones de uso y responsabilidad del sitio de ZeroCode DevOps.',
+  },
+  {
+    path: '/politica-de-privacidad',
+    title: 'Política de privacidad | ZeroCode DevOps',
+    description: 'Información sobre el tratamiento de datos personales al contactar con ZeroCode DevOps.',
+  },
+  {
+    path: '/politica-de-cookies',
+    title: 'Política de cookies | ZeroCode DevOps',
+    description: 'Cookies, almacenamiento local y preferencias de medición de ZeroCode DevOps.',
+  },
+  {
     path: '/precios-paginas-web',
-    title: 'Precio de diseño web desde 400 € | ZeroCode',
-    description: 'Qué incluye la web de una página de ZeroCode desde 400 €: Inicio y Contacto, WhatsApp, adaptación móvil, dominio, hosting por un año y SSL.',
+    title: 'Precio de diseño web desde 400 € más IVA | ZeroCode',
+    description: 'Qué incluye la web de una página de ZeroCode desde 400 € más IVA: Inicio y Contacto, WhatsApp, adaptación móvil, dominio, hosting por un año y SSL.',
   },
   {
     path: '/casos-de-exito/reformas-zerochaos',

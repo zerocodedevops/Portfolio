@@ -10,7 +10,6 @@ import {
   X,
   Zap,
 } from 'lucide-react';
-import { trackEvent } from '@/lib/analytics';
 import { Button } from './ui';
 
 // Import type from Projects.tsx relative path? Or redefine.
@@ -312,9 +311,6 @@ export function ProjectDetailModal({
                       href={project.demoUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      onClick={() =>
-                        trackEvent('ProjectModal', 'ClickDemo', project.title)
-                      }
                     >
                       Ver Demo
                     </Button>

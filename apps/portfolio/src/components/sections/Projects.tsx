@@ -8,7 +8,6 @@ import { lazy, Suspense, useState } from 'react';
 import projectAiChat from '@/assets/projects/project-ai-chat.webp';
 import projectBlog from '@/assets/projects/project-blog.webp';
 import projectCrypto from '@/assets/projects/project-crypto-dashboard.webp';
-import projectDevOps from '@/assets/projects/project-devops-shop.webp';
 import projectPortfolio from '@/assets/projects/project-portfolio-dashboard.webp';
 import projectTask from '@/assets/projects/project-task-management.webp';
 import projectWeather from '@/assets/projects/project-weather.webp';
@@ -17,7 +16,6 @@ import projectZeroChaos from '@/assets/projects/zero-chaos.webp';
 import projectJBarranco from '@/assets/projects/jbarranco.webp';
 import { Card, TechBadge } from '@/components/ui';
 import { fadeInUp, staggerContainer } from '@/hooks/useScrollAnimation';
-import { trackEvent } from '@/lib/analytics';
 import { SectionTitle } from '@/components/ui/SectionTitle';
 
 const ProjectDetailModal = lazy(() =>
@@ -69,15 +67,6 @@ export const pymeProjects: Project[] = [
 
 export const techProjects: Project[] = [
   {
-    id: 1,
-    title: 'DevOps Shop',
-    image: projectDevOps,
-    tags: ['React', 'Redux', 'Stripe', 'Tailwind'],
-    demoUrl: '/proyectos/ecommerce',
-    repoUrl: 'https://github.com/zerocodedevops',
-    status: 'Prototype',
-  },
-  {
     id: 4,
     title: 'Portfolio Dashboard',
     image: projectPortfolio,
@@ -99,7 +88,7 @@ export const techProjects: Project[] = [
     id: 2,
     title: 'AI Chat Assistant',
     image: projectAiChat,
-    tags: ['Next.js', 'TypeScript', 'OpenAI', 'Supabase'],
+    tags: ['Next.js', 'TypeScript', 'OpenAI'],
     repoUrl: 'https://github.com/zerocodedevops',
     status: 'Development',
   },
@@ -277,7 +266,6 @@ function ProjectCard({
                 whileHover={{ x: 3 }}
                 onClick={(e) => {
                   e.stopPropagation();
-                  trackEvent('Project', 'Demo', project.title);
                 }}
               >
                 <ExternalLink className="w-4 h-4" />
@@ -293,7 +281,6 @@ function ProjectCard({
                 whileHover={{ x: 3 }}
                 onClick={(e) => {
                   e.stopPropagation();
-                  trackEvent('Project', 'Repo', project.title);
                 }}
               >
                 <GithubIcon className="w-4 h-4" />

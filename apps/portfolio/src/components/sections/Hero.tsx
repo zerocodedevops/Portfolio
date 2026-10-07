@@ -54,7 +54,7 @@ export function Hero() {
               </a>
             </motion.div>
             <motion.p variants={fadeInUp} className="mt-5 text-sm text-white/75">
-              Desde <strong className="font-semibold text-white">400 €</strong>
+              Desde <strong className="font-semibold text-white">400 € + IVA</strong>
               <span className="mx-2 text-white/40">·</span>
               Online en toda España
             </motion.p>

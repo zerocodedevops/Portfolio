@@ -6,11 +6,12 @@ import { RootErrorPage } from '@/components/RootErrorPage';
 const Home = lazy(() => import('@/features/home/Home'));
 const Pricing = lazy(() => import('@/features/pricing/Pricing'));
 const SalonApp = lazy(() => import('@zerovanity/routes'));
-// Mount the shop entry point so its Redux Provider wraps its routes.
-const EcommerceApp = lazy(() => import('@devops-shop/src/App'));
 const MediaApp = lazy(() => import('@zerodelay/App'));
 const ReformsApp = lazy(() => import('@zero-chaos/routes'));
 const CaseStudy = lazy(() => import('@/features/projects/CaseStudy'));
+const LegalNoticePage = lazy(() => import('@/features/legal/LegalPages').then((module) => ({ default: module.LegalNoticePage })));
+const PrivacyPolicyPage = lazy(() => import('@/features/legal/LegalPages').then((module) => ({ default: module.PrivacyPolicyPage })));
+const CookiesPolicyPage = lazy(() => import('@/features/legal/LegalPages').then((module) => ({ default: module.CookiesPolicyPage })));
 
 function VanityDemoApp() {
   return (
@@ -34,6 +35,9 @@ const router = createBrowserRouter(
       path: '/',
       errorElement: <RootErrorPage />,
       children: [
+        { path: 'aviso-legal', element: <Suspense fallback={<PageLoader text="Cargando aviso legal..." />}><LegalNoticePage /></Suspense> },
+        { path: 'politica-de-privacidad', element: <Suspense fallback={<PageLoader text="Cargando privacidad..." />}><PrivacyPolicyPage /></Suspense> },
+        { path: 'politica-de-cookies', element: <Suspense fallback={<PageLoader text="Cargando cookies..." />}><CookiesPolicyPage /></Suspense> },
         {
           index: true,
           element: (
@@ -73,14 +77,6 @@ const router = createBrowserRouter(
         {
           path: 'proyectos/crypto/*',
           element: <Navigate to="/" replace />,
-        },
-        {
-          path: 'proyectos/ecommerce/*',
-          element: (
-            <Suspense fallback={<PageLoader text="Abriendo DevOps Shop..." />}>
-              <EcommerceApp />
-            </Suspense>
-          ),
         },
         {
           path: 'proyectos/analytics/*',

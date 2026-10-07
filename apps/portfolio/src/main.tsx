@@ -5,12 +5,9 @@ import './styles/index.css';
 import { Providers } from './app/providers';
 import { Router } from './app/router';
 import { ErrorBoundary } from './components/ErrorBoundary';
-import { initGoogleTagManager } from './lib/gtm';
+import { CookieConsent } from './components/CookieConsent';
 // import { Toaster } from 'sileo';
-// import { initGA, logPageView } from './lib/analytics';
 import './i18n/config';
-
-initGoogleTagManager();
 
 const rootElement = document.getElementById('root');
 if (!rootElement) throw new Error('Root element not found');
@@ -20,6 +17,7 @@ ReactDOM.createRoot(rootElement).render(
     <ErrorBoundary>
       <Providers>
         <Router />
+        <CookieConsent />
       </Providers>
     </ErrorBoundary>
   </React.StrictMode>,

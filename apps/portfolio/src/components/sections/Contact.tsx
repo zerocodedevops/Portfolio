@@ -249,6 +249,12 @@ export function Contact() {
                     : t('contact.form.submit')}
                 </Button>
 
+                <p className="text-xs leading-5 text-slate-600">
+                  Al enviar, usaré tus datos para responder a tu consulta y, si lo pides, preparar una propuesta (medidas precontractuales). El formulario se envía mediante EmailJS; no se usarán para publicidad.
+                  Puedes ejercer tus derechos escribiendo a admin@zerocode-devops.com. Más información, incluidos destinatarios y conservación, en la{' '}
+                  <a className="underline" href="/politica-de-privacidad">política de privacidad</a>.
+                </p>
+
                 {/* Status messages */}
                 <AnimatePresence mode="wait">
                   {status === 'success' && (

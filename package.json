@@ -5,12 +5,18 @@
   "workspaces": [
     "apps/*"
   ],
+  "overrides": {
+    "qs": "6.16.0",
+    "concurrently": {
+      "shell-quote": "1.12.0"
+    }
+  },
   "scripts": {
     "dev": "turbo run dev",
     "dev:portfolio": "turbo run dev --filter=portfolio-app",
     "build": "npm run build:all && npm run copy:all",
     "build:all": "turbo run build",
-    "copy:all": "npx shx rm -rf dist && npx shx mkdir -p dist/zerodelay dist/devops-shop dist/reformas && npx shx cp -r apps/portfolio/dist/* dist/ && npx shx cp -r apps/zerodelay/dist/* dist/zerodelay/ && npx shx cp -r apps/devops-shop/dist/* dist/devops-shop/ && npx shx cp -r apps/zero-chaos/build/client/* dist/reformas/",
+    "copy:all": "node scripts/copy-all.mjs",
     "lint": "turbo run lint",
     "lint:fix": "turbo run lint:fix",
     "format": "prettier --write .",
@@ -25,7 +31,6 @@
     "import-session": "pwsh scripts/import-session.ps1"
   },
   "devDependencies": {
-    "@lhci/cli": "^0.15.1",
     "@playwright/test": "^1.58.2",
     "@tailwindcss/typography": "^0.5.19",
     "@tailwindcss/vite": "^4.2.2",
@@ -36,7 +41,6 @@
     "@types/node": "^25.5.0",
     "@typescript-eslint/eslint-plugin": "^8.57.1",
     "@typescript-eslint/parser": "^8.57.1",
-    "@vercel/node": "^5.6.18",
     "@vitejs/plugin-react": "^6.0.1",
     "autoprefixer": "^10.4.27",
     "concurrently": "^9.2.1",
@@ -46,8 +50,7 @@
     "postcss": "^8.5.8",
     "prettier": "^3.8.1",
     "rollup-plugin-visualizer": "^7.0.1",
-    "sharp": "^0.34.5",
-    "shx": "^0.4.0",
+    "sharp": "^0.35.5",
     "tailwindcss": "^4.2.2",
     "ts-node": "^10.9.2",
     "turbo": "^2.9.3",

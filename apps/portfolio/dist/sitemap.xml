@@ -13,6 +13,24 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://zerocode-devops.com/aviso-legal</loc>
+    <lastmod>2026-10-07</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  <url>
+    <loc>https://zerocode-devops.com/politica-de-privacidad</loc>
+    <lastmod>2026-10-07</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  <url>
+    <loc>https://zerocode-devops.com/politica-de-cookies</loc>
+    <lastmod>2026-10-07</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  <url>
     <loc>https://zerocode-devops.com/casos-de-exito/reformas-zerochaos</loc>
     <lastmod>2026-10-07</lastmod>
     <changefreq>monthly</changefreq>

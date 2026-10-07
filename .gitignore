@@ -33,6 +33,7 @@ lint_*.txt
 # Build output
 dist/
 dist-ssr/
+.turbo/
 build/
 *.local
 *.tgz
