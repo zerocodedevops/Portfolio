@@ -70,8 +70,8 @@ export function Contact() {
       return;
     }
     if (!captchaToken) {
-      setErrorMessage('Completa la verificación antispam antes de enviar.');
-      setStatus('error');
+      setCaptchaRequested(true);
+      setErrorMessage('La verificación de seguridad se está cargando. Complétala y vuelve a pulsar Enviar Mensaje.');
       return;
     }
 
@@ -178,7 +178,7 @@ export function Contact() {
             </div>
 
             {/* Contact form */}
-            <form onFocusCapture={() => setCaptchaRequested(true)} onSubmit={handleSubmit(onSubmit)} className="border border-[#d5e0e8] bg-white p-6 sm:p-8">
+            <form onSubmit={handleSubmit(onSubmit)} className="border border-[#d5e0e8] bg-white p-6 sm:p-8">
               <div className="space-y-6">
                 <div className="sr-only" aria-hidden="true">
                   <label htmlFor="companyWebsite">Deja este campo vacío</label>
@@ -288,7 +288,7 @@ export function Contact() {
                     La protección antispam aún no está configurada. Puedes contactar por correo o WhatsApp.
                   </p>
                 ) : (
-                  <p className="text-sm text-slate-600">La protección antispam se carga al empezar a rellenar el formulario.</p>
+                  <p className="text-sm text-slate-600">La verificación de seguridad se carga cuando intentas enviar el formulario.</p>
                 )}
 
                 {/* Submit button */}
@@ -297,7 +297,7 @@ export function Contact() {
                   variant="primary"
                   className="w-full py-4 text-base mt-4"
                   isLoading={status === 'loading'}
-                  disabled={!captchaSiteKey || !captchaToken || status === 'loading'}
+                  disabled={!captchaSiteKey || status === 'loading'}
                   rightIcon={<Send className="w-5 h-5" />}
                 >
                   {status === 'loading'
@@ -306,7 +306,7 @@ export function Contact() {
                 </Button>
 
                 <p className="text-xs leading-5 text-slate-600">
-                  Responsable: David González (ZeroCode DevOps). Trataré tu nombre, correo y consulta para responderte y, si lo solicitas, preparar una propuesta; la base será atender medidas precontractuales que pidas o mi interés legítimo en responder a otras consultas. El formulario se envía mediante EmailJS a mi correo y no usaré tus datos para publicidad. Las consultas que no generen contratación se suprimen a los 90 días desde la última interacción, salvo excepciones legales. Puedes ejercer tus derechos en admin@zerocode-devops.com o reclamar ante la AEPD. Consulta proveedores, destinatarios y más información en la{' '}
+                  Responsable: David González (ZeroCode DevOps). Trataré tu nombre, correo y consulta para responderte y, si lo solicitas, preparar una propuesta; la base será atender medidas precontractuales que pidas o mi interés legítimo en responder a otras consultas. El formulario se envía mediante EmailJS al buzón zerocode.devops@gmail.com y no usaré tus datos para publicidad. Las consultas que no generen contratación se suprimen a los 90 días desde la última interacción, salvo excepciones legales. Puedes ejercer tus derechos en admin@zerocode-devops.com o reclamar ante la AEPD. Consulta proveedores, destinatarios y más información en la{' '}
                   <a className="underline" href="/politica-de-privacidad">política de privacidad</a>.
                 </p>
 

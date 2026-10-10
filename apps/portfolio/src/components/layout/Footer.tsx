@@ -163,7 +163,7 @@ export function Footer() {
             © {currentYear} ZeroCode • Hecho con curiosidad
           </p>
           <div className="mt-4 flex flex-wrap justify-center gap-x-5 gap-y-2 text-xs text-dark-400">
-            <button className="underline underline-offset-2 hover:text-white" onClick={openCookieSettings} type="button">Configurar cookies</button>
+            <button className="underline underline-offset-2 hover:text-white" onClick={openCookieSettings} type="button">Información de cookies</button>
           </div>
 
         </div>

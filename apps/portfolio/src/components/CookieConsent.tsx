@@ -57,30 +57,30 @@ export function CookieConsent() {
 
   return (
     <aside
-      aria-label="Preferencias de cookies"
+      aria-label="Información sobre cookies y almacenamiento local"
       aria-labelledby="cookie-consent-title"
       className="fixed inset-x-3 bottom-3 z-[200] mx-auto max-w-4xl border border-slate-300 bg-white p-5 text-slate-900 shadow-2xl sm:inset-x-6 sm:bottom-6 sm:p-6"
       role="dialog"
     >
-      <h2 id="cookie-consent-title" className="text-lg font-bold">Tu privacidad importa</h2>
+      <h2 id="cookie-consent-title" className="text-lg font-bold">Información sobre cookies</h2>
       <p className="mt-2 text-sm leading-6">
-        Este sitio usa almacenamiento local para recordar el idioma y tu preferencia. Al empezar a rellenar el formulario,
-        cargamos reCAPTCHA para reducir el spam; Google establece la cookie técnica _GRECAPTCHA. No usamos analítica,
-        publicidad ni Google Tag Manager.
+        Este sitio usa almacenamiento local para recordar el idioma y el cierre de este aviso. No usamos analítica,
+        publicidad ni Google Tag Manager. reCAPTCHA se carga únicamente cuando intentas enviar el formulario y puede
+        establecer la cookie técnica _GRECAPTCHA.
         Consulta la <a className="underline" href="/politica-de-cookies">política de cookies</a>.
       </p>
       {showSettings && (
         <div className="mt-4 border-t border-slate-200 pt-4">
-          <p className="text-sm"><strong>Necesarias:</strong> almacenamiento local para idioma y preferencia, y la cookie técnica de reCAPTCHA solo al usar el formulario. <strong>Opcionales:</strong> no hay categorías de analítica ni publicidad.</p>
+          <p className="text-sm"><strong>Almacenamiento local:</strong> recuerda el idioma y que cerraste este aviso. No hay categorías opcionales de analítica o publicidad ni se solicita consentimiento opcional. La conexión con reCAPTCHA solo se inicia cuando intentas enviar el formulario.</p>
         </div>
       )}
       <div className="mt-5 flex flex-col gap-2 sm:flex-row sm:justify-end">
         {showSettings ? (
-          <button className="border border-slate-500 px-4 py-2 text-sm font-semibold hover:bg-slate-100" onClick={() => choose(false)} type="button">Guardar selección</button>
+          <button className="border border-slate-500 px-4 py-2 text-sm font-semibold hover:bg-slate-100" onClick={() => choose(false)} type="button">Cerrar aviso</button>
         ) : (
-          <button className="border border-slate-500 px-4 py-2 text-sm font-semibold hover:bg-slate-100" onClick={() => setShowSettings(true)} type="button">Configurar</button>
+          <button className="border border-slate-500 px-4 py-2 text-sm font-semibold hover:bg-slate-100" onClick={() => setShowSettings(true)} type="button">Ver información</button>
         )}
-        {!showSettings && <button className="bg-sky-800 px-4 py-2 text-sm font-semibold text-white hover:bg-sky-900" onClick={() => choose(false)} type="button">Entendido</button>}
+        {!showSettings && <button className="bg-sky-800 px-4 py-2 text-sm font-semibold text-white hover:bg-sky-900" onClick={() => choose(false)} type="button">Cerrar aviso</button>}
       </div>
     </aside>
   );
