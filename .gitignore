@@ -44,8 +44,8 @@ build/
 
 # Environment
 .env
-.env.local
-.env.*.local
+.env.*
+!.env.example
 
 # Firebase & DataConnect
 .firebase/
@@ -76,3 +76,9 @@ test-output.txt
 # System
 desktop.ini
 Thumbs.db
+
+# Local AI session state and confidential internal documents
+.ai-session/
+docs/proteccion-datos/
+/AUDITORIA-SEGURIDAD-Y-CAPTACION.md
+/REVISION-LEGAL-PARA-PROFESIONAL.md
