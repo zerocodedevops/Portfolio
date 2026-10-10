@@ -72,9 +72,10 @@ export default function CaseStudy() {
               {project.title}
             </h1>
             {(project.isDemo || details) && (
-              <p className="mb-8 rounded-xl border border-amber-500/30 bg-amber-500/5 p-4 text-amber-100">
-                Demo de portfolio. Muestra una propuesta de diseño y no representa resultados comerciales de un cliente.
-              </p>
+              <div className="mb-8 space-y-2 rounded-xl border border-amber-500/30 bg-amber-500/5 p-4 text-amber-100">
+                <p>Demo de portfolio.</p>
+                <p>Muestra una propuesta de diseño y no representa resultados comerciales de un cliente.</p>
+              </div>
             )}
             
             <div className="aspect-video w-full rounded-3xl overflow-hidden bg-dark-900 border border-dark-800">

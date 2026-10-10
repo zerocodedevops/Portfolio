@@ -63,15 +63,19 @@ export function CookieConsent() {
       role="dialog"
     >
       <h2 id="cookie-consent-title" className="text-lg font-bold">Información sobre cookies</h2>
-      <p className="mt-2 text-sm leading-6">
-        Este sitio usa almacenamiento local para recordar el idioma y el cierre de este aviso. No usamos analítica,
-        publicidad ni Google Tag Manager. reCAPTCHA se carga únicamente cuando intentas enviar el formulario y puede
-        establecer la cookie técnica _GRECAPTCHA.
-        Consulta la <a className="underline" href="/politica-de-cookies">política de cookies</a>.
-      </p>
+      <div className="mt-2 space-y-2 text-sm leading-6">
+        <p>Este sitio usa almacenamiento local para recordar el idioma y el cierre de este aviso.</p>
+        <p>No usamos analítica, publicidad ni Google Tag Manager.</p>
+        <p>reCAPTCHA se carga únicamente cuando intentas enviar el formulario y puede establecer la cookie técnica _GRECAPTCHA.</p>
+        <p>Consulta la <a className="underline" href="/politica-de-cookies">política de cookies</a>.</p>
+      </div>
       {showSettings && (
         <div className="mt-4 border-t border-slate-200 pt-4">
-          <p className="text-sm"><strong>Almacenamiento local:</strong> recuerda el idioma y que cerraste este aviso. No hay categorías opcionales de analítica o publicidad ni se solicita consentimiento opcional. La conexión con reCAPTCHA solo se inicia cuando intentas enviar el formulario.</p>
+          <div className="space-y-2 text-sm">
+            <p><strong>Almacenamiento local:</strong> recuerda el idioma y que cerraste este aviso.</p>
+            <p>No hay categorías opcionales de analítica o publicidad ni se solicita consentimiento opcional.</p>
+            <p>La conexión con reCAPTCHA solo se inicia cuando intentas enviar el formulario.</p>
+          </div>
         </div>
       )}
       <div className="mt-5 flex flex-col gap-2 sm:flex-row sm:justify-end">

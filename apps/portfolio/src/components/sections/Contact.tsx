@@ -3,9 +3,9 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { AnimatePresence, motion } from 'framer-motion';
 import {
   AlertCircle,
+  ArrowUpRight,
   CheckCircle,
   Mail,
-  MapPin,
   Send,
 } from 'lucide-react';
 import { useCallback, useMemo, useRef, useState } from 'react';
@@ -148,40 +148,30 @@ export function Contact() {
           </div>
         </div>
 
-        <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-12 items-start mt-8">
-          {/* Left Column: Info & Form */}
+        <div className="mt-8 grid items-start gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:gap-10">
+          {/* Form card */}
           <motion.div
             variants={slideInLeft}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            className="space-y-8"
+            className="h-full"
           >
-            <div className="space-y-6">
-              <h3 className="font-outfit text-2xl font-semibold text-[#0a203d] sm:text-3xl">
-                Diseño web a medida desde 400 €
-              </h3>
-              <div className="space-y-2 text-base leading-7 text-[#586a80]">
-                <p>Trabajo online en toda España.</p>
-                <p>Puedes traer una idea definida o pedirme que proponga el diseño.</p>
-              </div>
-              
-              <div className="flex w-fit items-center gap-4 border border-[#d5e0e8] bg-white p-4">
-                <div className="bg-[#e5f7fc] p-2.5 text-[#087cae]">
-                  <MapPin className="w-5 h-5" />
-                </div>
-                <div>
-                  <p className="mb-0.5 text-[10px] font-bold uppercase tracking-wider text-[#718197]">
-                    Atención online
-                  </p>
-                  <p className="text-sm font-medium text-[#0b294a]">Toda España</p>
-                </div>
-              </div>
-            </div>
-
             {/* Contact form */}
-            <form onSubmit={handleSubmit(onSubmit)} className="border border-[#d5e0e8] bg-white p-6 sm:p-8">
-              <div className="space-y-6">
+            <form onSubmit={handleSubmit(onSubmit)} className="h-full rounded-3xl border border-[#d7e4ec] bg-white p-5 shadow-[0_24px_70px_rgba(7,26,53,0.07)] sm:p-7">
+              <div className="mb-6 border-b border-[#e7eef3] pb-5">
+                <p className="mb-2 text-[11px] font-bold uppercase tracking-[0.17em] text-[#087cae]">Diseño web a medida</p>
+                <h3 className="font-outfit text-2xl font-semibold tracking-tight text-[#0a203d] sm:text-3xl">
+                  Una web para tu negocio.
+                </h3>
+                <p className="mt-2 font-semibold text-[#0a203d]">Precio mínimo: 400 € + IVA</p>
+                <div className="mt-2 space-y-1 text-sm leading-6 text-[#586a80] sm:text-base">
+                  <p>Trabajo online en toda España.</p>
+                  <p>Trae tu idea o te propongo el diseño.</p>
+                </div>
+              </div>
+
+              <div className="space-y-4">
                 <div className="sr-only" aria-hidden="true">
                   <label htmlFor="companyWebsite">Deja este campo vacío</label>
                   <input id="companyWebsite" tabIndex={-1} autoComplete="off" {...register('companyWebsite')} />
@@ -194,7 +184,7 @@ export function Contact() {
                   <input
                     id="name"
                     type="text"
-                    className="w-full border border-[#cbd7e1] bg-white p-4 text-[#0b294a] placeholder:text-[#8291a2] focus:border-[#0789bd] focus:outline-none focus:ring-2 focus:ring-[#0789bd]/20"
+                    className="w-full rounded-xl border border-[#d5e0e8] bg-[#f8fafc] px-4 py-3.5 text-[#0b294a] placeholder:text-[#8291a2] transition-colors focus:border-[#0789bd] focus:bg-white focus:outline-none focus:ring-4 focus:ring-[#0789bd]/10"
                     placeholder={t('contact.form.placeholders.name')}
                     maxLength={120}
                     {...register('name')}
@@ -217,7 +207,7 @@ export function Contact() {
                   <input
                     id="email"
                     type="email"
-                    className="w-full border border-[#cbd7e1] bg-white p-4 text-[#0b294a] placeholder:text-[#8291a2] focus:border-[#0789bd] focus:outline-none focus:ring-2 focus:ring-[#0789bd]/20"
+                    className="w-full rounded-xl border border-[#d5e0e8] bg-[#f8fafc] px-4 py-3.5 text-[#0b294a] placeholder:text-[#8291a2] transition-colors focus:border-[#0789bd] focus:bg-white focus:outline-none focus:ring-4 focus:ring-[#0789bd]/10"
                     placeholder={t('contact.form.placeholders.email')}
                     maxLength={254}
                     {...register('email')}
@@ -240,7 +230,7 @@ export function Contact() {
                   <input
                     id="subject"
                     type="text"
-                    className="w-full border border-[#cbd7e1] bg-white p-4 text-[#0b294a] placeholder:text-[#8291a2] focus:border-[#0789bd] focus:outline-none focus:ring-2 focus:ring-[#0789bd]/20"
+                    className="w-full rounded-xl border border-[#d5e0e8] bg-[#f8fafc] px-4 py-3.5 text-[#0b294a] placeholder:text-[#8291a2] transition-colors focus:border-[#0789bd] focus:bg-white focus:outline-none focus:ring-4 focus:ring-[#0789bd]/10"
                     placeholder={t('contact.form.placeholders.subject')}
                     maxLength={120}
                     {...register('subject')}
@@ -262,9 +252,9 @@ export function Contact() {
                   </label>
                   <textarea
                     id="message"
-                    className="w-full border border-[#cbd7e1] bg-white p-4 text-[#0b294a] placeholder:text-[#8291a2] focus:border-[#0789bd] focus:outline-none focus:ring-2 focus:ring-[#0789bd]/20"
+                    className="w-full rounded-xl border border-[#d5e0e8] bg-[#f8fafc] px-4 py-3.5 text-[#0b294a] placeholder:text-[#8291a2] transition-colors focus:border-[#0789bd] focus:bg-white focus:outline-none focus:ring-4 focus:ring-[#0789bd]/10"
                     placeholder={t('contact.form.placeholders.message')}
-                    rows={4}
+                    rows={3}
                     maxLength={5000}
                     {...register('message')}
                     aria-invalid={errors.message ? 'true' : 'false'}
@@ -286,9 +276,10 @@ export function Contact() {
                     onError={handleCaptchaError}
                   />
                 ) : !captchaSiteKey ? (
-                  <p className="border border-amber-300 bg-amber-50 p-3 text-sm text-amber-950" role="status">
-                    La protección antispam aún no está configurada. Puedes contactar por correo o WhatsApp.
-                  </p>
+                  <div className="space-y-2 border border-amber-300 bg-amber-50 p-3 text-sm text-amber-950" role="status">
+                    <p>La protección antispam aún no está configurada.</p>
+                    <p>Puedes contactar por correo o WhatsApp.</p>
+                  </div>
                 ) : (
                   <p className="text-sm text-slate-600">La verificación de seguridad se carga cuando intentas enviar el formulario.</p>
                 )}
@@ -307,10 +298,11 @@ export function Contact() {
                     : t('contact.form.submit')}
                 </Button>
 
-                <p className="text-xs leading-5 text-slate-600">
-                  Responsable: David González (ZeroCode DevOps). Trataré tu nombre, correo y consulta para responderte y, si lo solicitas, preparar una propuesta; la base será atender medidas precontractuales que pidas o mi interés legítimo en responder a otras consultas. El formulario se envía mediante EmailJS al buzón zerocode.devops@gmail.com y no usaré tus datos para publicidad. Las consultas que no generen contratación se suprimen a los 90 días desde la última interacción, salvo excepciones legales. Puedes ejercer tus derechos en admin@zerocode-devops.com o reclamar ante la AEPD. Consulta proveedores, destinatarios y más información en la{' '}
-                  <a className="underline" href="/politica-de-privacidad">política de privacidad</a>.
-                </p>
+                <div className="space-y-1 text-xs leading-5 text-[#718197]">
+                  <p>Responsable: David González (ZeroCode DevOps).</p>
+                  <p>Usaré tus datos para responder a tu consulta.</p>
+                  <p><a className="font-semibold text-[#087cae] underline underline-offset-2 hover:text-[#071a35]" href="/politica-de-privacidad">Privacidad y derechos</a>.</p>
+                </div>
 
                 {/* Status messages */}
                 <AnimatePresence mode="wait">
@@ -344,49 +336,52 @@ export function Contact() {
             </form>
           </motion.div>
 
-          {/* Right Column: Channels Card & Terminal */}
+          {/* Contact channels */}
           <motion.div
             variants={slideInRight}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            className="space-y-8 lg:sticky lg:top-24"
+            className="self-start lg:sticky lg:top-24"
           >
-            <div className="border border-[#d5e0e8] bg-white p-6 sm:p-8">
-              <h4 className="font-outfit mb-6 text-lg font-semibold text-[#0b294a]">Escríbeme</h4>
-              <div className="space-y-3">
+            <div className="rounded-3xl border border-[#d7e4ec] bg-white/95 p-6 shadow-[0_24px_70px_rgba(7,26,53,0.07)] sm:p-8">
+              <p className="mb-3 text-[11px] font-bold uppercase tracking-[0.17em] text-[#087cae]">Contacto directo</p>
+              <h4 className="font-outfit mb-7 text-2xl font-semibold tracking-tight text-[#0b294a]">Escríbeme</h4>
+              <div className="space-y-3.5">
                 <a
                   href="mailto:admin@zerocode-devops.com"
-                  className="group flex items-center gap-4 border border-[#dce4eb] bg-white p-4 transition hover:border-[#0789bd]"
+                  className="group flex min-w-0 items-center gap-4 rounded-2xl border border-[#e2ebf1] bg-gradient-to-br from-[#f8fbfd] to-white p-4 transition duration-300 hover:-translate-y-0.5 hover:border-[#9bdced] hover:shadow-[0_14px_30px_rgba(7,26,53,0.08)] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#0789bd]/15"
                 >
-                  <div className="p-3 rounded-xl bg-primary-500/10 text-primary-400 group-hover:bg-primary-500 group-hover:text-white transition-colors">
-                    <Mail className="w-5 h-5" />
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#e5f7fc] text-[#0789bd] transition-colors group-hover:bg-[#0789bd] group-hover:text-white">
+                    <Mail className="h-5 w-5" aria-hidden="true" />
                   </div>
-                  <div>
-                    <p className="mb-0.5 text-[10px] font-bold uppercase tracking-wider text-[#718197]">
+                  <div className="min-w-0 flex-1">
+                    <p className="mb-1 text-[10px] font-bold uppercase tracking-[0.14em] text-[#718197]">
                       Email
                     </p>
-                    <p className="text-sm font-medium text-[#0b294a]">
+                    <p className="break-words text-sm font-semibold text-[#0b294a] sm:text-base">
                       admin@zerocode-devops.com
                     </p>
                   </div>
+                  <ArrowUpRight className="h-4 w-4 shrink-0 text-[#8b9aac] transition group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-[#0789bd]" aria-hidden="true" />
                 </a>
 
                 <a
                   href="https://wa.me/34912622712"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group flex items-center gap-4 border border-[#dce4eb] bg-white p-4 transition hover:border-[#0789bd]"
+                  className="group flex min-w-0 items-center gap-4 rounded-2xl border border-[#e2ebf1] bg-gradient-to-br from-[#f8fbfd] to-white p-4 transition duration-300 hover:-translate-y-0.5 hover:border-[#a9dfbd] hover:shadow-[0_14px_30px_rgba(7,26,53,0.08)] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#0789bd]/15"
                 >
-                  <div className="p-3 rounded-xl bg-accent-500/10 text-accent-400 group-hover:bg-accent-500 group-hover:text-white transition-colors">
-                    <WhatsAppIcon className="w-5 h-5" />
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#eaf8ef] text-[#178b4d] transition-colors group-hover:bg-[#178b4d] group-hover:text-white">
+                    <WhatsAppIcon className="h-5 w-5" />
                   </div>
-                  <div>
-                    <p className="mb-0.5 text-[10px] font-bold uppercase tracking-wider text-[#718197]">
+                  <div className="min-w-0 flex-1">
+                    <p className="mb-1 text-[10px] font-bold uppercase tracking-[0.14em] text-[#718197]">
                       WhatsApp
                     </p>
-                    <p className="text-sm font-medium text-[#0b294a]">Enviar un mensaje</p>
+                    <p className="text-sm font-semibold text-[#0b294a] sm:text-base">Enviar un mensaje</p>
                   </div>
+                  <ArrowUpRight className="h-4 w-4 shrink-0 text-[#8b9aac] transition group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-[#178b4d]" aria-hidden="true" />
                 </a>
 
               </div>

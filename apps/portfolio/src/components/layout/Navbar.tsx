@@ -29,7 +29,11 @@ export function Navbar() {
     setIsMobileMenuOpen(false);
     if (href.startsWith('#')) {
       const element = document.querySelector(href);
-      if (element) element.scrollIntoView({ behavior: 'smooth' });
+      if (element) {
+        const headerHeight = document.querySelector('header')?.getBoundingClientRect().height ?? 0;
+        const targetTop = element.getBoundingClientRect().top + globalThis.scrollY - headerHeight;
+        globalThis.scrollTo({ top: targetTop, behavior: 'smooth' });
+      }
       else { navigate(`/${href}`); }
     } else {
       navigate(href);

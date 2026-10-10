@@ -29,8 +29,8 @@ export default function Home() {
   return (
     <Layout>
       <Seo
-        title="Diseño web para autónomos y pymes desde 400 € más IVA | ZeroCode"
-        description="Diseño web a medida para autónomos y pymes de toda España. Una página con Inicio y Contacto desde 400 € más IVA, con WhatsApp, adaptación móvil, dominio y hosting durante un año."
+        title="Diseño web para autónomos y pymes desde 400 € + IVA | ZeroCode"
+        description="Diseño web a medida para autónomos y pymes de toda España. El precio mínimo para una página con Inicio y Contacto es de 400 € + IVA, con WhatsApp, adaptación móvil, dominio y hosting durante un año."
         jsonLd={{
           '@context': 'https://schema.org',
           '@graph': [

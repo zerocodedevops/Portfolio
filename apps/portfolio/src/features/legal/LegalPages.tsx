@@ -27,48 +27,90 @@ export function LegalNoticePage() {
   return <LegalShell title="Aviso legal" description="Información legal y datos de contacto de ZeroCode DevOps.">
     <h2 className="text-xl font-semibold">Titular del sitio</h2>
     <p><strong>Titular:</strong> {controller}<br /><strong>NIF:</strong> {taxId}<br /><strong>Domicilio:</strong> {address}<br /><strong>Correo:</strong> <a className="underline" href={`mailto:${contactEmail}`}>{contactEmail}</a></p>
-    <p>Este sitio ofrece información sobre servicios de diseño y desarrollo web y muestra demostraciones de proyectos. Para consultas sobre el sitio, puedes escribir al correo indicado.</p>
-    <p><strong>Precios:</strong> servicio desde 400 €, más IVA; el presupuesto final depende del alcance acordado.</p>
+    <p>Este sitio ofrece información sobre servicios de diseño y desarrollo web y muestra demostraciones de proyectos.</p>
+    <p>Para consultas sobre el sitio, puedes escribir al correo indicado.</p>
+    <p><strong>Precios:</strong> precio mínimo de 400 € + IVA; el presupuesto final depende del alcance acordado.</p>
     <h2 className="text-xl font-semibold">Propiedad intelectual y responsabilidad</h2>
-    <p>Los contenidos propios del sitio están protegidos por la normativa aplicable. Las marcas, nombres e imágenes de proyectos de terceros pertenecen a sus respectivos titulares. Las demostraciones se identifican como tales y pueden usar datos ficticios.</p>
-    <p>El titular procura mantener la información actualizada, pero no garantiza la ausencia de errores o interrupciones. Los enlaces externos se ofrecen como referencia y se rigen por las condiciones de sus respectivos sitios.</p>
+    <p>Los contenidos propios del sitio están protegidos por la normativa aplicable.</p>
+    <p>Las marcas, nombres e imágenes de proyectos de terceros pertenecen a sus respectivos titulares.</p>
+    <p>Las demostraciones se identifican como tales y pueden usar datos ficticios.</p>
+    <p>El titular procura mantener la información actualizada, pero no garantiza la ausencia de errores o interrupciones.</p>
+    <p>Los enlaces externos se ofrecen como referencia y se rigen por las condiciones de sus respectivos sitios.</p>
   </LegalShell>;
 }
 
 export function PrivacyPolicyPage() {
   return <LegalShell title="Política de privacidad" description="Cómo ZeroCode DevOps trata los datos enviados por formulario y otros canales.">
-    <p><strong>Responsable:</strong> {controller}, NIF {taxId}. <strong>Dirección:</strong> {address}. <strong>Contacto:</strong> <a className="underline" href={`mailto:${contactEmail}`}>{contactEmail}</a>.</p>
+    <p><strong>Responsable:</strong> {controller}, NIF {taxId}.</p>
+    <p><strong>Dirección:</strong> {address}.</p>
+    <p><strong>Contacto:</strong> <a className="underline" href={`mailto:${contactEmail}`}>{contactEmail}</a>.</p>
     <h2 className="text-xl font-semibold">Qué datos y para qué</h2>
-    <p>Si envías una consulta mediante el formulario, tratamos nombre, correo electrónico, asunto y mensaje para responderte y, si procede, preparar una propuesta solicitada. La base jurídica para preparar la propuesta es la aplicación de medidas precontractuales a petición tuya; la gestión de la comunicación se apoya en el interés legítimo. No usamos estos datos para enviarte publicidad no solicitada.</p>
-    <p>Al navegar, Firebase Hosting recibe direcciones IP de las solicitudes para prestar el alojamiento, detectar abusos y generar información de uso. Google indica que Hosting conserva datos IP durante unos meses. La base del tratamiento por el responsable es el interés legítimo en mantener la seguridad y disponibilidad del sitio; el proveedor gestiona sus registros conforme a sus condiciones.</p>
-    <p>Si contactas por WhatsApp o correo, se tratarán los datos que incluyas en el mensaje a través del proveedor de ese canal. El responsable confirma que elimina el historial de consultas de WhatsApp Business a los 90 días desde la última interacción, salvo que la conversación siga abierta o deba conservarse por una obligación legal o para gestionar un contrato. También informa de que tiene una copia automática en su cuenta de Google, cifrada de extremo a extremo. WhatsApp indica que Google proporciona y gestiona el almacenamiento en la nube y que una nueva copia con la misma cuenta sobrescribe la anterior; esto no permite determinar por sí solo el plazo de eliminación de todas las copias técnicas del proveedor. Consulta la información de WhatsApp sobre <a className="underline" href="https://faq.whatsapp.com/407643231403807/?locale=es_LA" rel="noreferrer" target="_blank">copias en la cuenta de Google</a> y <a className="underline" href="https://faq.whatsapp.com/490592613091019/?locale=es_ES" rel="noreferrer" target="_blank">copias cifradas de extremo a extremo</a>. No es necesario incluir información sensible.</p>
+    <p>Si envías una consulta mediante el formulario, tratamos nombre, correo electrónico, asunto y mensaje para responderte y, si procede, preparar una propuesta solicitada.</p>
+    <p>La base jurídica para preparar la propuesta es la aplicación de medidas precontractuales a petición tuya; la gestión de la comunicación se apoya en el interés legítimo.</p>
+    <p>No usamos estos datos para enviarte publicidad no solicitada.</p>
+    <p>Al navegar, Firebase Hosting recibe direcciones IP de las solicitudes para prestar el alojamiento, detectar abusos y generar información de uso.</p>
+    <p>Google indica que Hosting conserva datos IP durante unos meses.</p>
+    <p>La base del tratamiento por el responsable es el interés legítimo en mantener la seguridad y disponibilidad del sitio; el proveedor gestiona sus registros conforme a sus condiciones.</p>
+    <p>Si contactas por WhatsApp o correo, se tratarán los datos que incluyas en el mensaje a través del proveedor de ese canal.</p>
+    <p>El responsable confirma que elimina el historial de consultas de WhatsApp Business a los 90 días desde la última interacción, salvo que la conversación siga abierta o deba conservarse por una obligación legal o para gestionar un contrato.</p>
+    <p>También informa de que tiene una copia automática en su cuenta de Google, cifrada de extremo a extremo.</p>
+    <p>WhatsApp indica que Google proporciona y gestiona el almacenamiento en la nube y que una nueva copia con la misma cuenta sobrescribe la anterior; esto no permite determinar por sí solo el plazo de eliminación de todas las copias técnicas del proveedor.</p>
+    <p>Consulta la información de WhatsApp sobre <a className="underline" href="https://faq.whatsapp.com/407643231403807/?locale=es_LA" rel="noreferrer" target="_blank">copias en la cuenta de Google</a> y <a className="underline" href="https://faq.whatsapp.com/490592613091019/?locale=es_ES" rel="noreferrer" target="_blank">copias cifradas de extremo a extremo</a>.</p>
+    <p>No es necesario incluir información sensible.</p>
     <h2 className="text-xl font-semibold">Destinatarios y proveedores</h2>
-    <p>El formulario transmite nombre, email, asunto y mensaje mediante EmailJS a la cuenta de correo del responsable, <a className="underline" href="mailto:zerocode.devops@gmail.com">zerocode.devops@gmail.com</a>. El responsable confirma que ha desactivado el historial de EmailJS y que tiene activada “Do not save private data” en la plantilla Contact Us. Esta opción está destinada a evitar guardar los valores de parámetros en el historial de la plantilla y desactiva su reenvío desde ese historial. EmailJS puede procesar metadatos o registros técnicos para prestar y proteger el servicio; la desactivación del historial no equivale a afirmar que no existe ningún registro del servicio. EmailJS indica que sus servidores están en EE. UU. y que pueden existir transferencias internacionales protegidas mediante cláusulas contractuales tipo. Sus condiciones indican que su acuerdo de tratamiento de datos (DPA) se incorpora por referencia para tratamientos sujetos al RGPD. Consulta la <a className="underline" href="https://www.emailjs.com/legal/privacy-policy/" rel="noreferrer" target="_blank">política de privacidad</a>, los <a className="underline" href="https://www.emailjs.com/legal/terms-of-service/" rel="noreferrer" target="_blank">términos</a> y el <a className="underline" href="https://www.emailjs.com/legal/data-protection-agreement/" rel="noreferrer" target="_blank">acuerdo de tratamiento de EmailJS</a>.</p>
-    <p>Si eliges contactar por WhatsApp, Meta/WhatsApp tratará la información que envíes conforme a su <a className="underline" href="https://www.whatsapp.com/legal/privacy-policy-eea" rel="noreferrer" target="_blank">política de privacidad aplicable en el Espacio Económico Europeo</a>. El correo de recepción usa Gmail, sujeto a la <a className="underline" href="https://policies.google.com/privacy?hl=es-es" rel="noreferrer" target="_blank">política de privacidad de Google</a>. reCAPTCHA (Google Cloud Fraud Defense) se carga solo después de que intentes enviar un formulario válido, para prevenir envíos automatizados, fraude y abusos. El responsable se apoya en su interés legítimo en proteger el formulario; la necesidad, proporcionalidad y base aplicable requieren validación profesional. Google indica que, desde el 2 de abril de 2026, actúa como encargado del tratamiento respecto a los datos de reCAPTCHA y los trata conforme a sus condiciones específicas y a su <a className="underline" href="https://cloud.google.com/terms/data-processing-addendum" rel="noreferrer" target="_blank">acuerdo de tratamiento de datos</a>; puede establecer la cookie técnica <code>_GRECAPTCHA</code> para el análisis de riesgos.</p>
-    <p>El sitio se aloja en Firebase Hosting, de Google, que trata direcciones IP y datos técnicos para prestar, mantener y proteger el servicio; Google indica que conserva datos IP de Hosting durante unos meses. No se venden datos ni se usan para publicidad.</p>
-    <p>La web no utiliza autenticación ni una base de datos para recoger datos de visitantes. Firebase se mantiene para alojar el sitio mientras se use el servicio.</p>
+    <p>El formulario transmite nombre, email, asunto y mensaje mediante EmailJS a la cuenta de correo del responsable, <a className="underline" href="mailto:zerocode.devops@gmail.com">zerocode.devops@gmail.com</a>.</p>
+    <p>El responsable confirma que ha desactivado el historial de EmailJS y que tiene activada “Do not save private data” en la plantilla Contact Us.</p>
+    <p>Esta opción está destinada a evitar guardar los valores de parámetros en el historial de la plantilla y desactiva su reenvío desde ese historial.</p>
+    <p>EmailJS puede procesar metadatos o registros técnicos para prestar y proteger el servicio; la desactivación del historial no equivale a afirmar que no existe ningún registro del servicio.</p>
+    <p>EmailJS indica que sus servidores están en EE. UU. y que pueden existir transferencias internacionales protegidas mediante cláusulas contractuales tipo.</p>
+    <p>Sus condiciones indican que su acuerdo de tratamiento de datos (DPA) se incorpora por referencia para tratamientos sujetos al RGPD.</p>
+    <p>Consulta la <a className="underline" href="https://www.emailjs.com/legal/privacy-policy/" rel="noreferrer" target="_blank">política de privacidad</a>, los <a className="underline" href="https://www.emailjs.com/legal/terms-of-service/" rel="noreferrer" target="_blank">términos</a> y el <a className="underline" href="https://www.emailjs.com/legal/data-protection-agreement/" rel="noreferrer" target="_blank">acuerdo de tratamiento de EmailJS</a>.</p>
+    <p>Si eliges contactar por WhatsApp, Meta/WhatsApp tratará la información que envíes conforme a su <a className="underline" href="https://www.whatsapp.com/legal/privacy-policy-eea" rel="noreferrer" target="_blank">política de privacidad aplicable en el Espacio Económico Europeo</a>.</p>
+    <p>El correo de recepción usa Gmail, sujeto a la <a className="underline" href="https://policies.google.com/privacy?hl=es-es" rel="noreferrer" target="_blank">política de privacidad de Google</a>.</p>
+    <p>reCAPTCHA (Google Cloud Fraud Defense) se carga solo después de que intentes enviar un formulario válido, para prevenir envíos automatizados, fraude y abusos.</p>
+    <p>El responsable se apoya en su interés legítimo en proteger el formulario; la necesidad, proporcionalidad y base aplicable requieren validación profesional.</p>
+    <p>Google indica que, desde el 2 de abril de 2026, actúa como encargado del tratamiento respecto a los datos de reCAPTCHA y los trata conforme a sus condiciones específicas y a su <a className="underline" href="https://cloud.google.com/terms/data-processing-addendum" rel="noreferrer" target="_blank">acuerdo de tratamiento de datos</a>; puede establecer la cookie técnica <code>_GRECAPTCHA</code> para el análisis de riesgos.</p>
+    <p>El sitio se aloja en Firebase Hosting, de Google, que trata direcciones IP y datos técnicos para prestar, mantener y proteger el servicio; Google indica que conserva datos IP de Hosting durante unos meses.</p>
+    <p>No se venden datos ni se usan para publicidad.</p>
+    <p>La web no utiliza autenticación ni una base de datos para recoger datos de visitantes.</p>
+    <p>Firebase se mantiene para alojar el sitio mientras se use el servicio.</p>
     <h2 className="text-xl font-semibold">Conservación y derechos</h2>
-    <p>Las consultas recibidas por formulario o correo que no den lugar a una contratación se conservarán hasta 90 días desde la última interacción y después se eliminarán, salvo que la conversación siga abierta o exista una obligación legal o una reclamación que justifique conservarlas durante más tiempo. Si se inicia una relación contractual, los datos necesarios se conservarán durante los plazos legales aplicables. El plazo de 90 días también se aplica al historial de WhatsApp Business conforme a lo indicado arriba. El responsable confirma que el historial de EmailJS está desactivado. Cualquier metadato técnico que EmailJS procese o conserve se regirá por las condiciones y plazos propios del proveedor.</p>
-    <p>Puedes solicitar acceso, rectificación, supresión, oposición, limitación o portabilidad escribiendo a {contactEmail}; también puedes retirar un consentimiento cuando el tratamiento se base en él. Puedes reclamar ante la Agencia Española de Protección de Datos (<a className="underline" href="https://www.aepd.es/" rel="noreferrer" target="_blank">AEPD</a>).</p>
-    <p>El envío del formulario no te suscribe a comunicaciones comerciales. La política podrá actualizarse si cambian las finalidades, proveedores o servicios.</p>
+    <p>Las consultas recibidas por formulario o correo que no den lugar a una contratación se conservarán hasta 90 días desde la última interacción y después se eliminarán, salvo que la conversación siga abierta o exista una obligación legal o una reclamación que justifique conservarlas durante más tiempo.</p>
+    <p>Si se inicia una relación contractual, los datos necesarios se conservarán durante los plazos legales aplicables.</p>
+    <p>El plazo de 90 días también se aplica al historial de WhatsApp Business conforme a lo indicado arriba.</p>
+    <p>El responsable confirma que el historial de EmailJS está desactivado.</p>
+    <p>Cualquier metadato técnico que EmailJS procese o conserve se regirá por las condiciones y plazos propios del proveedor.</p>
+    <p>Puedes solicitar acceso, rectificación, supresión, oposición, limitación o portabilidad escribiendo a {contactEmail}; también puedes retirar un consentimiento cuando el tratamiento se base en él.</p>
+    <p>Puedes reclamar ante la Agencia Española de Protección de Datos (<a className="underline" href="https://www.aepd.es/" rel="noreferrer" target="_blank">AEPD</a>).</p>
+    <p>El envío del formulario no te suscribe a comunicaciones comerciales.</p>
+    <p>La política podrá actualizarse si cambian las finalidades, proveedores o servicios.</p>
   </LegalShell>;
 }
 
 export function CookiesPolicyPage() {
   return <LegalShell title="Política de cookies" description="Información sobre cookies y almacenamiento local utilizado en ZeroCode DevOps.">
-    <p>Este sitio no utiliza cookies de analítica, publicidad ni seguimiento. Google Tag Manager (GTM) y las etiquetas asociadas están desactivados. reCAPTCHA (Google Cloud Fraud Defense) se carga solo después de que intentas enviar un formulario válido y puede establecer la cookie técnica <code>_GRECAPTCHA</code> para analizar riesgos y prevenir envíos automatizados, fraude y abusos. Google indica que actúa como encargado para esta función y que trata los datos conforme a sus <a className="underline" href="https://cloud.google.com/terms/service-terms" rel="noreferrer" target="_blank">condiciones específicas</a> y a su <a className="underline" href="https://cloud.google.com/terms/data-processing-addendum" rel="noreferrer" target="_blank">acuerdo de tratamiento de datos</a>. Si en el futuro se activan etiquetas de medición o publicidad, se actualizará esta política y se solicitará consentimiento antes de cargarlas.</p>
+    <p>Este sitio no utiliza cookies de analítica, publicidad ni seguimiento.</p>
+    <p>Google Tag Manager (GTM) y las etiquetas asociadas están desactivados.</p>
+    <p>reCAPTCHA (Google Cloud Fraud Defense) se carga solo después de que intentas enviar un formulario válido y puede establecer la cookie técnica <code>_GRECAPTCHA</code> para analizar riesgos y prevenir envíos automatizados, fraude y abusos.</p>
+    <p>Google indica que actúa como encargado para esta función y que trata los datos conforme a sus <a className="underline" href="https://cloud.google.com/terms/service-terms" rel="noreferrer" target="_blank">condiciones específicas</a> y a su <a className="underline" href="https://cloud.google.com/terms/data-processing-addendum" rel="noreferrer" target="_blank">acuerdo de tratamiento de datos</a>.</p>
+    <p>Si en el futuro se activan etiquetas de medición o publicidad, se actualizará esta política y se solicitará consentimiento antes de cargarlas.</p>
     <h2 className="text-xl font-semibold">Almacenamiento necesario</h2>
     <ul className="list-disc space-y-2 pl-6">
       <li><code>zerocode-cookie-consent-v1</code> (almacenamiento local): recuerda el cierre del aviso informativo; no registra una elección de consentimiento.</li>
       <li><code>i18nextLng</code> (almacenamiento local): recuerda el idioma escogido hasta que borres los datos del sitio.</li>
-      <li><code>_GRECAPTCHA</code> (cookie de Google reCAPTCHA): puede establecerse al intentar enviar un formulario válido y sirve para el análisis de riesgos y la prevención de envíos automatizados. La documentación pública consultada no especifica un plazo fijo.</li>
+      <li><div className="space-y-2"><p><code>_GRECAPTCHA</code> (cookie de Google reCAPTCHA): puede establecerse al intentar enviar un formulario válido y sirve para el análisis de riesgos y la prevención de envíos automatizados.</p><p>La documentación pública consultada no especifica un plazo fijo.</p></div></li>
     </ul>
-    <p>Las dos claves de almacenamiento local son propias y no son cookies de seguimiento. Firebase Hosting también recibe direcciones IP para entregar el sitio, detectar abusos y generar información de uso; Google informa que conserva esas IP durante unos meses.</p>
+    <p>Las dos claves de almacenamiento local son propias y no son cookies de seguimiento.</p>
+    <p>Firebase Hosting también recibe direcciones IP para entregar el sitio, detectar abusos y generar información de uso; Google informa que conserva esas IP durante unos meses.</p>
     <h2 className="text-xl font-semibold">Enlaces externos</h2>
-    <p>El sitio puede enlazar a WhatsApp y otros servicios externos. No se cargan sus contenidos incrustados dentro de esta página. Al abrir un enlace, el proveedor externo podrá tratar datos conforme a su propia política.</p>
+    <p>El sitio puede enlazar a WhatsApp y otros servicios externos.</p>
+    <p>No se cargan sus contenidos incrustados dentro de esta página.</p>
+    <p>Al abrir un enlace, el proveedor externo podrá tratar datos conforme a su propia política.</p>
     <h2 className="text-xl font-semibold">Aviso informativo</h2>
-    <p>Este aviso no ofrece categorías opcionales ni registra una elección de consentimiento. Puedes volver a consultar la información:</p>
+    <p>Este aviso no ofrece categorías opcionales ni registra una elección de consentimiento.</p>
+    <p>Puedes volver a consultar la información:</p>
     <button className="border border-slate-500 px-4 py-2 font-semibold hover:bg-slate-100" onClick={openCookieSettings} type="button">Abrir aviso informativo</button>
-    <p>También puedes borrar el almacenamiento del sitio desde la configuración del navegador. Los enlaces externos, como WhatsApp, pueden usar sus propias cookies al abrirse y están sujetos a las políticas del proveedor.</p>
+    <p>También puedes borrar el almacenamiento del sitio desde la configuración del navegador.</p>
+    <p>Los enlaces externos, como WhatsApp, pueden usar sus propias cookies al abrirse y están sujetos a las políticas del proveedor.</p>
   </LegalShell>;
 }
