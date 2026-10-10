@@ -16,6 +16,7 @@ import { Button } from '@/components/ui';
 import { RecaptchaV2, type RecaptchaV2Handle } from '@/components/RecaptchaV2';
 import { WhatsAppIcon } from '@/components/ui/BrandIcons';
 import { slideInLeft, slideInRight } from '@/hooks/useScrollAnimation';
+import { ParallaxBackdrop } from '@/components/ui/ParallaxBackdrop';
 import { sileo } from 'sileo';
 
 export function Contact() {
@@ -128,7 +129,8 @@ export function Contact() {
   };
 
   return (
-    <section id="contacto" className="relative bg-[#f3f7fa] py-20 sm:py-24">
+    <section id="contacto" className="relative isolate overflow-hidden bg-[#f3f7fa] py-20 sm:py-24">
+      <ParallaxBackdrop />
       {/* Background decoration */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute bottom-0 left-1/4 w-1/2 h-1/2 bg-gradient-radial from-primary-500/5 to-transparent blur-3xl" />

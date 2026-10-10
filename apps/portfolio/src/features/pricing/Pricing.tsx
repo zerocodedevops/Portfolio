@@ -1,6 +1,7 @@
 import { Check, MessageCircle } from 'lucide-react';
 import { Seo } from '@/components/common/SEO';
 import { Layout } from '@/components/layout';
+import { ParallaxBackdrop } from '@/components/ui/ParallaxBackdrop';
 
 const inclusions = [
   'Una sola página con Inicio y Contacto',
@@ -14,8 +15,9 @@ const inclusions = [
 export default function Pricing() {
   return <Layout>
     <Seo title="Precio de página web desde 400 € más IVA" description="Conoce qué incluye la web de una página desde 400 € más IVA para autónomos y pymes de toda España. Presupuesto claro antes de empezar." />
-    <main className="bg-[#f3f7fa] px-4 pb-24 pt-32 sm:px-6">
-      <div className="container-custom">
+    <main className="relative isolate overflow-hidden bg-[#f3f7fa] px-4 pb-24 pt-32 sm:px-6">
+      <ParallaxBackdrop />
+      <div className="container-custom relative z-10">
         <header className="mx-auto mb-12 max-w-3xl text-center">
           <p className="mb-4 text-xs font-bold uppercase tracking-[0.19em] text-[#087cae]">Precio claro</p>
           <h1 className="font-outfit text-4xl font-semibold tracking-tight text-[#071a35] sm:text-5xl">Una web para empezar desde 400 € más IVA</h1>
