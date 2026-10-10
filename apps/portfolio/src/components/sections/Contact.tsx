@@ -8,11 +8,12 @@ import {
   MapPin,
   Send,
 } from 'lucide-react';
-import { useMemo, useState } from 'react';
+import { useCallback, useMemo, useRef, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
 import { z } from 'zod';
 import { Button } from '@/components/ui';
+import { RecaptchaV2, type RecaptchaV2Handle } from '@/components/RecaptchaV2';
 import { WhatsAppIcon } from '@/components/ui/BrandIcons';
 import { slideInLeft, slideInRight } from '@/hooks/useScrollAnimation';
 import { sileo } from 'sileo';
@@ -24,16 +25,28 @@ export function Contact() {
   >('idle');
   const [errorMessage, setErrorMessage] = useState('');
   const [fallbackMailto, setFallbackMailto] = useState('mailto:admin@zerocode-devops.com');
+  const [captchaToken, setCaptchaToken] = useState('');
+  const [captchaRequested, setCaptchaRequested] = useState(false);
+  const captchaRef = useRef<RecaptchaV2Handle>(null);
+  const captchaSiteKey = import.meta.env.VITE_RECAPTCHA_SITE_KEY;
+  const handleCaptchaError = useCallback(() => {
+    setErrorMessage('No se pudo cargar la protección antispam. Puedes escribirme directamente por correo.');
+  }, []);
+  const handleCaptchaTokenChange = useCallback((token: string) => {
+    setCaptchaToken(token);
+    if (token) setErrorMessage('');
+  }, []);
 
   const contactSchema = useMemo(
     () =>
       z.object({
-        name: z.string().min(2, t('contact.form.validation.name')),
-        email: z.string().regex(/^[^\s@]+@[^\s@]+\.[^\s@]+$/, {
+        name: z.string().trim().min(2, t('contact.form.validation.name')).max(120),
+        email: z.string().trim().max(254).regex(/^[^\s@]+@[^\s@]+\.[^\s@]+$/, {
           message: t('contact.form.validation.email'),
         }),
-        subject: z.string().min(5, t('contact.form.validation.subject')),
-        message: z.string().min(10, t('contact.form.validation.message')),
+        subject: z.string().trim().min(5, t('contact.form.validation.subject')).max(120),
+        message: z.string().trim().min(10, t('contact.form.validation.message')).max(5000),
+        companyWebsite: z.string().max(0).optional(),
       }),
     [t],
   );
@@ -46,10 +59,22 @@ export function Contact() {
     reset,
     formState: { errors },
   } = useForm<ContactFormData>({
-    resolver: zodResolver(contactSchema as any),
+    resolver: zodResolver(contactSchema),
   });
 
   const onSubmit = async (data: ContactFormData) => {
+    if (data.companyWebsite) return;
+    if (!captchaSiteKey) {
+      setErrorMessage('El formulario está pendiente de configurar reCAPTCHA. Puedes escribirme directamente por correo.');
+      setStatus('error');
+      return;
+    }
+    if (!captchaToken) {
+      setErrorMessage('Completa la verificación antispam antes de enviar.');
+      setStatus('error');
+      return;
+    }
+
     setStatus('loading');
     setErrorMessage('');
     setFallbackMailto(`mailto:admin@zerocode-devops.com?subject=${encodeURIComponent(data.subject)}&body=${encodeURIComponent(`Nombre: ${data.name}\nCorreo: ${data.email}\n\n${data.message}`)}`);
@@ -79,6 +104,7 @@ export function Contact() {
           from_email: data.email,
           subject: data.subject,
           message: data.message,
+          'g-recaptcha-response': captchaToken,
         },
         publicKey,
       );
@@ -89,6 +115,7 @@ export function Contact() {
       });
       setStatus('success');
       reset();
+      captchaRef.current?.reset();
     } catch {
       sileo.error({
         title: 'Error al enviar el mensaje',
@@ -96,6 +123,7 @@ export function Contact() {
       });
       setStatus('error');
       setErrorMessage(t('contact.form.error'));
+      captchaRef.current?.reset();
     }
   };
 
@@ -150,8 +178,12 @@ export function Contact() {
             </div>
 
             {/* Contact form */}
-            <form onSubmit={handleSubmit(onSubmit)} className="border border-[#d5e0e8] bg-white p-6 sm:p-8">
+            <form onFocusCapture={() => setCaptchaRequested(true)} onSubmit={handleSubmit(onSubmit)} className="border border-[#d5e0e8] bg-white p-6 sm:p-8">
               <div className="space-y-6">
+                <div className="sr-only" aria-hidden="true">
+                  <label htmlFor="companyWebsite">Deja este campo vacío</label>
+                  <input id="companyWebsite" tabIndex={-1} autoComplete="off" {...register('companyWebsite')} />
+                </div>
                 {/* Name */}
                 <div className="flex flex-col">
                   <label htmlFor="name" className="mb-2 text-sm font-bold text-[#263c56]">
@@ -162,12 +194,14 @@ export function Contact() {
                     type="text"
                     className="w-full border border-[#cbd7e1] bg-white p-4 text-[#0b294a] placeholder:text-[#8291a2] focus:border-[#0789bd] focus:outline-none focus:ring-2 focus:ring-[#0789bd]/20"
                     placeholder={t('contact.form.placeholders.name')}
+                    maxLength={120}
                     {...register('name')}
                     aria-invalid={errors.name ? 'true' : 'false'}
+                    aria-describedby={errors.name ? 'name-error' : undefined}
                     required={true}
                   />
                   {errors.name && (
-                    <p className="mt-2 text-sm font-medium text-red-700" role="alert">
+                    <p id="name-error" className="mt-2 text-sm font-medium text-red-700" role="alert">
                       {errors.name.message}
                     </p>
                   )}
@@ -183,12 +217,14 @@ export function Contact() {
                     type="email"
                     className="w-full border border-[#cbd7e1] bg-white p-4 text-[#0b294a] placeholder:text-[#8291a2] focus:border-[#0789bd] focus:outline-none focus:ring-2 focus:ring-[#0789bd]/20"
                     placeholder={t('contact.form.placeholders.email')}
+                    maxLength={254}
                     {...register('email')}
                     aria-invalid={errors.email ? 'true' : 'false'}
+                    aria-describedby={errors.email ? 'email-error' : undefined}
                     required={true}
                   />
                   {errors.email && (
-                    <p className="mt-2 text-sm font-medium text-red-700" role="alert">
+                    <p id="email-error" className="mt-2 text-sm font-medium text-red-700" role="alert">
                       {errors.email.message}
                     </p>
                   )}
@@ -204,12 +240,14 @@ export function Contact() {
                     type="text"
                     className="w-full border border-[#cbd7e1] bg-white p-4 text-[#0b294a] placeholder:text-[#8291a2] focus:border-[#0789bd] focus:outline-none focus:ring-2 focus:ring-[#0789bd]/20"
                     placeholder={t('contact.form.placeholders.subject')}
+                    maxLength={120}
                     {...register('subject')}
                     aria-invalid={errors.subject ? 'true' : 'false'}
+                    aria-describedby={errors.subject ? 'subject-error' : undefined}
                     required
                   />
                   {errors.subject && (
-                    <p className="mt-2 text-sm font-medium text-red-700" role="alert">
+                    <p id="subject-error" className="mt-2 text-sm font-medium text-red-700" role="alert">
                       {errors.subject.message}
                     </p>
                   )}
@@ -225,16 +263,33 @@ export function Contact() {
                     className="w-full border border-[#cbd7e1] bg-white p-4 text-[#0b294a] placeholder:text-[#8291a2] focus:border-[#0789bd] focus:outline-none focus:ring-2 focus:ring-[#0789bd]/20"
                     placeholder={t('contact.form.placeholders.message')}
                     rows={4}
+                    maxLength={5000}
                     {...register('message')}
                     aria-invalid={errors.message ? 'true' : 'false'}
+                    aria-describedby={errors.message ? 'message-error' : undefined}
                     required={true}
                   />
                   {errors.message && (
-                    <p className="mt-2 text-sm font-medium text-red-700" role="alert">
+                    <p id="message-error" className="mt-2 text-sm font-medium text-red-700" role="alert">
                       {errors.message.message}
                     </p>
                   )}
                 </div>
+
+                {captchaSiteKey && captchaRequested ? (
+                  <RecaptchaV2
+                    ref={captchaRef}
+                    siteKey={captchaSiteKey}
+                    onTokenChange={handleCaptchaTokenChange}
+                    onError={handleCaptchaError}
+                  />
+                ) : !captchaSiteKey ? (
+                  <p className="border border-amber-300 bg-amber-50 p-3 text-sm text-amber-950" role="status">
+                    La protección antispam aún no está configurada. Puedes contactar por correo o WhatsApp.
+                  </p>
+                ) : (
+                  <p className="text-sm text-slate-600">La protección antispam se carga al empezar a rellenar el formulario.</p>
+                )}
 
                 {/* Submit button */}
                 <Button
@@ -242,6 +297,7 @@ export function Contact() {
                   variant="primary"
                   className="w-full py-4 text-base mt-4"
                   isLoading={status === 'loading'}
+                  disabled={!captchaSiteKey || !captchaToken || status === 'loading'}
                   rightIcon={<Send className="w-5 h-5" />}
                 >
                   {status === 'loading'
@@ -250,8 +306,7 @@ export function Contact() {
                 </Button>
 
                 <p className="text-xs leading-5 text-slate-600">
-                  Al enviar, usaré tus datos para responder a tu consulta y, si lo pides, preparar una propuesta (medidas precontractuales). El formulario se envía mediante EmailJS; no se usarán para publicidad.
-                  Puedes ejercer tus derechos escribiendo a admin@zerocode-devops.com. Más información, incluidos destinatarios y conservación, en la{' '}
+                  Responsable: David González (ZeroCode DevOps). Trataré tu nombre, correo y consulta para responderte y, si lo solicitas, preparar una propuesta; la base será atender medidas precontractuales que pidas o mi interés legítimo en responder a otras consultas. El formulario se envía mediante EmailJS a mi correo y no usaré tus datos para publicidad. Las consultas que no generen contratación se suprimen a los 90 días desde la última interacción, salvo excepciones legales. Puedes ejercer tus derechos en admin@zerocode-devops.com o reclamar ante la AEPD. Consulta proveedores, destinatarios y más información en la{' '}
                   <a className="underline" href="/politica-de-privacidad">política de privacidad</a>.
                 </p>
 
@@ -262,7 +317,8 @@ export function Contact() {
                       initial={{ opacity: 0, y: 10 }}
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: -10 }}
-                      className="flex items-center gap-2 p-4 rounded-lg bg-green-500/10 border border-green-500/30 text-green-400 mt-4"
+                      role="status"
+                      className="flex items-center gap-2 p-4 rounded-lg bg-green-500/10 border border-green-500/30 text-green-800 mt-4"
                     >
                       <CheckCircle className="w-5 h-5 shrink-0" />
                       <p className="text-sm font-medium">{t('contact.form.success')}</p>
@@ -274,7 +330,8 @@ export function Contact() {
                       initial={{ opacity: 0, y: 10 }}
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: -10 }}
-                      className="flex items-center gap-2 p-4 rounded-lg bg-red-500/10 border border-red-500/30 text-red-400 mt-4"
+                      role="alert"
+                      className="flex items-center gap-2 p-4 rounded-lg bg-red-500/10 border border-red-500/30 text-red-800 mt-4"
                     >
                       <AlertCircle className="w-5 h-5 shrink-0" />
                       <div className="text-sm font-medium"><div className="space-y-1">{errorMessage.split(/(?<=\.)\s+/).map((sentence) => <p key={sentence}>{sentence}</p>)}</div><a className="mt-2 inline-block underline underline-offset-2" href={fallbackMailto}>Escríbeme directamente por correo</a></div>

@@ -4,7 +4,7 @@ const projects = [
   { name: 'J.Barranco', sector: 'Limpieza profesional', note: 'Servicios locales presentados con claridad.', href: 'https://jbarrancolimpieza.com', mark: 'JB', tone: 'from-[#d8edeb] to-[#f3f8f6]', image: '/assets/projects/thumbnails/project-jbarranco.webp' },
   { name: 'ZeroChaos', sector: 'Reformas integrales', note: 'Demo web para presentar servicios y facilitar solicitudes de presupuesto.', href: '/casos-de-exito/reformas-zerochaos', mark: 'ZC', tone: 'from-[#e8e9df] to-[#f6f5ee]', image: '/assets/projects/thumbnails/project-zerochaos.webp', demo: true },
   { name: 'ZeroDelay', sector: 'Mudanzas', note: 'Demo web para explicar servicios y solicitar un presupuesto.', href: '/casos-de-exito/mudanzas-zerodelay', mark: 'ZD', tone: 'from-[#e2edf7] to-[#f3f7fa]', image: '/assets/projects/thumbnails/project-zerodelay.webp', demo: true },
-  { name: 'ZeroVanity', sector: 'Peluquería y estética', note: 'Demo interactiva de una web para un salón, con recorrido de reserva simulado.', href: '/proyectos/zerovanity/', mark: 'ZV', tone: 'from-[#f2e4dd] to-[#faf6f2]', image: '/assets/projects/thumbnails/project-zerovanity.webp', demo: true },
+  { name: 'ZeroVanity', sector: 'Peluquería y estética', note: 'Demo interactiva de una web para un salón, con recorrido de reserva simulado.', href: '/proyectos/zerovanity', mark: 'ZV', tone: 'from-[#f2e4dd] to-[#faf6f2]', image: '/assets/projects/thumbnails/project-zerovanity.webp', demo: true },
 ];
 
 export function HomeProjectGallery() {

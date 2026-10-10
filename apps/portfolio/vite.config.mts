@@ -19,10 +19,6 @@ export default defineConfig({
         target: 'http://localhost:5174',
         changeOrigin: true,
       },
-      '/devops-shop': {
-        target: 'http://localhost:5175',
-        changeOrigin: true,
-      },
       '/reformas': {
         target: 'http://localhost:5176',
         changeOrigin: true,
@@ -35,7 +31,6 @@ export default defineConfig({
       '@zerovanity': path.resolve(dirname, '../zerovanity/src'),
       '@crypto': path.resolve(dirname, '../crypto'),
       '@ecommerce': path.resolve(dirname, '../ecommerce'),
-      '@devops-shop': path.resolve(dirname, '../devops-shop'),
       '@analytics': path.resolve(dirname, '../analytics'),
       '@zerodelay': path.resolve(dirname, '../zerodelay/src'),
       '@zero-chaos': path.resolve(dirname, '../zero-chaos'),

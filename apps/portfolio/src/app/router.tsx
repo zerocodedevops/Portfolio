@@ -2,6 +2,7 @@ import { lazy, Suspense } from 'react';
 import { createBrowserRouter, Navigate, RouterProvider } from 'react-router-dom';
 import { PageLoader } from '@/components/ui/PageLoader';
 import { RootErrorPage } from '@/components/RootErrorPage';
+import { Seo } from '@/components/common/SEO';
 
 const Home = lazy(() => import('@/features/home/Home'));
 const Pricing = lazy(() => import('@/features/pricing/Pricing'));
@@ -16,6 +17,11 @@ const CookiesPolicyPage = lazy(() => import('@/features/legal/LegalPages').then(
 function VanityDemoApp() {
   return (
     <>
+      <Seo
+        title="Demo de web para peluquería y estética | ZeroVanity"
+        description="Explora ZeroVanity, una demo interactiva de una web para peluquería y estética. Recorrido de reserva simulado, sin conexión a base de datos ni almacenamiento de información."
+        url="https://zerocode-devops.com/proyectos/zerovanity"
+      />
       <SalonApp />
       <details className="fixed bottom-4 right-4 z-[100] max-w-xs rounded-xl border border-amber-500/40 bg-dark-950/95 text-amber-100 shadow-xl">
         <summary className="cursor-pointer px-4 py-2 text-sm font-semibold">
@@ -112,6 +118,10 @@ const router = createBrowserRouter(
         },
         {
           path: 'blog/:id',
+          element: <Navigate to="/" replace />,
+        },
+        {
+          path: '*',
           element: <Navigate to="/" replace />,
         },
       ],

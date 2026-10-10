@@ -49,6 +49,26 @@
         "type": 301
       },
       {
+        "source": "/devops-shop",
+        "destination": "/",
+        "type": 301
+      },
+      {
+        "source": "/devops-shop/**",
+        "destination": "/",
+        "type": 301
+      },
+      {
+        "source": "/proyectos/devops-shop",
+        "destination": "/",
+        "type": 301
+      },
+      {
+        "source": "/proyectos/devops-shop/**",
+        "destination": "/",
+        "type": 301
+      },
+      {
         "source": "/proyectos/crypto",
         "destination": "/",
         "type": 301
@@ -121,7 +141,7 @@
         "headers": [
           {
             "key": "Content-Security-Policy",
-            "value": "default-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; upgrade-insecure-requests; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: blob: https://images.unsplash.com https://images.pexels.com https://res.cloudinary.com; connect-src 'self' https://api.emailjs.com; frame-src 'self';"
+            "value": "default-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; upgrade-insecure-requests; script-src 'self' https://www.recaptcha.net/recaptcha/ https://www.google.com/recaptcha/ https://www.gstatic.com/recaptcha/; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: blob: https://images.unsplash.com https://images.pexels.com https://res.cloudinary.com https://www.gstatic.com/recaptcha/ https://www.google.com/recaptcha/; connect-src 'self' https://api.emailjs.com https://www.recaptcha.net/recaptcha/ https://www.google.com/recaptcha/ https://www.gstatic.com/recaptcha/; frame-src 'self' https://www.recaptcha.net/recaptcha/ https://www.google.com/recaptcha/ https://recaptcha.google.com/recaptcha/;"
           },
           {
             "key": "X-Content-Type-Options",

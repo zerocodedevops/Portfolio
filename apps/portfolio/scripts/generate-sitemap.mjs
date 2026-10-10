@@ -15,24 +15,20 @@ function generateSitemap() {
   console.log('🚀 Iniciando generación de sitemap.xml...');
 
   const staticRoutes = [
-    { url: '/', priority: '1.0', changefreq: 'weekly' },
-    { url: '/precios-paginas-web', priority: '0.9', changefreq: 'weekly' },
-    { url: '/aviso-legal', priority: '0.2', changefreq: 'yearly' },
-    { url: '/politica-de-privacidad', priority: '0.2', changefreq: 'yearly' },
-    { url: '/politica-de-cookies', priority: '0.2', changefreq: 'yearly' },
-    { url: '/casos-de-exito/reformas-zerochaos', priority: '0.8', changefreq: 'monthly' },
-    { url: '/casos-de-exito/mudanzas-zerodelay', priority: '0.8', changefreq: 'monthly' },
+    { url: '/' },
+    { url: '/precios-paginas-web' },
+    { url: '/aviso-legal' },
+    { url: '/politica-de-privacidad' },
+    { url: '/politica-de-cookies' },
+    { url: '/casos-de-exito/reformas-zerochaos' },
+    { url: '/casos-de-exito/mudanzas-zerodelay' },
+    { url: '/proyectos/zerovanity' },
   ];
-
-  const today = new Date().toISOString().split('T')[0];
 
   const sitemapXml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${staticRoutes.map(route => `  <url>
     <loc>${DOMAIN}${route.url}</loc>
-    <lastmod>${today}</lastmod>
-    <changefreq>${route.changefreq}</changefreq>
-    <priority>${route.priority}</priority>
   </url>`).join('\n')}
 </urlset>`;
 

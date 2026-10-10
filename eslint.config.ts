@@ -8,13 +8,17 @@ const config: Linter.Config[] = [
   {
     ignores: [
       "src/dataconnect-generated/**",
+      "apps/portfolio/src/dataconnect-generated/**",
+      "apps/portfolio/node_modules/**",
+      "apps/portfolio/dist/**",
+      "apps/portfolio/.git/**",
       "node_modules/**",
       "dist/**",
       ".git/**",
     ],
   },
   {
-    files: ["**/*.ts", "**/*.tsx"],
+    files: ["**/*.ts", "**/*.tsx", "**/*.mts"],
     languageOptions: {
       parser: tsparser,
       parserOptions: { ecmaVersion: "latest", sourceType: "module" },
@@ -40,6 +44,7 @@ const config: Linter.Config[] = [
   {
     files: [
       "**/vite.config.ts",
+      "**/vite.config.mts",
       "**/vitest.config.ts",
       "**/playwright.config.ts",
     ],

@@ -39,6 +39,11 @@ const staticPages = [
     title: 'Web para ZeroDelay, demo de mudanzas | ZeroCode',
     description: 'Explora el proyecto ZeroDelay, una demo web para servicios de mudanzas creada por ZeroCode.',
   },
+  {
+    path: '/proyectos/zerovanity',
+    title: 'Demo web para peluquería y estética | ZeroVanity | ZeroCode',
+    description: 'Explora ZeroVanity, una demo interactiva para peluquería y estética. Recorrido de reserva simulado, sin base de datos ni almacenamiento de información.',
+  },
 ];
 
 function escapeHtml(value) {

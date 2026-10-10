@@ -64,23 +64,23 @@ export function CookieConsent() {
     >
       <h2 id="cookie-consent-title" className="text-lg font-bold">Tu privacidad importa</h2>
       <p className="mt-2 text-sm leading-6">
-        Este sitio solo usa almacenamiento local necesario para recordar el idioma y que la medición opcional
-        está desactivada. Google Tag Manager y las etiquetas de seguimiento no están activos.
+        Este sitio usa almacenamiento local para recordar el idioma y tu preferencia. Al empezar a rellenar el formulario,
+        cargamos reCAPTCHA para reducir el spam; Google establece la cookie técnica _GRECAPTCHA. No usamos analítica,
+        publicidad ni Google Tag Manager.
         Consulta la <a className="underline" href="/politica-de-cookies">política de cookies</a>.
       </p>
       {showSettings && (
         <div className="mt-4 border-t border-slate-200 pt-4">
-          <p className="text-sm"><strong>Necesarias:</strong> almacenamiento local para recordar el idioma y esta preferencia. <strong>Opcionales:</strong> medición desactivada; no se cargan etiquetas analíticas ni publicitarias.</p>
+          <p className="text-sm"><strong>Necesarias:</strong> almacenamiento local para idioma y preferencia, y la cookie técnica de reCAPTCHA solo al usar el formulario. <strong>Opcionales:</strong> no hay categorías de analítica ni publicidad.</p>
         </div>
       )}
       <div className="mt-5 flex flex-col gap-2 sm:flex-row sm:justify-end">
-        <button className="border border-slate-500 px-4 py-2 text-sm font-semibold hover:bg-slate-100" onClick={() => choose(false)} type="button">Rechazar opcionales</button>
         {showSettings ? (
           <button className="border border-slate-500 px-4 py-2 text-sm font-semibold hover:bg-slate-100" onClick={() => choose(false)} type="button">Guardar selección</button>
         ) : (
           <button className="border border-slate-500 px-4 py-2 text-sm font-semibold hover:bg-slate-100" onClick={() => setShowSettings(true)} type="button">Configurar</button>
         )}
-        <button className="bg-sky-800 px-4 py-2 text-sm font-semibold text-white hover:bg-sky-900" onClick={() => choose(false)} type="button">Aceptar necesarias</button>
+        {!showSettings && <button className="bg-sky-800 px-4 py-2 text-sm font-semibold text-white hover:bg-sky-900" onClick={() => choose(false)} type="button">Entendido</button>}
       </div>
     </aside>
   );

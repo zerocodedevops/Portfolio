@@ -46,9 +46,6 @@
       "@zero-chaos/*": [
         "../zero-chaos/*"
       ],
-      "@devops-shop/*": [
-        "../devops-shop/*"
-      ],
       "@salon/*": [
         "../zerovanity/src/*"
       ]
@@ -65,9 +62,7 @@
     "../zero-chaos/app/routes.ts",
     "../zero-chaos/react-router.config.ts",
     "../zero-chaos/vite.config.ts",
-    "../devops-shop/vite.config.ts",
     "../zerodelay/vite.config.ts",
-    "../devops-shop/node_modules",
     "../zerodelay/node_modules",
     "../zerodelay/dist"
   ],

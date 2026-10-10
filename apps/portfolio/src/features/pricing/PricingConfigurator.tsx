@@ -17,6 +17,7 @@ import {
   User,
   X,
   Zap,
+  type LucideIcon,
 } from 'lucide-react';
 import { useMemo, useState } from 'react';
 import { useForm } from 'react-hook-form';
@@ -31,7 +32,7 @@ interface PricingItem {
 }
 
 interface PricingCategory {
-  icon: any;
+  icon: LucideIcon;
   items: PricingItem[];
 }
 
@@ -249,7 +250,7 @@ export function PricingConfigurator() {
     formState: { errors },
     reset,
   } = useForm<ContactFormData>({
-    resolver: zodResolver(contactSchema as any),
+    resolver: zodResolver(contactSchema),
   });
 
   const toggleSelection = (id: string) => {
