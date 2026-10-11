@@ -10,11 +10,11 @@ describe('cookie preferences', () => {
     localStorage.clear();
   });
 
-  it('stores only necessary preferences and does not enable analytics', () => {
+  it('allows visitors to reject optional measurement', () => {
     render(<CookieConsent />);
 
     expect(screen.getByRole('dialog')).toBeTruthy();
-    fireEvent.click(screen.getByRole('button', { name: 'Cerrar aviso' }));
+    fireEvent.click(screen.getByRole('button', { name: 'Rechazar' }));
 
     expect(JSON.parse(localStorage.getItem(COOKIE_CONSENT_KEY) ?? 'null')).toMatchObject({
       necessary: true,
@@ -23,11 +23,12 @@ describe('cookie preferences', () => {
     expect(screen.queryByRole('dialog')).toBeNull();
   });
 
-  it('keeps optional analytics disabled in the settings panel', () => {
+  it('allows visitors to save their optional measurement preference', () => {
     render(<CookieConsent />);
-    fireEvent.click(screen.getByRole('button', { name: 'Ver información' }));
-    fireEvent.click(screen.getByRole('button', { name: 'Cerrar aviso' }));
+    fireEvent.click(screen.getByRole('button', { name: 'Configurar' }));
+    fireEvent.click(screen.getByRole('checkbox'));
+    fireEvent.click(screen.getByRole('button', { name: 'Guardar preferencias' }));
 
-    expect(JSON.parse(localStorage.getItem(COOKIE_CONSENT_KEY) ?? 'null').analytics).toBe(false);
+    expect(JSON.parse(localStorage.getItem(COOKIE_CONSENT_KEY) ?? 'null').analytics).toBe(true);
   });
 });

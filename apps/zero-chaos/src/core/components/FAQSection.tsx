@@ -20,11 +20,11 @@ export const FAQSection = ({ items }: FAQSectionProps) => {
             onClick={() => setOpenIndex(openIndex === idx ? null : idx)}
             className="w-full flex justify-between items-center p-5 text-left bg-white hover:bg-gray-50 transition-colors"
           >
-            <span className="font-bold text-[#1C1C1E] pr-6">
+            <span className="font-bold text-[#2B302E] pr-6">
               {item.question}
             </span>
             <span
-              className={`text-[#D4A853] transition-transform duration-300 ${openIndex === idx ? "rotate-180" : ""}`}
+              className={`text-[#A8754F] transition-transform duration-300 ${openIndex === idx ? "rotate-180" : ""}`}
             >
               <svg
                 className="w-6 h-6"

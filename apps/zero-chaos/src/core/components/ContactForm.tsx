@@ -33,8 +33,8 @@ export const ContactForm = () => {
       onSubmit={handleSubmit(onSubmit)}
       className="bg-white p-8 shadow-2xl border border-gray-100 max-w-lg w-full"
     >
-      <h3 className="text-2xl font-bold text-[#1C1C1E] mb-6 uppercase tracking-tight">
-        Solicita presupuesto <span className="text-[#D4A853]">en 24h</span>
+      <h3 className="text-2xl font-bold text-[#2B302E] mb-6 uppercase tracking-tight">
+        Solicita presupuesto <span className="text-[#A8754F]">en 24h</span>
       </h3>
 
       <div className="space-y-4">
@@ -48,7 +48,7 @@ export const ContactForm = () => {
           <input
             {...register("nombre")}
             type="text"
-            className="w-full px-4 py-3 border border-gray-300 focus:border-[#D4A853] focus:ring-1 focus:ring-[#D4A853] outline-none transition-all"
+            className="w-full px-4 py-3 border border-gray-300 focus:border-[#A8754F] focus:ring-1 focus:ring-[#A8754F] outline-none transition-all"
             placeholder="Tu nombre"
           />
           {errors.nombre && (
@@ -66,7 +66,7 @@ export const ContactForm = () => {
           <input
             {...register("telefono")}
             type="tel"
-            className="w-full px-4 py-3 border border-gray-300 focus:border-[#D4A853] focus:ring-1 focus:ring-[#D4A853] outline-none transition-all"
+            className="w-full px-4 py-3 border border-gray-300 focus:border-[#A8754F] focus:ring-1 focus:ring-[#A8754F] outline-none transition-all"
             placeholder="600 000 000"
           />
           {errors.telefono && (
@@ -85,7 +85,7 @@ export const ContactForm = () => {
           </label>
           <select
             {...register("tipoReforma")}
-            className="w-full px-4 py-3 border border-gray-300 focus:border-[#D4A853] focus:ring-1 focus:ring-[#D4A853] outline-none transition-all bg-white"
+            className="w-full px-4 py-3 border border-gray-300 focus:border-[#A8754F] focus:ring-1 focus:ring-[#A8754F] outline-none transition-all bg-white"
           >
             <option value="integral">Reforma Integral</option>
             <option value="cocina">Reforma de Cocina</option>

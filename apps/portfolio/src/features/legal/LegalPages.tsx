@@ -51,6 +51,8 @@ export function PrivacyPolicyPage() {
     <p>Al navegar, Firebase Hosting recibe direcciones IP de las solicitudes para prestar el alojamiento, detectar abusos y generar información de uso.</p>
     <p>Google indica que Hosting conserva datos IP durante unos meses.</p>
     <p>La base del tratamiento por el responsable es el interés legítimo en mantener la seguridad y disponibilidad del sitio; el proveedor gestiona sus registros conforme a sus condiciones.</p>
+    <p>Si aceptas la medición opcional, Google Tag Manager carga la etiqueta de Metricool para analizar el uso de la web. Metricool recibe la URL visitada, la página de procedencia, dimensiones de pantalla y el país aproximado derivado de la dirección IP; la petición de red también transmite la IP al proveedor. La base jurídica es el consentimiento, que puedes retirar desde las preferencias de cookies.</p>
+    <p>Metricool indica que su código de medición no utiliza cookies. Según la información publicada por el proveedor, los datos se alojan en la Unión Europea; el tratamiento se rige por su <a className="underline" href="https://help.metricool.com/data-processing-agreement-dpa-8vc0d" rel="noreferrer" target="_blank">acuerdo de tratamiento de datos</a> y su <a className="underline" href="https://metricool.com/privacy-policy/" rel="noreferrer" target="_blank">política de privacidad</a>. La documentación consultada no establece un plazo concreto de conservación de los datos de visitas.</p>
     <p>Si contactas por WhatsApp o correo, se tratarán los datos que incluyas en el mensaje a través del proveedor de ese canal.</p>
     <p>El responsable confirma que elimina el historial de consultas de WhatsApp Business a los 90 días desde la última interacción, salvo que la conversación siga abierta o deba conservarse por una obligación legal o para gestionar un contrato.</p>
     <p>También informa de que tiene una copia automática en su cuenta de Google, cifrada de extremo a extremo.</p>
@@ -89,27 +91,25 @@ export function PrivacyPolicyPage() {
 
 export function CookiesPolicyPage() {
   return <LegalShell title="Política de cookies" description="Información sobre cookies y almacenamiento local utilizado en ZeroCode DevOps.">
-    <p>Este sitio no utiliza cookies de analítica, publicidad ni seguimiento.</p>
-    <p>Google Tag Manager (GTM) y las etiquetas asociadas están desactivados.</p>
+    <p>Google Tag Manager y la etiqueta de medición de Metricool solo se cargan si aceptas expresamente la categoría opcional de medición. Si rechazas o retiras el consentimiento, no se cargan en las siguientes páginas.</p>
+    <p>Metricool indica que su código de medición no instala cookies. Recibe las páginas visitadas, la página de procedencia, dimensiones de pantalla y el país aproximado derivado de la IP. Puedes cambiar tu elección en cualquier momento desde este aviso.</p>
     <p>reCAPTCHA (Google Cloud Fraud Defense) se carga solo después de que intentas enviar un formulario válido y puede establecer la cookie técnica <code>_GRECAPTCHA</code> para analizar riesgos y prevenir envíos automatizados, fraude y abusos.</p>
     <p>Google indica que actúa como encargado para esta función y que trata los datos conforme a sus <a className="underline" href="https://cloud.google.com/terms/service-terms" rel="noreferrer" target="_blank">condiciones específicas</a> y a su <a className="underline" href="https://cloud.google.com/terms/data-processing-addendum" rel="noreferrer" target="_blank">acuerdo de tratamiento de datos</a>.</p>
-    <p>Si en el futuro se activan etiquetas de medición o publicidad, se actualizará esta política y se solicitará consentimiento antes de cargarlas.</p>
     <h2 className="text-xl font-semibold">Almacenamiento necesario</h2>
     <ul className="list-disc space-y-2 pl-6">
-      <li><code>zerocode-cookie-consent-v1</code> (almacenamiento local): recuerda el cierre del aviso informativo; no registra una elección de consentimiento.</li>
+      <li><code>zerocode-cookie-consent-v1</code> (almacenamiento local): guarda la elección sobre la medición opcional y la fecha en que se tomó; no es una cookie.</li>
       <li><code>i18nextLng</code> (almacenamiento local): recuerda el idioma escogido hasta que borres los datos del sitio.</li>
       <li><div className="space-y-2"><p><code>_GRECAPTCHA</code> (cookie de Google reCAPTCHA): puede establecerse al intentar enviar un formulario válido y sirve para el análisis de riesgos y la prevención de envíos automatizados.</p><p>La documentación pública consultada no especifica un plazo fijo.</p></div></li>
     </ul>
-    <p>Las dos claves de almacenamiento local son propias y no son cookies de seguimiento.</p>
+    <p>Las dos claves de almacenamiento local son propias y no son cookies de seguimiento. La preferencia de medición se mantiene hasta que la cambies o borres los datos locales del sitio.</p>
     <p>Firebase Hosting también recibe direcciones IP para entregar el sitio, detectar abusos y generar información de uso; Google informa que conserva esas IP durante unos meses.</p>
     <h2 className="text-xl font-semibold">Enlaces externos</h2>
     <p>El sitio puede enlazar a WhatsApp y otros servicios externos.</p>
     <p>No se cargan sus contenidos incrustados dentro de esta página.</p>
     <p>Al abrir un enlace, el proveedor externo podrá tratar datos conforme a su propia política.</p>
-    <h2 className="text-xl font-semibold">Aviso informativo</h2>
-    <p>Este aviso no ofrece categorías opcionales ni registra una elección de consentimiento.</p>
-    <p>Puedes volver a consultar la información:</p>
-    <button className="border border-slate-500 px-4 py-2 font-semibold hover:bg-slate-100" onClick={openCookieSettings} type="button">Abrir aviso informativo</button>
+    <h2 className="text-xl font-semibold">Preferencias de medición</h2>
+    <p>Puedes consultar o cambiar tu elección:</p>
+    <button className="border border-slate-500 px-4 py-2 font-semibold hover:bg-slate-100" onClick={openCookieSettings} type="button">Abrir preferencias de privacidad</button>
     <p>También puedes borrar el almacenamiento del sitio desde la configuración del navegador.</p>
     <p>Los enlaces externos, como WhatsApp, pueden usar sus propias cookies al abrirse y están sujetos a las políticas del proveedor.</p>
   </LegalShell>;

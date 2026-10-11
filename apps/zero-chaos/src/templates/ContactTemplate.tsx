@@ -1,82 +1,39 @@
-import { RootLayout } from "../core/layout/RootLayout";
-import { ContactForm } from "../core/components/ContactForm";
+import { Link } from "react-router-dom";
 import { config } from "../clients/madrid-zerochaos/config";
+import { RootLayout } from "../core/layout/RootLayout";
+import { Reveal } from "../core/components/Reveal";
+import { useZeroChaosPath } from "../core/hooks/useZeroChaosPath";
+
+const mailto = `mailto:${config.contact.email}?subject=${encodeURIComponent("Hablemos de mi proyecto")}`;
 
 export const ContactTemplate = () => {
-  return (
-    <RootLayout>
-      <section className="pt-40 pb-24 bg-[#F5F5F0]">
-        <div className="container mx-auto px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-            <div>
-              <h1 className="text-5xl md:text-7xl font-black text-[#1C1C1E] uppercase tracking-tighter mb-8 max-w-xl">
-                Hablemos de tu <span className="text-[#D4A853]">proyecto.</span>
-              </h1>
-              <p className="text-lg text-gray-500 mb-12 leading-relaxed max-w-lg">
-                Estamos listos para eliminar el caos de tu futura reforma.
-                Rellena el formulario o llámanos directamente para agendar una
-                visita técnica gratuita.
-              </p>
-
-              <div className="space-y-8">
-                <div className="flex items-center space-x-6">
-                  <div className="w-12 h-12 bg-[#1C1C1E] text-[#D4A853] flex items-center justify-center rounded-sm font-bold">
-                    T
-                  </div>
-                  <div>
-                    <p className="text-xs text-gray-400 uppercase tracking-widest font-bold mb-1">
-                      Teléfono
-                    </p>
-                    <a
-                      href={`tel:${config.contact.phone.replaceAll(" ", "")}`}
-                      className="text-xl font-bold text-[#1C1C1E] hover:text-[#D4A853] transition-colors"
-                    >
-                      {config.contact.phone}
-                    </a>
-                  </div>
-                </div>
-
-                <div className="flex items-center space-x-6">
-                  <div className="w-12 h-12 bg-[#1C1C1E] text-[#D4A853] flex items-center justify-center rounded-sm font-bold">
-                    E
-                  </div>
-                  <div>
-                    <p className="text-xs text-gray-400 uppercase tracking-widest font-bold mb-1">
-                      Email
-                    </p>
-                    <a
-                      href={`mailto:${config.contact.email}`}
-                      className="text-xl font-bold text-[#1C1C1E] hover:text-[#D4A853] transition-colors"
-                    >
-                      {config.contact.email}
-                    </a>
-                  </div>
-                </div>
-
-                <div className="flex items-center space-x-6">
-                  <div className="w-12 h-12 bg-[#1C1C1E] text-[#D4A853] flex items-center justify-center rounded-sm font-bold">
-                    D
-                  </div>
-                  <div>
-                    <p className="text-xs text-gray-400 uppercase tracking-widest font-bold mb-1">
-                      Oficina en Madrid
-                    </p>
-                    <p className="text-lg font-bold text-[#1C1C1E]">
-                      {config.contact.address}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="flex justify-center lg:justify-end">
-              <ContactForm />
-            </div>
-          </div>
+  const zcPath = useZeroChaosPath();
+  return <RootLayout>
+    <section className="zc-contact-page">
+      <div className="zc-contact-page__left">
+        <div className="zc-contact-page__copy">
+          <p className="zc-eyebrow zc-eyebrow--light">Una primera conversación</p>
+          <h1>Tu idea merece<br /><em>un buen comienzo.</em></h1>
+          <p>Cuéntanos qué espacio quieres transformar, qué te gustaría mejorar y en qué momento estás pensando empezar.</p>
+          <a className="zc-button zc-button--light" href={mailto}>Escribir un correo <span aria-hidden="true">↗</span></a>
         </div>
-      </section>
-
-      {/* Google Maps placeholder could go here */}
-    </RootLayout>
-  );
+        <span className="zc-contact-page__coordinates" aria-hidden="true">ZEROCHAOS · MADRID</span>
+      </div>
+      <div className="zc-contact-page__right">
+        <Reveal className="zc-contact-card">
+          <p className="zc-eyebrow">Para orientarnos</p>
+          <h2>Cuatro datos<br /><span>para empezar.</span></h2>
+          <ol>
+            <li><span>01</span>Qué estancia o vivienda quieres reformar.</li>
+            <li><span>02</span>Qué te gustaría cambiar o conservar.</li>
+            <li><span>03</span>Dónde se encuentra el espacio.</li>
+            <li><span>04</span>En qué plazo te gustaría abordarlo.</li>
+          </ol>
+          <a className="zc-contact-card__email" href={mailto}><span>{config.contact.email}</span><span aria-hidden="true">↗</span></a>
+          <small>El enlace abrirá tu aplicación de correo. El mensaje solo se enviará cuando lo confirmes desde allí.</small>
+        </Reveal>
+        <Link className="zc-contact-back" to={zcPath("/")}>← Volver a ZeroChaos</Link>
+      </div>
+    </section>
+  </RootLayout>;
 };

@@ -6,7 +6,7 @@ export const barrios: BarrioConfig[] = [
     name: "Barrio de Salamanca",
     slug: "salamanca",
     description:
-      "Especialistas en reformas de lujo en el Barrio de Salamanca. Proyectos integrales que combinan la arquitectura clásica con el confort moderno.",
+      "Ideas para actualizar una vivienda en el Barrio de Salamanca, combinando arquitectura, luz y comodidad contemporánea.",
     keywords: [
       "reformas barrio salamanca",
       "reformas integrales salamanca madrid",
@@ -17,7 +17,7 @@ export const barrios: BarrioConfig[] = [
         question:
           "¿Cuánto tiempo dura una reforma integral en el Barrio de Salamanca?",
         answer:
-          "Dependiendo de los metros cuadrados, suele oscilar entre 3 y 5 meses.",
+          "La duración depende del alcance, el estado de la vivienda, los materiales y la planificación acordada.",
       },
     ],
   },
@@ -26,7 +26,7 @@ export const barrios: BarrioConfig[] = [
     name: "Chamberí",
     slug: "chamberi",
     description:
-      "Transformamos pisos antiguos en Chamberí en espacios funcionales y elegantes. Reformas con alma técnica y acabados impecables.",
+      "Propuestas para viviendas de Chamberí que buscan ganar funcionalidad y conservar los detalles que les dan carácter.",
     keywords: [
       "reformas chamberi",
       "reformas integrales chamberi madrid",
@@ -36,7 +36,7 @@ export const barrios: BarrioConfig[] = [
       {
         question: "¿Es difícil conseguir permisos de obra en Chamberí?",
         answer:
-          "Nosotros nos encargamos de toda la gestión técnica con el Ayuntamiento de Madrid.",
+          "Los trámites dependen del tipo de intervención y de la normativa aplicable. El alcance se revisa antes de definir los siguientes pasos.",
       },
     ],
   },
@@ -45,7 +45,7 @@ export const barrios: BarrioConfig[] = [
     name: "Chamartín",
     slug: "chamartin",
     description:
-      "Servicios de reforma en Chamartín. Calidad premium para viviendas familiares y oficinas que buscan la máxima eficiencia.",
+      "Una mirada a medida para viviendas de Chamartín, con atención a la distribución, el almacenamiento y la vida cotidiana.",
     keywords: [
       "reformas chamartin",
       "reformas integrales chamartin",
@@ -58,7 +58,7 @@ export const barrios: BarrioConfig[] = [
     name: "Retiro",
     slug: "retiro",
     description:
-      "Reformas frente al Retiro. Proyectos exclusivos que cuidan la luminosidad y el espacio en una de las mejores zonas de Madrid.",
+      "Ideas de reforma en Retiro que ponen la luz, los recorridos y el aprovechamiento del espacio en el centro.",
     keywords: [
       "reformas retiro madrid",
       "reforma integral retiro",
@@ -71,7 +71,7 @@ export const barrios: BarrioConfig[] = [
     name: "Pozuelo de Alarcón",
     slug: "pozuelo",
     description:
-      "Reformas de chalets y pisos en Pozuelo. Soluciones a medida con contrato cerrado y garantía absoluta de cumplimiento.",
+      "Propuestas para pisos y viviendas unifamiliares en Pozuelo de Alarcón, definidas según el espacio y las prioridades.",
     keywords: [
       "reformas pozuelo",
       "reformas de cocinas pozuelo",
@@ -84,7 +84,7 @@ export const barrios: BarrioConfig[] = [
     name: "Majadahonda",
     slug: "majadahonda",
     description:
-      "Reformas integrales en Majadahonda. Lideramos el sector con procesos optimizados y presupuesto sin sorpresas.",
+      "Diseño de reformas integrales en Majadahonda, con materiales y soluciones elegidos para cada vivienda.",
     keywords: [
       "reformas majadahonda",
       "reformas integrales majadahonda",

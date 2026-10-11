@@ -11,9 +11,9 @@ export const PricingTable = ({ prices }: PricingTableProps) => {
       {prices.map((section) => (
         <div
           key={section.title}
-          className="bg-white border-t-4 border-[#D4A853] p-8 shadow-sm hover:shadow-md transition-shadow"
+          className="bg-white border-t-4 border-[#A8754F] p-8 shadow-sm hover:shadow-md transition-shadow"
         >
-          <h4 className="text-xl font-bold text-[#1C1C1E] mb-6 uppercase tracking-wider">
+          <h4 className="text-xl font-bold text-[#2B302E] mb-6 uppercase tracking-wider">
             {section.title}
           </h4>
           <ul className="space-y-4">
@@ -32,7 +32,7 @@ export const PricingTable = ({ prices }: PricingTableProps) => {
                     </span>
                   )}
                 </div>
-                <span className="text-[#D4A853] font-bold whitespace-nowrap">
+                <span className="text-[#A8754F] font-bold whitespace-nowrap">
                   {item.price}
                 </span>
               </li>

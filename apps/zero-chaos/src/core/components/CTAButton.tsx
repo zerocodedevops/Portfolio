@@ -30,10 +30,10 @@ export const CTAButton = ({
 
   const variants = {
     primary:
-      "bg-[#D4A853] text-white hover:bg-[#B88E3E] shadow-lg hover:shadow-xl",
-    secondary: "bg-[#1C1C1E] text-white hover:bg-black",
+      "bg-[#A8754F] text-white hover:bg-[#B88E3E] shadow-lg hover:shadow-xl",
+    secondary: "bg-[#2B302E] text-white hover:bg-black",
     outline:
-      "border-2 border-[#D4A853] text-[#D4A853] hover:bg-[#D4A853] hover:text-white",
+      "border-2 border-[#A8754F] text-[#A8754F] hover:bg-[#A8754F] hover:text-white",
   };
 
   const finalClassName = `${baseStyles} ${variants[variant]} ${className}`;

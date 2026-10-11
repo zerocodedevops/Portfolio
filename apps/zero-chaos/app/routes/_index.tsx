@@ -5,22 +5,22 @@ import { config } from "../../src/clients/madrid-zerochaos/config";
 export const meta: MetaFunction = () => {
   return [
     {
-      title: `Reformas Integrales en Madrid | Cero Caos, Presupuesto Cerrado | ${config.name}`,
+      title: `Reformas integrales en Madrid con diseño cuidado | ${config.name}`,
     },
     {
       name: "description",
       content:
-        "Empresa de reformas en Madrid especialista en proyectos integrales, cocinas y ba├▒os. Sin sobrecostes, plazos garantizados y m├íxima calidad. ┬íPide tu presupuesto!",
+        "Reformas integrales, cocinas y baños en Madrid. Diseñamos cada proyecto con atención al espacio, los materiales y cada etapa de la obra.",
     },
     {
       property: "og:title",
-      content: `Reformas Integrales en Madrid | ${config.name}`,
+      content: `Reformas con diseño y atención al detalle | ${config.name}`,
     },
     {
       property: "og:description",
-      content: "Reformas de alta calidad con presupuesto cerrado en Madrid.",
+      content: "Diseño y reformas de viviendas en Madrid.",
     },
-    { name: "theme-color", content: "#1C1C1E" },
+    { name: "theme-color", content: "#252824" },
   ];
 };
 

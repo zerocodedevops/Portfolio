@@ -1,94 +1,78 @@
+import { Link } from "react-router-dom";
 import { RootLayout } from "../core/layout/RootLayout";
-import { CTAButton } from "../core/components/CTAButton";
-import { config } from "../clients/madrid-zerochaos/config";
+import { Reveal } from "../core/components/Reveal";
+import materialImage from "../assets/inspiration/materia.webp";
+import { useZeroChaosPath } from "../core/hooks/useZeroChaosPath";
+
+const principles = [
+  {
+    number: "01",
+    title: "Escuchar antes de proyectar",
+    text: "Cada vivienda y cada forma de vivirla son distintas. El diseño empieza entendiendo qué necesitas conservar, cambiar y sentir.",
+  },
+  {
+    number: "02",
+    title: "Elegir con criterio",
+    text: "Distribución, luz, textura y materiales se piensan como un conjunto: atractivo, funcional y coherente con el uso diario.",
+  },
+  {
+    number: "03",
+    title: "Dar claridad al proceso",
+    text: "Las decisiones, el alcance y los siguientes pasos se hablan de forma directa antes de avanzar con cada fase.",
+  },
+];
 
 export const AboutTemplate = () => {
-  return (
-    <RootLayout>
-      <section className="pt-40 pb-20 bg-[#1C1C1E]">
-        <div className="container mx-auto px-6 text-center">
-          <h1 className="text-5xl md:text-7xl font-black text-white uppercase tracking-tighter mb-8">
-            Nuestra <span className="text-[#D4A853]">Historia</span>
-          </h1>
-          <p className="text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed">
-            Nacimos con un objetivo claro: reformar viviendas sin los problemas
-            de siempre. En Zero Chaos, el orden no es negociable.
-          </p>
-        </div>
-      </section>
+  const zcPath = useZeroChaosPath();
+  return <RootLayout>
+    <section className="zc-subhero zc-subhero--dark">
+      <div className="zc-shell">
+        <p className="zc-eyebrow zc-eyebrow--light">La mirada ZeroChaos</p>
+        <h1 className="zc-heading zc-heading--light">Menos ruido.<br /><em>Más intención.</em></h1>
+        <p className="zc-subhero__lead">Una reforma transforma un espacio. Un buen proyecto también mejora la forma de vivirlo.</p>
+        <a className="zc-text-link zc-text-link--light" href={zcPath("#filosofia")}>Descubre nuestra filosofía <span aria-hidden="true">↓</span></a>
+      </div>
+      <span className="zc-subhero__index" aria-hidden="true">01 — 04</span>
+    </section>
 
-      <section className="py-24 bg-white">
-        <div className="container mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          <div className="text-gray-600 space-y-6 leading-relaxed">
-            <h2 className="text-4xl font-black text-[#1C1C1E] uppercase tracking-tighter mb-6">
-              ¿Por qué <span className="text-[#D4A853]">Zero Chaos</span>?
-            </h2>
-            <p>
-              Fundamos esta empresa tras ver cientos de propietarios frustrados
-              por los mismos errores sistemáticos en el sector de las reformas:
-              presupuestos que crecen sin control, operarios que no aparecen y
-              acabados que no cumplen con lo prometido.
-            </p>
-            <p>
-              Decidimos aplicar principios de ingeniería y gestión de proyectos
-              industrial a la reforma de viviendas. El resultado es un sistema
-              predecible donde el cliente sabe en todo momento lo que está
-              pagando y cuándo terminará su obra.
-            </p>
-            <p>
-              En **{config.name}**, no solo renovamos espacios; renovamos la
-              confianza en el sector de la construcción.
-            </p>
-            <div className="pt-6">
-              <CTAButton
-                text="Conoce nuestro proceso"
-                href="/"
-                variant="outline"
-              />
-            </div>
-          </div>
-          <div className="bg-[#F5F5F0] p-12 order-first lg:order-last">
-            <div className="grid grid-cols-2 gap-8">
-              <div>
-                <span className="block text-4xl font-black text-[#1C1C1E] uppercase mb-2">
-                  +250
-                </span>
-                <p className="text-xs text-gray-400 uppercase tracking-widest font-bold">
-                  Viviendas <br />
-                  transformadas
-                </p>
-              </div>
-              <div>
-                <span className="block text-4xl font-black text-[#1C1C1E] uppercase mb-2">
-                  10Añ
-                </span>
-                <p className="text-xs text-gray-400 uppercase tracking-widest font-bold">
-                  Garantía <br />
-                  total
-                </p>
-              </div>
-              <div>
-                <span className="block text-4xl font-black text-[#1C1C1E] uppercase mb-2">
-                  100%
-                </span>
-                <p className="text-xs text-gray-400 uppercase tracking-widest font-bold">
-                  Presupuesto <br />
-                  blindado
-                </p>
-              </div>
-              <div>
-                <span className="block text-4xl font-black text-[#1C1C1E] uppercase mb-2">
-                  24h
-                </span>
-                <p className="text-xs text-gray-400 uppercase tracking-widest font-bold">
-                  Respuesta <br />
-                  asegurada
-                </p>
-              </div>
-            </div>
-          </div>
+    <section className="zc-section zc-about" id="filosofia">
+      <div className="zc-shell zc-about__intro">
+        <Reveal>
+          <p className="zc-eyebrow">Una forma de hacer</p>
+          <h2 className="zc-heading">La calma también<br /><span>se puede diseñar.</span></h2>
+        </Reveal>
+        <Reveal className="zc-about__copy" delay={100}>
+          <p className="zc-lead">ZeroChaos nace de una idea sencilla: una reforma debe sentirse tan bien pensada como el espacio que deja atrás.</p>
+          <p>Por eso reunimos diseño, materiales y planificación en una misma conversación. Buscamos equilibrio entre carácter y comodidad, con decisiones claras en cada etapa.</p>
+          <p>Esta propuesta se centra en viviendas de Madrid y se adapta a las necesidades y al alcance de cada proyecto.</p>
+        </Reveal>
+      </div>
+    </section>
+
+    <section className="zc-section zc-about__principles">
+      <div className="zc-shell">
+        <div className="zc-section-head">
+          <div><p className="zc-eyebrow">Lo que guía cada decisión</p><h2 className="zc-heading">Tres principios.<br /><span>Un espacio propio.</span></h2></div>
         </div>
-      </section>
-    </RootLayout>
-  );
+        <div className="zc-about__grid">
+          {principles.map((principle, index) => (
+            <Reveal key={principle.number} delay={index * 110} className="zc-about__card">
+              <span>{principle.number}</span>
+              <h3>{principle.title}</h3>
+              <p>{principle.text}</p>
+            </Reveal>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section className="zc-about__image" aria-label="Inspiración de interiores">
+      <img src={materialImage} alt="Interior de inspiración con madera, piedra y luz natural" loading="lazy" />
+      <div><p className="zc-eyebrow zc-eyebrow--light">Materiales honestos · Espacios vividos</p><p>La belleza aparece<br />cuando todo encuentra<br /><em>su lugar.</em></p></div>
+    </section>
+
+    <section className="zc-about__end">
+      <div className="zc-shell"><p className="zc-eyebrow">El siguiente paso</p><h2>Empecemos por<br /><em>escuchar tu idea.</em></h2><Link className="zc-button zc-button--dark" to={zcPath("/contacto")}>Hablemos de tu proyecto <span aria-hidden="true">↗</span></Link></div>
+    </section>
+  </RootLayout>;
 };

@@ -1,5 +1,6 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { readCookieConsent, saveCookieConsent, type CookieConsent as Consent } from '@/lib/cookieConsent';
+import { loadGoogleTagManager } from '@/lib/gtm';
 
 const MANAGE_EVENT = 'zerocode:manage-cookies';
 
@@ -20,23 +21,27 @@ function clearKnownAnalyticsCookies() {
 export function CookieConsent() {
   const [consent, setConsent] = useState<Consent | null>(() => readCookieConsent());
   const [showSettings, setShowSettings] = useState(false);
+  const [allowAnalytics, setAllowAnalytics] = useState(() => readCookieConsent()?.analytics ?? false);
+  const previousAnalytics = useRef(readCookieConsent()?.analytics ?? false);
 
   useEffect(() => {
     const previousConsent = readCookieConsent();
-    clearKnownAnalyticsCookies();
-    if (previousConsent?.analytics === true) {
-      saveCookieConsent(false);
-      window.location.reload();
-      return;
-    }
+    if (previousConsent?.analytics === true) loadGoogleTagManager();
+
     const syncConsent = (event: Event) => {
       const next = (event as CustomEvent<Consent>).detail;
       setConsent(next);
-      if (next.analytics) saveCookieConsent(false);
+      setAllowAnalytics(next.analytics);
+      if (next.analytics) {
+        loadGoogleTagManager();
+      } else if (previousAnalytics.current) {
+        clearKnownAnalyticsCookies();
+      }
+      const wasEnabled = previousAnalytics.current;
+      previousAnalytics.current = next.analytics;
+      if (wasEnabled && !next.analytics) window.location.reload();
     };
-    const openSettings = () => {
-      setShowSettings(true);
-    };
+    const openSettings = () => setShowSettings(true);
     window.addEventListener('zerocode:cookie-consent', syncConsent);
     window.addEventListener(MANAGE_EVENT, openSettings);
     return () => {
@@ -45,46 +50,59 @@ export function CookieConsent() {
     };
   }, []);
 
-  const choose = (allowAnalytics: boolean) => {
-    const wasAllowed = readCookieConsent()?.analytics === true;
-    const next = saveCookieConsent(false);
+  const choose = (analytics: boolean) => {
+    const next = saveCookieConsent(analytics);
     setConsent(next);
+    setAllowAnalytics(analytics);
     setShowSettings(false);
-    if (allowAnalytics || wasAllowed) window.location.reload();
   };
 
   if (consent && !showSettings) return null;
 
   return (
     <aside
-      aria-label="Información sobre cookies y almacenamiento local"
+      aria-label="Preferencias de privacidad"
       aria-labelledby="cookie-consent-title"
       className="fixed inset-x-3 bottom-3 z-[200] mx-auto max-w-4xl border border-slate-300 bg-white p-5 text-slate-900 shadow-2xl sm:inset-x-6 sm:bottom-6 sm:p-6"
       role="dialog"
+      aria-modal="true"
     >
-      <h2 id="cookie-consent-title" className="text-lg font-bold">Información sobre cookies</h2>
+      <h2 id="cookie-consent-title" className="text-lg font-bold">
+        Privacidad y medición de visitas
+      </h2>
       <div className="mt-2 space-y-2 text-sm leading-6">
-        <p>Este sitio usa almacenamiento local para recordar el idioma y el cierre de este aviso.</p>
-        <p>No usamos analítica, publicidad ni Google Tag Manager.</p>
-        <p>reCAPTCHA se carga únicamente cuando intentas enviar el formulario y puede establecer la cookie técnica _GRECAPTCHA.</p>
-        <p>Consulta la <a className="underline" href="/politica-de-cookies">política de cookies</a>.</p>
+        <p>Usamos almacenamiento local para recordar el idioma y tus preferencias. No es una cookie.</p>
+        <p>Si aceptas la medición, Google Tag Manager cargará Metricool. Metricool recibe las páginas visitadas, la página de procedencia, el tamaño de pantalla y el país aproximado derivado de la dirección IP. Según su documentación, el código de seguimiento no instala cookies.</p>
+        <p>La medición es opcional y no afecta al formulario ni al funcionamiento esencial de la web. Puedes cambiar tu elección desde la política de cookies.</p>
+        <p>Consulta la <a className="underline" href="/politica-de-cookies">política de cookies</a> y la <a className="underline" href="/privacidad">política de privacidad</a>.</p>
       </div>
       {showSettings && (
         <div className="mt-4 border-t border-slate-200 pt-4">
-          <div className="space-y-2 text-sm">
-            <p><strong>Almacenamiento local:</strong> recuerda el idioma y que cerraste este aviso.</p>
-            <p>No hay categorías opcionales de analítica o publicidad ni se solicita consentimiento opcional.</p>
-            <p>La conexión con reCAPTCHA solo se inicia cuando intentas enviar el formulario.</p>
-          </div>
+          <label className="flex items-start gap-3 text-sm leading-6">
+            <input
+              checked={allowAnalytics}
+              className="mt-1"
+              onChange={(event) => setAllowAnalytics(event.target.checked)}
+              type="checkbox"
+            />
+            <span><strong>Medición opcional:</strong> permitir la carga de Metricool mediante Google Tag Manager.</span>
+          </label>
+          <p className="mt-2 text-xs leading-5 text-slate-600">Las tecnologías necesarias para mostrar la web no se pueden desactivar desde este panel.</p>
         </div>
       )}
       <div className="mt-5 flex flex-col gap-2 sm:flex-row sm:justify-end">
         {showSettings ? (
-          <button className="border border-slate-500 px-4 py-2 text-sm font-semibold hover:bg-slate-100" onClick={() => choose(false)} type="button">Cerrar aviso</button>
+          <>
+            <button className="border border-slate-500 px-4 py-2 text-sm font-semibold hover:bg-slate-100" onClick={() => choose(false)} type="button">Rechazar opcionales</button>
+            <button className="bg-sky-800 px-4 py-2 text-sm font-semibold text-white hover:bg-sky-900" onClick={() => choose(allowAnalytics)} type="button">Guardar preferencias</button>
+          </>
         ) : (
-          <button className="border border-slate-500 px-4 py-2 text-sm font-semibold hover:bg-slate-100" onClick={() => setShowSettings(true)} type="button">Ver información</button>
+          <>
+            <button className="border border-slate-500 px-4 py-2 text-sm font-semibold hover:bg-slate-100" onClick={() => choose(false)} type="button">Rechazar</button>
+            <button className="border border-slate-500 px-4 py-2 text-sm font-semibold hover:bg-slate-100" onClick={() => setShowSettings(true)} type="button">Configurar</button>
+            <button className="bg-sky-800 px-4 py-2 text-sm font-semibold text-white hover:bg-sky-900" onClick={() => choose(true)} type="button">Aceptar medición</button>
+          </>
         )}
-        {!showSettings && <button className="bg-sky-800 px-4 py-2 text-sm font-semibold text-white hover:bg-sky-900" onClick={() => choose(false)} type="button">Cerrar aviso</button>}
       </div>
     </aside>
   );

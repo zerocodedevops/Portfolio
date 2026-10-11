@@ -5,11 +5,11 @@ import { config } from "../../src/clients/madrid-zerochaos/config";
 export const meta: MetaFunction = () => {
   return [
     {
-      title: `Sobre Nosotros | ${config.name} | Expertos en Reformas en Madrid`,
+      title: `Nuestra filosofía | ${config.name}`,
     },
     {
       name: "description",
-      content: `Conoce a ${config.name}. Nuestra misi├│n es eliminar el caos de las reformas en Madrid a trav├®s de la t├®cnica, la planificaci├│n y la transparencia.`,
+      content: `Conoce la mirada de ${config.name}: diseño, materiales y una planificación clara para reformas en Madrid.`,
     },
   ];
 };

@@ -1,168 +1,272 @@
 import { Link } from "react-router-dom";
 import { RootLayout } from "../core/layout/RootLayout";
-import { SchemaLocalBusiness } from "../core/seo/SchemaLocalBusiness";
-import { CTAButton } from "../core/components/CTAButton";
-import { ProcessSteps } from "../core/components/ProcessSteps";
-import { ContactForm } from "../core/components/ContactForm";
-import { config } from "../clients/madrid-zerochaos/config";
 import { servicios } from "../clients/madrid-zerochaos/servicios";
+import { Reveal } from "../core/components/Reveal";
+import { ParallaxImage } from "../core/components/ParallaxImage";
+import { useZeroChaosPath } from "../core/hooks/useZeroChaosPath";
+import atelierImage from "../assets/inspiration/atelier.webp";
+import kitchenImage from "../assets/inspiration/cocina.webp";
+import materialImage from "../assets/inspiration/materia.webp";
+
+const conceptImages = [
+  {
+    src: kitchenImage,
+    alt: "Cocina contemporánea con acabados de madera y piedra",
+    title: "La cocina, en equilibrio",
+    category: "Cocinas · Materiales naturales",
+    number: "01",
+  },
+  {
+    src: materialImage,
+    alt: "Interior cálido con superficies minerales y carpintería de roble",
+    title: "Texturas que perduran",
+    category: "Interiores · Piedra y roble",
+    number: "02",
+  },
+];
+
+const faqs = [
+  {
+    question: "¿Cómo empieza una reforma?",
+    answer:
+      "Empezamos con una conversación y una visita para entender el espacio, las prioridades y el alcance. Después preparamos una propuesta detallada para que puedas decidir con toda la información.",
+  },
+  {
+    question: "¿Puedo elegir los materiales y acabados?",
+    answer:
+      "Sí. Te acompañamos en la selección de materiales, acabados e iluminación para que cada decisión encaje con el diseño, el uso diario y el presupuesto acordado.",
+  },
+  {
+    question: "¿Trabajáis solo en Madrid?",
+    answer:
+      "ZeroChaos está centrado en Madrid. La disponibilidad y el alcance se confirman en la primera conversación según la ubicación y el tipo de proyecto.",
+  },
+];
 
 export const HomeTemplate = () => {
-  return (
-    <RootLayout>
-      <SchemaLocalBusiness
-        name={config.name}
-        description={config.seo.mainDescription}
-        address={config.contact.address}
-        phone={config.contact.phone}
-        email={config.contact.email}
-        url={`https://${config.domain}`}
-        logo={`https://${config.domain}/logo.png`}
-        image={`https://${config.domain}/hero-bg.jpg`}
-        city={config.contact.city}
-      />
-
-      {/* Hero Section */}
-      <section className="relative h-screen min-h-[700px] flex items-center bg-[#1C1C1E] overflow-hidden">
-        {/* Abstract background elements */}
-        <div className="absolute top-0 right-0 w-1/2 h-full bg-[#D4A853]/5 -skew-x-12 translate-x-1/4" />
-
-        <div className="container mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 relative z-10 pt-20">
-          <div className="flex flex-col justify-center animate-fade-in-up">
-            <h1 className="text-5xl md:text-7xl font-black text-white leading-tight uppercase tracking-tighter mb-6">
-              Reformas integrales <br />
-              <span className="text-[#D4A853]">sin el caos</span> de siempre.
-            </h1>
-            <p className="text-xl text-gray-400 mb-10 max-w-xl leading-relaxed">
-              Especialistas en Madrid. Presupuesto cerrado por contrato y
-              gestión técnica impecable. Convertimos tu obra en una inversión,
-              no en un problema.
-            </p>
-            <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-6">
-              <CTAButton
-                text="Pide Presupuesto real"
-                href="/proyectos/zero-chaos/contacto"
-                variant="primary"
-              />
-              <CTAButton
-                text="Ver Proyectos"
-                href="/proyectos/zero-chaos/proyectos"
-                variant="outline"
-              />
-            </div>
-
-            <div className="mt-16 flex items-center space-x-8">
-              <div>
-                <span className="block text-3xl font-bold text-white uppercase">
-                  +250
-                </span>
-                <span className="text-[10px] text-gray-500 uppercase tracking-widest">
-                  Proyectos realizados
-                </span>
-              </div>
-              <div className="w-px h-10 bg-white/10" />
-              <div>
-                <span className="block text-3xl font-bold text-white uppercase">
-                  10Añ
-                </span>
-                <span className="text-[10px] text-gray-500 uppercase tracking-widest">
-                  Garantía por escrito
-                </span>
-              </div>
-            </div>
-          </div>
-
-          <div className="hidden lg:flex justify-end items-center">
-            <ContactForm />
-          </div>
-        </div>
-      </section>
-
-      {/* Social Proof / Trust Bar */}
-      <section className="bg-white py-12 border-b border-gray-100">
-        <div className="container mx-auto px-6 text-center">
-          <p className="text-xs font-bold text-gray-400 uppercase tracking-[0.3em] mb-8">
-            Confianza asegurada por contrato
+  const zcPath = useZeroChaosPath();
+  return <RootLayout>
+    <section className="zc-hero" id="inicio">
+      <div className="zc-hero__image" aria-hidden="true">
+        <ParallaxImage
+          src={atelierImage}
+          alt=""
+          className="zc-hero__photo"
+          strength={0.12}
+        />
+      </div>
+      <div className="zc-hero__shade" aria-hidden="true" />
+      <div className="zc-hero__grain" aria-hidden="true" />
+      <div className="zc-shell zc-hero__content">
+        <p className="zc-eyebrow zc-eyebrow--light zc-enter zc-enter--1">
+          Reformas integrales · Madrid
+        </p>
+        <h1 className="zc-display zc-enter zc-enter--2">
+          El espacio que imaginas.
+          <br />
+          <em>La obra, bajo control.</em>
+        </h1>
+        <div className="zc-hero__bottom zc-enter zc-enter--3">
+          <p>
+            Reformas pensadas al detalle, con materiales honestos y un proceso
+            claro desde la primera visita hasta la entrega.
           </p>
-          <div className="flex flex-wrap justify-center items-center gap-12 opacity-50 grayscale hover:grayscale-0 transition-all duration-500">
-            {/* Trust badges placeholders */}
-            <span className="text-xl font-bold text-gray-800 uppercase tracking-tighter">
-              Certificado Calidad
-            </span>
-            <span className="text-xl font-bold text-gray-800 uppercase tracking-tighter">
-              Seguro RC 1M€
-            </span>
-            <span className="text-xl font-bold text-gray-800 uppercase tracking-tighter">
-              Planificación 3D
-            </span>
-            <span className="text-xl font-bold text-gray-800 uppercase tracking-tighter">
-              Presupuesto Cerrado
-            </span>
+          <div className="zc-actions">
+            <Link className="zc-button zc-button--light" to={zcPath("/contacto")}>
+              Cuéntanos tu proyecto <span aria-hidden="true">↗</span>
+            </Link>
+            <a className="zc-text-link zc-text-link--light" href="#espacios">
+              Explorar la propuesta <span aria-hidden="true">↓</span>
+            </a>
           </div>
         </div>
-      </section>
+      </div>
+      <div className="zc-hero__side-label" aria-hidden="true">
+        DISEÑO · MATERIA · OFICIO
+      </div>
+      <a href="#espacios" className="zc-scroll-cue" aria-label="Desplazarse hacia abajo">
+        <span />
+      </a>
+    </section>
 
-      {/* Services Grid */}
-      <section className="py-24 bg-[#F5F5F0]">
-        <div className="container mx-auto px-6">
-          <div className="text-center mb-20">
-            <h2 className="text-4xl md:text-5xl font-black text-[#1C1C1E] uppercase tracking-tighter mb-4">
-              Nuestros <span className="text-[#D4A853]">Servicios</span>
-            </h2>
-            <div className="w-20 h-1 bg-[#D4A853] mx-auto" />
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {servicios.map((servicio) => (
-              <div
-                key={servicio.id}
-                className="group bg-white p-10 shadow-sm hover:shadow-2xl transition-all duration-500 border-b-4 border-transparent hover:border-[#D4A853]"
-              >
-                <h3 className="text-2xl font-bold text-[#1C1C1E] mb-4 uppercase tracking-tight">
-                  {servicio.name}
-                </h3>
-                <p className="text-gray-500 mb-8 leading-relaxed">
-                  {servicio.shortDescription}
-                </p>
-                <div className="flex justify-between items-center">
-                  <span className="text-xs font-bold text-gray-400 uppercase tracking-widest">
-                    {servicio.priceFrom}
-                  </span>
-                  <Link
-                    to={`/proyectos/zero-chaos/${servicio.slug}`}
-                    className="text-[#D4A853] font-bold uppercase text-sm tracking-widest group-hover:translate-x-2 transition-transform"
-                  >
-                    Ver más →
-                  </Link>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Proceso Step by Step */}
-      <section className="py-24 bg-white">
-        <div className="container mx-auto px-6 text-center">
-          <div className="mb-16">
-            <h2 className="text-4xl md:text-5xl font-black text-[#1C1C1E] uppercase tracking-tighter mb-4">
-              El proceso <span className="text-[#D4A853]">Zero Chaos</span>
-            </h2>
-            <p className="text-gray-500 max-w-2xl mx-auto">
-              Eliminamos la incertidumbre de tu reforma con un sistema probado
-              en más de 250 viviendas.
+    <section className="zc-intro zc-section" id="filosofia">
+      <div className="zc-shell zc-intro__grid">
+        <Reveal>
+          <p className="zc-eyebrow">01 / Una forma distinta de reformar</p>
+          <h2 className="zc-heading">
+            Menos ruido.
+            <br />
+            <span>Más intención.</span>
+          </h2>
+        </Reveal>
+        <Reveal delay={120}>
+          <div className="zc-intro__copy">
+            <p className="zc-lead">
+              Una reforma transforma una casa. La manera de hacerla transforma
+              la experiencia.
             </p>
+            <p>
+              Diseñamos cada intervención alrededor de cómo quieres vivir:
+              escuchamos, ordenamos las decisiones y coordinamos los oficios
+              para que forma y función avancen juntas.
+            </p>
+            <div className="zc-principles">
+              <div><span>01</span> Diseño con propósito</div>
+              <div><span>02</span> Materiales bien elegidos</div>
+              <div><span>03</span> Comunicación directa</div>
+            </div>
           </div>
-          <ProcessSteps />
-          <div className="mt-16">
-            <CTAButton
-              text="Descarga nuestra guía de proceso"
-              href="/proyectos/zero-chaos/contacto"
-              variant="outline"
-            />
-          </div>
+        </Reveal>
+      </div>
+      <div className="zc-marquee" aria-label="Diseño, materia, oficio">
+        <div className="zc-marquee__track" aria-hidden="true">
+          {[0, 1].map((copy) => (
+            <span key={copy}>DISEÑO <i>✳</i> MATERIA <i>✳</i> OFICIO <i>✳</i> CALMA <i>✳</i> </span>
+          ))}
         </div>
-      </section>
-    </RootLayout>
-  );
+      </div>
+    </section>
+
+    <section className="zc-services zc-section" id="servicios">
+      <div className="zc-shell">
+        <Reveal className="zc-section-head">
+          <div>
+            <p className="zc-eyebrow">02 / Qué hacemos</p>
+            <h2 className="zc-heading">Cada espacio,<br /><span>una nueva lectura.</span></h2>
+          </div>
+          <p className="zc-section-head__aside">
+            Del cambio preciso a la transformación completa. El alcance se
+            define contigo antes de empezar.
+          </p>
+        </Reveal>
+        <div className="zc-service-list">
+          {servicios.map((servicio, index) => (
+            <Reveal key={servicio.id} delay={index * 90}>
+              <Link className="zc-service-row" to={zcPath(`/${servicio.slug}`)}>
+                <span className="zc-service-row__index">0{index + 1}</span>
+                <span className="zc-service-row__name">{servicio.name}</span>
+                <span className="zc-service-row__description">{servicio.shortDescription}</span>
+                <span className="zc-service-row__arrow" aria-hidden="true">↗</span>
+              </Link>
+            </Reveal>
+          ))}
+        </div>
+        <div className="zc-service-footnote">
+          <span>También estudiamos proyectos parciales y necesidades especiales.</span>
+          <Link to={zcPath("/contacto")}>Consultar mi caso <span aria-hidden="true">↗</span></Link>
+        </div>
+      </div>
+    </section>
+
+    <section className="zc-materials zc-section" id="espacios">
+      <div className="zc-shell">
+        <Reveal className="zc-section-head zc-section-head--light">
+          <div>
+            <p className="zc-eyebrow zc-eyebrow--light">03 / La materia habla</p>
+            <h2 className="zc-heading zc-heading--light">Texturas con<br /><em>carácter propio.</em></h2>
+          </div>
+          <p className="zc-section-head__aside">
+            Piedra, madera, metal y luz. Una selección serena que gana belleza
+            con el tiempo y hace que cada estancia se sienta tuya.
+          </p>
+        </Reveal>
+        <div className="zc-gallery">
+          {conceptImages.map((image, index) => (
+            <Reveal key={image.src} delay={index * 130} className={`zc-gallery__item zc-gallery__item--${index + 1}`}>
+              <figure>
+                <div className="zc-gallery__image-wrap">
+                  <img src={image.src} alt={image.alt} loading="lazy" />
+                  <span className="zc-gallery__number">{image.number}</span>
+                  <span className="zc-gallery__zoom" aria-hidden="true">↗</span>
+                </div>
+                <figcaption>
+                  <span>{image.category}</span>
+                  <h3>{image.title}</h3>
+                </figcaption>
+              </figure>
+            </Reveal>
+          ))}
+          <Reveal className="zc-gallery-note" delay={220}>
+            <span className="zc-gallery-note__mark">“</span>
+            <p>La calidad de un espacio está en lo que se ve y en cómo se vive.</p>
+            <small>Imágenes de inspiración; no representan obras ejecutadas por ZeroChaos.</small>
+          </Reveal>
+        </div>
+      </div>
+    </section>
+
+    <section className="zc-process zc-section" id="proceso">
+      <div className="zc-shell zc-process__layout">
+        <Reveal className="zc-process__intro">
+          <p className="zc-eyebrow">04 / El proceso</p>
+          <h2 className="zc-heading">Claridad en<br /><span>cada etapa.</span></h2>
+          <p>Un buen resultado empieza mucho antes de la obra: empieza con buenas preguntas y decisiones compartidas.</p>
+          <Link className="zc-button zc-button--dark" to={zcPath("/contacto")}>Empezar a conversar <span aria-hidden="true">↗</span></Link>
+        </Reveal>
+        <div className="zc-timeline">
+          {[
+            ["01", "Escuchar", "Entendemos el espacio, tus prioridades y la forma en que lo utilizas."],
+            ["02", "Proyectar", "Definimos alcance, distribución, acabados y una propuesta detallada."],
+            ["03", "Coordinar", "Organizamos calendario, materiales y equipos antes de cada fase."],
+            ["04", "Entregar", "Revisamos juntos los detalles y cerramos el proyecto contigo."],
+          ].map(([number, title, description], index) => (
+            <Reveal key={number} delay={index * 100}>
+              <div className="zc-timeline__item">
+                <span className="zc-timeline__number">{number}</span>
+                <div><h3>{title}</h3><p>{description}</p></div>
+                <span className="zc-timeline__tick" aria-hidden="true">✳</span>
+              </div>
+            </Reveal>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section className="zc-detail" aria-label="Detalle de materiales">
+      <div className="zc-detail__image">
+          <ParallaxImage src={materialImage} alt="Detalle de interiorismo en madera y piedra" strength={0.08} />
+      </div>
+      <div className="zc-detail__overlay" />
+      <div className="zc-shell zc-detail__content">
+        <Reveal>
+          <p className="zc-eyebrow zc-eyebrow--light">Diseñado para durar</p>
+          <p className="zc-detail__quote">La belleza está en<br />el encuentro entre<br /><em>materia y luz.</em></p>
+          <span className="zc-detail__line" />
+        </Reveal>
+      </div>
+      <span className="zc-detail__caption">PIEDRA · ROBLE · ACERO</span>
+    </section>
+
+    <section className="zc-faq zc-section" id="preguntas">
+      <div className="zc-shell zc-faq__layout">
+        <Reveal>
+          <p className="zc-eyebrow">05 / Antes de empezar</p>
+          <h2 className="zc-heading">Hablemos<br /><span>sin rodeos.</span></h2>
+          <p className="zc-faq__intro">Cada proyecto es distinto. Estas son algunas de las primeras preguntas que solemos resolver.</p>
+          <Link to={zcPath("/contacto")} className="zc-text-link">¿Tienes otra duda? Escríbenos <span aria-hidden="true">↗</span></Link>
+        </Reveal>
+        <div className="zc-faq__list">
+          {faqs.map((faq, index) => (
+            <Reveal key={faq.question} delay={index * 90}>
+              <details className="zc-faq__item">
+                <summary><span>{faq.question}</span><i aria-hidden="true">+</i></summary>
+                <p>{faq.answer}</p>
+              </details>
+            </Reveal>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section className="zc-contact-cta" id="contacto">
+      <div className="zc-contact-cta__texture" aria-hidden="true" />
+      <Reveal className="zc-contact-cta__inner">
+        <p className="zc-eyebrow zc-eyebrow--light">ZeroChaos · Madrid</p>
+        <h2>Tu casa merece<br /><em>una nueva historia.</em></h2>
+        <p>Cuéntanos qué tienes en mente. La primera conversación sirve para poner orden a las ideas.</p>
+        <Link className="zc-button zc-button--light" to={zcPath("/contacto")}>Solicitar una primera visita <span aria-hidden="true">↗</span></Link>
+      </Reveal>
+      <span className="zc-contact-cta__seal" aria-hidden="true">ZC<br /><small>EST. · MADRID</small></span>
+    </section>
+  </RootLayout>;
 };

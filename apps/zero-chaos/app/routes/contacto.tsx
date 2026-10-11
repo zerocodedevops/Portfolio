@@ -7,7 +7,7 @@ export const meta: MetaFunction = () => {
     { title: `Pide Presupuesto de Reforma | Contacto | ${config.name}` },
     {
       name: "description",
-      content: `Solicita tu presupuesto de reforma integral, cocina o ba├▒o en Madrid. Respondemos en menos de 24h. Visita t├®cnica gratuita y presupuesto cerrado.`,
+      content: "Cuéntanos qué espacio quieres transformar y qué necesitas. Hablemos de tu proyecto de reforma en Madrid.",
     },
   ];
 };

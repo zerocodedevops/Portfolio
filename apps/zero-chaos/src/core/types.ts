@@ -1,8 +1,6 @@
 export interface ClientConfig {
   id: string;
   name: string;
-  legalName: string;
-  domain: string;
   colors: {
     primary: string;
     accent: string;
@@ -10,11 +8,7 @@ export interface ClientConfig {
     text: string;
   };
   contact: {
-    phone: string;
-    whatsapp: string;
     email: string;
-    address: string;
-    city: string;
   };
   seo: {
     mainTitle: string;
@@ -37,7 +31,6 @@ export interface ServiceConfig {
   slug: string;
   shortDescription: string;
   fullContent: string;
-  priceFrom: string;
   faqs: { question: string; answer: string }[];
 }
 

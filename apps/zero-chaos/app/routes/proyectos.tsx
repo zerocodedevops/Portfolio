@@ -3,11 +3,11 @@ import { ProjectsTemplate } from "../../src/templates/ProjectsTemplate";
 
 export const meta: MetaFunction = () => {
   return [
-    { title: "Proyectos de Reforma en Madrid | Antes y Despu├®s | Zero Chaos" },
+    { title: "Ideas e inspiración para reformas | ZeroChaos" },
     {
       name: "description",
       content:
-        "Explora nuestra galer├¡a de proyectos reales. Reformas integrales, cocinas y ba├▒os con acabados de alta calidad. Resultados visibles, clientes satisfechos.",
+        "Referencias visuales de materiales, luz y distribución para imaginar reformas integrales, cocinas y baños.",
     },
   ];
 };

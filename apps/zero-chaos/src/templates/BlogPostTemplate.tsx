@@ -14,15 +14,15 @@ export const BlogPostTemplate = ({ post }: BlogPostTemplateProps) => {
           <div className="mb-12 text-center">
             <Link
               to="/proyectos/zero-chaos/blog"
-              className="text-xs font-bold text-[#D4A853] uppercase tracking-widest mb-6 inline-block hover:underline"
+              className="text-xs font-bold text-[#A8754F] uppercase tracking-widest mb-6 inline-block hover:underline"
             >
               ← Volver al Blog
             </Link>
-            <h1 className="text-4xl md:text-6xl font-black text-[#1C1C1E] uppercase tracking-tight leading-none mb-8">
+            <h1 className="text-4xl md:text-6xl font-black text-[#2B302E] uppercase tracking-tight leading-none mb-8">
               {post.title}
             </h1>
             <div className="flex items-center justify-center gap-6 text-sm text-gray-400 font-medium">
-              <span className="bg-[#F5F5F0] px-3 py-1 text-[#1C1C1E] rounded-full">
+              <span className="bg-[#F1EEE8] px-3 py-1 text-[#2B302E] rounded-full">
                 {post.category}
               </span>
               <span>{post.date}</span>
@@ -30,7 +30,7 @@ export const BlogPostTemplate = ({ post }: BlogPostTemplateProps) => {
             </div>
           </div>
 
-          <div className="prose prose-xl max-w-none prose-headings:text-[#1C1C1E] prose-headings:font-black prose-headings:uppercase prose-p:text-gray-600 prose-p:leading-relaxed prose-strong:text-[#1C1C1E] prose-li:text-gray-600">
+          <div className="prose prose-xl max-w-none prose-headings:text-[#2B302E] prose-headings:font-black prose-headings:uppercase prose-p:text-gray-600 prose-p:leading-relaxed prose-strong:text-[#2B302E] prose-li:text-gray-600">
             {/* Split content by newlines and render */}
             {post.content.split("\n").map((line, i) => {
               if (line.trim().startsWith("##")) {
@@ -65,7 +65,7 @@ export const BlogPostTemplate = ({ post }: BlogPostTemplateProps) => {
           </div>
 
           <div className="mt-24 pt-12 border-t border-gray-100 flex flex-col items-center text-center">
-            <h4 className="text-2xl font-black text-[#1C1C1E] uppercase mb-6">
+            <h4 className="text-2xl font-black text-[#2B302E] uppercase mb-6">
               ¿Quieres resultados similares?
             </h4>
             <p className="text-gray-500 mb-10 max-w-lg">
@@ -74,7 +74,7 @@ export const BlogPostTemplate = ({ post }: BlogPostTemplateProps) => {
             </p>
             <Link
               to="/proyectos/zero-chaos/contacto"
-              className="bg-[#1C1C1E] text-white px-10 py-5 font-black uppercase tracking-tighter hover:bg-[#D4A853] transition-colors"
+              className="bg-[#2B302E] text-white px-10 py-5 font-black uppercase tracking-tighter hover:bg-[#A8754F] transition-colors"
             >
               Pide Presupuesto Gratis
             </Link>

@@ -1,106 +1,73 @@
+import { Link } from "react-router-dom";
 import { RootLayout } from "../core/layout/RootLayout";
-import { proyectos } from "../clients/madrid-zerochaos/proyectos";
-import { CTAButton } from "../core/components/CTAButton";
+import { Reveal } from "../core/components/Reveal";
+import kitchenImage from "../assets/inspiration/cocina.webp";
+import materialImage from "../assets/inspiration/materia.webp";
+import atelierImage from "../assets/inspiration/atelier.webp";
+import { useZeroChaosPath } from "../core/hooks/useZeroChaosPath";
+
+const inspirations = [
+  {
+    number: "01",
+    title: "Una cocina abierta",
+    type: "Cocina · Roble y piedra",
+    image: kitchenImage,
+    alt: "Cocina de inspiración con isla de piedra y mobiliario de madera",
+    text: "Una composición serena que conecta la cocina con el espacio de encuentro.",
+  },
+  {
+    number: "02",
+    title: "Materia y luz",
+    type: "Interior · Texturas naturales",
+    image: materialImage,
+    alt: "Interior de inspiración con acabados minerales y luz cálida",
+    text: "Tonos minerales y madera natural para crear profundidad sin recargar el espacio.",
+  },
+  {
+    number: "03",
+    title: "Una nueva perspectiva",
+    type: "Vivienda · Reforma integral",
+    image: atelierImage,
+    alt: "Espacio interior de inspiración para una reforma integral",
+    text: "Una propuesta visual para imaginar cómo puede cambiar la relación entre las estancias.",
+  },
+];
 
 export const ProjectsTemplate = () => {
-  return (
-    <RootLayout>
-      <section className="pt-40 pb-20 bg-[#1C1C1E]">
-        <div className="container mx-auto px-6 text-center">
-          <h1 className="text-5xl md:text-6xl font-black text-white uppercase tracking-tighter mb-6">
-            Proyectos <span className="text-[#D4A853]">Completados</span>
-          </h1>
-          <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-            La mejor garantía es nuestro trabajo. Estos son algunos resultados
-            del método Zero Chaos en viviendas de Madrid.
-          </p>
-        </div>
-      </section>
+  const zcPath = useZeroChaosPath();
+  return <RootLayout>
+    <section className="zc-subhero zc-subhero--dark zc-subhero--projects">
+      <div className="zc-shell">
+        <p className="zc-eyebrow zc-eyebrow--light">Ideas para imaginar</p>
+        <h1 className="zc-heading zc-heading--light">Espacios con<br /><em>otra perspectiva.</em></h1>
+        <p className="zc-subhero__lead">Una selección de referencias de materiales, luz y distribución que inspiran la mirada ZeroChaos.</p>
+        <a className="zc-text-link zc-text-link--light" href="#inspiracion">Ver referencias <span aria-hidden="true">↓</span></a>
+      </div>
+      <span className="zc-subhero__index" aria-hidden="true">02 — 04</span>
+    </section>
 
-      <section className="py-24 bg-white">
-        <div className="container mx-auto px-6">
-          <div className="space-y-32">
-            {proyectos.map((project, index) => (
-              <div
-                key={project.id}
-                className={`grid grid-cols-1 lg:grid-cols-2 gap-20 items-center ${index % 2 !== 0 ? "lg:flex-row-reverse" : ""}`}
-              >
-                <div className="space-y-8">
-                  <div className="flex items-center gap-4">
-                    <span className="text-sm font-bold text-[#D4A853] uppercase tracking-widest">
-                      {project.location}
-                    </span>
-                    <div className="h-px flex-1 bg-gray-100" />
-                  </div>
-                  <h2 className="text-4xl md:text-5xl font-black text-[#1C1C1E] uppercase tracking-tighter leading-none">
-                    {project.title}
-                  </h2>
-                  <p className="text-xl text-gray-500 leading-relaxed">
-                    {project.description}
-                  </p>
-                  <div className="bg-[#F5F5F0] p-8 border-l-4 border-[#D4A853]">
-                    <h3 className="text-lg font-bold text-[#1C1C1E] uppercase mb-4 tracking-tight">
-                      Trabajos Realizados:
-                    </h3>
-                    <ul className="space-y-3">
-                      {project.details.map((detail, dIndex) => (
-                        <li key={dIndex} className="flex items-start">
-                          <span className="text-[#D4A853] mr-3">✔</span>
-                          <span className="text-gray-600 text-sm">
-                            {detail}
-                          </span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                  <div className="flex flex-wrap gap-2">
-                    {project.tags.map((tag) => (
-                      <span
-                        key={tag}
-                        className="text-[10px] font-bold uppercase tracking-widest border border-gray-200 px-3 py-1 text-gray-400"
-                      >
-                        #{tag}
-                      </span>
-                    ))}
-                  </div>
-                  <CTAButton
-                    text="Quiero algo así"
-                    href="/proyectos/zero-chaos/contacto"
-                  />
-                </div>
-                <div className="space-y-6">
-                  <div className="grid grid-cols-2 gap-4">
-                    <div className="space-y-2">
-                      <span className="text-[10px] font-black uppercase text-gray-400 tracking-widest">
-                        Antes
-                      </span>
-                      <div className="aspect-[4/5] bg-gray-100 overflow-hidden">
-                        <img
-                          src={project.beforeImage}
-                          alt="Antes"
-                          className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
-                        />
-                      </div>
-                    </div>
-                    <div className="space-y-2">
-                      <span className="text-[10px] font-black uppercase text-[#D4A853] tracking-widest">
-                        Después
-                      </span>
-                      <div className="aspect-[4/5] bg-gray-100 overflow-hidden">
-                        <img
-                          src={project.afterImage}
-                          alt="Después"
-                          className="w-full h-full object-cover"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
+    <section className="zc-section zc-inspirations" id="inspiracion">
+      <div className="zc-shell">
+        <div className="zc-section-head zc-section-head--inspiration">
+          <div><p className="zc-eyebrow">Cuaderno de materiales</p><h2 className="zc-heading">Ideas, no obras<br /><span>atribuidas.</span></h2></div>
+          <p className="zc-section-head__aside">Estas imágenes son referencias visuales de inspiración. No representan proyectos realizados ni trabajos propios de ZeroChaos.</p>
         </div>
-      </section>
-    </RootLayout>
-  );
+        <div className="zc-inspiration-grid">
+          {inspirations.map((item, index) => (
+            <Reveal key={item.number} delay={index * 100} className={`zc-inspiration-card zc-inspiration-card--${index + 1}`}>
+              <figure>
+                <div className="zc-inspiration-card__image"><img src={item.image} alt={item.alt} loading="lazy" /><span>{item.number}</span></div>
+                <figcaption><span>{item.type}</span><h3>{item.title}</h3><p>{item.text}</p></figcaption>
+              </figure>
+            </Reveal>
+          ))}
+        </div>
+        <div className="zc-inspiration-note"><span aria-hidden="true">✳</span><p>La selección de acabados y soluciones se define para cada espacio, con muestras y decisiones compartidas antes de avanzar.</p></div>
+      </div>
+    </section>
+
+    <section className="zc-about__end">
+      <div className="zc-shell"><p className="zc-eyebrow">Tu proyecto empieza aquí</p><h2>¿Qué espacio<br /><em>te gustaría cambiar?</em></h2><Link className="zc-button zc-button--dark" to={zcPath("/contacto")}>Cuéntanos tu idea <span aria-hidden="true">↗</span></Link></div>
+    </section>
+  </RootLayout>;
 };

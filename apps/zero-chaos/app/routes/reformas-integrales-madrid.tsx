@@ -7,10 +7,10 @@ const service = servicios.find((s) => s.id === "integrales")!;
 
 export const meta: MetaFunction = () => {
   return [
-    { title: `${service.name} en Madrid | Cero Sobrecostes | ${config.name}` },
+    { title: `${service.name} en Madrid | ${config.name}` },
     {
       name: "description",
-      content: `${service.shortDescription} Especialistas en ${service.name} en la Comunidad de Madrid. Presupuesto cerrado y garant├¡a por escrito.`,
+      content: `${service.shortDescription} Conoce cómo se define el alcance y la propuesta de cada reforma integral.`,
     },
   ];
 };

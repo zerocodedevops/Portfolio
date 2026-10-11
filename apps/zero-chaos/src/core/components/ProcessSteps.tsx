@@ -42,10 +42,10 @@ export const ProcessSteps = () => {
           key={step.number}
           className="flex flex-col items-center text-center group"
         >
-          <div className="w-16 h-16 rounded-full bg-white border-2 border-[#D4A853] text-[#1C1C1E] font-bold text-xl flex items-center justify-center mb-6 group-hover:bg-[#D4A853] group-hover:text-white transition-all duration-300">
+          <div className="w-16 h-16 rounded-full bg-white border-2 border-[#A8754F] text-[#2B302E] font-bold text-xl flex items-center justify-center mb-6 group-hover:bg-[#A8754F] group-hover:text-white transition-all duration-300">
             {step.number}
           </div>
-          <h4 className="text-lg font-bold text-[#1C1C1E] mb-3 uppercase tracking-tight">
+          <h4 className="text-lg font-bold text-[#2B302E] mb-3 uppercase tracking-tight">
             {step.title}
           </h4>
           <p className="text-sm text-gray-500 leading-relaxed">

@@ -9,8 +9,8 @@ declare global {
 export const useTracking = () => {
   const trackEvent = useCallback(
     (action: string, category: string, label: string) => {
-      if (globalThis.gtag) {
-        globalThis.gtag("event", action, {
+      if (typeof window !== "undefined" && window.gtag) {
+        window.gtag("event", action, {
           event_category: category,
           event_label: label,
         });
