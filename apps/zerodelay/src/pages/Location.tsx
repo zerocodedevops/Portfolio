@@ -1,10 +1,6 @@
+import { Link } from 'react-router-dom';
+import SEO from '../components/common/SEO';
+
 export default function Location() {
-  return (
-    <section className="py-20 px-4 max-w-4xl mx-auto">
-      <h1 className="text-4xl font-bold mb-6">Ubicación</h1>
-      <p className="text-lg text-gray-600">
-        Nos encontramos en Madrid. Contáctanos para más información.
-      </p>
-    </section>
-  );
+  return <><SEO title="Rutas y disponibilidad | ZeroDelay" description="Consulta la disponibilidad de ZeroDelay para tu ruta de mudanza." /><header className="zd-page-hero"><div className="zd-shell"><h1 className="zd-title">Tu origen y destino marcan el recorrido.</h1><p className="zd-copy">La disponibilidad puede variar según el trayecto, la fecha y el tipo de servicio. Cuéntanos los dos extremos para consultarlo.</p></div></header><section className="zd-section"><div className="zd-shell zd-content-grid"><article className="zd-content-card zd-reveal"><h2>¿Desde dónde sales?</h2><p>Indica ciudad o código postal de origen y destino. Si hay varias paradas, puedes mencionarlas en tu consulta.</p></article><article className="zd-content-card zd-reveal"><h2>¿Cuándo te mudas?</h2><p>Comparte una fecha o intervalo aproximado. Así podemos revisar disponibilidad para el momento previsto.</p></article></div><div className="zd-shell" style={{ paddingTop: 32 }}><Link className="zd-button" to="../contacto">Consultar una ruta <span className="zd-arrow" aria-hidden="true">↗</span></Link></div></section></>;
 }

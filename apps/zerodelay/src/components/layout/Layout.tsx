@@ -1,30 +1,33 @@
-import { Outlet } from 'react-router-dom';
+import { useEffect } from 'react';
+import { Outlet, useLocation } from 'react-router-dom';
 import Footer from '../common/Footer';
 import Header from '../common/Header';
-import SubFooter from '../common/SubFooter';
 import WhatsAppButton from '../common/WhatsAppButton';
 
-const Layout = () => {
-  return (
-    <div
-      style={{
-        display: 'flex',
-        flexDirection: 'column',
-        minHeight: '100vh',
-        backgroundColor: '#FFFFFF',
-        color: '#333333',
-        fontFamily: "'Poppins', sans-serif",
-      }}
-    >
-      <Header />
-      <main style={{ flex: 1 }}>
-        <Outlet />
-      </main>
-      <Footer />
-      <SubFooter />
-      <WhatsAppButton />
-    </div>
-  );
-};
+export default function Layout() {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    document.documentElement.classList.add('has-motion');
+    const elements = document.querySelectorAll<HTMLElement>('.zd-reveal');
+    if (!('IntersectionObserver' in window)) {
+      elements.forEach((element) => element.classList.add('is-visible'));
+      return () => document.documentElement.classList.remove('has-motion');
+    }
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    elements.forEach((element) => observer.observe(element));
+    return () => {
+      observer.disconnect();
+      document.documentElement.classList.remove('has-motion');
+    };
+  }, [pathname]);
 
-export default Layout;
+  return <div className="zd-layout"><Header /><main id="contenido"><Outlet /></main><Footer /><WhatsAppButton /></div>;
+}

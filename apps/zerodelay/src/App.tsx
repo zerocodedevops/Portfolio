@@ -10,6 +10,7 @@ import PrivacyPolicy from './pages/legal/PrivacyPolicy';
 import LegalNotice from './pages/legal/LegalNotice';
 import CookiesPolicy from './pages/legal/CookiesPolicy';
 import ScrollToTop from './components/common/ScrollToTop';
+import './styles/index.css';
 
 function App() {
   return (

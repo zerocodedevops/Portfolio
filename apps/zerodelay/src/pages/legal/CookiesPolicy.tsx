@@ -1,10 +1,5 @@
+import SEO from '../../components/common/SEO';
+
 export default function CookiesPolicy() {
-  return (
-    <section className="py-20 px-4 max-w-4xl mx-auto">
-      <h1 className="text-4xl font-bold mb-6">Política de Cookies</h1>
-      <p className="text-lg text-gray-600">
-        Información sobre el uso de cookies en nuestro sitio web.
-      </p>
-    </section>
-  );
+  return <><SEO title="Cookies | ZeroDelay" description="Información sobre el uso de cookies en la web de ZeroDelay." /><section className="zd-section"><div className="zd-shell zd-legal"><h1>Política de cookies</h1><p>Información sobre el uso de cookies en nuestro sitio web.</p><p>Para consultas sobre esta web, puedes escribir a <a href="mailto:info@zerodelay.es">info@zerodelay.es</a>.</p></div></section></>;
 }

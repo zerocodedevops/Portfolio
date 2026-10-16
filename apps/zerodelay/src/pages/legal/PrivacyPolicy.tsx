@@ -1,10 +1,5 @@
+import SEO from '../../components/common/SEO';
+
 export default function PrivacyPolicy() {
-  return (
-    <section className="py-20 px-4 max-w-4xl mx-auto">
-      <h1 className="text-4xl font-bold mb-6">Política de Privacidad</h1>
-      <p className="text-lg text-gray-600">
-        Información sobre nuestra política de privacidad.
-      </p>
-    </section>
-  );
+  return <><SEO title="Privacidad | ZeroDelay" description="Información sobre privacidad y contacto de ZeroDelay." /><section className="zd-section"><div className="zd-shell zd-legal"><h1>Política de privacidad</h1><p>Información sobre nuestra política de privacidad.</p><p>Para consultas relacionadas con privacidad, puedes escribir a <a href="mailto:info@zerodelay.es">info@zerodelay.es</a>.</p></div></section></>;
 }

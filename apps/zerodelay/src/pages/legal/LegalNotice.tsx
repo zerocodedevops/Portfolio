@@ -1,10 +1,5 @@
+import SEO from '../../components/common/SEO';
+
 export default function LegalNotice() {
-  return (
-    <section className="py-20 px-4 max-w-4xl mx-auto">
-      <h1 className="text-4xl font-bold mb-6">Aviso Legal</h1>
-      <p className="text-lg text-gray-600">
-        Información legal de Zero Delay Mudanzas.
-      </p>
-    </section>
-  );
+  return <><SEO title="Aviso legal | ZeroDelay" description="Información legal de la web de ZeroDelay." /><section className="zd-section"><div className="zd-shell zd-legal"><h1>Aviso legal</h1><p>Información legal de ZeroDelay Mudanzas.</p><p>Para consultas relacionadas con esta web, puedes escribir a <a href="mailto:info@zerodelay.es">info@zerodelay.es</a>.</p></div></section></>;
 }
