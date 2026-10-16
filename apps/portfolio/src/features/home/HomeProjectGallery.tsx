@@ -41,7 +41,6 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
         target={project.href.startsWith('http') ? '_blank' : undefined}
         rel={project.href.startsWith('http') ? 'noopener noreferrer' : undefined}
         className="block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0789bd] focus-visible:ring-offset-4"
-        aria-label={`Ver ${project.name}`}
       >
         <div className={`relative flex aspect-square items-center justify-center overflow-hidden bg-gradient-to-br ${project.tone}`}>
           {project.image ? (
@@ -71,10 +70,10 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
           </span>
         </div>
         <div className="pt-4">
-          <p className="text-xs font-medium uppercase tracking-wider text-[#718197]">{project.sector}</p>
+          <p className="text-xs font-medium uppercase tracking-wider text-[#5b687a]">{project.sector}</p>
           <h3 className="mt-2 font-outfit text-lg font-semibold text-[#0a203d]">{project.name}</h3>
           <p className="mt-2 text-sm leading-6 text-[#586a80]">{project.note}</p>
-          <span className="mt-3 inline-flex items-center gap-1.5 text-sm font-semibold text-[#087cae]">Ver proyecto <ExternalLink className="h-3.5 w-3.5" /></span>
+          <span className="mt-3 inline-flex items-center gap-1.5 text-sm font-semibold text-[#00658c]">Ver proyecto <ExternalLink className="h-3.5 w-3.5" /></span>
         </div>
       </a>
     </motion.article>

@@ -138,7 +138,7 @@ export function Contact() {
 
       <div className="container-custom relative z-10">
         <div className="mx-auto mb-12 max-w-5xl text-center">
-          <p className="mb-4 text-xs font-bold uppercase tracking-[0.19em] text-[#087cae]">Cuéntame tu idea</p>
+          <p className="mb-4 text-xs font-bold uppercase tracking-[0.19em] text-[#006b92]">Cuéntame tu idea</p>
           <h2 className="font-outfit mb-5 text-3xl font-semibold tracking-tight text-[#071a35] sm:text-4xl">
             Hablemos de tu proyecto
           </h2>
@@ -298,7 +298,7 @@ export function Contact() {
                     : t('contact.form.submit')}
                 </Button>
 
-                <div className="space-y-1 text-xs leading-5 text-[#718197]">
+                <div className="space-y-1 text-xs leading-5 text-[#5b687a]">
                   <p>Responsable: David González (ZeroCode DevOps).</p>
                   <p>Usaré tus datos para responder a tu consulta.</p>
                   <p><a className="font-semibold text-[#087cae] underline underline-offset-2 hover:text-[#071a35]" href="/politica-de-privacidad">Privacidad y derechos</a>.</p>
@@ -356,7 +356,7 @@ export function Contact() {
                     <Mail className="h-5 w-5" aria-hidden="true" />
                   </div>
                   <div className="min-w-0 flex-1">
-                    <p className="mb-1 text-[10px] font-bold uppercase tracking-[0.14em] text-[#718197]">
+                    <p className="mb-1 text-[10px] font-bold uppercase tracking-[0.14em] text-[#5b687a]">
                       Email
                     </p>
                     <p className="break-words text-sm font-semibold text-[#0b294a] sm:text-base">
@@ -376,7 +376,7 @@ export function Contact() {
                     <WhatsAppIcon className="h-5 w-5" />
                   </div>
                   <div className="min-w-0 flex-1">
-                    <p className="mb-1 text-[10px] font-bold uppercase tracking-[0.14em] text-[#718197]">
+                    <p className="mb-1 text-[10px] font-bold uppercase tracking-[0.14em] text-[#5b687a]">
                       WhatsApp
                     </p>
                     <p className="text-sm font-semibold text-[#0b294a] sm:text-base">Enviar un mensaje</p>

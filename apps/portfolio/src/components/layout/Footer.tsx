@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { ArrowUp, Mail, MessageCircle } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
-import footerLogo from '@/assets/zerocode-horizontal.webp';
+import footerLogo from '@/assets/zerocode-horizontal-optimized.webp';
 import { openCookieSettings } from '@/components/CookieConsent';
 
 const socialLinks = [

@@ -150,7 +150,7 @@ export function ProductOptions() {
               </span>
               <span className="min-w-0 flex-1">
                 <span className="block font-outfit text-lg font-semibold text-[#0b294a]">{name}</span>
-                <span className="mt-1 block text-sm leading-6 text-[#718197]">{description}</span>
+                <span className="mt-1 block text-sm leading-6 text-[#5b687a]">{description}</span>
                 <span className="mt-2 block text-xs font-semibold text-[#087cae]">{options.length} opciones</span>
               </span>
               <ChevronDown className="mt-1 h-5 w-5 shrink-0 text-[#718197] transition-transform group-open:rotate-180" aria-hidden="true" />
@@ -167,7 +167,7 @@ export function ProductOptions() {
         ))}
       </div>
 
-      <div className="mx-auto mt-8 max-w-3xl space-y-2 text-center text-xs leading-5 text-[#718197]">
+      <div className="mx-auto mt-8 max-w-3xl space-y-2 text-center text-xs leading-5 text-[#5b687a]">
         <p>Algunas opciones requieren cuentas, licencias o servicios de terceros.</p>
         <p>Los costes externos, límites y condiciones se detallarán en cada presupuesto.</p>
         <p>Los textos legales se publicarán con la información que facilite el cliente y conviene validarlos con un profesional.</p>

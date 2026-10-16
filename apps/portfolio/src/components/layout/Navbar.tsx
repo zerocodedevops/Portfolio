@@ -3,7 +3,7 @@ import { Menu, MessageCircle, X } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { cn } from '@/lib/utils';
-import logoZero from '@/assets/zerocode-horizontal.webp';
+import logoZero from '@/assets/zerocode-horizontal-optimized.webp';
 
 const navLinks = [
   { label: 'Proceso', href: '#proceso' },
