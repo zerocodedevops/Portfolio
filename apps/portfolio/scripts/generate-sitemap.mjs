@@ -23,6 +23,10 @@ function generateSitemap() {
     { url: '/casos-de-exito/reformas-zerochaos' },
     { url: '/casos-de-exito/mudanzas-zerodelay' },
     { url: '/proyectos/zerovanity' },
+    { url: '/proyectos/zero-breakdown' },
+    { url: '/proyectos/zero-breakdown/fontaneria' },
+    { url: '/proyectos/zero-breakdown/electricidad' },
+    { url: '/proyectos/zero-breakdown/climatizacion' },
   ];
 
   const sitemapXml = `<?xml version="1.0" encoding="UTF-8"?>

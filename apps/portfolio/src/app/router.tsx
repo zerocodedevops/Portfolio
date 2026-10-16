@@ -9,6 +9,7 @@ const Pricing = lazy(() => import('@/features/pricing/Pricing'));
 const SalonApp = lazy(() => import('@zerovanity/routes'));
 const MediaApp = lazy(() => import('@zerodelay/App'));
 const ReformsApp = lazy(() => import('@zero-chaos/routes'));
+const ZeroBreakdownDemo = lazy(() => import('@/features/zero-breakdown/ZeroBreakdownDemo'));
 const CaseStudy = lazy(() => import('@/features/projects/CaseStudy'));
 const LegalNoticePage = lazy(() => import('@/features/legal/LegalPages').then((module) => ({ default: module.LegalNoticePage })));
 const PrivacyPolicyPage = lazy(() => import('@/features/legal/LegalPages').then((module) => ({ default: module.PrivacyPolicyPage })));
@@ -77,6 +78,14 @@ const router = createBrowserRouter(
           element: (
             <Suspense fallback={<PageLoader text="Abriendo demo ZeroVanity..." />}>
               <VanityDemoApp />
+            </Suspense>
+          ),
+        },
+        {
+          path: 'proyectos/zero-breakdown/*',
+          element: (
+            <Suspense fallback={<PageLoader text="Abriendo demo Zero Breakdown..." />}>
+              <ZeroBreakdownDemo />
             </Suspense>
           ),
         },

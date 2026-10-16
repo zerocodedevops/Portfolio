@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 900" role="img" aria-label="Zero Breakdown, fontanería, electricidad y climatización">
+  <rect width="900" height="900" fill="#f5f2fc"/>
+  <circle cx="452" cy="395" r="305" fill="#5939e8"/>
+  <circle cx="452" cy="395" r="250" fill="none" stroke="#d5ff62" stroke-width="3" stroke-dasharray="4 14"/>
+  <circle cx="452" cy="395" r="205" fill="none" stroke="#f5f2fc" stroke-opacity=".55" stroke-width="2"/>
+  <g fill="#d5ff62">
+    <path d="M452 395c-42-109-38-210 13-282 58 106 52 204-13 282Z"/>
+    <path d="M452 395c109-42 210-38 282 13-106 58-204 52-282-13Z"/>
+    <path d="M452 395c42 109 38 210-13 282-58-106-52-204 13-282Z"/>
+    <path d="M452 395c-109 42-210 38-282-13 106-58 204-52 282 13Z"/>
+  </g>
+  <g fill="#ff665d"><path d="M452 395c42-87 106-145 181-158-18 108-76 173-181 158Z"/><path d="M452 395c-42 87-106 145-181 158 18-108 76-173 181-158Z"/></g>
+  <circle cx="452" cy="395" r="85" fill="#f5f2fc"/>
+  <circle cx="452" cy="395" r="62" fill="#5939e8"/>
+  <circle cx="452" cy="395" r="10" fill="#d5ff62"/>
+  <text x="73" y="777" fill="#241d38" font-family="Arial,sans-serif" font-size="59" font-weight="700" letter-spacing="-4">ZERO BREAKDOWN</text>
+  <text x="76" y="824" fill="#655d78" font-family="monospace" font-size="17" letter-spacing="3">AGUA / ENERGÍA / CONFORT</text>
+</svg>

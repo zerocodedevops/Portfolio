@@ -44,6 +44,26 @@ const staticPages = [
     title: 'Demo web para peluquería y estética | ZeroVanity | ZeroCode',
     description: 'Explora ZeroVanity, una demo interactiva para peluquería y estética. Recorrido de reserva simulado, sin base de datos ni almacenamiento de información.',
   },
+  {
+    path: '/proyectos/zero-breakdown',
+    title: 'Zero Breakdown · Fontanería, electricidad y climatización',
+    description: 'Elige una especialidad y explora servicios de fontanería, electricidad y climatización para casa y negocio.',
+  },
+  {
+    path: '/proyectos/zero-breakdown/fontaneria',
+    title: 'Fontanería para casa y negocio | Zero Breakdown',
+    description: 'Servicios de fontanería: fugas y tuberías, grifos y sanitarios, desagües, baños, cocinas y agua caliente.',
+  },
+  {
+    path: '/proyectos/zero-breakdown/electricidad',
+    title: 'Electricidad para viviendas y negocios | Zero Breakdown',
+    description: 'Instalaciones eléctricas, cuadros, reformas, iluminación, enchufes y revisión de averías.',
+  },
+  {
+    path: '/proyectos/zero-breakdown/climatizacion',
+    title: 'Climatización para casa y negocio | Zero Breakdown',
+    description: 'Aire acondicionado, calefacción, bombas de calor, ventilación y mantenimiento de equipos.',
+  },
 ];
 
 function escapeHtml(value) {

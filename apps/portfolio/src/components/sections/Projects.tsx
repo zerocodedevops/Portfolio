@@ -63,6 +63,15 @@ export const pymeProjects: Project[] = [
     status: 'Prototype',
     isDemo: true,
   },
+  {
+    id: 12,
+    title: 'Zero Breakdown - Instalaciones para el hogar',
+    image: '/assets/projects/thumbnails/project-zero-breakdown.webp',
+    tags: ['Fontanería', 'Electricidad', 'Climatización'],
+    demoUrl: '/proyectos/zero-breakdown',
+    status: 'Prototype',
+    isDemo: true,
+  },
 ];
 
 export const techProjects: Project[] = [
@@ -323,7 +332,7 @@ export function Projects() {
               key={project.id}
               project={project}
               onClick={() => {
-                if (project.demoUrl?.includes('casos-de-exito')) {
+                if (project.demoUrl?.includes('casos-de-exito') || project.demoUrl?.includes('/proyectos/')) {
                    globalThis.location.href = project.demoUrl;
                 } else {
                    setSelectedProject(project);

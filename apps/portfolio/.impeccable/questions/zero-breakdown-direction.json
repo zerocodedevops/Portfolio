@@ -1,0 +1,140 @@
+{
+  "title": "Elegir la dirección visual de la demo",
+  "question": "He preparado dos estructuras de web para comparar. Elige cuál convierto en la demo de fontanería, electricidad y climatización.",
+  "options": [
+    {
+      "id": "assigned",
+      "kind": "assigned",
+      "label": "Guía de instalaciones",
+      "kicker": "THE ROLL",
+      "lineage": "Manuales ilustrados de vivienda y guías de oficio",
+      "thesis": "Una guía editorial que ayuda a reconocer el problema y entender qué puede hacer cada oficio.",
+      "palette": ["#f2f0e8", "#252a28", "#d85f3d", "#337c83"],
+      "materials": ["papel técnico", "fotografía de oficio", "líneas de instalación"],
+      "viewport": "Un gran esquema doméstico se despliega como una hoja de servicio; el contacto y la selección de especialidad forman parte de la página.",
+      "risk": "Puede parecer un catálogo plano si el esquema no responde a la elección del visitante.",
+      "raised": [
+        {
+          "from": "pop-culture-shelf-benday-comic-page",
+          "raise": "Las etapas del servicio tendrán una secuencia visual fácil de recorrer, sin adoptar lenguaje de cómic."
+        },
+        {
+          "from": "clay-ceramics-fracture-coiled-earth-tower",
+          "raise": "Las fotografías acercarán la materialidad real de instalaciones, paredes y acabados."
+        }
+      ],
+      "html": ".impeccable/mocks/decision/zero-breakdown-assigned.html"
+    },
+    {
+      "id": "model-pick",
+      "label": "Plano de recorridos",
+      "kicker": "IMPECCABLE’S PICK",
+      "lineage": "Planos domésticos y diagramas de redes de servicios",
+      "thesis": "Agua, electricidad y aire se entienden como recorridos distintos dentro de una misma vivienda.",
+      "palette": ["#e9eee8", "#1e2927", "#e26342", "#317d87"],
+      "materials": ["papel de plano", "fotografía de espacios", "trazos de color"],
+      "viewport": "Una planta de vivienda a gran escala deja elegir un sistema; el recorrido activo conduce directamente a la solicitud de visita.",
+      "risk": "Un mapa demasiado abstracto podría prometer cobertura geográfica que la demo no confirma.",
+      "html": ".impeccable/mocks/decision/zero-breakdown-map.html"
+    },
+    {
+      "id": "challenger-risograph-web-system",
+      "kind": "challenger",
+      "catalogId": "risograph-web-system",
+      "label": "Riso de oficio",
+      "verdict": "competitive",
+      "lineage": "Impresión risográfica de dos tintas",
+      "thesis": "Cada especialidad se distingue por capas impresas que se desplazan al activar una opción.",
+      "palette": ["#f3ead8", "#ef4d58", "#1859a8", "#e9cf42"],
+      "materials": ["papel poroso", "tintas planas", "trama impresa"],
+      "viewport": "Un cartel en capas presenta los tres servicios con una acción visible para contactar.",
+      "risk": "Puede dar una sensación demasiado juguetona para una reparación doméstica.",
+      "case": "Se reconoce como comunicación impresa, aunque explica menos la función de cada servicio que la guía.",
+      "hero": "https://impeccable.style/worlds/cards/risograph-web-system-hero.webp"
+    },
+    {
+      "id": "challenger-oscilloscope",
+      "kind": "challenger",
+      "catalogId": "scientific-notation-oscilloscope-signal-bench",
+      "label": "Trazo de señal",
+      "verdict": "competitive",
+      "lineage": "Lectura de señales en un osciloscopio",
+      "thesis": "Una señal recorre el sistema activo y se detiene en los puntos donde hace falta intervenir.",
+      "palette": ["#101719", "#c4d2c7", "#9dce78", "#e4a558"],
+      "materials": ["fósforo sobre vidrio", "grilla de medición", "luz de estado"],
+      "viewport": "Una señal animada cruza el esquema de un hogar y cada control muestra un estado reconocible.",
+      "risk": "La estética de instrumento puede alejar la web de quien solo necesita pedir ayuda.",
+      "case": "Explica bien el movimiento de energía, agua o aire, pero identifica menos al cliente doméstico.",
+      "hero": "https://impeccable.style/worlds/cards/scientific-notation-oscilloscope-signal-bench-hero.webp"
+    },
+    {
+      "id": "challenger-swiss-poster",
+      "kind": "challenger",
+      "catalogId": "design-canon-swiss-grid-poster-wall",
+      "label": "Retícula de servicio",
+      "verdict": "competitive",
+      "lineage": "Carteles modulares de estilo suizo",
+      "thesis": "Una retícula firme ordena los tres oficios y convierte cada especialidad en una entrada clara.",
+      "palette": ["#f7f7f2", "#191c1b", "#d94d3d", "#236b87"],
+      "materials": ["papel blanco", "tinta negra", "un color de señal"],
+      "viewport": "Una composición tipográfica modular abre con la necesidad y mantiene a mano el contacto.",
+      "risk": "La geometría puede sentirse fría si no se acompaña de fotografía de trabajo real.",
+      "case": "Ofrece una jerarquía legible, aunque la guía conecta mejor las instalaciones con la vivienda.",
+      "hero": "https://impeccable.style/worlds/cards/design-canon-swiss-grid-poster-wall-hero.webp"
+    },
+    {
+      "id": "challenger-comic-page",
+      "kind": "challenger",
+      "catalogId": "pop-culture-shelf-benday-comic-page",
+      "label": "Historias en viñetas",
+      "verdict": "declined",
+      "lineage": "Páginas de cómic impresas en cuatricromía",
+      "thesis": "Cada consulta se cuenta como una secuencia breve de problema, revisión y siguiente paso.",
+      "palette": ["#f1e7ce", "#ca3e31", "#2072a0", "#e7ce43"],
+      "materials": ["papel pulp", "puntos Ben-Day", "tinta desplazada"],
+      "viewport": "Viñetas grandes narran un tipo de intervención con una llamada a la acción directa.",
+      "risk": "El tono ilustrado podría restar credibilidad a un servicio técnico.",
+      "kept": "La secuencia de viñetas aporta una lectura paso a paso que la guía debe conservar."
+    },
+    {
+      "id": "challenger-clay-tower",
+      "kind": "challenger",
+      "catalogId": "clay-ceramics-fracture-coiled-earth-tower",
+      "label": "Materia de obra",
+      "verdict": "declined",
+      "lineage": "Formas cerámicas hechas a mano",
+      "thesis": "La web se construye como un objeto material por capas, con cada oficio ligado a una textura.",
+      "palette": ["#d8b89f", "#583e32", "#f0e7d8", "#7a8d83"],
+      "materials": ["arcilla", "engobe", "superficie mineral"],
+      "viewport": "Una composición de texturas abre la página y conduce a una presentación de servicios.",
+      "risk": "La cerámica comunica menos la especialidad técnica que las instalaciones requieren.",
+      "kept": "La textura y el detalle cercano recuerdan que las instalaciones forman parte de espacios reales."
+    },
+    {
+      "id": "challenger-chromatophore",
+      "kind": "challenger",
+      "catalogId": "reefs-bioluminescent-nocturnal-chromatophore-skin-language",
+      "label": "Señales que se adaptan",
+      "verdict": "competitive",
+      "lineage": "Patrones vivos que cambian según el contexto",
+      "thesis": "La gráfica del hogar cambia al seleccionar agua, electricidad o climatización.",
+      "palette": ["#eee9dc", "#713b31", "#2c8c87", "#203333"],
+      "materials": ["superficie texturada", "pigmentos de señal", "capas translúcidas"],
+      "viewport": "La elección de oficio transforma el esquema central sin mover el contenido ni ocultar el contacto.",
+      "risk": "El cambio de estados puede parecer decorativo si la información no responde con claridad.",
+      "case": "El estado reactivo diferencia la web, aunque la guía deja más claro qué opciones se pueden contratar."
+    }
+  ],
+  "reroll": { "registers": ["safer", "bolder"] },
+  "steer": true,
+  "canon": true,
+  "canonCard": {
+      "id": "canon",
+      "label": "La web de oficio habitual",
+      "thesis": "Una página blanca con titular, tres tarjetas de servicio y un botón de WhatsApp.",
+      "palette": ["#ffffff", "#1f2937", "#2563eb"],
+      "materials": ["retícula simple", "foto de stock", "botón azul"],
+      "viewport": "Una cabecera centrada, tres tarjetas iguales y un formulario al final.",
+      "risk": "Cumple lo esperado, pero se parecería a cualquier otra maqueta de servicios locales."
+  }
+}
