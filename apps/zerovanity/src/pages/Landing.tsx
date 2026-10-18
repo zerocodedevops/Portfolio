@@ -112,12 +112,20 @@ export default function Landing() {
           })}
         </ul>
 
-        <div>
+        <div className="flex flex-col items-end gap-2">
+          <button
+            type="button"
+            onClick={() => setIsBookingOpen(true)}
+            className="booking-cta inline-flex items-center gap-2 px-5 py-3 text-sm font-bold uppercase tracking-wider transition-colors"
+          >
+            <Calendar size={17} aria-hidden="true" />
+            Reservar cita
+          </button>
           <Link
             to="/proyectos/zerovanity/admin"
-            className="px-6 py-2 border border-[#BF953F] text-[#BF953F] hover:bg-[#BF953F] hover:text-black transition-all duration-300 uppercase text-xs font-bold tracking-widest rounded-sm"
+            className="text-xs text-neutral-500 transition-colors hover:text-[#FCF6BA] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#FCF6BA]"
           >
-            Ver como Admin · Demo
+            Acceso admin de la demo
           </Link>
         </div>
       </nav>
@@ -148,16 +156,19 @@ export default function Landing() {
           élite.
         </p>
 
-        <div className="flex flex-col md:flex-row gap-6 animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-300">
+        <div className="flex flex-col items-center gap-3 animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-300">
           <button
             onClick={() => setIsBookingOpen(true)}
-            className="group relative px-8 py-4 bg-[#BF953F] text-black font-bold uppercase tracking-widest overflow-hidden rounded-sm hover:scale-105 transition-transform duration-300 cursor-pointer"
+            className="booking-cta group relative min-w-64 px-10 py-5 font-bold uppercase tracking-widest overflow-hidden rounded-sm transition-all duration-300 cursor-pointer"
           >
             <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
-            <span className="relative flex items-center gap-3">
-              RESERVAR CITA <Calendar size={18} />
+            <span className="relative flex items-center justify-center gap-3 text-base">
+              Reservar cita <Calendar size={21} aria-hidden="true" />
             </span>
           </button>
+          <span className="text-sm text-neutral-400">
+            Elige servicio, profesional y horario
+          </span>
         </div>
 
         {/* About Section */}
@@ -402,6 +413,10 @@ export default function Landing() {
           <BlogModal
             post={selectedPost}
             onClose={() => setSelectedPost(null)}
+            onBook={() => {
+              setSelectedPost(null);
+              setIsBookingOpen(true);
+            }}
           />
         )}
         {isBookingOpen && (
@@ -464,7 +479,12 @@ function ServiceCard({
 function BlogModal({
   post,
   onClose,
-}: Readonly<{ post: (typeof BLOG_POSTS)[0]; onClose: () => void }>) {
+  onBook,
+}: Readonly<{
+  post: (typeof BLOG_POSTS)[0];
+  onClose: () => void;
+  onBook: () => void;
+}>) {
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -529,12 +549,13 @@ function BlogModal({
           <p className="text-[#FCF6BA] font-heading text-xl mb-4">
             ¿Te gustaría probar este servicio?
           </p>
-          <Link
-            to="/proyectos/zerovanity/admin"
-            className="inline-block px-8 py-3 border border-[#BF953F] text-[#BF953F] hover:bg-[#BF953F] hover:text-black transition-colors uppercase text-xs font-bold tracking-widest"
+          <button
+            type="button"
+            onClick={onBook}
+            className="booking-cta inline-flex items-center gap-3 px-8 py-4 text-sm font-bold uppercase tracking-widest transition-colors"
           >
-            Reservar Cita Ahora
-          </Link>
+            Reservar cita ahora <Calendar size={18} aria-hidden="true" />
+          </button>
         </div>
       </motion.div>
     </motion.div>

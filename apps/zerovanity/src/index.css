@@ -143,3 +143,17 @@
 .rbc-event {
   @apply bg-gradient-to-r from-[#BF953F] to-[#B38728] border border-[#FCF6BA]/50 text-black font-bold text-xs rounded-none shadow-lg !important;
 }
+
+.booking-cta {
+  background-color: #bf953f;
+  color: #080808;
+}
+
+.booking-cta:hover {
+  background-color: #fcf6ba;
+}
+
+.booking-cta:focus-visible {
+  outline: 2px solid #fcf6ba;
+  outline-offset: 4px;
+}
