@@ -5,10 +5,10 @@ import { ParallaxBackdrop } from '@/components/ui/ParallaxBackdrop';
 
 const projects = [
   { name: 'J.Barranco', sector: 'Limpieza profesional', note: 'Servicios locales presentados con claridad.', href: 'https://jbarrancolimpieza.com', mark: 'JB', tone: 'from-[#d8edeb] to-[#f3f8f6]', image: '/assets/projects/thumbnails/project-jbarranco.webp' },
-  { name: 'ZeroChaos', sector: 'Reformas integrales', note: 'Demo web para presentar servicios y facilitar solicitudes de presupuesto.', href: '/casos-de-exito/reformas-zerochaos', mark: 'ZC', tone: 'from-[#e8e9df] to-[#f6f5ee]', image: '/assets/projects/thumbnails/project-zerochaos.webp', demo: true },
-  { name: 'ZeroDelay', sector: 'Mudanzas', note: 'Demo web para explicar servicios y solicitar un presupuesto.', href: '/casos-de-exito/mudanzas-zerodelay', mark: 'ZD', tone: 'from-[#e2edf7] to-[#f3f7fa]', image: '/assets/projects/thumbnails/project-zerodelay.webp', demo: true },
-  { name: 'ZeroVanity', sector: 'Peluquería y estética', note: 'Demo interactiva de una web para un salón, con recorrido de reserva simulado.', href: '/proyectos/zerovanity', mark: 'ZV', tone: 'from-[#f2e4dd] to-[#faf6f2]', image: '/assets/projects/thumbnails/project-zerovanity.webp', demo: true },
-  { name: 'Zero Breakdown', sector: 'Fontanería · Electricidad · Climatización', note: 'Concepto web con especialidades interactivas e identidad visual propia.', href: '/proyectos/zero-breakdown', mark: 'ZB', tone: 'from-[#e9e4f5] to-[#f5f2fc]', image: '/assets/projects/thumbnails/project-zero-breakdown.webp', demo: true },
+  { name: 'ZeroChaos', sector: 'Reformas integrales', note: 'Demo web para presentar servicios y facilitar solicitudes de presupuesto.', demoDetail: 'Concepto interactivo; marca, cifras y formulario son de demostración. El envío no transmite ni guarda tus datos.', href: '/proyectos/zero-chaos', mark: 'ZC', tone: 'from-[#e8e9df] to-[#f6f5ee]', image: '/assets/projects/thumbnails/project-zerochaos.webp', demo: true },
+  { name: 'ZeroDelay', sector: 'Mudanzas', note: 'Demo web para explicar servicios y solicitar un presupuesto.', demoDetail: 'Concepto interactivo; cifras, disponibilidad y formulario son simulados. El envío no transmite ni guarda tus datos.', href: '/proyectos/zerodelay', mark: 'ZD', tone: 'from-[#e2edf7] to-[#f3f7fa]', image: '/assets/projects/thumbnails/project-zerodelay.webp', demo: true },
+  { name: 'ZeroVanity', sector: 'Peluquería y estética', note: 'Demo interactiva de una web para un salón, con recorrido de reserva simulado.', demoDetail: 'Reserva y panel de administración simulados; no se guardan datos. No introduzcas información personal.', href: '/proyectos/zerovanity', mark: 'ZV', tone: 'from-[#f2e4dd] to-[#faf6f2]', image: '/assets/projects/thumbnails/project-zerovanity.webp', demo: true },
+  { name: 'Zero Breakdown', sector: 'Fontanería · Electricidad · Climatización', note: 'Concepto web con especialidades interactivas e identidad visual propia.', demoDetail: 'Cifras, acreditaciones y disponibilidad son datos de ejemplo. Los formularios son simulados y no transmiten ni guardan información.', href: '/proyectos/zero-breakdown', mark: 'ZB', tone: 'from-[#e9e4f5] to-[#f5f2fc]', image: '/assets/projects/thumbnails/project-zero-breakdown.webp', demo: true },
 ];
 
 type Project = (typeof projects)[number];
@@ -65,7 +65,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
               </div>
             </>
           )}
-          {project.demo && <span className="absolute bottom-4 left-4 bg-white/85 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-[#0b294a]">Demo en desarrollo</span>}
+          {project.demo && <span className="absolute bottom-4 left-4 bg-white/90 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-[#0b294a]">Demo · datos simulados</span>}
           <span className="absolute bottom-4 right-4 flex h-10 w-10 items-center justify-center rounded-full bg-[#071a35] text-white transition group-hover:bg-[#12b8e8] group-hover:text-[#061a32]">
             <ArrowUpRight className="h-4 w-4" />
           </span>
@@ -74,6 +74,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
           <p className="text-xs font-medium uppercase tracking-wider text-[#5b687a]">{project.sector}</p>
           <h3 className="mt-2 font-outfit text-lg font-semibold text-[#0a203d]">{project.name}</h3>
           <p className="mt-2 text-sm leading-6 text-[#586a80]">{project.note}</p>
+          {'demoDetail' in project && <p className="mt-2 border-l-2 border-[#0789bd]/40 pl-3 text-xs leading-5 text-[#5b687a]">{project.demoDetail}</p>}
           <span className="mt-3 inline-flex items-center gap-1.5 text-sm font-semibold text-[#00658c]">Ver proyecto <ExternalLink className="h-3.5 w-3.5" /></span>
         </div>
       </a>

@@ -29,7 +29,7 @@ export function LegalNoticePage() {
     <p><strong>Titular:</strong> {controller}<br /><strong>NIF:</strong> {taxId}<br /><strong>Domicilio:</strong> {address}<br /><strong>Correo:</strong> <a className="underline" href={`mailto:${contactEmail}`}>{contactEmail}</a></p>
     <p>Este sitio ofrece información sobre servicios de diseño y desarrollo web y muestra demostraciones de proyectos.</p>
     <p>Para consultas sobre el sitio, puedes escribir al correo indicado.</p>
-    <p><strong>Precios:</strong> precio mínimo de 400 € + IVA; el presupuesto final depende del alcance acordado.</p>
+    <p><strong>Precios:</strong> precio desde 400 € para el alcance descrito; el presupuesto final depende del alcance acordado.</p>
     <h2 className="text-xl font-semibold">Propiedad intelectual y responsabilidad</h2>
     <p>Los contenidos propios del sitio están protegidos por la normativa aplicable.</p>
     <p>Las marcas, nombres e imágenes de proyectos de terceros pertenecen a sus respectivos titulares.</p>

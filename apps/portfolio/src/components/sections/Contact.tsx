@@ -164,7 +164,7 @@ export function Contact() {
                 <h3 className="font-outfit text-2xl font-semibold tracking-tight text-[#0a203d] sm:text-3xl">
                   Una web para tu negocio.
                 </h3>
-                <p className="mt-2 font-semibold text-[#0a203d]">Precio mínimo: 400 € + IVA</p>
+                <p className="mt-2 font-semibold text-[#0a203d]">Tu web profesional por 400 €</p>
                 <div className="mt-2 space-y-1 text-sm leading-6 text-[#586a80] sm:text-base">
                   <p>Trabajo online en toda España.</p>
                   <p>Trae tu idea o te propongo el diseño.</p>

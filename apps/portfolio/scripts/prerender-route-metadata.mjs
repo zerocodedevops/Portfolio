@@ -26,18 +26,8 @@ const staticPages = [
   },
   {
     path: '/precios-paginas-web',
-    title: 'Precio de diseño web desde 400 € más IVA | ZeroCode',
-    description: 'Qué incluye la web de una página de ZeroCode desde 400 € más IVA: Inicio y Contacto, WhatsApp, adaptación móvil, dominio, hosting por un año y SSL.',
-  },
-  {
-    path: '/casos-de-exito/reformas-zerochaos',
-    title: 'Web para ZeroChaos, demo de reformas | ZeroCode',
-    description: 'Explora el proyecto ZeroChaos, una demo web para servicios de reformas creada por ZeroCode.',
-  },
-  {
-    path: '/casos-de-exito/mudanzas-zerodelay',
-    title: 'Web para ZeroDelay, demo de mudanzas | ZeroCode',
-    description: 'Explora el proyecto ZeroDelay, una demo web para servicios de mudanzas creada por ZeroCode.',
+    title: 'Precio de diseño web desde 400 € | ZeroCode',
+    description: 'Qué incluye la web de una página de ZeroCode desde 400 €: Inicio y Contacto, WhatsApp, adaptación móvil, dominio, hosting por un año y SSL.',
   },
   {
     path: '/proyectos/zerovanity',

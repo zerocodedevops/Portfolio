@@ -11,9 +11,6 @@ import projectCrypto from '@/assets/projects/project-crypto-dashboard.webp';
 import projectPortfolio from '@/assets/projects/project-portfolio-dashboard.webp';
 import projectTask from '@/assets/projects/project-task-management.webp';
 import projectWeather from '@/assets/projects/project-weather.webp';
-import projectZeroDelay from '@/assets/projects/ZeroDelay.webp';
-import projectZeroChaos from '@/assets/projects/zero-chaos.webp';
-import projectJBarranco from '@/assets/projects/jbarranco.webp';
 import { Card, TechBadge } from '@/components/ui';
 import { fadeInUp, staggerContainer } from '@/hooks/useScrollAnimation';
 import { SectionTitle } from '@/components/ui/SectionTitle';
@@ -40,7 +37,7 @@ export const pymeProjects: Project[] = [
   {
     id: 11,
     title: 'J.Barranco - Limpiezas en Madrid',
-    image: projectJBarranco,
+    image: '/assets/projects/thumbnails/project-jbarranco.webp',
     tags: ['Servicios', 'Limpieza profesional', 'Pymes'],
     demoUrl: 'https://jbarrancolimpieza.com',
     status: 'Production',
@@ -48,18 +45,18 @@ export const pymeProjects: Project[] = [
   {
     id: 10,
     title: 'ZeroChaos - Reformas Integrales',
-    image: projectZeroChaos,
+    image: '/assets/projects/thumbnails/project-zerochaos.webp',
     tags: ['Construcción', 'Reformas', 'Diseño adaptable'],
-    demoUrl: '/casos-de-exito/reformas-zerochaos',
+    demoUrl: '/proyectos/zero-chaos',
     status: 'Prototype',
     isDemo: true,
   },
   {
     id: 9,
     title: 'ZeroDelay - Empresa de Mudanzas',
-    image: projectZeroDelay,
+    image: '/assets/projects/thumbnails/project-zerodelay.webp',
     tags: ['Logística', 'Formularios Ágiles', 'Multi-paso'],
-    demoUrl: '/casos-de-exito/mudanzas-zerodelay',
+    demoUrl: '/proyectos/zerodelay',
     status: 'Prototype',
     isDemo: true,
   },
@@ -207,9 +204,6 @@ function ProjectCard({
   })();
 
   const getLinkLabel = () => {
-    if (project.demoUrl?.includes('casos-de-exito')) {
-      return 'Ver Caso de Estudio';
-    }
     return project.status === 'Production'
       ? t('projects.links.visit')
       : t('projects.links.demo');
@@ -267,9 +261,7 @@ function ProjectCard({
             {project.demoUrl && (
               <motion.a
                 href={project.demoUrl}
-                target={
-                  project.demoUrl.includes('casos-de-exito') ? '_self' : '_blank'
-                }
+                target={project.demoUrl.startsWith('/') ? '_self' : '_blank'}
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 text-sm text-dark-300 hover:text-primary-400 transition-colors"
                 whileHover={{ x: 3 }}
@@ -332,7 +324,7 @@ export function Projects() {
               key={project.id}
               project={project}
               onClick={() => {
-                if (project.demoUrl?.includes('casos-de-exito') || project.demoUrl?.includes('/proyectos/')) {
+                if (project.demoUrl?.startsWith('/proyectos/')) {
                    globalThis.location.href = project.demoUrl;
                 } else {
                    setSelectedProject(project);

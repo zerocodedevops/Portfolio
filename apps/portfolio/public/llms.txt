@@ -1,6 +1,6 @@
 # ZeroCode DevOps
 
-> Diseño web a medida para autónomos y pequeñas empresas en España. El precio mínimo de una web de una página con Inicio y Contacto es 400 € + IVA.
+> Diseño web a medida para autónomos y pequeñas empresas en España. Una web de una página con Inicio y Contacto parte de 400 €.
 
 ## Web
 
@@ -13,8 +13,8 @@
 
 ## Proyectos
 
-- [ZeroChaos, reformas integrales](https://zerocode-devops.com/casos-de-exito/reformas-zerochaos)
-- [ZeroDelay, mudanzas](https://zerocode-devops.com/casos-de-exito/mudanzas-zerodelay)
+- [ZeroChaos, reformas integrales](https://zerocode-devops.com/proyectos/zero-chaos)
+- [ZeroDelay, mudanzas](https://zerocode-devops.com/proyectos/zerodelay)
 - [ZeroVanity, peluquería y estética](https://zerocode-devops.com/proyectos/zerovanity)
 
 ## Información legal

@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+
+<html lang="es"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600;700&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style></head><body class="bg-surface font-body-md text-on-surface antialiased"><header class="fixed top-0 w-full z-50 bg-surface/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-20 max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between gap-6"><div class="flex items-center gap-4 shrink-0"><span aria-label="ZeroLeaks" class="h-8 w-8 rounded-full bg-primary text-on-primary flex items-center justify-center font-headline-sm font-bold zb-reference-mark">ZL</span><div class="flex flex-col"><span class="font-headline-sm text-headline-sm tracking-tight text-on-surface uppercase font-bold leading-none">ZeroLeaks</span><span class="font-label-sm text-label-sm text-on-surface-variant tracking-wider uppercase mt-1">Instalaciones Integrales MEP</span></div></div><nav class="hidden lg:flex items-center gap-1" data-active-classes="text-on-surface font-semibold bg-surface-container-high rounded"><a class="font-body-md text-body-md px-3 py-2 text-on-surface-variant hover:text-on-surface transition-colors"  href="/proyectos/zero-breakdown" target="_top">Inicio</a><a class="font-body-md text-body-md px-3 py-2 text-on-surface-variant hover:text-on-surface transition-colors"  href="/proyectos/zero-breakdown/electricidad" target="_top">Electricidad</a><a aria-current="page" class="px-3 py-2 transition-colors text-on-surface font-semibold bg-surface-container-high rounded"  href="/proyectos/zero-breakdown/fontaneria" target="_top">Fontanería</a><a class="font-body-md text-body-md px-3 py-2 text-on-surface-variant hover:text-on-surface transition-colors"  href="/proyectos/zero-breakdown/climatizacion" target="_top">Climatización</a></nav><div class="flex items-center gap-4"><a class="inline-flex items-center gap-2 px-4 py-2.5 bg-primary text-on-primary rounded text-label-md font-label-md uppercase tracking-wider hover:bg-primary-container hover:text-on-primary-container transition-all shadow-[0_2px_4px_-1px_rgba(15,23,42,0.06)]"  href="#contacto"><span class="w-2 h-2 rounded-full bg-secondary-container animate-pulse"></span>Contactar / Urgencias 24h</a><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-20 bg-surface"><div class="flex flex-col w-full">
+<!-- HERO SECTION CON MEDIDORES Y ONDAS FLUIDAS -->
+<section class="relative w-full overflow-hidden bg-surface-container-low pt-12 pb-24">
+<!-- Fondo decorativo SVG con ondas sutiles de agua -->
+<div class="absolute inset-0 pointer-events-none opacity-40">
+<svg class="w-full h-full" fill="none" preserveaspectratio="none" viewbox="0 0 1440 600" xmlns="http://www.w3.org/2000/svg">
+<path class="text-surface-container-high/40" d="M0,192 C320,250 420,120 720,180 C1020,240 1180,100 1440,160 L1440,600 L0,600 Z" fill="currentColor">
+<animate attributename="d" dur="14s" repeatcount="indefinite" values="M0,192 C320,250 420,120 720,180 C1020,240 1180,100 1440,160 L1440,600 L0,600 Z;
+                    M0,160 C360,110 500,260 800,190 C1100,120 1260,240 1440,180 L1440,600 L0,600 Z;
+                    M0,192 C320,250 420,120 720,180 C1020,240 1180,100 1440,160 L1440,600 L0,600 Z"></animate>
+</path>
+<path class="text-surface-container/60" d="M0,280 C240,320 480,220 760,270 C1040,320 1280,210 1440,260 L1440,600 L0,600 Z" fill="currentColor">
+<animate attributename="d" dur="18s" repeatcount="indefinite" values="M0,280 C240,320 480,220 760,270 C1040,320 1280,210 1440,260 L1440,600 L0,600 Z;
+                    M0,240 C300,180 540,310 820,250 C1100,190 1320,290 1440,240 L1440,600 L0,600 Z;
+                    M0,280 C240,320 480,220 760,270 C1040,320 1280,210 1440,260 L1440,600 L0,600 Z"></animate>
+</path>
+</svg>
+</div>
+<div class="relative max-w-7xl mx-auto px-6 lg:px-12">
+<!-- Breadcrumb y Vertical Chip -->
+<div class="flex items-center gap-3 mb-6">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 bg-surface-container rounded-full font-label-sm text-label-sm text-on-tertiary-container uppercase tracking-wider">
+<span class="w-2 h-2 rounded-full bg-secondary animate-ping"></span>
+          Ingeniería Hidráulica
+        </span>
+<span class="text-outline font-label-sm text-label-sm">|</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Sistemas Estancos de Alta Presión</span>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+<!-- Columna de texto principal -->
+<div class="lg:col-span-7 flex flex-col gap-6">
+<div class="inline-flex items-center gap-2 font-label-md text-label-md text-secondary">
+<span class="material-symbols-outlined text-[20px]">water_drop</span>
+<span class="uppercase tracking-widest font-semibold">ZeroLeaks • Saneamiento &amp; ACS</span>
+</div>
+<h1 class="font-headline-xl text-headline-xl lg:text-[42px] lg:leading-[50px] font-bold text-on-surface tracking-tight">
+            Fontanería Avanzada, Redes de Suministro y Saneamiento Certificado
+          </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
+            Diseñamos, montamos e inspeccionamos colectores de distribución hidrosanitaria, circuitos de recirculación ACS y salas de bombeo con grado industrial. Garantía de estanqueidad verificada mediante prueba de carga hidrostática a 16 bar.
+          </p>
+<!-- Acciones principales -->
+<div class="flex flex-wrap items-center gap-4 pt-2">
+<a class="px-6 py-3.5 bg-primary text-on-primary rounded font-label-lg text-label-lg uppercase tracking-wider hover:bg-primary-container transition-all shadow-md flex items-center gap-3" href="#diagnostico-averias">
+<span class="material-symbols-outlined text-[20px]">precision_manufacturing</span>
+              Solicitar Auditoría Hidráulica
+            </a>
+<a class="px-6 py-3.5 bg-secondary text-on-secondary rounded font-label-lg text-label-lg uppercase tracking-wider hover:bg-secondary-container hover:text-on-secondary-container transition-all shadow-sm flex items-center gap-2" href="#guardia-urgente">
+<span class="material-symbols-outlined text-[20px]">emergency</span>
+              Urgencia 24h: Fugas &amp; Roturas
+            </a>
+</div>
+<!-- Métricas vivas de ingeniería de agua -->
+<div class="grid grid-cols-3 gap-4 pt-6 max-w-xl">
+<div class="p-3.5 bg-surface-container-lowest rounded shadow-sm flex flex-col">
+<span class="font-headline-md text-headline-md font-bold text-secondary">100%</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase mt-1">Estanqueidad Certificada</span>
+</div>
+<div class="p-3.5 bg-surface-container-lowest rounded shadow-sm flex flex-col">
+<span class="font-headline-md text-headline-md font-bold text-on-surface">10 Años</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase mt-1">Garantía PEX/Multicapa</span>
+</div>
+<div class="p-3.5 bg-surface-container-lowest rounded shadow-sm flex flex-col">
+<span class="font-headline-md text-headline-md font-bold text-on-surface">&lt; 35 min</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase mt-1">Despliegue de Fugas 24h</span>
+</div>
+</div>
+</div>
+<!-- Columna Visual: Foto y Panel Telemétrico Interactivo -->
+<div class="lg:col-span-5 flex flex-col gap-4">
+<!-- Tarjeta de Imagen Principal del Cuadro Colector y Tuberías -->
+<div class="relative rounded-xl overflow-hidden bg-surface-container shadow-xl">
+<img alt="Colector hidráulico con tuberías de cobre pulido, manifold con tubos azules PEX y manómetros analógicos de presión" class="w-full h-80 object-cover" src="/images/zero-breakdown/reference/referencia-3.webp"/>
+<!-- Superposición con medidores flotantes interactivos estilo manómetro industrial -->
+<div class="absolute bottom-4 left-4 right-4 bg-surface-container-lowest/90 backdrop-blur-md p-4 rounded-lg shadow-md flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[24px]">speed</span>
+</div>
+<div>
+<div class="font-label-sm text-label-sm text-on-surface-variant uppercase font-semibold">Circuito de Retorno ACS</div>
+<div class="font-label-lg text-label-lg font-bold text-on-surface">3.85 BAR • 52.4 °C</div>
+</div>
+</div>
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 bg-surface-container rounded font-label-sm text-label-sm text-secondary font-bold">
+                ESTABLE
+              </span>
+</div>
+</div>
+<!-- Telemetría de Monitoreo Interactivo del Manifold -->
+<div class="p-4 bg-surface-container-lowest rounded-lg shadow-sm flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface uppercase font-bold tracking-wider flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+                Presión de Distribución en Tiempo Real
+              </span>
+<span class="font-label-sm text-label-sm text-on-surface-variant" id="live-gauge-val">4.20 BAR</span>
+</div>
+<!-- Barra interactiva de simulación de presión -->
+<div class="w-full bg-surface-container h-2.5 rounded-full overflow-hidden">
+<div class="h-full bg-secondary transition-all duration-700" id="pressure-fill" style="width: 70%;"></div>
+</div>
+<div class="flex items-center justify-between font-label-sm text-label-sm text-on-surface-variant">
+<span>Mín: 1.5 BAR</span>
+<div class="flex gap-2">
+<button class="px-2 py-0.5 bg-surface-container hover:bg-surface-container-high rounded text-on-surface transition-all" data-zb-action="adjustPressure(-0.5)">Test -0.5</button>
+<button class="px-2 py-0.5 bg-surface-container hover:bg-surface-container-high rounded text-on-surface transition-all" data-zb-action="adjustPressure(0.5)">Test +0.5</button>
+</div>
+<span>Nominal: 6.0 BAR</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECCIÓN 2: CAPACIDADES HIDRÁULICAS Y SERVICIOS ESPECIALIZADOS -->
+<section class="w-full py-20 bg-surface">
+<div class="max-w-7xl mx-auto px-6 lg:px-12 flex flex-col gap-12">
+<!-- Cabecera de sección -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6">
+<div class="flex flex-col gap-2 max-w-2xl">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary font-semibold">Gama Técnica Especializada</span>
+<h2 class="font-headline-lg text-headline-lg font-bold text-on-surface">Capacidades Hidráulicas y Montajes Críticos</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">
+            Desde acometidas comunitarias hasta salas de máquinas de alta demanda. Cada instalación cuenta con certificación UNE 149201 y homologación RITE.
+          </p>
+</div>
+<div class="shrink-0 flex items-center gap-2">
+<span class="font-label-md text-label-md text-on-surface-variant">Protocolo EN 806</span>
+<span class="material-symbols-outlined text-secondary">verified_user</span>
+</div>
+</div>
+<!-- Grid Modular de Capacidades -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Tarjeta 1: Redes Cobre, Multicapa y PE -->
+<div class="bg-surface-container-lowest rounded-xl p-6 shadow-sm hover:shadow-md transition-all flex flex-col justify-between group">
+<div class="flex flex-col gap-4">
+<div class="w-12 h-12 rounded-lg bg-surface-container-high flex items-center justify-center text-secondary group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-[28px]">plumbing</span>
+</div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary font-bold">Instalación Troncal</span>
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface">Redes de Cobre, Multicapa &amp; Polietileno</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              Distribución sin fugas con garantía decenal de estanqueidad. Montaje mediante uniones por prensado mecánico (press-fitting) y soldadura capilar de plata.
+            </p>
+</div>
+<div class="pt-6 mt-6 flex flex-col gap-2">
+<div class="flex items-center justify-between font-label-sm text-label-sm text-on-surface-variant">
+<span>Resistencia Térmica</span>
+<span class="font-bold text-on-surface">Hasta 95 °C</span>
+</div>
+<div class="flex items-center justify-between font-label-sm text-label-sm text-on-surface-variant">
+<span>Garantía de Obra</span>
+<span class="font-bold text-secondary">10 Años</span>
+</div>
+</div>
+</div>
+<!-- Tarjeta 2: Geófono y Gas Trazador -->
+<div class="bg-surface-container-lowest rounded-xl p-6 shadow-sm hover:shadow-md transition-all flex flex-col justify-between group">
+<div class="flex flex-col gap-4">
+<div class="w-12 h-12 rounded-lg bg-surface-container-high flex items-center justify-center text-on-surface group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-[28px]">radar</span>
+</div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-bold">Diagnóstico No Invasivo</span>
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface">Geófono Electroacústico &amp; Gas Trazador</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              Detección submilimétrica de fugas ocultas bajo pavimentos y soleras sin obras ni roturas destructivas. Inyección inocua de gas Nitrógeno-Hidrógeno 95/5.
+            </p>
+</div>
+<div class="pt-6 mt-6 flex flex-col gap-2">
+<div class="flex items-center justify-between font-label-sm text-label-sm text-on-surface-variant">
+<span>Precisión de Fuga</span>
+<span class="font-bold text-on-surface">± 10 cm</span>
+</div>
+<div class="flex items-center justify-between font-label-sm text-label-sm text-on-surface-variant">
+<span>Intervención Destructiva</span>
+<span class="font-bold text-secondary">0% Invasiva</span>
+</div>
+</div>
+</div>
+<!-- Tarjeta 3: Grupos de Presión y Bombas -->
+<div class="bg-surface-container-lowest rounded-xl p-6 shadow-sm hover:shadow-md transition-all flex flex-col justify-between group">
+<div class="flex flex-col gap-4">
+<div class="w-12 h-12 rounded-lg bg-surface-container-high flex items-center justify-center text-secondary group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-[28px]">cyclone</span>
+</div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary font-bold">Impulsión Continua</span>
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface">Grupos de Presión &amp; Bombas de Achique</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              Estaciones de presión con variadores de frecuencia inverter para garantizar caudal constante en cotas elevadas. Bombas sumergibles trituradoras para sótanos.
+            </p>
+</div>
+<div class="pt-6 mt-6 flex flex-col gap-2">
+<div class="flex items-center justify-between font-label-sm text-label-sm text-on-surface-variant">
+<span>Ahorro Eléctrico</span>
+<span class="font-bold text-on-surface">-40% con Inverter</span>
+</div>
+<div class="flex items-center justify-between font-label-sm text-label-sm text-on-surface-variant">
+<span>Presión Mínima</span>
+<span class="font-bold text-secondary">Regulación Constante</span>
+</div>
+</div>
+</div>
+<!-- Tarjeta 4: Tratamiento de Aguas -->
+<div class="bg-surface-container-lowest rounded-xl p-6 shadow-sm hover:shadow-md transition-all flex flex-col justify-between group">
+<div class="flex flex-col gap-4">
+<div class="w-12 h-12 rounded-lg bg-surface-container-high flex items-center justify-center text-on-surface group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-[28px]">water_ph</span>
+</div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-bold">Purificación y Cal</span>
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface">Ósmosis Inversa &amp; Descalcificadores</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              Sistemas de intercambio iónico de bajo consumo de sal para eliminar la dureza del agua. Protección de calderas, griferías y redes contra incrustaciones calcáreas.
+            </p>
+</div>
+<div class="pt-6 mt-6 flex flex-col gap-2">
+<div class="flex items-center justify-between font-label-sm text-label-sm text-on-surface-variant">
+<span>Eliminación de Cal</span>
+<span class="font-bold text-on-surface">&gt; 98% CaCO3</span>
+</div>
+<div class="flex items-center justify-between font-label-sm text-label-sm text-on-surface-variant">
+<span>Salud de Instalación</span>
+<span class="font-bold text-secondary">Vida útil x3</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECCIÓN 3: COMPARATIVA TÉCNICA - SISTEMAS TRADICIONALES VS MULTICAPA/PEX -->
+<section class="w-full py-16 bg-surface-container-low">
+<div class="max-w-7xl mx-auto px-6 lg:px-12 flex flex-col gap-10">
+<div class="flex flex-col gap-2 max-w-2xl">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary font-semibold">Análisis de Materiales e Ingeniería</span>
+<h2 class="font-headline-lg text-headline-lg font-bold text-on-surface">Sistemas Tradicionales vs Nuevas Tecnologías PEX / Multicapa</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">
+          Evaluación objetiva de rendimiento físico, durabilidad frente a aguas agresivas y velocidad de ejecución en obra.
+        </p>
+</div>
+<!-- Tabla Comparativa Limpia sin bordes duros -->
+<div class="w-full bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm">
+<div class="grid grid-cols-12 bg-surface-container p-4 font-label-sm text-label-sm font-bold text-on-surface uppercase tracking-wider">
+<div class="col-span-4 md:col-span-3">Parámetro Técnico</div>
+<div class="col-span-4 md:col-span-4 text-on-surface-variant">Sistemas Tradicionales (Hierro/Cobre clásico)</div>
+<div class="col-span-4 md:col-span-5 text-secondary font-bold">Tecnología Multicapa PEX-AL-PEX ZeroLeaks</div>
+</div>
+<div class="divide-y divide-surface-container-high/40 font-body-sm text-body-sm">
+<!-- Fila 1 -->
+<div class="grid grid-cols-12 p-4 items-center">
+<div class="col-span-4 md:col-span-3 font-semibold text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-secondary">shield</span>
+              Resistencia a Incrustaciones y Cal
+            </div>
+<div class="col-span-4 md:col-span-4 text-on-surface-variant">
+              Alta rugosidad interior. Vulnerable a sedimentos calcáreos que reducen el caudal con los años.
+            </div>
+<div class="col-span-4 md:col-span-5 text-on-surface font-medium bg-surface-container-high/30 p-2 rounded">
+              Rugosidad k = 0,007 mm. Pared interior de polietileno ultraliso donde la cal resbala sin adherirse.
+            </div>
+</div>
+<!-- Fila 2 -->
+<div class="grid grid-cols-12 p-4 items-center bg-surface-container-low/50">
+<div class="col-span-4 md:col-span-3 font-semibold text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-secondary">bolt</span>
+              Corrosión Galvánica y Picaduras
+            </div>
+<div class="col-span-4 md:col-span-4 text-on-surface-variant">
+              Riesgo permanente de par galvánico en contacto con otros metales o corrientes parásitas.
+            </div>
+<div class="col-span-4 md:col-span-5 text-on-surface font-medium bg-surface-container-high/30 p-2 rounded">
+              Dieléctrico absoluto. El núcleo de aluminio queda encapsulado y sellado a láser sin contacto con el fluido.
+            </div>
+</div>
+<!-- Fila 3 -->
+<div class="grid grid-cols-12 p-4 items-center">
+<div class="col-span-4 md:col-span-3 font-semibold text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-secondary">expand</span>
+              Expansión Térmica y Golpe de Ariete
+            </div>
+<div class="col-span-4 md:col-span-4 text-on-surface-variant">
+              Dilatación notable en PEX simple sin alma metálica; ruidos acústicos por cambios bruscos de presión.
+            </div>
+<div class="col-span-4 md:col-span-5 text-on-surface font-medium bg-surface-container-high/30 p-2 rounded">
+              Coeficiente de dilatación similar al cobre (0.026 mm/mK) con absorción acústica del golpe de ariete.
+            </div>
+</div>
+<!-- Fila 4 -->
+<div class="grid grid-cols-12 p-4 items-center bg-surface-container-low/50">
+<div class="col-span-4 md:col-span-3 font-semibold text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-secondary">handyman</span>
+              Técnica de Montaje &amp; Seguridad
+            </div>
+<div class="col-span-4 md:col-span-4 text-on-surface-variant">
+              Precisa soplete abierto de gas y soldaduras manuales con riesgo de incendio en reformas habitadas.
+            </div>
+<div class="col-span-4 md:col-span-5 text-on-surface font-medium bg-surface-container-high/30 p-2 rounded">
+              Crimpadora electrohidráulica prensada en frío. Sin llamas, sin humos, sellado mecánico indeformable.
+            </div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECCIÓN 4: RESOLUCIÓN INTERACTIVA DE AVERÍAS HIDRÁULICAS -->
+<section class="w-full py-20 bg-surface" id="diagnostico-averias">
+<div class="max-w-7xl mx-auto px-6 lg:px-12 flex flex-col gap-10">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-4">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary font-semibold">Protocolo de Diagnóstico Activo</span>
+<h2 class="font-headline-lg text-headline-lg font-bold text-on-surface">Resolución de Incidencias Hidráulicas Habituales</h2>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant max-w-md">
+          Seleccione la anomalía que presenta su instalación para conocer nuestro procedimiento de rectificación estandarizado.
+        </p>
+</div>
+<!-- Desplegables de Casos Prácticos (Interactive Accordion) -->
+<div class="flex flex-col gap-4">
+<!-- Caso 1 -->
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm transition-all duration-300">
+<button class="w-full p-6 text-left flex items-center justify-between hover:bg-surface-container-low/50 transition-colors" data-zb-action="toggleFaq(faq-1)">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined">water_damage</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm font-semibold text-on-surface">Goteos persistentes o humedad en falso techo / trasdosados</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Código: INC-01 • Posible rotura capilar o dilatación de junta</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant transition-transform duration-300" id="icon-faq-1">expand_more</span>
+</button>
+<div class="hidden px-6 pb-6 pt-2 bg-surface-container-low/30 flex flex-col md:flex-row gap-6" id="faq-1">
+<div class="flex-1">
+<span class="font-label-sm text-label-sm uppercase font-bold text-secondary block mb-1">Procedimiento de Intervención ZeroLeaks</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                1. Escaneo termográfico con cámara infrarroja Fluke para delinear el mapa de temperatura de la humedad.<br/>
+                2. Calibración acústica con geófono para confirmar el punto exacto de la fuga con margen de centímetros.<br/>
+                3. Sustitución del tramo afectado mediante manguito de unión rápida press-fitting sin desescombrar la pared completa.<br/>
+                4. Prueba final de presión a 1.5x la presión de servicio durante 60 minutos con certificación escrita.
+              </p>
+</div>
+<div class="shrink-0 p-4 bg-surface-container rounded-lg flex flex-col justify-center gap-2">
+<span class="font-label-sm text-label-sm font-bold text-on-surface">Tiempo Medio de Solución</span>
+<span class="font-headline-sm text-headline-sm font-bold text-secondary">2.5 Horas</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Sin obras destructivas</span>
+</div>
+</div>
+</div>
+<!-- Caso 2 -->
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm transition-all duration-300">
+<button class="w-full p-6 text-left flex items-center justify-between hover:bg-surface-container-low/50 transition-colors" data-zb-action="toggleFaq(faq-2)">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined">speed</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm font-semibold text-on-surface">Baja presión o caídas de caudal simultáneas en plantas altas</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Código: INC-02 • Subdimensionamiento o fallo de grupo de presión</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant transition-transform duration-300" id="icon-faq-2">expand_more</span>
+</button>
+<div class="hidden px-6 pb-6 pt-2 bg-surface-container-low/30 flex flex-col md:flex-row gap-6" id="faq-2">
+<div class="flex-1">
+<span class="font-label-sm text-label-sm uppercase font-bold text-secondary block mb-1">Procedimiento de Intervención ZeroLeaks</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                1. Medición diferencial con manómetro patrón en acometida general y terminales de los pisos superiores.<br/>
+                2. Comprobación del calderín de membrana hidroneumática y precarga de nitrógeno.<br/>
+                3. Si el caudal de acometida es insuficiente, instalación de grupo de presión compacto con bomba multiturbina inverter de modulación suave.<br/>
+                4. Equilibrado hidráulico de montantes para evitar sobrepresiones en plantas bajas y falta en ático.
+              </p>
+</div>
+<div class="shrink-0 p-4 bg-surface-container rounded-lg flex flex-col justify-center gap-2">
+<span class="font-label-sm text-label-sm font-bold text-on-surface">Garantía de Presión</span>
+<span class="font-headline-sm text-headline-sm font-bold text-secondary">Constante ± 0.2 BAR</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">En todos los grifos</span>
+</div>
+</div>
+</div>
+<!-- Caso 3 -->
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm transition-all duration-300">
+<button class="w-full p-6 text-left flex items-center justify-between hover:bg-surface-container-low/50 transition-colors" data-zb-action="toggleFaq(faq-3)">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined">delete_sweep</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm font-semibold text-on-surface">Atascos recurrentes, malos olores y retorno en desagües</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Código: INC-03 • Falta de ventilación primaria o sedimentación en bajantes</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant transition-transform duration-300" id="icon-faq-3">expand_more</span>
+</button>
+<div class="hidden px-6 pb-6 pt-2 bg-surface-container-low/30 flex flex-col md:flex-row gap-6" id="faq-3">
+<div class="flex-1">
+<span class="font-label-sm text-label-sm uppercase font-bold text-secondary block mb-1">Procedimiento de Intervención ZeroLeaks</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                1. Inspección técnica de televisión robotizada (CCTV) con sonda emisora para identificar roturas, raíces o aplastamientos.<br/>
+                2. Limpieza y desincrustación con tobera hidrocinética a alta presión de agua (150 BAR) sin productos químicos corrosivos.<br/>
+                3. Verificación de las válvulas de aireación y ventilación secundaria en cubierta para eliminar el desifonamiento.<br/>
+                4. Entrega de informe en vídeo digital con el estado interno del colector saneado.
+              </p>
+</div>
+<div class="shrink-0 p-4 bg-surface-container rounded-lg flex flex-col justify-center gap-2">
+<span class="font-label-sm text-label-sm font-bold text-on-surface">Inspección CCTV</span>
+<span class="font-headline-sm text-headline-sm font-bold text-secondary">HD Color</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Con localizador 512 Hz</span>
+</div>
+</div>
+</div>
+<!-- Caso 4 -->
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm transition-all duration-300">
+<button class="w-full p-6 text-left flex items-center justify-between hover:bg-surface-container-low/50 transition-colors" data-zb-action="toggleFaq(faq-4)">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined">architecture</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm font-semibold text-on-surface">Sustitución de bajantes de fibrocemento o plomo degradadas</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Código: INC-04 • Renovación comunitaria según CTE DB-HS</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant transition-transform duration-300" id="icon-faq-4">expand_more</span>
+</button>
+<div class="hidden px-6 pb-6 pt-2 bg-surface-container-low/30 flex flex-col md:flex-row gap-6" id="faq-4">
+<div class="flex-1">
+<span class="font-label-sm text-label-sm uppercase font-bold text-secondary block mb-1">Procedimiento de Intervención ZeroLeaks</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                1. Plan de desamiantado homologado por empresa RERA autorizada cuando aplique retirada de amianto.<br/>
+                2. Reemplazo por tubería insonorizada de polipropileno tricapa con atenuación de ruido de descarga inferior a 15 dB.<br/>
+                3. Instalación de manguitos cortafuegos intumescentes en los pasos entre forjados cumpliendo DB-SI.<br/>
+                4. Montaje completado en jornada continua para minimizar el tiempo de corte de servicio a los vecinos.
+              </p>
+</div>
+<div class="shrink-0 p-4 bg-surface-container rounded-lg flex flex-col justify-center gap-2">
+<span class="font-label-sm text-label-sm font-bold text-on-surface">Aislamiento Acústico</span>
+<span class="font-headline-sm text-headline-sm font-bold text-secondary">&lt; 15 dB (A)</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Confort residencial total</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECCIÓN 5: BANNER DE ACCIÓN INMEDIATA Y DESPACHO DE URGENCIAS 24H -->
+<section class="w-full py-16 bg-surface-container-high" id="guardia-urgente">
+<div class="max-w-7xl mx-auto px-6 lg:px-12">
+<div class="bg-primary text-on-primary rounded-2xl p-8 lg:p-12 shadow-2xl relative overflow-hidden">
+<!-- Elemento de fondo: ondas abstractas de presión -->
+<div class="absolute -right-20 -bottom-20 w-96 h-96 rounded-full bg-secondary/15 blur-3xl pointer-events-none"></div>
+<div class="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+<div class="lg:col-span-8 flex flex-col gap-4">
+<div class="inline-flex items-center gap-2 px-3 py-1 bg-secondary rounded font-label-sm text-label-sm text-on-secondary uppercase tracking-widest font-bold w-fit">
+<span class="w-2 h-2 rounded-full bg-on-secondary animate-pulse"></span>
+              Servicio de Intervención Rápida 24/7/365
+            </div>
+<h2 class="font-headline-xl text-headline-xl font-bold text-on-primary tracking-tight">
+              ¿Fuga crítica, rotura de montante o inundación en curso?
+            </h2>
+<p class="font-body-md text-body-md text-on-primary-fixed-variant max-w-2xl">
+              Nuestros vehículos taller móviles llevan a bordo soldadura TIG, manifolds de emergencia, equipos de congelación de tuberías Rothenberger (para reparar sin vaciar el edificio) y motobombas de achique de gran caudal.
+            </p>
+<div class="flex flex-wrap items-center gap-6 pt-2 font-label-md text-label-md text-inverse-primary">
+<span class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[20px]">timer</span>
+                Llegada &lt; 35 min
+              </span>
+<span class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[20px]">ac_unit</span>
+                Congelación de tubos (sin corte gral.)
+              </span>
+<span class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[20px]">verified</span>
+                Fontaneros Homologados
+              </span>
+</div>
+</div>
+<!-- Botonera de Contacto de Alto Impacto -->
+<div class="lg:col-span-4 flex flex-col gap-4">
+<a class="w-full py-4 px-6 bg-secondary text-on-secondary rounded font-headline-sm text-headline-sm font-bold flex items-center justify-center gap-3 hover:bg-secondary-container hover:text-on-secondary-container transition-all shadow-lg text-center" href="tel:+34 912 622 712">
+<span class="material-symbols-outlined text-[28px]">phone_in_talk</span>
+              912 622 712
+            </a>
+<button class="w-full py-3.5 px-6 bg-surface-container-highest text-on-surface rounded font-label-md text-label-md uppercase tracking-wider font-bold flex items-center justify-center gap-2 hover:bg-surface-container-lowest transition-all" data-zb-action="openModal">
+<span class="material-symbols-outlined text-[20px]">assignment</span>
+              Pedir Presupuesto o Inspección
+            </button>
+<span class="text-center font-label-sm text-label-sm text-inverse-primary">Atención telefónica directa con técnico de guardia, sin intermediarios.</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- MODAL / FORMULARIO FLOTANTE DE INSPECCIÓN HIDRÁULICA (Interactivo) -->
+<div class="hidden fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4" id="modal-diagnostico">
+<div class="bg-surface-container-lowest rounded-2xl max-w-xl w-full p-8 shadow-2xl relative flex flex-col gap-6">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined">water_drop</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface">Solicitar Auditoría Hidráulica</h3>
+<span class="font-label-sm text-label-sm text-on-surface-variant">ZeroLeaks • Contacto</span>
+</div>
+</div>
+<button class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-on-surface" data-zb-action="closeModal">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<form class="flex flex-col gap-4">
+<div>
+<label class="block font-label-sm text-label-sm font-bold text-on-surface uppercase mb-1">Tipo de Instalación</label>
+<select class="w-full px-4 py-2.5 bg-surface-container-low rounded font-body-sm text-body-sm text-on-surface focus:outline-none">
+<option>Comunidad de Propietarios (Bajantes / Batería de contadores)</option>
+<option>Edificio Terciario / Oficinas / Hospital</option>
+<option>Instalación Industrial / Nave Logística</option>
+<option>Vivienda Unifamiliar / Colector Suelo Radiante</option>
+</select>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div>
+<label class="block font-label-sm text-label-sm font-bold text-on-surface uppercase mb-1">Nombre / Contacto</label>
+<input class="w-full px-4 py-2.5 bg-surface-container-low rounded font-body-sm text-body-sm text-on-surface focus:outline-none" placeholder="Ing. Fernando Gómez" required="" type="text"/>
+</div>
+<div>
+<label class="block font-label-sm text-label-sm font-bold text-on-surface uppercase mb-1">Teléfono Directo</label>
+<input class="w-full px-4 py-2.5 bg-surface-container-low rounded font-body-sm text-body-sm text-on-surface focus:outline-none" placeholder="+34 600 000 000" required="" type="tel"/>
+</div>
+</div>
+<div>
+<label class="block font-label-sm text-label-sm font-bold text-on-surface uppercase mb-1">Descripción del problema o proyecto</label>
+<textarea class="w-full px-4 py-2.5 bg-surface-container-low rounded font-body-sm text-body-sm text-on-surface focus:outline-none" placeholder="Fuga no localizada, sustitución de tuberías o necesidad de grupo de presión..." rows="3"></textarea>
+</div>
+<button class="w-full py-3.5 bg-secondary text-on-secondary rounded font-label-md text-label-md uppercase tracking-wider font-bold hover:bg-secondary-container hover:text-on-secondary-container transition-all" type="submit">
+          Enviar para Asignación de Ingeniero
+        </button>
+</form>
+<div class="hidden p-3 bg-surface-container rounded text-center font-label-md text-label-md text-secondary font-bold" id="form-success-msg">
+        Envío simulado. No se ha enviado ni almacenado ningún dato.
+      </div>
+</div>
+</div>
+<!-- SCRIPT PARA INTERACTIVIDAD: ACCORDION, PRESIÓN Y MODAL -->
+
+</div></main><footer class="w-full bg-surface-container-low shadow-[0_-1px_8px_rgba(0,0,0,0.02)]"><div class="max-w-7xl mx-auto px-6 lg:px-12 py-16"><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12"><div class="flex flex-col gap-4"><div class="flex items-center gap-3"><span aria-label="ZeroLeaks" class="h-8 w-8 rounded-full bg-primary text-on-primary flex items-center justify-center font-headline-sm font-bold zb-reference-mark">ZL</span><span class="font-headline-sm text-headline-sm font-bold tracking-tight text-on-surface">ZeroLeaks</span></div><p class="font-body-sm text-body-sm text-on-surface-variant">Ingeniería, montaje y mantenimiento integral de sistemas MEP. Máxima fiabilidad técnica para entornos industriales, comerciales y residenciales de alta demanda.</p><div class="flex flex-col gap-1"><span class="font-label-sm text-label-sm uppercase text-on-surface-variant font-semibold">Certificaciones Técnicas</span><div class="flex flex-wrap gap-1.5 mt-1"><span class="font-label-sm text-label-sm px-2 py-0.5 bg-surface-container rounded text-on-surface">ISO 9001</span><span class="font-label-sm text-label-sm px-2 py-0.5 bg-surface-container rounded text-on-surface">ISO 14001</span><span class="font-label-sm text-label-sm px-2 py-0.5 bg-surface-container rounded text-on-surface">RITE</span><span class="font-label-sm text-label-sm px-2 py-0.5 bg-surface-container rounded text-on-surface">REBT</span></div></div></div><div class="flex flex-col gap-3"><span class="font-headline-sm text-headline-sm font-semibold text-on-surface">Sectores MEP</span><div class="flex flex-col gap-2 font-body-sm text-body-sm text-on-surface-variant"><a class="hover:text-on-surface transition-colors"  href="/proyectos/zero-breakdown/electricidad" target="_top">Subestaciones y Baja Tensión</a><a class="hover:text-on-surface transition-colors"  href="/proyectos/zero-breakdown/electricidad" target="_top">Cuadros Industriales y Domótica</a><a class="hover:text-on-surface transition-colors"  href="/proyectos/zero-breakdown/fontaneria" target="_top">Redes Hidráulicas y ACS</a><a class="hover:text-on-surface transition-colors"  href="/proyectos/zero-breakdown/fontaneria" target="_top">Grupos de Presión y Saneamiento</a><a class="hover:text-on-surface transition-colors"  href="/proyectos/zero-breakdown/climatizacion" target="_top">Sistemas VRF / Aerotermia</a><a class="hover:text-on-surface transition-colors"  href="/proyectos/zero-breakdown/climatizacion" target="_top">Ventilación Mecánica y Filtración</a></div></div><div class="flex flex-col gap-3"><span class="font-headline-sm text-headline-sm font-semibold text-on-surface">Cobertura Operativa</span><div class="flex flex-col gap-2 font-body-sm text-body-sm text-on-surface-variant"><span class="flex items-center gap-2"><span class="material-symbols-outlined text-label-md text-on-surface-variant">location_on</span>Parques Industriales y Logísticos</span><span class="flex items-center gap-2"><span class="material-symbols-outlined text-label-md text-on-surface-variant">location_on</span>Complejos Hospitalarios y Clínicos</span><span class="flex items-center gap-2"><span class="material-symbols-outlined text-label-md text-on-surface-variant">location_on</span>Centros Comerciales y Terciarios</span><span class="flex items-center gap-2"><span class="material-symbols-outlined text-label-md text-on-surface-variant">location_on</span>Residencial de Alta Eficiencia</span></div><div class="mt-2 p-3 bg-surface-container rounded"><span class="font-label-sm text-label-sm uppercase text-secondary font-bold block mb-1">Despacho 24h</span><p class="font-body-sm text-body-sm text-on-surface">Intervención técnica urgente con tiempo medio de respuesta menor a 45 min en zona metropolitana.</p></div></div><div class="flex flex-col gap-3"><span class="font-headline-sm text-headline-sm font-semibold text-on-surface">Centro de Urgencias</span><div class="p-4 bg-surface-container-high rounded flex flex-col gap-3"><div class="flex items-center gap-2"><span class="material-symbols-outlined text-secondary text-[22px]">phone_in_talk</span><a href="tel:+34912622712" class="font-label-lg text-label-lg font-bold text-on-surface">+34 912 622 712</a></div><p class="font-body-sm text-body-sm text-on-surface-variant">Línea técnica prioritaria permanente 24/7/365 para incidencias críticas y averías de suministro.</p><a class="inline-flex items-center justify-center px-3 py-2 bg-secondary text-on-secondary rounded text-label-md font-label-md uppercase tracking-wider hover:bg-secondary-container hover:text-on-secondary-container transition-all"  href="#contacto">Activar Guardia Técnica</a></div><span class="font-body-sm text-body-sm text-on-surface-variant mt-2">Contacto: <a href="mailto:admin@zerocode-devops.com">admin@zerocode-devops.com</a></span></div></div><div class="pt-8 mt-8 border-t border-outline-variant/30 flex flex-col sm:flex-row items-center justify-between gap-4 font-body-sm text-body-sm text-on-surface-variant"><p>© 2025 ZeroLeaks. Todos los derechos reservados.</p><div class="flex items-center gap-6 font-label-sm text-label-sm"><a class="hover:text-on-surface transition-colors"  href="/aviso-legal" target="_top">Aviso Legal</a><a class="hover:text-on-surface transition-colors"  href="/politica-de-privacidad" target="_top">Política de Privacidad</a><a class="hover:text-on-surface transition-colors"  href="/politica-de-cookies" target="_top">Cookies</a><a class="hover:text-on-surface transition-colors"  href="/aviso-legal" target="_top">Normativa Técnica</a></div></div></div></footer></body></html>

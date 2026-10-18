@@ -137,7 +137,7 @@ export function ProductOptions() {
         </h2>
         <div className="mt-4 space-y-3 leading-7 text-[#586a80]">
           <p>Desde nuevas secciones hasta reservas, campañas o mantenimiento.</p>
-          <p>El precio de 400 € + IVA corresponde únicamente a la web de una página descrita arriba; estas opciones se presupuestan según el alcance, las integraciones y los proveedores necesarios.</p>
+          <p>El precio de 400 € corresponde únicamente a la web de una página descrita arriba; estas opciones se presupuestan según el alcance, las integraciones y los proveedores necesarios.</p>
         </div>
       </header>
 
@@ -170,7 +170,7 @@ export function ProductOptions() {
       <div className="mx-auto mt-8 max-w-3xl space-y-2 text-center text-xs leading-5 text-[#5b687a]">
         <p>Algunas opciones requieren cuentas, licencias o servicios de terceros.</p>
         <p>Los costes externos, límites y condiciones se detallarán en cada presupuesto.</p>
-        <p>Los textos legales se publicarán con la información que facilite el cliente y conviene validarlos con un profesional.</p>
+        <p>Los textos legales se publicarán con la información que facilite el cliente.</p>
       </div>
     </section>
   );

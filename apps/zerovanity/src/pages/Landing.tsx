@@ -142,6 +142,8 @@ export default function Landing() {
           />
         </div>
 
+        <h1 className="sr-only">Zero Vanity: peluquería y estética</h1>
+
         <p className="max-w-2xl text-lg text-neutral-400 mb-12 font-light leading-relaxed animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-200">
           Bienvenido a Zero Vanity, donde la estética de vanguardia se une al
           lujo atemporal. Descubre un espacio dedicado exclusivamente a tu

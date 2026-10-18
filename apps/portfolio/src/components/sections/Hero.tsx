@@ -52,6 +52,9 @@ export function Hero() {
             <motion.h1 variants={fadeInUp} className="max-w-[620px] font-outfit text-[clamp(2.5rem,4.3vw,4.2rem)] font-semibold leading-[1.04] tracking-[-0.045em] text-white">
               Una web propia para dar visibilidad a tu negocio.
             </motion.h1>
+            <motion.p variants={fadeInUp} className="mt-4 max-w-[620px] text-base leading-relaxed text-white/80">
+              Diseño web a medida para autónomos y pymes de toda España. Presenta tus servicios con claridad, transmite confianza profesional y capta clientes sin complicaciones.
+            </motion.p>
             <motion.ul variants={fadeInUp} className="mt-6 grid max-w-[590px] gap-3 text-sm leading-6 text-white/85 sm:text-base">
               {benefits.map((benefit) => (
                 <li key={benefit} className="flex items-start gap-3">
@@ -71,7 +74,7 @@ export function Hero() {
               </a>
             </motion.div>
             <motion.p variants={fadeInUp} className="mt-5 text-sm text-white/75">
-              Precio mínimo: <strong className="font-semibold text-white">400 € + IVA</strong>
+              Tu web profesional por <strong className="font-semibold text-white">400€*</strong>
               <span className="mx-2 text-white/40">·</span>
               Online en toda España
             </motion.p>

@@ -318,7 +318,7 @@ export function PricingConfigurator() {
     if (selectedPack)
       selectionText += `PACK: ${PACKS[selectedPack as keyof typeof PACKS].name} (${PACKS[selectedPack as keyof typeof PACKS].price}€)\n`;
     selectionText += `SERVICIOS:\n${selected.map((i) => `- ${i.name}`).join('\n')}`;
-    selectionText += `\nTOTAL ESTIMADO: ${totalPrice}€ + IVA`;
+    selectionText += `\nTOTAL ESTIMADO: ${totalPrice}€`;
 
     const messageSuffix = formData.message ?? 'Sin mensaje';
     try {

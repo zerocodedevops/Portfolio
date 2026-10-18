@@ -10,7 +10,6 @@ const SalonApp = lazy(() => import('@zerovanity/routes'));
 const MediaApp = lazy(() => import('@zerodelay/App'));
 const ReformsApp = lazy(() => import('@zero-chaos/routes'));
 const ZeroBreakdownDemo = lazy(() => import('@/features/zero-breakdown/ZeroBreakdownDemo'));
-const CaseStudy = lazy(() => import('@/features/projects/CaseStudy'));
 const LegalNoticePage = lazy(() => import('@/features/legal/LegalPages').then((module) => ({ default: module.LegalNoticePage })));
 const PrivacyPolicyPage = lazy(() => import('@/features/legal/LegalPages').then((module) => ({ default: module.PrivacyPolicyPage })));
 const CookiesPolicyPage = lazy(() => import('@/features/legal/LegalPages').then((module) => ({ default: module.CookiesPolicyPage })));
@@ -24,7 +23,7 @@ function VanityDemoApp() {
         url="https://zerocode-devops.com/proyectos/zerovanity"
       />
       <SalonApp />
-      <details className="fixed bottom-4 right-4 z-[100] max-w-xs rounded-xl border border-amber-500/40 bg-dark-950/95 text-amber-100 shadow-xl">
+      <details open className="fixed bottom-4 right-4 z-[100] max-w-xs rounded-xl border border-amber-500/40 bg-dark-950/95 text-amber-100 shadow-xl">
         <summary className="cursor-pointer px-4 py-2 text-sm font-semibold">
           ZeroVanity · Demo
         </summary>
@@ -109,17 +108,22 @@ const router = createBrowserRouter(
           path: 'proyectos/zero-chaos/*',
           element: (
             <Suspense fallback={<PageLoader text="Abriendo Cero Caos..." />}>
-              <ReformsApp />
+              <>
+                <ReformsApp />
+                <aside className="fixed bottom-3 left-3 z-[100] max-w-sm rounded border border-amber-500/50 bg-amber-50 px-4 py-3 text-xs text-slate-800 shadow-xl" aria-label="Aviso de demostración">
+                  Demo conceptual: formulario y envío simulados. No introduzcas datos reales; la información no se envía ni se almacena.
+                </aside>
+              </>
             </Suspense>
           ),
         },
         {
-          path: 'casos-de-exito/:slug',
-          element: (
-            <Suspense fallback={<PageLoader text="Cargando Caso de Estudio..." />}>
-              <CaseStudy />
-            </Suspense>
-          ),
+          path: 'casos-de-exito/reformas-zerochaos',
+          element: <Navigate to="/proyectos/zero-chaos" replace />,
+        },
+        {
+          path: 'casos-de-exito/mudanzas-zerodelay',
+          element: <Navigate to="/proyectos/zerodelay" replace />,
         },
         {
           path: 'tech',

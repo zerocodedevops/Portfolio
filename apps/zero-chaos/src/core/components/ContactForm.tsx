@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
@@ -12,20 +13,20 @@ const contactSchema = z.object({
 type ContactFormData = z.infer<typeof contactSchema>;
 
 export const ContactForm = () => {
+  const [simulated, setSimulated] = useState(false);
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors, isSubmitting },
   } = useForm<ContactFormData>({
-    resolver: zodResolver(contactSchema as any),
+    resolver: zodResolver(contactSchema),
   });
 
-  const onSubmit = async (data: ContactFormData) => {
-    console.log("Form data:", data);
-    // Here we would implement the logic to send to email or CRM
-    alert(
-      "¡Mensaje enviado! Nos pondremos en contacto contigo en menos de 24h.",
-    );
+  const onSubmit = async (_data: ContactFormData) => {
+    // Demo-only: deliberately do not log, persist, or transmit submitted values.
+    reset();
+    setSimulated(true);
   };
 
   return (
@@ -33,8 +34,14 @@ export const ContactForm = () => {
       onSubmit={handleSubmit(onSubmit)}
       className="bg-white p-8 shadow-2xl border border-gray-100 max-w-lg w-full"
     >
+      <p className="mb-5 border border-[#A8754F]/30 bg-[#A8754F]/5 p-3 text-sm text-gray-700">
+        Demo interactiva: este envío es simulado. No introduzcas datos reales; la información no se guarda ni se envía a ningún sitio.
+      </p>
+      <p className="mb-5 border border-[#A8754F]/30 bg-[#A8754F]/5 p-3 text-sm text-gray-700">
+        Demo interactiva: este envío es simulado. Los datos que introduzcas no se guardan ni se envían a ningún sitio.
+      </p>
       <h3 className="text-2xl font-bold text-[#2B302E] mb-6 uppercase tracking-tight">
-        Solicita presupuesto <span className="text-[#A8754F]">en 24h</span>
+        Solicita presupuesto de ejemplo
       </h3>
 
       <div className="space-y-4">
@@ -100,9 +107,19 @@ export const ContactForm = () => {
           className="w-full mt-4"
         />
 
-        <p className="text-[10px] text-gray-400 text-center mt-4">
-          Al enviar aceptas nuestra política de privacidad. Te llamaremos para
-          una visita técnica gratuita.
+        {simulated && (
+          <p role="status" aria-live="polite" className="mt-4 text-sm text-[#2B302E]">
+            Envío simulado. No se ha enviado ni almacenado ningún dato.
+          </p>
+        )}
+
+        {simulated && (
+          <p role="status" className="text-sm text-[#2B302E]" aria-live="polite">
+            Envío simulado. No se ha enviado ni almacenado ningún dato.
+          </p>
+        )}
+        <p className="text-[10px] text-gray-500 text-center mt-4">
+          No introduzcas datos reales. Este formulario de demostración no almacena ni transmite la información.
         </p>
       </div>
     </form>

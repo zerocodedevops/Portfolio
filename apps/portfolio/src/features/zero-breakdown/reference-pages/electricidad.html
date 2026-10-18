@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+
+<html lang="es"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600;700&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style></head><body class="bg-surface font-body-md text-on-surface antialiased"><header class="fixed top-0 w-full z-50 bg-surface/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-20 max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between gap-6"><div class="flex items-center gap-4 shrink-0"><span aria-label="ZeroBlackout" class="h-8 w-8 rounded-full bg-primary text-on-primary flex items-center justify-center font-headline-sm font-bold zb-reference-mark">ZB</span><div class="flex flex-col"><span class="font-headline-sm text-headline-sm tracking-tight text-on-surface uppercase font-bold leading-none">ZeroBlackout</span><span class="font-label-sm text-label-sm text-on-surface-variant tracking-wider uppercase mt-1">Instalaciones Integrales MEP</span></div></div><nav class="hidden lg:flex items-center gap-1" data-active-classes="text-on-surface font-semibold bg-surface-container-high rounded"><a class="font-body-md text-body-md px-3 py-2 text-on-surface-variant hover:text-on-surface transition-colors"  href="/proyectos/zero-breakdown" target="_top">Inicio</a><a aria-current="page" class="px-3 py-2 transition-colors text-on-surface font-semibold bg-surface-container-high rounded"  href="/proyectos/zero-breakdown/electricidad" target="_top">Electricidad</a><a class="font-body-md text-body-md px-3 py-2 text-on-surface-variant hover:text-on-surface transition-colors"  href="/proyectos/zero-breakdown/fontaneria" target="_top">Fontanería</a><a class="font-body-md text-body-md px-3 py-2 text-on-surface-variant hover:text-on-surface transition-colors"  href="/proyectos/zero-breakdown/climatizacion" target="_top">Climatización</a></nav><div class="flex items-center gap-4"><a class="inline-flex items-center gap-2 px-4 py-2.5 bg-primary text-on-primary rounded text-label-md font-label-md uppercase tracking-wider hover:bg-primary-container hover:text-on-primary-container transition-all shadow-[0_2px_4px_-1px_rgba(15,23,42,0.06)]"  href="#contacto"><span class="w-2 h-2 rounded-full bg-secondary-container animate-pulse"></span>Contactar / Urgencias 24h</a><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-20 bg-surface"><div class="flex flex-col w-full">
+<div class="relative w-full overflow-hidden bg-primary-container text-on-primary">
+<div class="absolute inset-0 pointer-events-none opacity-20">
+<svg class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<pattern height="60" id="elec-circuit-grid" patternunits="userSpaceOnUse" width="60">
+<path d="M 60 0 L 0 0 0 60" fill="none" stroke="#fe932c" stroke-dasharray="4,8" stroke-width="0.75"></path>
+<circle cx="60" cy="0" fill="#fe932c" r="2.5"></circle>
+<circle cx="0" cy="60" fill="#fe932c" r="2.5"></circle>
+<path d="M 15 15 L 45 15 L 45 45" fill="none" opacity="0.4" stroke="#fe932c" stroke-width="0.5"></path>
+</pattern>
+</defs>
+<rect fill="url(#elec-circuit-grid)" height="100%" width="100%"></rect>
+</svg>
+</div>
+<div class="absolute -top-32 -right-32 w-96 h-96 rounded-full bg-secondary-container/20 blur-3xl pointer-events-none"></div>
+<div class="absolute -bottom-40 left-1/4 w-80 h-80 rounded-full bg-secondary/30 blur-3xl pointer-events-none"></div>
+<div class="relative max-w-7xl mx-auto px-6 lg:px-12 py-16 lg:py-24 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+<div class="lg:col-span-7 flex flex-col gap-6">
+<div class="inline-flex items-center gap-3 px-3 py-1.5 rounded bg-surface-container-highest/20 text-secondary-fixed w-fit">
+<span class="flex h-2 w-2 rounded-full bg-secondary-container animate-ping"></span>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary-fixed">División Eléctrica Certificada REBT - Cat. Especialista</span>
+</div>
+<div class="flex flex-col gap-2">
+<span class="font-label-md text-label-md uppercase tracking-wider text-secondary-fixed-dim">Soluciones MEP de Alta Potencia · 400V / 230V</span>
+<h1 class="font-headline-xl text-headline-xl lg:text-display-lg font-bold tracking-tight text-on-primary">
+            Ingeniería Eléctrica, Cuadros de Potencia y Eficiencia Energética
+          </h1>
+</div>
+<p class="font-body-lg text-body-lg text-primary-fixed-dim max-w-2xl">
+          Diseño, ensamblaje, telediagnóstico y mantenimiento certificado de sistemas electrotécnicos. Garantizamos continuidad operacional de grado industrial, legalizaciones urgentes y automatización inteligente con estándar KNX.
+        </p>
+<div class="grid grid-cols-3 gap-4 pt-4 max-w-xl">
+<div class="p-3 rounded bg-surface-container-highest/15 backdrop-blur-sm flex flex-col">
+<span class="font-headline-lg text-headline-lg font-bold text-secondary-container">99.98%</span>
+<span class="font-label-sm text-label-sm text-surface-container-highest uppercase">Continuidad Crítica</span>
+</div>
+<div class="p-3 rounded bg-surface-container-highest/15 backdrop-blur-sm flex flex-col">
+<span class="font-headline-lg text-headline-lg font-bold text-secondary-fixed">&lt;24h</span>
+<span class="font-label-sm text-label-sm text-surface-container-highest uppercase">Boletines CIE Oficiales</span>
+</div>
+<div class="p-3 rounded bg-surface-container-highest/15 backdrop-blur-sm flex flex-col">
+<span class="font-headline-lg text-headline-lg font-bold text-secondary-container">1.2 MW</span>
+<span class="font-label-sm text-label-sm text-surface-container-highest uppercase">Potencia Instalada/Mes</span>
+</div>
+</div>
+<div class="flex flex-wrap items-center gap-4 pt-2">
+<a class="inline-flex items-center gap-2 px-6 py-3.5 bg-secondary text-on-secondary rounded text-label-lg font-label-lg uppercase tracking-wider hover:bg-secondary-container hover:text-on-secondary-container transition-all shadow-md" href="#cotizacion-directa">
+<span class="material-symbols-outlined text-[18px]">bolt</span>
+            Solicitar Presupuesto Técnico
+          </a>
+<a class="inline-flex items-center gap-2 px-5 py-3.5 bg-surface-container-highest/20 text-on-primary rounded text-label-lg font-label-lg uppercase tracking-wider hover:bg-surface-container-highest/30 transition-all" href="#calculadora-potencia">
+<span class="material-symbols-outlined text-[18px]">calculate</span>
+            Calculadora de Carga
+          </a>
+</div>
+</div>
+<div class="lg:col-span-5 relative">
+<div class="relative rounded-lg overflow-hidden bg-surface-container-highest/10 shadow-2xl p-2">
+<div class="relative w-full h-[440px] rounded overflow-hidden">
+<img alt="Ingeniero electricista de ZeroBlackout inspeccionando y testeando un cuadro general de distribución y maniobra trifasica" class="w-full h-full object-cover" src="/images/zero-breakdown/reference/referencia-2.webp"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary-container via-transparent to-transparent"></div>
+<div class="absolute top-4 right-4 bg-primary-container/90 backdrop-blur-md px-3 py-1.5 rounded flex items-center gap-2">
+<span class="inline-block w-2.5 h-2.5 rounded-full bg-secondary-container animate-pulse"></span>
+<span class="font-label-sm text-label-sm uppercase text-secondary-fixed">TELEMETRÍA EN DIRECTO</span>
+</div>
+<div class="absolute bottom-4 left-4 right-4 bg-primary-container/95 backdrop-blur-md p-4 rounded flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary-container text-[28px]">speed</span>
+<div>
+<span class="font-label-sm text-label-sm uppercase text-secondary-fixed-dim block">Tensión Trifásica</span>
+<span class="font-label-lg text-label-lg text-on-primary font-bold">398.6 V · 50.02 Hz</span>
+</div>
+</div>
+<div class="text-right">
+<span class="font-label-sm text-label-sm uppercase text-secondary-fixed-dim block">Estado de Aislamiento</span>
+<span class="font-label-sm text-label-sm text-secondary-container font-semibold">&gt; 500 MΩ [CONFORME]</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="max-w-7xl mx-auto px-6 lg:px-12 py-20 w-full flex flex-col gap-16">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+<div class="flex flex-col gap-2 max-w-2xl">
+<div class="flex items-center gap-2">
+<span class="w-8 h-1 bg-secondary rounded"></span>
+<span class="font-label-md text-label-md uppercase tracking-wider text-secondary">Especialización Técnica Directa</span>
+</div>
+<h2 class="font-headline-xl text-headline-xl font-bold tracking-tight text-on-surface">
+          Nuestras Especialidades Eléctricas
+        </h2>
+<p class="font-body-md text-body-md text-on-surface-variant">
+          Infraestructura de alta exigencia, seguridad industrial innegociable e integración de sistemas energéticos sostenibles bajo estricta normativa europea.
+        </p>
+</div>
+<div class="flex items-center gap-3 bg-surface-container px-4 py-2 rounded self-start md:self-auto">
+<span class="material-symbols-outlined text-secondary text-[20px]">verified</span>
+<span class="font-label-sm text-label-sm text-on-surface uppercase font-semibold">Técnicos Autorizados Instaladores Categoría Especialista</span>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<div class="p-6 rounded-lg bg-surface-container-lowest shadow-md flex flex-col justify-between group hover:shadow-xl transition-all">
+<div class="flex flex-col gap-4">
+<div class="w-12 h-12 rounded bg-surface-container-high flex items-center justify-center text-secondary group-hover:bg-secondary group-hover:text-on-secondary transition-colors">
+<span class="material-symbols-outlined text-[28px]">electric_meter</span>
+</div>
+<div class="flex flex-col gap-1">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary font-semibold">Mando &amp; Potencia</span>
+<h3 class="font-headline-md text-headline-md font-bold text-on-surface leading-snug">
+              Instalaciones Industriales &amp; Cuadros
+            </h3>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Distribución trifásica equilibrada, tableros modulares con protecciones selectivas contra sobretensiones y cortocircuitos, contactores, variadores de frecuencia y armarios de maniobra certificados.
+          </p>
+<ul class="flex flex-col gap-1.5 pt-2 font-label-sm text-label-sm text-on-surface">
+<li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>Armarios metálicos IP65 / IK10</li>
+<li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>Bancos de condensadores para cos φ</li>
+<li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>Sistemas de transferencia SAI / Grupos</li>
+</ul>
+</div>
+<div class="pt-6 mt-4">
+<a class="inline-flex items-center gap-1 font-label-md text-label-md uppercase text-secondary hover:text-secondary-container transition-colors font-bold" href="#cotizacion-directa">
+            Consultar Diseño Industrial →
+          </a>
+</div>
+</div>
+<div class="p-6 rounded-lg bg-surface-container-lowest shadow-md flex flex-col justify-between group hover:shadow-xl transition-all">
+<div class="flex flex-col gap-4">
+<div class="w-12 h-12 rounded bg-surface-container-high flex items-center justify-center text-secondary group-hover:bg-secondary group-hover:text-on-secondary transition-colors">
+<span class="material-symbols-outlined text-[28px]">home_iot_device</span>
+</div>
+<div class="flex flex-col gap-1">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary font-semibold">Smart Control</span>
+<h3 class="font-headline-md text-headline-md font-bold text-on-surface leading-snug">
+              Domótica &amp; Vivienda Inteligente
+            </h3>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Automatización integral sobre bus KNX o Zigbee Pro. Regulación lumínica DALI, zonificación de cargas, control de persianas motorizadas y supervisión remota mediante interfaces unificadas.
+          </p>
+<ul class="flex flex-col gap-1.5 pt-2 font-label-sm text-label-sm text-on-surface">
+<li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>Estándar interoperable KNX Partner</li>
+<li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>Integración DALI-2 y microdimming</li>
+<li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>Gestión energética de consumo pico</li>
+</ul>
+</div>
+<div class="pt-6 mt-4">
+<a class="inline-flex items-center gap-1 font-label-md text-label-md uppercase text-secondary hover:text-secondary-container transition-colors font-bold" href="#cotizacion-directa">
+            Ver Proyectos Domóticos →
+          </a>
+</div>
+</div>
+<div class="p-6 rounded-lg bg-surface-container-lowest shadow-md flex flex-col justify-between group hover:shadow-xl transition-all">
+<div class="flex flex-col gap-4">
+<div class="w-12 h-12 rounded bg-surface-container-high flex items-center justify-center text-secondary group-hover:bg-secondary group-hover:text-on-secondary transition-colors">
+<span class="material-symbols-outlined text-[28px]">assignment_turned_in</span>
+</div>
+<div class="flex flex-col gap-1">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary font-semibold">Homologaciones</span>
+<h3 class="font-headline-md text-headline-md font-bold text-on-surface leading-snug">
+              Boletines Eléctricos &amp; Certificados CIE
+            </h3>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Emisión de Certificados de Instalación Eléctrica (CIE) oficiales para aumentos de potencia, cambios de titularidad, reactivaciones y altas nuevas en distribuidora con tramitación telemática urgente.
+          </p>
+<ul class="flex flex-col gap-1.5 pt-2 font-label-sm text-label-sm text-on-surface">
+<li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>Gestión telemática prioritaria</li>
+<li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>Inspección OCA previa coordinada</li>
+<li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>Memoria Técnica de Diseño (MTD)</li>
+</ul>
+</div>
+<div class="pt-6 mt-4">
+<a class="inline-flex items-center gap-1 font-label-md text-label-md uppercase text-secondary hover:text-secondary-container transition-colors font-bold" href="#cotizacion-directa">
+            Tramitar Boletín CIE →
+          </a>
+</div>
+</div>
+<div class="p-6 rounded-lg bg-surface-container-lowest shadow-md flex flex-col justify-between group hover:shadow-xl transition-all">
+<div class="flex flex-col gap-4">
+<div class="w-12 h-12 rounded bg-surface-container-high flex items-center justify-center text-secondary group-hover:bg-secondary group-hover:text-on-secondary transition-colors">
+<span class="material-symbols-outlined text-[28px]">solar_power</span>
+</div>
+<div class="flex flex-col gap-1">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary font-semibold">Generación &amp; Movilidad</span>
+<h3 class="font-headline-md text-headline-md font-bold text-on-surface leading-snug">
+              Energía Fotovoltaica &amp; Recarga VE
+            </h3>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Sistemas de autoconsumo solar con inversores híbridos y almacenamiento electroquímico. Puntos de recarga vehicular rápida (ITC-BT-52) con balanceo dinámico de carga respecto a la potencia contratada.
+          </p>
+<ul class="flex flex-col gap-1.5 pt-2 font-label-sm text-label-sm text-on-surface">
+<li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>Cargadores Tipo 2 hasta 22 kW</li>
+<li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>Balanceo dinámico sin saltos de ICP</li>
+<li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>Monitoreo fotovoltaico por string</li>
+</ul>
+</div>
+<div class="pt-6 mt-4">
+<a class="inline-flex items-center gap-1 font-label-md text-label-md uppercase text-secondary hover:text-secondary-container transition-colors font-bold" href="#cotizacion-directa">
+            Planificar Autoconsumo →
+          </a>
+</div>
+</div>
+</div>
+</div>
+<div class="w-full bg-surface-container-low py-20">
+<div class="max-w-7xl mx-auto px-6 lg:px-12 flex flex-col gap-12">
+<div class="flex flex-col gap-3 text-center max-w-3xl mx-auto">
+<span class="font-label-md text-label-md uppercase tracking-wider text-secondary font-semibold">Metodología de Inspección Predictiva</span>
+<h2 class="font-headline-xl text-headline-xl font-bold tracking-tight text-on-surface">
+          Protocolo de Seguridad y Normativa Eléctrica
+        </h2>
+<p class="font-body-md text-body-md text-on-surface-variant">
+          Cada intervención de ZeroBlackout sigue un riguroso estándar de ensayo que previene siniestros de arco eléctrico, identifica puntos calientes no visibles y valida la respuesta diferencial en milisegundos.
+        </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<div class="p-6 rounded-lg bg-surface-container-lowest shadow-sm flex flex-col gap-4 relative">
+<div class="flex items-center justify-between">
+<span class="w-8 h-8 rounded-full bg-secondary-container text-on-secondary-container font-label-md text-label-md font-bold flex items-center justify-center">01</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Paso Previo</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm font-bold text-on-surface">Termografía Infrarroja Calibrada</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Escaneo térmico con cámaras FLIR bajo régimen de carga real para detectar bornes flojos, desequilibrios de fase y sobrecalentamientos ocultos en pletinas.
+          </p>
+<div class="mt-auto p-3 rounded bg-surface-container font-label-sm text-label-sm text-secondary font-semibold">
+            Umbral de detección: ΔT ≥ 5°C
+          </div>
+</div>
+<div class="p-6 rounded-lg bg-surface-container-lowest shadow-sm flex flex-col gap-4 relative">
+<div class="flex items-center justify-between">
+<span class="w-8 h-8 rounded-full bg-secondary-container text-on-secondary-container font-label-md text-label-md font-bold flex items-center justify-center">02</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Verificación</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm font-bold text-on-surface">Ensayo de Diferenciales (RCD)</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Prueba de disparo en rampa de corriente e inyección de semi-ondas para medir tiempo de desconexión exacto (≤ 200 ms) y sensibilidad nominal (30 mA / 300 mA).
+          </p>
+<div class="mt-auto p-3 rounded bg-surface-container font-label-sm text-label-sm text-secondary font-semibold">
+            Tiempos de disparo: &lt; 25 ms tipo A/B
+          </div>
+</div>
+<div class="p-6 rounded-lg bg-surface-container-lowest shadow-sm flex flex-col gap-4 relative">
+<div class="flex items-center justify-between">
+<span class="w-8 h-8 rounded-full bg-secondary-container text-on-secondary-container font-label-md text-label-md font-bold flex items-center justify-center">03</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Aislamiento</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm font-bold text-on-surface">Medición de Resistencia de Tierra</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Comprobación de bucle de defecto y piquetas de dispersión mediante telurómetro calibrado. Garantía estricta de continuidad del conductor de protección (PE).
+          </p>
+<div class="mt-auto p-3 rounded bg-surface-container font-label-sm text-label-sm text-secondary font-semibold">
+            Límite REBT: R &lt; 15 Ω para edificios
+          </div>
+</div>
+<div class="p-6 rounded-lg bg-surface-container-lowest shadow-sm flex flex-col gap-4 relative">
+<div class="flex items-center justify-between">
+<span class="w-8 h-8 rounded-full bg-secondary-container text-on-secondary-container font-label-md text-label-md font-bold flex items-center justify-center">04</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Legal</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm font-bold text-on-surface">Informe Digital &amp; Precinto</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Generación de acta digital firmada electrónicamente por Ingeniero Colegiado, planos unifilares actualizados y sellado del cuadro con etiquetas de trazabilidad.
+          </p>
+<div class="mt-auto p-3 rounded bg-surface-container font-label-sm text-label-sm text-secondary font-semibold">
+            Firma acreditada por Colegio Oficial
+          </div>
+</div>
+</div>
+<div class="p-6 rounded-lg bg-surface-container-lowest shadow-md grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+<div class="lg:col-span-8 flex flex-col gap-2">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[24px]">shield</span>
+<span class="font-headline-md text-headline-md font-bold text-on-surface">¿Su instalación ha superado los 10 años de antigüedad?</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+            El Reglamento Electrotécnico para Baja Tensión exige revisiones periódicas cada 5 años en locales de pública concurrencia y 10 años en edificios comunes. Evite sanciones y riesgos de incendio solicitando una auditoría termográfica preventiva.
+          </p>
+</div>
+<div class="lg:col-span-4 flex justify-end">
+<a class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-primary text-on-primary rounded text-label-lg font-label-lg uppercase tracking-wider hover:bg-primary-container hover:text-on-primary-container transition-all shadow-md" href="#cotizacion-directa">
+            Solicitar Auditoría REBT
+          </a>
+</div>
+</div>
+</div>
+</div>
+<div class="max-w-7xl mx-auto px-6 lg:px-12 py-20 w-full flex flex-col gap-12" id="calculadora-potencia">
+<div class="flex flex-col gap-3 text-center max-w-3xl mx-auto">
+<span class="font-label-md text-label-md uppercase tracking-wider text-secondary font-semibold">Herramienta Interactiva de Dimensionamiento</span>
+<h2 class="font-headline-xl text-headline-xl font-bold tracking-tight text-on-surface">
+        Calculadora Rápida de Potencia Recomendada
+      </h2>
+<p class="font-body-md text-body-md text-on-surface-variant">
+        Seleccione el tipo de instalación y los equipos simultáneos para estimar la potencia requerida (kW) y la sección técnica aconsejada para su acometida.
+      </p>
+</div>
+<div class="p-8 rounded-lg bg-surface-container-lowest shadow-xl grid grid-cols-1 lg:grid-cols-12 gap-10">
+<div class="lg:col-span-7 flex flex-col gap-8">
+<div class="flex flex-col gap-3">
+<label class="font-label-md text-label-md uppercase text-on-surface font-bold">1. Tipo de Instalación</label>
+<div class="grid grid-cols-3 gap-3" id="calc-tipo-container">
+<button class="calc-tipo-btn p-3 rounded bg-surface-container text-on-surface hover:bg-surface-container-high transition-all text-left flex flex-col gap-1" data-tipo="vivienda" type="button">
+<span class="material-symbols-outlined text-secondary text-[24px]">apartment</span>
+<span class="font-label-md text-label-md font-bold">Residencial</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Vivienda unifamiliar / piso</span>
+</button>
+<button class="calc-tipo-btn p-3 rounded bg-surface-container text-on-surface hover:bg-surface-container-high transition-all text-left flex flex-col gap-1" data-tipo="comercio" type="button">
+<span class="material-symbols-outlined text-secondary text-[24px]">storefront</span>
+<span class="font-label-md text-label-md font-bold">Comercio / Oficina</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Hostelería, retail, clínicas</span>
+</button>
+<button class="calc-tipo-btn p-3 rounded bg-surface-container text-on-surface hover:bg-surface-container-high transition-all text-left flex flex-col gap-1" data-tipo="industrial" type="button">
+<span class="material-symbols-outlined text-secondary text-[24px]">factory</span>
+<span class="font-label-md text-label-md font-bold">Nave Industrial</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Maquinaria y trifásica</span>
+</button>
+</div>
+</div>
+<div class="flex flex-col gap-3">
+<label class="font-label-md text-label-md uppercase text-on-surface font-bold">2. Equipamiento e Instalaciones Previstas (Simultaneidad)</label>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-3" id="calc-cargas-container">
+<label class="flex items-center gap-3 p-3 rounded bg-surface-container hover:bg-surface-container-high cursor-pointer transition-colors">
+<input checked="" class="calc-item w-4 h-4 rounded text-secondary" data-kw="4.5" type="checkbox"/>
+<div class="flex flex-col">
+<span class="font-body-sm text-body-sm font-semibold text-on-surface">Climatización / Aerotermia</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">+4.5 kW estimados</span>
+</div>
+</label>
+<label class="flex items-center gap-3 p-3 rounded bg-surface-container hover:bg-surface-container-high cursor-pointer transition-colors">
+<input class="calc-item w-4 h-4 rounded text-secondary" data-kw="7.4" type="checkbox"/>
+<div class="flex flex-col">
+<span class="font-body-sm text-body-sm font-semibold text-on-surface">Cargador Vehículo Eléctrico (VE)</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">+7.4 kW (Modo 3 rápido)</span>
+</div>
+</label>
+<label class="flex items-center gap-3 p-3 rounded bg-surface-container hover:bg-surface-container-high cursor-pointer transition-colors">
+<input checked="" class="calc-item w-4 h-4 rounded text-secondary" data-kw="3.0" type="checkbox"/>
+<div class="flex flex-col">
+<span class="font-body-sm text-body-sm font-semibold text-on-surface">Cocina de Inducción &amp; Hornos</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">+3.0 kW potencia media</span>
+</div>
+</label>
+<label class="flex items-center gap-3 p-3 rounded bg-surface-container hover:bg-surface-container-high cursor-pointer transition-colors">
+<input class="calc-item w-4 h-4 rounded text-secondary" data-kw="5.5" type="checkbox"/>
+<div class="flex flex-col">
+<span class="font-body-sm text-body-sm font-semibold text-on-surface">Maquinaria Trifásica / Compresores</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">+5.5 kW potencia inductiva</span>
+</div>
+</label>
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<div class="flex justify-between items-center">
+<label class="font-label-md text-label-md uppercase text-on-surface font-bold">3. Superficie Útil (m²)</label>
+<span class="font-label-md text-label-md text-secondary font-bold" id="superficie-val">120 m²</span>
+</div>
+<input class="w-full h-2 bg-surface-container-high rounded cursor-pointer accent-secondary" id="superficie-slider" max="600" min="40" step="10" type="range" value="120"/>
+</div>
+</div>
+<div class="lg:col-span-5 p-6 rounded bg-primary-container text-on-primary flex flex-col justify-between shadow-inner">
+<div class="flex flex-col gap-6">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary-fixed">Cálculo Pre-Dimensionado</span>
+<span class="material-symbols-outlined text-secondary-container">offline_bolt</span>
+</div>
+<div class="flex flex-col gap-1">
+<span class="font-label-md text-label-md uppercase text-surface-container-highest">Potencia Sugerida a Contratar</span>
+<div class="flex items-baseline gap-2">
+<span class="font-headline-xl text-headline-xl lg:text-display-lg font-bold text-secondary-container" id="res-kw">9.2</span>
+<span class="font-headline-md text-headline-md text-secondary-fixed">kW</span>
+</div>
+<span class="font-label-sm text-label-sm text-secondary-fixed-dim" id="res-tipo-toma">Suministro Monofásico 230V · ICP 40A</span>
+</div>
+<div class="flex flex-col gap-3 pt-4">
+<div class="flex items-center justify-between py-1.5 text-surface-container-highest font-body-sm text-body-sm">
+<span>Sección cable recomendada:</span>
+<span class="font-label-md text-label-md text-on-primary font-bold" id="res-seccion">10 mm² Cu</span>
+</div>
+<div class="flex items-center justify-between py-1.5 text-surface-container-highest font-body-sm text-body-sm">
+<span>Intensidad nominal calculada:</span>
+<span class="font-label-md text-label-md text-on-primary font-bold" id="res-amperios">40.0 A</span>
+</div>
+<div class="flex items-center justify-between py-1.5 text-surface-container-highest font-body-sm text-body-sm">
+<span>Sensibilidad de diferencial:</span>
+<span class="font-label-md text-label-md text-on-primary font-bold">30 mA / Clase A</span>
+</div>
+</div>
+</div>
+<div class="pt-6 flex flex-col gap-3">
+<p class="font-label-sm text-label-sm text-surface-container-highest">
+            * Cálculo preliminar orientativo según guía técnica ITC-BT-10. ZeroBlackout realiza el cálculo exacto de caída de tensión antes de emitir boletín.
+          </p>
+<a class="w-full inline-flex items-center justify-center gap-2 px-4 py-3 bg-secondary text-on-secondary rounded text-label-md font-label-md uppercase tracking-wider hover:bg-secondary-container hover:text-on-secondary-container transition-all font-bold" href="#cotizacion-directa">
+            Legalizar Esta Potencia con ZeroBlackout
+          </a>
+</div>
+</div>
+</div>
+</div>
+<div class="max-w-7xl mx-auto px-6 lg:px-12 py-20 w-full" id="cotizacion-directa">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+<div class="lg:col-span-5 flex flex-col justify-between gap-8">
+<div class="flex flex-col gap-4">
+<div class="flex items-center gap-2">
+<span class="w-8 h-1 bg-secondary rounded"></span>
+<span class="font-label-md text-label-md uppercase tracking-wider text-secondary">Contacto Técnico Directo</span>
+</div>
+<h2 class="font-headline-xl text-headline-xl font-bold tracking-tight text-on-surface">
+            Presupuesto Inmediato &amp; Urgencias Eléctricas
+          </h2>
+<p class="font-body-md text-body-md text-on-surface-variant">
+            Atención prioritaria para reparaciones de acometidas, cortes de suministro no programados, cuadros quemados o formalización de altas y boletines urgentes.
+          </p>
+<div class="p-5 rounded-lg bg-secondary-container text-on-secondary-container flex flex-col gap-3 shadow-md mt-4">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[32px]">warning</span>
+<div>
+<span class="font-headline-sm text-headline-sm font-bold block">Guardia Eléctrica 24 Horas</span>
+<span class="font-label-sm text-label-sm">Intervención de emergencia con unidad móvil equipada</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm">
+              Tiempo medio de llegada inferior a 45 minutos en polígonos industriales y casco metropolitano.
+            </p>
+<a class="inline-flex items-center justify-center gap-2 px-4 py-3 bg-primary text-on-primary rounded text-label-lg font-label-lg uppercase tracking-wider hover:bg-primary-container transition-all" href="tel:+34 912 622 712">
+<span class="material-symbols-outlined text-[20px]">call</span>
+              Llamar Guardia: 912 622 712
+            </a>
+</div>
+</div>
+<div class="p-6 rounded bg-surface-container flex flex-col gap-3">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-bold">Garantías de Ejecución</span>
+<div class="grid grid-cols-2 gap-4 font-body-sm text-body-sm text-on-surface">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[20px]">check_circle</span>
+<span>Seguro RC 1.500.000€</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[20px]">check_circle</span>
+<span>Garantía 24 meses</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[20px]">check_circle</span>
+<span>Repuestos Schneider / ABB</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[20px]">check_circle</span>
+<span>Ingeniería propia</span>
+</div>
+</div>
+</div>
+</div>
+<div class="lg:col-span-7">
+<div class="p-8 rounded-lg bg-surface-container-lowest shadow-xl flex flex-col gap-6">
+<div class="flex flex-col gap-1">
+<h3 class="font-headline-md text-headline-md font-bold text-on-surface">
+              Solicitud de Intervención / Estudio Eléctrico
+            </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              Complete los datos técnicos para asignarle el equipo de ingenieros o montadores idóneo.
+            </p>
+</div>
+<form class="flex flex-col gap-4" id="formulario-electricidad">
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<div class="flex flex-col gap-1.5">
+<label class="font-label-sm text-label-sm uppercase text-on-surface-variant font-semibold" for="nombre-elec">Nombre / Razón Social *</label>
+<input class="px-3.5 py-2.5 rounded bg-surface text-on-surface font-body-md text-body-md outline-none focus:ring-2 focus:ring-secondary" id="nombre-elec" placeholder="Ej. Instalaciones S.L. o Nombre" required="" type="text"/>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="font-label-sm text-label-sm uppercase text-on-surface-variant font-semibold" for="telefono-elec">Teléfono Directo *</label>
+<input class="px-3.5 py-2.5 rounded bg-surface text-on-surface font-body-md text-body-md outline-none focus:ring-2 focus:ring-secondary" id="telefono-elec" placeholder="+34 600 000 000" required="" type="tel"/>
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<div class="flex flex-col gap-1.5">
+<label class="font-label-sm text-label-sm uppercase text-on-surface-variant font-semibold" for="servicio-elec">Especialidad Requerida *</label>
+<select class="px-3.5 py-2.5 rounded bg-surface text-on-surface font-body-md text-body-md outline-none focus:ring-2 focus:ring-secondary" id="servicio-elec">
+<option value="cuadro">Cuadros Industriales &amp; Distribución</option>
+<option value="boletin">Boletín CIE / Aumento de Potencia</option>
+<option value="domotica">Domótica KNX / Automatización</option>
+<option value="fotovoltaica">Autoconsumo Solar / Baterías</option>
+<option value="ve">Punto de Recarga Vehículo Eléctrico</option>
+<option value="averia">Avería Urgente / Fallo Térmico</option>
+</select>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="font-label-sm text-label-sm uppercase text-on-surface-variant font-semibold" for="tension-elec">Tipo de Tensión Estimada</label>
+<select class="px-3.5 py-2.5 rounded bg-surface text-on-surface font-body-md text-body-md outline-none focus:ring-2 focus:ring-secondary" id="tension-elec">
+<option value="mono">Monofásica (230 V)</option>
+<option value="tri">Trifásica (400 V)</option>
+<option value="media">Media Tensión / Centro Transformación</option>
+<option value="desconocida">No lo sé / Requiere verificación</option>
+</select>
+</div>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="font-label-sm text-label-sm uppercase text-on-surface-variant font-semibold" for="ubicacion-elec">Ubicación de la Instalación</label>
+<input class="px-3.5 py-2.5 rounded bg-surface text-on-surface font-body-md text-body-md outline-none focus:ring-2 focus:ring-secondary" id="ubicacion-elec" placeholder="Dirección, Polígono o Municipio" type="text"/>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="font-label-sm text-label-sm uppercase text-on-surface-variant font-semibold" for="detalles-elec">Descripción del Proyecto o Avería</label>
+<textarea class="px-3.5 py-2.5 rounded bg-surface text-on-surface font-body-md text-body-md outline-none focus:ring-2 focus:ring-secondary" id="detalles-elec" placeholder="Indique síntomas de anomalía, disparos de protecciones, número de contadores o potencia aproximada deseada..." rows="4"></textarea>
+</div>
+<div class="flex items-start gap-2 pt-2">
+<input class="mt-1 w-4 h-4 rounded text-secondary" id="acepto-terminos" required="" type="checkbox"/>
+<label class="font-body-sm text-body-sm text-on-surface-variant" for="acepto-terminos">
+                Acepto el tratamiento de mis datos de conformidad con el RGPD para recibir el informe técnico y propuesta de servicio de ZeroBlackout.
+              </label>
+</div>
+<div class="pt-2">
+<button class="w-full inline-flex items-center justify-center gap-2 px-6 py-4 bg-secondary text-on-secondary rounded text-label-lg font-label-lg uppercase tracking-wider hover:bg-secondary-container hover:text-on-secondary-container transition-all shadow-md font-bold" type="submit">
+<span class="material-symbols-outlined text-[20px]">send</span>
+                Enviar Solicitud a Ingeniería Eléctrica
+              </button>
+</div>
+<div class="hidden p-4 rounded bg-surface-container font-label-md text-label-md text-on-surface text-center" id="form-exito">
+              Envío simulado. No se ha enviado ni almacenado ningún dato.
+            </div>
+</form>
+</div>
+</div>
+</div>
+</div>
+<div class="w-full bg-primary-container text-on-primary py-12">
+<div class="max-w-7xl mx-auto px-6 lg:px-12 flex flex-col md:flex-row items-center justify-between gap-6">
+<div class="flex items-center gap-4">
+<span class="w-12 h-12 rounded bg-secondary-container/20 text-secondary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-[32px]">verified_user</span>
+</span>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm font-bold text-on-primary">Empresa Habilitada por la Dirección General de Industria</span>
+<span class="font-label-sm text-label-sm text-primary-fixed-dim">Registro de Empresas Instaladoras RITSIC / N° Aut: 28-IBTE-09412</span>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<span class="font-label-sm text-label-sm text-secondary-fixed uppercase">Normativa UNE-HD 60364</span>
+<span class="font-label-sm text-label-sm text-secondary-fixed uppercase">Cumplimiento REBT 2002</span>
+<span class="font-label-sm text-label-sm text-secondary-fixed uppercase">Garantía Certificada</span>
+</div>
+</div>
+</div>
+
+</div></main><footer class="w-full bg-surface-container-low shadow-[0_-1px_8px_rgba(0,0,0,0.02)]"><div class="max-w-7xl mx-auto px-6 lg:px-12 py-16"><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12"><div class="flex flex-col gap-4"><div class="flex items-center gap-3"><span aria-label="ZeroBlackout" class="h-8 w-8 rounded-full bg-primary text-on-primary flex items-center justify-center font-headline-sm font-bold zb-reference-mark">ZB</span><span class="font-headline-sm text-headline-sm font-bold tracking-tight text-on-surface">ZeroBlackout</span></div><p class="font-body-sm text-body-sm text-on-surface-variant">Ingeniería, montaje y mantenimiento integral de sistemas MEP. Máxima fiabilidad técnica para entornos industriales, comerciales y residenciales de alta demanda.</p><div class="flex flex-col gap-1"><span class="font-label-sm text-label-sm uppercase text-on-surface-variant font-semibold">Certificaciones Técnicas</span><div class="flex flex-wrap gap-1.5 mt-1"><span class="font-label-sm text-label-sm px-2 py-0.5 bg-surface-container rounded text-on-surface">ISO 9001</span><span class="font-label-sm text-label-sm px-2 py-0.5 bg-surface-container rounded text-on-surface">ISO 14001</span><span class="font-label-sm text-label-sm px-2 py-0.5 bg-surface-container rounded text-on-surface">RITE</span><span class="font-label-sm text-label-sm px-2 py-0.5 bg-surface-container rounded text-on-surface">REBT</span></div></div></div><div class="flex flex-col gap-3"><span class="font-headline-sm text-headline-sm font-semibold text-on-surface">Sectores MEP</span><div class="flex flex-col gap-2 font-body-sm text-body-sm text-on-surface-variant"><a class="hover:text-on-surface transition-colors"  href="/proyectos/zero-breakdown/electricidad" target="_top">Subestaciones y Baja Tensión</a><a class="hover:text-on-surface transition-colors"  href="/proyectos/zero-breakdown/electricidad" target="_top">Cuadros Industriales y Domótica</a><a class="hover:text-on-surface transition-colors"  href="/proyectos/zero-breakdown/fontaneria" target="_top">Redes Hidráulicas y ACS</a><a class="hover:text-on-surface transition-colors"  href="/proyectos/zero-breakdown/fontaneria" target="_top">Grupos de Presión y Saneamiento</a><a class="hover:text-on-surface transition-colors"  href="/proyectos/zero-breakdown/climatizacion" target="_top">Sistemas VRF / Aerotermia</a><a class="hover:text-on-surface transition-colors"  href="/proyectos/zero-breakdown/climatizacion" target="_top">Ventilación Mecánica y Filtración</a></div></div><div class="flex flex-col gap-3"><span class="font-headline-sm text-headline-sm font-semibold text-on-surface">Cobertura Operativa</span><div class="flex flex-col gap-2 font-body-sm text-body-sm text-on-surface-variant"><span class="flex items-center gap-2"><span class="material-symbols-outlined text-label-md text-on-surface-variant">location_on</span>Parques Industriales y Logísticos</span><span class="flex items-center gap-2"><span class="material-symbols-outlined text-label-md text-on-surface-variant">location_on</span>Complejos Hospitalarios y Clínicos</span><span class="flex items-center gap-2"><span class="material-symbols-outlined text-label-md text-on-surface-variant">location_on</span>Centros Comerciales y Terciarios</span><span class="flex items-center gap-2"><span class="material-symbols-outlined text-label-md text-on-surface-variant">location_on</span>Residencial de Alta Eficiencia</span></div><div class="mt-2 p-3 bg-surface-container rounded"><span class="font-label-sm text-label-sm uppercase text-secondary font-bold block mb-1">Despacho 24h</span><p class="font-body-sm text-body-sm text-on-surface">Intervención técnica urgente con tiempo medio de respuesta menor a 45 min en zona metropolitana.</p></div></div><div class="flex flex-col gap-3"><span class="font-headline-sm text-headline-sm font-semibold text-on-surface">Centro de Urgencias</span><div class="p-4 bg-surface-container-high rounded flex flex-col gap-3"><div class="flex items-center gap-2"><span class="material-symbols-outlined text-secondary text-[22px]">phone_in_talk</span><a href="tel:+34912622712" class="font-label-lg text-label-lg font-bold text-on-surface">+34 912 622 712</a></div><p class="font-body-sm text-body-sm text-on-surface-variant">Línea técnica prioritaria permanente 24/7/365 para incidencias críticas y averías de suministro.</p><a class="inline-flex items-center justify-center px-3 py-2 bg-secondary text-on-secondary rounded text-label-md font-label-md uppercase tracking-wider hover:bg-secondary-container hover:text-on-secondary-container transition-all"  href="#contacto">Activar Guardia Técnica</a></div><span class="font-body-sm text-body-sm text-on-surface-variant mt-2">Contacto: <a href="mailto:admin@zerocode-devops.com">admin@zerocode-devops.com</a></span></div></div><div class="pt-8 mt-8 border-t border-outline-variant/30 flex flex-col sm:flex-row items-center justify-between gap-4 font-body-sm text-body-sm text-on-surface-variant"><p>© 2025 ZeroBlackout. Todos los derechos reservados.</p><div class="flex items-center gap-6 font-label-sm text-label-sm"><a class="hover:text-on-surface transition-colors"  href="/aviso-legal" target="_top">Aviso Legal</a><a class="hover:text-on-surface transition-colors"  href="/politica-de-privacidad" target="_top">Política de Privacidad</a><a class="hover:text-on-surface transition-colors"  href="/politica-de-cookies" target="_top">Cookies</a><a class="hover:text-on-surface transition-colors"  href="/aviso-legal" target="_top">Normativa Técnica</a></div></div></div></footer></body></html>

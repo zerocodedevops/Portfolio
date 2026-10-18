@@ -23,6 +23,41 @@ export function CookieConsent() {
   const [showSettings, setShowSettings] = useState(false);
   const [allowAnalytics, setAllowAnalytics] = useState(() => readCookieConsent()?.analytics ?? false);
   const previousAnalytics = useRef(readCookieConsent()?.analytics ?? false);
+  const dialogRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const dialog = dialogRef.current;
+    if (!dialog) return;
+    const previousFocus = document.activeElement instanceof HTMLElement ? document.activeElement : null;
+    const getFocusable = () => Array.from(dialog.querySelectorAll<HTMLElement>(
+      'button:not([disabled]), a[href], input:not([disabled]), [tabindex]:not([tabindex="-1"])',
+    ));
+    getFocusable()[0]?.focus();
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape' && showSettings) {
+        event.preventDefault();
+        setShowSettings(false);
+        return;
+      }
+      if (event.key !== 'Tab') return;
+      const items = getFocusable();
+      const first = items[0];
+      const last = items[items.length - 1];
+      if (!first || !last) return;
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault();
+        last.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first.focus();
+      }
+    };
+    dialog.addEventListener('keydown', onKeyDown);
+    return () => {
+      dialog.removeEventListener('keydown', onKeyDown);
+      if (previousFocus?.isConnected) previousFocus.focus();
+    };
+  }, [consent, showSettings]);
 
   useEffect(() => {
     const previousConsent = readCookieConsent();
@@ -61,6 +96,7 @@ export function CookieConsent() {
 
   return (
     <aside
+      ref={dialogRef}
       aria-label="Preferencias de privacidad"
       aria-labelledby="cookie-consent-title"
       className="fixed inset-x-3 bottom-3 z-[200] mx-auto max-w-4xl border border-slate-300 bg-white p-5 text-slate-900 shadow-2xl sm:inset-x-6 sm:bottom-6 sm:p-6"
@@ -74,7 +110,7 @@ export function CookieConsent() {
         <p>Usamos almacenamiento local para recordar el idioma y tus preferencias. No es una cookie.</p>
         <p>Si aceptas la medición, Google Tag Manager cargará Metricool. Metricool recibe las páginas visitadas, la página de procedencia, el tamaño de pantalla y el país aproximado derivado de la dirección IP. Según su documentación, el código de seguimiento no instala cookies.</p>
         <p>La medición es opcional y no afecta al formulario ni al funcionamiento esencial de la web. Puedes cambiar tu elección desde la política de cookies.</p>
-        <p>Consulta la <a className="underline" href="/politica-de-cookies">política de cookies</a> y la <a className="underline" href="/privacidad">política de privacidad</a>.</p>
+        <p>Consulta la <a className="underline" href="/politica-de-cookies">política de cookies</a> y la <a className="underline" href="/politica-de-privacidad">política de privacidad</a>.</p>
       </div>
       {showSettings && (
         <div className="mt-4 border-t border-slate-200 pt-4">
