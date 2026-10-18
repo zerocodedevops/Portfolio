@@ -175,15 +175,6 @@ export default function ZeroBreakdownDemo() {
     const contentRoot = document.querySelector('.zero-breakdown-reference');
     if (contentRoot instanceof HTMLElement) {
       associateFormLabels(contentRoot);
-      const main = contentRoot.querySelector('main');
-      if (main && !main.querySelector('[data-demo-banner]')) {
-        const banner = document.createElement('aside');
-        banner.dataset.demoBanner = 'true';
-        banner.className = 'mx-auto max-w-7xl border-b border-secondary/30 bg-surface-container-high px-6 py-3 text-sm text-on-surface lg:px-12';
-        banner.setAttribute('aria-label', 'Aviso de demostración');
-        banner.textContent = 'ZeroBreakDown es una demostración: todos los datos son simulados, incluidos precios, cifras, servicios, garantías, certificaciones y disponibilidad. Los formularios no envían ni almacenan información.';
-        main.prepend(banner);
-      }
       const contactForm = contentRoot.querySelector('form');
       const contactSection = contentRoot.querySelector('#guardia-urgente')
         ?? contactForm?.closest('section')

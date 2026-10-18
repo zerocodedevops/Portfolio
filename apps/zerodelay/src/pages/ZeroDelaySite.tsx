@@ -28,13 +28,6 @@ export default function ZeroDelaySite() {
   useEffect(() => {
     const root = siteRef.current;
     const form = root.querySelector<HTMLFormElement>('#quoteForm');
-    const notice = document.createElement('aside');
-    notice.id = 'zero-delay-demo-notice';
-    notice.className = 'mx-auto max-w-[1280px] border-b border-amber-500/40 bg-amber-50 px-4 py-3 text-sm text-slate-800';
-    notice.setAttribute('aria-label', 'Aviso de demostración');
-    notice.textContent = 'ZeroDelay es una demostración: todos los datos son simulados, incluidos precios, cifras, servicios, seguros, garantías, horarios y disponibilidad. El planificador no envía ni almacena los datos introducidos.';
-    root.querySelector('main')?.prepend(notice);
-    form?.setAttribute('aria-describedby', notice.id);
 
     const handleSubmit = (event: Event) => {
       event.preventDefault();
@@ -62,7 +55,6 @@ export default function ZeroDelaySite() {
     return () => {
       form?.removeEventListener('submit', handleSubmit);
       root.removeEventListener('click', closeMobileMenu);
-      notice.remove();
     };
   }, []);
 

@@ -1,4 +1,4 @@
-import { lazy, Suspense } from 'react';
+import { lazy, Suspense, useState } from 'react';
 import { createBrowserRouter, Navigate, RouterProvider } from 'react-router-dom';
 import { PageLoader } from '@/components/ui/PageLoader';
 import { RootErrorPage } from '@/components/RootErrorPage';
@@ -14,6 +14,28 @@ const LegalNoticePage = lazy(() => import('@/features/legal/LegalPages').then((m
 const PrivacyPolicyPage = lazy(() => import('@/features/legal/LegalPages').then((module) => ({ default: module.PrivacyPolicyPage })));
 const CookiesPolicyPage = lazy(() => import('@/features/legal/LegalPages').then((module) => ({ default: module.CookiesPolicyPage })));
 
+function DismissibleDemoNotice({ children }: { children: string }) {
+  const [isVisible, setIsVisible] = useState(true);
+
+  if (!isVisible) return null;
+
+  return (
+    <div className="pointer-events-none fixed left-3 top-20 z-[100] flex max-w-[calc(100vw-1.5rem)] justify-start sm:left-5 sm:top-24" role="note">
+      <aside className="pointer-events-auto flex w-fit max-w-full items-center gap-2 rounded-lg border border-amber-500/35 bg-slate-950/95 px-3 py-2 text-xs leading-relaxed text-amber-50 shadow-lg backdrop-blur-md">
+        <p className="m-0 flex-1">{children}</p>
+        <button
+          aria-label="Cerrar aviso de datos simulados"
+          className="-mr-1 -mt-1 inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-lg text-amber-100/80 transition-colors hover:bg-white/10 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-200"
+          onClick={() => setIsVisible(false)}
+          type="button"
+        >
+          <span aria-hidden="true">×</span>
+        </button>
+      </aside>
+    </div>
+  );
+}
+
 function VanityDemoApp() {
   return (
     <>
@@ -23,9 +45,9 @@ function VanityDemoApp() {
         url="https://zerocode-devops.com/proyectos/zerovanity"
       />
       <SalonApp />
-      <aside className="mx-auto my-3 max-w-7xl rounded-xl border border-amber-500/40 bg-dark-950/95 px-4 py-3 text-sm leading-relaxed text-amber-100 shadow-xl" aria-label="Aviso de demostración">
-        ZeroVanity es una demostración: todos los datos son simulados, incluidos servicios, precios, cifras, disponibilidad, garantías y credenciales. Las reservas y el panel de administración no son reales; no introduzcas información personal.
-      </aside>
+      <DismissibleDemoNotice>
+        ZeroVanity: todos los datos de esta demo son simulados.
+      </DismissibleDemoNotice>
     </>
   );
 }
@@ -79,7 +101,12 @@ const router = createBrowserRouter(
           path: 'proyectos/zero-breakdown/*',
           element: (
             <Suspense fallback={<PageLoader text="Abriendo demo Zero Breakdown..." />}>
-              <ZeroBreakdownDemo />
+              <>
+                <ZeroBreakdownDemo />
+                <DismissibleDemoNotice>
+                  ZeroBreakDown: todos los datos de esta demo son simulados.
+                </DismissibleDemoNotice>
+              </>
             </Suspense>
           ),
         },
@@ -95,7 +122,12 @@ const router = createBrowserRouter(
           path: 'proyectos/zerodelay/*',
           element: (
             <Suspense fallback={<PageLoader text="Cargando Zero Delay..." />}>
-              <MediaApp />
+              <>
+                <MediaApp />
+                <DismissibleDemoNotice>
+                  ZeroDelay: todos los datos de esta demo son simulados.
+                </DismissibleDemoNotice>
+              </>
             </Suspense>
           ),
         },
@@ -104,10 +136,10 @@ const router = createBrowserRouter(
           element: (
             <Suspense fallback={<PageLoader text="Abriendo Cero Caos..." />}>
               <>
-                <aside className="mx-auto my-3 max-w-7xl border border-amber-500/50 bg-amber-50 px-4 py-3 text-sm leading-relaxed text-slate-800" aria-label="Aviso de demostración">
-                  ZeroChaos es una demostración: todos los datos son simulados, incluidos precios, proyectos de ejemplo, cifras, garantías, certificaciones y disponibilidad. El formulario no envía ni almacena datos. Los enlaces de correo abren tu aplicación; el mensaje solo se envía si lo confirmas allí.
-                </aside>
                 <ReformsApp />
+                <DismissibleDemoNotice>
+                  ZeroChaos: todos los datos de esta demo son simulados.
+                </DismissibleDemoNotice>
               </>
             </Suspense>
           ),

@@ -122,10 +122,6 @@ export default function Landing() {
         </div>
       </nav>
 
-      <div className="relative z-10 mx-auto -mt-4 max-w-7xl px-6 text-center text-xs text-neutral-500">
-        Demo interactiva: las reservas y el panel de administración son simulados. No introduzcas datos personales; no se envían ni almacenan datos.
-      </div>
-
       {/* Hero Section */}
       <main className="relative z-10 w-full max-w-7xl mx-auto px-6 mt-16 md:mt-24 flex flex-col items-center text-center">
         <div className="inline-flex items-center gap-2 px-4 py-1 rounded-full border border-white/10 bg-white/5 backdrop-blur-sm mb-12 animate-in fade-in slide-in-from-bottom-4 duration-700">
