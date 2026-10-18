@@ -70,7 +70,10 @@ function associateFormLabels(root: HTMLElement) {
     form.querySelectorAll('label').forEach((label, labelIndex) => {
       if (label.htmlFor || label.querySelector('input, select, textarea')) return;
       const parent = label.parentElement;
-      const control = parent?.querySelector('input, select, textarea');
+      const nextSibling = label.nextElementSibling;
+      const control = nextSibling instanceof HTMLElement && nextSibling.matches('input, select, textarea')
+        ? nextSibling
+        : parent?.querySelector('input, select, textarea');
       if (!control) return;
       if (!control.id) control.id = `zb-form-${formIndex}-field-${labelIndex}`;
       label.htmlFor = control.id;
@@ -79,9 +82,11 @@ function associateFormLabels(root: HTMLElement) {
     if (!form.querySelector('[data-demo-privacy]')) {
       const note = document.createElement('p');
       note.dataset.demoPrivacy = 'true';
+      note.id = `zb-form-${formIndex}-demo-note`;
       note.className = 'my-3 rounded border border-secondary/30 bg-surface-container px-4 py-3 text-sm text-on-surface';
       note.textContent = 'Formulario de demostración: el envío es simulado. No introduzcas datos reales; la información no se envía ni se almacena.';
       form.prepend(note);
+      form.setAttribute('aria-describedby', note.id);
     }
   });
 }
@@ -149,6 +154,7 @@ export default function ZeroBreakdownDemo() {
 
   useEffect(() => {
     const lifecycle = new AbortController();
+    let hashScrollFrame = 0;
     const browserWindow = window as Window & { __zeroBreakdownLifecycle?: AbortController };
     browserWindow.__zeroBreakdownLifecycle = lifecycle;
     const links = fontStylesheets.map((href) => {
@@ -169,14 +175,31 @@ export default function ZeroBreakdownDemo() {
     const contentRoot = document.querySelector('.zero-breakdown-reference');
     if (contentRoot instanceof HTMLElement) {
       associateFormLabels(contentRoot);
+      const main = contentRoot.querySelector('main');
+      if (main && !main.querySelector('[data-demo-banner]')) {
+        const banner = document.createElement('aside');
+        banner.dataset.demoBanner = 'true';
+        banner.className = 'mx-auto max-w-7xl border-b border-secondary/30 bg-surface-container-high px-6 py-3 text-sm text-on-surface lg:px-12';
+        banner.setAttribute('aria-label', 'Aviso de demostración');
+        banner.textContent = 'ZeroBreakDown es una demostración: todos los datos son simulados, incluidos precios, cifras, servicios, garantías, certificaciones y disponibilidad. Los formularios no envían ni almacenan información.';
+        main.prepend(banner);
+      }
+      const contactForm = contentRoot.querySelector('form');
       const contactSection = contentRoot.querySelector('#guardia-urgente')
-        ?? contentRoot.querySelector('form')?.closest('section');
+        ?? contactForm?.closest('section')
+        ?? contactForm;
       if (contactSection instanceof HTMLElement && !contentRoot.querySelector('#contacto')) {
         const anchor = document.createElement('span');
         anchor.id = 'contacto';
         anchor.className = 'block scroll-mt-24';
         anchor.setAttribute('aria-hidden', 'true');
         contactSection.prepend(anchor);
+      }
+      const hashId = decodeURIComponent(window.location.hash.slice(1));
+      if (hashId) {
+        hashScrollFrame = window.requestAnimationFrame(() => {
+          contentRoot.querySelector<HTMLElement>(`#${CSS.escape(hashId)}`)?.scrollIntoView({ block: 'start' });
+        });
       }
     }
 
@@ -187,6 +210,7 @@ export default function ZeroBreakdownDemo() {
       }
       script?.remove();
       links.forEach((link) => link.remove());
+      if (hashScrollFrame) window.cancelAnimationFrame(hashScrollFrame);
     };
   }, [page.script]);
 
@@ -200,9 +224,6 @@ export default function ZeroBreakdownDemo() {
         onSubmit={handleReferenceSubmit}
         dangerouslySetInnerHTML={{ __html: content.html }}
       />
-      <aside className="fixed bottom-3 left-3 z-[100] max-w-sm rounded border border-secondary/50 bg-surface-container-highest px-4 py-3 text-xs text-on-surface shadow-xl" aria-label="Aviso de demostración">
-        Demo interactiva: cifras, certificaciones, garantías y disponibilidad son datos simulados. Los formularios no envían ni almacenan información.
-      </aside>
     </>
   );
 }

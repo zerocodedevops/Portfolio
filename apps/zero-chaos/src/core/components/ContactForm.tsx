@@ -32,16 +32,14 @@ export const ContactForm = () => {
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
+      aria-describedby="demo-form-notice"
       className="bg-white p-8 shadow-2xl border border-gray-100 max-w-lg w-full"
     >
-      <p className="mb-5 border border-[#A8754F]/30 bg-[#A8754F]/5 p-3 text-sm text-gray-700">
-        Demo interactiva: este envío es simulado. No introduzcas datos reales; la información no se guarda ni se envía a ningún sitio.
-      </p>
-      <p className="mb-5 border border-[#A8754F]/30 bg-[#A8754F]/5 p-3 text-sm text-gray-700">
-        Demo interactiva: este envío es simulado. Los datos que introduzcas no se guardan ni se envían a ningún sitio.
+      <p id="demo-form-notice" className="mb-5 border border-[#A8754F]/30 bg-[#A8754F]/5 p-3 text-sm text-gray-700">
+        Demo interactiva: el envío es simulado. No introduzcas datos reales; la información no se guarda ni se envía a ningún sitio.
       </p>
       <h3 className="text-2xl font-bold text-[#2B302E] mb-6 uppercase tracking-tight">
-        Solicita presupuesto de ejemplo
+        Solicita presupuesto en 24h
       </h3>
 
       <div className="space-y-4">
@@ -53,13 +51,17 @@ export const ContactForm = () => {
             Nombre completo
           </label>
           <input
+            id="nombre"
             {...register("nombre")}
             type="text"
+            autoComplete="off"
+            aria-invalid={Boolean(errors.nombre)}
+            aria-describedby={errors.nombre ? "nombre-error" : undefined}
             className="w-full px-4 py-3 border border-gray-300 focus:border-[#A8754F] focus:ring-1 focus:ring-[#A8754F] outline-none transition-all"
             placeholder="Tu nombre"
           />
           {errors.nombre && (
-            <p className="text-red-500 text-xs mt-1">{errors.nombre.message}</p>
+            <p id="nombre-error" className="text-red-500 text-xs mt-1">{errors.nombre.message}</p>
           )}
         </div>
 
@@ -71,13 +73,17 @@ export const ContactForm = () => {
             Teléfono de contacto
           </label>
           <input
+            id="telefono"
             {...register("telefono")}
             type="tel"
+            autoComplete="off"
+            aria-invalid={Boolean(errors.telefono)}
+            aria-describedby={errors.telefono ? "telefono-error" : undefined}
             className="w-full px-4 py-3 border border-gray-300 focus:border-[#A8754F] focus:ring-1 focus:ring-[#A8754F] outline-none transition-all"
             placeholder="600 000 000"
           />
           {errors.telefono && (
-            <p className="text-red-500 text-xs mt-1">
+            <p id="telefono-error" className="text-red-500 text-xs mt-1">
               {errors.telefono.message}
             </p>
           )}
@@ -91,7 +97,9 @@ export const ContactForm = () => {
             Tipo de reforma
           </label>
           <select
+            id="tipoReforma"
             {...register("tipoReforma")}
+            autoComplete="off"
             className="w-full px-4 py-3 border border-gray-300 focus:border-[#A8754F] focus:ring-1 focus:ring-[#A8754F] outline-none transition-all bg-white"
           >
             <option value="integral">Reforma Integral</option>
@@ -109,12 +117,6 @@ export const ContactForm = () => {
 
         {simulated && (
           <p role="status" aria-live="polite" className="mt-4 text-sm text-[#2B302E]">
-            Envío simulado. No se ha enviado ni almacenado ningún dato.
-          </p>
-        )}
-
-        {simulated && (
-          <p role="status" className="text-sm text-[#2B302E]" aria-live="polite">
             Envío simulado. No se ha enviado ni almacenado ningún dato.
           </p>
         )}

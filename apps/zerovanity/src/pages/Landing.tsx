@@ -32,6 +32,7 @@ import {
   ArrowRight,
   Calendar,
   Clock,
+  MapPin,
   Scissors,
   Sparkles,
   Star,
@@ -122,7 +123,7 @@ export default function Landing() {
       </nav>
 
       <div className="relative z-10 mx-auto -mt-4 max-w-7xl px-6 text-center text-xs text-neutral-500">
-        Demo interactiva: las reservas y el panel de administración son simulados. No introduzcas datos personales.
+        Demo interactiva: las reservas y el panel de administración son simulados. No introduzcas datos personales; no se envían ni almacenan datos.
       </div>
 
       {/* Hero Section */}
@@ -374,10 +375,19 @@ export default function Landing() {
                 {/* Add more contact info here */}
               </div>
             </div>
-            <div className="bg-neutral-900 border border-white/10 h-64 md:h-auto flex items-center justify-center">
-              <span className="text-neutral-500 uppercase tracking-widest text-sm">
-                [Mapa Ubicación]
-              </span>
+            <div className="relative min-h-64 overflow-hidden border border-white/10 bg-[#18201d] p-6 md:min-h-80">
+              <div aria-hidden="true" className="absolute inset-0 opacity-40" style={{ backgroundImage: "linear-gradient(32deg, transparent 47%, #65756b 48%, #65756b 50%, transparent 51%), linear-gradient(145deg, transparent 43%, #65756b 44%, #65756b 46%, transparent 47%), linear-gradient(90deg, transparent 48%, #65756b 49%, #65756b 51%, transparent 52%)", backgroundSize: "130px 110px, 170px 140px, 100px 100px" }} />
+              <div className="relative flex h-full min-h-52 flex-col justify-between border border-white/10 bg-black/20 p-5">
+                <span className="w-fit border border-[#BF953F]/50 bg-black/40 px-3 py-1 text-[10px] uppercase tracking-[0.2em] text-[#FCF6BA]">Ubicación de ejemplo</span>
+                <div className="flex items-end justify-between gap-4">
+                  <div>
+                    <MapPin aria-hidden="true" className="mb-2 text-[#FCF6BA]" size={24} />
+                    <p className="font-heading text-xl text-white">Barrio de Salamanca</p>
+                    <p className="mt-1 text-sm text-neutral-300">Madrid</p>
+                  </div>
+                  <span className="max-w-36 text-right text-xs leading-relaxed text-neutral-400">Ubicación simulada para esta demo. No corresponde a un establecimiento real.</span>
+                </div>
+              </div>
             </div>
           </div>
         </section>
@@ -386,7 +396,7 @@ export default function Landing() {
       {/* Footer */}
       <footer className="relative z-10 w-full border-t border-white/5 mt-32 py-8 text-center">
         <p className="text-neutral-600 text-xs uppercase tracking-widest">
-          © 2026 Zero Salon. The Art of Coding.
+          © 2026 Zero Salon.
         </p>
       </footer>
 

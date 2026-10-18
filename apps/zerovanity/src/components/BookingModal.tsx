@@ -189,9 +189,12 @@ export function BookingModal({ onClose }: Readonly<BookingModalProps>) {
                     </div>
                   </div>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                    <label className="sr-only" htmlFor="demo-guest-name">Nombre de ejemplo</label>
                     <input
+                      id="demo-guest-name"
                       type="text"
                       placeholder="Tu Nombre"
+                      autoComplete="off"
                       className="bg-black/30 border border-white/10 rounded-sm p-3 text-sm text-neutral-300 focus:outline-none focus:border-[#BF953F]/50 transition-colors"
                       // We need to add state for this. I'll use specialRequests for now or add new state?
                       // The user explicitly complained about "ni el nombre del cliente".
@@ -202,9 +205,12 @@ export function BookingModal({ onClose }: Readonly<BookingModalProps>) {
                       value={guestName}
                       onChange={(e) => setGuestName(e.target.value)}
                     />
+                    <label className="sr-only" htmlFor="demo-guest-email">Correo electrónico de ejemplo</label>
                     <input
+                      id="demo-guest-email"
                       type="email"
                       placeholder="Tu Email"
+                      autoComplete="off"
                       className="bg-black/30 border border-white/10 rounded-sm p-3 text-sm text-neutral-300 focus:outline-none focus:border-[#BF953F]/50 transition-colors"
                       value={guestEmail}
                       onChange={(e) => setGuestEmail(e.target.value)}
@@ -225,10 +231,13 @@ export function BookingModal({ onClose }: Readonly<BookingModalProps>) {
                       </p>
                     </div>
                   </div>
+                  <label className="sr-only" htmlFor="demo-special-request">Consulta de ejemplo</label>
                   <textarea
+                    id="demo-special-request"
                     value={specialRequests}
                     onChange={(e) => setSpecialRequests(e.target.value)}
                     placeholder="Escribe aquí..."
+                    autoComplete="off"
                     className="w-full bg-black/30 border border-white/10 rounded-sm p-3 text-sm text-neutral-300 focus:outline-none focus:border-[#BF953F]/50 transition-colors min-h-[60px] resize-none"
                   />
                 </div>

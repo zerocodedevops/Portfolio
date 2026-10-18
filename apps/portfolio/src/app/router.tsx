@@ -23,14 +23,9 @@ function VanityDemoApp() {
         url="https://zerocode-devops.com/proyectos/zerovanity"
       />
       <SalonApp />
-      <details open className="fixed bottom-4 right-4 z-[100] max-w-xs rounded-xl border border-amber-500/40 bg-dark-950/95 text-amber-100 shadow-xl">
-        <summary className="cursor-pointer px-4 py-2 text-sm font-semibold">
-          ZeroVanity · Demo
-        </summary>
-        <p className="px-4 pb-3 text-xs leading-relaxed">
-          Recorrido de demostración con datos ficticios. No se conecta a una base de datos ni guarda información.
-        </p>
-      </details>
+      <aside className="mx-auto my-3 max-w-7xl rounded-xl border border-amber-500/40 bg-dark-950/95 px-4 py-3 text-sm leading-relaxed text-amber-100 shadow-xl" aria-label="Aviso de demostración">
+        ZeroVanity es una demostración: todos los datos son simulados, incluidos servicios, precios, cifras, disponibilidad, garantías y credenciales. Las reservas y el panel de administración no son reales; no introduzcas información personal.
+      </aside>
     </>
   );
 }
@@ -109,10 +104,10 @@ const router = createBrowserRouter(
           element: (
             <Suspense fallback={<PageLoader text="Abriendo Cero Caos..." />}>
               <>
-                <ReformsApp />
-                <aside className="fixed bottom-3 left-3 z-[100] max-w-sm rounded border border-amber-500/50 bg-amber-50 px-4 py-3 text-xs text-slate-800 shadow-xl" aria-label="Aviso de demostración">
-                  Demo conceptual: formulario y envío simulados. No introduzcas datos reales; la información no se envía ni se almacena.
+                <aside className="mx-auto my-3 max-w-7xl border border-amber-500/50 bg-amber-50 px-4 py-3 text-sm leading-relaxed text-slate-800" aria-label="Aviso de demostración">
+                  ZeroChaos es una demostración: todos los datos son simulados, incluidos precios, proyectos de ejemplo, cifras, garantías, certificaciones y disponibilidad. El formulario no envía ni almacena datos. Los enlaces de correo abren tu aplicación; el mensaje solo se envía si lo confirmas allí.
                 </aside>
+                <ReformsApp />
               </>
             </Suspense>
           ),
