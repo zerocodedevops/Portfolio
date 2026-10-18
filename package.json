@@ -14,7 +14,7 @@
   "scripts": {
     "dev": "turbo run dev",
     "dev:portfolio": "turbo run dev --filter=portfolio-app",
-    "build": "npm run build:all && npm run copy:all",
+    "build": "npm run build:all && npm run copy:all && node scripts/sync-csp-inline-script-hashes.mjs firebase.json dist/reformas && node scripts/sync-csp-inline-script-hashes.mjs apps/zero-chaos/firebase.json apps/zero-chaos/build/client",
     "build:all": "turbo run build",
     "copy:all": "node scripts/copy-all.mjs",
     "lint": "turbo run lint",

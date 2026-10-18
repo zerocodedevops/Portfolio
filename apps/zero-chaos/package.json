@@ -10,7 +10,7 @@
     "typecheck": "react-router typegen && tsc",
     "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "format": "prettier --write \"src/**/*.{ts,tsx,css}\"",
-    "deploy": "npm run build && firebase deploy --only hosting:reformas"
+    "deploy": "npm run build && node ../../scripts/sync-csp-inline-script-hashes.mjs firebase.json build/client && firebase deploy --only hosting:reformas"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",
