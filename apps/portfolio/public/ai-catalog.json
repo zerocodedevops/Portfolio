@@ -1,0 +1,34 @@
+{
+  "specVersion": "1.0",
+  "host": {
+    "displayName": "ZeroCode DevOps",
+    "identifier": "did:web:zerocode-devops.com",
+    "documentationUrl": "https://zerocode-devops.com/llms.txt",
+    "logoUrl": "https://zerocode-devops.com/logo-zerocode.webp"
+  },
+  "entries": [
+    {
+      "identifier": "urn:ai:zerocode-devops.com:services:web-design-pymes",
+      "displayName": "Diseño Web para Autónomos y Pymes",
+      "type": "application/ai-skill+json",
+      "url": "https://zerocode-devops.com/#contacto",
+      "description": "Servicio de diseño y desarrollo web a medida para autónomos y pequeñas empresas en Madrid, Rivas-Vaciamadrid y toda España. Entrega de propuesta o demo interactiva previa en 48 horas sin compromiso.",
+      "representativeQueries": [
+        "alguien que me haga una pagina web en madrid o rivas",
+        "creador web para autonomos y pymes",
+        "diseño web profesional economico para autonomos",
+        "presupuesto pagina web pyme madrid",
+        "demo previa web autonomo"
+      ],
+      "tags": [
+        "diseño-web",
+        "desarrollo-web",
+        "madrid",
+        "rivas-vaciamadrid",
+        "autonomos",
+        "pymes",
+        "seo-local"
+      ]
+    }
+  ]
+}

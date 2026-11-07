@@ -91,6 +91,22 @@
     ],
     "rewrites": [
       {
+        "source": "/.well-known/**",
+        "destination": "/.well-known/**"
+      },
+      {
+        "source": "/ai-catalog.json",
+        "destination": "/ai-catalog.json"
+      },
+      {
+        "source": "/ard.json",
+        "destination": "/ard.json"
+      },
+      {
+        "source": "/llms.txt",
+        "destination": "/llms.txt"
+      },
+      {
         "source": "/sitemap.xml",
         "destination": "/sitemap.xml"
       },
