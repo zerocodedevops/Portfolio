@@ -137,7 +137,7 @@ export function ProductOptions() {
         </h2>
         <div className="mt-4 space-y-3 leading-7 text-[#586a80]">
           <p>Desde nuevas secciones hasta reservas, campañas o mantenimiento.</p>
-          <p>El precio de 400 € corresponde únicamente a la web de una página descrita arriba; estas opciones se presupuestan según el alcance, las integraciones y los proveedores necesarios.</p>
+          <p>Nos adaptamos a tu presupuesto para que el coste no sea un impedimento. Estas opciones y ampliaciones se presupuestan de forma transparente según el alcance y las necesidades de tu proyecto.</p>
         </div>
       </header>
 

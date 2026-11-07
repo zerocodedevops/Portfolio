@@ -17,7 +17,7 @@ export function Seo({
   url = globalThis.location?.href || import.meta.env.VITE_SITE_URL || 'https://zerocode-devops.com',
   jsonLd,
 }: Readonly<SEOProps>) {
-  const siteTitle = 'Diseño web para autónomos y pymes desde 400 € | ZeroCode';
+  const siteTitle = 'Diseño Web para Autónomos y Pymes en Madrid y Rivas | ZeroCode';
   const siteUrl = import.meta.env.VITE_SITE_URL || 'https://zerocode-devops.com';
   const canonical = new URL(url || globalThis.location?.href || siteUrl, siteUrl);
   canonical.search = '';

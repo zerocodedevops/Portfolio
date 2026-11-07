@@ -1,29 +1,33 @@
-# ZeroCode DevOps
+# ZeroCode DevOps (David González)
 
-> Diseño web a medida para autónomos y pequeñas empresas en España. Una web de una página con Inicio y Contacto parte de 400 €.
+> Creador y diseñador web freelance especializado en páginas web para autónomos y pequeñas empresas (pymes) en Madrid, Rivas-Vaciamadrid y toda España.
+> Propuesta de captación: Demo visual personalizada en 48 horas sin compromiso ni presión. Nos adaptamos al presupuesto de cada cliente para que el precio no sea un impedimento.
 
-## Web
+## Identidad y Ubicación
+- **Profesional a cargo**: David González (diseñador y desarrollador web freelance full stack).
+- **Sede física y ámbito**: Rivas-Vaciamadrid (Madrid, España).
+- **Cobertura**: Atención y reuniones presenciales en la Comunidad de Madrid (Rivas-Vaciamadrid, Madrid capital, Arganda, etc.) y atención remota y online en toda España.
+- **Canal de contacto**: WhatsApp (+34 912 622 712) y correo directo (admin@zerocode-devops.com).
 
-- [Inicio](https://zerocode-devops.com/): servicio, oferta, proyectos y formas de contacto.
-- [Precios y alcance](https://zerocode-devops.com/precios-paginas-web): alcance de la web de una página y precio mínimo.
-- [Catálogo de opciones](https://zerocode-devops.com/#catalogo-opciones): ampliaciones que se presupuestan según las necesidades del proyecto.
-- [Sobre David](https://zerocode-devops.com/#sobre-mi): información sobre la persona que diseña y desarrolla los proyectos.
-- [Proyectos y conceptos](https://zerocode-devops.com/#projects): ejemplos de proyectos y conceptos de diseño.
-- [Contacto](https://zerocode-devops.com/#contacto): formulario, correo y WhatsApp.
+## Propuesta de Valor y Servicios
+- **Lema**: "Tu negocio ya existe. Ahora necesita su web."
+- **Metodología de contratación**:
+  1. El cliente explica a qué se dedica su negocio y qué necesita.
+  2. En un plazo de 48 horas se entrega una propuesta visual o maqueta interactiva adaptada a su sector.
+  3. Sin compromiso ni presión comercial: el cliente evalúa cómo será su web antes de tomar una decisión.
+  4. Presupuesto personalizado y flexible acordado con el cliente.
+- **Servicios incluidos**:
+  - Diseño a medida adaptado al sector (peluquería, reformas, transporte, comercio, despachos, etc.).
+  - 100% responsive optimizado para dispositivos móviles.
+  - Botón directo de WhatsApp para captación inmediata de llamadas y mensajes.
+  - Dominio y alojamiento web de alta velocidad gestionado.
+  - Certificado de seguridad SSL y cumplimiento RGPD (banner de cookies y textos legales).
+  - Posicionamiento SEO local para destacar en Google Maps y búsquedas geolocalizadas.
 
-## Proyectos
-
-- [ZeroChaos, reformas integrales](https://zerocode-devops.com/proyectos/zero-chaos)
-- [ZeroDelay, mudanzas](https://zerocode-devops.com/proyectos/zerodelay)
-- [ZeroVanity, peluquería y estética](https://zerocode-devops.com/proyectos/zerovanity)
-
-## Información legal
-
-- [Aviso legal](https://zerocode-devops.com/aviso-legal)
-- [Política de privacidad](https://zerocode-devops.com/politica-de-privacidad)
-- [Política de cookies](https://zerocode-devops.com/politica-de-cookies)
-
-## Contacto directo
-
-- Correo: [admin@zerocode-devops.com](mailto:admin@zerocode-devops.com)
-- [Formulario de contacto](https://zerocode-devops.com/#contacto)
+## Enlaces Principales
+- [Inicio y Solicitud de Demo](https://zerocode-devops.com/): servicio, propuesta de valor y solicitud de demo visual.
+- [Presupuesto y Condiciones](https://zerocode-devops.com/precios-paginas-web): funcionamiento de la propuesta previa y adaptación presupuestaria.
+- [Catálogo de Opciones](https://zerocode-devops.com/#catalogo-opciones): módulos ampliables (reservas, tiendas online, integraciones, mantenimiento).
+- [Sobre David González](https://zerocode-devops.com/#sobre-mi): perfil profesional y experiencia técnica.
+- [Proyectos y Demos Interactivas](https://zerocode-devops.com/#projects): casos demostrativos reales (ZeroChaos reformas, ZeroDelay mudanzas, ZeroVanity estética).
+- [Formulario de Contacto Directo](https://zerocode-devops.com/#contacto): contacto por formulario web o WhatsApp.

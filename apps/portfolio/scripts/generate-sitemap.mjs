@@ -24,6 +24,7 @@ function generateSitemap() {
     { url: '/proyectos/zerodelay' },
     { url: '/proyectos/zerovanity' },
     { url: '/proyectos/zero-breakdown' },
+    { url: '/proyectos/zerorisk.html' },
     { url: '/proyectos/zero-breakdown/fontaneria' },
     { url: '/proyectos/zero-breakdown/electricidad' },
     { url: '/proyectos/zero-breakdown/climatizacion' },

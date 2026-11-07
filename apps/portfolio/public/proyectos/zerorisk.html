@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><title>VANGUARD PRL | Aegis Risk Advisory</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&amp;family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "on-secondary-container": "#00311f", "surface": "#101419", "on-tertiary-container": "#384658", "outline-variant": "#4d4635", "tertiary-fixed-dim": "#b9c8de", "surface-dim": "#101419", "error-container": "#93000a", "surface-container": "#1c2025", "on-primary-fixed": "#241a00", "primary-fixed-dim": "#e9c349", "inverse-primary": "#735c00", "surface-tint": "#e9c349", "inverse-on-surface": "#2d3136", "on-primary": "#3c2f00", "on-tertiary": "#233143", "on-secondary": "#003824", "surface-bright": "#36393f", "on-surface-variant": "#d0c5af", "secondary-fixed": "#6ffbbe", "primary-container": "#d4af37", "surface-container-highest": "#31353b", "primary-fixed": "#ffe088", "tertiary": "#c0d0e6", "on-tertiary-fixed": "#0d1c2d", "on-primary-container": "#554300", "secondary-fixed-dim": "#4edea3", "error": "#ffb4ab", "primary": "#f2ca50", "inverse-surface": "#e0e2ea", "on-tertiary-fixed-variant": "#39485a", "surface-container-high": "#262a30", "background": "#101419", "secondary": "#4edea3", "on-secondary-fixed-variant": "#005236", "outline": "#99907c", "secondary-container": "#00a572", "on-error": "#690005", "on-surface": "#e0e2ea", "on-background": "#e0e2ea", "surface-variant": "#31353b", "on-primary-fixed-variant": "#574500", "surface-container-low": "#181c21", "surface-container-lowest": "#0a0e13", "tertiary-fixed": "#d4e4fa", "on-error-container": "#ffdad6", "tertiary-container": "#a5b4ca", "on-secondary-fixed": "#002113" }, "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, "spacing": { "margin": "1.25rem", "space-xl": "4rem", "space-sm": "0.75rem", "space-xs": "0.375rem", "gutter-desktop": "2.5rem", "gutter": "1.5rem", "space-lg": "2.25rem", "margin-desktop": "5rem", "margin-tablet": "2.5rem", "space-md": "1.25rem" }, "fontFamily": { "body-lg": ["Plus Jakarta Sans"], "headline-lg-mobile": ["Playfair Display"], "body-sm": ["Plus Jakarta Sans"], "label-sm": ["Plus Jakarta Sans"], "title-lg": ["Plus Jakarta Sans"], "headline-md": ["Playfair Display"], "body-md": ["Plus Jakarta Sans"], "display-mobile": ["Playfair Display"], "headline-sm": ["Playfair Display"], "label-md": ["Plus Jakarta Sans"], "headline-lg": ["Playfair Display"], "display": ["Playfair Display"], "title-sm": ["Plus Jakarta Sans"], "title-md": ["Plus Jakarta Sans"] }, "fontSize": { "body-lg": ["1.125rem", { "lineHeight": "1.875rem", "letterSpacing": "0em", "fontWeight": "400" }], "headline-lg-mobile": ["2rem", { "lineHeight": "2.5rem", "letterSpacing": "-0.01em", "fontWeight": "500" }], "body-sm": ["0.8125rem", { "lineHeight": "1.375rem", "letterSpacing": "0.01em", "fontWeight": "400" }], "label-sm": ["0.6875rem", { "lineHeight": "0.875rem", "letterSpacing": "0.12em", "fontWeight": "700" }], "title-lg": ["1.375rem", { "lineHeight": "1.875rem", "letterSpacing": "-0.01em", "fontWeight": "600" }], "headline-md": ["2.25rem", { "lineHeight": "2.75rem", "letterSpacing": "-0.01em", "fontWeight": "500" }], "body-md": ["0.9375rem", { "lineHeight": "1.6rem", "letterSpacing": "0em", "fontWeight": "400" }], "display-mobile": ["2.75rem", { "lineHeight": "3.25rem", "letterSpacing": "-0.015em", "fontWeight": "600" }], "headline-sm": ["1.75rem", { "lineHeight": "2.25rem", "letterSpacing": "0em", "fontWeight": "500" }], "label-md": ["0.75rem", { "lineHeight": "1rem", "letterSpacing": "0.08em", "fontWeight": "600" }], "headline-lg": ["3rem", { "lineHeight": "3.5rem", "letterSpacing": "-0.015em", "fontWeight": "500" }], "display": ["4.5rem", { "lineHeight": "5rem", "letterSpacing": "-0.02em", "fontWeight": "600" }], "title-sm": ["1rem", { "lineHeight": "1.5rem", "letterSpacing": "0.01em", "fontWeight": "600" }], "title-md": ["1.125rem", { "lineHeight": "1.625rem", "letterSpacing": "0em", "fontWeight": "600" }] } } } };</script></head><body class="bg-background font-body-md text-body-md text-on-surface antialiased selection:bg-primary-container selection:text-on-primary-container"><header class="fixed top-0 left-0 right-0 z-50 bg-surface/85 backdrop-blur-md shadow-[0_1px_8px_rgba(0,0,0,0.4)]"><div class="h-20 max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between gap-6"><div class="flex items-center gap-4 shrink-0"><img alt="Vanguard Protection Crest" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1U9hj9gZx-HQi1OvExLf9Awk2E6He7wexIOmfzYq8xVGudQiOrLdG6J6fYTkAP2fEPlsEfXnL2LkREfpUGAtuaN1VTAlUyiu7fFG9O8h0WmRJDAWvMUahtKvwgSJajd9hSft1ehwSKzzGTVdIX1jPW65DKy6VdX0Fcwmon2kxyHdL9H2kJvk5QIItvHSoa1L4afe81bkiRFXKtDwNF1-lcAMho4j7X5pDBX8J9bWllOYNFPIn3AJH1KqnM"/><div class="flex flex-col"><div class="flex items-center gap-2"><span class="font-headline-sm text-title-sm tracking-tight text-on-surface uppercase">Vanguard PRL</span><span class="hidden sm:inline-block w-1.5 h-1.5 rounded-full bg-primary"></span><span class="hidden sm:inline-block font-label-sm text-label-sm uppercase text-primary tracking-widest">Aegis</span></div><span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">High-Risk Advisory &amp; Safety Engineering</span></div></div><nav class="hidden xl:flex items-center gap-8" data-active-classes="text-primary"><a aria-current="page" class="font-label-md uppercase tracking-wider transition-colors text-primary" data-path="inicio" href="#inicio">Inicio</a><a class="font-label-md text-label-md uppercase tracking-wider text-on-surface-variant hover:text-on-surface transition-colors" data-path="nosotros" href="#nosotros">Nosotros</a><a class="font-label-md text-label-md uppercase tracking-wider text-on-surface-variant hover:text-on-surface transition-colors" data-path="servicios" href="#servicios">Servicios</a><a class="font-label-md text-label-md uppercase tracking-wider text-on-surface-variant hover:text-on-surface transition-colors" data-path="auditoria-estandares" href="#auditoria-estandares">Auditoría &amp; Estándares</a><a class="font-label-md text-label-md uppercase tracking-wider text-on-surface-variant hover:text-on-surface transition-colors" data-path="contacto" href="#contacto">Contacto</a></nav><div class="flex items-center gap-4 shrink-0"><a class="hidden md:flex items-center gap-2 text-on-surface-variant hover:text-primary transition-colors" href="tel:+34900826482"><span class="material-symbols-outlined text-primary text-[18px]">call</span><span class="font-label-sm text-label-sm tracking-wider uppercase">+34 900 826 482</span></a><a class="flex items-center justify-center w-9 h-9 rounded bg-surface-container-high hover:bg-surface-container-highest transition-all duration-300 shadow-[0_0_12px_rgba(78,222,163,0.15)]" href="https://wa.me/34900826482" rel="noopener noreferrer" target="_blank" title="Canal Confidencial WhatsApp"><span class="material-symbols-outlined text-secondary text-[20px]">chat</span></a><a class="hidden sm:inline-flex items-center justify-center px-4 py-2 rounded bg-primary-container text-on-primary-container font-label-md text-label-md uppercase tracking-wider hover:bg-primary transition-all duration-300 shadow-[0_0_20px_rgba(212,175,55,0.25)]" href="#contacto">Solicitar Auditoría</a><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-20 bg-background min-h-screen"><div class="flex flex-col w-full text-on-surface">
+<!-- ==================== HERO SECTION (#inicio) ==================== -->
+<section class="relative w-full min-h-[92vh] flex flex-col justify-between overflow-hidden bg-surface-container-lowest px-6 lg:px-12 pt-12 pb-16" id="inicio">
+<!-- Atmospheric Ambient WebGL Shader Layer -->
+<!-- STITCH_SHADER_START:ANIMATION_2 class="absolute inset-0 w-full h-full pointer-events-none opacity-45" -->
+<div class="absolute inset-0 w-full h-full pointer-events-none opacity-45" style="display:block;">
+<canvas id="shader-canvas-ANIMATION_2" style="display:block;width:100%;height:100%"></canvas>
+<script>
+(function() {
+  const canvas = document.getElementById('shader-canvas-ANIMATION_2');
+
+  // Sync the WebGL drawing-buffer size with the CSS-driven layout size.
+  // This fires on initial layout and whenever the element is resized.
+  function syncSize() {
+    const w = canvas.clientWidth  || 1280;
+    const h = canvas.clientHeight || 720;
+    if (canvas.width !== w || canvas.height !== h) {
+      canvas.width  = w;
+      canvas.height = h;
+    }
+  }
+  if (typeof ResizeObserver !== 'undefined') {
+    new ResizeObserver(syncSize).observe(canvas);
+  }
+  syncSize();
+
+  const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
+  if (!gl) return;
+  const vs = `attribute vec2 a_position;
+varying vec2 v_texCoord;
+void main() {
+  v_texCoord = a_position * 0.5 + 0.5;
+  gl_Position = vec4(a_position, 0.0, 1.0);
+}`;
+  const fs = `precision highp float;
+uniform float u_time;
+uniform vec2 u_resolution;
+uniform vec2 u_mouse;
+varying vec2 v_texCoord;
+
+// Simplex-style organic noise for subtle dark luxury wave
+vec3 mod289(vec3 x) { return x - floor(x * (1.0 / 289.0)) * 289.0; }
+vec2 mod289(vec2 x) { return x - floor(x * (1.0 / 289.0)) * 289.0; }
+vec3 permute(vec3 x) { return mod289(((x*34.0)+1.0)*x); }
+
+float snoise(vec2 v) {
+  const vec4 C = vec4(0.211324865405187,  // (3.0-sqrt(3.0))/6.0
+                      0.366025403784439,  // 0.5*(sqrt(3.0)-1.0)
+                     -0.577350269189626,  // -1.0 + 2.0 * C.x
+                      0.024390243902439); // 1.0 / 41.0
+  vec2 i  = floor(v + dot(v, C.yy) );
+  vec2 x0 = v -   i + dot(i, C.xx);
+  vec2 i1;
+  i1 = (x0.x > x0.y) ? vec2(1.0, 0.0) : vec2(0.0, 1.0);
+  vec4 x12 = x0.xyxy + C.xxzz;
+  x12.xy -= i1;
+  i = mod289(i);
+  vec3 p = permute( permute( i.y + vec3(0.0, i1.y, 1.0 ))
+        + i.x + vec3(0.0, i1.x, 1.0 ));
+  vec3 m = max(0.5 - vec3(dot(x0,x0), dot(x12.xy,x12.xy), dot(x12.zw,x12.zw)), 0.0);
+  m = m*m ;
+  m = m*m ;
+  vec3 x = 2.0 * fract(p * C.www) - 1.0;
+  vec3 h = abs(x) - 0.5;
+  vec3 ox = floor(x + 0.5);
+  vec3 a0 = x - ox;
+  m *= 1.79284291400159 - 0.85373472095314 * ( a0*a0 + h*h );
+  vec3 g;
+  g.x  = a0.x  * x0.x  + h.x  * x0.y;
+  g.yz = a0.yz * x12.xz + h.yz * x12.yw;
+  return 130.0 * dot(m, g);
+}
+
+void main() {
+  vec2 uv = gl_FragCoord.xy / u_resolution.xy;
+  vec2 mouseNorm = u_mouse.xy / u_resolution.xy;
+  
+  float t = u_time * 0.12;
+  vec2 p = uv * 2.2 - vec2(1.1);
+  p.x *= u_resolution.x / u_resolution.y;
+
+  // Multi-layered fluid silk motion
+  float n1 = snoise(p * 1.2 + vec2(t * 0.4, -t * 0.3));
+  float n2 = snoise(p * 2.5 - vec2(t * 0.5, t * 0.2) + n1 * 0.45);
+  float n3 = snoise(p * 4.0 + vec2(n2 * 0.6, t * 0.25));
+
+  // Mouse interactive distortion
+  float dMouse = length(uv - mouseNorm);
+  float mouseInfluence = smoothstep(0.4, 0.0, dMouse) * 0.25;
+
+  float wave = smoothstep(-0.4, 0.8, n2 + n3 * 0.5 + mouseInfluence);
+  
+  // Luxury Palette: Deep Obsidian, Graphite, Velvet Champagne Gold
+  vec3 colDeepNavy = vec3(0.039, 0.055, 0.078); // #0a0e14
+  vec3 colAnthracite = vec3(0.075, 0.098, 0.133); // #131922
+  vec3 colGoldWarm = vec3(0.831, 0.686, 0.216); // #d4af37
+  vec3 colGoldGlow = vec3(0.965, 0.851, 0.498); // #f6d97f
+  
+  // Base dark gradient
+  vec3 bg = mix(colDeepNavy, colAnthracite, uv.y * 0.8 + n1 * 0.15);
+  
+  // Golden atmospheric highlights
+  float goldVein = pow(smoothstep(0.2, 0.7, n2), 3.5) * 0.32;
+  float goldVeinFine = pow(smoothstep(0.45, 0.85, n3), 5.0) * 0.45;
+  
+  vec3 finalColor = bg + (colGoldWarm * goldVein) + (colGoldGlow * goldVeinFine);
+  
+  // Subtle vignette
+  float vignette = smoothstep(1.5, 0.3, length(uv - 0.5) * 1.2);
+  finalColor *= vignette;
+
+  gl_FragColor = vec4(finalColor, 1.0);
+}`;
+  function cs(type, src) {
+    const s = gl.createShader(type);
+    gl.shaderSource(s, src);
+    gl.compileShader(s);
+    return s;
+  }
+  const prog = gl.createProgram();
+  gl.attachShader(prog, cs(gl.VERTEX_SHADER, vs));
+  gl.attachShader(prog, cs(gl.FRAGMENT_SHADER, fs));
+  gl.linkProgram(prog);
+  gl.useProgram(prog);
+  const buf = gl.createBuffer();
+  gl.bindBuffer(gl.ARRAY_BUFFER, buf);
+  gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1,-1, 1,-1, -1,1, 1,1]), gl.STATIC_DRAW);
+  const pos = gl.getAttribLocation(prog, 'a_position');
+  gl.enableVertexAttribArray(pos);
+  gl.vertexAttribPointer(pos, 2, gl.FLOAT, false, 0, 0);
+  const uTime = gl.getUniformLocation(prog, 'u_time');
+  const uRes = gl.getUniformLocation(prog, 'u_resolution');
+  const uMouse = gl.getUniformLocation(prog, 'u_mouse');
+
+  // u_mouse is in pixel coordinates matching u_resolution (ShaderToy convention).
+  // Shaders that need normalized coords should use: u_mouse / u_resolution.
+  let mouse = { x: canvas.width / 2, y: canvas.height / 2 };
+  window.addEventListener('mousemove', (event) => {
+    const rect = canvas.getBoundingClientRect();
+    if (rect.width && rect.height) {
+      const nx = (event.clientX - rect.left) / rect.width;
+      const ny = 1.0 - (event.clientY - rect.top) / rect.height;
+      mouse.x = nx * canvas.width;
+      mouse.y = ny * canvas.height;
+    }
+  });
+
+  function render(t) {
+    if (typeof ResizeObserver === 'undefined') syncSize();
+    gl.viewport(0, 0, canvas.width, canvas.height);
+    if (uTime) gl.uniform1f(uTime, t * 0.001);
+    if (uRes) gl.uniform2f(uRes, canvas.width, canvas.height);
+    if (uMouse) gl.uniform2f(uMouse, mouse.x, mouse.y);
+    gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+    requestAnimationFrame(render);
+  }
+  render(0);
+})();
+</script>
+</div>
+<!-- STITCH_SHADER_END:ANIMATION_2 -->
+<!-- Subtle Radial Glow Overlays for Editorial Depth -->
+<div class="absolute -top-32 -left-32 w-96 h-96 rounded-full bg-primary/10 blur-[120px] pointer-events-none"></div>
+<div class="absolute top-1/2 -right-32 w-[32rem] h-[32rem] rounded-full bg-secondary/10 blur-[140px] pointer-events-none"></div>
+<div class="absolute bottom-0 inset-x-0 h-48 bg-gradient-to-t from-surface-container-lowest via-surface-container-lowest/80 to-transparent pointer-events-none"></div>
+<!-- Main Hero Architectural Layout -->
+<div class="relative z-10 max-w-7xl mx-auto w-full pt-8 lg:pt-14 flex flex-col gap-10">
+<!-- Prestige Accreditations Ribbon -->
+<div class="flex flex-wrap items-center gap-3">
+<div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-surface-container-high/70 backdrop-blur-md shadow-sm">
+<span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-widest">Acreditados ISO 45001:2018</span>
+</div>
+<div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-surface-container-high/60 backdrop-blur-md shadow-sm">
+<span class="material-symbols-outlined text-primary text-[15px]" style="font-variation-settings: 'FILL' 1;">workspace_premium</span>
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-widest">Auditoría Internacional Grado Platinum</span>
+</div>
+<div class="hidden sm:inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-surface-container-low/80 backdrop-blur-sm">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Aegis Executive Registry · No. 849-EU</span>
+</div>
+</div>
+<!-- Headline & Editorial Narrative Split -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end">
+<div class="lg:col-span-8 flex flex-col gap-6">
+<div class="flex items-center gap-3">
+<span class="h-px w-12 bg-primary/60"></span>
+<span class="font-label-sm text-label-sm uppercase tracking-[0.25em] text-primary">Sovereign Industrial Defense &amp; PRL Engineering</span>
+</div>
+<h1 class="font-display text-display font-medium tracking-tight text-on-surface leading-[1.08] max-w-4xl">
+            La Arquitectura de la <span class="italic text-primary font-normal">Certeza</span> en Seguridad Laboral.
+          </h1>
+</div>
+<div class="lg:col-span-4 flex flex-col gap-6 lg:pb-3">
+<p class="font-body-lg text-body-lg text-on-surface-variant font-light leading-relaxed">
+            Protegemos el capital humano y blindamos el patrimonio operacional de corporaciones líderes mediante ingeniería de prevención de élite y cumplimiento normativo de nivel <span class="text-on-surface font-medium">cero incidentes</span>.
+          </p>
+<!-- Interactive Action Triggers -->
+<div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-2">
+<a class="group relative inline-flex items-center justify-center gap-3 px-7 py-3.5 rounded bg-primary-container text-on-primary-container font-label-md text-label-md uppercase tracking-wider font-semibold shadow-lg shadow-primary-container/20 hover:bg-primary transition-all duration-300" href="#contacto">
+<span class="relative z-10 flex items-center gap-2">
+<span>Diseñar Plan de Blindaje</span>
+<span class="material-symbols-outlined text-[18px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</span>
+</a>
+<a class="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded bg-surface-container-high/80 hover:bg-surface-container-highest text-on-surface font-label-md text-label-md uppercase tracking-wider transition-all duration-300 shadow-sm" href="#servicios">
+<span class="material-symbols-outlined text-outline text-[18px]">account_tree</span>
+<span>Explorar Servicios</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Telemetry Live Metric Strip -->
+<div class="mt-8 pt-8">
+<div class="grid grid-cols-2 lg:grid-cols-4 gap-6">
+<div class="flex flex-col gap-2 p-5 rounded-lg bg-surface-container/60 backdrop-blur-md shadow-sm group hover:bg-surface-container/80 transition-all">
+<div class="flex items-center justify-between">
+<span class="font-display text-headline-md text-on-surface font-semibold group-hover:text-secondary transition-colors">99.8%</span>
+<span class="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-bold bg-secondary/10 text-secondary tracking-wider">VERIFIED</span>
+</div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">Tasa de Cero Incidentes</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant/80">Auditado en 64 plantas de severidad alta</span>
+</div>
+<div class="flex flex-col gap-2 p-5 rounded-lg bg-surface-container/60 backdrop-blur-md shadow-sm group hover:bg-surface-container/80 transition-all">
+<div class="flex items-center justify-between">
+<span class="font-display text-headline-md text-on-surface font-semibold group-hover:text-primary transition-colors">+450</span>
+<span class="material-symbols-outlined text-primary text-[20px]">verified_user</span>
+</div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">Auditorías Complejas</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant/80">Petroquímica, energía, obra civil pesada</span>
+</div>
+<div class="flex flex-col gap-2 p-5 rounded-lg bg-surface-container/60 backdrop-blur-md shadow-sm group hover:bg-surface-container/80 transition-all">
+<div class="flex items-center justify-between">
+<span class="font-display text-headline-md text-secondary font-semibold">0€</span>
+<span class="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-bold bg-secondary/15 text-secondary tracking-wider">CERO MULTAS</span>
+</div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">Sanciones Regulatorias</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant/80">Historial de clientes con blindaje Aegis</span>
+</div>
+<div class="flex flex-col gap-2 p-5 rounded-lg bg-surface-container/60 backdrop-blur-md shadow-sm group hover:bg-surface-container/80 transition-all">
+<div class="flex items-center justify-between">
+<span class="font-display text-headline-md text-primary font-semibold">24/7</span>
+<span class="w-2.5 h-2.5 rounded-full bg-secondary animate-ping"></span>
+</div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">Comité de Crisis</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant/80">Despliegue pericial y respuesta en &lt;2h</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Architectural Monogram Bottom Strip -->
+<div class="relative z-10 max-w-7xl mx-auto w-full pt-8 flex items-center justify-between text-outline">
+<div class="flex items-center gap-6">
+<span class="font-label-sm text-label-sm tracking-widest uppercase">Madrid</span>
+<span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+<span class="font-label-sm text-label-sm tracking-widest uppercase">Frankfurt</span>
+<span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+<span class="font-label-sm text-label-sm tracking-widest uppercase">Houston</span>
+<span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+<span class="font-label-sm text-label-sm tracking-widest uppercase">Doha</span>
+</div>
+<div class="hidden sm:flex items-center gap-2 font-label-sm text-label-sm tracking-wider uppercase text-on-surface-variant">
+<span>Gobernanza Industrial Superior</span>
+<span class="material-symbols-outlined text-[16px] text-primary">shield</span>
+</div>
+</div>
+</section>
+<!-- ==================== NOSOTROS SECTION (#nosotros) ==================== -->
+<section class="relative w-full py-28 px-6 lg:px-12 bg-surface" id="nosotros">
+<div class="max-w-7xl mx-auto flex flex-col gap-20">
+<!-- Header Label & Lead Title -->
+<div class="flex flex-col lg:flex-row lg:items-end justify-between gap-8 pb-8">
+<div class="flex flex-col gap-3 max-w-2xl">
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-primary">01 / Legado y Rigor</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface font-medium leading-tight">
+            La Firma · Maestría, Ética &amp; Rigor Científico
+          </h2>
+</div>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-md font-light">
+          Más de 18 años asesorando a consejos de administración de corporaciones multinacionales en los entornos operativos de mayor severidad técnica del planeta.
+        </p>
+</div>
+<!-- Mosaic Bento: Imagery + Director Manifesto + Pillars -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+<!-- Left Visual & Executive Quote (5 cols) -->
+<div class="lg:col-span-5 flex flex-col gap-6">
+<div class="relative w-full h-80 rounded-xl overflow-hidden shadow-2xl bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Modern high-end industrial engineering laboratory and boardroom with architects and senior safety engineers reviewing complex isometric blueprints under cool titanium lighting and architectural gold accents, dramatic depth of field" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA0aJVU6tiVonwNa2nEtAexd5uIldKyCufJGvrp_ltUrJ56sfTlzYph-qAqYhbL9af3KIxea59x4NViZsSIfLwgmBuPE9xlbmPDzPoey0fyqQt9WhqfN3HyGbHPyiF4gpqvB0NjYLqMeamfsyijttbHOCAOvk6tXT4oMcouCaouwXJ4_39TxeGUF0YktOt1vpTIRxQWOTG83TfP1w5xXDGzOFT5b_TcSZqVI8Dun7CzqrBnf7bPbSiV"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-surface-container-lowest/30 to-transparent"></div>
+<div class="absolute bottom-5 left-5 right-5 flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-primary bg-surface/80 backdrop-blur-md px-3 py-1 rounded">Sede Técnica Central</span>
+<span class="font-label-sm text-label-sm text-outline">Ref. Laboratorio Forense PRL</span>
+</div>
+</div>
+<!-- Director Manifesto Dossier -->
+<div class="p-8 rounded-xl bg-surface-container-low shadow-md flex flex-col justify-between gap-6 relative overflow-hidden">
+<div class="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full blur-2xl pointer-events-none"></div>
+<span class="material-symbols-outlined text-primary text-[36px] opacity-70">format_quote</span>
+<p class="font-headline-sm text-title-lg italic font-normal text-on-surface leading-snug">
+              "En la industria de alta severidad, el azar no existe: solo existe la ingeniería imperfecta o el rigor absoluto. Vanguard PRL no certifica meros papeles, erige escudos inviolables para proteger vidas y la continuidad de las mayores empresas."
+            </p>
+<div class="flex items-center justify-between pt-4">
+<div>
+<h4 class="font-title-md text-title-md font-semibold text-on-surface">Dr. Álvaro Menéndez de la Vega</h4>
+<p class="font-label-sm text-label-sm uppercase tracking-wider text-outline">Socio Director · Ph.D. Seguridad Industrial &amp; Compliance Penal</p>
+</div>
+<div class="w-12 h-12 rounded-full bg-surface-container-highest flex items-center justify-center text-primary shadow-inner">
+<span class="material-symbols-outlined text-[24px]">approval</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Pillars Grid (7 cols) -->
+<div class="lg:col-span-7 flex flex-col gap-6 justify-between">
+<!-- Pillar 1 -->
+<div class="p-8 rounded-xl bg-surface-container/70 shadow-sm hover:bg-surface-container transition-all flex flex-col sm:flex-row gap-6 items-start group">
+<div class="w-14 h-14 rounded-lg bg-surface-container-high flex items-center justify-center shrink-0 group-hover:bg-primary-container transition-colors shadow-sm">
+<span class="material-symbols-outlined text-primary group-hover:text-on-primary-container text-[28px] transition-colors">model_training</span>
+</div>
+<div class="flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<h3 class="font-title-lg text-title-lg text-on-surface font-semibold">Ingeniería Preventiva Cuantitativa</h3>
+<span class="font-label-sm text-label-sm text-secondary font-bold uppercase tracking-wider">Predictivo</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant font-light">
+                Modelización estocástica de fallos, análisis termodinámico y algoritmos de IA predictiva. Anticipamos microfisuras de seguridad operacional y fatiga técnica semanas antes de que se manifiesten en planta.
+              </p>
+<div class="flex items-center gap-3 mt-2 text-outline font-label-sm text-label-sm uppercase tracking-wider">
+<span>IA Predictiva</span> • <span>Análisis Cuantitativo</span> • <span>Near-Miss Automation</span>
+</div>
+</div>
+</div>
+<!-- Pillar 2 -->
+<div class="p-8 rounded-xl bg-surface-container/70 shadow-sm hover:bg-surface-container transition-all flex flex-col sm:flex-row gap-6 items-start group">
+<div class="w-14 h-14 rounded-lg bg-surface-container-high flex items-center justify-center shrink-0 group-hover:bg-primary-container transition-colors shadow-sm">
+<span class="material-symbols-outlined text-primary group-hover:text-on-primary-container text-[28px] transition-colors">gavel</span>
+</div>
+<div class="flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<h3 class="font-title-lg text-title-lg text-on-surface font-semibold">Defensa Jurídica &amp; Cumplimiento C-Level</h3>
+<span class="font-label-sm text-label-sm text-primary font-bold uppercase tracking-wider">Legal Shield</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant font-light">
+                Blindaje integral de responsabilidad penal corporativa para Miembros del Consejo, CEOs y Directores de Planta frente a la Ley de Prevención de Riesgos e inspecciones laborales de máxima fricción legal.
+              </p>
+<div class="flex items-center gap-3 mt-2 text-outline font-label-sm text-label-sm uppercase tracking-wider">
+<span>Compliance Penal 31 bis</span> • <span>Defensa Pericial</span> • <span>Due Diligence PRL</span>
+</div>
+</div>
+</div>
+<!-- Pillar 3 -->
+<div class="p-8 rounded-xl bg-surface-container/70 shadow-sm hover:bg-surface-container transition-all flex flex-col sm:flex-row gap-6 items-start group">
+<div class="w-14 h-14 rounded-lg bg-surface-container-high flex items-center justify-center shrink-0 group-hover:bg-primary-container transition-colors shadow-sm">
+<span class="material-symbols-outlined text-primary group-hover:text-on-primary-container text-[28px] transition-colors">psychology</span>
+</div>
+<div class="flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<h3 class="font-title-lg text-title-lg text-on-surface font-semibold">Cultura de Seguridad Transformacional</h3>
+<span class="font-label-sm text-label-sm text-secondary font-bold uppercase tracking-wider">Zero-Harm</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant font-light">
+                Capacitación inmersiva ejecutiva, neuro-seguridad aplicada y rediseño de incentivos operacionales. Convertimos el cumplimiento formal en una ventaja estratégica no negociable inculcada en cada estrato técnico.
+              </p>
+<div class="flex items-center gap-3 mt-2 text-outline font-label-sm text-label-sm uppercase tracking-wider">
+<span>Liderazgo Inmersivo</span> • <span>Neuroergonomía</span> • <span>Simulación Crítica VR</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ==================== SERVICIOS SECTION (#servicios) ==================== -->
+<section class="relative w-full py-28 px-6 lg:px-12 bg-surface-container-lowest" id="servicios">
+<div class="max-w-7xl mx-auto flex flex-col gap-16">
+<!-- Section Header -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6">
+<div class="flex flex-col gap-3">
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-primary">02 / Áreas de Intervención</span>
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary">Acreditación Máxima</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface font-medium leading-tight">
+            Servicios de Consultoría de Alto Rendimiento
+          </h2>
+</div>
+<div class="flex items-center gap-3 text-on-surface-variant font-label-md text-label-md uppercase tracking-wider">
+<span class="material-symbols-outlined text-primary text-[20px]">tune</span>
+<span>Despliegue a medida para industria pesada</span>
+</div>
+</div>
+<!-- Services Grid (6 Executive Cards) -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Card 1 -->
+<div class="group relative flex flex-col justify-between p-8 rounded-xl bg-surface-container-low shadow-sm hover:bg-surface-container transition-all duration-300">
+<div class="flex flex-col gap-5">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-widest px-2.5 py-1 rounded bg-primary/10 text-primary">Grado Severidad 5/5</span>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors text-[24px]">verified</span>
+</div>
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-outline">Módulo 01</span>
+<h3 class="font-title-lg text-title-lg text-on-surface font-semibold mt-1">Auditorías de Conformidad Legal &amp; Certificación ISO 45001</h3>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant font-light">
+              Diagnóstico exhaustivo y preparación para auditorías oficiales. Detección milimétrica de no conformidades con remediación express y garantía de certificación ante los organismos de mayor exigencia internacional.
+            </p>
+<ul class="flex flex-col gap-2 pt-2">
+<li class="flex items-center gap-2 text-on-surface-variant font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-secondary text-[16px]">check_circle</span>
+<span>Matriz integral de cumplimiento reglamentario</span>
+</li>
+<li class="flex items-center gap-2 text-on-surface-variant font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-secondary text-[16px]">check_circle</span>
+<span>Due diligence técnica previa a M&amp;A corporativo</span>
+</li>
+</ul>
+</div>
+<div class="pt-8">
+<a class="inline-flex items-center justify-between w-full py-2.5 px-4 rounded bg-surface-container-high group-hover:bg-primary-container group-hover:text-on-primary-container text-on-surface font-label-md text-label-md uppercase tracking-wider transition-all" href="#contacto">
+<span>Solicitar Diagnóstico</span>
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</a>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="group relative flex flex-col justify-between p-8 rounded-xl bg-surface-container-low shadow-sm hover:bg-surface-container transition-all duration-300">
+<div class="flex flex-col gap-5">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-widest px-2.5 py-1 rounded bg-secondary/10 text-secondary">Bienestar &amp; Biomecánica</span>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-secondary transition-colors text-[24px]">accessibility_new</span>
+</div>
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-outline">Módulo 02</span>
+<h3 class="font-title-lg text-title-lg text-on-surface font-semibold mt-1">Ergonomía Avanzada &amp; Psicosociología Aplicada</h3>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant font-light">
+              Salud mental ejecutiva, detección temprana de burnout operacional y análisis cinemático tridimensional en líneas de ensamblaje crítico para erradicar trastornos musculoesqueléticos crónicos.
+            </p>
+<ul class="flex flex-col gap-2 pt-2">
+<li class="flex items-center gap-2 text-on-surface-variant font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-secondary text-[16px]">check_circle</span>
+<span>Evaluación de carga mental con biometría</span>
+</li>
+<li class="flex items-center gap-2 text-on-surface-variant font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-secondary text-[16px]">check_circle</span>
+<span>Protocolos de desconexión y retención directiva</span>
+</li>
+</ul>
+</div>
+<div class="pt-8">
+<a class="inline-flex items-center justify-between w-full py-2.5 px-4 rounded bg-surface-container-high group-hover:bg-primary-container group-hover:text-on-primary-container text-on-surface font-label-md text-label-md uppercase tracking-wider transition-all" href="#contacto">
+<span>Auditar Ergonomía</span>
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</a>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="group relative flex flex-col justify-between p-8 rounded-xl bg-surface-container-low shadow-sm hover:bg-surface-container transition-all duration-300">
+<div class="flex flex-col gap-5">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-widest px-2.5 py-1 rounded bg-primary/10 text-primary">Atmósferas Explosivas ATEX</span>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors text-[24px]">warning</span>
+</div>
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-outline">Módulo 03</span>
+<h3 class="font-title-lg text-title-lg text-on-surface font-semibold mt-1">Planes de Emergencia, Autoprotección &amp; Espacios Confinados</h3>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant font-light">
+              Ingeniería de salvamento y protocolos de respuesta ante deflagración o asfixia química. Simulacros hiperrealistas en gemelos digitales y certificación de brigadas de intervención rápida.
+            </p>
+<ul class="flex flex-col gap-2 pt-2">
+<li class="flex items-center gap-2 text-on-surface-variant font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-secondary text-[16px]">check_circle</span>
+<span>Planes de autoprotección con visado oficial</span>
+</li>
+<li class="flex items-center gap-2 text-on-surface-variant font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-secondary text-[16px]">check_circle</span>
+<span>Sistemas de extracción y rescate vertical homologado</span>
+</li>
+</ul>
+</div>
+<div class="pt-8">
+<a class="inline-flex items-center justify-between w-full py-2.5 px-4 rounded bg-surface-container-high group-hover:bg-primary-container group-hover:text-on-primary-container text-on-surface font-label-md text-label-md uppercase tracking-wider transition-all" href="#contacto">
+<span>Ver Protocolo ATEX</span>
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</a>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="group relative flex flex-col justify-between p-8 rounded-xl bg-surface-container-low shadow-sm hover:bg-surface-container transition-all duration-300">
+<div class="flex flex-col gap-5">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-widest px-2.5 py-1 rounded bg-secondary/10 text-secondary">Megaproyectos Civiles</span>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-secondary transition-colors text-[24px]">engineering</span>
+</div>
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-outline">Módulo 04</span>
+<h3 class="font-title-lg text-title-lg text-on-surface font-semibold mt-1">Coordinación de Seguridad y Salud en Obras Mayores</h3>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant font-light">
+              Supervisión de campo no tolerante en infraestructura crítica, parques eólicos offshore y rascacielos. Coordinación de subcontratas transnacionales bajo estándares OHSAS y normativas europeas.
+            </p>
+<ul class="flex flex-col gap-2 pt-2">
+<li class="flex items-center gap-2 text-on-surface-variant font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-secondary text-[16px]">check_circle</span>
+<span>Control telemático de accesos y habilitaciones</span>
+</li>
+<li class="flex items-center gap-2 text-on-surface-variant font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-secondary text-[16px]">check_circle</span>
+<span>Coordinadores con habilitación senior permanente</span>
+</li>
+</ul>
+</div>
+<div class="pt-8">
+<a class="inline-flex items-center justify-between w-full py-2.5 px-4 rounded bg-surface-container-high group-hover:bg-primary-container group-hover:text-on-primary-container text-on-surface font-label-md text-label-md uppercase tracking-wider transition-all" href="#contacto">
+<span>Asignar Coordinador</span>
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</a>
+</div>
+</div>
+<!-- Card 5 -->
+<div class="group relative flex flex-col justify-between p-8 rounded-xl bg-surface-container-low shadow-sm hover:bg-surface-container transition-all duration-300">
+<div class="flex flex-col gap-5">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-widest px-2.5 py-1 rounded bg-primary/10 text-primary">Laboratorio Forense</span>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors text-[24px]">science</span>
+</div>
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-outline">Módulo 05</span>
+<h3 class="font-title-lg text-title-lg text-on-surface font-semibold mt-1">Higiene Industrial &amp; Toxicología Operacional</h3>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant font-light">
+              Monitoreo cromatográfico de compuestos orgánicos volátiles (COVs), nanopartículas, sílice cristalina y radiaciones ionizantes. Auditoría de límites de exposición profesional (VLA-ED / VLA-EC).
+            </p>
+<ul class="flex flex-col gap-2 pt-2">
+<li class="flex items-center gap-2 text-on-surface-variant font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-secondary text-[16px]">check_circle</span>
+<span>Detección espectrométrica in situ</span>
+</li>
+<li class="flex items-center gap-2 text-on-surface-variant font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-secondary text-[16px]">check_circle</span>
+<span>Mapas acústicos y aislamiento vibratorio</span>
+</li>
+</ul>
+</div>
+<div class="pt-8">
+<a class="inline-flex items-center justify-between w-full py-2.5 px-4 rounded bg-surface-container-high group-hover:bg-primary-container group-hover:text-on-primary-container text-on-surface font-label-md text-label-md uppercase tracking-wider transition-all" href="#contacto">
+<span>Solicitar Monitoreo</span>
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</a>
+</div>
+</div>
+<!-- Card 6 -->
+<div class="group relative flex flex-col justify-between p-8 rounded-xl bg-surface-container-low shadow-sm hover:bg-surface-container transition-all duration-300">
+<div class="flex flex-col gap-5">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-widest px-2.5 py-1 rounded bg-error/15 text-error">Contingencia Crítica</span>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors text-[24px]">balance</span>
+</div>
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-outline">Módulo 06</span>
+<h3 class="font-title-lg text-title-lg text-on-surface font-semibold mt-1">Gabinete de Peritajes Judiciales &amp; Defensa Técnica</h3>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant font-light">
+              Reconstrucción cinemática forense de accidentes graves o fatales. Elaboración de dictámenes periciales independientes con solvencia científica para litigios ante Audiencia Nacional y tribunales europeos.
+            </p>
+<ul class="flex flex-col gap-2 pt-2">
+<li class="flex items-center gap-2 text-on-surface-variant font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-secondary text-[16px]">check_circle</span>
+<span>Presencia pericial colegiada en salas de juicio</span>
+</li>
+<li class="flex items-center gap-2 text-on-surface-variant font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-secondary text-[16px]">check_circle</span>
+<span>Contraperitajes de actas de infracción de la ITSS</span>
+</li>
+</ul>
+</div>
+<div class="pt-8">
+<a class="inline-flex items-center justify-between w-full py-2.5 px-4 rounded bg-surface-container-high group-hover:bg-primary-container group-hover:text-on-primary-container text-on-surface font-label-md text-label-md uppercase tracking-wider transition-all" href="#contacto">
+<span>Activar Peritaje Urgente</span>
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ==================== AUDITORÍA & ESTÁNDARES SECTION ==================== -->
+<section class="relative w-full py-24 px-6 lg:px-12 bg-surface" id="auditoria-estandares">
+<div class="max-w-7xl mx-auto flex flex-col gap-14">
+<!-- Split Presentation: Operational Matrix -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+<div class="lg:col-span-6 flex flex-col gap-6">
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-primary">03 / Garantía de Cumplimiento</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface font-medium leading-tight">
+            El Estándar Aegis Platinum: Seguridad Sin Concesiones
+          </h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant font-light">
+            Nuestros clientes corporativos operan bajo un marco de inviolabilidad operativa certificado mediante auditorías cruzadas trimestrales y protocolos de doble ciego.
+          </p>
+<div class="flex flex-col gap-4 pt-2">
+<div class="flex items-start gap-4 p-4 rounded bg-surface-container-low shadow-sm">
+<span class="material-symbols-outlined text-secondary text-[24px]">verified</span>
+<div>
+<h4 class="font-title-sm text-title-sm text-on-surface font-semibold">Trazabilidad Criptográfica de Registros</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Cada inspección, entrega de EPI y firma de formación se inscribe con timestamp inviolable para validez procesal irrefutable.</p>
+</div>
+</div>
+<div class="flex items-start gap-4 p-4 rounded bg-surface-container-low shadow-sm">
+<span class="material-symbols-outlined text-primary text-[24px]">crisis_alert</span>
+<div>
+<h4 class="font-title-sm text-title-sm text-on-surface font-semibold">SLA de Respuesta Inmediata C-Level</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">En caso de contingencia o inspección laboral no anunciada, un perito senior y un abogado laboralista intervienen en menos de 120 minutos.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Side: Visual Data Dashboard Card -->
+<div class="lg:col-span-6 p-8 rounded-2xl bg-surface-container-lowest shadow-2xl flex flex-col gap-6">
+<div class="flex items-center justify-between pb-4">
+<div class="flex items-center gap-3">
+<span class="w-3 h-3 rounded-full bg-secondary"></span>
+<span class="font-title-sm text-title-sm text-on-surface font-semibold">Panel de Control de Riesgos en Tiempo Real</span>
+</div>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-outline">Cluster Industrial #09</span>
+</div>
+<!-- Minimalist SVG Chart Display -->
+<div class="flex flex-col gap-3">
+<div class="flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm uppercase">
+<span>Índice de Frecuencia de Siniestralidad (IF)</span>
+<span class="text-secondary font-bold">0.02 (Límite Industria: 14.5)</span>
+</div>
+<div class="w-full h-3 rounded-full bg-surface-container-highest overflow-hidden">
+<div class="h-full bg-gradient-to-r from-secondary-container to-secondary w-[4%] rounded-full"></div>
+</div>
+</div>
+<div class="flex flex-col gap-3">
+<div class="flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm uppercase">
+<span>Índice de Gravedad Acumulado (IG)</span>
+<span class="text-secondary font-bold">0.00 (Zero Severity)</span>
+</div>
+<div class="w-full h-3 rounded-full bg-surface-container-highest overflow-hidden">
+<div class="h-full bg-secondary w-[1%] rounded-full"></div>
+</div>
+</div>
+<div class="flex flex-col gap-3">
+<div class="flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm uppercase">
+<span>Conformidad Legal Exigible (RD 39/1997 &amp; Directivas UE)</span>
+<span class="text-primary font-bold">100% Auditado</span>
+</div>
+<div class="w-full h-3 rounded-full bg-surface-container-highest overflow-hidden">
+<div class="h-full bg-primary w-full rounded-full"></div>
+</div>
+</div>
+<div class="pt-4 flex items-center justify-between text-outline font-label-sm text-label-sm">
+<span>Última sincronización: Hace 4 minutos</span>
+<span class="text-secondary flex items-center gap-1 font-semibold">
+<span class="material-symbols-outlined text-[14px]">lock</span> Cifrado Militar TLS 1.3
+            </span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ==================== FORMULARIO DE CONTACTO (#contacto) ==================== -->
+<section class="relative w-full py-28 px-6 lg:px-12 bg-surface-container-lowest" id="contacto">
+<div class="max-w-7xl mx-auto flex flex-col gap-16">
+<!-- Contact Header -->
+<div class="flex flex-col gap-4 text-center max-w-3xl mx-auto">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-primary">04 / Enlace Directivo</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface font-medium leading-tight">
+          Inicie su Protocolo de Protección
+        </h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant font-light">
+          Canal confidencial directo con nuestro equipo de ingenieros senior y auditores jefe. Tratamiento estricto bajo secreto profesional y acuerdos de no divulgación (NDA) automáticos.
+        </p>
+</div>
+<!-- Grid: Form + Office Dossier -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+<!-- Form Container (7 cols) -->
+<div class="lg:col-span-7 p-8 lg:p-10 rounded-2xl bg-surface-container-low shadow-xl">
+<form class="flex flex-col gap-6" id="contact-advisory-form" onsubmit="event.preventDefault(); document.getElementById('form-feedback').classList.remove('hidden');">
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+<!-- Name & Role -->
+<div class="flex flex-col gap-2">
+<label class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-semibold" for="contact-name">Nombre Completo &amp; Cargo Directivo *</label>
+<input class="w-full px-4 py-3 rounded bg-surface-container-highest text-on-surface font-body-md text-body-md placeholder-outline focus:outline-none focus:ring-1 focus:ring-primary shadow-sm" id="contact-name" placeholder="Ej. Roberto Sala · VP de Operaciones" required="" type="text"/>
+</div>
+<!-- Company & Sector -->
+<div class="flex flex-col gap-2">
+<label class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-semibold" for="contact-company">Empresa &amp; Sector Operativo *</label>
+<select class="w-full px-4 py-3 rounded bg-surface-container-highest text-on-surface font-body-md text-body-md focus:outline-none focus:ring-1 focus:ring-primary shadow-sm" id="contact-company" required="">
+<option disabled="" selected="" value="">Seleccione sector industrial...</option>
+<option value="quimico">Sector Petroquímico / Químico Pesado</option>
+<option value="minero">Minería &amp; Siderurgia</option>
+<option value="construccion">Construcción Civil &amp; Megaproyectos</option>
+<option value="energia">Generación Eléctrica / Renovable</option>
+<option value="logistica">Logística Multimodal &amp; Portuaria</option>
+<option value="corporativo">Corporativo / Consejo de Administración</option>
+</select>
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+<!-- Corporate Email -->
+<div class="flex flex-col gap-2">
+<label class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-semibold" for="contact-email">Correo Electrónico Corporativo *</label>
+<input class="w-full px-4 py-3 rounded bg-surface-container-highest text-on-surface font-body-md text-body-md placeholder-outline focus:outline-none focus:ring-1 focus:ring-primary shadow-sm" id="contact-email" placeholder="directorio@corporacion.com" required="" type="email"/>
+</div>
+<!-- Phone -->
+<div class="flex flex-col gap-2">
+<label class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-semibold" for="contact-phone">Teléfono Directo de Contacto *</label>
+<input class="w-full px-4 py-3 rounded bg-surface-container-highest text-on-surface font-body-md text-body-md placeholder-outline focus:outline-none focus:ring-1 focus:ring-primary shadow-sm" id="contact-phone" placeholder="+34 600 000 000" required="" type="tel"/>
+</div>
+</div>
+<!-- Urgency Level -->
+<div class="flex flex-col gap-2">
+<label class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-semibold" for="contact-urgency">Nivel de Requerimiento / Urgencia *</label>
+<select class="w-full px-4 py-3 rounded bg-surface-container-highest text-on-surface font-body-md text-body-md focus:outline-none focus:ring-1 focus:ring-primary shadow-sm" id="contact-urgency" required="">
+<option value="auditoria-inmediata">Auditoría Inmediata de Diagnóstico Legal</option>
+<option value="inspeccion-programada">Preparación ante Inspección Laboral Programada</option>
+<option value="crisis-peritaje">Contingencia Activa / Peritaje Judicial Urgente</option>
+<option value="plan-integral">Plan Integral Anual de Blindaje C-Level</option>
+<option value="formacion-elite">Formación Élite de Mandos &amp; Liderazgo Conductual</option>
+</select>
+</div>
+<!-- Message Area -->
+<div class="flex flex-col gap-2">
+<label class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-semibold" for="contact-message">Descripción Sintética del Reto Operacional</label>
+<textarea class="w-full px-4 py-3 rounded bg-surface-container-highest text-on-surface font-body-md text-body-md placeholder-outline focus:outline-none focus:ring-1 focus:ring-primary shadow-sm resize-none" id="contact-message" placeholder="Indique particularidades de la instalación, volumen de plantilla expuesta o plazos normativos a satisfacer..." rows="4"></textarea>
+</div>
+<!-- GDPR Checkbox -->
+<div class="flex items-start gap-3 pt-2">
+<input class="mt-1 w-4 h-4 rounded bg-surface-container-highest text-primary focus:ring-primary focus:ring-offset-0" id="contact-consent" required="" type="checkbox"/>
+<label class="font-body-sm text-body-sm text-on-surface-variant leading-tight" for="contact-consent">
+                Consiento el tratamiento de mis datos corporativos con carácter estrictamente confidencial bajo régimen de secreto profesional y conforme al RGPD de la Unión Europea.
+              </label>
+</div>
+<!-- Submit Button -->
+<button class="w-full py-4 rounded bg-primary-container text-on-primary-container font-label-md text-label-md uppercase tracking-widest font-semibold hover:bg-primary transition-all duration-300 shadow-lg shadow-primary-container/20 flex items-center justify-center gap-3" type="submit">
+<span class="material-symbols-outlined text-[20px]">verified_user</span>
+<span>Enviar Solicitud Confidencial</span>
+</button>
+<!-- Feedback Notification (Hidden by default) -->
+<div class="hidden p-4 rounded bg-secondary/15 text-secondary flex items-center gap-3" id="form-feedback">
+<span class="material-symbols-outlined text-[22px]">check_circle</span>
+<span class="font-body-sm text-body-sm font-semibold">Solicitud recibida en canal encriptado. Un Auditor Principal contactará en menos de 120 minutos.</span>
+</div>
+</form>
+</div>
+<!-- Headquarters & SLA Information (5 cols) -->
+<div class="lg:col-span-5 flex flex-col gap-6">
+<div class="p-8 rounded-2xl bg-surface-container shadow-sm flex flex-col gap-6">
+<h3 class="font-title-lg text-title-lg text-on-surface font-semibold">SLA de Respuesta Inmediata</h3>
+<div class="flex flex-col gap-4">
+<div class="flex items-center gap-4 p-4 rounded bg-surface-container-high">
+<span class="material-symbols-outlined text-secondary text-[26px]">timer</span>
+<div>
+<div class="font-title-sm text-title-sm text-on-surface font-bold">&lt; 2 Horas Laborables</div>
+<div class="font-label-sm text-label-sm text-outline">Contacto técnico directo con auditor asignado</div>
+</div>
+</div>
+<div class="flex items-center gap-4 p-4 rounded bg-surface-container-high">
+<span class="material-symbols-outlined text-primary text-[26px]">lock</span>
+<div>
+<div class="font-title-sm text-title-sm text-on-surface font-bold">Acuerdo de Confidencialidad (NDA)</div>
+<div class="font-label-sm text-label-sm text-outline">Emisión previa automática a la primera sesión de trabajo</div>
+</div>
+</div>
+</div>
+<div class="pt-4 flex flex-col gap-3">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-outline">Sede Corporativa Central</span>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                Torre de Cristal, Planta 42 · Paseo de la Castellana 259C<br/>
+                28046 Madrid, España
+              </p>
+</div>
+<div class="flex flex-col gap-2 pt-2">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-outline">Línea Prioritaria Exclusiva</span>
+<a class="font-title-md text-title-md text-primary font-semibold hover:underline" href="tel:+34900826482">+34 900 826 482</a>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Centralita de Despacho Pericial 24/7/365</span>
+</div>
+</div>
+<!-- Dynamic Visual Card -->
+<div class="relative p-6 rounded-xl overflow-hidden bg-surface-container-high shadow-md flex items-center justify-between">
+<div class="flex flex-col gap-1 z-10">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+<span class="font-label-sm text-label-sm text-secondary uppercase font-bold tracking-wider">Estado de Guardia Activo</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">8 Equipos de Intervención Rápida en alerta operativa en la península.</p>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant/30 text-[48px] z-0">emergency</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ==================== PERMANENT FLOATING WHATSAPP CTA ==================== -->
+<div class="fixed bottom-6 right-6 z-50 flex items-center gap-3">
+<!-- Tooltip (Visible on hover and desktop) -->
+<div class="hidden sm:flex items-center gap-2 px-3.5 py-2 rounded-lg bg-surface-container-highest/95 backdrop-blur-md shadow-xl pointer-events-none">
+<span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+<span class="font-label-sm text-label-sm text-on-surface font-semibold tracking-wide">Canal Prioritario WhatsApp · Respuesta en &lt; 5 min</span>
+</div>
+<!-- WhatsApp Action Button -->
+<a aria-label="Abrir conversación confidencial en WhatsApp" class="group relative flex items-center justify-center w-14 h-14 rounded-full bg-surface-container-high hover:bg-surface-container-highest shadow-2xl transition-all duration-300 transform hover:scale-105" href="https://wa.me/34600000000?text=Hola,%20deseo%20solicitar%20asesoramiento%20confidencial%20en%20prevenci%C3%B3n%20de%20riesgos%20laborales" rel="noopener noreferrer" target="_blank">
+<!-- Pulsing halo -->
+<span class="absolute inset-0 rounded-full bg-secondary/20 animate-ping pointer-events-none"></span>
+<!-- Custom Stylized WhatsApp Vector Icon with Gold/Emerald Touch -->
+<svg class="w-7 h-7 text-secondary group-hover:text-primary transition-colors fill-current" viewbox="0 0 24 24">
+<path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2M12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 14.99 3.8 13.47 3.8 11.91C3.81 7.37 7.5 3.67 12.05 3.67M9.53 7.34C9.36 7.34 9.08 7.4 8.84 7.67C8.61 7.93 7.94 8.56 7.94 9.84C7.94 11.12 8.87 12.35 9 12.53C9.13 12.7 10.82 15.31 13.41 16.43C14.03 16.7 14.51 16.85 14.89 16.97C15.51 17.17 16.08 17.14 16.53 17.07C17.03 17 18.06 16.44 18.28 15.83C18.5 15.22 18.5 14.7 18.43 14.59C18.37 14.48 18.19 14.42 17.92 14.28C17.65 14.15 16.32 13.49 16.07 13.4C15.82 13.31 15.64 13.27 15.46 13.54C15.28 13.8 14.77 14.42 14.61 14.59C14.46 14.77 14.31 14.79 14.04 14.66C13.77 14.53 12.89 14.24 11.85 13.32C11.04 12.6 10.5 11.71 10.34 11.44C10.18 11.17 10.32 11.02 10.46 10.89C10.58 10.77 10.73 10.58 10.87 10.42C11.01 10.26 11.05 10.14 11.14 9.96C11.23 9.78 11.19 9.63 11.12 9.49C11.05 9.36 10.53 8.08 10.31 7.55C10.1 7.03 9.88 7.1 9.72 7.1L9.53 7.34Z"></path>
+</svg>
+</a>
+</div>
+</div></main><footer class="w-full bg-surface-container-lowest"><div class="max-w-7xl mx-auto px-6 lg:px-12 pt-16 pb-12"><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16"><div class="flex flex-col gap-4"><div class="flex items-center gap-3"><img alt="Vanguard Protection Crest" class="h-7 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1U9hj9gZx-HQi1OvExLf9Awk2E6He7wexIOmfzYq8xVGudQiOrLdG6J6fYTkAP2fEPlsEfXnL2LkREfpUGAtuaN1VTAlUyiu7fFG9O8h0WmRJDAWvMUahtKvwgSJajd9hSft1ehwSKzzGTVdIX1jPW65DKy6VdX0Fcwmon2kxyHdL9H2kJvk5QIItvHSoa1L4afe81bkiRFXKtDwNF1-lcAMho4j7X5pDBX8J9bWllOYNFPIn3AJH1KqnM"/><span class="font-headline-sm text-title-md text-on-surface tracking-tight uppercase">Vanguard PRL</span></div><p class="font-body-sm text-body-sm text-on-surface-variant">Aegis Risk Advisory &amp; Safety Engineering. Firma soberana de gobernanza, ingeniería preventiva y blindaje directivo ante contingencias de alto impacto.</p><div class="flex items-center gap-2 mt-2"><span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span><span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary">Línea Directiva de Crisis Activa 24/7</span></div></div><div class="flex flex-col gap-4"><h4 class="font-label-sm text-label-sm uppercase tracking-widest text-primary">Gobernanza &amp; Servicios</h4><ul class="flex flex-col gap-2.5"><li class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors cursor-pointer">Auditoría Legal PRL &amp; Due Diligence</li><li class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors cursor-pointer">Defensa de Responsabilidad Penal Corporativa</li><li class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors cursor-pointer">Ingeniería de Procesos ATEX &amp; Alta Severidad</li><li class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors cursor-pointer">Protocolos de Contingencia &amp; Crisis Ejecutiva</li></ul></div><div class="flex flex-col gap-4"><h4 class="font-label-sm text-label-sm uppercase tracking-widest text-primary">Acreditaciones &amp; Estándares</h4><div class="flex flex-col gap-3"><div class="flex items-center gap-3 p-3 rounded bg-surface-container"><span class="material-symbols-outlined text-secondary text-[22px]">verified</span><div><div class="font-title-sm text-title-sm text-on-surface leading-none">ISO 45001:2018</div><span class="font-label-sm text-label-sm text-outline">Certificación Global de Sistemas SST</span></div></div><div class="flex items-center gap-3 p-3 rounded bg-surface-container"><span class="material-symbols-outlined text-primary text-[22px]">shield</span><div><div class="font-title-sm text-title-sm text-on-surface leading-none">OHSAS 18001 Audit Ready</div><span class="font-label-sm text-label-sm text-outline">Cumplimiento Transnacional de Riesgo</span></div></div></div></div><div class="flex flex-col gap-4"><h4 class="font-label-sm text-label-sm uppercase tracking-widest text-primary">Canal Confidencial PRL</h4><p class="font-body-sm text-body-sm text-on-surface-variant">Canal cifrado exclusivo para miembros del Consejo de Administración y Directores de Operaciones.</p><div class="flex flex-col gap-2"><a class="inline-flex items-center gap-2 text-on-surface hover:text-primary transition-colors font-body-sm text-body-sm" href="mailto:advisory@vanguard-prl.com"><span class="material-symbols-outlined text-primary text-[16px]">lock</span>advisory@vanguard-prl.com</a><a class="inline-flex items-center gap-2 text-on-surface hover:text-primary transition-colors font-body-sm text-body-sm" href="tel:+34900826482"><span class="material-symbols-outlined text-primary text-[16px]">encrypted</span>Línea Segura: +34 900 826 482</a></div></div></div><div class="pt-8 flex flex-col md:flex-row items-center justify-between gap-4"><p class="font-label-sm text-label-sm uppercase tracking-wider text-outline">© 2025 Vanguard PRL / Aegis Risk Advisory Group. Todos los derechos reservados.</p><div class="flex items-center gap-6"><a class="font-label-sm text-label-sm uppercase tracking-wider text-outline hover:text-on-surface transition-colors" href="#">Privacidad Corporativa</a><a class="font-label-sm text-label-sm uppercase tracking-wider text-outline hover:text-on-surface transition-colors" href="#">Compliance &amp; Éstándares</a><a class="font-label-sm text-label-sm uppercase tracking-wider text-outline hover:text-on-surface transition-colors" href="#">Términos de Intervención</a></div></div></div></footer></body></html>

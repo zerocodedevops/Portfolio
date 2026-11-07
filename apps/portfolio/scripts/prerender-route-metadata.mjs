@@ -26,8 +26,8 @@ const staticPages = [
   },
   {
     path: '/precios-paginas-web',
-    title: 'Precio de diseño web desde 400 € | ZeroCode',
-    description: 'Qué incluye la web de una página de ZeroCode desde 400 €: Inicio y Contacto, WhatsApp, adaptación móvil, dominio, hosting por un año y SSL.',
+    title: 'Presupuesto de diseño web y demo | ZeroCode',
+    description: 'Pide una propuesta visual previa en 48h sin compromiso. Nos adaptamos al presupuesto de tu negocio.',
   },
   {
     path: '/proyectos/zerovanity',

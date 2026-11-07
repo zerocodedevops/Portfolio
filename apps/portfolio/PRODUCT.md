@@ -16,7 +16,7 @@ La web de ZeroCode DevOps presenta el servicio de diseño y desarrollo web, expl
 
 ## Positioning
 
-Servicio de diseño web con trato directo de David González, orientado a autónomos y pymes, con atención online en toda España. La oferta básica se comunica desde 400 €; las funciones adicionales se presupuestan según alcance.
+Servicio de diseño web con trato directo de David González, orientado a autónomos y pymes, con atención online en toda España. La captación se realiza mediante una demo personalizada previa en 48 horas sin compromiso, adaptándose al presupuesto del cliente.
 
 ## Capabilities and Constraints
 

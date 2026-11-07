@@ -53,7 +53,7 @@ export function Hero() {
               Una web propia para dar visibilidad a tu negocio.
             </motion.h1>
             <motion.p variants={fadeInUp} className="mt-4 max-w-[620px] text-base leading-relaxed text-white/80">
-              Diseño web a medida para autónomos y pymes de toda España. Presenta tus servicios con claridad, transmite confianza profesional y capta clientes sin complicaciones.
+              Diseño web a medida para autónomos y pymes en Madrid, Rivas y toda España. Te preparo una demo personalizada en 48 horas para que veas el resultado antes de decidir.
             </motion.p>
             <motion.ul variants={fadeInUp} className="mt-6 grid max-w-[590px] gap-3 text-sm leading-6 text-white/85 sm:text-base">
               {benefits.map((benefit) => (
@@ -74,9 +74,9 @@ export function Hero() {
               </a>
             </motion.div>
             <motion.p variants={fadeInUp} className="mt-5 text-sm text-white/75">
-              Tu web profesional por <strong className="font-semibold text-white">400€*</strong>
+              Demo personalizada en <strong className="font-semibold text-white">48h sin compromiso</strong>
               <span className="mx-2 text-white/40">·</span>
-              Online en toda España
+              Adaptada a tu presupuesto
             </motion.p>
           </motion.div>
 

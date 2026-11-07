@@ -29,28 +29,60 @@ export default function Home() {
   return (
     <Layout>
       <Seo
-        title="Diseño web para autónomos y pymes desde 400 € | ZeroCode"
-        description="Diseño web a medida para autónomos y pymes de toda España. Una página con Inicio y Contacto desde 400 €, con WhatsApp, adaptación móvil, dominio y hosting durante un año."
+        title="Diseño Web para Autónomos y Pymes en Madrid y Rivas | ZeroCode"
+        description="Diseño web a medida para autónomos y pymes en Madrid, Rivas y toda España. Pide tu demo personalizada en 48 horas sin compromiso. Nos adaptamos a tu presupuesto."
         jsonLd={{
           '@context': 'https://schema.org',
           '@graph': [
             {
-              '@type': 'Organization',
-              name: 'ZeroCode DevOps',
+              '@type': ['ProfessionalService', 'LocalBusiness'],
+              '@id': 'https://zerocode-devops.com/#localbusiness',
+              name: 'ZeroCode DevOps - Diseño Web Autónomos y Pymes',
               url: 'https://zerocode-devops.com/',
               email: 'admin@zerocode-devops.com',
+              telephone: '+34912622712',
               logo: 'https://zerocode-devops.com/logo-zerocode.webp',
-              areaServed: { '@type': 'Country', name: 'España' },
-            },
-            {
-              '@type': 'Service',
-              name: 'Diseño web a medida para autónomos y pymes',
-              provider: { '@type': 'Organization', name: 'ZeroCode DevOps' },
-              areaServed: { '@type': 'Country', name: 'España' },
-              description: 'Diseño de una página web con Inicio y Contacto, adaptada a móviles, con botón de WhatsApp, dominio y hosting durante un año y certificado SSL.',
-              offers: { '@type': 'Offer', price: '400', priceCurrency: 'EUR' },
-            },
-          ],
+              image: 'https://zerocode-devops.com/og-image.webp',
+              priceRange: '€€',
+              founder: {
+                '@type': 'Person',
+                name: 'David González',
+                jobTitle: 'Diseñador y Desarrollador Web Freelance',
+                url: 'https://zerocode-devops.com/#sobre-mi'
+              },
+              address: {
+                '@type': 'PostalAddress',
+                addressLocality: 'Rivas-Vaciamadrid',
+                addressRegion: 'Madrid',
+                postalCode: '28522',
+                addressCountry: 'ES'
+              },
+              geo: {
+                '@type': 'GeoCoordinates',
+                latitude: 40.3524,
+                longitude: -3.5358
+              },
+              areaServed: [
+                { '@type': 'City', name: 'Rivas-Vaciamadrid' },
+                { '@type': 'AdministrativeArea', name: 'Comunidad de Madrid' },
+                { '@type': 'Country', name: 'España' }
+              ],
+              hasOfferCatalog: {
+                '@type': 'OfferCatalog',
+                name: 'Servicios de Diseño Web',
+                itemListElement: [
+                  {
+                    '@type': 'Offer',
+                    itemOffered: {
+                      '@type': 'Service',
+                      name: 'Demo personalizada de página web en 48 horas sin compromiso',
+                      description: 'Propuesta visual previa adaptada a tu negocio y presupuesto antes de decidir.'
+                    }
+                  }
+                ]
+              }
+            }
+          ]
         }}
       />
       <main>
