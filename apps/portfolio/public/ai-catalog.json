@@ -8,9 +8,9 @@
   },
   "entries": [
     {
-      "identifier": "urn:ai:zerocode-devops.com:services:web-design-pymes",
+      "identifier": "urn:air:zerocode-devops.com:services:web-design-pymes",
       "displayName": "Diseño Web para Autónomos y Pymes",
-      "type": "application/ai-skill+json",
+      "type": "application/a2a-agent-card+json",
       "url": "https://zerocode-devops.com/#contacto",
       "description": "Servicio de diseño y desarrollo web a medida para autónomos y pequeñas empresas en Madrid, Rivas-Vaciamadrid y toda España. Entrega de propuesta o demo interactiva previa en 48 horas sin compromiso.",
       "representativeQueries": [
