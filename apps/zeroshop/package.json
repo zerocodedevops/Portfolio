@@ -1,7 +1,7 @@
 {
-  "name": "devops-shop",
+  "name": "zeroshop-app",
   "version": "1.0.0",
-  "description": "E-commerce moderno con React, Redux, Stripe y funcionalidades AI (Voice Search)",
+  "description": "Zero Shop - Tienda online demostrativa para comercios y pymes (React 19, Redux, Stripe)",
   "type": "module",
   "scripts": {
     "dev": "vite",

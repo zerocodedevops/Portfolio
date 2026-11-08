@@ -1,4 +1,4 @@
-import { Cpu, LogOut, Moon, ShoppingCart, Sun, User } from "lucide-react";
+import { LogOut, Moon, ShoppingBag, ShoppingCart, Sun, User } from "lucide-react";
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useDispatch, useSelector } from "react-redux";
@@ -38,12 +38,12 @@ function Navbar() {
       <nav className="bg-white/80 dark:bg-slate-900/80 backdrop-blur-md sticky top-0 z-40 border-b border-slate-200 dark:border-slate-800 transition-colors">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between h-16 items-center">
-            <Link to="/" className="flex items-center gap-2 group">
+            <Link to="/proyectos/zeroshop" className="flex items-center gap-2 group">
               <div className="bg-slate-900 dark:bg-indigo-600 p-2 rounded-lg group-hover:bg-indigo-600 transition-colors">
-                <Cpu className="w-5 h-5 text-white" />
+                <ShoppingBag className="w-5 h-5 text-white" />
               </div>
               <span className="font-bold text-xl text-slate-900 dark:text-white tracking-tight group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
-                DevOps Shop
+                Zero Shop
               </span>
             </Link>
 
@@ -52,7 +52,7 @@ function Navbar() {
                 to="/"
                 className="text-sm font-medium text-slate-500 hover:text-indigo-600 transition-colors hidden md:block"
               >
-                ← Inicio
+                ← Volver a ZeroCode
               </Link>
 
               <div className="h-6 w-px bg-slate-200 dark:bg-slate-700 hidden md:block" />
@@ -142,7 +142,7 @@ function Navbar() {
 
 export default function EcommerceLayout() {
   useEffect(() => {
-    document.title = "Catálogo | DevOps Shop";
+    document.title = "Catálogo | Zero Shop";
   }, []);
 
   return (

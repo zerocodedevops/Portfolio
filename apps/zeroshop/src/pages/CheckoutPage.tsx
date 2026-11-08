@@ -42,7 +42,7 @@ function CheckoutForm() {
       dispatch(clearCart());
       setShowToast(true);
       setTimeout(() => {
-        navigate("/proyectos/ecommerce");
+        navigate("/proyectos/zeroshop");
       }, 2500);
     }, 2000);
 

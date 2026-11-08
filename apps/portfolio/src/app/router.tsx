@@ -9,6 +9,7 @@ const Pricing = lazy(() => import('@/features/pricing/Pricing'));
 const SalonApp = lazy(() => import('@zerovanity/routes'));
 const MediaApp = lazy(() => import('@zerodelay/App'));
 const ReformsApp = lazy(() => import('@zero-chaos/routes'));
+const ZeroShopApp = lazy(() => import('@zeroshop/App'));
 const ZeroBreakdownDemo = lazy(() => import('@/features/zero-breakdown/ZeroBreakdownDemo'));
 const LegalNoticePage = lazy(() => import('@/features/legal/LegalPages').then((module) => ({ default: module.LegalNoticePage })));
 const PrivacyPolicyPage = lazy(() => import('@/features/legal/LegalPages').then((module) => ({ default: module.PrivacyPolicyPage })));
@@ -94,6 +95,24 @@ const router = createBrowserRouter(
           element: (
             <Suspense fallback={<PageLoader text="Abriendo demo ZeroVanity..." />}>
               <VanityDemoApp />
+            </Suspense>
+          ),
+        },
+        {
+          path: 'proyectos/zeroshop/*',
+          element: (
+            <Suspense fallback={<PageLoader text="Abriendo demo Zero Shop..." />}>
+              <>
+                <Seo
+                  title="Demo de tienda online para comercios y pymes | Zero Shop"
+                  description="Explora Zero Shop, una demo interactiva de tienda online con carrito, catálogo filtrable, búsqueda por voz y checkout simulado."
+                  url="https://zerocode-devops.com/proyectos/zeroshop"
+                />
+                <ZeroShopApp />
+                <DismissibleDemoNotice>
+                  ZeroShop: todos los datos y pagos de esta demo son simulados.
+                </DismissibleDemoNotice>
+              </>
             </Suspense>
           ),
         },

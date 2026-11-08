@@ -22,7 +22,7 @@ export default function ProductDetailPage() {
 
   useEffect(() => {
     if (product) {
-      document.title = `${product.title} | DevOps Shop`;
+      document.title = `${product.title} | Zero Shop`;
     }
   }, [product]);
 
@@ -43,7 +43,7 @@ export default function ProductDetailPage() {
       {/* Breadcrumbs */}
       <nav className="flex items-center gap-2 text-sm text-slate-500 mb-6 overflow-x-auto whitespace-nowrap pb-2">
         <Link
-          to="/proyectos/ecommerce"
+          to="/proyectos/zeroshop"
           className="hover:text-indigo-600 dark:hover:text-indigo-400 flex items-center gap-1 transition-colors"
         >
           <Home className="w-4 h-4" />

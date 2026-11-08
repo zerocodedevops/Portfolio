@@ -4,7 +4,7 @@ import { defineConfig } from "vite";
 
 export default defineConfig({
   plugins: [react(), tailwindcss()],
-  base: "/devops-shop/",
+  base: "/proyectos/zeroshop/",
   server: {
     port: 5175,
     strictPort: true,

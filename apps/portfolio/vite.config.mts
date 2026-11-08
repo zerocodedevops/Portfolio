@@ -23,12 +23,17 @@ export default defineConfig({
         target: 'http://localhost:5176',
         changeOrigin: true,
       },
+      '/proyectos/zeroshop': {
+        target: 'http://localhost:5175',
+        changeOrigin: true,
+      },
     },
   },
   resolve: {
     alias: {
       '@': path.resolve(dirname, './src'),
       '@zerovanity': path.resolve(dirname, '../zerovanity/src'),
+      '@zeroshop': path.resolve(dirname, '../zeroshop/src'),
       '@crypto': path.resolve(dirname, '../crypto'),
       '@analytics': path.resolve(dirname, '../analytics'),
       '@zerodelay': path.resolve(dirname, '../zerodelay/src'),

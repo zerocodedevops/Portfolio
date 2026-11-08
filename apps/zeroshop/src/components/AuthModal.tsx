@@ -33,7 +33,7 @@ export default function AuthModal({ isOpen, onClose }: AuthModalProps) {
       // Or better, we can rely on the Navbar to show the "Logged in" state visually
       if (isRegister) {
         alert(
-          `✅ Registro Simulado Exitoso\n\nBienvenido al prototipo de DevOps Shop, ${username}. Esta es una simulación, no se han guardado datos reales.`,
+          `✅ Registro Simulado Exitoso\n\nBienvenido al prototipo de Zero Shop, ${username}. Esta es una simulación, no se han guardado datos reales.`,
         );
       }
     }, 1500);
