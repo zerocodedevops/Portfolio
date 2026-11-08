@@ -30,7 +30,6 @@ export default defineConfig({
       '@': path.resolve(dirname, './src'),
       '@zerovanity': path.resolve(dirname, '../zerovanity/src'),
       '@crypto': path.resolve(dirname, '../crypto'),
-      '@ecommerce': path.resolve(dirname, '../ecommerce'),
       '@analytics': path.resolve(dirname, '../analytics'),
       '@zerodelay': path.resolve(dirname, '../zerodelay/src'),
       '@zero-chaos': path.resolve(dirname, '../zero-chaos'),
