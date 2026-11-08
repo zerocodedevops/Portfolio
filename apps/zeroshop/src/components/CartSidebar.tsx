@@ -142,7 +142,7 @@ export default function CartSidebar() {
                   </span>
                 </div>
                 <Link
-                  to="/proyectos/ecommerce/checkout"
+                  to="/proyectos/zeroshop/checkout"
                   onClick={() => dispatch(toggleCart())}
                   className="block w-full bg-indigo-600 hover:bg-indigo-700 text-white text-center py-3 rounded-xl font-medium shadow-lg shadow-indigo-200 transition-all hover:shadow-indigo-300"
                 >

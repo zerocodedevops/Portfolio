@@ -15,6 +15,7 @@ export default function AuthModal({ isOpen, onClose }: AuthModalProps) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const [registeredNotice, setRegisteredNotice] = useState<string | null>(null);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -26,17 +27,17 @@ export default function AuthModal({ isOpen, onClose }: AuthModalProps) {
     setTimeout(() => {
       dispatch(login({ username }));
       setIsLoading(false);
-      onClose();
 
-      // Show prototype alert
-      // In a real app we'd use a toast library, but simple alert fits the "Prototype" instruction
-      // Or better, we can rely on the Navbar to show the "Logged in" state visually
       if (isRegister) {
-        alert(
-          `✅ Registro Simulado Exitoso\n\nBienvenido al prototipo de Zero Shop, ${username}. Esta es una simulación, no se han guardado datos reales.`,
-        );
+        setRegisteredNotice(`✅ Bienvenido, ${username}. Registro simulado con éxito.`);
+        setTimeout(() => {
+          setRegisteredNotice(null);
+          onClose();
+        }, 1800);
+      } else {
+        onClose();
       }
-    }, 1500);
+    }, 1200);
   };
 
   return (
@@ -76,6 +77,12 @@ export default function AuthModal({ isOpen, onClose }: AuthModalProps) {
                   Accede a funciones exclusivas y gestiona tus pedidos.
                 </p>
               </div>
+
+              {registeredNotice ? (
+                <div className="p-4 mb-4 bg-emerald-50 border border-emerald-200 text-emerald-800 text-sm rounded-xl text-center font-medium">
+                  {registeredNotice}
+                </div>
+              ) : null}
 
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div className="space-y-2">

@@ -43,6 +43,7 @@ export default function CatalogPage() {
   const [search, setSearch] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [isListening, setIsListening] = useState(false);
+  const [voiceNotice, setVoiceNotice] = useState<string | null>(null);
 
   const handleVoiceSearch = () => {
     const SpeechRecognition =
@@ -74,7 +75,8 @@ export default function CatalogPage() {
       recognition.onerror = () => setIsListening(false);
       recognition.onend = () => setIsListening(false);
     } else {
-      alert("Tu navegador no soporta búsqueda por voz");
+      setVoiceNotice("Tu navegador no soporta búsqueda por voz en este entorno.");
+      setTimeout(() => setVoiceNotice(null), 3000);
     }
   };
 
@@ -89,6 +91,12 @@ export default function CatalogPage() {
 
   return (
     <div className="space-y-8">
+      {voiceNotice ? (
+        <div className="p-3 bg-amber-50 border border-amber-200 text-amber-800 text-xs rounded-xl text-center">
+          {voiceNotice}
+        </div>
+      ) : null}
+
       {/* Header & Filters */}
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 bg-white dark:bg-slate-900 p-6 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800 transition-colors">
         <div>

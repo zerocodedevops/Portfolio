@@ -13,8 +13,11 @@ import Toast from "../components/Toast";
 import { type CartState, clearCart } from "../store/cartSlice";
 import type { RootState } from "../store/store";
 
-// Initialize Stripe (Test Mode)
-const stripePromise = loadStripe("pk_test_TYooMQauvdEDq54NiTphI7jx"); // Public Test Key
+// Initialize Stripe (Test Mode Public Key)
+const STRIPE_PUBLIC_KEY =
+  (import.meta.env.VITE_STRIPE_PUBLIC_KEY as string | undefined) ||
+  "pk_test_TYooMQauvdEDq54NiTphI7jx";
+const stripePromise = loadStripe(STRIPE_PUBLIC_KEY);
 
 function CheckoutForm() {
   const stripe = useStripe();
