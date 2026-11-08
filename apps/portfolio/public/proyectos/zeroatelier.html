@@ -1,0 +1,1041 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="es">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="web_standard" name="shell-type"/>
+  <title>Zero Atelier | Taller de Enmarcación de Autor y Conservación</title>
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  <style>
+    @layer base {
+      html, body { margin: 0; padding: 0; }
+      body { overscroll-behavior: none; }
+      main > :first-child { margin-top: 0 !important; }
+      main > :last-child { margin-bottom: 0 !important; }
+    }
+    ::-webkit-scrollbar { display: none; }
+  </style>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "tertiary-container": "#3a0b00",
+            "primary-container": "#1c1b1a",
+            "outline": "#7b766f",
+            "on-background": "#1b1c1a",
+            "surface-variant": "#e4e2de",
+            "on-surface-variant": "#4a4640",
+            "on-secondary-container": "#5b675e",
+            "surface-container-high": "#eae8e4",
+            "on-primary": "#ffffff",
+            "on-secondary-fixed": "#131e17",
+            "on-primary-fixed": "#1c1b1a",
+            "on-error": "#ffffff",
+            "on-surface": "#1b1c1a",
+            "inverse-surface": "#30312e",
+            "surface-dim": "#dbdad6",
+            "surface-bright": "#fbf9f5",
+            "on-tertiary-fixed": "#3a0b00",
+            "secondary-fixed-dim": "#bccabf",
+            "on-tertiary-container": "#bc7058",
+            "surface-container-lowest": "#ffffff",
+            "on-tertiary": "#ffffff",
+            "on-tertiary-fixed-variant": "#723521",
+            "surface-container-highest": "#e4e2de",
+            "background": "#fbf9f5",
+            "on-primary-fixed-variant": "#484645",
+            "secondary-container": "#d8e6da",
+            "inverse-on-surface": "#f2f0ed",
+            "error-container": "#ffdad6",
+            "primary": "#000000",
+            "tertiary-fixed-dim": "#ffb59e",
+            "on-error-container": "#93000a",
+            "inverse-primary": "cac6c4",
+            "tertiary": "#000000",
+            "primary-fixed": "#e6e2df",
+            "on-secondary": "#ffffff",
+            "outline-variant": "#ccc5bd",
+            "surface": "#fbf9f5",
+            "surface-tint": "#605e5c",
+            "secondary": "#556158",
+            "on-primary-container": "#868382",
+            "surface-container": "#efeeea",
+            "tertiary-fixed": "#ffdbd0",
+            "on-secondary-fixed-variant": "#3d4a41",
+            "secondary-fixed": "#d8e6da",
+            "primary-fixed-dim": "#cac6c4",
+            "surface-container-low": "#f5f3ef",
+            "error": "#ba1a1a"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-xs": "0.25rem",
+            "space-xl": "3rem",
+            "space-sm": "0.5rem",
+            "margin": "3rem",
+            "space-md": "1rem",
+            "gutter-mobile": "1rem",
+            "space-lg": "1.75rem",
+            "gutter": "1.5rem",
+            "margin-mobile": "1.25rem"
+          },
+          "fontFamily": {
+            "display-lg-mobile": ["Playfair Display"],
+            "headline-lg": ["Playfair Display"],
+            "label-md": ["Plus Jakarta Sans"],
+            "title-md": ["Plus Jakarta Sans"],
+            "label-sm": ["Plus Jakarta Sans"],
+            "body-lg": ["Plus Jakarta Sans"],
+            "headline-md": ["Playfair Display"],
+            "display-lg": ["Playfair Display"],
+            "headline-sm": ["Playfair Display"],
+            "body-md": ["Plus Jakarta Sans"],
+            "body-sm": ["Plus Jakarta Sans"],
+            "headline-lg-mobile": ["Playfair Display"]
+          },
+          "fontSize": {
+            "display-lg-mobile": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.01em", "fontWeight": "400" }],
+            "headline-lg": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.015em", "fontWeight": "400" }],
+            "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.06em", "fontWeight": "600" }],
+            "title-md": ["18px", { "lineHeight": "26px", "letterSpacing": "-0.005em", "fontWeight": "600" }],
+            "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.08em", "fontWeight": "500" }],
+            "body-lg": ["17px", { "lineHeight": "28px", "fontWeight": "400" }],
+            "headline-md": ["28px", { "lineHeight": "36px", "fontWeight": "400" }],
+            "display-lg": ["56px", { "lineHeight": "64px", "letterSpacing": "-0.02em", "fontWeight": "400" }],
+            "headline-sm": ["22px", { "lineHeight": "30px", "fontWeight": "500" }],
+            "body-md": ["15px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "body-sm": ["13px", { "lineHeight": "20px", "fontWeight": "400" }],
+            "headline-lg-mobile": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "400" }]
+          }
+        }
+      }
+    };
+  </script>
+</head>
+<body class="bg-surface font-body-md text-body-md text-on-surface antialiased selection:bg-secondary-container selection:text-on-secondary-fixed">
+  <!-- Top Dismissible Prototype Notice -->
+  <div class="fixed left-3 top-20 z-[100] flex max-w-[calc(100vw-1.5rem)] justify-start sm:left-5 sm:top-24" id="demo-banner" role="note">
+    <aside class="flex w-fit max-w-full items-center gap-2 rounded-lg border border-amber-500/35 bg-slate-950/95 px-3 py-2 text-xs leading-relaxed text-amber-50 shadow-lg backdrop-blur-md">
+      <p class="m-0 flex-1">ZeroAtelier: concepto interactivo de demostración. Los datos, valoraciones y envíos son simulados.</p>
+      <button aria-label="Cerrar aviso de demo" class="-mr-1 -mt-1 inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-full text-lg text-amber-100/80 transition-colors hover:bg-white/10 hover:text-white" onclick="document.getElementById('demo-banner').style.display='none'" type="button">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </aside>
+  </div>
+
+  <header class="fixed top-0 left-0 right-0 z-50 bg-surface/90 backdrop-blur-md shadow-[0_1px_8px_rgba(0,0,0,0.04)]">
+    <div class="h-20 w-full px-margin-mobile lg:px-margin flex items-center justify-between gap-space-md">
+      <div class="flex items-center gap-space-md">
+        <a class="flex items-center gap-space-sm group" href="#inicio">
+          <div class="w-9 h-9 rounded-lg bg-primary flex items-center justify-center text-white font-bold text-sm tracking-wider">
+            ZA
+          </div>
+          <div class="flex flex-col">
+            <span class="font-headline-sm text-headline-sm font-medium tracking-tight text-on-surface leading-none group-hover:text-on-surface-variant transition-colors">Zero Atelier</span>
+            <span class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant">Taller de Enmarcación & Arte</span>
+          </div>
+        </a>
+      </div>
+      <nav class="hidden xl:flex items-center gap-space-lg" data-active-classes="text-on-surface font-semibold">
+        <a aria-current="page" class="uppercase tracking-wider transition-colors py-space-xs text-on-surface font-semibold" data-path="inicio" href="#inicio">Inicio</a>
+        <a class="font-label-md text-label-md uppercase tracking-wider text-on-surface-variant hover:text-on-surface transition-colors py-space-xs" data-path="servicios" href="#servicios">Servicios</a>
+        <a class="font-label-md text-label-md uppercase tracking-wider text-on-surface-variant hover:text-on-surface transition-colors py-space-xs" data-path="especialidades" href="#especialidades">Especialidades</a>
+        <a class="font-label-md text-label-md uppercase tracking-wider text-on-surface-variant hover:text-on-surface transition-colors py-space-xs" data-path="proyectos" href="#proyectos">Proyectos</a>
+        <a class="font-label-md text-label-md uppercase tracking-wider text-on-surface-variant hover:text-on-surface transition-colors py-space-xs" data-path="proceso" href="#proceso">Proceso</a>
+        <a class="font-label-md text-label-md uppercase tracking-wider text-on-surface-variant hover:text-on-surface transition-colors py-space-xs" data-path="taller" href="#taller">Taller</a>
+        <a class="font-label-md text-label-md uppercase tracking-wider text-on-surface-variant hover:text-on-surface transition-colors py-space-xs" data-path="contacto" href="#contacto">Contacto</a>
+      </nav>
+      <div class="flex items-center gap-space-sm">
+        <a class="hidden sm:inline-flex items-center gap-space-xs px-space-md py-space-xs font-label-md text-label-md uppercase tracking-wider text-secondary border border-outline-variant hover:border-secondary hover:text-on-surface transition-all bg-surface-container-low/60" href="https://wa.me/34912622712" rel="noopener noreferrer" target="_blank">
+          <span class="material-symbols-outlined text-[16px]">chat</span>WhatsApp
+        </a>
+        <a class="inline-flex items-center px-space-md py-space-xs font-label-md text-label-md uppercase tracking-wider bg-primary text-on-primary hover:bg-inverse-surface transition-colors" href="#contacto">
+          Pedir presupuesto
+        </a>
+        <a class="inline-flex items-center justify-center text-xs font-bold uppercase tracking-wider text-slate-500 hover:text-primary transition-colors ml-1" href="/" title="Volver al inicio de ZeroCode">
+          ← ZeroCode
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="w-full pt-20 bg-surface">
+    <div class="flex flex-col w-full">
+      <!-- HERO SECTION -->
+      <section class="relative w-full pt-space-xl pb-space-xl lg:py-space-xl px-margin-mobile lg:px-margin bg-surface overflow-hidden" id="inicio">
+        <div class="max-w-[1440px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-gutter lg:gap-space-xl items-center">
+          <div class="lg:col-span-6 flex flex-col items-start z-10">
+            <div class="inline-flex items-center gap-space-xs px-space-md py-1 bg-surface-container border border-outline-variant rounded-full mb-space-md">
+              <span class="w-2 h-2 rounded-full bg-secondary"></span>
+              <span class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface">Taller artesano de enmarcación en Madrid · Desde 1974</span>
+            </div>
+            <h1 class="font-display-lg text-display-lg text-on-surface leading-[1.08] tracking-tight mb-space-md">
+              Enmarcamos<br/>
+              <span class="italic font-normal text-secondary">lo que importa.</span>
+            </h1>
+            <p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl mb-space-lg leading-relaxed">
+              Taller de enmarcación de autor y conservación en Madrid. Obras de arte, camisetas, fotografías, recuerdos y piezas singulares, transformadas con rigor artesanal en piezas para conservar y admirar toda la vida.
+            </p>
+            <div class="flex flex-wrap items-center gap-space-sm w-full sm:w-auto">
+              <a class="w-full sm:w-auto text-center px-space-lg py-3.5 bg-primary text-on-primary font-label-md text-label-md uppercase tracking-widest hover:bg-inverse-surface transition-all shadow-sm" href="#contacto">
+                Pedir presupuesto
+              </a>
+              <a class="w-full sm:w-auto text-center px-space-lg py-3.5 bg-transparent text-on-surface font-label-md text-label-md uppercase tracking-widest border border-outline-variant hover:border-primary transition-all" href="#proyectos">
+                Ver trabajos
+              </a>
+              <a class="inline-flex items-center justify-center gap-space-xs px-space-md py-3.5 bg-surface-container-low text-secondary font-label-md text-label-md uppercase tracking-wider hover:text-on-surface transition-all" href="https://wa.me/34912622712" rel="noopener noreferrer" target="_blank">
+                <span class="material-symbols-outlined text-[18px]">chat</span>
+                <span>Consulta WhatsApp</span>
+              </a>
+            </div>
+            <div class="grid grid-cols-3 gap-space-md pt-space-lg mt-space-lg border-t border-outline-variant/60 w-full max-w-lg">
+              <div>
+                <span class="font-headline-sm text-headline-sm font-semibold text-on-surface block leading-none">50+</span>
+                <span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant mt-1 block">Años de oficio</span>
+              </div>
+              <div>
+                <span class="font-headline-sm text-headline-sm font-semibold text-on-surface block leading-none">2.000+</span>
+                <span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant mt-1 block">Molduras nobles</span>
+              </div>
+              <div>
+                <span class="font-headline-sm text-headline-sm font-semibold text-on-surface block leading-none">100%</span>
+                <span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant mt-1 block">Taller a medida</span>
+              </div>
+            </div>
+          </div>
+          <div class="lg:col-span-6 relative mt-space-md lg:mt-0">
+            <div class="relative bg-surface-container-high p-space-sm sm:p-space-md shadow-xl border border-outline-variant/50">
+              <div class="relative overflow-hidden aspect-[4/5] sm:aspect-[16/14] lg:aspect-[4/5]">
+                <img class="w-full h-full object-cover" data-alt="Taller de enmarcación de autor en Madrid" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD08SgBfdoMeEbPnv0o1YAo95Hb31ftsYY6gnsXZj0gIzwKmWxjaqbZy9di8tbJCsXp_lKUQGRbJC4nK7PLx6KL9vLLoOY5J8c3Mq0mMQ5o4PDXEXfKi1N_mJneSU9rnxzhZ67XQpTxYSBZi0NVRwNPVC_XCIN6HNQdOj6fZTwMO3qxglE8s586VclobfOprA_3gB-lMwYN06xZxOX--KcAxAqRASgIHFMiECowBRaH"/>
+                <div class="absolute inset-0 bg-gradient-to-t from-primary/30 via-transparent to-transparent"></div>
+              </div>
+              <div class="absolute -bottom-4 -left-3 sm:bottom-space-md sm:left-space-md bg-surface-bright/95 backdrop-blur-md p-space-md shadow-lg border border-outline-variant max-w-[260px]">
+                <div class="flex items-center gap-space-xs text-secondary mb-1">
+                  <span class="material-symbols-outlined text-[18px]">verified</span>
+                  <span class="font-label-sm text-label-sm uppercase tracking-widest font-semibold">Conservación Museo</span>
+                </div>
+                <p class="font-body-sm text-body-sm text-on-surface-variant leading-snug">
+                  Materiales 100% libres de ácido, filtración UV 99% y ensamblaje de precisión milimétrica.
+                </p>
+              </div>
+              <div class="absolute top-space-sm right-space-sm px-space-xs py-1 bg-surface-container text-on-surface font-label-sm text-label-sm uppercase tracking-widest border border-outline-variant/60">
+                Zero Atelier Madrid
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="flex justify-center mt-space-xl">
+          <a class="inline-flex flex-col items-center gap-1 text-on-surface-variant hover:text-on-surface transition-colors group" href="#confianza">
+            <span class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant group-hover:text-on-surface">Explorar Taller</span>
+            <span class="material-symbols-outlined text-[18px] animate-bounce">arrow_downward</span>
+          </a>
+        </div>
+      </section>
+
+      <!-- TRUST BAR -->
+      <section class="w-full bg-surface-container-low border-y border-outline-variant/60 py-space-md px-margin-mobile lg:px-margin" id="confianza">
+        <div class="max-w-[1440px] mx-auto">
+          <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-gutter text-on-surface">
+            <div class="flex items-center gap-space-sm">
+              <div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-secondary shrink-0">
+                <span class="material-symbols-outlined text-[20px]">history_edu</span>
+              </div>
+              <div>
+                <p class="font-label-md text-label-md font-semibold leading-tight">+50 años de experiencia</p>
+                <p class="font-body-sm text-body-sm text-on-surface-variant">Artesanía desde 1974</p>
+              </div>
+            </div>
+            <div class="flex items-center gap-space-sm">
+              <div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-secondary shrink-0">
+                <span class="material-symbols-outlined text-[20px]">palette</span>
+              </div>
+              <div>
+                <p class="font-label-md text-label-md font-semibold leading-tight">+2.000 molduras</p>
+                <p class="font-body-sm text-body-sm text-on-surface-variant">Maderas nobles y metal</p>
+              </div>
+            </div>
+            <div class="flex items-center gap-space-sm">
+              <div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-secondary shrink-0">
+                <span class="material-symbols-outlined text-[20px]">square_foot</span>
+              </div>
+              <div>
+                <p class="font-label-md text-label-md font-semibold leading-tight">100% a medida</p>
+                <p class="font-body-sm text-body-sm text-on-surface-variant">Sin medidas fijas estándar</p>
+              </div>
+            </div>
+            <div class="flex items-center gap-space-sm">
+              <div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-secondary shrink-0">
+                <span class="material-symbols-outlined text-[20px]">store</span>
+              </div>
+              <div>
+                <p class="font-label-md text-label-md font-semibold leading-tight">Taller en Madrid</p>
+                <p class="font-body-sm text-body-sm text-on-surface-variant">Instalaciones propias directas</p>
+              </div>
+            </div>
+            <div class="flex items-center gap-space-sm col-span-2 md:col-span-1">
+              <div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-secondary shrink-0">
+                <span class="material-symbols-outlined text-[20px]">apparel</span>
+              </div>
+              <div>
+                <p class="font-label-md text-label-md font-semibold leading-tight">Camisetas y textiles</p>
+                <p class="font-body-sm text-body-sm text-on-surface-variant">Montaje reversible y noble</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FILOSOFÍA -->
+      <section class="w-full py-space-xl px-margin-mobile lg:px-margin bg-surface" id="servicios">
+        <div class="max-w-[1440px] mx-auto">
+          <div class="flex flex-col md:flex-row md:items-end justify-between mb-space-xl gap-space-md border-b border-outline-variant/60 pb-space-lg">
+            <div class="max-w-2xl">
+              <span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary block mb-space-xs">Filosofía de taller</span>
+              <h2 class="font-headline-lg text-headline-lg text-on-surface leading-tight">
+                Más que un marco: una forma de conservar lo que importa.
+              </h2>
+            </div>
+            <p class="font-body-md text-body-md text-on-surface-variant max-w-md">
+              Cada obra encierra una historia irrepetible. Nuestro papel como artesanos es realzarla con discreción, rigor técnico y pureza material, sin restar protagonismo al objeto.
+            </p>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter lg:gap-space-lg">
+            <div class="bg-surface-container-low p-space-lg border border-outline-variant/60 flex flex-col justify-between group hover:shadow-md transition-shadow">
+              <div>
+                <div class="aspect-[4/3] overflow-hidden mb-space-md bg-surface-container">
+                  <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Muestrario de molduras de autor" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBRykVvRIIv4ps2lXLRRWn_uubdcTJfz2oZQFsViMNDzFCsITI_q_weqk0C6rW_3wyQjT9wS3E_Rwqb0t9P4xhZrNEbUbL-891-NQQKdVsu-q8mqsHc8YWWxEypZeg6eGwpd79RTsdgLAENOuukqBsK_C2tUxSBsMNe4mSh8Z49pGT_IdfMQTsCQ_3KJOsyBxkZKLEFserWLvrvxhihVRj3Ly43pspX3HL0dJMhy9KA"/>
+                </div>
+                <span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary">01 / Curaduría</span>
+                <h3 class="font-headline-sm text-headline-sm text-on-surface mt-1 mb-space-xs">Diseño personalizado</h3>
+                <p class="font-body-md text-body-md text-on-surface-variant">
+                  Selección experta de la moldura, proporciones del passe-partout y profundidad idónea para dialogar con el entorno donde habitará la pieza.
+                </p>
+              </div>
+              <div class="pt-space-md mt-space-md border-t border-outline-variant/40 flex items-center justify-between">
+                <span class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant">Asesoramiento personal</span>
+                <span class="material-symbols-outlined text-[16px] text-secondary">arrow_forward</span>
+              </div>
+            </div>
+
+            <div class="bg-surface-container-low p-space-lg border border-outline-variant/60 flex flex-col justify-between group hover:shadow-md transition-shadow">
+              <div>
+                <div class="aspect-[4/3] overflow-hidden mb-space-md bg-surface-container">
+                  <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Montaje de conservación" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDeMw3Gei32u5lQnrVjxLVZC7aoolQ4z1IHZgtomlntKsnOAhrms6lPMqQs-MEY1S8OfhFHKO6CbgRbPqbuuCpsnY4V3GM6yIJcPUZTdE0e-okRovnqqNuRefwpBHsB_ge4_0ioZ5pxtSsbk4ClkaWCmweLftpwLfUKU9pbk4f-riKNKqHRc4doz1uRUff9HDLFJRsDBFbmMfUvbzFGREB-4XRqg_7k-FmcFmapaidS"/>
+                </div>
+                <span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary">02 / Protección Activa</span>
+                <h3 class="font-headline-sm text-headline-sm text-on-surface mt-1 mb-space-xs">Conservación y protección</h3>
+                <p class="font-body-md text-body-md text-on-surface-variant">
+                  Materiales libres de ácido, cintas de montaje reversibles y vidrios con bloqueo UV 99% o antirreflejante que blindan la obra contra la luz y el tiempo.
+                </p>
+              </div>
+              <div class="pt-space-md mt-space-md border-t border-outline-variant/40 flex items-center justify-between">
+                <span class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant">Norma ISO 9706</span>
+                <span class="material-symbols-outlined text-[16px] text-secondary">arrow_forward</span>
+              </div>
+            </div>
+
+            <div class="bg-surface-container-low p-space-lg border border-outline-variant/60 flex flex-col justify-between group hover:shadow-md transition-shadow">
+              <div>
+                <div class="aspect-[4/3] overflow-hidden mb-space-md bg-surface-container">
+                  <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Manos artesanas en taller" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD7yWhII5c4zBzKwYWox-watSN1ai8839WuxvJVXqkP4Uutu9-ExZVaKrG4esG3Evkj0JHVotSTVhGhIKxT4Q3VHdeBcgeCDKs3O5R3LqFrRc2-YhEPoCASnjj491Cmivg77yvJLfgpx0njV2C5saVeW61hwuw_37FILF0xVVT2NZqfwoVwR1_LpI96e8uKXWwKNg9ZF0K7ulmDNWx2uDkmUNVBGPpKKmv5QdBzAXDn"/>
+                </div>
+                <span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary">03 / Maestría de Oficio</span>
+                <h3 class="font-headline-sm text-headline-sm text-on-surface mt-1 mb-space-xs">Artesanía y precisión</h3>
+                <p class="font-body-md text-body-md text-on-surface-variant">
+                  Cincuenta años de destreza manual. Cortes a inglete exactos, esquinas reforzadas, fondos sellados antipolvo y herrajes de sustentación calculados para durar.
+                </p>
+              </div>
+              <div class="pt-space-md mt-space-md border-t border-outline-variant/40 flex items-center justify-between">
+                <span class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant">Elaboración en Madrid</span>
+                <span class="material-symbols-outlined text-[16px] text-secondary">arrow_forward</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ESPECIALIDADES -->
+      <section class="w-full py-space-xl px-margin-mobile lg:px-margin bg-surface-container-low" id="especialidades">
+        <div class="max-w-[1440px] mx-auto">
+          <div class="mb-space-lg">
+            <span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary block mb-space-xs">Catálogo de capacidades</span>
+            <h2 class="font-headline-lg text-headline-lg text-on-surface leading-tight">
+              Especialidades de Zero Atelier
+            </h2>
+            <p class="font-body-md text-body-md text-on-surface-variant max-w-xl mt-space-xs">
+              Tratamos cada tipología con su metodología constructiva específica, asegurando reversibilidad e impacto visual.
+            </p>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
+            <div class="bg-surface p-space-md border border-outline-variant/60 flex flex-col justify-between hover:border-secondary transition-colors">
+              <div>
+                <div class="aspect-[16/10] overflow-hidden mb-space-sm bg-surface-container">
+                  <img class="w-full h-full object-cover" data-alt="Lienzo contemporáneo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC57q_cUlV-IQ0bjOQfhrCrYC8F0tM5NxGTYBRpVNWh1_eJ4aS3fiOM9Iqgn1CI17U4pKIR60Ex-r5rWSp_OENeMCLMGuGSVSmPsg-GB1ekHs9ywdZ5LsFKiOuqsTwFP98jfFwPIA_BpU87vVuC2rl931TH16z4oezDujj8Itl28Mnpafqx8QQqSEL1Kvk2vOV8ns0Gi-aokKLC7diQtn_xikxbsBUclnyjzfhRqa0a"/>
+                </div>
+                <span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">Lienzos y Papel</span>
+                <h3 class="font-title-md text-title-md text-on-surface mt-1">Obras de arte y lienzos</h3>
+                <p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs">
+                  Óleos, acrílicos, acuarelas y grabados. Montajes sobre bastidor de pino secado y cajas americanas que respetan la respiración del lienzo.
+                </p>
+              </div>
+              <a class="mt-space-md pt-space-xs border-t border-outline-variant/40 inline-flex items-center justify-between text-secondary hover:text-on-surface font-label-sm text-label-sm uppercase tracking-wider" href="#contacto">
+                <span>Consultar obra</span>
+                <span class="material-symbols-outlined text-[16px]">north_east</span>
+              </a>
+            </div>
+
+            <div class="bg-surface p-space-md border border-outline-variant/60 flex flex-col justify-between hover:border-secondary transition-colors">
+              <div>
+                <div class="aspect-[16/10] overflow-hidden mb-space-sm bg-surface-container">
+                  <img class="w-full h-full object-cover" data-alt="Camiseta enmarcada" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAgPj9w6Cs0vSsE3lv0G1NNCFNPLAvyoXE3L0M5zEAMhplJk8cywn8S6NHeB57fKyBmaxwruMt0wyUuvnIw5q-f-NPmFk9P4sCIizMJAJrcJaqMicOLWPBRyyB6O9sXS221C4WvIEo3jZjjaBlSimNNPTn81jU-CpmNveVpWGzFbzPFeYKts0GgxTX0wGH-XcUi3jcpV3ylTqyEu0Q33r6huvwnyzDCFy2EerzmYHgJ"/>
+                </div>
+                <span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary font-semibold">Especialistas</span>
+                <h3 class="font-title-md text-title-md text-on-surface mt-1">Camisetas y prendas textiles</h3>
+                <p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs">
+                  Prendas deportivas, fútbol, baloncesto, ciclismo y recuerdos familiares. Sistema de sujeción invisible con hilo de algodón 100% reversible sin colas.
+                </p>
+              </div>
+              <a class="mt-space-md pt-space-xs border-t border-outline-variant/40 inline-flex items-center justify-between text-secondary hover:text-on-surface font-label-sm text-label-sm uppercase tracking-wider" href="#contacto">
+                <span>Enmarcar camiseta</span>
+                <span class="material-symbols-outlined text-[16px]">north_east</span>
+              </a>
+            </div>
+
+            <div class="bg-surface p-space-md border border-outline-variant/60 flex flex-col justify-between hover:border-secondary transition-colors">
+              <div>
+                <div class="aspect-[16/10] overflow-hidden mb-space-sm bg-surface-container">
+                  <img class="w-full h-full object-cover" data-alt="Fotografía fine-art" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAlZKc_X5BuEc9wmtdkrSDmT1AzLwwo-bCNk-3Ip6DYHCpOLQqvO_QbaKEvZM2mT6m73PlLQJfLjduHwRrnTYZXT6LqFbbIHkrBIHhD8TidUYnZuXkEgp6e-XLU97yppNYhJJGhWxEnL7Hw5WrxCye64MHFwTIQEKMZQ7PWJnj6ColS5WIJ5KKkPkYrUUzHU0E4Qzab7DA0ymMcTHji8Z-gIT7lNZHrOmcF6stlDNyY"/>
+                </div>
+                <span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">Memoria Familiar</span>
+                <h3 class="font-title-md text-title-md text-on-surface mt-1">Fotografías y recuerdos</h3>
+                <p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs">
+                  Fotografía fine-art en papel baritado, documentos históricos y retratos familiares enmarcados para preservarse intactos de generación en generación.
+                </p>
+              </div>
+              <a class="mt-space-md pt-space-xs border-t border-outline-variant/40 inline-flex items-center justify-between text-secondary hover:text-on-surface font-label-sm text-label-sm uppercase tracking-wider" href="#contacto">
+                <span>Consultar fotografía</span>
+                <span class="material-symbols-outlined text-[16px]">north_east</span>
+              </a>
+            </div>
+
+            <div class="bg-surface p-space-md border border-outline-variant/60 flex flex-col justify-between hover:border-secondary transition-colors">
+              <div>
+                <div class="aspect-[16/10] overflow-hidden mb-space-sm bg-surface-container">
+                  <img class="w-full h-full object-cover" data-alt="Póster de diseño" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCB29knsnGeyPLz5QSx54_1CZFDBc0utqjKYevohlE3GVuh_phChGw__V1NHQoL0k4buV70CdaL5sc7bNuAxiMRVluvJypuKR96Ulr7Vb6sbA7Moc5awpie5OG6w3GQxqq3lvBI_myJd_lKdo4hAGkj8cTtxR_3DqTgtXFPDlaRNuONKvKGpe_-mGSG2IrP8txu50rFMsUFMrUzBgJJHzUGRTtLK4quq3BpLNN1-rRN"/>
+                </div>
+                <span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">Gráfica Contemporánea</span>
+                <h3 class="font-title-md text-title-md text-on-surface mt-1">Pósters y láminas de autor</h3>
+                <p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs">
+                  Serigrafías, cartelería de cine, diseño tipográfico y litografías con perfiles minimalistas en aluminio anodizado y maderas naturales.
+                </p>
+              </div>
+              <a class="mt-space-md pt-space-xs border-t border-outline-variant/40 inline-flex items-center justify-between text-secondary hover:text-on-surface font-label-sm text-label-sm uppercase tracking-wider" href="#contacto">
+                <span>Ver opciones de láminas</span>
+                <span class="material-symbols-outlined text-[16px]">north_east</span>
+              </a>
+            </div>
+
+            <div class="bg-surface p-space-md border border-outline-variant/60 flex flex-col justify-between hover:border-secondary transition-colors">
+              <div>
+                <div class="aspect-[16/10] overflow-hidden mb-space-sm bg-surface-container">
+                  <img class="w-full h-full object-cover" data-alt="Título y certificado" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAlOONX9eBY50WeRBL8gW2FmqwmIvzJYzz5ywIunIM816FeKZjkM5H9HWVvnVvGzeY_S_d9QkO6KWSfT8wgVE7B3o7rMYGmQLxwjEn7XwR-Zb2Zf8YZN0cYDAHLyyo1ac27cdqcdu89H_6ZaboayKUf3dSL4YV69Yau-Pc7udXg9IkG0160U2t05O7EUVnUezXgIKYo5DlKSJ09OuboOwlB_hRGu4mG7FHDurGv6-D2"/>
+                </div>
+                <span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">Institucional y Carrera</span>
+                <h3 class="font-title-md text-title-md text-on-surface mt-1">Títulos y certificados</h3>
+                <p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs">
+                  Presentaciones solemnes para despachos profesionales, notarías y clínicas. Acabados discretos de gran durabilidad y prestancia.
+                </p>
+              </div>
+              <a class="mt-space-md pt-space-xs border-t border-outline-variant/40 inline-flex items-center justify-between text-secondary hover:text-on-surface font-label-sm text-label-sm uppercase tracking-wider" href="#contacto">
+                <span>Enmarcar titulación</span>
+                <span class="material-symbols-outlined text-[16px]">north_east</span>
+              </a>
+            </div>
+
+            <div class="bg-surface p-space-md border border-outline-variant/60 flex flex-col justify-between hover:border-secondary transition-colors">
+              <div>
+                <div class="aspect-[16/10] overflow-hidden mb-space-sm bg-surface-container">
+                  <img class="w-full h-full object-cover" data-alt="Caja vitrina medallas" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBFZZiaZxVchiitavps2Gtwv_tqcvjiZH0ySDaETbYeg4hzGT6Fy8l_eIL_jRrJHqNGxp8TYalFT-wgVKKjuNlt0oheRN_PiSqRqelDPstZYZkfdZbKzaAVwcnj_-88dOncgFBEk4bgcvXWKk9bTP_SwudQNDWhxmEg9krM_-W7VUhP1IOWcYa4nzRQLEn80MNREFzN2OlE2ppjUodJP-T2wuHMoPer0Pfybu8uRU7m"/>
+                </div>
+                <span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">Cajas Tridimensionales</span>
+                <h3 class="font-title-md text-title-md text-on-surface mt-1">Medallas y colecciones</h3>
+                <p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs">
+                  Vitrina con fondo profundo para medallas, insignias, condecoraciones y recuerdos con fondos textiles de lino y terciopelo.
+                </p>
+              </div>
+              <a class="mt-space-md pt-space-xs border-t border-outline-variant/40 inline-flex items-center justify-between text-secondary hover:text-on-surface font-label-sm text-label-sm uppercase tracking-wider" href="#contacto">
+                <span>Crear vitrina deportiva</span>
+                <span class="material-symbols-outlined text-[16px]">north_east</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- GALERÍA DE PROYECTOS -->
+      <section class="w-full py-space-xl px-margin-mobile lg:px-margin bg-surface" id="proyectos">
+        <div class="max-w-[1440px] mx-auto">
+          <div class="flex flex-col md:flex-row md:items-end justify-between mb-space-lg gap-space-sm">
+            <div>
+              <span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary block mb-space-xs">Archivo de trabajos</span>
+              <h2 class="font-headline-lg text-headline-lg text-on-surface leading-tight">
+                Trabajos que hablan por sí solos
+              </h2>
+            </div>
+            <p class="font-body-sm text-body-sm text-on-surface-variant max-w-sm">
+              Cada obra entregada por nuestro taller es un compromiso con la precisión, el detalle y la conservación permanente.
+            </p>
+          </div>
+          <div class="flex flex-wrap items-center gap-space-xs mb-space-lg" id="gallery-filter-buttons">
+            <button class="gallery-btn px-space-md py-1.5 font-label-sm text-label-sm uppercase tracking-wider bg-primary text-on-primary transition-all" onclick="filterGallery('todo', this)">Todo</button>
+            <button class="gallery-btn px-space-md py-1.5 font-label-sm text-label-sm uppercase tracking-wider bg-surface-container text-on-surface hover:bg-surface-container-high transition-all" onclick="filterGallery('arte', this)">Arte</button>
+            <button class="gallery-btn px-space-md py-1.5 font-label-sm text-label-sm uppercase tracking-wider bg-surface-container text-on-surface hover:bg-surface-container-high transition-all" onclick="filterGallery('camisetas', this)">Camisetas</button>
+            <button class="gallery-btn px-space-md py-1.5 font-label-sm text-label-sm uppercase tracking-wider bg-surface-container text-on-surface hover:bg-surface-container-high transition-all" onclick="filterGallery('fotografia', this)">Fotografía</button>
+            <button class="gallery-btn px-space-md py-1.5 font-label-sm text-label-sm uppercase tracking-wider bg-surface-container text-on-surface hover:bg-surface-container-high transition-all" onclick="filterGallery('deporte', this)">Deporte</button>
+            <button class="gallery-btn px-space-md py-1.5 font-label-sm text-label-sm uppercase tracking-wider bg-surface-container text-on-surface hover:bg-surface-container-high transition-all" onclick="filterGallery('espejos', this)">Espejos</button>
+            <button class="gallery-btn px-space-md py-1.5 font-label-sm text-label-sm uppercase tracking-wider bg-surface-container text-on-surface hover:bg-surface-container-high transition-all" onclick="filterGallery('objetos', this)">Objetos</button>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter" id="gallery-grid">
+            <div class="gallery-item group relative bg-surface-container-low border border-outline-variant/60 flex flex-col justify-between" data-category="camisetas deporte">
+              <div class="aspect-[3/4] overflow-hidden relative">
+                <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Camiseta enmarcada" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA67bU7rWd4d2qh3ddSz7tvnVj0bUpCAchzTb5zQI6fpNJXb6gXtVYYQEIG6eukl68Idf2k5-Lq31C_H1iw97vM8X5y5HPs4L_yPvXNxYamRXbObyRFX27smJ1fjg5jjZ4rlmtm0QzQE_23mb9em4gq3NkYRlcC1wXy2cCyIZEur2kx4ifT2YBVhmCIQtrRHL3rGWj5DBy_j5fdMXOpMyRo4nUvt-yBMz2-DAMBGQ31"/>
+                <div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                  <button class="px-space-md py-2 bg-surface text-on-surface font-label-sm text-label-sm uppercase tracking-wider shadow-lg" onclick="openProjectModal('Camiseta Oficial Selección Española', 'camisetas', 'Montaje integral de camiseta firmada con sistema reversible sin adhesivos. Caja vitrina de 6 cm de profundidad en madera lacada en negro mate, doble passe-partout libre de ácido con remate perimetral rojo y cristal óptico antirreflejante.')">Ver detalle</button>
+                </div>
+              </div>
+              <div class="p-space-md">
+                <span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary">Prenda de Colección</span>
+                <h4 class="font-title-md text-title-md text-on-surface mt-1">Camiseta Selección Española</h4>
+                <p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Caja vitrina negra con doble passe-partout y cristal de conservación.</p>
+              </div>
+            </div>
+
+            <div class="gallery-item group relative bg-surface-container-low border border-outline-variant/60 flex flex-col justify-between" data-category="arte">
+              <div class="aspect-[3/4] overflow-hidden relative">
+                <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Óleo moderno" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCwBwVqOcbWqIeg6pulrz-R5F4H-UyCVi_tOsP-uDz8wQSMJKyB567vhVt6zcIQ5cVtA3VckbDoOaUqAes3Kkwnk8RuugI7M73qS62UGgJS8_ypSla-_QrsC2hmexy6SlGvXQPvgT5OdpDNZyK9UZivxnKqzMuPthAMYAZ3_mDIH2eGWpzd0HmEuxyDTeAlvXhGJe4lFSVFivrZ5E7QVR9jbv4NAwRJBBnRQsuIeaTM"/>
+                <div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                  <button class="px-space-md py-2 bg-surface text-on-surface font-label-sm text-label-sm uppercase tracking-wider shadow-lg" onclick="openProjectModal('Pintura Abstracta Contemporánea', 'arte', 'Lienzo de 120x90 cm montado en caja americana con perfil en L de roble macizo acabado al aceite natural. La pieza flota con un huelgo perimetral de 12 mm que acentúa la volumetría del empaste.')">Ver detalle</button>
+                </div>
+              </div>
+              <div class="p-space-md">
+                <span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary">Lienzo en Bastidor</span>
+                <h4 class="font-title-md text-title-md text-on-surface mt-1">Óleo Abstracto de Gran Formato</h4>
+                <p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Caja americana en roble español con tratamiento mate.</p>
+              </div>
+            </div>
+
+            <div class="gallery-item group relative bg-surface-container-low border border-outline-variant/60 flex flex-col justify-between" data-category="fotografia">
+              <div class="aspect-[3/4] overflow-hidden relative">
+                <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Fotografía histórica" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB0tEoNXGkMrRL2pP0G0WcC0NbmkLnJBTOd-2Oa30cB_HMsBri9_I4F6vtCWCzeiOFXCCgMnSRWXXomdmiosFRvknhFOJ7pPxJ4Jy8z5CJrlUkGMVbT0Awy-cI7FHU9cYDuSYWBVV2Mqgex2ogD52WmPHsEB8CY5UapTpjGgBRNT24EwtuaUG7XsFYCfQ99U2lNzKR2uXlAeOVUkY2yD0BLBVgB6pl2Vzo3_rmony1y"/>
+                <div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                  <button class="px-space-md py-2 bg-surface text-on-surface font-label-sm text-label-sm uppercase tracking-wider shadow-lg" onclick="openProjectModal('Retrato Familiar Histórico (1928)', 'fotografia', 'Restauración del soporte y montaje de conservación con passe-partout 100% algodón calidad museo de 8 cm. Moldura artesanal con pan de oro al agua patinado y cristal UV 99%.')">Ver detalle</button>
+                </div>
+              </div>
+              <div class="p-space-md">
+                <span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary">Archivo Familiar</span>
+                <h4 class="font-title-md text-title-md text-on-surface mt-1">Fotografía Familiar Histórica</h4>
+                <p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Passe-partout marfil y moldura dorada al agua envejecida.</p>
+              </div>
+            </div>
+
+            <div class="gallery-item group relative bg-surface-container-low border border-outline-variant/60 flex flex-col justify-between" data-category="deporte objetos">
+              <div class="aspect-[3/4] overflow-hidden relative">
+                <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Trofeo y medalla" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAk-eg9HExtpoTRAO3egSmutKV37AwvnHsgl83xI2sNn8RTJWAriH95EfL-wt31RFBLvPxvMu2ubkfYOK0M3jkJe7dU1ZxsMPdF1bAMxIPSKdE-sZ4V_6FoU0eXVnXVzYcFiHGcSiKvXdTlxIZ6_HRqGCdLgED_9448Fsj9_PsJNWGseioPytdfA2ATmVOeGM-F34ydW76s89rRQISXSwphGxVKN0rGd8GS6oRuvbX4"/>
+                <div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                  <button class="px-space-md py-2 bg-surface text-on-surface font-label-sm text-label-sm uppercase tracking-wider shadow-lg" onclick="openProjectModal('Trofeo y Dorsal Maratón', 'deporte', 'Caja tridimensional con base tapizada en lino natural. La medalla cuelga sin tensionar la cinta y el dorsal queda preservado sin adhesivos destructivos.')">Ver detalle</button>
+                </div>
+              </div>
+              <div class="p-space-md">
+                <span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary">Memoria Deportiva</span>
+                <h4 class="font-title-md text-title-md text-on-surface mt-1">Medalla y Dorsal de Competición</h4>
+                <p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Vitrina tridimensional con fondo de lino y herrajes ocultos.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- LIGHTBOX MODAL -->
+      <div class="fixed inset-0 z-50 bg-primary/80 backdrop-blur-sm hidden items-center justify-center p-margin-mobile" id="project-modal">
+        <div class="bg-surface max-w-xl w-full p-space-lg border border-outline-variant shadow-2xl relative">
+          <button class="absolute top-space-md right-space-md w-8 h-8 flex items-center justify-center text-on-surface hover:text-secondary" onclick="closeProjectModal()">
+            <span class="material-symbols-outlined text-[24px]">close</span>
+          </button>
+          <span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary block mb-1" id="modal-category">Proyecto de taller</span>
+          <h3 class="font-headline-sm text-headline-sm text-on-surface mb-space-sm" id="modal-title">Título del Proyecto</h3>
+          <p class="font-body-md text-body-md text-on-surface-variant mb-space-lg leading-relaxed" id="modal-description">Descripción detallada del montaje realizado en taller.</p>
+          <div class="flex items-center gap-space-sm pt-space-md border-t border-outline-variant/60">
+            <a class="px-space-md py-2.5 bg-primary text-on-primary font-label-md text-label-md uppercase tracking-wider hover:bg-inverse-surface transition-colors" href="#contacto" onclick="applyProjectToQuote(); closeProjectModal();">
+              Quiero algo similar
+            </a>
+            <button class="px-space-md py-2.5 bg-surface-container text-on-surface font-label-md text-label-md uppercase tracking-wider hover:bg-surface-container-high transition-colors" onclick="closeProjectModal()">
+              Cerrar
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- VISUALIZADOR INTERACTIVO -->
+      <section class="w-full py-space-xl px-margin-mobile lg:px-margin bg-surface">
+        <div class="max-w-[1440px] mx-auto">
+          <div class="max-w-2xl mb-space-lg">
+            <span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary block mb-space-xs">Configurador interactivo</span>
+            <h2 class="font-headline-lg text-headline-lg text-on-surface leading-tight">
+              Encuentra el marco perfecto para tu obra
+            </h2>
+            <p class="font-body-md text-body-md text-on-surface-variant mt-space-xs">
+              Experimenta en directo combinaciones de moldura noble, color de passe-partout y tipo de cristal para visualizar cómo transformará tu pieza.
+            </p>
+          </div>
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter lg:gap-space-xl items-center bg-surface-container-low p-space-md sm:p-space-lg border border-outline-variant/60">
+            <div class="lg:col-span-7 flex flex-col items-center justify-center p-space-md bg-surface border border-outline-variant/40 min-h-[460px] relative overflow-hidden">
+              <div class="text-center mb-space-sm">
+                <span class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant" id="preview-caption">Simulación: Roble Natural · Marfil · Óptico Estándar</span>
+              </div>
+              <div class="transition-all duration-300 relative shadow-2xl p-6 sm:p-10" id="interactive-frame" style="border: 24px solid #b5885c; background-color: #fbf9f5;">
+                <div class="absolute inset-0 pointer-events-none transition-all duration-300 opacity-20 bg-gradient-to-tr from-transparent via-surface to-white" id="frame-glass-layer"></div>
+                <div class="w-56 sm:w-80 aspect-[3/4] overflow-hidden bg-surface-container relative shadow-inner">
+                  <img class="w-full h-full object-cover" data-alt="Obra botánica" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxeTW9Jh9vlaJnXx30Nidn308fK223mG1Ha4plEBWpp1zSx5MJChbzrytLfMH4bGEBx0neWdrd8CRYfeIDfQuvQkLFpeeU0wKVlBZtEg2WCIpAkqJ69mwThRAsoEN93WurXdSYrNk-2lB8IU8ToSjjgf1OlYla_9heDec6EKMhAX52RyqwqH4OdgoPaDogxUcci2e6Bp2aXXAyf_F3WJhNJqbaBps33JDUqCgjVNZG"/>
+                  <div class="absolute bottom-2 right-2 font-label-sm text-[10px] text-on-surface/40 uppercase tracking-widest">
+                    Zero Atelier
+                  </div>
+                </div>
+              </div>
+              <div class="mt-space-md inline-flex items-center gap-space-xs font-label-sm text-label-sm uppercase tracking-wider text-secondary" id="glass-indicator">
+                <span class="material-symbols-outlined text-[16px]">visibility</span>
+                <span>Cristal óptico estándar seleccionado</span>
+              </div>
+            </div>
+            <div class="lg:col-span-5 flex flex-col gap-space-md">
+              <div>
+                <label class="font-label-md text-label-md uppercase tracking-wider text-on-surface block mb-space-xs">
+                  1. Moldura y Acabado de Madera
+                </label>
+                <div class="grid grid-cols-2 gap-space-xs">
+                  <button class="moulding-opt active-opt p-space-xs text-left bg-surface border border-primary text-on-surface text-body-sm flex items-center gap-space-xs" onclick="setMoulding('roble', '#b5885c', '24px solid #b5885c', 'Madera de Roble Natural')">
+                    <span class="w-4 h-4 bg-[#b5885c] shrink-0 border border-outline-variant"></span>
+                    <span>Roble Natural</span>
+                  </button>
+                  <button class="moulding-opt p-space-xs text-left bg-surface border border-outline-variant text-on-surface text-body-sm flex items-center gap-space-xs" onclick="setMoulding('wengue', '#2d221e', '24px solid #2d221e', 'Madera Oscura Wengué')">
+                    <span class="w-4 h-4 bg-[#2d221e] shrink-0 border border-outline-variant"></span>
+                    <span>Wengué Oscuro</span>
+                  </button>
+                  <button class="moulding-opt p-space-xs text-left bg-surface border border-outline-variant text-on-surface text-body-sm flex items-center gap-space-xs" onclick="setMoulding('negro', '#121212', '20px solid #121212', 'Negro Mate Contemporáneo')">
+                    <span class="w-4 h-4 bg-[#121212] shrink-0 border border-outline-variant"></span>
+                    <span>Negro Mate</span>
+                  </button>
+                  <button class="moulding-opt p-space-xs text-left bg-surface border border-outline-variant text-on-surface text-body-sm flex items-center gap-space-xs" onclick="setMoulding('aluminio', '#8a8d8f', '14px solid #8a8d8f', 'Aluminio Cepillado')">
+                    <span class="w-4 h-4 bg-[#8a8d8f] shrink-0 border border-outline-variant"></span>
+                    <span>Aluminio Cepillado</span>
+                  </button>
+                  <button class="moulding-opt p-space-xs text-left bg-surface border border-outline-variant text-on-surface text-body-sm flex items-center gap-space-xs" onclick="setMoulding('dorado', '#c2a15d', '26px solid #c2a15d', 'Dorado Sutil Envejecido')">
+                    <span class="w-4 h-4 bg-[#c2a15d] shrink-0 border border-outline-variant"></span>
+                    <span>Dorado Envejecido</span>
+                  </button>
+                  <button class="moulding-opt p-space-xs text-left bg-surface border border-outline-variant text-on-surface text-body-sm flex items-center gap-space-xs" onclick="setMoulding('blanco', '#ece8e1', '22px solid #ece8e1', 'Blanco Marfil Minimal')">
+                    <span class="w-4 h-4 bg-[#ece8e1] shrink-0 border border-outline-variant"></span>
+                    <span>Blanco Marfil</span>
+                  </button>
+                </div>
+              </div>
+              <div>
+                <label class="font-label-md text-label-md uppercase tracking-wider text-on-surface block mb-space-xs">
+                  2. Passe-partout (Margen Libre de Ácido)
+                </label>
+                <div class="grid grid-cols-4 gap-space-xs">
+                  <button class="pp-opt active-pp p-space-xs text-center bg-surface border border-primary text-on-surface text-body-sm" onclick="setPassepartout('#fbf9f5', 'Blanco Marfil')">
+                    <div class="w-full h-5 bg-[#fbf9f5] border border-outline-variant mb-1"></div>
+                    <span class="text-[11px] block leading-tight">Marfil</span>
+                  </button>
+                  <button class="pp-opt p-space-xs text-center bg-surface border border-outline-variant text-on-surface text-body-sm" onclick="setPassepartout('#ece3d4', 'Crema Cálido')">
+                    <div class="w-full h-5 bg-[#ece3d4] border border-outline-variant mb-1"></div>
+                    <span class="text-[11px] block leading-tight">Crema</span>
+                  </button>
+                  <button class="pp-opt p-space-xs text-center bg-surface border border-outline-variant text-on-surface text-body-sm" onclick="setPassepartout('#1e1e1e', 'Negro Carbón')">
+                    <div class="w-full h-5 bg-[#1e1e1e] border border-outline-variant mb-1"></div>
+                    <span class="text-[11px] block leading-tight">Negro</span>
+                  </button>
+                  <button class="pp-opt p-space-xs text-center bg-surface border border-outline-variant text-on-surface text-body-sm" onclick="setPassepartout('#d8d4cd', 'Gris Piedra')">
+                    <div class="w-full h-5 bg-[#d8d4cd] border border-outline-variant mb-1"></div>
+                    <span class="text-[11px] block leading-tight">Gris</span>
+                  </button>
+                </div>
+              </div>
+              <div>
+                <label class="font-label-md text-label-md uppercase tracking-wider text-on-surface block mb-space-xs">
+                  3. Tipo de Cristal Protector
+                </label>
+                <div class="space-y-space-xs">
+                  <label class="flex items-center gap-space-sm p-space-xs bg-surface border border-outline-variant cursor-pointer hover:border-secondary">
+                    <input checked="" class="accent-primary" name="glass" onchange="setGlass('standard', 'Cristal óptico estándar')" type="radio" value="standard"/>
+                    <div>
+                      <span class="font-label-md text-label-md text-on-surface block">Cristal Óptico Estándar</span>
+                      <span class="font-body-sm text-body-sm text-on-surface-variant block">Claridad nítida para ambientes sin reflejo directo.</span>
+                    </div>
+                  </label>
+                  <label class="flex items-center gap-space-sm p-space-xs bg-surface border border-outline-variant cursor-pointer hover:border-secondary">
+                    <input class="accent-primary" name="glass" onchange="setGlass('anti-reflejo', 'Antirreflejante de alta definición')" type="radio" value="anti-reflejo"/>
+                    <div>
+                      <span class="font-label-md text-label-md text-on-surface block">Antirreflejante Ultra HD</span>
+                      <span class="font-body-sm text-body-sm text-on-surface-variant block">Dispersa reflejos de ventanas y focos sin empañar la obra.</span>
+                    </div>
+                  </label>
+                  <label class="flex items-center gap-space-sm p-space-xs bg-surface border border-outline-variant cursor-pointer hover:border-secondary">
+                    <input class="accent-primary" name="glass" onchange="setGlass('museo', 'Protección UV 99% Grado Museo')" type="radio" value="museo"/>
+                    <div>
+                      <span class="font-label-md text-label-md text-on-surface block">Protección UV 99% Museo</span>
+                      <span class="font-body-sm text-body-sm text-on-surface-variant block">Máxima conservación frente al sol y luz artificial degradante.</span>
+                    </div>
+                  </label>
+                </div>
+              </div>
+              <button class="w-full py-3 bg-primary text-on-primary font-label-md text-label-md uppercase tracking-widest hover:bg-inverse-surface transition-colors mt-space-xs flex items-center justify-center gap-space-xs" onclick="transferCustomConfigToForm()">
+                <span>Pedir presupuesto con estas opciones</span>
+                <span class="material-symbols-outlined text-[16px]">arrow_downward</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACTO Y PRESUPUESTO -->
+      <section class="w-full py-space-xl px-margin-mobile lg:px-margin bg-surface-container-low border-t border-outline-variant/60" id="contacto">
+        <div class="max-w-[1440px] mx-auto">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter lg:gap-space-xl">
+            <div class="lg:col-span-5 flex flex-col justify-between">
+              <div>
+                <span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary block mb-space-xs">Taller artesano</span>
+                <h2 class="font-headline-lg text-headline-lg text-on-surface leading-tight mb-space-md">
+                  Hablemos de tu proyecto
+                </h2>
+                <p class="font-body-md text-body-md text-on-surface-variant mb-space-lg leading-relaxed">
+                  Estaremos encantados de atenderte para enseñarte molduras, comparar tonalidades y diseñar juntos la solución ideal para tu obra o recuerdo.
+                </p>
+                <div class="space-y-space-md bg-surface p-space-md border border-outline-variant/60 mb-space-md">
+                  <div class="flex items-start gap-space-sm">
+                    <span class="material-symbols-outlined text-secondary text-[22px] shrink-0 mt-0.5">location_on</span>
+                    <div>
+                      <span class="font-label-md text-label-md uppercase tracking-wider text-on-surface block font-semibold">Zero Atelier</span>
+                      <p class="font-body-md text-body-md text-on-surface-variant">
+                        Calle de la Innovación 4<br/>
+                        28522 Rivas-Vaciamadrid, Madrid<br/>
+                        <span class="text-body-sm italic">Comunidad de Madrid (Atención con cita previa)</span>
+                      </p>
+                    </div>
+                  </div>
+                  <div class="flex items-start gap-space-sm">
+                    <span class="material-symbols-outlined text-secondary text-[22px] shrink-0 mt-0.5">schedule</span>
+                    <div>
+                      <span class="font-label-md text-label-md uppercase tracking-wider text-on-surface block font-semibold">Horario de Taller</span>
+                      <div class="space-y-0.5 text-body-sm text-on-surface-variant mt-1">
+                        <p><span class="font-medium text-on-surface">Lunes a Jueves:</span> 09:00 – 14:00 | 16:00 – 19:30</p>
+                        <p><span class="font-medium text-on-surface">Viernes:</span> 09:00 – 15:00 (Continuado)</p>
+                        <p><span class="font-medium text-on-surface">Sábados y Domingos:</span> Cerrado</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="flex items-start gap-space-sm">
+                    <span class="material-symbols-outlined text-secondary text-[22px] shrink-0 mt-0.5">call</span>
+                    <div>
+                      <span class="font-label-md text-label-md uppercase tracking-wider text-on-surface block font-semibold">Teléfono y Atención</span>
+                      <p class="font-body-md text-body-md text-on-surface mt-1">+34 912 622 712</p>
+                      <p class="font-body-sm text-body-sm text-on-surface-variant">admin@zerocode-devops.com</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="flex flex-wrap items-center gap-space-xs">
+                  <a class="inline-flex items-center gap-space-xs px-space-md py-2.5 bg-surface text-on-surface border border-outline-variant font-label-sm text-label-sm uppercase tracking-wider hover:border-primary transition-colors" href="https://wa.me/34912622712" rel="noopener noreferrer" target="_blank">
+                    <span class="material-symbols-outlined text-[16px]">chat</span>
+                    <span>WhatsApp directo</span>
+                  </a>
+                  <a class="inline-flex items-center gap-space-xs px-space-md py-2.5 bg-surface text-on-surface border border-outline-variant font-label-sm text-label-sm uppercase tracking-wider hover:border-primary transition-colors" href="tel:+34912622712">
+                    <span class="material-symbols-outlined text-[16px]">call</span>
+                    <span>Llamar ahora</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Formulario -->
+            <div class="lg:col-span-7 bg-surface p-space-md sm:p-space-lg border border-outline-variant/60 shadow-sm">
+              <div class="mb-space-md">
+                <h3 class="font-headline-sm text-headline-sm text-on-surface">Solicitar presupuesto a medida</h3>
+                <p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+                  Rellena los datos de tu pieza. Te responderemos en menos de 24 horas laborables con una estimación técnica detallada.
+                </p>
+              </div>
+              <form class="space-y-space-md" id="quote-form" onsubmit="handleQuoteSubmit(event)">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md">
+                  <div>
+                    <label class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface block mb-1" for="form-nombre">Nombre y apellidos *</label>
+                    <input class="w-full px-space-sm py-2.5 bg-surface-container-low border border-outline-variant focus:border-primary text-on-surface font-body-md focus:outline-none transition-colors" id="form-nombre" placeholder="Ej. Carlos Martínez" required="" type="text"/>
+                  </div>
+                  <div>
+                    <label class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface block mb-1" for="form-telefono">Teléfono de contacto *</label>
+                    <input class="w-full px-space-sm py-2.5 bg-surface-container-low border border-outline-variant focus:border-primary text-on-surface font-body-md focus:outline-none transition-colors" id="form-telefono" placeholder="+34 600 000 000" required="" type="tel"/>
+                  </div>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md">
+                  <div>
+                    <label class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface block mb-1" for="form-email">Correo electrónico *</label>
+                    <input class="w-full px-space-sm py-2.5 bg-surface-container-low border border-outline-variant focus:border-primary text-on-surface font-body-md focus:outline-none transition-colors" id="form-email" placeholder="tu-correo@ejemplo.com" required="" type="email"/>
+                  </div>
+                  <div>
+                    <label class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface block mb-1" for="form-tipo">Tipo de pieza a enmarcar *</label>
+                    <select class="w-full px-space-sm py-2.5 bg-surface-container-low border border-outline-variant focus:border-primary text-on-surface font-body-md focus:outline-none transition-colors" id="form-tipo" required="">
+                      <option value="">Selecciona una opción</option>
+                      <option value="obra-arte">Obra de arte o lienzo</option>
+                      <option value="camiseta">Camiseta o prenda textil</option>
+                      <option value="fotografia">Fotografía o recuerdo</option>
+                      <option value="poster">Póster o lámina gráfica</option>
+                      <option value="titulo">Título o diploma profesional</option>
+                      <option value="medalla">Medalla o colección deportiva</option>
+                      <option value="espejo">Espejo a medida</option>
+                      <option value="otro">Objeto singular tridimensional</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md">
+                  <div>
+                    <label class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface block mb-1" for="form-ancho">Ancho aproximado (cm)</label>
+                    <input class="w-full px-space-sm py-2.5 bg-surface-container-low border border-outline-variant focus:border-primary text-on-surface font-body-md focus:outline-none transition-colors" id="form-ancho" max="500" min="5" placeholder="Ej. 60" type="number"/>
+                  </div>
+                  <div>
+                    <label class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface block mb-1" for="form-alto">Alto aproximado (cm)</label>
+                    <input class="w-full px-space-sm py-2.5 bg-surface-container-low border border-outline-variant focus:border-primary text-on-surface font-body-md focus:outline-none transition-colors" id="form-alto" max="500" min="5" placeholder="Ej. 80" type="number"/>
+                  </div>
+                </div>
+                <div class="hidden p-space-sm bg-surface-container text-body-sm text-on-surface border border-outline-variant" id="form-config-specs">
+                  <span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary block font-semibold mb-1">Opciones transferidas del visualizador:</span>
+                  <p class="text-on-surface-variant" id="form-config-text"></p>
+                </div>
+                <div>
+                  <label class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface block mb-1" for="form-notas">Detalles de la obra y preferencias de marco</label>
+                  <textarea class="w-full px-space-sm py-2.5 bg-surface-container-low border border-outline-variant focus:border-primary text-on-surface font-body-md focus:outline-none transition-colors" id="form-notas" placeholder="Cuéntanos si tiene firmas, qué tonalidad de madera buscas o si prefieres cristal anti-reflejante..." rows="3"></textarea>
+                </div>
+                <div class="flex items-start gap-space-sm pt-space-xs">
+                  <input class="accent-primary mt-1" id="form-rgpd" required="" type="checkbox"/>
+                  <label class="font-body-sm text-body-sm text-on-surface-variant leading-snug" for="form-rgpd">
+                    He leído y acepto la gestión simulada de mi consulta con Zero Atelier.
+                  </label>
+                </div>
+                <button class="w-full py-3.5 bg-primary text-on-primary font-label-md text-label-md uppercase tracking-widest hover:bg-inverse-surface transition-colors shadow-md flex items-center justify-center gap-space-xs" type="submit">
+                  <span>Enviar solicitud de presupuesto</span>
+                  <span class="material-symbols-outlined text-[18px]">send</span>
+                </button>
+              </form>
+              <div class="hidden mt-space-md p-space-md bg-secondary-container text-on-secondary-fixed border border-secondary/30" id="form-success-banner">
+                <div class="flex items-start gap-space-sm">
+                  <span class="material-symbols-outlined text-[24px] text-secondary">check_circle</span>
+                  <div>
+                    <h4 class="font-headline-sm text-headline-sm font-semibold leading-tight">¡Solicitud simulada con éxito!</h4>
+                    <p class="font-body-md text-body-md mt-1 leading-relaxed">
+                      Gracias por probar la demo de Zero Atelier. En una web real, el taller recibiría esta solicitud con todos los detalles y fotos adjuntas.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="w-full bg-surface-container-low text-on-surface mt-space-xl">
+    <div class="w-full px-margin-mobile lg:px-margin py-space-xl">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-gutter lg:gap-space-xl mb-space-xl">
+        <div class="lg:col-span-4 flex flex-col items-start gap-space-md">
+          <div class="flex items-center gap-space-sm">
+            <div class="w-8 h-8 rounded-lg bg-primary flex items-center justify-center text-white font-bold text-xs">
+              ZA
+            </div>
+            <span class="font-headline-sm text-headline-sm font-medium tracking-tight text-on-surface">Zero Atelier</span>
+          </div>
+          <p class="font-body-md text-body-md text-on-surface-variant max-w-sm">
+            Atelier de enmarcación de autor, conservación museográfica y ebanistería a medida. Rigor técnico, nobleza material y diálogo constante con coleccionistas, artistas y particulares.
+          </p>
+          <div class="inline-flex items-center gap-space-sm px-space-md py-space-xs bg-surface-container border border-outline-variant">
+            <span class="material-symbols-outlined text-on-surface-variant text-[18px]">verified</span>
+            <span class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface">Artesanía y Conservación · Madrid</span>
+          </div>
+        </div>
+        <div class="lg:col-span-3 flex flex-col gap-space-sm">
+          <h3 class="font-title-md text-title-md text-on-surface mb-space-xs">Atelier & Ubicación</h3>
+          <p class="font-body-md text-body-md text-on-surface-variant">
+            Calle de la Innovación 4<br/>
+            28522 Rivas-Vaciamadrid, Madrid<br/>
+            Comunidad de Madrid
+          </p>
+          <div class="mt-space-sm">
+            <p class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">Contacto Directo</p>
+            <p class="font-body-md text-body-md text-on-surface mt-space-xs">+34 912 622 712<br/>admin@zerocode-devops.com</p>
+          </div>
+        </div>
+        <div class="lg:col-span-3 flex flex-col gap-space-sm">
+          <h3 class="font-title-md text-title-md text-on-surface mb-space-xs">Horario de Taller</h3>
+          <div class="space-y-space-xs">
+            <p class="font-body-md text-body-md text-on-surface"><span class="font-semibold">Lunes a Jueves:</span><br/><span class="text-on-surface-variant">09:00 – 14:00 | 16:00 – 19:30</span></p>
+            <p class="font-body-md text-body-md text-on-surface"><span class="font-semibold">Viernes:</span><br/><span class="text-on-surface-variant">09:00 – 15:00</span></p>
+            <p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs italic">Atención personalizada con cita previa disponible.</p>
+          </div>
+        </div>
+        <div class="lg:col-span-2 flex flex-col gap-space-sm">
+          <h3 class="font-title-md text-title-md text-on-surface mb-space-xs">Navegación</h3>
+          <ul class="space-y-space-xs">
+            <li class="font-body-md text-body-md"><a class="text-on-surface-variant hover:text-on-surface transition-colors" href="#inicio">Inicio</a></li>
+            <li class="font-body-md text-body-md"><a class="text-on-surface-variant hover:text-on-surface transition-colors" href="#servicios">Servicios</a></li>
+            <li class="font-body-md text-body-md"><a class="text-on-surface-variant hover:text-on-surface transition-colors" href="#especialidades">Especialidades</a></li>
+            <li class="font-body-md text-body-md"><a class="text-on-surface-variant hover:text-on-surface transition-colors" href="#proyectos">Proyectos</a></li>
+            <li class="font-body-md text-body-md"><a class="text-on-surface-variant hover:text-on-surface transition-colors" href="#proceso">Proceso</a></li>
+            <li class="font-body-md text-body-md"><a class="text-on-surface-variant hover:text-on-surface transition-colors" href="#contacto">Contacto</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="pt-space-lg border-t border-outline-variant flex flex-col sm:flex-row items-center justify-between gap-space-md">
+        <p class="font-body-sm text-body-sm text-on-surface-variant">© 2026 Zero Atelier · Una demostración de ZeroCode DevOps. Todos los derechos reservados.</p>
+        <div class="flex items-center gap-space-md">
+          <a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" href="/aviso-legal">Aviso Legal</a>
+          <span class="text-outline-variant">·</span>
+          <a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" href="/politica-de-privacidad">Privacidad</a>
+          <span class="text-outline-variant">·</span>
+          <a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" href="/">Volver a ZeroCode</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function filterGallery(category, clickedBtn) {
+      const buttons = document.querySelectorAll('.gallery-btn');
+      buttons.forEach(btn => {
+        btn.classList.remove('bg-primary', 'text-on-primary');
+        btn.classList.add('bg-surface-container', 'text-on-surface');
+      });
+      clickedBtn.classList.remove('bg-surface-container', 'text-on-surface');
+      clickedBtn.classList.add('bg-primary', 'text-on-primary');
+
+      const items = document.querySelectorAll('.gallery-item');
+      items.forEach(item => {
+        const cats = item.getAttribute('data-category');
+        if (category === 'todo' || cats.includes(category)) {
+          item.style.display = 'flex';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    }
+
+    let currentModalProjectTitle = "";
+
+    function openProjectModal(title, categoryName, desc) {
+      currentModalProjectTitle = title;
+      document.getElementById('modal-title').textContent = title;
+      document.getElementById('modal-category').textContent = 'Especialidad: ' + categoryName.toUpperCase();
+      document.getElementById('modal-description').textContent = desc;
+      
+      const modal = document.getElementById('project-modal');
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    }
+
+    function closeProjectModal() {
+      const modal = document.getElementById('project-modal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+
+    function applyProjectToQuote() {
+      const notasField = document.getElementById('form-notas');
+      notasField.value = "Me interesa un acabado similar al proyecto: " + currentModalProjectTitle + ".";
+    }
+
+    let activeMouldingName = "Roble Natural";
+    let activePpName = "Blanco Marfil";
+    let activeGlassName = "Cristal óptico estándar";
+
+    function setMoulding(type, colorHex, borderRule, name) {
+      const frame = document.getElementById('interactive-frame');
+      frame.style.border = borderRule;
+      activeMouldingName = name;
+      updateCaption();
+
+      document.querySelectorAll('.moulding-opt').forEach(btn => {
+        btn.classList.remove('border-primary');
+        btn.classList.add('border-outline-variant');
+      });
+      event.currentTarget.classList.add('border-primary');
+      event.currentTarget.classList.remove('border-outline-variant');
+    }
+
+    function setPassepartout(bgHex, name) {
+      const frame = document.getElementById('interactive-frame');
+      frame.style.backgroundColor = bgHex;
+      activePpName = name;
+      updateCaption();
+
+      document.querySelectorAll('.pp-opt').forEach(btn => {
+        btn.classList.remove('border-primary');
+        btn.classList.add('border-outline-variant');
+      });
+      event.currentTarget.classList.add('border-primary');
+      event.currentTarget.classList.remove('border-outline-variant');
+    }
+
+    function setGlass(type, name) {
+      const glassLayer = document.getElementById('frame-glass-layer');
+      const indicator = document.getElementById('glass-indicator');
+      activeGlassName = name;
+      
+      if (type === 'standard') {
+        glassLayer.style.opacity = '0.25';
+        indicator.innerHTML = '<span class="material-symbols-outlined text-[16px]">visibility</span><span>Cristal óptico estándar seleccionado</span>';
+      } else if (type === 'anti-reflejo') {
+        glassLayer.style.opacity = '0.04';
+        indicator.innerHTML = '<span class="material-symbols-outlined text-[16px]">blur_off</span><span>Tratamiento Antirreflejante Ultra HD activado</span>';
+      } else if (type === 'museo') {
+        glassLayer.style.opacity = '0.08';
+        indicator.innerHTML = '<span class="material-symbols-outlined text-[16px]">shield</span><span>Filtro UV 99% Grado Museo activo</span>';
+      }
+      updateCaption();
+    }
+
+    function updateCaption() {
+      document.getElementById('preview-caption').textContent = `Simulación: ${activeMouldingName} · Passe-partout ${activePpName} · ${activeGlassName}`;
+    }
+
+    function transferCustomConfigToForm() {
+      const specsContainer = document.getElementById('form-config-specs');
+      const specsText = document.getElementById('form-config-text');
+      specsContainer.classList.remove('hidden');
+      specsText.textContent = `Moldura: ${activeMouldingName} | Passe-partout: ${activePpName} | Vidrio: ${activeGlassName}`;
+
+      const notas = document.getElementById('form-notas');
+      if (!notas.value.includes('Configuración visualizador:')) {
+        notas.value = `[Configuración visualizador: ${activeMouldingName}, Passe-partout ${activePpName}, ${activeGlassName}] \n` + notas.value;
+      }
+
+      document.getElementById('contacto').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function handleQuoteSubmit(e) {
+      e.preventDefault();
+      const banner = document.getElementById('form-success-banner');
+      banner.classList.remove('hidden');
+      banner.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+  </script>
+</body>
+</html>
