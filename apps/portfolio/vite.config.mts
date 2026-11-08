@@ -23,10 +23,6 @@ export default defineConfig({
         target: 'http://localhost:5176',
         changeOrigin: true,
       },
-      '/proyectos/zeroshop': {
-        target: 'http://localhost:5175',
-        changeOrigin: true,
-      },
     },
   },
   resolve: {

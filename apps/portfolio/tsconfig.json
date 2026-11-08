@@ -43,6 +43,9 @@
       "@zerodelay/*": [
         "../zerodelay/src/*"
       ],
+      "@zeroshop/*": [
+        "../zeroshop/src/*"
+      ],
       "@zero-chaos/*": [
         "../zero-chaos/*"
       ],

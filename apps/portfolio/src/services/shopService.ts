@@ -1,5 +1,5 @@
-import { mockProducts } from '@ecommerce/data/mockProducts';
-import type { Product } from '@ecommerce/services/productsApi';
+import { mockProducts } from '@zeroshop/data/mockProducts';
+import type { Product } from '@zeroshop/services/productsApi';
 
 /** Legacy shop data stays local; this service intentionally has no database connection. */
 export const ShopService = {

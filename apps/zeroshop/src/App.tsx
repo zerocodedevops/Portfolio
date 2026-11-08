@@ -1,4 +1,5 @@
 import { Provider } from "react-redux";
+import "./i18n";
 import EcommerceRoutes from "./routes";
 import { store } from "./store/store";
 
