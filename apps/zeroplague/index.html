@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zero Plague | Sanidad Ambiental, Bioseguridad y Control Integral de Plagas (Demo)</title>
+  <meta name="description" content="Demo comercial de Zero Plague: sanidad ambiental, bioseguridad y control integral de plagas para hogares y empresas.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@500;600;700;800&amp;family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&amp;display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body class="bg-obsidian text-ink-light antialiased selection:bg-bio-emerald selection:text-obsidian overflow-x-hidden">
+
+  <!-- HEADER -->
+  <header class="fixed top-0 left-0 right-0 z-50 border-b border-ink-light/10 bg-obsidian/85 backdrop-blur-xl">
+    <div class="bg-forest/90 border-b border-ink-light/10 py-1.5 px-4 sm:px-8">
+      <div class="max-w-7xl mx-auto flex items-center justify-between gap-4 font-code-technical text-[11px] tracking-wider uppercase text-ink-muted">
+        <div class="flex items-center gap-2">
+          <span class="w-1.5 h-1.5 rounded-full bg-bio-emerald-light animate-pulse"></span>
+          <span>DEMO COMERCIAL · PRECISION BIO-ARCHITECTURE</span>
+        </div>
+        <a href="#contacto-final" class="text-bio-emerald-light hover:text-ink-light transition-colors font-semibold hidden sm:inline">
+          Atención técnica demostrativa 24/7 →
+        </a>
+      </div>
+    </div>
+
+    <div class="h-20 max-w-7xl mx-auto px-4 sm:px-8 flex items-center justify-between gap-4">
+      <!-- Marca tipográfica provisional (pendiente logotipo oficial del propietario) -->
+      <a href="index.html" class="flex flex-col shrink-0 group">
+        <span class="font-headline-sm text-xl font-extrabold tracking-tight text-ink-light leading-none group-hover:text-bio-emerald-light transition-colors">ZERO PLAGUE</span>
+        <span class="font-code-technical text-[10px] text-bio-emerald tracking-[0.2em] uppercase mt-1">Sanidad Ambiental</span>
+      </a>
+
+      <!-- Navegación escritorio -->
+      <nav class="hidden xl:flex items-center gap-7" aria-label="Navegación principal">
+        <a aria-current="page" class="font-body-md text-bio-emerald-light font-semibold py-2" href="#hero-section">Inicio</a>
+        <a class="font-body-md text-ink-muted hover:text-ink-light transition-colors py-2" href="servicios.html">Servicios</a>
+        <a class="font-body-md text-ink-muted hover:text-ink-light transition-colors py-2" href="#segment-particulares" onclick="showSegment('particulares')">Particulares</a>
+        <a class="font-body-md text-ink-muted hover:text-ink-light transition-colors py-2" href="empresas-y-comunidades.html">Empresas y Comunidades</a>
+        <a class="font-body-md text-ink-muted hover:text-ink-light transition-colors py-2" href="#pilares">Metodología</a>
+        <a class="font-body-md text-ink-muted hover:text-ink-light transition-colors py-2" href="contacto.html">Contacto</a>
+      </nav>
+
+      <!-- Acciones derecha -->
+      <div class="flex items-center gap-3">
+        <a class="hidden md:flex items-center gap-2.5 bg-forest border border-ink-light/10 px-3.5 py-2 rounded-lg hover:border-bio-emerald/40 transition-colors" href="#contacto-final">
+          <span class="w-2 h-2 rounded-full bg-bio-emerald-light animate-pulse"></span>
+          <div class="flex flex-col leading-none">
+            <span class="font-code-technical text-[10px] text-ink-muted uppercase">Guardia 24/7</span>
+            <span class="font-code-technical text-xs font-semibold text-ink-light mt-0.5">912 622 712 (Demo)</span>
+          </div>
+        </a>
+
+        <a data-magnetic class="hidden sm:inline-flex items-center gap-2 bg-bio-emerald text-obsidian px-5 py-2.5 rounded-lg font-label-md font-bold hover:bg-bio-emerald-light transition-colors" href="#contacto-final">
+          <span>Solicitar Presupuesto</span>
+          <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+        </a>
+
+        <button aria-controls="mobile-menu" aria-expanded="false" aria-label="Abrir menú de navegación" class="xl:hidden inline-flex items-center justify-center w-10 h-10 rounded-lg bg-forest border border-ink-light/15 text-ink-light hover:border-bio-emerald transition-colors" id="mobile-menu-toggle" type="button">
+          <span class="material-symbols-outlined text-[24px]">menu</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Drawer móvil -->
+    <div aria-label="Menú de navegación móvil" class="hidden xl:hidden fixed inset-x-0 top-[109px] bottom-0 z-40 bg-obsidian/95 backdrop-blur-xl border-t border-ink-light/10 overflow-y-auto px-6 py-6" id="mobile-menu">
+      <div class="max-w-7xl mx-auto flex flex-col gap-4">
+        <div class="flex items-center justify-between pb-3 border-b border-ink-light/10">
+          <span class="font-code-technical text-xs uppercase tracking-widest text-ink-muted">Navegación</span>
+          <button aria-label="Cerrar menú" class="inline-flex items-center justify-center w-9 h-9 rounded-lg bg-forest text-ink-light hover:text-bio-emerald-light" id="mobile-menu-close" type="button">
+            <span class="material-symbols-outlined text-[20px]">close</span>
+          </button>
+        </div>
+        <nav class="flex flex-col gap-2" aria-label="Navegación móvil">
+          <a class="px-3 py-2.5 rounded-lg font-body-lg text-bio-emerald-light font-semibold bg-forest/60" href="#hero-section">Inicio</a>
+          <a class="px-3 py-2.5 rounded-lg font-body-lg text-ink-light hover:bg-forest transition-colors" href="servicios.html">Servicios</a>
+          <a class="px-3 py-2.5 rounded-lg font-body-lg text-ink-light hover:bg-forest transition-colors" href="#segment-particulares" onclick="showSegment('particulares')">Particulares</a>
+          <a class="px-3 py-2.5 rounded-lg font-body-lg text-ink-light hover:bg-forest transition-colors" href="empresas-y-comunidades.html">Empresas y Comunidades</a>
+          <a class="px-3 py-2.5 rounded-lg font-body-lg text-ink-light hover:bg-forest transition-colors" href="#pilares">Metodología</a>
+          <a class="px-3 py-2.5 rounded-lg font-body-lg text-ink-light hover:bg-forest transition-colors" href="contacto.html">Contacto</a>
+        </nav>
+        <div class="pt-4 border-t border-ink-light/10 flex flex-col gap-3">
+          <a class="flex items-center justify-between bg-forest border border-ink-light/10 px-4 py-3 rounded-xl" href="#contacto-final">
+            <span class="font-code-technical text-xs text-bio-emerald-light uppercase">Urgencias 24/7 (Demo)</span>
+            <span class="font-code-technical font-semibold text-ink-light">912 622 712 (Demo)</span>
+          </a>
+          <a class="inline-flex items-center justify-center gap-2 bg-bio-emerald text-obsidian px-5 py-3 rounded-lg font-label-md font-bold" href="#contacto-final">
+            <span>Solicitar Presupuesto</span>
+            <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="w-full pt-[109px]">
+
+    <!-- 1. HERO CINEMATOGRÁFICO MULTICAPA -->
+    <section id="hero-section" class="relative min-h-[calc(100dvh-109px)] flex items-end lg:items-center overflow-hidden bg-obsidian bg-tech-grid py-14 lg:py-24">
+      <!-- Capa 1: Fotografía con parallax de ratón y zoom cinematográfico -->
+      <div data-parallax-depth="0.03" class="absolute -inset-6 pointer-events-none transition-transform duration-200 ease-out">
+        <img data-cinematic-zoom src="assets/img/img-02.jpg" alt="Inspección técnica de sanidad ambiental con instrumentación de precisión" class="w-full h-full object-cover opacity-40" fetchpriority="high">
+      </div>
+      <!-- Capa 2: Gradiente cinematográfico + Spotlight reactivo al cursor -->
+      <div class="absolute inset-0 bg-gradient-to-t from-obsidian via-obsidian/75 to-obsidian/35 pointer-events-none"></div>
+      <div id="hero-spotlight" class="absolute inset-0 pointer-events-none transition-opacity duration-300" aria-hidden="true"></div>
+      <!-- Capa 3: Partículas orgánicas -->
+      <canvas id="hero-particles" class="absolute inset-0 w-full h-full pointer-events-none"></canvas>
+
+      <!-- Capa 4: Contenido editorial asimétrico -->
+      <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-8 w-full">
+        <div data-parallax-depth="-0.015" class="max-w-4xl space-y-7 transition-transform duration-200 ease-out">
+          <div data-hero-stagger class="flex items-center gap-4">
+            <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-forest/90 border border-bio-emerald/35 font-code-technical text-[11px] text-bio-emerald-light uppercase tracking-widest">
+              <span class="w-1.5 h-1.5 rounded-full bg-bio-emerald-light animate-pulse"></span>
+              Bioseguridad &amp; Control Vectorial
+            </span>
+            <span class="hidden sm:inline font-code-technical text-[11px] text-ink-muted uppercase tracking-widest">00 · Apertura</span>
+          </div>
+
+          <h1 data-hero-stagger class="font-display-lg text-display-hero text-ink-light tracking-tight">
+            Precisión científica contra toda amenaza biológica.
+          </h1>
+
+          <div data-hero-stagger class="grid grid-cols-1 md:grid-cols-12 gap-6 items-end pt-2 border-t border-ink-light/15">
+            <p class="md:col-span-7 font-body-xl text-ink-muted leading-relaxed">
+              Diagnóstico técnico, desinsectación, desratización y bioseguridad ambiental para hogares, hostelería e industria con total discreción operativa.
+            </p>
+            <div class="md:col-span-5 flex flex-wrap md:justify-end gap-3">
+              <a data-magnetic href="#diagnostico-express" class="inline-flex items-center gap-2.5 bg-bio-emerald text-obsidian px-6 py-3.5 rounded-lg font-label-md font-bold hover:bg-bio-emerald-light transition-colors">
+                <span>Diagnóstico express</span>
+                <span class="material-symbols-outlined text-[18px]">arrow_downward</span>
+              </a>
+              <a href="tel:+34912622712" class="inline-flex items-center gap-2 bg-forest/90 border border-ink-light/20 text-ink-light px-5 py-3.5 rounded-lg font-label-md font-semibold hover:border-bio-emerald-light transition-colors">
+                <span class="material-symbols-outlined text-bio-emerald-light text-[18px]">phone_in_talk</span>
+                <span>912 622 712</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. INTRODUCCIÓN EDITORIAL CON MÁSCARA Y ZOOM -->
+    <section class="bg-mineral text-ink-dark py-20 lg:py-32 border-b border-ink-dark/10">
+      <div class="max-w-7xl mx-auto px-4 sm:px-8 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div data-mask-reveal class="lg:col-span-6 rounded-2xl overflow-hidden bg-obsidian">
+          <img data-cinematic-zoom src="assets/img/img-01.jpg" alt="Equipamiento técnico de bioseguridad Zero Plague" class="w-full h-[380px] lg:h-[480px] object-cover" loading="lazy">
+        </div>
+        <div data-reveal class="lg:col-span-6 space-y-6">
+          <span class="font-code-technical text-xs uppercase tracking-widest text-bio-emerald font-semibold">01 · Arquitectura Biológica</span>
+          <h2 class="font-headline-xl text-headline-xl-mobile md:text-headline-xl text-ink-dark leading-tight">
+            Intervenciones clínicas sin ruido ni residuos innecesarios.
+          </h2>
+          <p class="font-body-xl text-ink-dark-muted leading-relaxed">
+            Sustituimos la fumigación genérica por protocolos de precisión: localización de focos ocultos, tratamiento selectivo y exclusión estructural para evitar reapariciones.
+          </p>
+          <div class="grid grid-cols-3 gap-4 pt-6 border-t border-ink-dark/15">
+            <div>
+              <p class="font-code-technical text-xl font-bold text-ink-dark">Adaptado</p>
+              <p class="font-body-sm text-ink-dark-muted mt-1">Tratamientos adaptados a cada entorno</p>
+            </div>
+            <div>
+              <p class="font-code-technical text-xl font-bold text-ink-dark">Discreto</p>
+              <p class="font-body-sm text-ink-dark-muted mt-1">Flota sin rotulación comercial</p>
+            </div>
+            <div>
+              <p class="font-code-technical text-xl font-bold text-ink-dark">Trazable</p>
+              <p class="font-body-sm text-ink-dark-muted mt-1">Control digital de puntos</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. SERVICIOS: EDITORIAL SHOWCASE INTERACTIVO -->
+    <section id="servicios" class="bg-obsidian text-ink-light py-20 lg:py-32">
+      <div class="max-w-7xl mx-auto px-4 sm:px-8 space-y-12">
+        <div data-reveal class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+          <div>
+            <span class="font-code-technical text-xs uppercase tracking-widest text-bio-emerald-light">02 · Especialidades Técnicas</span>
+            <h2 class="font-headline-xl text-headline-xl-mobile md:text-headline-xl text-ink-light mt-2">
+              Control integral por vector
+            </h2>
+          </div>
+          <a href="#contacto-final" class="inline-flex items-center gap-2 font-label-md text-bio-emerald-light hover:text-ink-light transition-colors">
+            <span>Solicitar valoración</span>
+            <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+          </a>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          <!-- Lista interactiva -->
+          <div class="lg:col-span-6 space-y-3">
+            <button type="button" data-service-img="assets/img/img-03.jpg" data-service-caption="Desinsectación dirigida con geles biocidas de alta especificidad" class="w-full text-left p-5 rounded-xl border border-bio-emerald bg-forest/80 transition-all">
+              <div class="flex items-center justify-between">
+                <span class="font-code-technical text-xs text-bio-emerald-light">01 · DESINSECTACIÓN</span>
+                <span class="material-symbols-outlined text-bio-emerald-light text-[18px]">arrow_outward</span>
+              </div>
+              <h3 class="font-headline-sm text-ink-light mt-1">Cucarachas, hormigas y rastreros</h3>
+              <p class="font-body-sm text-ink-muted mt-1">Tratamientos específicos para el control de vectores y nidos, buscando minimizar molestias según la intervención.</p>
+            </button>
+
+            <button type="button" data-service-img="assets/img/img-04.jpg" data-service-caption="Estaciones monitorizadas y sellado estructural de accesos" class="w-full text-left p-5 rounded-xl border border-ink-light/10 hover:border-bio-emerald/60 transition-all">
+              <div class="flex items-center justify-between">
+                <span class="font-code-technical text-xs text-bio-emerald-light">02 · DESRATIZACIÓN</span>
+                <span class="material-symbols-outlined text-ink-muted text-[18px]">arrow_outward</span>
+              </div>
+              <h3 class="font-headline-sm text-ink-light mt-1">Control y exclusión de roedores</h3>
+              <p class="font-body-sm text-ink-muted mt-1">Barreras perimetrales y seguimiento continuo.</p>
+            </button>
+
+            <button type="button" data-service-img="assets/img/img-05.jpg" data-service-caption="Choque térmico controlado sin residuos químicos" class="w-full text-left p-5 rounded-xl border border-ink-light/10 hover:border-bio-emerald/60 transition-all">
+              <div class="flex items-center justify-between">
+                <span class="font-code-technical text-xs text-bio-emerald-light">03 · TERMO-CONTROL</span>
+                <span class="material-symbols-outlined text-ink-muted text-[18px]">arrow_outward</span>
+              </div>
+              <h3 class="font-headline-sm text-ink-light mt-1">Chinches de cama</h3>
+              <p class="font-body-sm text-ink-muted mt-1">Tratamiento térmico de precisión en hoteles y hogares.</p>
+            </button>
+
+            <button type="button" data-service-img="assets/img/img-06.jpg" data-service-caption="Nebulización técnica y protección estructural de madera" class="w-full text-left p-5 rounded-xl border border-ink-light/10 hover:border-bio-emerald/60 transition-all">
+              <div class="flex items-center justify-between">
+                <span class="font-code-technical text-xs text-bio-emerald-light">04 · BIOSEGURIDAD</span>
+                <span class="material-symbols-outlined text-ink-muted text-[18px]">arrow_outward</span>
+              </div>
+              <h3 class="font-headline-sm text-ink-light mt-1">Desinfección ambiental y termitas</h3>
+              <p class="font-body-sm text-ink-muted mt-1">Sistemas de cebos y desinfección de espacios críticos.</p>
+            </button>
+          </div>
+
+          <!-- Fotografía protagonista dinámica -->
+          <div data-mask-reveal data-tilt-img class="lg:col-span-6 relative rounded-2xl overflow-hidden bg-forest border border-ink-light/10 transition-transform duration-200 ease-out">
+            <img id="service-showcase-img" src="assets/img/img-03.jpg" alt="Vista previa del servicio técnico seleccionado" class="w-full h-[360px] lg:h-[460px] object-cover transition-all duration-500" loading="lazy">
+            <div class="absolute inset-x-0 bottom-0 p-6 bg-gradient-to-t from-obsidian via-obsidian/80 to-transparent">
+              <p id="service-showcase-caption" class="font-code-technical text-xs text-bio-emerald-light">Desinsectación dirigida con geles biocidas de alta especificidad</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. SECTORES Y ENTORNOS (WARM MINERAL) -->
+    <section id="segment-particulares" class="bg-mineral text-ink-dark py-20 lg:py-28">
+      <div class="max-w-7xl mx-auto px-4 sm:px-8 space-y-10">
+        <div data-reveal class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+          <div>
+            <span class="font-code-technical text-xs uppercase tracking-widest text-bio-emerald font-semibold">03 · Soluciones por Entorno</span>
+            <h2 class="font-headline-xl text-headline-xl-mobile md:text-headline-xl text-ink-dark mt-2">
+              Adaptado a hogares y empresas
+            </h2>
+          </div>
+          <div class="inline-flex rounded-lg bg-surface-container p-1 border border-ink-dark/10">
+            <button id="tab-btn-particulares" type="button" onclick="showSegment('particulares')" class="px-4 py-2 rounded-md font-label-md text-sm bg-obsidian text-ink-light transition-colors">
+              Particulares
+            </button>
+            <button id="tab-btn-empresas" type="button" onclick="showSegment('empresas')" class="px-4 py-2 rounded-md font-label-md text-sm text-ink-dark-muted hover:text-ink-dark transition-colors">
+              Empresas y HORECA
+            </button>
+          </div>
+        </div>
+
+        <div id="segment-panel-particulares" class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          <div data-tilt-img class="lg:col-span-6 rounded-2xl overflow-hidden transition-transform duration-200 ease-out">
+            <img data-cinematic-zoom src="assets/img/img-07.jpg" alt="Vivienda particular protegida" class="w-full h-[360px] object-cover" loading="lazy">
+          </div>
+          <div class="lg:col-span-6 space-y-5">
+            <h3 class="font-headline-lg text-ink-dark">Viviendas, chalets y comunidades</h3>
+            <p class="font-body-lg text-ink-dark-muted">
+              Intervenciones rápidas, limpias y sin olores molestos. Protegemos tu hogar frente a cucarachas, hormigas, roedores, avispas y xilófagos con total seguridad familiar.
+            </p>
+            <a href="#diagnostico-express" class="inline-flex items-center gap-2 bg-obsidian text-ink-light px-6 py-3 rounded-lg font-label-md font-semibold hover:bg-forest transition-colors">
+              <span>Calcular diagnóstico</span>
+              <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+            </a>
+          </div>
+        </div>
+
+        <div id="segment-panel-empresas" class="hidden">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            <div data-tilt-img class="lg:col-span-6 rounded-2xl overflow-hidden transition-transform duration-200 ease-out">
+              <img src="assets/img/img-08.jpg" alt="Entorno empresarial y hostelería" class="w-full h-[360px] object-cover" loading="lazy">
+            </div>
+            <div class="lg:col-span-6 space-y-5">
+              <h3 class="font-headline-lg text-ink-dark">Hostelería, industria y oficinas</h3>
+              <p class="font-body-lg text-ink-dark-muted">
+                Planes preventivos continuados con monitorización periódica, documentación técnica y respuesta prioritaria ante inspecciones o incidencias críticas.
+              </p>
+              <a href="#segment-particulares" class="inline-flex items-center gap-2 bg-obsidian text-ink-light px-6 py-3 rounded-lg font-label-md font-semibold hover:bg-forest transition-colors">
+                <span>Ver soluciones B2B</span>
+                <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. METODOLOGÍA NARRATIVA STICKY + PROGRESO AL SCROLL -->
+    <section id="pilares" class="bg-forest text-ink-light py-20 lg:py-32 border-y border-ink-light/10">
+      <div class="max-w-7xl mx-auto px-4 sm:px-8 grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+        <div class="lg:col-span-5 lg:sticky lg:top-36 space-y-4">
+          <span class="font-code-technical text-xs uppercase tracking-widest text-bio-emerald-light">04 · Metodología Operativa</span>
+          <h2 class="font-headline-xl text-headline-xl-mobile md:text-headline-xl text-ink-light">
+            Protocolo en cuatro fases verificables
+          </h2>
+          <p class="font-body-lg text-ink-muted">
+            Cada actuación sigue una secuencia técnica documentada para garantizar la erradicación del foco y prevenir nuevas entradas.
+          </p>
+        </div>
+
+        <div class="lg:col-span-7 relative pl-8 space-y-10">
+          <div class="absolute left-2 top-2 bottom-2 w-0.5 bg-ink-light/15" aria-hidden="true">
+            <div id="methodology-progress-line" class="w-full h-full bg-bio-emerald-light"></div>
+          </div>
+
+          <div data-reveal class="relative p-6 rounded-xl bg-obsidian/65 border border-ink-light/10 space-y-2">
+            <span class="font-code-technical text-xs text-bio-emerald-light">FASE 01</span>
+            <h3 class="font-headline-sm text-ink-light">Inspección técnica</h3>
+            <p class="font-body-md text-ink-muted">Localización de focos, vías de entrada y condiciones ambientales favorables.</p>
+          </div>
+
+          <div data-reveal class="relative p-6 rounded-xl bg-obsidian/65 border border-ink-light/10 space-y-2">
+            <span class="font-code-technical text-xs text-bio-emerald-light">FASE 02</span>
+            <h3 class="font-headline-sm text-ink-light">Diagnóstico biológico</h3>
+            <p class="font-body-md text-ink-muted">Identificación de especie y selección del método de menor impacto.</p>
+          </div>
+
+          <div data-reveal class="relative p-6 rounded-xl bg-obsidian/65 border border-ink-light/10 space-y-2">
+            <span class="font-code-technical text-xs text-bio-emerald-light">FASE 03</span>
+            <h3 class="font-headline-sm text-ink-light">Intervención dirigida</h3>
+            <p class="font-body-md text-ink-muted">Aplicación precisa con protocolos de seguridad específicos y máxima discreción.</p>
+          </div>
+
+          <div data-reveal class="relative p-6 rounded-xl bg-obsidian/65 border border-ink-light/10 space-y-2">
+            <span class="font-code-technical text-xs text-bio-emerald-light">FASE 04</span>
+            <h3 class="font-headline-sm text-ink-light">Seguimiento y exclusión</h3>
+            <p class="font-body-md text-ink-muted">Verificación de erradicación y medidas preventivas estructurales.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. DIAGNÓSTICO EXPRESS (#calc-form) -->
+    <section id="diagnostico-express" class="bg-mineral text-ink-dark py-20 lg:py-24">
+      <div class="max-w-4xl mx-auto px-4 sm:px-8">
+        <div class="bg-surface-container-lowest rounded-2xl p-6 sm:p-10 shadow-sm border border-ink-dark/10 space-y-6">
+          <div>
+            <span class="font-code-technical text-xs uppercase tracking-widest text-bio-emerald font-semibold">Simulador Demo</span>
+            <h2 class="font-headline-lg text-ink-dark mt-1">Diagnóstico Express</h2>
+            <p class="font-body-md text-ink-dark-muted mt-1">Indica tu código postal y teléfono para simular una valoración técnica inmediata.</p>
+          </div>
+
+          <form class="space-y-6" id="calc-form">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label for="codigo_postal" class="block font-label-md text-ink-dark mb-1.5">Código Postal *</label>
+                <input id="codigo_postal" name="codigo_postal" type="text" required placeholder="Ej. 28001" class="w-full px-4 py-3 rounded-lg bg-mineral border border-outline-variant text-ink-dark">
+              </div>
+              <div>
+                <label for="telefono_diag" class="block font-label-md text-ink-dark mb-1.5">Teléfono de contacto *</label>
+                <input id="telefono_diag" name="telefono_diag" type="tel" required placeholder="Ej. 912 622 712" class="w-full px-4 py-3 rounded-lg bg-mineral border border-outline-variant text-ink-dark">
+              </div>
+            </div>
+
+            <button type="submit" data-magnetic class="inline-flex items-center justify-center gap-2 bg-bio-emerald text-obsidian px-6 py-3.5 rounded-lg font-label-md font-bold hover:bg-bio-emerald-light transition-colors">
+              <span>Evaluar incidencia (Demo)</span>
+              <span class="material-symbols-outlined text-[18px]">biotech</span>
+            </button>
+
+            <div id="calc-result" class="hidden p-4 rounded-xl bg-secondary-container/40 border border-bio-emerald text-on-secondary-fixed">
+              <p class="font-label-md font-bold">Orientación inicial (Demostración)</p>
+              <p class="font-body-sm mt-1">Esta herramienta ofrece una orientación inicial con fines demostrativos. No sustituye una inspección ni un diagnóstico técnico. La disponibilidad y las actuaciones deberán confirmarse.</p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. CIERRE COMERCIAL & FORMULARIO FINAL (#final-lead-form) -->
+    <section id="contacto-final" class="bg-obsidian text-ink-light py-20 lg:py-28">
+      <div class="max-w-7xl mx-auto px-4 sm:px-8 grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+        <div class="lg:col-span-5 space-y-5">
+          <span class="font-code-technical text-xs uppercase tracking-widest text-bio-emerald-light">05 · Contacto Directo</span>
+          <h2 class="font-headline-xl text-headline-xl-mobile md:text-headline-xl text-ink-light">
+            Solicita tu inspección técnica
+          </h2>
+          <p class="font-body-lg text-ink-muted">
+            Formulario interactivo de demostración de Zero Plague. Completa los campos para comprobar la validación accesible y la confirmación visual.
+          </p>
+        </div>
+
+        <div class="lg:col-span-7 bg-forest border border-ink-light/15 rounded-2xl p-6 sm:p-8">
+          <form class="space-y-5" id="final-lead-form">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label for="lead_nombre" class="block font-label-md text-ink-light mb-1.5">Nombre completo *</label>
+                <input id="lead_nombre" name="lead_nombre" type="text" required placeholder="Tu nombre" class="w-full px-4 py-3 rounded-lg bg-obsidian border border-ink-light/20 text-ink-light">
+              </div>
+              <div>
+                <label for="lead_telefono" class="block font-label-md text-ink-light mb-1.5">Teléfono *</label>
+                <input id="lead_telefono" name="lead_telefono" type="tel" required placeholder="912 622 712" class="w-full px-4 py-3 rounded-lg bg-obsidian border border-ink-light/20 text-ink-light">
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label for="lead_email" class="block font-label-md text-ink-light mb-1.5">Correo electrónico *</label>
+                <input id="lead_email" name="lead_email" type="email" required placeholder="nombre@ejemplo.com" class="w-full px-4 py-3 rounded-lg bg-obsidian border border-ink-light/20 text-ink-light">
+              </div>
+              <div>
+                <label for="lead_tipo_inmueble" class="block font-label-md text-ink-light mb-1.5">Tipo de inmueble</label>
+                <select id="lead_tipo_inmueble" name="lead_tipo_inmueble" class="w-full px-4 py-3 rounded-lg bg-obsidian border border-ink-light/20 text-ink-light">
+                  <option value="vivienda">Vivienda particular</option>
+                  <option value="comunidad">Comunidad de propietarios</option>
+                  <option value="horeca">Hostelería / Restauración</option>
+                  <option value="empresa">Empresa / Nave industrial</option>
+                </select>
+              </div>
+            </div>
+
+            <div>
+              <label for="lead_descripcion" class="block font-label-md text-ink-light mb-1.5">Descripción breve</label>
+              <textarea id="lead_descripcion" name="lead_descripcion" rows="3" placeholder="Describe brevemente la incidencia..." class="w-full px-4 py-3 rounded-lg bg-obsidian border border-ink-light/20 text-ink-light"></textarea>
+            </div>
+
+            <div class="flex items-start gap-2.5">
+              <input id="rgpd" name="rgpd" type="checkbox" required class="mt-1 h-4 w-4 rounded border-ink-light/30 text-bio-emerald">
+              <label for="rgpd" class="font-body-sm text-ink-muted">Acepto simular el envío en esta demostración comercial de Zero Plague (sin transmisión de datos reales).</label>
+            </div>
+
+            <button type="submit" data-magnetic class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-bio-emerald text-obsidian px-7 py-3.5 rounded-lg font-label-md font-bold hover:bg-bio-emerald-light transition-colors">
+              <span>Enviar solicitud (Demo)</span>
+              <span class="material-symbols-outlined text-[18px]">send</span>
+            </button>
+
+            <div id="final-confirm" class="hidden p-4 rounded-xl bg-obsidian border border-bio-emerald text-ink-light">
+              <p class="font-label-md font-bold text-bio-emerald-light">Solicitud de demostración validada</p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Botones flotantes -->
+  <div class="fixed bottom-5 right-5 z-40 flex items-center gap-2 bg-obsidian/90 backdrop-blur-md p-1.5 rounded-full border border-ink-light/15 shadow-lg">
+    <a class="flex items-center gap-1.5 bg-bio-emerald text-obsidian px-4 py-2 rounded-full font-label-md text-xs font-bold hover:bg-bio-emerald-light transition-colors" href="#contacto-final">
+      <span class="material-symbols-outlined text-[16px]">support_agent</span>
+      <span class="hidden sm:inline">Guardia 24h</span>
+    </a><a class="flex items-center gap-1.5 bg-forest text-bio-emerald-light px-4 py-2 rounded-full font-label-md text-xs font-semibold hover:bg-obsidian transition-colors" href="https://wa.me/34912622712" rel="noopener noreferrer" target="_blank"><span class="material-symbols-outlined text-[16px]">chat</span><span class="hidden sm:inline">WhatsApp</span></a>
+    
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="bg-obsidian text-ink-light border-t border-ink-light/10 py-14">
+    <div class="max-w-7xl mx-auto px-4 sm:px-8 grid grid-cols-1 md:grid-cols-3 gap-10">
+      <div class="space-y-3">
+        <span class="font-headline-sm text-xl font-extrabold tracking-tight text-ink-light">ZERO PLAGUE</span>
+        <p class="font-body-md text-ink-muted">
+          Demostración comercial de sanidad ambiental y bioseguridad.
+        </p>
+      </div>
+      <div class="space-y-2">
+        <h3 class="font-code-technical text-xs uppercase tracking-widest text-bio-emerald-light">Navegación</h3>
+        <ul class="space-y-1.5 font-body-md text-ink-muted">
+          <li><a href="index.html" class="hover:text-ink-light transition-colors">Inicio</a></li>
+          <li><a href="#servicios" class="hover:text-ink-light transition-colors">Servicios Técnicos</a></li>
+          <li><a href="#segment-particulares" class="hover:text-ink-light transition-colors">Empresas y Comunidades</a></li>
+          <li><a href="#contacto-final" class="hover:text-ink-light transition-colors">Contacto y Urgencias</a></li>
+        </ul>
+      </div>
+      <div class="space-y-2">
+        <h3 class="font-code-technical text-xs uppercase tracking-widest text-bio-emerald-light">Contacto Demo</h3>
+        <p class="font-code-technical text-sm text-ink-light">Tel: Formulario de diagnóstico</p>
+        <p class="font-code-technical text-sm text-ink-muted">admin@zerocode-devops.com</p>
+        <p class="font-body-sm text-ink-muted pt-2">Sede Demostrativa · Ejemplo de Portfolio</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    function showSegment(seg) {
+      const pPart = document.getElementById("segment-panel-particulares");
+      const pEmp = document.getElementById("segment-panel-empresas");
+      const bPart = document.getElementById("tab-btn-particulares");
+      const bEmp = document.getElementById("tab-btn-empresas");
+      if (!pPart || !pEmp || !bPart || !bEmp) return;
+
+      const isPart = seg === "particulares";
+      pPart.classList.toggle("hidden", !isPart);
+      pEmp.classList.toggle("hidden", isPart);
+      bPart.className = isPart
+        ? "px-4 py-2 rounded-md font-label-md text-sm bg-obsidian text-ink-light transition-colors"
+        : "px-4 py-2 rounded-md font-label-md text-sm text-ink-dark-muted hover:text-ink-dark transition-colors";
+      bEmp.className = !isPart
+        ? "px-4 py-2 rounded-md font-label-md text-sm bg-obsidian text-ink-light transition-colors"
+        : "px-4 py-2 rounded-md font-label-md text-sm text-ink-dark-muted hover:text-ink-dark transition-colors";
+    }
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js" integrity="sha384-qOkzR5Ke/XkQxuGVJ9hpFEpDlcoLtWwVYhnJf06cLIZa2vaIptSqaubivErzmD5O" crossorigin="anonymous" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" integrity="sha384-g4NTh/Iv5PPU4xPyhEWqPcwtNXOvdaDI8LLnyYfyNZOjKJeYQyjzQ9X5275eBjpt" crossorigin="anonymous" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" integrity="sha384-Z3REaz79l2IaAZqJsSABtTbhjgOUYyV3p90XNnAPCSHg3EMTz1fouunq9WZRtj3d" crossorigin="anonymous" defer></script>
+  <script src="assets/js/main.js" defer></script>
+  <script src="assets/js/forms.js" defer></script>
+  <script src="assets/js/motion.js" defer></script>
+</body>
+</html>

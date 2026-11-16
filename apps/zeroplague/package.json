@@ -1,0 +1,13 @@
+{
+  "name": "zeroplague-demo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Demo comercial Zero Plague — Portfolio Zero Code DevOps",
+  "scripts": {
+    "dev": "tailwindcss -i ./assets/css/input.css -o ./assets/css/styles.css --watch",
+    "build": "tailwindcss -i ./assets/css/input.css -o ./assets/css/styles.css --minify"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.17"
+  }
+}
