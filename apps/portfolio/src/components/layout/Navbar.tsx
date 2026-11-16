@@ -1,4 +1,4 @@
-import { AnimatePresence, motion } from 'framer-motion';
+import { AnimatePresence, motion, useScroll, useSpring } from 'framer-motion';
 import { Menu, MessageCircle, X } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
@@ -18,6 +18,12 @@ export function Navbar() {
   const navigate = useNavigate();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const { scrollYProgress } = useScroll();
+  const scaleX = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001,
+  });
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(globalThis.scrollY > 24);
@@ -43,6 +49,11 @@ export function Navbar() {
 
   return (
     <motion.header initial={{ y: -72 }} animate={{ y: 0 }} transition={{ duration: 0.4 }} className={cn('fixed inset-x-0 top-0 z-50 border-b border-white/15 bg-[#001b41] text-white transition-shadow duration-300', isScrolled ? 'shadow-[0_8px_25px_rgba(0,27,65,.24)]' : '')}>
+      <motion.div
+        style={{ scaleX }}
+        className="fixed top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-[#006b92] via-[#11c7e6] to-[#d9fbff] origin-left z-50"
+        aria-hidden="true"
+      />
       <div className="container-custom"><nav aria-label="Navegación principal" className="flex min-h-[70px] items-center justify-between gap-6">
         <a href="/" className="flex shrink-0 items-center" onClick={(event)=>{event.preventDefault();handleNavClick('/');}} aria-label="ZeroCode, inicio"><img src={logoZero} alt="ZeroCode DevOps" className="h-[54px] w-[164px] object-cover object-center sm:h-[58px] sm:w-[174px]" fetchPriority="high"/></a>
         <div className="hidden items-center gap-5 lg:flex xl:gap-7">{navLinks.map((link)=><a key={link.href} href={link.href} className="text-sm font-medium text-white/80 transition-colors hover:text-[#11c7e6]" onClick={(event)=>{event.preventDefault();handleNavClick(link.href);}}>{link.label}</a>)}</div>

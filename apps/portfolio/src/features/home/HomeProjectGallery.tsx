@@ -12,21 +12,28 @@ const projects = [
   { name: 'Zero Breakdown', sector: 'Fontanería · Electricidad · Climatización', note: 'Concepto web con especialidades interactivas e identidad visual propia.', demoDetail: 'Cifras, acreditaciones y disponibilidad son datos de ejemplo. Los formularios son simulados y no transmiten ni guardan información.', href: '/proyectos/zero-breakdown', mark: 'ZB', tone: 'from-[#e9e4f5] to-[#f5f2fc]', image: '/assets/projects/thumbnails/project-zero-breakdown.webp', demo: true },
   { name: 'ZeroRisk', sector: 'Prevención de riesgos laborales', note: 'Concepto web para servicios de prevención y seguridad laboral.', demoDetail: 'Proyecto de demostración; datos, acreditaciones, cifras y contacto son simulados. El formulario solo muestra una respuesta de ejemplo y no transmite ni guarda datos.', href: '/proyectos/zerorisk.html', mark: 'ZR', tone: 'from-[#e8ebed] to-[#f5f6f6]', image: '/assets/projects/thumbnails/project-zerorisk.webp', demo: true },
   { name: 'Zero Atelier', sector: 'Enmarcación y conservación', note: 'Taller de enmarcación artesanal de autor, conservación de obras y molduras a medida.', demoDetail: 'Proyecto de demostración; catálogo de molduras, presupuestos y pedidos son simulados.', href: '/proyectos/zeroatelier.html', mark: 'ZA', tone: 'from-[#f5f0eb] to-[#fbf8f5]', image: '/assets/projects/thumbnails/project-zeroatelier.webp', demo: true },
+  { name: 'Zero Plague', sector: 'Sanidad ambiental y bioseguridad', note: 'Control integral de plagas, bioseguridad y sanidad ambiental con rigor clínico.', demoDetail: 'Proyecto de demostración; catálogo técnico, diagnóstico interactivo y solicitud de guardia 24/7 simulados.', href: '/proyectos/zeroplague/index.html', mark: 'ZP', tone: 'from-[#d8e3fb] to-[#f0f3ff]', image: '/assets/projects/thumbnails/project-zeroplague.webp', demo: true },
 ];
 
 type Project = (typeof projects)[number];
 
-function ProjectCard({ project, index }: { project: Project; index: number }) {
+interface ProjectCardProps {
+  readonly project: Project;
+  readonly index: number;
+}
+
+function ProjectCard({ project, index }: ProjectCardProps) {
   const cardRef = useRef<HTMLElement>(null);
   const prefersReducedMotion = useReducedMotion();
   const { scrollYProgress } = useScroll({
     target: cardRef,
     offset: ['start end', 'end start'],
   });
+  const defaultYRange = index % 2 === 0 ? [64, -64] : [-64, 64];
   const cardY = useTransform(
     scrollYProgress,
     [0, 1],
-    prefersReducedMotion ? [0, 0] : index % 2 === 0 ? [64, -64] : [-64, 64],
+    prefersReducedMotion ? [0, 0] : defaultYRange,
   );
   const imageY = useTransform(
     scrollYProgress,

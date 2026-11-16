@@ -1,0 +1,604 @@
+<!DOCTYPE html><html class="scroll-smooth" lang="es"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><meta content="web_standard" name="shell-type"><link href="https://fonts.googleapis.com" rel="preconnect"><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@500;600;700;800&amp;family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;family=Plus+Jakarta+Sans:wght@100..900&amp;display=swap" rel="stylesheet"><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top: 0;}main>:last-child{margin-bottom: 0;}}::-webkit-scrollbar{display:none;}.material-symbols-outlined{font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "on-primary-fixed-variant": "#314c3f", "on-background": "#111c2d", "error": "#ba1a1a", "primary-fixed-dim": "#afcebc", "on-primary": "#ffffff", "on-tertiary-fixed-variant": "#6e3900", "surface": "#f9f9ff", "on-primary-fixed": "#042015", "on-secondary": "#ffffff", "primary-fixed": "#caead7", "outline": "#727974", "inverse-on-surface": "#ecf1ff", "on-tertiary-container": "#d47300", "surface-container-low": "#f0f3ff", "inverse-surface": "#263143", "on-tertiary-fixed": "#2f1500", "tertiary-fixed": "#ffdcc3", "background": "#f9f9ff", "primary": "#00140b", "primary-container": "#0e2a1e", "secondary-container": "#82f5c1", "on-error": "#ffffff", "secondary": "#006c4a", "tertiary": "#1e0b00", "surface-tint": "#486456", "tertiary-container": "#3d1d00", "outline-variant": "#c2c8c2", "on-surface": "#111c2d", "on-surface-variant": "#424844", "on-error-container": "#93000a", "inverse-primary": "#afcebc", "on-secondary-container": "#00714e", "surface-container-highest": "#d8e3fb", "surface-container": "#e7eeff", "error-container": "#ffdad6", "on-tertiary": "#ffffff", "surface-container-lowest": "#ffffff", "on-primary-container": "#759382", "surface-bright": "#f9f9ff", "surface-container-high": "#dee8ff", "surface-dim": "#cfdaf2", "on-secondary-fixed-variant": "#005137", "secondary-fixed": "#85f8c4", "surface-variant": "#d8e3fb", "tertiary-fixed-dim": "#ffb77d", "on-secondary-fixed": "#002114", "secondary-fixed-dim": "#68dba9" }, "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, "spacing": { "margin": "2rem", "space-sm": "0.5rem", "space-xs": "0.25rem", "space-lg": "1.5rem", "space-xl": "2.5rem", "gutter": "1.5rem", "space-md": "1rem" }, "fontFamily": { "label-md": ["Inter"], "display-lg": ["Plus Jakarta Sans"], "display-lg-mobile": ["Plus Jakarta Sans"], "headline-md": ["Plus Jakarta Sans"], "headline-lg": ["Plus Jakarta Sans"], "body-sm": ["Inter"], "body-lg": ["Inter"], "body-xl": ["Inter"], "headline-xl": ["Plus Jakarta Sans"], "code-technical": ["JetBrains Mono"], "body-md": ["Inter"], "headline-xl-mobile": ["Plus Jakarta Sans"], "headline-lg-mobile": ["Plus Jakarta Sans"], "label-sm": ["Inter"], "headline-sm": ["Plus Jakarta Sans"] }, "fontSize": { "label-md": ["13px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" }], "display-lg": ["56px", { "lineHeight": "64px", "letterSpacing": "-0.03em", "fontWeight": "800" }], "display-lg-mobile": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "800" }], "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "600" }], "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "body-sm": ["12px", { "lineHeight": "18px", "letterSpacing": "0.01em", "fontWeight": "400" }], "body-lg": ["16px", { "lineHeight": "26px", "letterSpacing": "-0.005em", "fontWeight": "400" }], "body-xl": ["18px", { "lineHeight": "28px", "letterSpacing": "-0.005em", "fontWeight": "400" }], "headline-xl": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.025em", "fontWeight": "700" }], "code-technical": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500" }], "body-md": ["14px", { "lineHeight": "22px", "letterSpacing": "0em", "fontWeight": "400" }], "headline-xl-mobile": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "headline-lg-mobile": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "700" }], "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.05em", "fontWeight": "600" }], "headline-sm": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600" }] } } } };</script></head><body class="bg-surface text-on-surface antialiased selection:bg-secondary-container selection:text-on-secondary-container"><header class="fixed top-0 left-0 right-0 z-50"><div class="bg-primary-container text-on-primary-container py-1.5 px-margin"><div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-space-xs font-label-sm text-label-sm"><div class="flex items-center gap-space-sm"><span class="inline-flex items-center gap-1.5 bg-primary px-2 py-0.5 rounded text-secondary-fixed"><span class="w-1.5 h-1.5 rounded-full bg-secondary-fixed animate-pulse"></span>NORMATIVA UNE-EN 16636</span><span class="text-primary-fixed-dim hidden sm:inline">Sanidad ambiental certificada | Cobertura peninsular y respuesta técnica en &lt;2h</span></div><div class="flex items-center gap-space-md"><span class="text-primary-fixed-dim hidden lg:inline">ROESB N°: 0984-AND-750</span><a class="text-secondary-fixed hover:text-on-primary transition-colors flex items-center gap-1 font-semibold" data-path="contacto" href="contacto.html">Atención técnica inmediata vía WhatsApp</a></div></div></div><div class="bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-20 max-w-7xl mx-auto px-margin flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-md shrink-0"><img alt="Zero Plague Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/ALJJyrCG1-756nKMyr7k7oRp8SmG5AUV-AUsxe1lIVJDUiy4P_ei0kAumwjc9P_1gGOYoF15ynj_FA8-V1mVB9ll9FyKxNz4k9Eefj9riWwOqnZKA1YDrN2ZNYVEnbCd1iac9WObuMRIkhYZUhh4HeOr4X0yUFIx3MWy983RQ0wYzbmxJDIJoEd3U-rlI84mn8pvl43jwKvnh-E4FqEXuPe1-AkVsdT3A2IfnfXfKN9caH1jag"><div class="hidden sm:flex flex-col"><span class="font-headline-sm text-headline-sm font-bold tracking-tight text-primary leading-none">Zero Plague</span><span class="font-label-sm text-label-sm text-secondary font-medium tracking-wider uppercase mt-0.5">Sanidad Ambiental</span></div></div><nav aria-label="Navegación principal" class="hidden xl:flex items-center gap-space-lg" data-active-classes="text-secondary font-semibold"><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors py-2" data-path="inicio" href="index.html">Inicio</a><div class="relative group"><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors py-2 flex items-center gap-1" data-path="servicios" href="servicios.html">Servicios</a></div><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors py-2" data-path="particulares" href="index.html#segment-particulares">Particulares</a><a aria-current="page" class="transition-colors py-2 text-secondary font-semibold" data-path="empresas-y-comunidades" href="empresas-y-comunidades.html">Empresas y Comunidades</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors py-2" data-path="nosotros" href="index.html#pilares">Nosotros</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors py-2" data-path="contacto" href="contacto.html">Contacto</a></nav><div class="flex items-center gap-space-md"><a class="hidden md:flex items-center gap-space-sm bg-surface-container-low px-space-md py-2 rounded-xl text-left" href="tel:+34912622712"><span class="relative flex h-2.5 w-2.5"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-error opacity-75"></span><span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-error"></span></span><div class="flex flex-col"><span class="font-label-sm text-label-sm font-bold text-error uppercase tracking-wider leading-none">Urgencias 24/7</span><span class="font-code-technical text-code-technical font-semibold text-on-surface mt-0.5">912 622 712</span></div></a><a class="inline-flex items-center gap-space-sm bg-secondary text-on-secondary px-space-lg py-2.5 rounded-lg shadow-sm hover:bg-primary-container hover:text-on-primary transition-all font-label-md text-label-md" data-path="solicitar-presupuesto" href="contacto.html"><span class="font-semibold">Solicitar Presupuesto</span><span class="material-symbols-outlined text-secondary-fixed text-[18px]">arrow_forward</span></a><a href="/" class="hidden lg:inline-flex items-center gap-1 text-xs font-semibold text-on-surface-variant hover:text-primary transition-colors border border-outline-variant/60 rounded px-2.5 py-1.5 bg-surface-container-low/60"><span class="material-symbols-outlined text-[15px]">arrow_back</span>ZeroCode</a><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></div></header><main class="w-full pt-28 bg-surface min-h-screen"><div class="flex flex-col w-full">
+<!-- BREADCRUMBS & TOP NAV CONTEXT -->
+<section class="max-w-7xl mx-auto w-full px-margin pt-6 pb-2">
+<nav aria-label="Miga de pan" class="flex items-center gap-space-xs font-label-sm text-label-sm text-on-surface-variant">
+<a class="hover:text-secondary transition-colors" data-path="inicio" href="index.html">Inicio</a>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="text-on-surface font-semibold">Empresas y Comunidades</span>
+<span class="ml-auto hidden md:inline-flex items-center gap-1.5 bg-secondary-container/30 text-on-secondary-container px-2.5 py-0.5 rounded font-code-technical text-code-technical font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+        SLA CORPORATIVO: INTERVENCIÓN &lt; 2 HORAS
+      </span>
+</nav>
+</section>
+<!-- HERO SECTION WITH EDITORIAL ASYMMETRY -->
+<section class="max-w-7xl mx-auto w-full px-margin py-space-lg">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-stretch">
+<!-- Title & Mission Column -->
+<div class="lg:col-span-7 flex flex-col justify-between space-y-space-md">
+<div class="space-y-space-md">
+<div class="inline-flex items-center gap-2 bg-surface-container-low px-3 py-1 rounded text-secondary font-label-md text-label-md">
+<span class="material-symbols-outlined text-[18px]">verified_user</span>
+<span class="">Auditorías APPCC &amp; Sanidad Ambiental Homologada</span>
+</div>
+<h1 class="font-display-lg text-display-lg-mobile md:text-display-lg text-primary tracking-tight font-extrabold leading-tight">
+            Control de Plagas y Bioseguridad Certificada para Empresas, HORECA y Comunidades
+          </h1>
+<p class="font-body-xl text-body-xl text-on-surface-variant max-w-2xl">
+            Cumplimiento normativo riguroso, auditorías APPCC y planes de vigilancia técnica continua para blindar la reputación sanitaria y operativa de tu organización.
+          </p>
+</div>
+<!-- Quick Indicators Grid -->
+<div class="grid grid-cols-2 sm:grid-cols-3 gap-space-sm pt-space-md">
+<div class="bg-surface-container-lowest p-space-md rounded shadow-sm">
+<span class="font-headline-lg text-headline-lg font-bold text-secondary block">100%</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Conformidad en inspecciones oficiales</span>
+</div>
+<div class="bg-surface-container-lowest p-space-md rounded shadow-sm">
+<span class="font-headline-lg text-headline-lg font-bold text-primary block">&gt;3.400</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Puntos críticos HORECA blindados</span>
+</div>
+<div class="col-span-2 sm:col-span-1 bg-surface-container-lowest p-space-md rounded shadow-sm flex flex-col justify-center">
+<span class="font-code-technical text-code-technical font-bold text-on-surface block">UNE-EN 16636</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Protocolo Biológico Sanitario</span>
+</div>
+</div>
+<div class="flex flex-wrap items-center gap-space-md pt-space-xs">
+<a class="inline-flex items-center gap-space-sm bg-secondary text-on-secondary px-space-xl py-3 rounded shadow hover:bg-primary-container transition-all font-label-md text-label-md font-semibold" href="#cotizador-b2b">
+<span class="">Solicitar Auditoría Técnica Gratuita</span>
+<span class="material-symbols-outlined text-[18px]">assignment_turned_in</span>
+</a>
+<a class="inline-flex items-center gap-2 bg-surface-container text-on-surface px-space-lg py-3 rounded hover:bg-surface-container-high transition-colors font-label-md text-label-md font-medium" href="#portal-legal">
+<span class="material-symbols-outlined text-secondary text-[20px]">folder_special</span>
+<span class="">Ver Marco Normativo</span>
+</a>
+</div>
+</div>
+<!-- Hero Visual Column -->
+<div class="lg:col-span-5 relative flex flex-col">
+<div class="relative w-full h-[380px] lg:h-full rounded-xl overflow-hidden shadow-md">
+<img alt="Inspección higiénico-sanitaria y auditoría de puntos críticos en cocina industrial de alta capacidad, técnicos con indumentaria de bioseguridad revisando registros con el jefe de cocina" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDbPDaFTY883qnvv7Sg51qbdSV9VAMFPE5v81R7kucbcwXUM_QvLwXkKdfzosvcQZWxKe0PMXO060EzTe32YVztT4B0ppKin4zTCae76dB8xKzpHDC3wOukKVqZnHrmSCUo6GVLBQdJoW0WiISwa31RgWVf67IC8ewLbA9x84TFIohYGYG9uNMQeDuMZC0MNujuHDppi_UUMwq3zdjfxRVJnIwwxtavZDfIoav0OUNb">
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-primary/20 to-transparent"></div>
+<!-- Live Telemetry Pill Overlay -->
+<div class="absolute bottom-4 left-4 right-4 bg-surface-container-lowest/95 backdrop-blur-md p-space-md rounded shadow-lg">
+<div class="flex items-center justify-between gap-space-xs">
+<div class="flex items-center gap-2">
+<span class="relative flex h-2.5 w-2.5">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-secondary"></span>
+</span>
+<span class="font-label-sm text-label-sm font-bold text-on-surface uppercase tracking-wider">Inspección In Situ Validada</span>
+</div>
+<span class="font-code-technical text-code-technical text-secondary font-semibold">ROESB 0984-AND</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+              Monitoreo activo de vectores y endotoxinas bajo estándares APPCC sin interrupción de cocina.
+            </p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- TARGET VERTICALS BENTO GRID -->
+<section class="max-w-7xl mx-auto w-full px-margin py-space-xl">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-md mb-space-lg">
+<div>
+<span class="font-label-sm text-label-sm text-secondary font-bold uppercase tracking-widest block mb-1">Especialización Sectorial</span>
+<h2 class="font-headline-xl text-headline-xl text-primary font-bold">Soluciones a Medida por Industria</h2>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-md">
+        Diseñamos protocolos de exclusión física, telemetría IoT y tratamientos químicos de nulo impacto en la operativa cotidiana.
+      </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-lg">
+<!-- 1. HORECA -->
+<div class="bg-surface-container-lowest p-space-xl rounded-xl shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow">
+<div class="space-y-space-md">
+<div class="flex items-center justify-between">
+<div class="w-12 h-12 rounded bg-surface-container-low flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[28px]">restaurant</span>
+</div>
+<span class="bg-secondary-container/40 text-on-secondary-container font-label-sm text-label-sm font-semibold px-2.5 py-1 rounded">
+              Prioridad HORECA
+            </span>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md font-bold text-primary mb-2">Restauración, Bares y Hoteles</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+              Protección ininterrumpida frente a inspecciones de Sanidad y quejas de clientes. Discreción quirúrgica y tolerancia cero a insectos o roedores.
+            </p>
+</div>
+<div class="space-y-2.5 pt-2">
+<div class="flex items-start gap-2.5 text-on-surface">
+<span class="material-symbols-outlined text-secondary text-[20px] shrink-0 mt-0.5">check_circle</span>
+<span class="font-body-sm text-body-sm"><strong class="font-semibold text-primary">Mantenimiento preventivo mensual</strong> con revisión de puntos calientes de cocinas, cámaras y barras.</span>
+</div>
+<div class="flex items-start gap-2.5 text-on-surface">
+<span class="material-symbols-outlined text-secondary text-[20px] shrink-0 mt-0.5">check_circle</span>
+<span class="font-body-sm text-body-sm"><strong class="font-semibold text-primary">Cebadores ocultos inviolables</strong> integrados en mobiliario estético sin visibilidad para el comensal.</span>
+</div>
+<div class="flex items-start gap-2.5 text-on-surface">
+<span class="material-symbols-outlined text-secondary text-[20px] shrink-0 mt-0.5">check_circle</span>
+<span class="font-body-sm text-body-sm"><strong class="font-semibold text-primary">Certificados sanitarios reglamentarios</strong> y Libro Oficial de Registro de Tratamientos Biocidas siempre actualizado.</span>
+</div>
+</div>
+</div>
+<div class="mt-space-lg pt-space-md bg-surface-container-low p-space-md rounded flex items-center justify-between">
+<div class="font-code-technical text-code-technical text-on-surface-variant">
+            Inspección Sanitaria: <span class="text-secondary font-bold">100% Blindada</span>
+</div>
+<a class="font-label-sm text-label-sm font-semibold text-secondary hover:underline flex items-center gap-1" href="#cotizador-b2b">
+            Auditar Local <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- 2. Industria Alimentaria -->
+<div class="bg-surface-container-lowest p-space-xl rounded-xl shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow">
+<div class="space-y-space-md">
+<div class="flex items-center justify-between">
+<div class="w-12 h-12 rounded bg-surface-container-low flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[28px]">precision_manufacturing</span>
+</div>
+<span class="bg-surface-container-high text-primary font-label-sm text-label-sm font-semibold px-2.5 py-1 rounded">
+              Auditorías Globales
+            </span>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md font-bold text-primary mb-2">Industria Alimentaria y Logística</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+              Trazabilidad integral para plantas transformadoras, secaderos, silos y centros de distribución con exigencia documental de primer nivel.
+            </p>
+</div>
+<div class="space-y-2.5 pt-2">
+<div class="flex items-start gap-2.5 text-on-surface">
+<span class="material-symbols-outlined text-secondary text-[20px] shrink-0 mt-0.5">check_circle</span>
+<span class="font-body-sm text-body-sm"><strong class="font-semibold text-primary">Detección precoz y exclusión física</strong> en muelles de carga, falsos techos y silos de almacenamiento.</span>
+</div>
+<div class="flex items-start gap-2.5 text-on-surface">
+<span class="material-symbols-outlined text-secondary text-[20px] shrink-0 mt-0.5">check_circle</span>
+<span class="font-body-sm text-body-sm"><strong class="font-semibold text-primary">Estándares BRC, IFS e ISO 22000</strong> con dossieres técnicos preparados para auditorías de certificación.</span>
+</div>
+<div class="flex items-start gap-2.5 text-on-surface">
+<span class="material-symbols-outlined text-secondary text-[20px] shrink-0 mt-0.5">check_circle</span>
+<span class="font-body-sm text-body-sm"><strong class="font-semibold text-primary">Informes digitalizados de tendencias</strong> poblacionales con cartografía vectorial de capturas por lote.</span>
+</div>
+</div>
+</div>
+<div class="mt-space-lg pt-space-md bg-surface-container-low p-space-md rounded flex items-center justify-between">
+<div class="font-code-technical text-code-technical text-on-surface-variant">
+            Validación: <span class="text-primary font-bold">IFS Food / BRC Packaging</span>
+</div>
+<a class="font-label-sm text-label-sm font-semibold text-secondary hover:underline flex items-center gap-1" href="#cotizador-b2b">
+            Planes APPCC <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- 3. Comunidades de Propietarios -->
+<div class="bg-surface-container-lowest p-space-xl rounded-xl shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow">
+<div class="space-y-space-md">
+<div class="flex items-center justify-between">
+<div class="w-12 h-12 rounded bg-surface-container-low flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[28px]">apartment</span>
+</div>
+<span class="bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm font-semibold px-2.5 py-1 rounded">
+              Fincas &amp; Mancomunidades
+            </span>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md font-bold text-primary mb-2">Comunidades y Administradores de Fincas</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+              Intervenciones integrales en áreas comunes, saneamiento y garajes para erradicar plagas de raíz y evitar quejas vecinales recurrentes.
+            </p>
+</div>
+<div class="space-y-2.5 pt-2">
+<div class="flex items-start gap-2.5 text-on-surface">
+<span class="material-symbols-outlined text-secondary text-[20px] shrink-0 mt-0.5">check_circle</span>
+<span class="font-body-sm text-body-sm"><strong class="font-semibold text-primary">Tratamientos periódicos de arquetas</strong>, redes de saneamiento, bajantes generales y canalizaciones húmedas.</span>
+</div>
+<div class="flex items-start gap-2.5 text-on-surface">
+<span class="material-symbols-outlined text-secondary text-[20px] shrink-0 mt-0.5">check_circle</span>
+<span class="font-body-sm text-body-sm"><strong class="font-semibold text-primary">Atención prioritaria vecinal</strong> con tarifas y condiciones concertadas para viviendas privativas del edificio.</span>
+</div>
+<div class="flex items-start gap-2.5 text-on-surface">
+<span class="material-symbols-outlined text-secondary text-[20px] shrink-0 mt-0.5">check_circle</span>
+<span class="font-body-sm text-body-sm"><strong class="font-semibold text-primary">Avisos anticipados en cartelería</strong> oficial cumpliendo protocolos de seguridad para mascotas y niños.</span>
+</div>
+</div>
+</div>
+<div class="mt-space-lg pt-space-md bg-surface-container-low p-space-md rounded flex items-center justify-between">
+<div class="font-code-technical text-code-technical text-on-surface-variant">
+            Convenio: <span class="text-primary font-bold">Colegio Admin. Fincas</span>
+</div>
+<a class="font-label-sm text-label-sm font-semibold text-secondary hover:underline flex items-center gap-1" href="#cotizador-b2b">
+            Pedir Tarifa Comunidad <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- 4. Oficinas, Centros Educativos y Gimnasios -->
+<div class="bg-surface-container-lowest p-space-xl rounded-xl shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow">
+<div class="space-y-space-md">
+<div class="flex items-center justify-between">
+<div class="w-12 h-12 rounded bg-surface-container-low flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[28px]">corporate_fare</span>
+</div>
+<span class="bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm font-semibold px-2.5 py-1 rounded">
+              Cero Interrupción
+            </span>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md font-bold text-primary mb-2">Oficinas, Educación y Centros Deportivos</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+              Ambientes limpios y seguros para empleados, alumnos y usuarios. Intervenciones fuera de franja operativa sin alterar la productividad.
+            </p>
+</div>
+<div class="space-y-2.5 pt-2">
+<div class="flex items-start gap-2.5 text-on-surface">
+<span class="material-symbols-outlined text-secondary text-[20px] shrink-0 mt-0.5">check_circle</span>
+<span class="font-body-sm text-body-sm"><strong class="font-semibold text-primary">Operativa en horario nocturno o fin de semana</strong> con reingreso garantizado sin olores ni residuos.</span>
+</div>
+<div class="flex items-start gap-2.5 text-on-surface">
+<span class="material-symbols-outlined text-secondary text-[20px] shrink-0 mt-0.5">check_circle</span>
+<span class="font-body-sm text-body-sm"><strong class="font-semibold text-primary">Biocidas de toxicidad nula o plazo mínimo</strong> autorizados para espacios docentes e instalaciones sensibles.</span>
+</div>
+<div class="flex items-start gap-2.5 text-on-surface">
+<span class="material-symbols-outlined text-secondary text-[20px] shrink-0 mt-0.5">check_circle</span>
+<span class="font-body-sm text-body-sm"><strong class="font-semibold text-primary">Control microbiológico</strong> en conductos HVAC y purificación del aire ambiental contra patógenos.</span>
+</div>
+</div>
+</div>
+<div class="mt-space-lg pt-space-md bg-surface-container-low p-space-md rounded flex items-center justify-between">
+<div class="font-code-technical text-code-technical text-on-surface-variant">
+            Seguridad: <span class="text-secondary font-bold">Plazo Reentrada 0h</span>
+</div>
+<a class="font-label-sm text-label-sm font-semibold text-secondary hover:underline flex items-center gap-1" href="#cotizador-b2b">
+            Programar Turno <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- DATA & ANALYTICS PREVIEW (BENTO COMPONENT) -->
+<section class="max-w-7xl mx-auto w-full px-margin py-space-lg">
+<div class="bg-primary text-on-primary rounded-xl p-space-xl relative overflow-hidden shadow-lg">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-center relative z-10">
+<div class="lg:col-span-6 space-y-space-md">
+<span class="font-code-technical text-code-technical text-secondary-fixed tracking-wider uppercase">Vigilancia Continua</span>
+<h2 class="font-headline-lg text-headline-lg font-bold">Telemetría y Control de Tendencias Poblacionales</h2>
+<p class="font-body-md text-body-md text-primary-fixed-dim">
+            Nuestros clientes corporativos cuentan con monitores electrónicos y estaciones inteligentes que recopilan datos 24/7. Detectamos fluctuaciones biológicas semanas antes de que se manifiesten en superficie.
+          </p>
+<div class="grid grid-cols-3 gap-space-sm pt-2">
+<div class="bg-primary-container p-3 rounded">
+<span class="font-headline-sm text-headline-sm font-bold text-secondary-fixed block">-94%</span>
+<span class="font-label-sm text-label-sm text-on-primary-container">Incidencias anuales</span>
+</div>
+<div class="bg-primary-container p-3 rounded">
+<span class="font-headline-sm text-headline-sm font-bold text-secondary-fixed block">&lt;2h</span>
+<span class="font-label-sm text-label-sm text-on-primary-container">Activación urgente</span>
+</div>
+<div class="bg-primary-container p-3 rounded">
+<span class="font-headline-sm text-headline-sm font-bold text-secondary-fixed block">100%</span>
+<span class="font-label-sm text-label-sm text-on-primary-container">Digitalizado</span>
+</div>
+</div>
+</div>
+<div class="lg:col-span-6 bg-primary-container/80 backdrop-blur-md p-space-md rounded-lg">
+<div class="flex items-center justify-between pb-space-sm mb-space-sm bg-primary/40 p-2.5 rounded">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary-fixed text-[20px]">insights</span>
+<span class="font-label-md text-label-md font-semibold text-on-primary">Índice Poblacional de Riesgo (Últimas 12 Semanas)</span>
+</div>
+<span class="font-code-technical text-code-technical text-secondary-fixed">NIVEL 0 - SEGURO</span>
+</div>
+<!-- Trend Chart Visual SVG -->
+<div class="w-full h-44 flex items-center justify-center">
+<svg class="w-full h-full text-secondary-fixed" fill="none" viewBox="0 0 450 140" role="img" aria-label="Gráfica de tendencia de bioseguridad">
+<title>Gráfica de reducción de incidencias biológicas</title>
+<!-- Grid background -->
+<path d="M10 20 H440 M10 60 H440 M10 100 H440" stroke="rgba(255,255,255,0.08)" stroke-width="1"></path>
+<!-- Safe threshold line -->
+<path d="M10 40 H440" stroke="rgba(245,158,11,0.4)" stroke-dasharray="4 4" stroke-width="1"></path>
+<text fill="rgba(255,255,255,0.4)" font-family="JetBrains Mono" font-size="9" x="360" y="36">LÍMITE ALERTA</text>
+<!-- Trend Line -->
+<path d="M15 110 C 60 95, 90 120, 130 85 C 170 50, 200 70, 240 45 C 280 20, 310 35, 360 25 C 400 18, 420 18, 435 15" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="3"></path>
+<!-- Gradient under line -->
+<path d="M15 110 C 60 95, 90 120, 130 85 C 170 50, 200 70, 240 45 C 280 20, 310 35, 360 25 C 400 18, 420 18, 435 15 L 435 130 L 15 130 Z" fill="rgba(133,248,196,0.08)"></path>
+<!-- Active Points -->
+<circle cx="240" cy="45" fill="#85f8c4" r="4"></circle>
+<circle cx="360" cy="25" fill="#85f8c4" r="4"></circle>
+<circle cx="435" cy="15" fill="#85f8c4" r="5"></circle>
+</svg>
+</div>
+<div class="flex items-center justify-between text-on-primary-container font-code-technical text-code-technical pt-2">
+<span class="">S-01 (Auditoría Inicial)</span>
+<span class="">S-06 (Intervención Exclusión)</span>
+<span class="text-secondary-fixed">S-12 (Control Total)</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- COMPLIANCE & LEGAL SHIELD SECTION -->
+<section class="max-w-7xl mx-auto w-full px-margin py-space-xl" id="portal-legal">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-start">
+<!-- Left side: Legal compliance explanations -->
+<div class="lg:col-span-7 space-y-space-md">
+<span class="font-label-sm text-label-sm text-secondary font-bold uppercase tracking-widest block">Blindaje Jurídico y Sanitario</span>
+<h2 class="font-headline-xl text-headline-xl text-primary font-bold">
+          Cumplimiento Riguroso de la Legislación Española y Comunitaria
+        </h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Una infracción sanitaria o un tratamiento realizado por personal no homologado puede acarrear multas superiores a 60.000 € y la clausura cautelar de instalaciones. En Zero Plague operamos exclusivamente bajo el amparo de la legislación técnica más exigente.</p>
+<div class="space-y-space-md pt-2">
+<!-- Accordion/Card 1 -->
+<div class="bg-surface-container-lowest p-space-md rounded shadow-sm">
+<div class="flex items-center gap-space-sm mb-2">
+<span class="material-symbols-outlined text-secondary text-[24px]">gavel</span>
+<h3 class="font-headline-sm text-headline-sm text-primary font-semibold">Real Decreto 830/2010</h3>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+              Garantía legal de capacitación: todo nuestro cuadro técnico posee el Certificado de Profesionalidad de Servicios para el Control de Plagas (Nivel 2 y 3) y supervisión directa por Responsables Técnicos Biólogos y Químicos colegiados.
+            </p>
+</div>
+<!-- Accordion/Card 2 -->
+<div class="bg-surface-container-lowest p-space-md rounded shadow-sm">
+<div class="flex items-center gap-space-sm mb-2">
+<span class="material-symbols-outlined text-secondary text-[24px]">verified</span>
+<h3 class="font-headline-sm text-headline-sm text-primary font-semibold">Norma UNE-EN 16636</h3>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+              El estándar europeo de máxima categoría para empresas de Gestión de Plagas. Acredita una metodología analítica basada en inspección inicial, evaluación de riesgos, diagnosis científica y minimización de materias activas residuales.
+            </p>
+</div>
+<!-- Accordion/Card 3 -->
+<div class="bg-surface-container-lowest p-space-md rounded shadow-sm">
+<div class="flex items-center gap-space-sm mb-2">
+<span class="material-symbols-outlined text-secondary text-[24px]">health_and_safety</span>
+<h3 class="font-headline-sm text-headline-sm text-primary font-semibold">Registro Sanitario Oficial ROESB</h3>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+              Inscripción oficial n° <strong>0984-AND-750</strong> en el Registro Oficial de Establecimientos y Servicios Biocidas. Todos los productos utilizados constan en el registro del Ministerio de Sanidad con fichas toxicológicas validadas.
+            </p>
+</div>
+</div>
+</div>
+<!-- Right side: Digital Portal Feature Card -->
+<div class="lg:col-span-5 bg-surface-container-low p-space-xl rounded-xl shadow-sm flex flex-col justify-between">
+<div class="space-y-space-md">
+<div class="inline-flex items-center gap-2 bg-surface-container-lowest px-3 py-1 rounded text-secondary font-code-technical text-code-technical">
+<span class="material-symbols-outlined text-[16px]">cloud_done</span>
+            PORTAL DEL CLIENTE 24/7
+          </div>
+<h3 class="font-headline-lg text-headline-lg text-primary font-bold">
+            Documentación Inmediata ante Inspecciones
+          </h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+            Acceso en tiempo real a la bóveda documental de cada una de tus sedes. Muestra los certificados sanitarios al inspector directamente desde tu smartphone o tableta.
+          </p>
+<!-- Mock Document Stack -->
+<div class="space-y-2 pt-2">
+<div class="bg-surface-container-lowest p-space-sm rounded flex items-center justify-between shadow-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[20px]">description</span>
+<span class="font-body-sm text-body-sm font-semibold text-primary">Certificado Oficial de Desinfección</span>
+</div>
+<span class="font-code-technical text-code-technical text-secondary">PDF FIRMADO</span>
+</div>
+<div class="bg-surface-container-lowest p-space-sm rounded flex items-center justify-between shadow-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[20px]">map</span>
+<span class="font-body-sm text-body-sm font-semibold text-primary">Plano de Cebado y Puntos Críticos</span>
+</div>
+<span class="font-code-technical text-code-technical text-secondary">MAPA VECTOR</span>
+</div>
+<div class="bg-surface-container-lowest p-space-sm rounded flex items-center justify-between shadow-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[20px]">science</span>
+<span class="font-body-sm text-body-sm font-semibold text-primary">Fichas de Datos de Seguridad (FDS)</span>
+</div>
+<span class="font-code-technical text-code-technical text-secondary">REG. SANIDAD</span>
+</div>
+</div>
+</div>
+<div class="mt-space-lg pt-space-md bg-surface-container-lowest p-space-md rounded">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary text-[32px]">qr_code_scanner</span>
+<div>
+<p class="font-label-md text-label-md font-bold text-primary">Trazabilidad con Código QR</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Adhesivos identificativos en cada estación de monitoreo.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- INTERACTIVE B2B QUOTE CALCULATOR & AUDIT REQUEST -->
+<section class="max-w-7xl mx-auto w-full px-margin py-space-xl" id="cotizador-b2b">
+<div class="bg-surface-container-lowest rounded-xl p-space-xl shadow-md">
+<div class="max-w-3xl mb-space-lg">
+<span class="font-label-sm text-label-sm text-secondary font-bold uppercase tracking-widest block mb-1">Presupuesto Técnico Corporativo</span>
+<h2 class="font-headline-xl text-headline-xl text-primary font-bold">
+          Calculadora de Auditoría Previa y Propuesta en 24h
+        </h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mt-2">
+          Introduce las características de tus instalaciones para que nuestro departamento técnico elabore un plan de vigilancia a medida y sin compromiso.
+        </p>
+</div>
+<form class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-space-md" id="auditForm" onsubmit="event.preventDefault(); handleFormSubmit();">
+<!-- Sector Activity -->
+<div class="space-y-1.5">
+<label for="sectorSelect" class="font-label-md text-label-md font-semibold text-primary flex items-center gap-1.5"><span class="material-symbols-outlined text-secondary text-[16px]">domain</span>Sector de Actividad</label>
+<select class="w-full bg-surface-container-low text-on-surface p-3 rounded font-body-md text-body-md focus:outline-none focus:bg-surface-container-lowest" id="sectorSelect">
+<option value="horeca">Hostelería y Restauración (HORECA)</option>
+<option value="industria">Industria Alimentaria / Transformación</option>
+<option value="comunidad">Comunidad de Propietarios / Fincas</option>
+<option value="logistica">Logística, Almacenes y Distribución</option>
+<option value="corporativo">Oficinas y Edificios Corporativos</option>
+<option value="educacion">Colegios / Centros Infantiles</option>
+<option value="sanitario">Clínicas y Centros de Salud</option>
+</select>
+</div>
+<!-- Surface Square Meters -->
+<div class="space-y-1.5">
+<label for="superficieSelect" class="font-label-md text-label-md font-semibold text-primary flex items-center gap-1.5"><span class="material-symbols-outlined text-secondary text-[16px]">straighten</span>Superficie Total Estimada</label>
+<select class="w-full bg-surface-container-low text-on-surface p-3 rounded font-body-md text-body-md focus:outline-none focus:bg-surface-container-lowest" id="superficieSelect">
+<option value="s1">Hasta 150 m² (Local estándar)</option>
+<option value="s2">150 m² a 500 m² (Restaurante mediano / Sede)</option>
+<option value="s3">500 m² a 1.500 m² (Comunidad / Nave)</option>
+<option value="s4">1.500 m² a 5.000 m² (Industria / Complejo)</option>
+<option value="s5">Más de 5.000 m² (Planta Logística / Multisede)</option>
+</select>
+</div>
+<!-- Number of Locations -->
+<div class="space-y-1.5">
+<label for="sedesSelect" class="font-label-md text-label-md font-semibold text-primary flex items-center gap-1.5"><span class="material-symbols-outlined text-secondary text-[16px]">pin_drop</span>Número de Sedes o Locales</label>
+<select class="w-full bg-surface-container-low text-on-surface p-3 rounded font-body-md text-body-md focus:outline-none focus:bg-surface-container-lowest" id="sedesSelect">
+<option value="1">1 sede / localización única</option>
+<option value="2-5">2 a 5 sedes (Grupo local)</option>
+<option value="6-20">6 a 20 sedes (Red regional)</option>
+<option value="20+">Más de 20 sedes (Cobertura nacional)</option>
+</select>
+</div>
+<!-- Urgency / Status -->
+<div class="space-y-1.5">
+<label for="estadoSelect" class="font-label-md text-label-md font-semibold text-primary flex items-center gap-1.5"><span class="material-symbols-outlined text-secondary text-[16px]">warning</span>Estado Actual de la Instalación</label>
+<select class="w-full bg-surface-container-low text-on-surface p-3 rounded font-body-md text-body-md focus:outline-none focus:bg-surface-container-lowest" id="estadoSelect">
+<option value="preventivo">Mantenimiento preventivo rutinario</option>
+<option value="inspeccion">Inspección Sanitaria programada</option>
+<option value="activa">Sospecha o plaga activa detectada</option>
+<option value="auditoria">Certificación IFS / BRC inminente</option>
+</select>
+</div>
+<!-- Contact Name -->
+<div class="space-y-1.5">
+<label for="responsableInput" class="font-label-md text-label-md font-semibold text-primary flex items-center gap-1.5"><span class="material-symbols-outlined text-secondary text-[16px]">person</span>Nombre del Responsable Técnico / Cargo</label>
+<input class="w-full bg-surface-container-low text-on-surface p-3 rounded font-body-md text-body-md focus:outline-none focus:bg-surface-container-lowest" id="responsableInput" placeholder="Ej. Carlos Méndez (Director de Operaciones)" required="" type="text">
+</div>
+<!-- Contact Phone / Email -->
+<div class="space-y-1.5">
+<label for="contactoInput" class="font-label-md text-label-md font-semibold text-primary flex items-center gap-1.5"><span class="material-symbols-outlined text-secondary text-[16px]">alternate_email</span>Teléfono y Correo Corporativo</label>
+<input class="w-full bg-surface-container-low text-on-surface p-3 rounded font-body-md text-body-md focus:outline-none focus:bg-surface-container-lowest" id="contactoInput" placeholder="telefono@empresa.com / 600..." required="" type="text">
+</div>
+<!-- Submit Button Span 3 -->
+<div class="md:col-span-2 lg:col-span-3 pt-space-sm flex flex-col sm:flex-row items-center justify-between gap-space-md">
+<div class="flex items-center gap-2 text-on-surface-variant font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-secondary text-[20px]">lock</span>
+<span class="">Estricta confidencialidad bajo contrato NDA. Respuesta técnica en &lt; 24 horas laborables.</span>
+</div>
+<button class="w-full sm:w-auto inline-flex items-center justify-center gap-space-sm bg-secondary text-on-secondary px-space-xl py-3.5 rounded shadow-sm hover:bg-primary-container transition-all font-label-md text-label-md font-bold" type="submit">
+<span class="">Enviar Solicitud y Recibir Auditoría</span>
+<span class="material-symbols-outlined text-[18px]">send</span>
+</button>
+</div>
+</form>
+<!-- Feedback Banner on Submission -->
+<div class="hidden mt-space-md p-space-md bg-secondary-container text-on-secondary-container rounded flex items-center gap-space-sm" id="formSuccess">
+<span class="material-symbols-outlined text-[24px]">task_alt</span>
+<div class="font-body-md text-body-md">
+<strong>Solicitud B2B registrada con éxito.</strong> Un Responsable Técnico de Zona se pondrá en contacto en menos de 24 horas para coordinar la inspección in situ y remitir el diagnóstico.
+        </div>
+</div>
+</div>
+</section>
+<!-- FAQ / TECHNICAL TRUST CARDS -->
+<section class="max-w-7xl mx-auto w-full px-margin py-space-xl">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-lg">
+<div class="bg-surface-container-low p-space-lg rounded">
+<span class="material-symbols-outlined text-secondary text-[32px] mb-2">schedule</span>
+<h4 class="font-headline-sm text-headline-sm text-primary font-bold mb-1">Flexibilidad Horaria Total</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">
+          Trabajamos de noche, madrugadas o domingos para no interrumpir el servicio de tu restaurante ni la operativa de tu fábrica.
+        </p>
+</div>
+<div class="bg-surface-container-low p-space-lg rounded">
+<span class="material-symbols-outlined text-secondary text-[32px] mb-2">shield_with_heart</span>
+<h4 class="font-headline-sm text-headline-sm text-primary font-bold mb-1">Bioseguridad Sin Olores</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">
+          Empleo de microgeles cebo de última generación y trampas de feromonas sin disolventes volátiles ni riesgo para la comida.
+        </p>
+</div>
+<div class="bg-surface-container-low p-space-lg rounded">
+<span class="material-symbols-outlined text-secondary text-[32px] mb-2">receipt_long</span>
+<h4 class="font-headline-sm text-headline-sm text-primary font-bold mb-1">Facturación Consolidada</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">
+          Para cadenas HORECA y administradores de fincas: informes agrupados, albaranes digitales centralizados y condiciones de pago adaptadas.
+        </p>
+</div>
+</div>
+</section>
+<script>
+    function handleFormSubmit() {
+      const banner = document.getElementById('formSuccess');
+      if (banner) {
+        banner.classList.remove('hidden');
+        banner.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }
+    }
+  </script>
+</div></main><div class="fixed bottom-6 right-6 z-40 flex items-center gap-space-sm bg-surface-container-lowest/90 backdrop-blur-md p-1.5 rounded-full shadow-[0_4px_20px_rgba(0,0,0,0.08)]"><a class="flex items-center gap-space-xs bg-secondary text-on-secondary px-space-md py-2 rounded-full font-label-md text-label-md shadow-sm hover:bg-primary-container transition-all" data-path="contacto" href="contacto.html"><span class="material-symbols-outlined text-[18px]">support_agent</span><span class="hidden sm:inline font-semibold">Guardia 24h</span></a><a class="flex items-center gap-space-xs bg-primary text-secondary-fixed px-space-md py-2 rounded-full font-label-md text-label-md hover:bg-primary-container transition-all" href="https://wa.me/" rel="noopener noreferrer" target="_blank"><span class="material-symbols-outlined text-[18px]">chat</span><span class="hidden sm:inline font-semibold">WhatsApp</span></a></div><footer class="w-full bg-surface-container-low text-on-surface mt-space-xl"><div class="max-w-7xl mx-auto px-margin py-space-xl"><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-xl"><div class="space-y-space-md"><div class="flex items-center gap-space-sm"><img alt="Zero Plague Logo" class="h-7 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/ALJJyrCG1-756nKMyr7k7oRp8SmG5AUV-AUsxe1lIVJDUiy4P_ei0kAumwjc9P_1gGOYoF15ynj_FA8-V1mVB9ll9FyKxNz4k9Eefj9riWwOqnZKA1YDrN2ZNYVEnbCd1iac9WObuMRIkhYZUhh4HeOr4X0yUFIx3MWy983RQ0wYzbmxJDIJoEd3U-rlI84mn8pvl43jwKvnh-E4FqEXuPe1-AkVsdT3A2IfnfXfKN9caH1jag"><span class="font-headline-sm text-headline-sm font-bold text-primary">Zero Plague</span></div><p class="font-body-md text-body-md text-on-surface-variant">Entidad técnica especializada en bioseguridad, sanidad ambiental y control integral de plagas. Intervenciones clínicas certificadas bajo protocolos UNE-EN e ISO.</p><div class="space-y-2 pt-2"><div class="inline-flex items-center gap-2 bg-surface-container-lowest px-2.5 py-1.5 rounded text-on-surface font-code-technical text-code-technical shadow-[0_1px_3px_rgba(0,0,0,0.03)]"><span class="material-symbols-outlined text-secondary text-[16px]">verified</span>ROESB Reg. Sanitario: 0984-AND-750</div><div class="inline-flex items-center gap-2 bg-surface-container-lowest px-2.5 py-1.5 rounded text-on-surface font-code-technical text-code-technical shadow-[0_1px_3px_rgba(0,0,0,0.03)]"><span class="material-symbols-outlined text-secondary text-[16px]">military_tech</span>Certificación UNE-EN 16636 Bioseguridad</div></div></div><div class="space-y-space-md"><h3 class="font-headline-sm text-headline-sm text-primary font-bold">Servicios Principales</h3><ul class="space-y-2 font-body-md text-body-md text-on-surface-variant"><li class="flex items-center gap-2 hover:text-secondary transition-colors cursor-pointer"><span class="material-symbols-outlined text-[16px] text-secondary">arrow_right_alt</span>Desinsectación técnica avanzada</li><li class="flex items-center gap-2 hover:text-secondary transition-colors cursor-pointer"><span class="material-symbols-outlined text-[16px] text-secondary">arrow_right_alt</span>Desratización y exclusión biológica</li><li class="flex items-center gap-2 hover:text-secondary transition-colors cursor-pointer"><span class="material-symbols-outlined text-[16px] text-secondary">arrow_right_alt</span>Erradicación de chinches (termo-control)</li><li class="flex items-center gap-2 hover:text-secondary transition-colors cursor-pointer"><span class="material-symbols-outlined text-[16px] text-secondary">arrow_right_alt</span>Tratamiento biológico de termitas</li><li class="flex items-center gap-2 hover:text-secondary transition-colors cursor-pointer"><span class="material-symbols-outlined text-[16px] text-secondary">arrow_right_alt</span>Control de cucarachas y endotoxinas</li><li class="flex items-center gap-2 hover:text-secondary transition-colors cursor-pointer"><span class="material-symbols-outlined text-[16px] text-secondary">arrow_right_alt</span>Desinfección ambiental y patógenos</li></ul></div><div class="space-y-space-md"><h3 class="font-headline-sm text-headline-sm text-primary font-bold">Soluciones por Sector</h3><ul class="space-y-2 font-body-md text-body-md text-on-surface-variant"><li class="flex items-center gap-2 hover:text-secondary transition-colors cursor-pointer"><span class="material-symbols-outlined text-[16px] text-secondary">domain</span>Hostelería y Restauración (HORECA)</li><li class="flex items-center gap-2 hover:text-secondary transition-colors cursor-pointer"><span class="material-symbols-outlined text-[16px] text-secondary">precision_manufacturing</span>Industria Alimentaria y APPCC</li><li class="flex items-center gap-2 hover:text-secondary transition-colors cursor-pointer"><span class="material-symbols-outlined text-[16px] text-secondary">apartment</span>Comunidades y Fincas Residenciales</li><li class="flex items-center gap-2 hover:text-secondary transition-colors cursor-pointer"><span class="material-symbols-outlined text-[16px] text-secondary">local_shipping</span>Logística, Almacenes y Silos</li><li class="flex items-center gap-2 hover:text-secondary transition-colors cursor-pointer"><span class="material-symbols-outlined text-[16px] text-secondary">home</span>Viviendas Particulares y Chalets</li><li class="flex items-center gap-2 hover:text-secondary transition-colors cursor-pointer"><span class="material-symbols-outlined text-[16px] text-secondary">local_hospital</span>Clínicas y Espacios Sanitarios</li></ul></div><div class="space-y-space-md"><h3 class="font-headline-sm text-headline-sm text-primary font-bold">Atención Inmediata</h3><p class="font-body-md text-body-md text-on-surface-variant">Sede Operativa Central y Laboratorio de Diagnóstico Biológico.</p><div class="space-y-space-sm font-body-md text-body-md text-on-surface"><div class="flex items-start gap-2"><span class="material-symbols-outlined text-secondary text-[20px] mt-0.5">location_on</span><span class="">Parque Tecnológico de Madrid, Calle Bioquímica 14, 28760 Tres Cantos, Madrid</span></div><div class="flex items-center gap-2"><span class="material-symbols-outlined text-secondary text-[20px]">call</span><span class="font-code-technical text-code-technical font-semibold">912 622 712 / +34 912 622 712</span></div><div class="flex items-center gap-2"><span class="material-symbols-outlined text-secondary text-[20px]">mail</span><span class="font-code-technical text-code-technical">admin@zerocode-devops.com</span></div><div class="flex items-center gap-2"><span class="material-symbols-outlined text-secondary text-[20px]">schedule</span><span class="">Servicio Continuado 24/7 (Guardia Técnica)</span></div></div></div></div><div class="mt-space-xl pt-space-lg flex flex-col md:flex-row items-center justify-between gap-space-md"><p class="font-body-sm text-body-sm text-on-surface-variant text-center md:text-left">© 2025 Zero Plague S.L. Todos los derechos reservados. Homologación Sanitaria Oficial Registro Oficial Biocidas.</p><div class="flex flex-wrap items-center justify-center gap-space-md font-label-sm text-label-sm text-on-surface-variant"><a class="hover:text-primary transition-colors" data-path="aviso-legal" href="#">Aviso Legal</a><a class="hover:text-primary transition-colors" data-path="politica-privacidad" href="#">Política de Privacidad (RGPD)</a><a class="hover:text-primary transition-colors" data-path="politica-cookies" href="#">Política de Cookies</a><a class="hover:text-primary transition-colors" data-path="certificados-calidad" href="#">Certificados de Calidad</a></div></div></div></footer>
+
+<!-- GSAP & ScrollTrigger Engine -->
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    if (typeof gsap === "undefined" || typeof ScrollTrigger === "undefined") return;
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Reading Progress Bar
+    const progressBar = document.createElement("div");
+    progressBar.id = "gsap-progress-bar";
+    progressBar.style.cssText = "position:fixed;top:0;left:0;height:4px;background:linear-gradient(90deg, #006c4a, #82f5c1);width:0%;z-index:9999;pointer-events:none;";
+    document.body.appendChild(progressBar);
+
+    gsap.to(progressBar, {
+      width: "100%",
+      ease: "none",
+      scrollTrigger: {
+        trigger: document.body,
+        start: "top top",
+        end: "bottom bottom",
+        scrub: 0.3
+      }
+    });
+
+    // Cards and Sections scrub reveal
+    const cards = document.querySelectorAll("main .grid > div, main article, main form");
+    cards.forEach((card) => {
+      gsap.fromTo(card,
+        { opacity: 0.45, y: 30 },
+        {
+          opacity: 1,
+          y: 0,
+          ease: "power1.out",
+          scrollTrigger: {
+            trigger: card,
+            start: "top 90%",
+            end: "top 65%",
+            scrub: 0.4
+          }
+        }
+      );
+    });
+
+    // Content images scrub scale
+    const images = document.querySelectorAll("main img.object-cover:not(header img)");
+    images.forEach((img) => {
+      gsap.fromTo(img,
+        { scale: 0.94 },
+        {
+          scale: 1.0,
+          ease: "none",
+          scrollTrigger: {
+            trigger: img,
+            start: "top 90%",
+            end: "top 50%",
+            scrub: 0.5
+          }
+        }
+      );
+    });
+  });
+</script>
+</body></html>
