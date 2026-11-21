@@ -87,7 +87,7 @@ const skillCategoriesData: SkillCategory[] = [
   {
     key: 'backend',
     icon: <Server className="w-6 h-6" />,
-    color: 'from-orange-500 to-red-500',
+    color: 'from-blue-500 to-cyan-400',
     skills: [
       { name: 'Firebase Hosting', icon: <Cloud className="w-4 h-4" />, level: 95 },
       { name: 'Node.js', icon: <Terminal className="w-4 h-4" />, level: 75 },

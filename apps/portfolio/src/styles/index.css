@@ -2,6 +2,46 @@
 @source "../../../zerodelay/src/pages/ZeroDelayMarkup.ts";
 @source "../../../zerovanity/src";
 
+:root {
+  --zc-bg: #F7F6F3;
+  --zc-surface: #FFFFFF;
+  --zc-surface-alt: #EFECE6;
+  --zc-obsidian: #09090B;
+  --zc-ink: #111111;
+  --zc-muted: #5C5B57;
+  --zc-border: #E2DFD7;
+  --zc-accent: #0077CC;
+  --zc-accent-light: #4DB7FF;
+  --zc-accent-deep: #004B8A;
+  --zc-font-sans: 'Plus Jakarta Sans', 'Inter', system-ui, -apple-system, sans-serif;
+  --zc-font-serif: 'Instrument Serif', Georgia, serif;
+  --zc-font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
+}
+
+.font-editorial {
+  font-family: var(--zc-font-serif);
+}
+
+.font-tech {
+  font-family: var(--zc-font-mono);
+}
+
+.container-custom {
+  width: 100%;
+  max-width: 1360px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+@media (min-width: 768px) {
+  .container-custom {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+  }
+}
+
 .theme-salon .booking-cta {
   background-color: #bf953f;
   color: #080808;

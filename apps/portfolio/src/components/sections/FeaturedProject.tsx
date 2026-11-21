@@ -181,7 +181,7 @@ export function FeaturedProject() {
                 </div>
               </div>
               <div className="text-center">
-                <div className="flex items-center justify-center gap-1 text-xl font-bold text-orange-400">
+                <div className="flex items-center justify-center gap-1 text-xl font-bold text-blue-400">
                   <GitCommit className="w-4 h-4" />
                   {featuredProject.stats.commits}
                 </div>

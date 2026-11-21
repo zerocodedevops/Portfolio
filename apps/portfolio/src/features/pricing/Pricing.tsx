@@ -1,38 +1,171 @@
-import { Check, MessageCircle } from 'lucide-react';
-import { Seo } from '@/components/common/SEO';
-import { Layout } from '@/components/layout';
-import { ParallaxBackdrop } from '@/components/ui/ParallaxBackdrop';
+import { ArrowUpRight, Check, MessageCircle } from "lucide-react";
+import { Seo } from "@/components/common/SEO";
+import { Layout } from "@/components/layout";
 
-const inclusions = [
-  'Una sola página con Inicio y Contacto',
-  'Botón de redirección a WhatsApp',
-  'Diseño adaptado a móviles',
-  'Banner de Cookies RGPD',
-  'Dominio y hosting durante un año',
-  'Certificado SSL',
+const essentialInclusions = [
+	"Web de una página con Inicio y Contacto",
+	"Diseño adaptado a móviles",
+	"Dominio y hosting durante un año",
+	"Certificado SSL",
+	"Botón directo de WhatsApp",
+	"Banner de Cookies RGPD",
+];
+
+const customInclusions = [
+	"Webs multipágina y arquitectura editorial",
+	"Tiendas online y flujos interactivos",
+	"Aplicaciones web en React y TypeScript",
+	"Automatizaciones e integraciones a medida",
 ];
 
 export default function Pricing() {
-  return <Layout>
-    <Seo title="Presupuesto web y demo personalizada" description="Pide una demo personalizada en 48 horas sin compromiso. Nos adaptamos a tu presupuesto para que el precio no sea un problema." />
-    <main className="relative isolate overflow-hidden bg-[#f3f7fa] px-4 pb-24 pt-32 sm:px-6">
-      <ParallaxBackdrop />
-      <div className="container-custom relative z-10">
-        <header className="mx-auto mb-12 max-w-3xl text-center">
-          <p className="mb-4 text-xs font-bold uppercase tracking-[0.19em] text-[#087cae]">Precio claro</p>
-          <h1 className="font-outfit text-4xl font-semibold tracking-tight text-[#071a35] sm:text-5xl">Una propuesta adaptada a tu presupuesto</h1>
-          <div className="mt-5 space-y-2 text-lg leading-8 text-[#586a80]"><p>Una página cuidada para presentar tu negocio y facilitar que contacten contigo.</p><p>Trabajo online en toda España.</p></div>
-        </header>
-        <section className="mx-auto max-w-4xl border border-[#dce4eb] bg-white p-6 shadow-sm sm:p-10" aria-labelledby="price-includes">
-          <div className="flex flex-col justify-between gap-6 border-b border-[#dce4eb] pb-7 sm:flex-row sm:items-end">
-            <div><h2 id="price-includes" className="font-outfit text-2xl font-semibold text-[#071a35]">Web de una página</h2><p className="mt-2 text-sm text-[#586a80]">Inicio y contacto, con el alcance indicado a continuación.</p></div>
-            <p className="font-outfit text-4xl font-semibold text-[#071a35]">Demo en 48h</p>
-          </div>
-          <ul className="grid gap-4 py-8 text-sm leading-6 text-[#263c56] sm:grid-cols-2">{inclusions.map((item,index)=><li key={item} className={`flex gap-3 ${index < 2 ? 'sm:col-span-2' : ''}`}><Check className="mt-0.5 h-4 w-4 shrink-0 text-[#0789bd]" aria-hidden="true"/>{item}</li>)}</ul>
-          <div className="space-y-2 border-t border-[#dce4eb] pt-6 text-sm leading-6 text-[#586a80]"><p>Propuesta visual adaptada a tu negocio y recibida en 48 horas sin compromiso.</p><p>Cualquier renovación o mantenimiento posterior se acordará y presupuestará antes de contratarlo.</p><p>Si necesitas un alcance distinto, cuéntame qué tienes en mente.</p><p>Recibirás una propuesta y un presupuesto acordados antes de empezar.</p></div>
-          <div className="mt-7 flex flex-wrap gap-3"><a href="/#contacto" className="inline-flex min-h-12 items-center gap-2 bg-[#087cae] px-5 font-semibold text-white transition hover:bg-[#071a35]">Quiero mi demo</a><a href="https://wa.me/34912622712?text=Hola%2C%20quiero%20consultar%20una%20web%20para%20mi%20negocio." target="_blank" rel="noopener noreferrer" className="inline-flex min-h-12 items-center gap-2 border border-[#0b294a] px-5 font-semibold text-[#0b294a] transition hover:bg-[#0b294a] hover:text-white"><MessageCircle className="h-4 w-4"/>WhatsApp</a></div>
-        </section>
-      </div>
-    </main>
-  </Layout>;
+	return (
+		<Layout>
+			<Seo
+				title="Tarifas y Niveles de Proyecto | ZeroCode DevOps"
+				description="Lanzamiento Esencial para autónomos y pymes, y Plataformas y Soluciones a Medida. Solicita diagnóstico y presupuesto personalizado."
+			/>
+			<main className="border-b border-[#E2DFD7] bg-[#F7F6F3] px-4 pb-24 pt-32 text-[#111111] sm:px-6">
+				<div className="container-custom">
+					<header className="mb-16 border-b border-[#E2DFD7] pb-10">
+						<p className="font-tech mb-3 text-xs font-medium uppercase tracking-widest text-[#0077CC]">
+							TARIFAS Y ALCANCE MODULAR
+						</p>
+						<h1 className="max-w-[18ch] text-[clamp(2.25rem,4.5vw,4rem)] font-semibold leading-[1.02] tracking-tight text-[#111111]">
+							Dos niveles claros, mismo rigor técnico.
+						</h1>
+						<p className="mt-5 max-w-[58ch] text-base leading-relaxed text-[#5C5B57] md:text-lg">
+							Trabajamos en remoto bajo presupuesto personalizado tras un
+							diagnóstico breve, adaptando el alcance a lo que tu negocio
+							necesita realmente.
+						</p>
+					</header>
+
+					<div className="grid gap-10 lg:grid-cols-12">
+						<section
+							className="flex flex-col justify-between rounded-2xl border border-[#E2DFD7] bg-white p-8 sm:p-10 lg:col-span-6"
+							aria-labelledby="nivel-1-title"
+						>
+							<div>
+								<div className="flex items-baseline justify-between gap-4 border-b border-[#E2DFD7] pb-6">
+									<div>
+										<span className="font-tech text-xs font-semibold uppercase tracking-widest text-[#0077CC]">
+											NIVEL 1 · LANZAMIENTO ESENCIAL
+										</span>
+										<h2
+											id="nivel-1-title"
+											className="mt-2 text-2xl font-semibold text-[#111111]"
+										>
+											Presencia profesional rápida
+										</h2>
+									</div>
+									<span className="font-tech text-xs font-semibold uppercase tracking-widest text-[#111111]">
+										Consultar presupuesto
+									</span>
+								</div>
+
+								<p className="mt-5 text-sm leading-relaxed text-[#5C5B57]">
+									Pensado para autónomos, profesionales y pequeñas empresas que
+									necesitan una web clara, rápida y lista para captar contactos.
+								</p>
+
+								<ul className="mt-6 grid gap-3 border-t border-[#E2DFD7] pt-6 text-sm text-[#111111]">
+									{essentialInclusions.map((item) => (
+										<li key={item} className="flex items-start gap-3">
+											<Check
+												className="mt-0.5 h-4 w-4 shrink-0 text-[#0077CC]"
+												strokeWidth={1.75}
+												aria-hidden="true"
+											/>
+											<span>{item}</span>
+										</li>
+									))}
+								</ul>
+							</div>
+
+							<div className="mt-8 flex flex-wrap gap-3 border-t border-[#E2DFD7] pt-6">
+								<a
+									href="/#contacto"
+									className="group inline-flex min-h-12 items-center gap-2 rounded-full bg-[#111111] px-6 text-xs font-medium uppercase tracking-widest text-[#F7F6F3] transition-colors hover:bg-[#0077CC] hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0077CC]"
+								>
+									<span>Consultar presupuesto</span>
+									<ArrowUpRight
+										className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+										strokeWidth={1.5}
+										aria-hidden="true"
+									/>
+								</a>
+								<a
+									href="https://wa.me/34912622712?text=Hola%2C%20quiero%20consultar%20presupuesto%20para%20el%20Nivel%201%20Lanzamiento%20Esencial."
+									target="_blank"
+									rel="noopener noreferrer"
+									className="inline-flex min-h-12 items-center gap-2 rounded-full border border-[#111111] px-5 text-xs font-medium uppercase tracking-widest text-[#111111] transition-colors hover:bg-[#111111] hover:text-[#F7F6F3] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0077CC]"
+								>
+									<MessageCircle className="h-4 w-4" aria-hidden="true" />
+									<span>WhatsApp</span>
+								</a>
+							</div>
+						</section>
+
+						<section
+							className="flex flex-col justify-between rounded-2xl border border-white/10 bg-[#09090B] p-8 text-[#F7F6F3] sm:p-10 lg:col-span-6"
+							aria-labelledby="nivel-2-title"
+						>
+							<div>
+								<div className="flex items-baseline justify-between gap-4 border-b border-white/15 pb-6">
+									<div>
+										<span className="font-tech text-xs font-semibold uppercase tracking-widest text-[#0077CC]">
+											NIVEL 2 · SOLUCIONES A MEDIDA
+										</span>
+										<h2
+											id="nivel-2-title"
+											className="mt-2 text-2xl font-semibold text-[#F7F6F3]"
+										>
+											Plataformas y producto digital
+										</h2>
+									</div>
+									<span className="font-tech text-xs font-semibold uppercase tracking-widest text-white/80">
+										Consultar presupuesto
+									</span>
+								</div>
+
+								<p className="mt-5 text-sm leading-relaxed text-white/75">
+									Para empresas y proyectos con necesidades específicas de
+									diseño, comercio electrónico, aplicaciones interactivas o
+									automatización.
+								</p>
+
+								<ul className="mt-6 grid gap-3 border-t border-white/15 pt-6 text-sm text-[#F7F6F3]">
+									{customInclusions.map((item) => (
+										<li key={item} className="flex items-start gap-3">
+											<Check
+												className="mt-0.5 h-4 w-4 shrink-0 text-[#0077CC]"
+												strokeWidth={1.75}
+												aria-hidden="true"
+											/>
+											<span>{item}</span>
+										</li>
+									))}
+								</ul>
+							</div>
+
+							<div className="mt-8 flex flex-wrap gap-3 border-t border-white/15 pt-6">
+								<a
+									href="/#contacto"
+									className="group inline-flex min-h-12 items-center gap-2 rounded-full bg-[#0077CC] px-6 text-xs font-medium uppercase tracking-widest text-white transition-colors hover:bg-white hover:text-[#111111] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0077CC]"
+								>
+									<span>Solicitar diagnóstico</span>
+									<ArrowUpRight
+										className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+										strokeWidth={1.5}
+										aria-hidden="true"
+									/>
+								</a>
+							</div>
+						</section>
+					</div>
+				</div>
+			</main>
+		</Layout>
+	);
 }

@@ -1,66 +1,217 @@
-import { AnimatePresence, motion, useScroll, useSpring } from 'framer-motion';
-import { Menu, MessageCircle, X } from 'lucide-react';
-import { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { cn } from '@/lib/utils';
-import logoZero from '@/assets/zerocode-horizontal-optimized.webp';
+import {
+	AnimatePresence,
+	motion,
+	useReducedMotion,
+	useScroll,
+	useSpring,
+} from "framer-motion";
+import { ArrowUpRight } from "lucide-react";
+import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import logoZero from "@/assets/zerocode-horizontal-optimized.webp";
+import { cn } from "@/lib/utils";
 
 const navLinks = [
-  { label: 'Proceso', href: '#proceso' },
-  { label: 'Servicio', href: '#servicio' },
-  { label: 'Precio', href: '#inversion' },
-  { label: 'Sobre mí', href: '#sobre-mi' },
-  { label: 'Proyectos', href: '#projects' },
-  { label: 'Preguntas', href: '#preguntas' },
+	{ code: "01", label: "Estudio", href: "#sobre-mi" },
+	{ code: "02", label: "Servicios", href: "#servicio" },
+	{ code: "03", label: "Proyectos", href: "#projects" },
+	{ code: "04", label: "Metodología", href: "#proceso" },
+	{ code: "05", label: "Tarifas", href: "/precios-paginas-web" },
 ];
 
 export function Navbar() {
-  const navigate = useNavigate();
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const { scrollYProgress } = useScroll();
-  const scaleX = useSpring(scrollYProgress, {
-    stiffness: 100,
-    damping: 30,
-    restDelta: 0.001,
-  });
+	const navigate = useNavigate();
+	const prefersReducedMotion = useReducedMotion() ?? false;
+	const [isScrolled, setIsScrolled] = useState(false);
+	const [isMenuOpen, setIsMenuOpen] = useState(false);
+	const { scrollYProgress } = useScroll();
+	const scaleX = useSpring(scrollYProgress, {
+		stiffness: 120,
+		damping: 30,
+		restDelta: 0.001,
+	});
 
-  useEffect(() => {
-    const handleScroll = () => setIsScrolled(globalThis.scrollY > 24);
-    globalThis.addEventListener('scroll', handleScroll, { passive: true });
-    return () => globalThis.removeEventListener('scroll', handleScroll);
-  }, []);
+	useEffect(() => {
+		const handleScroll = () => setIsScrolled(globalThis.scrollY > 16);
+		globalThis.addEventListener("scroll", handleScroll, { passive: true });
+		return () => globalThis.removeEventListener("scroll", handleScroll);
+	}, []);
 
-  const handleNavClick = (href: string) => {
-    setIsMobileMenuOpen(false);
-    if (href.startsWith('#')) {
-      const element = document.querySelector(href);
-      if (element) {
-        const headerHeight = document.querySelector('header')?.getBoundingClientRect().height ?? 0;
-        const targetTop = element.getBoundingClientRect().top + globalThis.scrollY - headerHeight;
-        globalThis.scrollTo({ top: targetTop, behavior: 'smooth' });
-      }
-      else { navigate(`/${href}`); }
-    } else {
-      navigate(href);
-      globalThis.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-  };
+	const handleNavClick = (href: string) => {
+		setIsMenuOpen(false);
+		if (href.startsWith("#")) {
+			const element = document.querySelector(href);
+			if (element) {
+				const headerHeight =
+					document.querySelector("header")?.getBoundingClientRect().height ?? 0;
+				const targetTop =
+					element.getBoundingClientRect().top +
+					globalThis.scrollY -
+					headerHeight;
+				globalThis.scrollTo({
+					top: targetTop,
+					behavior: prefersReducedMotion ? "auto" : "smooth",
+				});
+			} else {
+				Promise.resolve(navigate(`/${href}`)).catch(() => undefined);
+			}
+		} else {
+			Promise.resolve(navigate(href)).catch(() => undefined);
+			globalThis.scrollTo({
+				top: 0,
+				behavior: prefersReducedMotion ? "auto" : "smooth",
+			});
+		}
+	};
 
-  return (
-    <motion.header initial={{ y: -72 }} animate={{ y: 0 }} transition={{ duration: 0.4 }} className={cn('fixed inset-x-0 top-0 z-50 border-b border-white/15 bg-[#001b41] text-white transition-shadow duration-300', isScrolled ? 'shadow-[0_8px_25px_rgba(0,27,65,.24)]' : '')}>
-      <motion.div
-        style={{ scaleX }}
-        className="fixed top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-[#006b92] via-[#11c7e6] to-[#d9fbff] origin-left z-50"
-        aria-hidden="true"
-      />
-      <div className="container-custom"><nav aria-label="Navegación principal" className="flex min-h-[70px] items-center justify-between gap-6">
-        <a href="/" className="flex shrink-0 items-center" onClick={(event)=>{event.preventDefault();handleNavClick('/');}} aria-label="ZeroCode, inicio"><img src={logoZero} alt="ZeroCode DevOps" className="h-[54px] w-[164px] object-cover object-center sm:h-[58px] sm:w-[174px]" fetchPriority="high"/></a>
-        <div className="hidden items-center gap-5 lg:flex xl:gap-7">{navLinks.map((link)=><a key={link.href} href={link.href} className="text-sm font-medium text-white/80 transition-colors hover:text-[#11c7e6]" onClick={(event)=>{event.preventDefault();handleNavClick(link.href);}}>{link.label}</a>)}</div>
-        <div className="hidden lg:block"><a href="#contacto" className="inline-flex min-h-10 items-center gap-2 bg-transparent px-3 text-sm font-semibold text-white/85 transition-colors hover:bg-white/10 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#001b41]" onClick={(event)=>{event.preventDefault();handleNavClick('#contacto');}}>Pedir presupuesto <span aria-hidden="true">↗</span></a></div>
-        <button className="rounded-md p-2 text-white transition hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#11c7e6] lg:hidden" onClick={()=>setIsMobileMenuOpen(!isMobileMenuOpen)} aria-expanded={isMobileMenuOpen} aria-label={isMobileMenuOpen?'Cerrar menú':'Abrir menú'}>{isMobileMenuOpen?<X className="h-6 w-6"/>:<Menu className="h-6 w-6"/>}</button>
-      </nav></div>
-      <AnimatePresence>{isMobileMenuOpen&&<motion.div initial={{opacity:0,y:-8}} animate={{opacity:1,y:0}} exit={{opacity:0,y:-8}} transition={{duration:.18}} className="absolute inset-x-0 top-full border-b border-white/15 bg-[#001b41] shadow-lg lg:hidden"><div className="container-custom flex flex-col gap-1 py-4">{navLinks.map((link)=><a key={link.href} href={link.href} className="py-3 font-medium text-white/85 transition-colors hover:text-[#11c7e6]" onClick={(event)=>{event.preventDefault();handleNavClick(link.href);}}>{link.label}</a>)}<a href="#contacto" className="mt-2 inline-flex min-h-12 items-center justify-center gap-2 bg-transparent px-5 font-semibold text-white/90 transition hover:bg-white/10 hover:text-white" onClick={(event)=>{event.preventDefault();handleNavClick('#contacto');}}>Pedir presupuesto <MessageCircle className="h-4 w-4"/></a></div></motion.div>}</AnimatePresence>
-    </motion.header>
-  );
+	return (
+		<header
+			className={cn(
+				"fixed inset-x-0 top-0 z-50 border-b transition-colors duration-300",
+				isScrolled
+					? "border-white/15 bg-[#09090B]/95 backdrop-blur-md"
+					: "border-white/10 bg-[#09090B]/90 backdrop-blur-sm",
+			)}
+		>
+			{!prefersReducedMotion && (
+				<motion.div
+					style={{ scaleX }}
+					className="fixed left-0 right-0 top-0 z-50 h-0.5 origin-left bg-[#0077CC]"
+					aria-hidden="true"
+				/>
+			)}
+
+			<div className="container-custom">
+				<nav
+					aria-label="Navegación principal"
+					className="flex min-h-16 items-center justify-between gap-6 md:min-h-[4.5rem]"
+				>
+					<a
+						href="/"
+						className="group flex shrink-0 items-center rounded-md transition-transform duration-300 hover:scale-[1.02] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#0077CC]"
+						onClick={(event) => {
+							event.preventDefault();
+							handleNavClick("/");
+						}}
+						aria-label="ZeroCode DevOps, inicio"
+					>
+						<img
+							src={logoZero}
+							alt="ZeroCode DevOps"
+							className="h-12 w-44 object-contain sm:h-14 sm:w-52"
+							fetchPriority="high"
+						/>
+					</a>
+
+					<div className="hidden items-center gap-7 xl:flex">
+						{navLinks.map((link) => (
+							<a
+								key={link.href}
+								href={link.href}
+								className="group inline-flex items-baseline gap-1.5 rounded-sm py-1.5 text-sm font-medium text-[#F7F6F3]/80 transition-colors hover:text-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#0077CC]"
+								onClick={(event) => {
+									event.preventDefault();
+									handleNavClick(link.href);
+								}}
+							>
+								<span className="font-tech text-[10px] text-[#0077CC]">
+									{link.code}
+								</span>
+								<span>{link.label}</span>
+							</a>
+						))}
+					</div>
+
+					<div className="flex items-center gap-2.5 sm:gap-3">
+						<button
+							type="button"
+							className="group hidden min-h-11 items-center gap-2.5 rounded-full bg-[#F7F6F3] px-5 text-xs font-medium uppercase tracking-widest text-[#111111] transition-colors duration-300 hover:bg-[#0077CC] hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0077CC] active:scale-[0.98] sm:inline-flex"
+							onClick={() => handleNavClick("#contacto")}
+						>
+							<span>Solicitar propuesta</span>
+							<span
+								className="h-1.5 w-1.5 rounded-full bg-[#0077CC] transition-colors group-hover:bg-white"
+								aria-hidden="true"
+							/>
+						</button>
+
+						<button
+							type="button"
+							className="inline-flex min-h-11 items-center gap-2.5 rounded-full border border-white/25 bg-[#141418] px-4 text-xs font-medium uppercase tracking-widest text-[#F7F6F3] transition-colors hover:border-white hover:bg-white/10 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0077CC] active:scale-[0.98]"
+							onClick={() => setIsMenuOpen(!isMenuOpen)}
+							aria-expanded={isMenuOpen}
+							aria-label={isMenuOpen ? "Cerrar menú" : "Abrir menú"}
+						>
+							<span>{isMenuOpen ? "Cerrar" : "Menú"}</span>
+							<span className="flex items-center gap-1" aria-hidden="true">
+								<span className="h-1 w-1 rounded-full bg-[#F7F6F3]" />
+								<span className="h-1 w-1 rounded-full bg-[#0077CC]" />
+							</span>
+						</button>
+					</div>
+				</nav>
+			</div>
+
+			<AnimatePresence>
+				{isMenuOpen && (
+					<motion.div
+						initial={prefersReducedMotion ? false : { opacity: 0, y: -12 }}
+						animate={{ opacity: 1, y: 0 }}
+						exit={prefersReducedMotion ? undefined : { opacity: 0, y: -12 }}
+						transition={{ duration: 0.24, ease: [0.22, 1, 0.36, 1] }}
+						className="fixed inset-x-0 top-16 z-40 md:top-[4.5rem] border-b border-[#E2DFD7] bg-[#F4F3EF] shadow-2xl"
+					>
+						<div className="container-custom py-8">
+							<div className="mb-4 flex items-center justify-between border-b border-[#E2DFD7] pb-3">
+								<span className="font-tech text-[11px] uppercase tracking-widest text-[#5C5B57]">
+									<span>NAVEGACIÓN</span> <span>{"//"}</span>{" "}
+									<span>ZERO CODE DEVOPS</span>
+								</span>
+								<span className="font-tech text-[11px] uppercase tracking-widest text-[#0077CC]">
+									ENFOQUE REMOTO
+								</span>
+							</div>
+
+							<div className="grid gap-2 md:grid-cols-2 md:gap-x-10">
+								{navLinks.map((link) => (
+									<a
+										key={link.href}
+										href={link.href}
+										className="group flex min-h-14 items-center justify-between border-b border-[#E2DFD7] text-lg font-medium text-[#111111] transition-colors hover:text-[#0077CC] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0077CC]"
+										onClick={(event) => {
+											event.preventDefault();
+											handleNavClick(link.href);
+										}}
+									>
+										<span>{link.label}</span>
+										<span className="font-tech text-xs text-[#5C5B57] transition-colors group-hover:text-[#0077CC]">
+											<span>{link.code}</span> <span>/</span>
+										</span>
+									</a>
+								))}
+							</div>
+
+							<div className="mt-6 flex flex-wrap items-center justify-between gap-4">
+								<p className="text-sm text-[#5C5B57]">
+									Diseño web, producto digital e ingeniería a medida.
+								</p>
+								<button
+									type="button"
+									className="inline-flex min-h-13 items-center justify-center gap-2 rounded-full bg-[#111111] px-6 text-xs font-medium uppercase tracking-widest text-[#F4F3EF] transition-colors hover:bg-[#0077CC] hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0077CC]"
+									onClick={() => handleNavClick("#contacto")}
+								>
+									<span>Solicitar propuesta</span>
+									<ArrowUpRight
+										className="h-4 w-4"
+										strokeWidth={1.75}
+										aria-hidden="true"
+									/>
+								</button>
+							</div>
+						</div>
+					</motion.div>
+				)}
+			</AnimatePresence>
+		</header>
+	);
 }
