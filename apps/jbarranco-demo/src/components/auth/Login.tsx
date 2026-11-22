@@ -1,24 +1,51 @@
-import { useEffect, useState } from "react";
-import {
-  DEMO_PRIMARY_CREDENTIALS,
-  loginAsDemoRole,
-  sendPasswordResetEmail,
-  signInWithEmailAndPassword,
-} from "../../demo/demoAuth";
-import type { DemoRoleMode } from "../../demo/demoTypes";
-import { auth } from "../../firebase/config";
-import toast from "react-hot-toast";
+import { type MouseEvent, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import {
+  ArrowRightIcon,
+  BuildingOffice2Icon,
+  ShieldCheckIcon,
+  UserIcon,
+} from "@heroicons/react/24/outline";
 import { useAuth } from "../../context/AuthContext";
+import { DEMO_PRIMARY_CREDENTIALS, loginAsDemoRole } from "../../demo/demoAuth";
+import type { DemoRoleMode } from "../../demo/demoTypes";
 import { getDashboardRoute } from "../../utils/navigation";
 
-function Login() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
-  const [loading, setLoading] = useState(false);
-  const [isResetting, setIsResetting] = useState(false);
+const ROLE_META: Record<
+  DemoRoleMode,
+  {
+    badge: string;
+    badgeClasses: string;
+    iconBg: string;
+    borderHover: string;
+    Icon: typeof ShieldCheckIcon;
+  }
+> = {
+  admin: {
+    badge: "Administración",
+    badgeClasses: "bg-brand-blue/10 text-brand-blue border-brand-blue/20",
+    iconBg: "bg-brand-blue text-white",
+    borderHover: "hover:border-brand-blue/60 hover:shadow-brand-blue/10",
+    Icon: ShieldCheckIcon,
+  },
+  cliente: {
+    badge: "Comunidad",
+    badgeClasses: "bg-blue-50 text-blue-700 border-blue-200",
+    iconBg: "bg-blue-600 text-white",
+    borderHover: "hover:border-blue-500/60 hover:shadow-blue-500/10",
+    Icon: BuildingOffice2Icon,
+  },
+  empleado: {
+    badge: "Operativa",
+    badgeClasses: "bg-emerald-50 text-emerald-700 border-emerald-200",
+    iconBg: "bg-emerald-600 text-white",
+    borderHover: "hover:border-emerald-500/60 hover:shadow-emerald-500/10",
+    Icon: UserIcon,
+  },
+};
 
+function Login() {
+  const [tilt, setTilt] = useState({ x: 0, y: 0 });
   const navigate = useNavigate();
   const { user, userRole } = useAuth();
   const logoSrc = `${import.meta.env.BASE_URL}logo-light.webp`;
@@ -30,270 +57,134 @@ function Login() {
   }, [user, userRole, navigate]);
 
   const handleQuickRoleAccess = (role: DemoRoleMode) => {
-    setError("");
     loginAsDemoRole(role);
     navigate(getDashboardRoute(role), { replace: true });
   };
 
-  const handleFillCredentials = (role: DemoRoleMode) => {
-    const creds = DEMO_PRIMARY_CREDENTIALS[role];
-    setEmail(creds.email);
-    setPassword(creds.password);
-    setError("");
+  const handleLogoMouseMove = (e: MouseEvent<HTMLDivElement>) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    const x = (e.clientX - rect.left) / rect.width - 0.5;
+    const y = (e.clientY - rect.top) / rect.height - 0.5;
+    setTilt({ x: -y * 16, y: x * 18 });
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setError("");
-    setLoading(true);
-
-    try {
-      await signInWithEmailAndPassword(auth, email, password);
-    } catch (err) {
-      setError("Usuario o contraseña incorrectos. Utiliza las credenciales ficticias de la demo.");
-      console.error(err);
-      setLoading(false);
-    }
-  };
-
-  const handleResetPassword = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!email) {
-      setError("Indica tu email para continuar.");
-      return;
-    }
-    setLoading(true);
-    setError("");
-
-    try {
-      await sendPasswordResetEmail(auth, email);
-      toast.success("Simulación Demo: Enlace de recuperación validado en memoria.");
-      setIsResetting(false);
-    } catch (err) {
-      console.error(err);
-      if ((err as { code?: string }).code === "auth/user-not-found") {
-        setError("Email no registrado en el entorno demo.");
-      } else {
-        setError("Error al procesar la solicitud.");
-      }
-    } finally {
-      setLoading(false);
-    }
+  const handleLogoMouseLeave = () => {
+    setTilt({ x: 0, y: 0 });
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 flex flex-col justify-center py-10 px-4 sm:px-6 lg:px-8">
-      <div className="sm:mx-auto sm:w-full sm:max-w-xl text-center">
-        <img
-          src={logoSrc}
-          alt="J.Barranco Logo"
-          width={320}
-          height={80}
-          className="h-20 w-auto mx-auto mb-3"
-        />
-        <h2 className="mt-3 text-center text-3xl font-bold text-brand-blue">
-          {isResetting ? "Recuperar Contraseña (Demo)" : "ERP de Gestión — Acceso Multi-Perfil"}
-        </h2>
-        <p className="mt-1.5 text-center text-sm text-gray-600">
-          {isResetting
-            ? "Introduce un correo ficticio registrado en la demo."
-            : "Selecciona un perfil para entrar en 1 clic o utiliza las credenciales ficticias en el formulario."}
-        </p>
+    <div className="relative min-h-screen overflow-hidden bg-slate-50 flex flex-col justify-center py-10 px-4 sm:px-6 lg:px-8">
+      {/* Subtle architectural background */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 overflow-hidden"
+      >
+        <div className="absolute -top-40 left-1/2 -translate-x-1/2 h-96 w-220 rounded-full bg-brand-blue/8 blur-3xl" />
+        <div className="absolute -bottom-32 right-0 h-80 w-80 rounded-full bg-blue-400/10 blur-3xl" />
       </div>
 
-      <div className="mt-6 sm:mx-auto sm:w-full sm:max-w-xl">
-        <div className="bg-white py-7 px-4 shadow-xl rounded-xl sm:px-8 border border-gray-100 space-y-6">
-          {!isResetting && (
-            <div className="space-y-3" aria-label="Acceso rápido de 1 clic">
-              <p className="text-xs font-bold uppercase tracking-wider text-gray-500">
-                Acceso Directo en 1 Clic (Perfiles Demo)
-              </p>
-              <div className="grid grid-cols-1 gap-2.5">
-                {(["admin", "cliente", "empleado"] as DemoRoleMode[]).map((role) => {
-                  const info = DEMO_PRIMARY_CREDENTIALS[role];
-                  const badgeColor =
-                    role === "admin"
-                      ? "bg-brand-blue text-white"
-                      : role === "cliente"
-                        ? "bg-blue-600 text-white"
-                        : "bg-emerald-700 text-white";
-                  return (
-                    <div
-                      key={role}
-                      className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 rounded-lg border border-gray-200 bg-gray-50/70 p-3 hover:border-brand-blue transition-colors"
-                    >
-                      <div className="text-left">
-                        <div className="flex items-center gap-2">
-                          <span className={`px-2 py-0.5 rounded text-[11px] font-bold uppercase ${badgeColor}`}>
-                            {role}
-                          </span>
-                          <span className="text-sm font-semibold text-gray-900">{info.label}</span>
-                        </div>
-                        <p className="mt-0.5 text-xs text-gray-600">{info.subtitle}</p>
-                        <p className="mt-0.5 text-[11px] font-mono text-gray-500">
-                          {info.email} · Clave: {info.password}
-                        </p>
-                      </div>
-                      <div className="flex items-center gap-1.5 shrink-0">
-                        <button
-                          type="button"
-                          onClick={() => handleFillCredentials(role)}
-                          data-testid={`fill-role-${role}`}
-                          className="px-2.5 py-1.5 rounded border border-gray-300 bg-white text-xs font-medium text-gray-700 hover:bg-gray-100"
-                        >
-                          Rellenar
-                        </button>
-                        <button
-                          type="button"
-                          onClick={() => handleQuickRoleAccess(role)}
-                          data-testid={`quick-login-${role}`}
-                          className="px-3 py-1.5 rounded bg-brand-blue text-xs font-semibold text-white hover:bg-blue-800 shadow-sm"
-                        >
-                          Entrar ahora →
-                        </button>
-                      </div>
-                    </div>
-                  );
-                })}
-              </div>
-            </div>
-          )}
+      <div className="relative z-10 sm:mx-auto sm:w-full sm:max-w-xl">
+        {/* Interactive 3D Logo Stage */}
+        <div
+          onMouseMove={handleLogoMouseMove}
+          onMouseLeave={handleLogoMouseLeave}
+          className="mx-auto mb-6 flex w-fit cursor-pointer flex-col items-center justify-center rounded-3xl p-4"
+          style={{ perspective: "1000px" }}
+        >
+          <div
+            className="relative transition-transform duration-300 ease-out will-change-transform"
+            style={{
+              transform: `rotateX(${tilt.x}deg) rotateY(${tilt.y}deg) scale(${
+                tilt.x !== 0 || tilt.y !== 0 ? 1.04 : 1
+              })`,
+              transformStyle: "preserve-3d",
+            }}
+          >
+            {/* Ambient glow behind logo */}
+            <div
+              aria-hidden="true"
+              className="absolute inset-0 -z-10 scale-110 rounded-full bg-brand-blue/15 blur-2xl animate-pulse"
+            />
+            <img
+              src={logoSrc}
+              alt="J.Barranco Logo"
+              width={400}
+              height={160}
+              className="h-32 sm:h-36 w-auto drop-shadow-[0_14px_24px_rgba(0,51,102,0.18)]"
+            />
+          </div>
+        </div>
 
-          {!isResetting && (
-            <div className="relative">
-              <div className="absolute inset-0 flex items-center">
-                <div className="w-full border-t border-gray-200" />
-              </div>
-              <div className="relative flex justify-center text-xs uppercase">
-                <span className="px-2 bg-white text-gray-500 font-medium">
-                  O validación mediante formulario con credenciales ficticias
-                </span>
-              </div>
-            </div>
-          )}
+        <div className="text-center mb-7">
+          <span className="inline-flex items-center gap-1.5 rounded-full border border-brand-blue/15 bg-white/80 px-3 py-1 text-[11px] font-semibold uppercase tracking-widest text-brand-blue shadow-2xs">
+            Entorno Interactivo
+          </span>
+          <h1 className="mt-3 text-2xl sm:text-3xl font-bold tracking-tight text-slate-900">
+            ERP de Gestión Integral
+          </h1>
+          <p className="mt-1.5 text-sm text-slate-600">
+            Selecciona un perfil para acceder directamente al panel correspondiente
+          </p>
+        </div>
 
-          {isResetting ? (
-            <form className="space-y-5" onSubmit={handleResetPassword}>
-              {error && (
-                <div className="bg-red-50 border-l-4 border-red-500 p-4">
-                  <p className="whitespace-pre-line text-sm text-red-700">{error}</p>
-                </div>
-              )}
-              <div>
-                <label htmlFor="reset-email" className="block text-sm font-medium text-gray-700">
-                  Email Ficticio
-                </label>
-                <div className="mt-1">
-                  <input
-                    id="reset-email"
-                    name="email"
-                    type="email"
-                    autoComplete="email"
-                    required
-                    data-testid="reset-email"
-                    className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-brand-blue focus:border-brand-blue sm:text-sm"
-                    placeholder="admin@jbarranco-demo.local"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                  />
-                </div>
-              </div>
+        {/* 3 Profile Access Cards */}
+        <div
+          className="space-y-3"
+          role="region"
+          aria-label="Acceso directo a perfiles"
+        >
+          {(["admin", "cliente", "empleado"] as DemoRoleMode[]).map((role) => {
+            const info = DEMO_PRIMARY_CREDENTIALS[role];
+            const meta = ROLE_META[role];
+            const Icon = meta.Icon;
 
-              <div>
-                <button
-                  type="submit"
-                  disabled={loading}
-                  className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-brand-blue hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-blue disabled:opacity-50 transition-colors"
-                >
-                  {loading ? "Validando..." : "Simular envío de enlace"}
-                </button>
-              </div>
-              <div className="text-center">
-                <button
-                  type="button"
-                  onClick={() => {
-                    setIsResetting(false);
-                    setError("");
-                  }}
-                  className="text-sm font-medium text-brand-blue hover:text-blue-500"
-                >
-                  Volver al inicio de sesión
-                </button>
-              </div>
-            </form>
-          ) : (
-            <form className="space-y-4" onSubmit={handleSubmit}>
-              {error && (
-                <div className="bg-red-50 border-l-4 border-red-500 p-4" data-testid="login-error">
-                  <p className="whitespace-pre-line text-sm text-red-700">{error}</p>
-                </div>
-              )}
-
-              <div>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-700">
-                  Email
-                </label>
-                <div className="mt-1">
-                  <input
-                    id="email"
-                    name="email"
-                    type="email"
-                    autoComplete="username"
-                    required
-                    data-testid="login-email"
-                    placeholder="admin@jbarranco-demo.local"
-                    className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-brand-blue focus:border-brand-blue sm:text-sm"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                  />
-                </div>
-              </div>
-
-              <div>
-                <label htmlFor="password" className="block text-sm font-medium text-gray-700">
-                  Contraseña
-                </label>
-                <div className="mt-1">
-                  <input
-                    id="password"
-                    name="password"
-                    type="password"
-                    autoComplete="current-password"
-                    required
-                    data-testid="login-password"
-                    placeholder="DemoAdmin2026!"
-                    className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-brand-blue focus:border-brand-blue sm:text-sm"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                  />
-                </div>
-              </div>
-
-              <div className="flex items-center justify-end">
-                <div className="text-sm">
-                  <button
-                    type="button"
-                    onClick={() => {
-                      setIsResetting(true);
-                      setError("");
-                    }}
-                    className="font-medium text-brand-blue hover:text-blue-500"
-                  >
-                    ¿Olvidaste tu contraseña?
-                  </button>
-                </div>
-              </div>
-
+            return (
               <button
-                type="submit"
-                disabled={loading}
-                data-testid="login-submit"
-                className="w-full flex justify-center py-2.5 px-4 border border-transparent rounded-md shadow-sm text-sm font-semibold text-white bg-brand-blue hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-blue disabled:opacity-50 transition-colors"
+                key={role}
+                type="button"
+                onClick={() => handleQuickRoleAccess(role)}
+                data-testid={`quick-login-${role}`}
+                className={`group w-full text-left flex items-center justify-between gap-4 rounded-2xl border border-slate-200/90 bg-white/95 p-4 sm:p-5 shadow-xs backdrop-blur-xs transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg active:translate-y-0 ${meta.borderHover}`}
               >
-                {loading ? "Iniciando Sesión..." : "Iniciar Sesión con Credenciales"}
+                <div className="flex items-center gap-4 min-w-0">
+                  <div
+                    className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-xl shadow-xs transition-transform duration-200 group-hover:scale-105 ${meta.iconBg}`}
+                  >
+                    <Icon className="h-6 w-6" aria-hidden="true" />
+                  </div>
+
+                  <div className="min-w-0">
+                    <div className="flex flex-wrap items-center gap-2">
+                      <span className="text-base font-bold text-slate-900 group-hover:text-brand-blue transition-colors">
+                        {info.label}
+                      </span>
+                      <span
+                        className={`inline-flex items-center rounded-full border px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider ${meta.badgeClasses}`}
+                      >
+                        {meta.badge}
+                      </span>
+                    </div>
+                    <p className="mt-0.5 text-xs sm:text-sm text-slate-500 truncate">
+                      {info.subtitle}
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-slate-100 text-slate-500 transition-all duration-200 group-hover:bg-brand-blue group-hover:text-white group-hover:translate-x-0.5">
+                  <ArrowRightIcon className="h-4 w-4" aria-hidden="true" />
+                </div>
               </button>
-            </form>
-          )}
+            );
+          })}
+        </div>
+
+        <div className="mt-7 text-center">
+          <a
+            href="/#projects"
+            className="inline-flex items-center gap-1.5 text-xs font-medium text-slate-500 hover:text-brand-blue transition-colors"
+          >
+            ← Volver al Portfolio
+          </a>
         </div>
       </div>
     </div>
