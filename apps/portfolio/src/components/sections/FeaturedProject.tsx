@@ -79,10 +79,10 @@ export function FeaturedProject() {
           >
             <div className="relative group">
               {/* Glow effect */}
-              <div className="absolute inset-0 bg-gradient-to-br from-primary-500/20 to-accent-500/20 rounded-2xl blur-xl transition-all duration-500 group-hover:blur-2xl" />
+              <div className="absolute inset-0 bg-linear-to-br from-primary-500/20 to-accent-500/20 rounded-2xl blur-xl transition-all duration-500 group-hover:blur-2xl" />
 
               {/* Main frame - Single Image */}
-              <div className="relative bg-dark-900 border border-dark-700/50 rounded-2xl overflow-hidden shadow-2xl aspect-[16/10]">
+              <div className="relative bg-dark-900 border border-dark-700/50 rounded-2xl overflow-hidden shadow-2xl aspect-16/10">
                 <img
                   src={featuredProjectImage}
                   alt="ZeroCode Project Dashboard"
