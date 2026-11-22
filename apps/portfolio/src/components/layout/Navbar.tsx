@@ -16,7 +16,9 @@ const navLinks = [
 	{ code: "02", label: "Servicios", href: "#servicio" },
 	{ code: "03", label: "Proyectos", href: "#projects" },
 	{ code: "04", label: "Metodología", href: "#proceso" },
-	{ code: "05", label: "Tarifas", href: "/precios-paginas-web" },
+	{ code: "05", label: "Tarifas", href: "#tarifas" },
+	{ code: "06", label: "FAQs", href: "#preguntas" },
+	{ code: "07", label: "Contacto", href: "#contacto" },
 ];
 
 export function Navbar() {
@@ -84,7 +86,7 @@ export function Navbar() {
 			<div className="container-custom">
 				<nav
 					aria-label="Navegación principal"
-					className="flex min-h-16 items-center justify-between gap-6 md:min-h-[4.5rem]"
+					className="flex min-h-16 md:min-h-18 items-center justify-between gap-6"
 				>
 					<a
 						href="/"
@@ -137,7 +139,7 @@ export function Navbar() {
 
 						<button
 							type="button"
-							className="inline-flex min-h-11 items-center gap-2.5 rounded-full border border-white/25 bg-[#141418] px-4 text-xs font-medium uppercase tracking-widest text-[#F7F6F3] transition-colors hover:border-white hover:bg-white/10 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0077CC] active:scale-[0.98]"
+							className="inline-flex min-h-11 items-center gap-2.5 rounded-full border border-white/25 bg-[#141418] px-4 text-xs font-medium uppercase tracking-widest text-[#F7F6F3] transition-colors hover:border-white hover:bg-white/10 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0077CC] active:scale-[0.98] xl:hidden"
 							onClick={() => setIsMenuOpen(!isMenuOpen)}
 							aria-expanded={isMenuOpen}
 							aria-label={isMenuOpen ? "Cerrar menú" : "Abrir menú"}
@@ -159,13 +161,13 @@ export function Navbar() {
 						animate={{ opacity: 1, y: 0 }}
 						exit={prefersReducedMotion ? undefined : { opacity: 0, y: -12 }}
 						transition={{ duration: 0.24, ease: [0.22, 1, 0.36, 1] }}
-						className="fixed inset-x-0 top-16 z-40 md:top-[4.5rem] border-b border-[#E2DFD7] bg-[#F4F3EF] shadow-2xl"
+						className="fixed inset-x-0 top-16 md:top-18 z-40 border-b border-[#E2DFD7] bg-[#F4F3EF] shadow-2xl"
 					>
 						<div className="container-custom py-8">
 							<div className="mb-4 flex items-center justify-between border-b border-[#E2DFD7] pb-3">
 								<span className="font-tech text-[11px] uppercase tracking-widest text-[#5C5B57]">
 									<span>NAVEGACIÓN</span> <span>{"//"}</span>{" "}
-									<span>ZERO CODE DEVOPS</span>
+									<span>ZEROCODE DEVOPS</span>
 								</span>
 								<span className="font-tech text-[11px] uppercase tracking-widest text-[#0077CC]">
 									ENFOQUE REMOTO
@@ -193,7 +195,7 @@ export function Navbar() {
 
 							<div className="mt-6 flex flex-wrap items-center justify-between gap-4">
 								<p className="text-sm text-[#5C5B57]">
-									Diseño web, producto digital e ingeniería a medida.
+									Diseño web y Producto Digital a medida.
 								</p>
 								<button
 									type="button"

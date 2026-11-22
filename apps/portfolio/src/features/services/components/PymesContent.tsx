@@ -70,9 +70,9 @@ export default function PymesContent({
               <FeatureListItem text="Diseño web responsive para negocios" />
               <FeatureListItem text="Optimización técnica (Performance)" />
               <FeatureListItem text="SEO On-Page para Google" />
-              <FeatureListItem text="Tienda online para pymes (eCommerce) - Opcional" />
-              <FeatureListItem text="Código limpio y optimizado con IA" />
-              <FeatureListItem text="Automatización de recepción de consultas" />
+              <FeatureListItem text="Landing pages y portales de gestión a medida" />
+              <FeatureListItem text="Código limpio y optimizado" />
+              <FeatureListItem text="Gestión directa de recepción de consultas" />
               <FeatureListItem text="Velocidad de carga relámpago (optimizada para Core Web Vitals)" />
             </ul>
           </section>
@@ -164,9 +164,9 @@ export default function PymesContent({
           </section>
 
           {/* Sección ¿Quién está detrás? */}
-          <section className="bg-gradient-to-br from-primary-500/5 to-accent-500/5 p-8 md:p-10 rounded-3xl border border-dark-800">
+          <section className="bg-linear-to-br from-primary-500/5 to-accent-500/5 p-8 md:p-10 rounded-3xl border border-dark-800">
             <div className="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-8 md:gap-12 items-center">
-              <div className="aspect-square w-full max-w-[280px] mx-auto md:max-w-none rounded-3xl bg-dark-800/80 flex items-center justify-center border border-primary-500/30 shadow-glow relative overflow-hidden group">
+              <div className="aspect-square w-full max-w-70 mx-auto md:max-w-none rounded-3xl bg-dark-800/80 flex items-center justify-center border border-primary-500/30 shadow-glow relative overflow-hidden group">
                 <div className="absolute inset-0 bg-primary-500/10 group-hover:bg-primary-500/20 transition-colors duration-500" />
                 <User className="w-24 h-24 text-primary-500 relative z-10" />
               </div>
@@ -307,10 +307,10 @@ function PriceCard({
         {level}
       </h3>
       <div className="text-4xl md:text-5xl font-extrabold text-white my-4">{price}</div>
-      <p className="text-sm text-dark-400 mb-8 leading-relaxed h-[42px]">{bestFor}</p>
+      <p className="text-sm text-dark-400 mb-8 leading-relaxed h-10.5">{bestFor}</p>
 
       {features.length > 0 && (
-        <ul className="space-y-4 mb-10 flex-grow">
+        <ul className="space-y-4 mb-10 grow">
           {features.map((feature) => (
             <li key={feature} className="flex items-start gap-3 text-dark-300 text-sm">
               <CheckCircle className="w-5 h-5 text-primary-500 shrink-0 mt-0.5" />
@@ -347,7 +347,7 @@ function TestimonialCard({
       <div className="text-primary-500/20 text-6xl font-serif mb-2 leading-none">
         &ldquo;
       </div>
-      <p className="text-dark-200 text-lg font-medium italic mb-8 relative z-10 flex-grow">{text}</p>
+      <p className="text-dark-200 text-lg font-medium italic mb-8 relative z-10 grow">{text}</p>
       <div className="mt-auto pt-6 border-t border-dark-700/50">
         <div className="text-sm font-bold text-white">{name}</div>
         <div className="text-xs text-dark-400 mt-1">{location} (Madrid)</div>

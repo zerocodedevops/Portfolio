@@ -72,7 +72,7 @@ function DemoFloatingToolbar() {
           |
         </span>
         <span className="font-medium text-amber-200/90 hidden sm:inline">
-          ERP DEMO (Datos ficticios):
+          Perfil activo:
         </span>
 
         <div className="flex items-center gap-1" role="group" aria-label="Cambiar perfil demo">

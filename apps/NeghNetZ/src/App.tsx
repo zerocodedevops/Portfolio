@@ -1,6 +1,6 @@
 // RUTA: ./src/App.jsx
 
-import { lazy, Suspense, useState } from 'react';
+import { lazy, Suspense } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate, useOutletContext } from 'react-router-dom';
 
 // Componentes comunes (no lazy)
@@ -65,34 +65,6 @@ function MembershipPending() {
   </main>;
 }
 
-function DismissibleDemoNotice() {
-  const [isVisible, setIsVisible] = useState(true);
-  if (!isVisible) return null;
-
-  return (
-    <div className="pointer-events-none fixed bottom-3 left-3 z-50 flex max-w-[calc(100vw-1.5rem)] justify-start sm:bottom-5 sm:left-5" role="note">
-      <aside className="pointer-events-auto flex w-fit max-w-full items-center gap-3 rounded-lg border border-amber-500/35 bg-slate-950/95 px-3.5 py-2 text-xs leading-relaxed text-amber-50 shadow-lg backdrop-blur-md">
-        <a
-          href="/#projects"
-          className="font-semibold text-amber-300 underline underline-offset-2 transition-colors hover:text-white"
-        >
-          ← Portfolio
-        </a>
-        <span className="text-amber-500/40" aria-hidden="true">|</span>
-        <p className="m-0 flex-1">NeighNet: todos los datos de esta demo son simulados.</p>
-        <button
-          aria-label="Cerrar aviso de datos simulados"
-          className="-mr-1 inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-full text-base text-amber-100/80 transition-colors hover:bg-white/10 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-200"
-          onClick={() => setIsVisible(false)}
-          type="button"
-        >
-          <span aria-hidden="true">×</span>
-        </button>
-      </aside>
-    </div>
-  );
-}
-
 function App() {
   const routerBasename =
     typeof window !== 'undefined' && window.location.pathname.startsWith('/proyectos/neighnet')
@@ -101,7 +73,6 @@ function App() {
 
   return (
     <Router basename={routerBasename} future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
-      <DismissibleDemoNotice />
       <Suspense fallback={<LoadingFallback />}>
         <Routes>
           {/* Rutas públicas y de estado inicial */}

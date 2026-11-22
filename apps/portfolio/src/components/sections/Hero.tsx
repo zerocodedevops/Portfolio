@@ -29,9 +29,11 @@ function ScrubbedWord({
 }) {
 	const opacity = useTransform(progress, range, [0.18, 1]);
 	return (
-		<motion.span style={{ opacity }} className="inline-block mr-[0.26em]">
-			{word}
-		</motion.span>
+		<>
+			<motion.span style={{ opacity }} className="inline-block">
+				{word}
+			</motion.span>{" "}
+		</>
 	);
 }
 
@@ -133,15 +135,15 @@ export function Hero() {
 									className="max-w-[18ch] text-[clamp(2.5rem,5vw,5rem)] font-semibold leading-[0.94] tracking-[-0.055em] text-white"
 									style={{ fontFamily: "var(--zc-font-sans)" }}
 								>
-										<span className="sm:block">Diseño web,</span>{" "}
-										<span className="font-editorial font-normal italic text-[#0077CC] sm:block">producto digital</span>{" "}
-										<span className="sm:block">e ingeniería a medida.</span>
+										<span className="sm:block">Diseño web y</span>{" "}
+										<span className="font-editorial font-normal italic text-[#0077CC] sm:block">Producto Digital</span>{" "}
+										<span className="sm:block">a medida.</span>
 								</motion.h1>
 							</div>
 
 							<div className="flex flex-col justify-between gap-5 sm:flex-row sm:items-end">
 								<p className="max-w-[42ch] text-sm leading-relaxed text-white/75 sm:text-base">
-									Construimos sitios web rápidos, aplicaciones interactivas y automatizaciones con código a medida y trato directo, sin intermediarios.
+									Construimos sitios web rápidos y aplicaciones con código a medida y trato directo, sin intermediarios.
 								</p>
 								<div className="flex flex-wrap items-center gap-3">
 									<a href="#contacto" className="group inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-[#0077CC] px-6 text-xs font-medium uppercase tracking-widest text-white transition-colors hover:bg-white hover:text-[#111111] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0077CC]">
@@ -153,7 +155,7 @@ export function Hero() {
 								</div>
 							</div>
 						</motion.div>
-						<div aria-hidden="true" className="pointer-events-none absolute right-6 top-1/2 z-[1] hidden -translate-y-1/2 font-tech text-right text-[10px] uppercase leading-6 tracking-[0.24em] text-white/45 lg:block">
+						<div aria-hidden="true" className="pointer-events-none absolute right-6 top-1/2 z-1 hidden -translate-y-1/2 font-tech text-right text-[10px] uppercase leading-6 tracking-[0.24em] text-white/45 lg:block">
 							<span className="block">DIGITAL SYSTEM</span><span className="block text-[#0077CC]">001 / ENGINEERED</span><span className="mt-2 block">FOR THE WEB</span>
 						</div>
 					</motion.div>
@@ -171,28 +173,23 @@ export function Hero() {
 							01 / EL ESTUDIO Y MANIFIESTO
 						</p>
 						<span className="font-tech text-[11px] uppercase tracking-widest text-[#5C5B57]">
-							<span>ATELIER</span> <span>{"//"}</span>{" "}
-							<span>DIRECCIÓN Y CRITERIO</span>
+							DIRECCIÓN Y CRITERIO
 						</span>
 					</div>
 
 					<div className="grid gap-12 lg:grid-cols-12 lg:items-start">
 						<div className="lg:col-span-4">
-							<figure className="space-y-3">
+							<figure>
 								<div className="overflow-hidden border border-[#E2DFD7] bg-[#EFECE6]">
 									<motion.img
 										style={{ scale: photoScale, y: photoY }}
 										src={profilePhoto}
-										alt="David González, desarrollador y responsable técnico de Zero Code DevOps"
+										alt="David G., desarrollador y responsable técnico de ZeroCode DevOps"
 										className="aspect-4/5 w-full object-cover object-top"
 										loading="lazy"
 										decoding="async"
 									/>
 								</div>
-								<figcaption className="font-tech flex items-center justify-between text-[11px] uppercase tracking-widest text-[#5C5B57]">
-									<span>FIG. 01 — DAVID GONZÁLEZ</span>
-									<span className="text-[#0077CC]">DIRECCIÓN</span>
-								</figcaption>
 							</figure>
 						</div>
 
@@ -204,8 +201,8 @@ export function Hero() {
 								transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
 								className="text-[clamp(1.85rem,3.4vw,3rem)] font-semibold leading-[1.06] tracking-tight text-[#111111]"
 							>
-								Soy David González, desarrollador y responsable técnico de Zero
-								Code DevOps.
+								Soy David G., desarrollador y responsable técnico de ZeroCode
+								DevOps.
 							</motion.h2>
 							<p className="mt-5 max-w-[60ch] text-base leading-relaxed text-[#5C5B57] md:text-lg">
 								Trabajo de forma directa con cada cliente para diseñar y

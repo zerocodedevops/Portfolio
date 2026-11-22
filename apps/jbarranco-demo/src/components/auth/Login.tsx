@@ -91,9 +91,6 @@ function Login() {
           height={80}
           className="h-20 w-auto mx-auto mb-3"
         />
-        <span className="inline-flex items-center rounded-full bg-amber-100 px-3 py-1 text-xs font-semibold text-amber-900 border border-amber-300">
-          ENTORNO DE DEMOSTRACIÓN · DATOS 100% FICTICIOS EN MEMORIA
-        </span>
         <h2 className="mt-3 text-center text-3xl font-bold text-brand-blue">
           {isResetting ? "Recuperar Contraseña (Demo)" : "ERP de Gestión — Acceso Multi-Perfil"}
         </h2>

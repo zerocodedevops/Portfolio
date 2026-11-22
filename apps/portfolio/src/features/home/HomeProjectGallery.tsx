@@ -6,42 +6,86 @@ import {
 	useSpring,
 	useTransform,
 } from "framer-motion";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, Globe, Layers, ShieldCheck } from "lucide-react";
 import type { MouseEvent } from "react";
 import { useRef } from "react";
 
-const realProject = {
-	name: "J.Barranco",
-	sector: "Limpieza profesional",
-	note: "Web corporativa real en producción para presentar servicios locales con claridad y facilitar el contacto.",
-	href: "https://jbarrancolimpieza.com",
-	image: "/assets/projects/thumbnails/project-jbarranco-gallery.webp",
-};
+interface ProductionProject {
+	readonly id: string;
+	readonly badge: string;
+	readonly statusPill: string;
+	readonly name: string;
+	readonly subtitle: string;
+	readonly sector: string;
+	readonly note: string;
+	readonly specs: readonly string[];
+	readonly href: string;
+	readonly external: boolean;
+	readonly ctaLabel: string;
+	readonly cursorLabel: string;
+	readonly image: string;
+	readonly accent: "cerulean" | "emerald";
+}
+
+const jbarrancoEcosystem: readonly [ProductionProject, ProductionProject] = [
+	{
+		id: "jbarranco-web",
+		badge: "01 // CAPA PÚBLICA COMERCIAL",
+		statusPill: "EN PRODUCCIÓN · ACCESO PÚBLICO",
+		name: "J.Barranco — Web Comercial",
+		subtitle: "Captación local, catálogo de servicios y presencia corporativa",
+		sector: "Limpieza profesional · Comunidad de Madrid",
+		note: "Plataforma pública en producción diseñada para posicionar servicios de limpieza de comunidades, oficinas y garajes, con arquitectura SEO local y conversión directa.",
+		specs: ["SEO Local Multi-Zona", "Catálogo Interactivo", "Web en Vivo"],
+		href: "https://jbarrancolimpieza.com",
+		external: true,
+		ctaLabel: "Visitar web comercial",
+		cursorLabel: "VISITAR WEB REAL ↗",
+		image: "/assets/projects/thumbnails/project-jbarranco-gallery.webp",
+		accent: "cerulean",
+	},
+	{
+		id: "jbarranco-erp",
+		badge: "02 // PLATAFORMA INTERNA ERP",
+		statusPill: "EN PRODUCCIÓN · MODO DEMO",
+		name: "J.Barranco — ERP de Gestión",
+		subtitle: "Sistema integral multi-perfil (Admin · Comunidad · Operario)",
+		sector: "ERP a Medida · Operaciones, Rutas, Stock y Contabilidad",
+		note: "El motor operativo real de la empresa: planificación de rutas, control de almacén y stock por comunidad, contabilidad, tickets y portales de cliente y empleado. Por privacidad de datos reales, se abre al público como entorno demo interactivo en memoria.",
+		specs: ["3 Perfiles en 1 Clic", "19 Colecciones en Memoria", "30 Rutas ERP"],
+		href: "/proyectos/jbarranco",
+		external: false,
+		ctaLabel: "Explorar demo del ERP",
+		cursorLabel: "ABRIR ERP DEMO ↗",
+		image: "/assets/projects/thumbnails/project-jbarranco-erp-gallery.webp",
+		accent: "emerald",
+	},
+];
 
 const demoProjects = [
 	{
-		name: "ZeroChaos",
+		name: "Zero Chaos",
 		sector: "Reformas integrales",
 		note: "Prototipo web para presentar servicios de reforma y simular solicitudes de presupuesto.",
 		href: "/proyectos/zero-chaos",
 		image: "/assets/projects/thumbnails/project-zerochaos-gallery.webp",
 	},
 	{
-		name: "ZeroDelay",
+		name: "Zero Delay",
 		sector: "Mudanzas",
 		note: "Demostración web para explicar servicios de mudanza y simular la solicitud de presupuesto.",
 		href: "/proyectos/zerodelay",
 		image: "/assets/projects/thumbnails/project-zerodelay-gallery.webp",
 	},
 	{
-		name: "ZeroShop",
-		sector: "Comercio y tienda online",
-		note: "Demo de e-commerce con catálogo filtrable, búsqueda por voz y carrito/checkout simulados.",
+		name: "Zero Shop",
+		sector: "Catálogo interactivo",
+		note: "Prototipo de catálogo filtrable con búsqueda por voz y flujo interactivo simulado.",
 		href: "/proyectos/zeroshop",
 		image: "/assets/projects/thumbnails/project-zeroshop-gallery.webp",
 	},
 	{
-		name: "ZeroVanity",
+		name: "Zero Vanity",
 		sector: "Peluquería y estética",
 		note: "Demo interactiva para salones con recorrido de reserva y simulador de pago.",
 		href: "/proyectos/zerovanity",
@@ -55,7 +99,7 @@ const demoProjects = [
 		image: "/assets/projects/thumbnails/project-zero-breakdown-gallery.webp",
 	},
 	{
-		name: "ZeroRisk",
+		name: "Zero Risk",
 		sector: "Prevención de riesgos laborales",
 		note: "Concepto web para servicios de prevención y seguridad laboral con formulario de ejemplo.",
 		href: "/proyectos/zerorisk.html",
@@ -76,22 +120,206 @@ const demoProjects = [
 		image: "/assets/projects/thumbnails/project-zeroplague-gallery.jpg",
 	},
 	{
-		name: "NeighNet",
+		name: "Neigh Net",
 		sector: "Comunidades de propietarios",
 		note: "Plataforma demo para gestión de comunidades con acceso como vecino o administrador, reservas, votaciones, incidencias y cuentas simuladas.",
 		href: "/proyectos/neighnet",
 		image: "/assets/projects/thumbnails/project-neighnet-gallery.webp",
 	},
-	{
-		name: "J.Barranco ERP — Demo Sistema de Gestión",
-		sector: "ERP de Gestión · Limpieza y Mantenimiento",
-		note: "Demostración interactiva del sistema de gestión interno con acceso directo como administrador, comunidad cliente o empleado, rutas, inventario, contabilidad, tickets y datos simulados en memoria.",
-		href: "/proyectos/jbarranco",
-		image: "/assets/projects/thumbnails/project-jbarranco-erp-gallery.webp",
-	},
 ];
 
 type DemoProject = (typeof demoProjects)[number];
+
+interface ProductionDiptychCardProps {
+	readonly project: ProductionProject;
+	readonly side: "left" | "right";
+}
+
+function ProductionDiptychCard({ project, side }: ProductionDiptychCardProps) {
+	const prefersReducedMotion = useReducedMotion() ?? false;
+	const tiltX = useMotionValue(0);
+	const tiltY = useMotionValue(0);
+	const smoothTiltX = useSpring(tiltX, { stiffness: 220, damping: 22 });
+	const smoothTiltY = useSpring(tiltY, { stiffness: 220, damping: 22 });
+
+	const handlePointerMove = (event: MouseEvent<HTMLAnchorElement>) => {
+		if (prefersReducedMotion) return;
+		const rect = event.currentTarget.getBoundingClientRect();
+		const px = (event.clientX - rect.left) / rect.width - 0.5;
+		const py = (event.clientY - rect.top) / rect.height - 0.5;
+		tiltY.set(px * 6);
+		tiltX.set(-py * 6);
+	};
+
+	const handlePointerLeave = () => {
+		tiltX.set(0);
+		tiltY.set(0);
+	};
+
+	const isCerulean = project.accent === "cerulean";
+
+	return (
+		<motion.article
+			initial={
+				prefersReducedMotion
+					? false
+					: { opacity: 0, y: 28 }
+			}
+			whileInView={{ opacity: 1, y: 0 }}
+			viewport={{ once: true, amount: 0.2 }}
+			transition={{
+				duration: 0.65,
+				delay: side === "left" ? 0.05 : 0.14,
+				ease: [0.22, 1, 0.36, 1],
+			}}
+			className="group relative flex h-full flex-col rounded-3xl border border-white/12 bg-white/3 p-2 transition-colors duration-500 hover:border-[#0077CC]/60"
+		>
+			<div className="relative flex h-full flex-col justify-between overflow-hidden rounded-2xl border border-white/8 bg-[#0D0E12] p-5 sm:p-7 shadow-[inset_0_1px_1px_rgba(255,255,255,0.12)]">
+				{/* Ambient radial glow */}
+				<div
+					aria-hidden="true"
+					className={`pointer-events-none absolute -top-28 ${
+						side === "left" ? "-left-24" : "-right-24"
+					} h-64 w-64 rounded-full opacity-20 blur-3xl transition-opacity duration-500 group-hover:opacity-45 ${
+						isCerulean ? "bg-[#0077CC]" : "bg-emerald-500"
+					}`}
+				/>
+
+				<div>
+					{/* Top meta header */}
+					<div className="mb-4 flex items-center justify-between gap-2">
+						<span className="font-tech inline-flex items-center gap-1.5 text-[11px] font-semibold uppercase tracking-widest text-[#38BDF8]">
+							{side === "left" ? (
+								<Globe className="h-3.5 w-3.5 shrink-0 text-[#0077CC]" aria-hidden="true" />
+							) : (
+								<Layers className="h-3.5 w-3.5 shrink-0 text-emerald-400" aria-hidden="true" />
+							)}
+							<span>{project.badge}</span>
+						</span>
+
+						<span
+							className={`font-tech inline-flex shrink-0 items-center gap-1.5 rounded-full border px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wider ${
+								isCerulean
+									? "border-[#0077CC]/40 bg-[#0077CC]/15 text-[#7DD3FC]"
+									: "border-emerald-500/40 bg-emerald-500/15 text-emerald-300"
+							}`}
+						>
+							<span
+								className={`h-1.5 w-1.5 rounded-full ${
+									isCerulean ? "bg-[#38BDF8]" : "bg-emerald-400"
+								}`}
+								aria-hidden="true"
+							/>
+							<span>{project.statusPill}</span>
+						</span>
+					</div>
+
+					{/* Interactive 3D Thumbnail Frame (Double-Bezel) */}
+					<a
+						href={project.href}
+						target={project.external ? "_blank" : undefined}
+						rel={project.external ? "noopener noreferrer" : undefined}
+						data-cursor={project.cursorLabel}
+						onMouseMove={handlePointerMove}
+						onMouseLeave={handlePointerLeave}
+						style={{ perspective: 1000 }}
+						className="relative block overflow-hidden rounded-2xl border border-white/15 bg-[#121318] p-1.5 transition-colors duration-300 group-hover:border-[#0077CC] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#0077CC]"
+					>
+						<motion.div
+							style={{
+								rotateX: smoothTiltX,
+								rotateY: smoothTiltY,
+							}}
+							className="relative aspect-5/4 w-full overflow-hidden rounded-xl bg-[#0A0B0E]"
+						>
+							<img
+								src={project.image}
+								alt={`${project.name} — ${project.sector}`}
+								className="block h-full w-full object-cover transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.04]"
+								loading="lazy"
+								decoding="async"
+							/>
+
+							{/* Subtle bottom gradient + floating glass badge inside thumbnail */}
+							<div
+								aria-hidden="true"
+								className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-linear-to-t from-[#09090B]/90 via-[#09090B]/35 to-transparent"
+							/>
+							<div className="pointer-events-none absolute bottom-3 left-3 right-3 flex items-center justify-between gap-2">
+								<span className="font-tech rounded-lg border border-white/15 bg-[#09090B]/80 px-2.5 py-1 text-[10px] font-medium uppercase tracking-widest text-white/90">
+									{side === "left"
+										? "jbarrancolimpieza.com"
+										: "/proyectos/jbarranco · ERP v2"}
+								</span>
+								<span
+									className={`font-tech rounded-lg px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wider ${
+										isCerulean
+											? "bg-[#0077CC] text-white"
+											: "bg-emerald-500 text-slate-950"
+									}`}
+								>
+									{side === "left" ? "WEB PÚBLICA" : "DEMO INTERACTIVA"}
+								</span>
+							</div>
+						</motion.div>
+					</a>
+
+					{/* Typography & technical specs */}
+					<div className="mt-6">
+						<p className="font-tech text-[11px] uppercase tracking-wider text-[#38BDF8]">
+							{project.sector}
+						</p>
+						<h3 className="mt-1.5 text-2xl font-semibold tracking-tight text-[#F7F6F3] sm:text-[1.65rem]">
+							{project.name}
+						</h3>
+						<p className="mt-1 text-xs font-medium text-white/60">
+							{project.subtitle}
+						</p>
+						<p className="mt-3 text-sm leading-relaxed text-white/75">
+							{project.note}
+						</p>
+					</div>
+				</div>
+
+				{/* Footer: Tech pills + Button-in-button CTA */}
+				<div className="mt-6 border-t border-white/10 pt-5">
+					<div className="mb-5 flex flex-wrap gap-2">
+						{project.specs.map((spec) => (
+							<span
+								key={spec}
+								className="font-tech rounded-md border border-white/10 bg-white/4 px-2.5 py-1 text-[10px] uppercase tracking-wider text-white/70"
+							>
+								{spec}
+							</span>
+						))}
+					</div>
+
+					<a
+						href={project.href}
+						target={project.external ? "_blank" : undefined}
+						rel={project.external ? "noopener noreferrer" : undefined}
+						className={`group/btn inline-flex min-h-12 w-full items-center justify-between rounded-full pl-5 pr-2 py-1.5 text-xs font-semibold uppercase tracking-wider transition-all duration-300 ease-[cubic-bezier(0.23,1,0.32,1)] active:scale-[0.98] focus-visible:outline-2 focus-visible:outline-offset-2 ${
+							isCerulean
+								? "bg-[#0077CC] text-white hover:bg-white hover:text-[#09090B] focus-visible:outline-[#0077CC]"
+								: "border border-emerald-400/40 bg-emerald-500/15 text-emerald-200 hover:bg-emerald-400 hover:text-slate-950 focus-visible:outline-emerald-400"
+						}`}
+					>
+						<span>{project.ctaLabel}</span>
+						<span
+							className={`flex h-8 w-8 items-center justify-center rounded-full transition-transform duration-300 ease-[cubic-bezier(0.23,1,0.32,1)] group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 ${
+								isCerulean
+									? "bg-black/20 text-white group-hover/btn:bg-[#0077CC] group-hover/btn:text-white"
+									: "bg-emerald-400/20 text-emerald-200 group-hover/btn:bg-slate-950/20 group-hover/btn:text-slate-950"
+							}`}
+						>
+							<ArrowUpRight className="h-4 w-4" strokeWidth={1.75} aria-hidden="true" />
+						</span>
+					</a>
+				</div>
+			</div>
+		</motion.article>
+	);
+}
 
 interface DemoCardProps {
 	readonly project: DemoProject;
@@ -157,12 +385,12 @@ function DemoProjectCard({ project, index }: DemoCardProps) {
 						rotateY: smoothTiltY,
 						scale: imageScale,
 					}}
-				className="aspect-5/4 w-full overflow-hidden bg-[#111114]"
+					className="aspect-5/4 w-full overflow-hidden bg-[#111114]"
 				>
 					<img
 						src={project.image}
 						alt={`${project.name} — ${project.sector}`}
-					className="block h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+						className="block h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
 						loading="lazy"
 						decoding="async"
 					/>
@@ -197,27 +425,6 @@ function DemoProjectCard({ project, index }: DemoCardProps) {
 
 export function HomeProjectGallery() {
 	const prefersReducedMotion = useReducedMotion() ?? false;
-	const featuredRef = useRef<HTMLDivElement>(null);
-	const { scrollYProgress: featuredScroll } = useScroll({
-		target: featuredRef,
-		offset: ["start end", "end start"],
-	});
-
-	const featuredTextY = useTransform(
-		featuredScroll,
-		[0, 1],
-		prefersReducedMotion ? [0, 0] : [32, -32],
-	);
-	const featuredImageY = useTransform(
-		featuredScroll,
-		[0, 1],
-		prefersReducedMotion ? [0, 0] : [-28, 28],
-	);
-	const featuredScale = useTransform(
-		featuredScroll,
-		[0, 0.5, 1],
-		prefersReducedMotion ? [1, 1, 1] : [0.94, 1.02, 0.96],
-	);
 
 	return (
 		<section
@@ -241,71 +448,54 @@ export function HomeProjectGallery() {
 						</h2>
 					</div>
 					<span className="font-tech text-[11px] uppercase tracking-widest text-white/50">
-						<span>OBSIDIAN</span> <span>{"//"}</span>{" "}
-						<span>SHOWCASE TÉCNICO</span>
+						SHOWCASE TÉCNICO
 					</span>
 				</motion.div>
 
-				<div
-					ref={featuredRef}
-					className="mb-24 grid gap-10 border-b border-white/10 pb-20 lg:grid-cols-12 lg:items-center"
-				>
-					<motion.div style={{ y: featuredTextY }} className="lg:col-span-5">
-						<span className="font-tech inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-[#0077CC]">
-							<span
-								className="h-2 w-2 rounded-full bg-[#0077CC]"
-								aria-hidden="true"
-							/>
-							<span>PROYECTO REAL EN PRODUCCIÓN</span>
-						</span>
-						<h3 className="mt-3 text-3xl font-semibold text-[#F7F6F3] md:text-4xl">
-							{realProject.name}
-						</h3>
-						<p className="font-tech mt-1 text-xs uppercase tracking-widest text-white/55">
-							{realProject.sector}
+				{/* Ecosistema Real en Producción: Díptico J.Barranco (Izquierda Comercial / Derecha Demo ERP) */}
+				<div className="mb-24 border-b border-white/10 pb-20">
+					<div className="mb-8 flex flex-col justify-between gap-4 lg:flex-row lg:items-end">
+						<div>
+							<div className="inline-flex flex-wrap items-center gap-2.5">
+								<span className="font-tech inline-flex items-center gap-2 rounded-full border border-[#0077CC]/40 bg-[#0077CC]/10 px-3 py-1 text-xs font-semibold uppercase tracking-widest text-[#38BDF8]">
+									<span
+										className="h-2 w-2 rounded-full bg-[#0077CC]"
+										aria-hidden="true"
+									/>
+									<span>ECOSISTEMA REAL EN PRODUCCIÓN · CASO J.BARRANCO</span>
+								</span>
+								<span className="font-tech inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-white/4 px-3 py-1 text-[11px] uppercase tracking-wider text-white/65">
+									<ShieldCheck className="h-3.5 w-3.5 text-emerald-400" aria-hidden="true" />
+									<span>Datos reales protegidos mediante entorno demo aislado</span>
+								</span>
+							</div>
+							<h3 className="mt-4 text-2xl font-semibold tracking-tight text-[#F7F6F3] sm:text-3xl">
+								Doble despliegue en producción: Portal Comercial + ERP de Gestión.
+							</h3>
+						</div>
+						<p className="max-w-[54ch] text-sm leading-relaxed text-white/65">
+							A la izquierda, la web comercial pública activa en producción. A la derecha, el sistema ERP interno con el que opera la empresa a diario, habilitado en modo demostración con datos simulados para proteger la privacidad de clientes y empleados.
 						</p>
-						<p className="mt-4 max-w-[46ch] text-base leading-relaxed text-white/75">
-							{realProject.note}
-						</p>
-						<a
-							href={realProject.href}
-							target="_blank"
-							rel="noopener noreferrer"
-							className="group mt-7 inline-flex min-h-12 items-center gap-2 rounded-full bg-[#0077CC] px-6 text-sm font-medium text-white transition-colors hover:bg-white hover:text-[#111111] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0077CC]"
-						>
-							<span>Visitar web real</span>
-							<ArrowUpRight
-								className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-								strokeWidth={1.5}
-								aria-hidden="true"
-							/>
-						</a>
-					</motion.div>
-					<motion.div
-						style={{ y: featuredImageY, scale: featuredScale }}
-						className="lg:col-span-7"
+					</div>
+
+					<div
+						className="grid gap-6 lg:grid-cols-2 lg:gap-8"
+						data-testid="jbarranco-production-diptych"
 					>
-						<a
-							href={realProject.href}
-							target="_blank"
-							rel="noopener noreferrer"
-							data-cursor="VISITAR WEB ↗"
-							className="block aspect-5/4 max-w-xl overflow-hidden rounded-2xl border border-white/15 bg-[#141418] transition-colors hover:border-[#0077CC] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#0077CC] lg:ml-auto"
-						>
-							<img
-								src={realProject.image}
-								alt="J.Barranco — Web corporativa en producción"
-							className="h-full w-full object-cover"
-								loading="lazy"
-								decoding="async"
-							/>
-						</a>
-					</motion.div>
+						<ProductionDiptychCard
+							project={jbarrancoEcosystem[0]}
+							side="left"
+						/>
+						<ProductionDiptychCard
+							project={jbarrancoEcosystem[1]}
+							side="right"
+						/>
+					</div>
 				</div>
 
 				<div className="mb-12 flex items-center justify-between">
 					<p className="font-tech text-xs uppercase tracking-widest text-white/60">
-						DEMOSTRACIONES TÉCNICAS · DATOS SIMULADOS
+						CONCEPTOS Y DEMOSTRACIONES SECTORIALES · DATOS SIMULADOS
 					</p>
 				</div>
 

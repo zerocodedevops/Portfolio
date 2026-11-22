@@ -38,7 +38,7 @@ export default function PymesService() {
       <Seo
         title="Desarrollo Web Pymes Madrid | Páginas Web Autónomos"
         description="Creamos páginas web profesionales para pymes y autónomos en Madrid con diseño responsive, SEO local y enfoque en ventas."
-        keywords="desarrollo web pymes madrid, paginas web autonomos madrid, diseño web madrid pymes, web para negocios locales madrid, desarrollo de tiendas online para pymes, creación de página web autónomos madrid"
+        keywords="desarrollo web pymes madrid, paginas web autonomos madrid, diseño web madrid pymes, web para negocios locales madrid, aplicaciones web a medida para pymes, creación de página web autónomos madrid"
         jsonLd={{
           '@context': 'https://schema.org',
           '@type': 'ProfessionalService',

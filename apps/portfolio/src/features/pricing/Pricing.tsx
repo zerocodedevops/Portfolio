@@ -12,10 +12,10 @@ const essentialInclusions = [
 ];
 
 const customInclusions = [
-	"Webs multipágina y arquitectura editorial",
-	"Tiendas online y flujos interactivos",
-	"Aplicaciones web en React y TypeScript",
-	"Automatizaciones e integraciones a medida",
+	"Webs multipágina, landing pages y arquitectura editorial",
+	"Portales de cliente y flujos interactivos",
+	"Aplicaciones web y sistemas de gestión con código a medida",
+	"Integraciones y despliegue estructurado",
 ];
 
 export default function Pricing() {
@@ -131,8 +131,8 @@ export default function Pricing() {
 
 								<p className="mt-5 text-sm leading-relaxed text-white/75">
 									Para empresas y proyectos con necesidades específicas de
-									diseño, comercio electrónico, aplicaciones interactivas o
-									automatización.
+									diseño, portales de gestión, aplicaciones interactivas o
+									integraciones a medida.
 								</p>
 
 								<ul className="mt-6 grid gap-3 border-t border-white/15 pt-6 text-sm text-[#F7F6F3]">

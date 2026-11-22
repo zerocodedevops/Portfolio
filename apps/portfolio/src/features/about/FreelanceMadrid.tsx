@@ -10,7 +10,7 @@ export default function FreelanceMadrid() {
     <Layout>
       <Seo
         title="Diseñador Web Freelance en Madrid (Rivas)"
-        description="Programador web freelance en Madrid con enfoque AI-First. Ayudo a pymes y autónomos a automatizar su negocio con webs de alto impacto. ¡Contáctame!"
+        description="Programador web freelance en Madrid con enfoque AI-First. Ayudo a pymes y autónomos a impulsar su negocio con webs y aplicaciones a medida. ¡Contáctame!"
         keywords="programador web madrid, diseñador web freelance, desarrollo web rivas vaciamadrid, david g freelance"
       />
 

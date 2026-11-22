@@ -8,6 +8,7 @@ import { ScrollJourneyOverlay } from "@/components/ui/ScrollJourneyOverlay";
 import {
 	HomeFaqSection,
 	HomeOfferSections,
+	HomePricingSection,
 	HomeProcessSections,
 } from "./HomeOfferSections";
 import { HomeProjectGallery } from "./HomeProjectGallery";
@@ -52,7 +53,7 @@ export default function Home() {
 							priceRange: "€€",
 							founder: {
 								"@type": "Person",
-								name: "David González",
+								name: "David G.",
 								jobTitle: "Diseñador y Desarrollador Web Freelance",
 								url: "https://zerocode-devops.com/#sobre-mi",
 							},
@@ -99,6 +100,7 @@ export default function Home() {
 				<HomeOfferSections />
 				<HomeProjectGallery />
 				<HomeProcessSections />
+				<HomePricingSection />
 				<HomeFaqSection />
 				<Suspense fallback={null}>
 					<Contact />

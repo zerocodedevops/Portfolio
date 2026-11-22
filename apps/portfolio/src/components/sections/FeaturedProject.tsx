@@ -134,7 +134,7 @@ export function FeaturedProject() {
                   viewport={{ once: true }}
                   custom={index}
                 >
-                  <span className="w-1.5 h-1.5 rounded-full bg-primary-500 mt-2 flex-shrink-0" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-primary-500 mt-2 shrink-0" />
                   {t(`featuredProject.features.${featureKey}`)}
                 </motion.li>
               ))}

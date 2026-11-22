@@ -167,7 +167,7 @@ export function Contact() {
 			<div className="container-custom relative z-10">
 				<div className="mb-12 border-b border-[#E2DFD7] pb-6">
 					<p className="font-tech mb-3 text-xs font-medium uppercase tracking-widest text-[#0077CC]">
-						06 / CONTACTO
+						07 / CONTACTO
 					</p>
 					<h2 className="text-[clamp(2rem,3.5vw,3.25rem)] font-semibold leading-[1.05] tracking-tight text-[#111111]">
 						Hablemos de tu proyecto.
@@ -370,7 +370,7 @@ export function Contact() {
 								</button>
 
 								<div className="space-y-1 pt-2 text-xs leading-5 text-[#5C5B57]">
-									<p>Responsable: David González (ZeroCode DevOps).</p>
+									<p>Responsable: David G. (ZeroCode DevOps).</p>
 									<p>
 										<a
 											className="font-semibold text-[#111111] underline underline-offset-2 hover:text-[#0077CC]"

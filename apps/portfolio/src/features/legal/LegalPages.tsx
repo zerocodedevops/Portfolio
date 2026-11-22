@@ -4,7 +4,7 @@ import { Seo } from '@/components/common/SEO';
 import { Layout } from '@/components/layout/Layout';
 import { openCookieSettings } from '@/components/CookieConsent';
 
-const controller = 'David González - ZeroCode DevOps';
+const controller = 'David G. - ZeroCode DevOps';
 const taxId = '51994535E';
 const address = 'C/ José Manuel Caballero Bonald 2, Rivas-Vaciamadrid, Madrid, España';
 const contactEmail = 'admin@zerocode-devops.com';

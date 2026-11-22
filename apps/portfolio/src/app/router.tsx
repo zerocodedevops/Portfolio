@@ -1,11 +1,10 @@
-import { lazy, Suspense, useState } from 'react';
+import { lazy, Suspense } from 'react';
 import { createBrowserRouter, Navigate, RouterProvider } from 'react-router-dom';
 import { PageLoader } from '@/components/ui/PageLoader';
 import { RootErrorPage } from '@/components/RootErrorPage';
 import { Seo } from '@/components/common/SEO';
 
 const Home = lazy(() => import('@/features/home/Home'));
-const Pricing = lazy(() => import('@/features/pricing/Pricing'));
 const SalonApp = lazy(() => import('@zerovanity/routes'));
 const MediaApp = lazy(() => import('@zerodelay/App'));
 const ReformsApp = lazy(() => import('@zero-chaos/routes'));
@@ -15,40 +14,15 @@ const LegalNoticePage = lazy(() => import('@/features/legal/LegalPages').then((m
 const PrivacyPolicyPage = lazy(() => import('@/features/legal/LegalPages').then((module) => ({ default: module.PrivacyPolicyPage })));
 const CookiesPolicyPage = lazy(() => import('@/features/legal/LegalPages').then((module) => ({ default: module.CookiesPolicyPage })));
 
-function DismissibleDemoNotice({ children }: { children: string }) {
-  const [isVisible, setIsVisible] = useState(true);
-
-  if (!isVisible) return null;
-
-  return (
-    <div className="pointer-events-none fixed left-3 top-20 z-[100] flex max-w-[calc(100vw-1.5rem)] justify-start sm:left-5 sm:top-24" role="note">
-      <aside className="pointer-events-auto flex w-fit max-w-full items-center gap-2 rounded-lg border border-amber-500/35 bg-slate-950/95 px-3 py-2 text-xs leading-relaxed text-amber-50 shadow-lg backdrop-blur-md">
-        <p className="m-0 flex-1">{children}</p>
-        <button
-          aria-label="Cerrar aviso de datos simulados"
-          className="-mr-1 -mt-1 inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-lg text-amber-100/80 transition-colors hover:bg-white/10 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-200"
-          onClick={() => setIsVisible(false)}
-          type="button"
-        >
-          <span aria-hidden="true">×</span>
-        </button>
-      </aside>
-    </div>
-  );
-}
-
 function VanityDemoApp() {
   return (
     <>
       <Seo
-        title="Demo de web para peluquería y estética | ZeroVanity"
-        description="Explora ZeroVanity, una demo interactiva de una web para peluquería y estética. Recorrido de reserva simulado, sin conexión a base de datos ni almacenamiento de información."
+        title="Demo de web para peluquería y estética | Zero Vanity"
+        description="Explora Zero Vanity, una demo interactiva de una web para peluquería y estética. Recorrido de reserva simulado, sin conexión a base de datos ni almacenamiento de información."
         url="https://zerocode-devops.com/proyectos/zerovanity"
       />
       <SalonApp />
-      <DismissibleDemoNotice>
-        ZeroVanity: todos los datos de esta demo son simulados.
-      </DismissibleDemoNotice>
     </>
   );
 }
@@ -84,16 +58,12 @@ const router = createBrowserRouter(
         },
         {
           path: 'precios-paginas-web',
-          element: (
-            <Suspense fallback={<PageLoader text="Consultando Precios..." />}>
-              <Pricing />
-            </Suspense>
-          ),
+          element: <Navigate to="/#tarifas" replace />,
         },
         {
           path: 'proyectos/zerovanity/*',
           element: (
-            <Suspense fallback={<PageLoader text="Abriendo demo ZeroVanity..." />}>
+            <Suspense fallback={<PageLoader text="Abriendo demo Zero Vanity..." />}>
               <VanityDemoApp />
             </Suspense>
           ),
@@ -104,14 +74,11 @@ const router = createBrowserRouter(
             <Suspense fallback={<PageLoader text="Abriendo demo Zero Shop..." />}>
               <>
                 <Seo
-                  title="Demo de tienda online para comercios y pymes | Zero Shop"
-                  description="Explora Zero Shop, una demo interactiva de tienda online con carrito, catálogo filtrable, búsqueda por voz y checkout simulado."
+                  title="Demo de catálogo interactivo | Zero Shop"
+                  description="Explora Zero Shop, una demo interactiva con catálogo filtrable, búsqueda por voz y flujo simulado."
                   url="https://zerocode-devops.com/proyectos/zeroshop"
                 />
                 <ZeroShopApp />
-                <DismissibleDemoNotice>
-                  ZeroShop: todos los datos y pagos de esta demo son simulados.
-                </DismissibleDemoNotice>
               </>
             </Suspense>
           ),
@@ -120,12 +87,7 @@ const router = createBrowserRouter(
           path: 'proyectos/zero-breakdown/*',
           element: (
             <Suspense fallback={<PageLoader text="Abriendo demo Zero Breakdown..." />}>
-              <>
-                <ZeroBreakdownDemo />
-                <DismissibleDemoNotice>
-                  ZeroBreakDown: todos los datos de esta demo son simulados.
-                </DismissibleDemoNotice>
-              </>
+              <ZeroBreakdownDemo />
             </Suspense>
           ),
         },
@@ -141,25 +103,15 @@ const router = createBrowserRouter(
           path: 'proyectos/zerodelay/*',
           element: (
             <Suspense fallback={<PageLoader text="Cargando Zero Delay..." />}>
-              <>
-                <MediaApp />
-                <DismissibleDemoNotice>
-                  ZeroDelay: todos los datos de esta demo son simulados.
-                </DismissibleDemoNotice>
-              </>
+              <MediaApp />
             </Suspense>
           ),
         },
         {
           path: 'proyectos/zero-chaos/*',
           element: (
-            <Suspense fallback={<PageLoader text="Abriendo Cero Caos..." />}>
-              <>
-                <ReformsApp />
-                <DismissibleDemoNotice>
-                  ZeroChaos: todos los datos de esta demo son simulados.
-                </DismissibleDemoNotice>
-              </>
+            <Suspense fallback={<PageLoader text="Abriendo Zero Chaos..." />}>
+              <ReformsApp />
             </Suspense>
           ),
         },
