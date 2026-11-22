@@ -1,0 +1,74 @@
+/* Print Styles */
+@media print {
+  /* Hide non-essential elements */
+  header,
+  nav,
+  .sticky,
+  button,
+  .no-print,
+  [role="navigation"],
+  [aria-label="Breadcrumb"] {
+    display: none !important;
+  }
+
+  /* Reset page margins */
+  @page {
+    margin: 2cm;
+  }
+
+  /* Ensure content prints well */
+  body {
+    font-size: 12pt;
+    line-height: 1.5;
+    color: #000;
+    background: #fff;
+  }
+
+  /* Avoid page breaks inside elements */
+  h1, h2, h3, h4, h5, h6 {
+    page-break-after: avoid;
+    page-break-inside: avoid;
+  }
+
+  img {
+    max-width: 100%;
+    page-break-inside: avoid;
+  }
+
+  /* Show links for print */
+  a[href]:after {
+    content: " (" attr(href) ")";
+    font-size: 0.8em;
+    color: #666;
+  }
+
+  /* Don't show links for internal anchors */
+  a[href^="#"]:after,
+  a[href^="javascript:"]:after {
+    content: "";
+  }
+
+  /* Optimize table printing */
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+
+  /* Show URLs for email and phone links */
+  a[href^="mailto:"]:after,
+  a[href^="tel:"]:after {
+    content: " (" attr(href) ")";
+  }
+
+  /* Prevent widows and orphans */
+  p, li {
+    orphans: 3;
+    widows: 3;
+  }
+}

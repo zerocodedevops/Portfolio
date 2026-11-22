@@ -16,9 +16,14 @@ function serveStaticAppsPlugin(): Plugin {
       const serveAtelier = sirv(path.join(appsDir, 'zeroatelier'), { dev: true, single: false });
       const serveRisk = sirv(path.join(appsDir, 'zerorisk'), { dev: true, single: false });
       const serveNeighnet = sirv(path.join(appsDir, 'NeghNetZ/dist'), { dev: true, single: true });
+      const serveJBarrancoDemo = sirv(path.join(appsDir, 'jbarranco-demo/dist'), { dev: true, single: true });
 
       server.middlewares.use((req, res, next) => {
         const url = req.url || '';
+        if (url.startsWith('/proyectos/jbarranco')) {
+          req.url = url.replace(/^\/proyectos\/jbarranco/, '') || '/';
+          return serveJBarrancoDemo(req, res, next);
+        }
         if (url.startsWith('/proyectos/neighnet')) {
           req.url = url.replace(/^\/proyectos\/neighnet/, '') || '/';
           return serveNeighnet(req, res, next);

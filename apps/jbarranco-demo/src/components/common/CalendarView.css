@@ -1,0 +1,251 @@
+/* Estilos personalizados para react-big-calendar con brand colors J-Barranco */
+
+.calendar-container {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+}
+
+/* Toolbar (barra superior) */
+.rbc-toolbar {
+  padding: 15px 0;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #003366;
+}
+
+.rbc-toolbar button {
+  color: #003366;
+  border: 1px solid #003366;
+  padding: 8px 15px;
+  border-radius: 5px;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.rbc-toolbar button:hover {
+  background-color: #003366;
+  color: white;
+}
+
+.rbc-toolbar button.rbc-active {
+  background-color: #003366;
+  color: white;
+}
+
+.rbc-toolbar button.rbc-active:hover {
+  background-color: #002244;
+}
+
+/* Header de mes */
+.rbc-header {
+  padding: 10px 5px;
+  font-weight: 600;
+  color: #003366;
+  border-bottom: 2px solid #e5e7eb;
+}
+
+/* Días del mes */
+.rbc-day-bg {
+  background-color: white;
+}
+
+.rbc-off-range-bg {
+  background-color: #f8f9fa;
+}
+
+.rbc-today {
+  background-color: #e6f2ff !important;
+}
+
+/* Eventos */
+.rbc-event {
+    padding: 8px !important;
+    font-size: 0.95rem !important;
+    font-weight: 500;
+    cursor: pointer;
+    min-height: 50px !important;
+    display: flex !important;
+    align-items: center !important;
+    margin-bottom: 6px !important;
+    line-height: 1.2 !important;
+}
+
+.rbc-event:hover {
+  opacity: 1 !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.rbc-event.rbc-selected {
+  background-color: #002244 !important;
+}
+
+/* Slots de tiempo */
+.rbc-time-slot {
+  border-top: 1px solid #e5e7eb;
+}
+
+.rbc-current-time-indicator {
+  background-color: #00a86b;
+  height: 2px;
+}
+
+/* Botón "Ver más" */
+.rbc-show-more {
+  color: #003366;
+  font-weight: 600;
+  padding: 4px;
+  border-radius: 4px;
+}
+
+.rbc-show-more:hover {
+  background-color: #e6f2ff;
+}
+
+/* Vista de agenda */
+.rbc-agenda-view {
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.rbc-agenda-date-cell,
+.rbc-agenda-time-cell {
+  padding: 12px;
+  color: #003366;
+  font-weight: 600;
+}
+
+.rbc-agenda-event-cell {
+  padding: 12px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .calendar-container {
+    padding: 10px;
+  }
+
+  .rbc-toolbar {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .rbc-toolbar-label {
+    margin: 10px 0;
+  }
+}
+
+/* --- MODIFICACIÓN PARA ELIMINAR VISTA HORARIA (v2) --- */
+.rbc-time-content, .rbc-time-gutter {
+  display: none !important;
+}
+
+.rbc-time-view {
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.rbc-time-view .rbc-header {
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.rbc-label {
+  display: none !important;
+}
+
+.rbc-row-segment {
+    padding: 4px 2px !important;
+}
+
+/* --- OCULTAR FINES DE SEMANA (Sábado y Domingo) --- */
+/* En locale español la semana empieza en Lunes:
+   1=Lun, 2=Mar, 3=Mié, 4=Jue, 5=Vie, 6=Sáb, 7=Dom */
+
+/* Vista mensual: ocultar headers de sábado (6) y domingo (7) */
+.rbc-month-view .rbc-month-header .rbc-header:nth-child(6),
+.rbc-month-view .rbc-month-header .rbc-header:nth-child(7) {
+    display: none !important;
+}
+
+/* Ocultar celdas de fondo del día (sábado y domingo) */
+.rbc-month-row .rbc-row-bg .rbc-day-bg:nth-child(6),
+.rbc-month-row .rbc-row-bg .rbc-day-bg:nth-child(7) {
+    display: none !important;
+}
+
+/* Ocultar los números de fecha de sábado y domingo */
+.rbc-month-row .rbc-row-content .rbc-row:first-child .rbc-date-cell:nth-child(6),
+.rbc-month-row .rbc-row-content .rbc-row:first-child .rbc-date-cell:nth-child(7) {
+    display: none !important;
+}
+
+/* Ajustar headers para 5 columnas iguales */
+.rbc-month-view .rbc-month-header {
+    display: flex !important;
+    width: 100% !important;
+}
+
+.rbc-month-view .rbc-month-header .rbc-header {
+    flex: none !important;
+    width: 20% !important;
+    min-width: 20% !important;
+    max-width: 20% !important;
+}
+
+/* Ajustar fila del mes para 5 columnas */
+.rbc-month-row {
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+.rbc-month-row .rbc-row-bg {
+    display: flex !important;
+    width: 100% !important;
+}
+
+.rbc-month-row .rbc-row-bg .rbc-day-bg {
+    flex: none !important;
+    width: 20% !important;
+    min-width: 20% !important;
+    max-width: 20% !important;
+}
+
+/* Fila de fechas: 5 columnas */
+.rbc-month-row .rbc-row-content .rbc-row:first-child {
+    display: flex !important;
+    width: 100% !important;
+}
+
+.rbc-month-row .rbc-row-content .rbc-row:first-child .rbc-date-cell {
+    flex: none !important;
+    width: 20% !important;
+    min-width: 20% !important;
+    max-width: 20% !important;
+}
+
+/* Ajustar segmentos de eventos a 5 columnas (20% cada una) */
+/* Los eventos usan flex-basis inline calculado para 7 días, lo sobreescribimos */
+.rbc-month-row .rbc-row-content .rbc-row .rbc-row-segment {
+    flex: none !important;
+    width: 20% !important;
+    min-width: 20% !important;
+    max-width: 20% !important;
+    flex-basis: 20% !important;
+}
+
+/* Ocultar eventos que caen en fin de semana (posiciones 6 y 7) */
+.rbc-month-row .rbc-row-content .rbc-row .rbc-row-segment:nth-child(6),
+.rbc-month-row .rbc-row-content .rbc-row .rbc-row-segment:nth-child(7) {
+    display: none !important;
+}
+
+/* Vista semanal: ocultar sábado y domingo */
+.rbc-time-view .rbc-time-header-content .rbc-header:nth-child(6),
+.rbc-time-view .rbc-time-header-content .rbc-header:nth-child(7) {
+    display: none !important;
+}
+
+.rbc-time-view .rbc-allday-cell .rbc-row-bg .rbc-day-bg:nth-child(6),
+.rbc-time-view .rbc-allday-cell .rbc-row-bg .rbc-day-bg:nth-child(7) {
+    display: none !important;
+}

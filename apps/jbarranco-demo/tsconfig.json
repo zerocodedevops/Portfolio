@@ -1,0 +1,31 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "useDefineForClassFields": true,
+    "lib": ["ES2023", "DOM", "DOM.Iterable"],
+    "module": "ESNext",
+    "skipLibCheck": true,
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
+    "isolatedModules": true,
+    "moduleDetection": "force",
+    "noEmit": true,
+    "jsx": "react-jsx",
+    "strict": true,
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
+    "noFallthroughCasesInSwitch": true,
+    "baseUrl": ".",
+    "paths": {
+      "firebase/app": ["./src/demo/demoAuth.ts"],
+      "firebase/auth": ["./src/demo/demoAuth.ts"],
+      "firebase/firestore": ["./src/demo/demoStore.ts"],
+      "@supabase/supabase-js": ["./src/demo/demoStorage.ts"],
+      "react-hot-toast": ["./src/demo/shims/reactHotToast.tsx"],
+      "ics": ["./src/demo/shims/icsShim.ts"],
+      "file-saver": ["./src/demo/shims/fileSaverShim.ts"],
+      "isomorphic-dompurify": ["./src/demo/shims/dompurifyShim.ts"]
+    }
+  },
+  "include": ["src"]
+}

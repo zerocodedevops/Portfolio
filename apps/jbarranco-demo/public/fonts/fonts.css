@@ -1,0 +1,41 @@
+/*
+ * Font: Inter (Copyright 2016 The Inter Project Authors - https://github.com/rsms/inter)
+ * License: SIL Open Font License, Version 1.1 (see ./OFL-LICENSE.txt)
+ * Self-hosted locally for J.Barranco ERP Demo — Zero external network requests.
+ */
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url('./inter-latin-ext-400-normal.woff2') format('woff2'),
+       url('./inter-latin-400-normal.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 500;
+  src: url('./inter-latin-ext-500-normal.woff2') format('woff2'),
+       url('./inter-latin-500-normal.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 600;
+  src: url('./inter-latin-ext-600-normal.woff2') format('woff2'),
+       url('./inter-latin-600-normal.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  src: url('./inter-latin-ext-700-normal.woff2') format('woff2'),
+       url('./inter-latin-700-normal.woff2') format('woff2');
+}

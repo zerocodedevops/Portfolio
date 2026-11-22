@@ -82,6 +82,13 @@ const demoProjects = [
 		href: "/proyectos/neighnet",
 		image: "/assets/projects/thumbnails/project-neighnet-gallery.webp",
 	},
+	{
+		name: "J.Barranco ERP — Demo Sistema de Gestión",
+		sector: "ERP de Gestión · Limpieza y Mantenimiento",
+		note: "Demostración interactiva del sistema de gestión interno con acceso directo como administrador, comunidad cliente o empleado, rutas, inventario, contabilidad, tickets y datos simulados en memoria.",
+		href: "/proyectos/jbarranco",
+		image: "/assets/projects/thumbnails/project-jbarranco-erp-gallery.webp",
+	},
 ];
 
 type DemoProject = (typeof demoProjects)[number];

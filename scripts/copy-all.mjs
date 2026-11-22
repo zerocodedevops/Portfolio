@@ -16,6 +16,8 @@ await cp(path.join(root, 'apps/zero-chaos/build/client'), path.join(output, 'ref
 await mkdir(path.join(output, 'proyectos'), { recursive: true });
 await mkdir(path.join(output, 'proyectos/neighnet'), { recursive: true });
 await cp(path.join(root, 'apps/NeghNetZ/dist'), path.join(output, 'proyectos/neighnet'), { recursive: true });
+await mkdir(path.join(output, 'proyectos/jbarranco'), { recursive: true });
+await cp(path.join(root, 'apps/jbarranco-demo/dist'), path.join(output, 'proyectos/jbarranco'), { recursive: true });
 await cp(path.join(root, 'apps/zeroplague'), path.join(output, 'proyectos/zeroplague'), { recursive: true });
 await cp(path.join(root, 'apps/zeroatelier'), path.join(output, 'proyectos/zeroatelier'), { recursive: true });
 await cp(path.join(root, 'apps/zerorisk'), path.join(output, 'proyectos/zerorisk'), { recursive: true });
