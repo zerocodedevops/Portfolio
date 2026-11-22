@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+
+<html lang="es"><head><link rel="stylesheet" href="/fonts/fonts.css"/><link rel="stylesheet" href="/stitch-tailwind.css"/><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/>
+<style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style></head><body class="bg-surface font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-72 bg-surface-container-lowest z-50 flex flex-col shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-space-lg flex items-center justify-between"><div class="flex items-center gap-space-sm"><img alt="NeighNetZ Logo" class="h-8 w-auto object-contain" src="/images/demo-placeholder.svg"/><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight">NeighNetZ</span></div></div><div class="px-space-md py-space-sm"><div class="bg-surface-container-low rounded-lg p-space-sm flex items-center justify-between cursor-pointer hover:bg-surface-container transition-colors"><div class="flex items-center gap-space-sm overflow-hidden"><span class="material-symbols-outlined text-secondary text-[20px]">apartment</span><div class="flex flex-col truncate"><span class="font-label-sm text-label-sm text-on-surface-variant uppercase truncate">Comunidad Activa</span><span class="font-label-md text-label-md text-on-surface truncate">Residencial Los Sauces 14</span></div></div><span class="material-symbols-outlined text-on-surface-variant text-[18px]">unfold_more</span></div></div><nav class="flex-1 overflow-y-auto px-space-md py-space-sm flex flex-col gap-space-xs" data-active-classes="bg-primary-container text-on-primary font-bold rounded-lg"><div class="px-space-sm pt-space-sm pb-space-xs"><span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Área del Vecino</span></div><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container hover:text-on-surface transition-all" data-path="dashboard" href="#"><span class="material-symbols-outlined text-[20px]">home</span><span>Inicio / Tablón</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container hover:text-on-surface transition-all" data-path="dashboard-incidencias" href="#"><span class="material-symbols-outlined text-[20px]">report_problem</span><span>Incidencias</span></a><a aria-current="page" class="flex items-center gap-space-sm px-space-sm py-space-sm transition-all bg-primary-container text-on-primary font-bold rounded-lg" data-path="dashboard-reservas" href="#"><span class="material-symbols-outlined text-[20px]">event_available</span><span>Reservas</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container hover:text-on-surface transition-all" data-path="dashboard-votaciones" href="#"><span class="material-symbols-outlined text-[20px]">how_to_vote</span><span>Votaciones</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container hover:text-on-surface transition-all" data-path="dashboard-documentos" href="#"><span class="material-symbols-outlined text-[20px]">folder_shared</span><span>Documentos</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container hover:text-on-surface transition-all" data-path="dashboard-vecinos" href="#"><span class="material-symbols-outlined text-[20px]">groups</span><span>Directorio de Vecinos</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container hover:text-on-surface transition-all" data-path="dashboard-gastos" href="#"><span class="material-symbols-outlined text-[20px]">account_balance_wallet</span><span>Cuentas y Gastos</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container hover:text-on-surface transition-all" data-path="dashboard-perfil" href="#"><span class="material-symbols-outlined text-[20px]">person</span><span>Mi Perfil</span></a><div class="px-space-sm pt-space-md pb-space-xs"><span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Panel de Administración</span></div><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container hover:text-on-surface transition-all" data-path="admin" href="#"><span class="material-symbols-outlined text-[20px]">monitoring</span><span>Panel Ejecutivo</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container hover:text-on-surface transition-all" data-path="admin-usuarios" href="#"><span class="material-symbols-outlined text-[20px]">verified_user</span><span>Validar Vecinos</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container hover:text-on-surface transition-all" data-path="admin-incidencias" href="#"><span class="material-symbols-outlined text-[20px]">assignment_late</span><span>Gestión de Incidencias</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container hover:text-on-surface transition-all" data-path="admin-reservas" href="#"><span class="material-symbols-outlined text-[20px]">book_online</span><span>Gestión de Reservas</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container hover:text-on-surface transition-all" data-path="admin-documentos" href="#"><span class="material-symbols-outlined text-[20px]">file_copy</span><span>Gestión Documental</span></a></nav><div class="p-space-md mt-auto"><div class="bg-surface-container-low rounded-lg p-space-sm flex items-center justify-between"><div class="flex items-center gap-space-sm"><span class="h-2 w-2 rounded-full bg-secondary"></span><span class="font-label-sm text-label-sm text-on-surface-variant">Servicios Operativos</span></div><span class="font-label-sm text-label-sm text-secondary font-bold">v2.4</span></div></div></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 h-16 bg-surface-container-lowest/80 backdrop-blur-xl z-40 flex items-center justify-between px-space-lg shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex items-center w-96"><div class="relative w-full flex items-center"><span class="material-symbols-outlined absolute left-space-sm text-on-surface-variant text-[20px]">search</span><input class="w-full bg-surface-container-low text-on-surface placeholder:text-on-surface-variant font-body-sm text-body-sm pl-9 pr-space-md py-space-xs rounded-lg outline-none focus:bg-surface-container-lowest transition-colors" placeholder="Buscar acuerdos, actas, reservas o incidencias..." type="text"/></div></div><div class="flex items-center gap-space-md"><div class="hidden sm:flex items-center gap-space-xs px-space-sm py-space-xs rounded-full bg-badge-emerald-bg"><span class="h-2 w-2 rounded-full bg-secondary animate-pulse"></span><span class="font-label-sm text-label-sm text-badge-emerald-text">Firebase Online</span></div><button aria-label="Notificaciones" class="relative p-space-xs rounded-full hover:bg-surface-container transition-colors text-on-surface-variant hover:text-on-surface" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-1 right-1 h-2 w-2 rounded-full bg-urgent-coral"></span></button><div class="flex items-center gap-space-sm pl-space-sm"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="/images/demo-placeholder.svg"/><div class="flex flex-col text-left"><span class="font-label-md text-label-md text-on-surface">Elena Morales</span><span class="font-label-sm text-label-sm text-on-surface-variant">Propietaria / Vicepresidenta</span></div></div></div></header><main class="relative pt-16 bg-surface min-h-screen"><div class="flex flex-col w-full">
+<div class="px-space-lg py-space-xl max-w-[1400px] mx-auto w-full space-y-space-xl">
+<!-- Top Action Bar & Header -->
+<div class="flex flex-col lg:flex-row lg:items-end justify-between gap-space-md">
+<div class="space-y-space-xs">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary px-space-xs py-0.5 bg-badge-emerald-bg rounded">Módulo Vecinal</span>
+<span class="text-on-surface-variant font-body-sm text-body-sm">/</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Gestión de Zonas Comunes</span>
+</div>
+<h1 class="font-headline-xl text-headline-xl text-on-surface tracking-tight">Reservas de Instalaciones y Espacios Comunes</h1>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl">
+          Selecciona un espacio de Residencial Los Sauces 14 para programar tu turno o gestionar el acceso digital de tus invitados con validación QR inmediata.
+        </p>
+</div>
+<div class="flex items-center gap-space-sm flex-wrap">
+<button class="inline-flex items-center gap-space-xs px-space-md py-space-sm rounded-lg bg-surface-container-low text-on-surface font-label-lg text-label-lg shadow-sm hover:bg-surface-container transition-all active:scale-[0.98]" id="open-rules-btn" type="button">
+<span class="material-symbols-outlined text-[18px]">gavel</span>
+<span>Normativa de uso</span>
+</button>
+<a class="inline-flex items-center gap-space-xs px-space-md py-space-sm rounded-lg bg-primary text-on-primary font-label-lg text-label-lg shadow-md hover:bg-on-primary-fixed transition-all active:scale-[0.98]" href="#mis-reservas-section">
+<span class="material-symbols-outlined text-[18px]">event_seat</span>
+<span>Ver mis reservas activas (1)</span>
+</a>
+</div>
+</div>
+<!-- Quick Stat Strip / Capacity Overview -->
+<div class="grid grid-cols-2 md:grid-cols-4 gap-space-md">
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex items-center justify-between">
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Pista Pádel</span>
+<p class="font-headline-md text-headline-md text-on-surface font-bold mt-0.5">86%</p>
+<span class="font-body-sm text-body-sm text-secondary font-semibold">4 franjas libres hoy</span>
+</div>
+<div class="w-10 h-10 rounded-lg bg-badge-emerald-bg flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[24px]">sports_tennis</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex items-center justify-between">
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Piscina Central</span>
+<p class="font-headline-md text-headline-md text-on-surface font-bold mt-0.5">18 / 60</p>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Aforo controlado</span>
+</div>
+<div class="w-10 h-10 rounded-lg bg-surface-container-low flex items-center justify-center text-on-surface">
+<span class="material-symbols-outlined text-[24px]">pool</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex items-center justify-between">
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Sala Gourmet</span>
+<p class="font-headline-md text-headline-md text-on-surface font-bold mt-0.5">Disponible</p>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Sin turnos para hoy</span>
+</div>
+<div class="w-10 h-10 rounded-lg bg-surface-container-low flex items-center justify-center text-on-surface">
+<span class="material-symbols-outlined text-[24px]">soup_kitchen</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex items-center justify-between">
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Fitness / Sauna</span>
+<p class="font-headline-md text-headline-md text-on-surface font-bold mt-0.5">3 / 10</p>
+<span class="font-body-sm text-body-sm text-secondary font-semibold">Acceso libre sin reserva</span>
+</div>
+<div class="w-10 h-10 rounded-lg bg-badge-emerald-bg flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[24px]">fitness_center</span>
+</div>
+</div>
+</div>
+<!-- Catálogo de Zonas Comunes -->
+<div class="space-y-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-on-surface text-[20px]">grid_view</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Espacios Comunitarios Disponibles</h2>
+</div>
+<span class="font-label-md text-label-md text-on-surface-variant">4 instalaciones activas en régimen vecinal</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-space-lg">
+<!-- Tarjeta 1: Pádel -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden flex flex-col group hover:shadow-md transition-shadow">
+<div class="relative h-48 w-full overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Modern outdoor glass paddle tennis court at dawn with clean blue turf, floodlights overhead, and architectural residential buildings in the blurred background. Crisp morning lighting, professional architectural real estate photography." src="/images/demo-placeholder.svg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent"></div>
+<div class="absolute top-space-sm left-space-sm flex gap-space-xs">
+<span class="font-label-sm text-label-sm bg-badge-emerald-bg text-badge-emerald-text px-2 py-0.5 rounded-full font-bold shadow-sm">Operativa</span>
+<span class="font-label-sm text-label-sm bg-surface-container-lowest/90 text-on-surface px-2 py-0.5 rounded-full shadow-sm">Gratuito</span>
+</div>
+<div class="absolute bottom-space-sm left-space-sm right-space-sm text-on-primary">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary-fixed">Exterior Nivel 0</span>
+<h3 class="font-headline-sm text-headline-sm font-bold">Pista de Pádel de Cristal</h3>
+</div>
+</div>
+<div class="p-space-md flex-1 flex flex-col justify-between space-y-space-md">
+<div class="space-y-space-sm">
+<div class="grid grid-cols-2 gap-space-xs font-body-sm text-body-sm text-on-surface-variant">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-on-surface">groups</span>
+<span>Capacidad: 4 pers.</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-on-surface">schedule</span>
+<span>08:00 - 23:00</span>
+</div>
+</div>
+<div class="bg-surface-container-low p-space-sm rounded-lg">
+<p class="font-label-sm text-label-sm text-on-surface font-semibold flex items-center gap-1 mb-0.5">
+<span class="material-symbols-outlined text-[14px] text-secondary">info</span>
+                  Regla de reserva:
+                </p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Máximo 1.5h por día por vecino titular. Cancelación con 2h de antelación.</p>
+</div>
+</div>
+<button class="w-full py-space-sm px-space-md rounded-lg bg-primary text-on-primary font-label-lg text-label-lg flex items-center justify-center gap-space-xs hover:bg-on-primary-fixed transition-colors active:scale-[0.98]" onclick="selectFacility('Pista de Pádel de Cristal')" type="button">
+<span class="material-symbols-outlined text-[18px]">calendar_month</span>
+<span>Reservar tramo</span>
+</button>
+</div>
+</div>
+<!-- Tarjeta 2: Piscina Comunitaria -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden flex flex-col group hover:shadow-md transition-shadow">
+<div class="relative h-48 w-full overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Pristine residential community swimming pool surrounded by manicured lawns, modern sun loungers, and wooden pergolas under gentle summer sunlight. Clear turquoise water, tranquil luxury residential complex atmosphere." src="/images/demo-placeholder.svg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent"></div>
+<div class="absolute top-space-sm left-space-sm flex gap-space-xs">
+<span class="font-label-sm text-label-sm bg-badge-emerald-bg text-badge-emerald-text px-2 py-0.5 rounded-full font-bold shadow-sm">Acceso QR</span>
+<span class="font-label-sm text-label-sm bg-surface-container-lowest/90 text-on-surface px-2 py-0.5 rounded-full shadow-sm">Gratuito</span>
+</div>
+<div class="absolute bottom-space-sm left-space-sm right-space-sm text-on-primary">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary-fixed">Jardines Centrales</span>
+<h3 class="font-headline-sm text-headline-sm font-bold">Piscina Comunitaria</h3>
+</div>
+</div>
+<div class="p-space-md flex-1 flex flex-col justify-between space-y-space-md">
+<div class="space-y-space-sm">
+<div class="grid grid-cols-2 gap-space-xs font-body-sm text-body-sm text-on-surface-variant">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-on-surface">groups</span>
+<span>Aforo máx: 60 pers.</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-on-surface">schedule</span>
+<span>10:00 - 21:00</span>
+</div>
+</div>
+<div class="bg-surface-container-low p-space-sm rounded-lg">
+<p class="font-label-sm text-label-sm text-on-surface font-semibold flex items-center gap-1 mb-0.5">
+<span class="material-symbols-outlined text-[14px] text-secondary">qr_code_scanner</span>
+                  Control de invitados:
+                </p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Hasta 4 pases digitales simultáneos por unidad inmobiliaria activa.</p>
+</div>
+</div>
+<button class="w-full py-space-sm px-space-md rounded-lg bg-surface-container-low text-on-surface font-label-lg text-label-lg flex items-center justify-center gap-space-xs hover:bg-surface-container transition-colors active:scale-[0.98]" onclick="selectFacility('Piscina Comunitaria')" type="button">
+<span class="material-symbols-outlined text-[18px]">deck</span>
+<span>Reservar hamaca / franja</span>
+</button>
+</div>
+</div>
+<!-- Tarjeta 3: Salón Social Gourmet -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden flex flex-col group hover:shadow-md transition-shadow">
+<div class="relative h-48 w-full overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Elegant communal gourmet room with open kitchen island, industrial wood dining table seating twenty people, warm pendant lighting, minimalist cabinetry and presentation projector screen ready for private gatherings." src="/images/demo-placeholder.svg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent"></div>
+<div class="absolute top-space-sm left-space-sm flex gap-space-xs">
+<span class="font-label-sm text-label-sm bg-badge-amber-bg text-badge-amber-text px-2 py-0.5 rounded-full font-bold shadow-sm">Fianza 15€</span>
+<span class="font-label-sm text-label-sm bg-surface-container-lowest/90 text-on-surface px-2 py-0.5 rounded-full shadow-sm">Reserva Previa</span>
+</div>
+<div class="absolute bottom-space-sm left-space-sm right-space-sm text-on-primary">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary-fixed">Edificio Comunitario B</span>
+<h3 class="font-headline-sm text-headline-sm font-bold">Salón Social / Sala Gourmet</h3>
+</div>
+</div>
+<div class="p-space-md flex-1 flex flex-col justify-between space-y-space-md">
+<div class="space-y-space-sm">
+<div class="grid grid-cols-2 gap-space-xs font-body-sm text-body-sm text-on-surface-variant">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-on-surface">groups</span>
+<span>Capacidad: 25 pers.</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-on-surface">tv</span>
+<span>Cocina &amp; Proyector</span>
+</div>
+</div>
+<div class="bg-surface-container-low p-space-sm rounded-lg">
+<p class="font-label-sm text-label-sm text-on-surface font-semibold flex items-center gap-1 mb-0.5">
+<span class="material-symbols-outlined text-[14px] text-secondary">cleaning_services</span>
+                  Fianza &amp; Limpieza:
+                </p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">15€ cargo simbólico retirable tras verificación de estado por conserjería.</p>
+</div>
+</div>
+<button class="w-full py-space-sm px-space-md rounded-lg bg-surface-container-low text-on-surface font-label-lg text-label-lg flex items-center justify-center gap-space-xs hover:bg-surface-container transition-colors active:scale-[0.98]" onclick="selectFacility('Salón Social / Sala Gourmet')" type="button">
+<span class="material-symbols-outlined text-[18px]">receipt_long</span>
+<span>Solicitar reserva</span>
+</button>
+</div>
+</div>
+<!-- Tarjeta 4: Gimnasio y Sauna -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden flex flex-col group hover:shadow-md transition-shadow">
+<div class="relative h-48 w-full overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Contemporary private condo gym and Scandinavian cedarwood sauna with glass walls, cardio treadmills, dumbbells rack, warm ambient indirect LED lighting, spotless clean modern residential wellness area." src="/images/demo-placeholder.svg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent"></div>
+<div class="absolute top-space-sm left-space-sm flex gap-space-xs">
+<span class="font-label-sm text-label-sm bg-badge-emerald-bg text-badge-emerald-text px-2 py-0.5 rounded-full font-bold shadow-sm">Libre Acceso</span>
+<span class="font-label-sm text-label-sm bg-surface-container-lowest/90 text-on-surface px-2 py-0.5 rounded-full shadow-sm">Sin Coste</span>
+</div>
+<div class="absolute bottom-space-sm left-space-sm right-space-sm text-on-primary">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary-fixed">Sótano -1</span>
+<h3 class="font-headline-sm text-headline-sm font-bold">Gimnasio y Sauna</h3>
+</div>
+</div>
+<div class="p-space-md flex-1 flex flex-col justify-between space-y-space-md">
+<div class="space-y-space-sm">
+<div class="grid grid-cols-2 gap-space-xs font-body-sm text-body-sm text-on-surface-variant">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-on-surface">groups</span>
+<span>Aforo máx: 10 pers.</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-on-surface">schedule</span>
+<span>06:00 - 23:30</span>
+</div>
+</div>
+<div class="bg-surface-container-low p-space-sm rounded-lg">
+<p class="font-label-sm text-label-sm text-on-surface font-semibold flex items-center gap-1 mb-0.5">
+<span class="material-symbols-outlined text-[14px] text-secondary">hot_tub</span>
+                  Sauna finlandesa:
+                </p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Precalentamiento automatizado por sensor. Uso simultáneo máx 3 personas.</p>
+</div>
+</div>
+<button class="w-full py-space-sm px-space-md rounded-lg bg-surface-container-low text-on-surface font-label-lg text-label-lg flex items-center justify-center gap-space-xs hover:bg-surface-container transition-colors active:scale-[0.98]" onclick="selectFacility('Gimnasio y Sauna')" type="button">
+<span class="material-symbols-outlined text-[18px]">query_builder</span>
+<span>Consultar disponibilidad</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Sección Inferior: Calendario y Panel Lateral Mis Reservas -->
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-space-lg items-start">
+<!-- Bloque de Horarios y Calendario (8 columnas) -->
+<div class="xl:col-span-8 bg-surface-container-lowest rounded-xl shadow-sm p-space-lg space-y-space-md">
+<!-- Header del Calendario -->
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm">
+<div>
+<div class="flex items-center gap-space-xs">
+<span class="h-2.5 w-2.5 rounded-full bg-secondary"></span>
+<span class="font-headline-md text-headline-md text-on-surface font-bold" id="active-facility-label">Pista de Pádel de Cristal</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Semana del 21 al 27 de Octubre, 2024</p>
+</div>
+<!-- Selector de Días de la semana -->
+<div class="flex items-center gap-1 bg-surface-container-low p-1 rounded-lg overflow-x-auto">
+<button class="px-space-sm py-1 rounded font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" onclick="setDay('Lun 21', this)" type="button">Lun 21</button>
+<button class="px-space-sm py-1 rounded font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" onclick="setDay('Mar 22', this)" type="button">Mar 22</button>
+<button class="px-space-sm py-1 rounded font-label-md text-label-md bg-primary text-on-primary font-bold shadow-sm" onclick="setDay('Mié 23', this)" type="button">Mié 23 (Hoy)</button>
+<button class="px-space-sm py-1 rounded font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" onclick="setDay('Jue 24', this)" type="button">Jue 24</button>
+<button class="px-space-sm py-1 rounded font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" onclick="setDay('Vie 25', this)" type="button">Vie 25</button>
+<button class="px-space-sm py-1 rounded font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" onclick="setDay('Sáb 26', this)" type="button">Sáb 26</button>
+<button class="px-space-sm py-1 rounded font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" onclick="setDay('Dom 27', this)" type="button">Dom 27</button>
+</div>
+</div>
+<!-- Leyenda de Estados de Franjas -->
+<div class="flex items-center gap-space-md py-space-xs flex-wrap font-body-sm text-body-sm">
+<div class="flex items-center gap-2">
+<div class="w-3.5 h-3.5 rounded bg-badge-emerald-bg"></div>
+<span class="text-on-surface-variant font-medium">Disponible para ti</span>
+</div>
+<div class="flex items-center gap-2">
+<div class="w-3.5 h-3.5 rounded bg-surface-container"></div>
+<span class="text-on-surface-variant font-medium">Ocupado por otro vecino</span>
+</div>
+<div class="flex items-center gap-2">
+<div class="w-3.5 h-3.5 rounded bg-badge-amber-bg"></div>
+<span class="text-on-surface font-semibold">Tu Reserva Activa</span>
+</div>
+</div>
+<!-- Rejilla de Horarios: 09:00 a 22:00 -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-space-sm pt-space-xs">
+<!-- 09:00 - 10:30 (Ocupado) -->
+<div class="p-space-md rounded-xl bg-surface-container flex items-center justify-between opacity-80 cursor-not-allowed">
+<div>
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">09:00 - 10:30</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Ocupado: Portal 1 (Piso 2ºB)</p>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant text-[20px]">lock</span>
+</div>
+<!-- 10:30 - 12:00 (Ocupado) -->
+<div class="p-space-md rounded-xl bg-surface-container flex items-center justify-between opacity-80 cursor-not-allowed">
+<div>
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">10:30 - 12:00</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Ocupado: Portal 3 (Piso 4ºA)</p>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant text-[20px]">lock</span>
+</div>
+<!-- 12:00 - 13:30 (Disponible) -->
+<button class="p-space-md rounded-xl bg-badge-emerald-bg hover:bg-secondary-fixed/40 transition-all flex items-center justify-between text-left group" onclick="confirmSlot('12:00 - 13:30')" type="button">
+<div>
+<span class="font-headline-sm text-headline-sm text-secondary font-bold group-hover:text-on-surface">12:00 - 13:30</span>
+<p class="font-body-sm text-body-sm text-badge-emerald-text font-medium mt-0.5">Franja Libre • 1.5 Horas</p>
+</div>
+<span class="material-symbols-outlined text-secondary text-[22px] group-hover:scale-110 transition-transform">add_circle</span>
+</button>
+<!-- 13:30 - 15:00 (Disponible) -->
+<button class="p-space-md rounded-xl bg-badge-emerald-bg hover:bg-secondary-fixed/40 transition-all flex items-center justify-between text-left group" onclick="confirmSlot('13:30 - 15:00')" type="button">
+<div>
+<span class="font-headline-sm text-headline-sm text-secondary font-bold group-hover:text-on-surface">13:30 - 15:00</span>
+<p class="font-body-sm text-body-sm text-badge-emerald-text font-medium mt-0.5">Franja Libre • 1.5 Horas</p>
+</div>
+<span class="material-symbols-outlined text-secondary text-[22px] group-hover:scale-110 transition-transform">add_circle</span>
+</button>
+<!-- 15:00 - 16:30 (Ocupado Mantenimiento) -->
+<div class="p-space-md rounded-xl bg-surface-container flex items-center justify-between opacity-80 cursor-not-allowed">
+<div>
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">15:00 - 16:30</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Limpieza y Mantenimiento</p>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant text-[20px]">build</span>
+</div>
+<!-- 16:30 - 18:00 (Disponible) -->
+<button class="p-space-md rounded-xl bg-badge-emerald-bg hover:bg-secondary-fixed/40 transition-all flex items-center justify-between text-left group" onclick="confirmSlot('16:30 - 18:00')" type="button">
+<div>
+<span class="font-headline-sm text-headline-sm text-secondary font-bold group-hover:text-on-surface">16:30 - 18:00</span>
+<p class="font-body-sm text-body-sm text-badge-emerald-text font-medium mt-0.5">Franja Libre • 1.5 Horas</p>
+</div>
+<span class="material-symbols-outlined text-secondary text-[22px] group-hover:scale-110 transition-transform">add_circle</span>
+</button>
+<!-- 18:00 - 19:30 (TU RESERVA) -->
+<div class="p-space-md rounded-xl bg-badge-amber-bg flex items-center justify-between shadow-sm relative overflow-hidden">
+<div class="space-y-0.5">
+<span class="font-headline-sm text-headline-sm text-badge-amber-text font-bold">18:00 - 19:30</span>
+<p class="font-label-sm text-label-sm text-badge-amber-text font-bold uppercase tracking-wider">Tu Reserva Confirmada</p>
+<p class="font-body-sm text-body-sm text-on-surface">Elena Morales (Piso 3º Izq)</p>
+</div>
+<div class="w-8 h-8 rounded-full bg-badge-amber-text text-on-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+</div>
+</div>
+<!-- 19:30 - 21:00 (Ocupado) -->
+<div class="p-space-md rounded-xl bg-surface-container flex items-center justify-between opacity-80 cursor-not-allowed">
+<div>
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">19:30 - 21:00</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Ocupado: Portal 2 (Piso 1ºD)</p>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant text-[20px]">lock</span>
+</div>
+<!-- 21:00 - 22:30 (Disponible) -->
+<button class="p-space-md rounded-xl bg-badge-emerald-bg hover:bg-secondary-fixed/40 transition-all flex items-center justify-between text-left group" onclick="confirmSlot('21:00 - 22:30')" type="button">
+<div>
+<span class="font-headline-sm text-headline-sm text-secondary font-bold group-hover:text-on-surface">21:00 - 22:30</span>
+<p class="font-body-sm text-body-sm text-badge-emerald-text font-medium mt-0.5">Luz artificial incluida</p>
+</div>
+<span class="material-symbols-outlined text-secondary text-[22px] group-hover:scale-110 transition-transform">add_circle</span>
+</button>
+</div>
+<div class="flex items-center justify-between pt-space-xs font-body-sm text-body-sm text-on-surface-variant">
+<span>* La iluminación de la pista se activa automáticamente mediante tu código QR en el torno exterior.</span>
+<a class="text-secondary font-semibold hover:underline" href="#">Reportar falla de encendido</a>
+</div>
+</div>
+<!-- Panel Lateral: Mis Reservas Activas (4 columnas) -->
+<div class="xl:col-span-4 space-y-space-md" id="mis-reservas-section">
+<div class="bg-surface-container-lowest rounded-xl shadow-sm p-space-lg space-y-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[22px]">confirmation_number</span>
+<h3 class="font-headline-md text-headline-md text-on-surface">Mis Reservas Activas</h3>
+</div>
+<span class="font-label-sm text-label-sm bg-primary text-on-primary px-2 py-0.5 rounded-full font-bold">1 Activa</span>
+</div>
+<!-- Tarjeta de Reserva Activa Interactiva -->
+<div class="bg-surface-container-low rounded-xl p-space-md space-y-space-md relative overflow-hidden">
+<div class="flex items-start justify-between">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-wide text-secondary font-bold">Hoy • En 3 horas</span>
+<h4 class="font-headline-sm text-headline-sm text-on-surface font-bold mt-0.5">Pista de Pádel de Cristal</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Miércoles 23 Oct • 18:00 a 19:30</p>
+</div>
+<span class="px-space-xs py-0.5 rounded font-label-sm text-label-sm bg-badge-emerald-bg text-badge-emerald-text font-bold">Confirmada</span>
+</div>
+<!-- Acceso QR Mocked Graphic -->
+<div class="bg-surface-container-lowest rounded-lg p-space-sm flex items-center gap-space-sm">
+<div class="w-16 h-16 bg-on-surface p-1.5 rounded flex items-center justify-center shrink-0">
+<!-- Inline SVG QR Code stylized -->
+<svg class="w-full h-full fill-white" viewbox="0 0 100 100">
+<path d="M10,10 h30 v30 h-30 z M18,18 v14 h14 v-14 z M60,10 h30 v30 h-30 z M68,18 v14 h14 v-14 z M10,60 h30 v30 h-30 z M18,68 v14 h14 v-14 z M24,24 h2 v2 h-2 z M74,24 h2 v2 h-2 z M24,74 h2 v2 h-2 z M50,10 h5 v10 h-5 z M50,30 h10 v5 h-10 z M10,48 h10 v5 h-10 z M30,48 h15 v5 h-15 z M60,50 h10 v15 h-10 z M80,50 h10 v5 h-10 z M75,65 h15 v10 h-15 z M50,60 h5 v30 h-5 z M65,80 h25 v10 h-25 z"></path>
+</svg>
+</div>
+<div class="overflow-hidden space-y-0.5">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Pase Digital Único</span>
+<p class="font-label-md text-label-md text-on-surface font-mono font-bold truncate">PADEL-L14-8849-ELN</p>
+<p class="font-body-sm text-body-sm text-secondary flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">door_front</span>
+                  Abre puerta 0 y taquilla 4
+                </p>
+</div>
+</div>
+<!-- Acciones de la reserva -->
+<div class="flex flex-col gap-space-xs pt-space-xs">
+<button class="w-full py-space-sm rounded-lg bg-on-surface text-surface-container-lowest font-label-lg text-label-lg flex items-center justify-center gap-space-xs hover:bg-slate-800 transition-colors shadow-sm active:scale-[0.98]" onclick="downloadPass()" type="button">
+<span class="material-symbols-outlined text-[18px]">download_for_offline</span>
+<span>Descargar pase digital QR</span>
+</button>
+<div class="flex items-center gap-space-xs">
+<button class="flex-1 py-space-sm rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md flex items-center justify-center gap-1 transition-colors" onclick="shareGuestPass()" type="button">
+<span class="material-symbols-outlined text-[16px]">share</span>
+<span>Invitar jugador</span>
+</button>
+<button class="px-space-md py-space-sm rounded-lg text-badge-coral-text hover:bg-badge-coral-bg font-label-md text-label-md transition-colors flex items-center gap-1" onclick="cancelReservationModal()" type="button">
+<span class="material-symbols-outlined text-[16px]">cancel</span>
+<span>Cancelar</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Próximos eventos / Normas rápidas del mes -->
+<div class="pt-space-xs space-y-space-xs">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-bold">Recordatorio del Conserje</span>
+<div class="bg-surface-container-low p-space-sm rounded-lg flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-secondary text-[20px] shrink-0 mt-0.5">eco</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                Por favor, asegúrate de dejar las redes recogidas y las papeleras de bolas cerradas. Ayudas a mantener la cuota comunitaria en su mínimo.
+              </p>
+</div>
+</div>
+</div>
+<!-- Banner de Ayuda y Normativa Rápida -->
+<div class="bg-primary-container text-on-primary rounded-xl p-space-lg shadow-sm space-y-space-sm relative overflow-hidden">
+<div class="relative z-10 space-y-space-xs">
+<span class="font-label-sm text-label-sm text-secondary-fixed uppercase tracking-wider font-bold">Asistencia Inmediata</span>
+<h4 class="font-headline-sm text-headline-sm font-bold">¿Problemas con el torno o la luz?</h4>
+<p class="font-body-sm text-body-sm text-on-primary-container">
+              El servicio de conserjería física está disponible en garita de lunes a jueves, de 09:00 a 14:00 y de 15:00 a 18:30, y los viernes de 09:00 a 14:30. También puedes generar una incidencia urgente con un clic.
+            </p>
+<div class="pt-space-xs">
+<a class="inline-flex items-center gap-1 font-label-md text-label-md text-secondary-fixed hover:underline" data-path="dashboard-incidencias" href="#">
+<span>Crear aviso de mantenimiento</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Decorative subtle icon watermark -->
+<span class="material-symbols-outlined absolute -bottom-6 -right-6 text-on-primary-fixed-variant text-[140px] opacity-20 pointer-events-none">support_agent</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Modal Normativa de Uso (Interactive) -->
+<div class="fixed inset-0 z-50 hidden items-center justify-center p-space-md backdrop-blur-sm bg-slate-900/40" id="rules-modal">
+<div class="bg-surface-container-lowest rounded-xl max-w-lg w-full p-space-lg shadow-xl space-y-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[24px]">gavel</span>
+<h3 class="font-headline-md text-headline-md text-on-surface font-bold">Normativa Zonas Comunes</h3>
+</div>
+<button class="text-on-surface-variant hover:text-on-surface" onclick="closeRulesModal()" type="button">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<div class="space-y-space-sm font-body-sm text-body-sm text-on-surface-variant max-h-80 overflow-y-auto pr-1">
+<div class="bg-surface-container-low p-space-sm rounded-lg space-y-1">
+<h5 class="font-label-md text-label-md text-on-surface font-bold">1. Pádel y Deporte</h5>
+<p>Máximo 1 hora y 30 minutos por vivienda al día. Las cancelaciones deben hacerse con al menos 2 horas de antelación para liberar el turno al resto de vecinos.</p>
+</div>
+<div class="bg-surface-container-low p-space-sm rounded-lg space-y-1">
+<h5 class="font-label-md text-label-md text-on-surface font-bold">2. Salón Social / Sala Gourmet</h5>
+<p>Se requiere depósito fianza de 15€ deducible en caso de desperfectos o requerimiento de limpieza extraordinaria. Prohibido fumar en todo el recinto cubierto.</p>
+</div>
+<div class="bg-surface-container-low p-space-sm rounded-lg space-y-1">
+<h5 class="font-label-md text-label-md text-on-surface font-bold">3. Invitados y Pases QR</h5>
+<p>Los códigos QR son personales e intransferibles salvo la función 'Invitar Jugador'. El titular de la vivienda asume la responsabilidad subsidiaria sobre el comportamiento de sus visitas.</p>
+</div>
+</div>
+<div class="flex justify-end pt-space-xs">
+<button class="px-space-md py-space-sm bg-primary text-on-primary font-label-lg text-label-lg rounded-lg hover:bg-slate-800 transition-colors" onclick="closeRulesModal()" type="button">
+          Entendido y Conforme
+        </button>
+</div>
+</div>
+</div>
+<!-- Notification Toast Container -->
+<div class="fixed bottom-6 right-6 z-50 transform translate-y-20 opacity-0 transition-all duration-300 pointer-events-none" id="toast-notification">
+<div class="bg-on-surface text-surface-container-lowest px-space-md py-space-sm rounded-lg shadow-xl flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-secondary text-[20px]" id="toast-icon">check_circle</span>
+<span class="font-body-sm text-body-sm" id="toast-message">Operación realizada con éxito</span>
+</div>
+</div>
+<script>
+    function showToast(message, icon = 'check_circle') {
+      const toast = document.getElementById('toast-notification');
+      const msgEl = document.getElementById('toast-message');
+      const iconEl = document.getElementById('toast-icon');
+      if (!toast) return;
+
+      msgEl.textContent = message;
+      iconEl.textContent = icon;
+      toast.classList.remove('translate-y-20', 'opacity-0', 'pointer-events-none');
+
+      setTimeout(() => {
+        toast.classList.add('translate-y-20', 'opacity-0', 'pointer-events-none');
+      }, 3500);
+    }
+
+    function selectFacility(facilityName) {
+      const label = document.getElementById('active-facility-label');
+      if (label) {
+        label.textContent = facilityName;
+      }
+      showToast('Cargando calendario de: ' + facilityName, 'calendar_month');
+    }
+
+    function setDay(dayText, btn) {
+      const parent = btn.parentElement;
+      const allButtons = parent.querySelectorAll('button');
+      allButtons.forEach(b => {
+        b.className = 'px-space-sm py-1 rounded font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors';
+      });
+      btn.className = 'px-space-sm py-1 rounded font-label-md text-label-md bg-primary text-on-primary font-bold shadow-sm';
+      showToast('Mostrando turnos para ' + dayText, 'event');
+    }
+
+    function confirmSlot(time) {
+      showToast('Tramo ' + time + ' reservado con éxito. Pase QR generado.', 'task_alt');
+    }
+
+    function downloadPass() {
+      showToast('Descargando pase digital QR a tu dispositivo...', 'download');
+    }
+
+    function shareGuestPass() {
+      showToast('Enlace de invitado copiado al portapapeles.', 'share');
+    }
+
+    function cancelReservationModal() {
+      if (confirm('¿Deseas cancelar tu reserva de hoy de 18:00 a 19:30? Esta acción liberará la pista para otros vecinos.')) {
+        showToast('Reserva cancelada correctamente.', 'info');
+      }
+    }
+
+    const modal = document.getElementById('rules-modal');
+    const openRulesBtn = document.getElementById('open-rules-btn');
+
+    if (openRulesBtn && modal) {
+      openRulesBtn.addEventListener('click', () => {
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+      });
+    }
+
+    function closeRulesModal() {
+      if (modal) {
+        modal.classList.remove('flex');
+        modal.classList.add('hidden');
+      }
+    }
+  </script>
+</div></main></div></body></html>

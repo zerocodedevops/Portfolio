@@ -15,9 +15,14 @@ function serveStaticAppsPlugin(): Plugin {
       const servePlague = sirv(path.join(appsDir, 'zeroplague'), { dev: true, single: false });
       const serveAtelier = sirv(path.join(appsDir, 'zeroatelier'), { dev: true, single: false });
       const serveRisk = sirv(path.join(appsDir, 'zerorisk'), { dev: true, single: false });
+      const serveNeighnet = sirv(path.join(appsDir, 'NeghNetZ/dist'), { dev: true, single: true });
 
       server.middlewares.use((req, res, next) => {
         const url = req.url || '';
+        if (url.startsWith('/proyectos/neighnet')) {
+          req.url = url.replace(/^\/proyectos\/neighnet/, '') || '/';
+          return serveNeighnet(req, res, next);
+        }
         if (url.startsWith('/proyectos/zeroplague')) {
           req.url = url.replace(/^\/proyectos\/zeroplague/, '') || '/';
           return servePlague(req, res, next);

@@ -1,0 +1,108 @@
+/* Local self-hosted fonts for NeighNet DEMO (zero external requests) */
+
+@font-face {
+  font-family: 'Material Symbols Outlined';
+  font-style: normal;
+  font-weight: 100 700;
+  font-display: block;
+  src: url('./material-symbols-outlined.woff2') format('woff2');
+}
+
+.material-symbols-outlined {
+  font-family: 'Material Symbols Outlined';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  font-feature-settings: 'liga';
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url('./inter-latin-ext-400-normal.woff2') format('woff2'),
+       url('./inter-latin-400-normal.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 500;
+  src: url('./inter-latin-ext-500-normal.woff2') format('woff2'),
+       url('./inter-latin-500-normal.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 600;
+  src: url('./inter-latin-ext-600-normal.woff2') format('woff2'),
+       url('./inter-latin-600-normal.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  src: url('./inter-latin-ext-700-normal.woff2') format('woff2'),
+       url('./inter-latin-700-normal.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url('./plus-jakarta-sans-latin-ext-400-normal.woff2') format('woff2'),
+       url('./plus-jakarta-sans-latin-400-normal.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 500;
+  src: url('./plus-jakarta-sans-latin-ext-500-normal.woff2') format('woff2'),
+       url('./plus-jakarta-sans-latin-500-normal.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 600;
+  src: url('./plus-jakarta-sans-latin-ext-600-normal.woff2') format('woff2'),
+       url('./plus-jakarta-sans-latin-600-normal.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  src: url('./plus-jakarta-sans-latin-ext-700-normal.woff2') format('woff2'),
+       url('./plus-jakarta-sans-latin-700-normal.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 800;
+  src: url('./plus-jakarta-sans-latin-ext-800-normal.woff2') format('woff2'),
+       url('./plus-jakarta-sans-latin-800-normal.woff2') format('woff2');
+}

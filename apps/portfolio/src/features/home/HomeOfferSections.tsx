@@ -85,7 +85,7 @@ const faqs = [
 	},
 	{
 		q: "¿Qué diferencia hay entre J.Barranco y las demás demos?",
-		a: "J.Barranco es un proyecto real en producción para un cliente real. Los otros ocho proyectos son demostraciones técnicas con datos simulados para mostrar nuestro criterio visual y técnico por sector.",
+		a: "J.Barranco es un proyecto real en producción para un cliente real. Los otros nueve proyectos son demostraciones técnicas con datos simulados para mostrar nuestro criterio visual y técnico por sector.",
 	},
 ];
 

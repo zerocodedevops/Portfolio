@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+
+<html lang="es"><head><link rel="stylesheet" href="/fonts/fonts.css"/><link rel="stylesheet" href="/stitch-tailwind.css"/><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/>
+<style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style></head><body class="bg-surface font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-72 bg-surface-container-lowest z-50 flex flex-col shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-space-lg flex items-center justify-between"><div class="flex items-center gap-space-sm"><img alt="NeighNetZ Logo" class="h-8 w-auto object-contain" src="/images/demo-placeholder.svg"/><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight">NeighNetZ</span></div></div><div class="px-space-md py-space-sm"><div class="bg-surface-container-low rounded-lg p-space-sm flex items-center justify-between cursor-pointer hover:bg-surface-container transition-colors"><div class="flex items-center gap-space-sm overflow-hidden"><span class="material-symbols-outlined text-secondary text-[20px]">apartment</span><div class="flex flex-col truncate"><span class="font-label-sm text-label-sm text-on-surface-variant uppercase truncate">Comunidad Activa</span><span class="font-label-md text-label-md text-on-surface truncate">Residencial Los Sauces 14</span></div></div><span class="material-symbols-outlined text-on-surface-variant text-[18px]">unfold_more</span></div></div><nav class="flex-1 overflow-y-auto px-space-md py-space-sm flex flex-col gap-space-xs" data-active-classes="bg-primary-container text-on-primary font-bold rounded-lg"><div class="px-space-sm pt-space-sm pb-space-xs"><span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Área del Vecino</span></div><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container hover:text-on-surface transition-all" data-path="dashboard" href="#"><span class="material-symbols-outlined text-[20px]">home</span><span>Inicio / Tablón</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container hover:text-on-surface transition-all" data-path="dashboard-incidencias" href="#"><span class="material-symbols-outlined text-[20px]">report_problem</span><span>Incidencias</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container hover:text-on-surface transition-all" data-path="dashboard-reservas" href="#"><span class="material-symbols-outlined text-[20px]">event_available</span><span>Reservas</span></a><a aria-current="page" class="flex items-center gap-space-sm px-space-sm py-space-sm transition-all bg-primary-container text-on-primary font-bold rounded-lg" data-path="dashboard-votaciones" href="#"><span class="material-symbols-outlined text-[20px]">how_to_vote</span><span>Votaciones</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container hover:text-on-surface transition-all" data-path="dashboard-documentos" href="#"><span class="material-symbols-outlined text-[20px]">folder_shared</span><span>Documentos</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container hover:text-on-surface transition-all" data-path="dashboard-vecinos" href="#"><span class="material-symbols-outlined text-[20px]">groups</span><span>Directorio de Vecinos</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container hover:text-on-surface transition-all" data-path="dashboard-gastos" href="#"><span class="material-symbols-outlined text-[20px]">account_balance_wallet</span><span>Cuentas y Gastos</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container hover:text-on-surface transition-all" data-path="dashboard-perfil" href="#"><span class="material-symbols-outlined text-[20px]">person</span><span>Mi Perfil</span></a><div class="px-space-sm pt-space-md pb-space-xs"><span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Panel de Administración</span></div><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container hover:text-on-surface transition-all" data-path="admin" href="#"><span class="material-symbols-outlined text-[20px]">monitoring</span><span>Panel Ejecutivo</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container hover:text-on-surface transition-all" data-path="admin-usuarios" href="#"><span class="material-symbols-outlined text-[20px]">verified_user</span><span>Validar Vecinos</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container hover:text-on-surface transition-all" data-path="admin-incidencias" href="#"><span class="material-symbols-outlined text-[20px]">assignment_late</span><span>Gestión de Incidencias</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container hover:text-on-surface transition-all" data-path="admin-reservas" href="#"><span class="material-symbols-outlined text-[20px]">book_online</span><span>Gestión de Reservas</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container hover:text-on-surface transition-all" data-path="admin-documentos" href="#"><span class="material-symbols-outlined text-[20px]">file_copy</span><span>Gestión Documental</span></a></nav><div class="p-space-md mt-auto"><div class="bg-surface-container-low rounded-lg p-space-sm flex items-center justify-between"><div class="flex items-center gap-space-sm"><span class="h-2 w-2 rounded-full bg-secondary"></span><span class="font-label-sm text-label-sm text-on-surface-variant">Servicios Operativos</span></div><span class="font-label-sm text-label-sm text-secondary font-bold">v2.4</span></div></div></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 h-16 bg-surface-container-lowest/80 backdrop-blur-xl z-40 flex items-center justify-between px-space-lg shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex items-center w-96"><div class="relative w-full flex items-center"><span class="material-symbols-outlined absolute left-space-sm text-on-surface-variant text-[20px]">search</span><input class="w-full bg-surface-container-low text-on-surface placeholder:text-on-surface-variant font-body-sm text-body-sm pl-9 pr-space-md py-space-xs rounded-lg outline-none focus:bg-surface-container-lowest transition-colors" placeholder="Buscar acuerdos, actas, reservas o incidencias..." type="text"/></div></div><div class="flex items-center gap-space-md"><div class="hidden sm:flex items-center gap-space-xs px-space-sm py-space-xs rounded-full bg-badge-emerald-bg"><span class="h-2 w-2 rounded-full bg-secondary animate-pulse"></span><span class="font-label-sm text-label-sm text-badge-emerald-text">Firebase Online</span></div><button aria-label="Notificaciones" class="relative p-space-xs rounded-full hover:bg-surface-container transition-colors text-on-surface-variant hover:text-on-surface" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-1 right-1 h-2 w-2 rounded-full bg-urgent-coral"></span></button><div class="flex items-center gap-space-sm pl-space-sm"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="/images/demo-placeholder.svg"/><div class="flex flex-col text-left"><span class="font-label-md text-label-md text-on-surface">Elena Morales</span><span class="font-label-sm text-label-sm text-on-surface-variant">Propietaria / Vicepresidenta</span></div></div></div></header><main class="relative pt-16 bg-surface min-h-screen"><div class="flex flex-col w-full">
+<div class="p-space-lg max-w-7xl mx-auto w-full flex flex-col gap-space-lg">
+<!-- Top Editorial Header & Legal Notice Bar -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-space-md">
+<div class="flex flex-col gap-space-xs">
+<div class="flex flex-wrap items-center gap-space-xs">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-badge-emerald-bg text-badge-emerald-text font-label-sm text-label-sm uppercase tracking-wider">
+<span class="material-symbols-outlined text-[15px]" style="font-variation-settings: 'FILL' 1;">gavel</span>
+            Validez LPH Art. 17.12
+          </span>
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[15px]">verified_user</span>
+            Cifrado SHA-256
+          </span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface mt-1">Votaciones Telemáticas y Acuerdos Comunitarios</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">
+          Ejerce tu derecho a voto con plenas garantías legales y auditoría telemática en tiempo real.
+        </p>
+</div>
+<!-- Voter Identity & Quorum Pill -->
+<div class="flex items-center gap-space-md bg-surface-container-low p-space-sm pl-space-md rounded-xl">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Inmueble con Derecho a Voto</span>
+<span class="font-headline-sm text-headline-sm text-on-surface flex items-center gap-1">
+<span class="material-symbols-outlined text-secondary text-[20px]">door_front</span>
+            Portal 2, 3º B
+          </span>
+<span class="font-label-sm text-label-sm text-secondary font-semibold">Coeficiente: 2.854% · 1 voto</span>
+</div>
+<div class="w-10 h-10 rounded-full bg-surface-container-lowest shadow-sm flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[24px]">how_to_vote</span>
+</div>
+</div>
+</div>
+<!-- Navigation Tabs -->
+<div class="flex items-center justify-between">
+<div class="inline-flex p-1 bg-surface-container-lowest rounded-xl shadow-sm gap-1">
+<button class="px-5 py-2 rounded-lg font-label-lg text-label-lg transition-all flex items-center gap-2 bg-on-primary-fixed text-on-primary shadow-sm" id="tab-btn-activas" onclick="switchVotingTab('activas')">
+<span class="material-symbols-outlined text-[18px]">how_to_vote</span>
+<span>Votaciones Activas</span>
+<span class="px-1.5 py-0.5 rounded-full bg-secondary text-on-secondary font-label-sm text-label-sm">2</span>
+</button>
+<button class="px-5 py-2 rounded-lg font-label-lg text-label-lg transition-all flex items-center gap-2 text-on-surface-variant hover:text-on-surface hover:bg-surface-container" id="tab-btn-historico" onclick="switchVotingTab('historico')">
+<span class="material-symbols-outlined text-[18px]">history_edu</span>
+<span>Histórico y Acuerdos Cerrados</span>
+<span class="px-1.5 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm">8</span>
+</button>
+</div>
+<div class="hidden md:flex items-center gap-2 text-on-surface-variant font-body-sm text-body-sm">
+<span class="h-2 w-2 rounded-full bg-secondary"></span>
+<span>Conexión cifrada con libro de actas digital</span>
+</div>
+</div>
+<!-- TAB 1: ACTIVE VOTINGS -->
+<div class="flex flex-col gap-space-lg" id="tab-content-activas">
+<!-- HERO VOTING CARD: Solar Panels -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden flex flex-col">
+<!-- Top Banner / Urgency -->
+<div class="bg-badge-amber-bg px-space-lg py-space-sm flex flex-wrap items-center justify-between gap-space-sm">
+<div class="flex items-center gap-2 text-badge-amber-text">
+<span class="material-symbols-outlined text-[20px]">timer</span>
+<span class="font-label-lg text-label-lg">Finaliza en 4 días (30 de Noviembre, 23:59h)</span>
+</div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-badge-amber-text bg-surface-container-lowest px-3 py-1 rounded-full shadow-sm font-semibold">
+            Voto pendiente de emitir
+          </span>
+</div>
+<div class="p-space-lg flex flex-col lg:flex-row gap-space-xl">
+<!-- Left Column: Context, Media & Docs -->
+<div class="lg:w-7/12 flex flex-col gap-space-md">
+<div class="flex items-center gap-2">
+<span class="px-2.5 py-0.5 rounded-full bg-badge-navy-bg text-badge-navy-text font-label-sm text-label-sm uppercase font-semibold">
+                Junta General Extraordinaria · Punto 03
+              </span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Ref: ACU-2024-089</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">
+              Instalación de paneles solares fotovoltaicos en la cubierta del edificio
+            </h2>
+<p class="font-body-md text-body-md text-on-surface-variant">
+              Propuesta formal para la colocación de 48 paneles monocristalinos en la azotea comunitaria (orientación Sur). Ahorro estimado del <strong class="text-on-surface font-semibold">42% en consumo eléctrico comunitario</strong> (ascensores, bombeo hidroneumático, iluminación general y zonas ajardinadas), amortizable en 3,8 años con bonificación IBI municipal del 50%.
+            </p>
+<!-- Proposal Image & Data highlight -->
+<div class="relative rounded-xl overflow-hidden shadow-sm h-52 w-full bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Photovoltaic solar panels cleanly arranged on the rooftop of a modern Spanish residential building during late afternoon sun, architectural photography, crisp slate and blue sky tones" src="/images/demo-placeholder.svg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary-container/80 via-transparent to-transparent flex items-end p-space-md">
+<div class="flex items-center gap-space-lg text-on-primary">
+<div>
+<span class="font-label-sm text-label-sm text-surface-variant uppercase block">Inversión Total</span>
+<span class="font-headline-md text-headline-md font-bold">18.400 €</span>
+</div>
+<div>
+<span class="font-label-sm text-label-sm text-surface-variant uppercase block">Subvención NextGen</span>
+<span class="font-headline-md text-headline-md text-secondary-fixed font-bold">- 6.200 €</span>
+</div>
+<div>
+<span class="font-label-sm text-label-sm text-surface-variant uppercase block">Cuota extraordinaria</span>
+<span class="font-headline-md text-headline-md font-bold">0 € / Derrama</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Attached Technical Documents -->
+<div class="bg-surface-container-low p-space-md rounded-xl flex flex-col sm:flex-row items-start sm:items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-lg bg-surface-container-lowest flex items-center justify-center text-error shadow-sm">
+<span class="material-symbols-outlined text-[24px]">picture_as_pdf</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Informe_Tecnico_Presupuestos_3Empresas.pdf</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">3.4 MB · Incluye comparativa SolEnergy vs IberVolt vs EcoSol</span>
+</div>
+</div>
+<a class="px-3.5 py-1.5 rounded-lg bg-surface-container-lowest hover:bg-surface-container text-on-surface font-label-md text-label-md shadow-sm transition-colors flex items-center gap-1.5" href="#">
+<span class="material-symbols-outlined text-[18px]">download</span>
+                Descargar .PDF
+              </a>
+</div>
+<!-- Quorum and Participation Meter -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Participación Comunitaria en Tiempo Real</span>
+<span class="px-2 py-0.5 rounded-full bg-badge-emerald-bg text-badge-emerald-text font-label-sm text-label-sm font-bold">Quórum Superado (3/5)</span>
+</div>
+<span class="font-label-lg text-label-lg font-bold text-secondary">68.5%</span>
+</div>
+<!-- Progress Bar -->
+<div class="w-full bg-surface-container h-3 rounded-full overflow-hidden">
+<div class="bg-secondary h-full rounded-full transition-all duration-500" style="width: 68.5%;"></div>
+</div>
+<div class="flex justify-between items-center text-on-surface-variant font-body-sm text-body-sm pt-1">
+<span>24 de 35 viviendas han votado</span>
+<span>Representa el 68.5% de coeficientes</span>
+</div>
+</div>
+</div>
+<!-- Right Column: Interactive Ballot Form -->
+<div class="lg:w-5/12 flex flex-col justify-between bg-surface-container-low p-space-lg rounded-xl">
+<div class="flex flex-col gap-space-md">
+<div class="flex items-center justify-between pb-space-xs">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider font-semibold">Papeleta de Voto Electrónico</span>
+<span class="inline-flex items-center gap-1 text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[16px]">lock</span>
+                  Voto Secreto Cifrado
+                </span>
+</div>
+<p class="font-headline-sm text-headline-sm text-on-surface">Selecciona tu sentido de voto para este acuerdo:</p>
+<!-- Ballot Radio Options -->
+<div class="flex flex-col gap-space-sm" id="ballot-group">
+<!-- Option 1: A favor -->
+<label class="cursor-pointer bg-surface-container-lowest p-space-md rounded-xl shadow-sm hover:shadow transition-all flex items-start gap-space-sm" id="label-opt-favor" onclick="selectBallotOption('opt-favor')">
+<div class="pt-0.5">
+<input class="w-4 h-4 text-primary focus:ring-primary" id="opt-favor" name="ballot-radio" type="radio" value="favor"/>
+</div>
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg text-on-surface font-semibold flex items-center gap-1.5">
+<span class="material-symbols-outlined text-secondary text-[20px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                      A favor de la propuesta
+                    </span>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+                      Opción 1 - Empresa SolEnergy S.L. por importe de 18.400 € con cargo al fondo de reserva existente (sin derrama adicional).
+                    </span>
+</div>
+</label>
+<!-- Option 2: En contra -->
+<label class="cursor-pointer bg-surface-container-lowest p-space-md rounded-xl shadow-sm hover:shadow transition-all flex items-start gap-space-sm" id="label-opt-contra" onclick="selectBallotOption('opt-contra')">
+<div class="pt-0.5">
+<input class="w-4 h-4 text-primary focus:ring-primary" id="opt-contra" name="ballot-radio" type="radio" value="contra"/>
+</div>
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg text-on-surface font-semibold flex items-center gap-1.5">
+<span class="material-symbols-outlined text-urgent-coral text-[20px]">cancel</span>
+                      En contra / No proceder
+                    </span>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+                      Rechazar la instalación y aplazar la evaluación técnica para el siguiente ejercicio contable.
+                    </span>
+</div>
+</label>
+<!-- Option 3: Abstencion -->
+<label class="cursor-pointer bg-surface-container-lowest p-space-md rounded-xl shadow-sm hover:shadow transition-all flex items-start gap-space-sm" id="label-opt-abstencion" onclick="selectBallotOption('opt-abstencion')">
+<div class="pt-0.5">
+<input class="w-4 h-4 text-primary focus:ring-primary" id="opt-abstencion" name="ballot-radio" type="radio" value="abstencion"/>
+</div>
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg text-on-surface font-semibold flex items-center gap-1.5">
+<span class="material-symbols-outlined text-on-surface-variant text-[20px]">remove_circle_outline</span>
+                      Abstención
+                    </span>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+                      Computa a efectos del quórum de constitución pero no suma al sentido mayoritario vinculante.
+                    </span>
+</div>
+</label>
+</div>
+<!-- Certificate / Signature confirmation check -->
+<div class="bg-surface-container-lowest/80 p-space-sm rounded-lg flex items-center gap-space-sm">
+<input checked="" class="rounded w-4 h-4 text-primary focus:ring-primary" id="legal-confirm" type="checkbox"/>
+<label class="font-body-sm text-body-sm text-on-surface-variant cursor-pointer select-none" for="legal-confirm">
+                  Declaro actuar como titular con capacidad para emitir el voto de la vivienda Portal 2, 3º B.
+                </label>
+</div>
+</div>
+<!-- Action button -->
+<div class="flex flex-col gap-2 pt-space-md">
+<button class="w-full py-3 px-4 rounded-xl bg-on-primary-fixed hover:bg-slate-800 text-on-primary font-label-lg text-label-lg font-bold flex items-center justify-center gap-2 shadow-md transition-all active:scale-[0.99]" id="submit-vote-btn" onclick="handleEmitVote()">
+<span class="material-symbols-outlined text-[20px]">verified</span>
+                Emitir mi Voto Telemático Seguro
+              </button>
+<div class="flex items-center justify-center gap-2 text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px]">lock</span>
+<span>Firma mediante certificado digital de plataforma NeighNetZ</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- ACTIVE VOTING 2: Already Voted State (LED Lighting) -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm p-space-lg flex flex-col lg:flex-row items-start lg:items-center justify-between gap-space-lg">
+<div class="flex flex-col gap-space-xs lg:w-5/12">
+<div class="flex flex-wrap items-center gap-space-xs">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-badge-emerald-bg text-badge-emerald-text font-label-sm text-label-sm font-bold">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+              Tu voto ya ha sido registrado: A FAVOR
+            </span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Emitido el 21 Nov, 18:42h</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mt-1">
+            Renovación integral de iluminación LED en garajes comunitarios
+          </h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+            Sustitución de 94 tubos fluorescentes obsoletos por luminarias LED estancas con sensores de presencia por sectores. Presupuesto aprobado provisional: 2.150 €.
+          </p>
+<div class="flex items-center gap-space-sm pt-2">
+<a class="inline-flex items-center gap-1 font-label-md text-label-md text-secondary font-semibold hover:underline" href="#">
+<span class="material-symbols-outlined text-[18px]">receipt_long</span>
+              Descargar recibo de voto criptográfico (.PKCS7)
+            </a>
+</div>
+</div>
+<!-- Graphic Breakdown of Votes with inline visual meter -->
+<div class="bg-surface-container-low p-space-md rounded-xl lg:w-6/12 w-full flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider font-semibold">Desglose de Escrutinio Provisional</span>
+<span class="font-label-md text-label-md text-on-surface font-bold">31 / 35 votos emitidos (88%)</span>
+</div>
+<!-- Segmented stacked progress bar -->
+<div class="w-full h-4 bg-surface-container rounded-full overflow-hidden flex">
+<div class="bg-secondary h-full transition-all" style="width: 85%;" title="A Favor: 85%"></div>
+<div class="bg-urgent-coral h-full transition-all" style="width: 10%;" title="En Contra: 10%"></div>
+<div class="bg-on-surface-variant h-full opacity-40 transition-all" style="width: 5%;" title="Abstención: 5%"></div>
+</div>
+<!-- Percentage Cards Legend -->
+<div class="grid grid-cols-3 gap-2 pt-1">
+<div class="bg-surface-container-lowest p-2 rounded-lg flex flex-col items-center shadow-sm">
+<span class="font-label-sm text-label-sm text-badge-emerald-text font-semibold flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-secondary"></span> A Favor
+              </span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">85%</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">26 viviendas</span>
+</div>
+<div class="bg-surface-container-lowest p-2 rounded-lg flex flex-col items-center shadow-sm">
+<span class="font-label-sm text-label-sm text-urgent-coral font-semibold flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-urgent-coral"></span> En Contra
+              </span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">10%</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">3 viviendas</span>
+</div>
+<div class="bg-surface-container-lowest p-2 rounded-lg flex flex-col items-center shadow-sm">
+<span class="font-label-sm text-label-sm text-on-surface-variant font-semibold flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-on-surface-variant"></span> Abstención
+              </span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">5%</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">2 viviendas</span>
+</div>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant font-body-sm text-body-sm pt-1">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-badge-amber-text">hourglass_top</span>
+              Votación abierta hasta el 28 de Noviembre, 12:00h
+            </span>
+<span class="font-semibold text-secondary">Aprobación virtual consolidada</span>
+</div>
+</div>
+</div>
+</div>
+<!-- TAB 2: HISTORICAL RESOLUTIONS AND SIGNED MINUTES -->
+<div class="flex flex-col gap-space-md" id="tab-content-historico">
+<!-- Section Header -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-sm">
+<div>
+<h2 class="font-headline-md text-headline-md text-on-surface">Acuerdos de Junta y Votaciones Finalizadas</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">
+            Histórico fehaciente con actas protocolizadas ante el Administrador Colegiado y firma mancomunada.
+          </p>
+</div>
+<!-- Filter dropdown emulation -->
+<div class="flex items-center gap-2">
+<div class="bg-surface-container-lowest px-3 py-1.5 rounded-lg shadow-sm flex items-center gap-2 font-body-sm text-body-sm text-on-surface">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant">filter_list</span>
+<span>Año: <strong>2024</strong></span>
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant">expand_more</span>
+</div>
+<div class="bg-surface-container-lowest px-3 py-1.5 rounded-lg shadow-sm flex items-center gap-2 font-body-sm text-body-sm text-on-surface">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant">check_circle</span>
+<span>Solo Acuerdos Aprobados</span>
+</div>
+</div>
+</div>
+<!-- Historical Agreements Grid / Table -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden">
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low text-on-surface-variant font-label-sm text-label-sm uppercase tracking-wider">
+<th class="py-3 px-space-md font-semibold">Ref. Acuerdo / Fecha</th>
+<th class="py-3 px-space-md font-semibold">Título del Acuerdo</th>
+<th class="py-3 px-space-md font-semibold">Resultado de Votación</th>
+<th class="py-3 px-space-md font-semibold">Tu Sentido de Voto</th>
+<th class="py-3 px-space-md font-semibold text-right">Acta Oficial</th>
+</tr>
+</thead>
+<tbody class="font-body-md text-body-md text-on-surface divide-y divide-surface-container-low">
+<!-- Row 1 -->
+<tr class="hover:bg-surface-container-lowest/60 transition-colors">
+<td class="py-space-md px-space-md whitespace-nowrap">
+<span class="font-label-md text-label-md font-bold text-on-surface block">ACU-2024-041</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">14 Octubre 2024</span>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg font-semibold text-on-surface">Pintura y revestimiento impermeabilizante de fachada norte</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Empresa adjudicataria: Revestimientos Levantinos S.L. (12.300 €)</span>
+</div>
+</td>
+<td class="py-space-md px-space-md whitespace-nowrap">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-badge-emerald-bg text-badge-emerald-text font-label-sm text-label-sm font-bold">
+<span class="material-symbols-outlined text-[14px]">check</span> APROBADO (91%)
+                  </span>
+</td>
+<td class="py-space-md px-space-md whitespace-nowrap">
+<span class="font-label-md text-label-md text-secondary font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[18px]">how_to_reg</span> A Favor
+                  </span>
+</td>
+<td class="py-space-md px-space-md text-right whitespace-nowrap">
+<a class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md transition-colors" href="#">
+<span class="material-symbols-outlined text-[18px] text-error">picture_as_pdf</span>
+<span>Acta Firmada</span>
+</a>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-surface-container-lowest/60 transition-colors">
+<td class="py-space-md px-space-md whitespace-nowrap">
+<span class="font-label-md text-label-md font-bold text-on-surface block">ACU-2024-033</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">02 Septiembre 2024</span>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg font-semibold text-on-surface">Instalación de punto de recarga de vehículos eléctricos comunitario</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Desestimada propuesta de infraestructura troncal centralizada</span>
+</div>
+</td>
+<td class="py-space-md px-space-md whitespace-nowrap">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-badge-coral-bg text-badge-coral-text font-label-sm text-label-sm font-bold">
+<span class="material-symbols-outlined text-[14px]">close</span> RECHAZADO (44%)
+                  </span>
+</td>
+<td class="py-space-md px-space-md whitespace-nowrap">
+<span class="font-label-md text-label-md text-on-surface-variant font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[18px]">how_to_reg</span> En Contra
+                  </span>
+</td>
+<td class="py-space-md px-space-md text-right whitespace-nowrap">
+<a class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md transition-colors" href="#">
+<span class="material-symbols-outlined text-[18px] text-error">picture_as_pdf</span>
+<span>Acta Firmada</span>
+</a>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-surface-container-lowest/60 transition-colors">
+<td class="py-space-md px-space-md whitespace-nowrap">
+<span class="font-label-md text-label-md font-bold text-on-surface block">ACU-2024-019</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">18 Junio 2024</span>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg font-semibold text-on-surface">Modificación de normas de régimen interno: Horarios de pista de pádel</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Cierre a las 22:30h en lugar de 23:30h para mitigación de ruido acústico</span>
+</div>
+</td>
+<td class="py-space-md px-space-md whitespace-nowrap">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-badge-emerald-bg text-badge-emerald-text font-label-sm text-label-sm font-bold">
+<span class="material-symbols-outlined text-[14px]">check</span> APROBADO (78%)
+                  </span>
+</td>
+<td class="py-space-md px-space-md whitespace-nowrap">
+<span class="font-label-md text-label-md text-secondary font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[18px]">how_to_reg</span> A Favor
+                  </span>
+</td>
+<td class="py-space-md px-space-md text-right whitespace-nowrap">
+<a class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md transition-colors" href="#">
+<span class="material-symbols-outlined text-[18px] text-error">picture_as_pdf</span>
+<span>Acta Firmada</span>
+</a>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-surface-container-lowest/60 transition-colors">
+<td class="py-space-md px-space-md whitespace-nowrap">
+<span class="font-label-md text-label-md font-bold text-on-surface block">ACU-2024-004</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">25 Enero 2024</span>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg font-semibold text-on-surface">Aprobación de cuentas anuales 2023 y liquidación de ejercicio</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Superávit comunitario de 4.820 € transferido al fondo legal de reserva</span>
+</div>
+</td>
+<td class="py-space-md px-space-md whitespace-nowrap">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-badge-emerald-bg text-badge-emerald-text font-label-sm text-label-sm font-bold">
+<span class="material-symbols-outlined text-[14px]">check</span> APROBADO (98%)
+                  </span>
+</td>
+<td class="py-space-md px-space-md whitespace-nowrap">
+<span class="font-label-md text-label-md text-secondary font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[18px]">how_to_reg</span> A Favor
+                  </span>
+</td>
+<td class="py-space-md px-space-md text-right whitespace-nowrap">
+<a class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md transition-colors" href="#">
+<span class="material-symbols-outlined text-[18px] text-error">picture_as_pdf</span>
+<span>Acta Firmada</span>
+</a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Table Footer / Pagination -->
+<div class="p-space-sm px-space-md bg-surface-container-low flex items-center justify-between">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Mostrando 4 de 8 acuerdos registrados</span>
+<div class="flex items-center gap-1">
+<button class="p-1.5 rounded-lg bg-surface-container-lowest text-on-surface-variant hover:text-on-surface shadow-sm">
+<span class="material-symbols-outlined text-[18px]">chevron_left</span>
+</button>
+<span class="px-3 py-1 rounded-lg bg-on-primary-fixed text-on-primary font-label-sm text-label-sm">1</span>
+<button class="p-1.5 rounded-lg bg-surface-container-lowest text-on-surface-variant hover:text-on-surface shadow-sm">
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Legal Advisory Micro-Card (Bottom anchor) -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col md:flex-row items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-md">
+<div class="w-10 h-10 rounded-full bg-badge-emerald-bg flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[24px]">verified</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Trazabilidad de Libro de Actas Telemático</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">
+            Conforme a la Ley de Propiedad Horizontal Española (Art. 17 y disposición final primera). Los votos computados incorporan firma electrónica y no son alterables.
+          </span>
+</div>
+</div>
+<button class="whitespace-nowrap px-4 py-2 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface font-label-md text-label-md transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">help_outline</span>
+        Consultar Normativa Legal
+      </button>
+</div>
+</div>
+</div>
+<script>
+  function switchVotingTab(tabName) {
+    const tabActivas = document.getElementById('tab-content-activas');
+    const tabHistorico = document.getElementById('tab-content-historico');
+    const btnActivas = document.getElementById('tab-btn-activas');
+    const btnHistorico = document.getElementById('tab-btn-historico');
+
+    if (tabName === 'activas') {
+      tabActivas.classList.remove('hidden');
+      tabHistorico.classList.add('hidden');
+      btnActivas.className = "px-5 py-2 rounded-lg font-label-lg text-label-lg transition-all flex items-center gap-2 bg-on-primary-fixed text-on-primary shadow-sm";
+      btnHistorico.className = "px-5 py-2 rounded-lg font-label-lg text-label-lg transition-all flex items-center gap-2 text-on-surface-variant hover:text-on-surface hover:bg-surface-container";
+    } else {
+      tabActivas.classList.add('hidden');
+      tabHistorico.classList.remove('hidden');
+      btnHistorico.className = "px-5 py-2 rounded-lg font-label-lg text-label-lg transition-all flex items-center gap-2 bg-on-primary-fixed text-on-primary shadow-sm";
+      btnActivas.className = "px-5 py-2 rounded-lg font-label-lg text-label-lg transition-all flex items-center gap-2 text-on-surface-variant hover:text-on-surface hover:bg-surface-container";
+    }
+  }
+
+  function selectBallotOption(radioId) {
+    const radio = document.getElementById(radioId);
+    if (radio) {
+      radio.checked = true;
+    }
+    const labels = ['label-opt-favor', 'label-opt-contra', 'label-opt-abstencion'];
+    labels.forEach(id => {
+      const el = document.getElementById(id);
+      if (id === 'label-' + radioId) {
+        el.classList.add('bg-surface-container');
+      } else {
+        el.classList.remove('bg-surface-container');
+      }
+    });
+  }
+
+  function handleEmitVote() {
+    const radios = document.getElementsByName('ballot-radio');
+    let selected = null;
+    for (const r of radios) {
+      if (r.checked) {
+        selected = r.value;
+        break;
+      }
+    }
+
+    if (!selected) {
+      alert('Por favor, selecciona una opción de voto (A favor, En contra o Abstención) antes de confirmar.');
+      return;
+    }
+
+    const btn = document.getElementById('submit-vote-btn');
+    btn.innerHTML = '<span class="material-symbols-outlined text-[20px] animate-spin">refresh</span> Firmando criptográficamente...';
+    btn.disabled = true;
+
+    setTimeout(() => {
+      btn.innerHTML = '<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: \'FILL\' 1;">check_circle</span> ¡Voto Registrado con Éxito!';
+      btn.className = "w-full py-3 px-4 rounded-xl bg-secondary text-on-secondary font-label-lg text-label-lg font-bold flex items-center justify-center gap-2 shadow-md";
+    }, 1200);
+  }
+</script></main></div></body></html>

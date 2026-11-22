@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+
+<html lang="es"><head><link rel="stylesheet" href="/fonts/fonts.css"/><link rel="stylesheet" href="/stitch-tailwind.css"/><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/>
+<style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style></head><body class="bg-surface font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-72 bg-surface-container-lowest z-50 flex flex-col shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-space-lg flex items-center justify-between"><div class="flex items-center gap-space-sm"><img alt="NeighNetZ Logo" class="h-8 w-auto object-contain" src="/images/demo-placeholder.svg"/><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight">NeighNetZ</span></div></div><div class="px-space-md py-space-sm"><div class="bg-surface-container-low rounded-lg p-space-sm flex items-center justify-between cursor-pointer hover:bg-surface-container transition-colors"><div class="flex items-center gap-space-sm overflow-hidden"><span class="material-symbols-outlined text-secondary text-[20px]">apartment</span><div class="flex flex-col truncate"><span class="font-label-sm text-label-sm text-on-surface-variant uppercase truncate">Comunidad Activa</span><span class="font-label-md text-label-md text-on-surface truncate">Residencial Los Sauces 14</span></div></div><span class="material-symbols-outlined text-on-surface-variant text-[18px]">unfold_more</span></div></div><nav class="flex-1 overflow-y-auto px-space-md py-space-sm flex flex-col gap-space-xs" data-active-classes="bg-primary-container text-on-primary font-bold rounded-lg"><div class="px-space-sm pt-space-sm pb-space-xs"><span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Área del Vecino</span></div><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container hover:text-on-surface transition-all" data-path="dashboard" href="#"><span class="material-symbols-outlined text-[20px]">home</span><span>Inicio / Tablón</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container hover:text-on-surface transition-all" data-path="dashboard-incidencias" href="#"><span class="material-symbols-outlined text-[20px]">report_problem</span><span>Incidencias</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container hover:text-on-surface transition-all" data-path="dashboard-reservas" href="#"><span class="material-symbols-outlined text-[20px]">event_available</span><span>Reservas</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container hover:text-on-surface transition-all" data-path="dashboard-votaciones" href="#"><span class="material-symbols-outlined text-[20px]">how_to_vote</span><span>Votaciones</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container hover:text-on-surface transition-all" data-path="dashboard-documentos" href="#"><span class="material-symbols-outlined text-[20px]">folder_shared</span><span>Documentos</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container hover:text-on-surface transition-all" data-path="dashboard-vecinos" href="#"><span class="material-symbols-outlined text-[20px]">groups</span><span>Directorio de Vecinos</span></a><a aria-current="page" class="flex items-center gap-space-sm px-space-sm py-space-sm transition-all bg-primary-container text-on-primary font-bold rounded-lg" data-path="dashboard-gastos" href="#"><span class="material-symbols-outlined text-[20px]">account_balance_wallet</span><span>Cuentas y Gastos</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container hover:text-on-surface transition-all" data-path="dashboard-perfil" href="#"><span class="material-symbols-outlined text-[20px]">person</span><span>Mi Perfil</span></a><div class="px-space-sm pt-space-md pb-space-xs"><span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Panel de Administración</span></div><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container hover:text-on-surface transition-all" data-path="admin" href="#"><span class="material-symbols-outlined text-[20px]">monitoring</span><span>Panel Ejecutivo</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container hover:text-on-surface transition-all" data-path="admin-usuarios" href="#"><span class="material-symbols-outlined text-[20px]">verified_user</span><span>Validar Vecinos</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container hover:text-on-surface transition-all" data-path="admin-incidencias" href="#"><span class="material-symbols-outlined text-[20px]">assignment_late</span><span>Gestión de Incidencias</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container hover:text-on-surface transition-all" data-path="admin-reservas" href="#"><span class="material-symbols-outlined text-[20px]">book_online</span><span>Gestión de Reservas</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container hover:text-on-surface transition-all" data-path="admin-documentos" href="#"><span class="material-symbols-outlined text-[20px]">file_copy</span><span>Gestión Documental</span></a></nav><div class="p-space-md mt-auto"><div class="bg-surface-container-low rounded-lg p-space-sm flex items-center justify-between"><div class="flex items-center gap-space-sm"><span class="h-2 w-2 rounded-full bg-secondary"></span><span class="font-label-sm text-label-sm text-on-surface-variant">Servicios Operativos</span></div><span class="font-label-sm text-label-sm text-secondary font-bold">v2.4</span></div></div></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 h-16 bg-surface-container-lowest/80 backdrop-blur-xl z-40 flex items-center justify-between px-space-lg shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex items-center w-96"><div class="relative w-full flex items-center"><span class="material-symbols-outlined absolute left-space-sm text-on-surface-variant text-[20px]">search</span><input class="w-full bg-surface-container-low text-on-surface placeholder:text-on-surface-variant font-body-sm text-body-sm pl-9 pr-space-md py-space-xs rounded-lg outline-none focus:bg-surface-container-lowest transition-colors" placeholder="Buscar acuerdos, actas, reservas o incidencias..." type="text"/></div></div><div class="flex items-center gap-space-md"><div class="hidden sm:flex items-center gap-space-xs px-space-sm py-space-xs rounded-full bg-badge-emerald-bg"><span class="h-2 w-2 rounded-full bg-secondary animate-pulse"></span><span class="font-label-sm text-label-sm text-badge-emerald-text">Firebase Online</span></div><button aria-label="Notificaciones" class="relative p-space-xs rounded-full hover:bg-surface-container transition-colors text-on-surface-variant hover:text-on-surface" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-1 right-1 h-2 w-2 rounded-full bg-urgent-coral"></span></button><div class="flex items-center gap-space-sm pl-space-sm"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="/images/demo-placeholder.svg"/><div class="flex flex-col text-left"><span class="font-label-md text-label-md text-on-surface">Elena Morales</span><span class="font-label-sm text-label-sm text-on-surface-variant">Propietaria / Vicepresidenta</span></div></div></div></header><main class="relative pt-16 bg-surface min-h-screen"><div class="flex flex-col w-full">
+<div class="px-space-lg py-space-xl max-w-[1400px] w-full mx-auto flex flex-col gap-space-lg">
+<!-- Header Section with Fiscal Selector and Export Action -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-md">
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center gap-space-xs">
+<span class="inline-flex items-center gap-space-xs px-space-sm py-0.5 rounded-full bg-badge-navy-bg text-badge-navy-text font-label-sm text-label-sm uppercase tracking-wider">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+            Auditoría Abierta
+          </span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">• Ejercicio Activo</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">
+          Transparencia Económica y Contabilidad Comunitaria
+        </h1>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl">
+          Supervisión en tiempo real de ingresos, partidas presupuestarias, proveedores contratados y el estado financiero legal del Residencial Los Sauces 14.
+        </p>
+</div>
+<div class="flex items-center gap-space-sm self-start md:self-auto">
+<div class="relative">
+<select class="appearance-none bg-surface-container-lowest text-on-surface font-label-lg text-label-lg py-2.5 pl-3.5 pr-9 rounded-lg shadow-sm focus:outline-none cursor-pointer" id="fiscal-selector">
+<option selected="" value="2024">Año 2024 (Enero - Diciembre)</option>
+<option value="2023">Año 2023 (Cerrado y auditado)</option>
+<option value="2022">Año 2022 (Histórico digitalizado)</option>
+</select>
+<span class="material-symbols-outlined absolute right-2.5 top-1/2 -translate-y-1/2 pointer-events-none text-on-surface-variant text-[18px]">expand_more</span>
+</div>
+<button class="inline-flex items-center gap-space-xs bg-primary text-on-primary font-label-lg text-label-lg px-space-md py-2.5 rounded-lg shadow-sm hover:opacity-90 active:scale-[0.98] transition-all" onclick="triggerExportNotice()" type="button">
+<span class="material-symbols-outlined text-[18px]">picture_as_pdf</span>
+<span>Exportar Balance PDF</span>
+</button>
+</div>
+</div>
+<!-- Notification Toast (Hidden by default) -->
+<div class="hidden transition-all duration-300 ease-out bg-surface-container-lowest text-on-surface p-space-md rounded-xl shadow-xl flex items-center justify-between" id="toast-export">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-full bg-badge-emerald-bg flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[20px]">download_done</span>
+</div>
+<div>
+<p class="font-label-lg text-label-lg text-on-surface">Generando balance contable oficial</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Libro mayor de 2024 firmado digitalmente por la administración de fincas colegiada.</p>
+</div>
+</div>
+<button class="text-on-surface-variant hover:text-on-surface p-1" onclick="dismissExportNotice()">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+<!-- Personal Home Unit Fee Banner (Portal 2, 3º B) -->
+<div class="relative overflow-hidden rounded-xl bg-surface-container-low p-space-lg shadow-sm">
+<div class="relative z-10 flex flex-col lg:flex-row lg:items-center justify-between gap-space-md">
+<div class="flex items-start gap-space-md">
+<div class="w-12 h-12 rounded-xl bg-surface-container-lowest flex items-center justify-center shadow-sm text-on-surface">
+<span class="material-symbols-outlined text-[26px]">cottage</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-sm">
+<span class="font-headline-sm text-headline-sm text-on-surface">Portal 2, Planta 3ª, Puerta B</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant bg-surface-container-lowest px-2 py-0.5 rounded">Coeficiente: 2.18%</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mt-0.5">
+              Titular: <span class="text-on-surface font-semibold">Elena Morales Gómez</span> • Cuota mensual ordinaria actual: <span class="font-semibold text-on-surface">85,40 € / mes</span>
+</p>
+</div>
+</div>
+<div class="flex items-center gap-space-md bg-surface-container-lowest px-space-md py-space-sm rounded-lg shadow-sm self-stretch lg:self-auto justify-between lg:justify-start">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Estado de cuenta</span>
+<div class="flex items-center gap-1.5 mt-0.5">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="font-label-lg text-label-lg text-badge-emerald-text">Al corriente de pago</span>
+</div>
+</div>
+<div class="h-8 w-px bg-surface-container"></div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Último cargo</span>
+<span class="font-label-md text-label-md text-on-surface font-semibold">01 Nov 2024 (Domiciliado)</span>
+</div>
+<button class="text-on-surface-variant hover:text-on-surface p-1 rounded hover:bg-surface-container transition-colors" title="Descargar comprobante bancario" type="button">
+<span class="material-symbols-outlined text-[20px]">receipt_long</span>
+</button>
+</div>
+</div>
+</div>
+<!-- 3 Summary Financial Metric Cards -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md">
+<!-- Card 1: Presupuesto Anual -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col justify-between relative overflow-hidden">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Presupuesto Anual Aprobado</span>
+<div class="w-9 h-9 rounded-lg bg-surface-container-low flex items-center justify-center text-on-surface">
+<span class="material-symbols-outlined text-[20px]">calculate</span>
+</div>
+</div>
+<div class="my-space-md">
+<div class="font-headline-xl text-headline-xl text-on-surface tracking-tight">48.500,00 €</div>
+<div class="flex items-center gap-1.5 mt-1">
+<span class="font-label-sm text-label-sm text-secondary bg-badge-emerald-bg px-1.5 py-0.5 rounded font-bold">Acta 14/01/2024</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Aprobado por mayoría 94%</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-space-xs text-on-surface-variant font-body-sm text-body-sm">
+<span>Partidas ordinarias: 42.000 €</span>
+<span>Extraordinarias: 6.500 €</span>
+</div>
+</div>
+<!-- Card 2: Gasto Ejecutado Acumulado -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col justify-between relative overflow-hidden">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Gasto Ejecutado Acumulado</span>
+<div class="w-9 h-9 rounded-lg bg-badge-amber-bg flex items-center justify-center text-badge-amber-text">
+<span class="material-symbols-outlined text-[20px]">trending_up</span>
+</div>
+</div>
+<div class="my-space-md">
+<div class="flex items-baseline gap-space-xs">
+<span class="font-headline-xl text-headline-xl text-on-surface tracking-tight">36.210,40 €</span>
+<span class="font-label-lg text-label-lg text-on-surface-variant font-bold">(74.6%)</span>
+</div>
+<!-- Progress bar indicator -->
+<div class="w-full bg-surface-container-low h-2 rounded-full mt-2.5 overflow-hidden">
+<div class="bg-secondary h-full rounded-full" style="width: 74.6%;"></div>
+</div>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant font-body-sm text-body-sm">
+<span>Previsión a fin de año: Normal</span>
+<span class="font-semibold text-secondary">Dentro de límite</span>
+</div>
+</div>
+<!-- Card 3: Fondo de Reserva -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col justify-between relative overflow-hidden">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Fondo de Reserva Disponible</span>
+<div class="w-9 h-9 rounded-lg bg-badge-emerald-bg flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[20px]">account_balance</span>
+</div>
+</div>
+<div class="my-space-md">
+<div class="font-headline-xl text-headline-xl text-secondary tracking-tight">14.850,20 €</div>
+<div class="flex items-center gap-1.5 mt-1">
+<span class="font-label-sm text-label-sm text-on-surface bg-badge-navy-bg px-1.5 py-0.5 rounded font-bold">10% Ley Propiedad Horizontal</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Obligatorio superado</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-space-xs text-on-surface-variant font-body-sm text-body-sm">
+<span>Banco Santander ES44 **** 2981</span>
+<span class="font-medium text-on-surface">Sin pignoraciones</span>
+</div>
+</div>
+</div>
+<!-- Mid Section: Visual Breakdown & Budget Distribution -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-md">
+<!-- Donut Visual Representation (5 Cols) -->
+<div class="lg:col-span-5 bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-space-sm">
+<h2 class="font-headline-md text-headline-md text-on-surface">Distribución por Categorías</h2>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Total 36.210 €</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-md">
+            Desglose de facturas liquidadas y devengadas durante el ejercicio contable actual.
+          </p>
+</div>
+<!-- SVG Donut Chart with Centered Metric -->
+<div class="relative flex items-center justify-center my-space-sm">
+<svg class="w-56 h-56 -rotate-90 transform" viewbox="0 0 100 100">
+<!-- Background Ring -->
+<circle class="text-surface-container-low" cx="50" cy="50" fill="transparent" r="38" stroke="currentColor" stroke-width="12"></circle>
+<!-- Suministros (28%): stroke-dasharray="70.37 167.63", offset=0 -->
+<circle class="transition-all duration-500 hover:opacity-85" cx="50" cy="50" fill="transparent" r="38" stroke="#006c4a" stroke-dasharray="66.85 171.15" stroke-dashoffset="0" stroke-width="12"></circle>
+<!-- Limpieza y Jardinería (30%): stroke-dasharray="71.63 166.37", offset=-66.85 -->
+<circle class="transition-all duration-500 hover:opacity-85" cx="50" cy="50" fill="transparent" r="38" stroke="#131b2e" stroke-dasharray="71.63 166.37" stroke-dashoffset="-66.85" stroke-width="12"></circle>
+<!-- Ascensores (22%): stroke-dasharray="52.53 185.47", offset=-138.48 -->
+<circle class="transition-all duration-500 hover:opacity-85" cx="50" cy="50" fill="transparent" r="38" stroke="#565e74" stroke-dasharray="52.53 185.47" stroke-dashoffset="-138.48" stroke-width="12"></circle>
+<!-- Seguro Multirriesgo (12%): stroke-dasharray="28.65 209.35", offset=-191.01 -->
+<circle class="transition-all duration-500 hover:opacity-85" cx="50" cy="50" fill="transparent" r="38" stroke="#b45309" stroke-dasharray="28.65 209.35" stroke-dashoffset="-191.01" stroke-width="12"></circle>
+<!-- Imprevistos (8%): stroke-dasharray="19.1 218.9", offset=-219.66 -->
+<circle class="transition-all duration-500 hover:opacity-85" cx="50" cy="50" fill="transparent" r="38" stroke="#ba1a1a" stroke-dasharray="19.1 218.9" stroke-dashoffset="-219.66" stroke-width="12"></circle>
+</svg>
+<!-- Inside Donut Label -->
+<div class="absolute inset-0 flex flex-col items-center justify-center text-center pointer-events-none">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest">Ejecutado</span>
+<span class="font-headline-lg text-headline-lg text-on-surface tracking-tight font-bold">74.6%</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">del presupuesto</span>
+</div>
+</div>
+<!-- Legend Items -->
+<div class="grid grid-cols-2 gap-space-sm pt-space-md mt-space-sm border-t border-surface-container">
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-sm bg-[#131b2e]"></span>
+<span class="font-body-sm text-body-sm text-on-surface">Limpieza (30%)</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-sm bg-[#006c4a]"></span>
+<span class="font-body-sm text-body-sm text-on-surface">Suministros (28%)</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-sm bg-[#565e74]"></span>
+<span class="font-body-sm text-body-sm text-on-surface">Ascensores (22%)</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-sm bg-[#b45309]"></span>
+<span class="font-body-sm text-body-sm text-on-surface">Seguro (12%)</span>
+</div>
+<div class="flex items-center gap-2 col-span-2">
+<span class="w-3 h-3 rounded-sm bg-[#ba1a1a]"></span>
+<span class="font-body-sm text-body-sm text-on-surface">Imprevistos / Fontanería (8%)</span>
+</div>
+</div>
+</div>
+<!-- Execution Bars per Department & Financial Status (7 Cols) -->
+<div class="lg:col-span-7 bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-space-sm">
+<h2 class="font-headline-md text-headline-md text-on-surface">Seguimiento por Partida Presupuestaria</h2>
+<span class="font-label-md text-label-md text-secondary font-bold">Sin desviaciones críticas</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-lg">
+            Comparativa entre asignación votada en junta ordinaria y gasto material devengado al tercer trimestre.
+          </p>
+<div class="flex flex-col gap-space-md">
+<!-- Limpieza y Zonas Comunes -->
+<div class="flex flex-col gap-1">
+<div class="flex justify-between font-label-md text-label-md">
+<span class="text-on-surface">Limpieza, Conserjería y Jardinería</span>
+<span class="text-on-surface font-semibold">10.863,12 € / 14.500,00 € (74.9%)</span>
+</div>
+<div class="w-full bg-surface-container-low h-3 rounded-full overflow-hidden flex">
+<div class="bg-primary-container h-full rounded-full" style="width: 74.9%;"></div>
+</div>
+</div>
+<!-- Suministros Eléctricos y Agua -->
+<div class="flex flex-col gap-1">
+<div class="flex justify-between font-label-md text-label-md">
+<span class="text-on-surface">Suministros (Iberdrola + Canal de Isabel II)</span>
+<span class="text-on-surface font-semibold">10.138,91 € / 13.500,00 € (75.1%)</span>
+</div>
+<div class="w-full bg-surface-container-low h-3 rounded-full overflow-hidden flex">
+<div class="bg-secondary h-full rounded-full" style="width: 75.1%;"></div>
+</div>
+</div>
+<!-- Mantenimiento de Ascensores y Salvaescaleras -->
+<div class="flex flex-col gap-1">
+<div class="flex justify-between font-label-md text-label-md">
+<span class="text-on-surface">Mantenimiento Preventivo Ascensores (Otis)</span>
+<span class="text-on-surface font-semibold">7.966,28 € / 10.600,00 € (75.1%)</span>
+</div>
+<div class="w-full bg-surface-container-low h-3 rounded-full overflow-hidden flex">
+<div class="bg-surface-tint h-full rounded-full" style="width: 75.1%;"></div>
+</div>
+</div>
+<!-- Seguro Multirriesgo Comunitario -->
+<div class="flex flex-col gap-1">
+<div class="flex justify-between font-label-md text-label-md">
+<span class="text-on-surface">Póliza Comunitaria Multirriesgo (Mapfre)</span>
+<span class="text-on-surface font-semibold">4.345,24 € / 5.800,00 € (74.9%)</span>
+</div>
+<div class="w-full bg-surface-container-low h-3 rounded-full overflow-hidden flex">
+<div class="bg-badge-amber-text h-full rounded-full" style="width: 74.9%;"></div>
+</div>
+</div>
+<!-- Imprevistos y Reparaciones Menores -->
+<div class="flex flex-col gap-1">
+<div class="flex justify-between font-label-md text-label-md">
+<span class="text-on-surface">Fondo de Imprevistos &amp; Reparaciones Menores</span>
+<span class="text-on-surface font-semibold">2.896,85 € / 4.100,00 € (70.6%)</span>
+</div>
+<div class="w-full bg-surface-container-low h-3 rounded-full overflow-hidden flex">
+<div class="bg-urgent-coral h-full rounded-full" style="width: 70.6%;"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-space-lg p-space-sm rounded-lg bg-surface-container-low flex items-center justify-between text-body-sm text-on-surface-variant">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[18px] text-secondary">verified</span>
+<span>Comprobación cruzada con extracto bancario Santander coincidente al 100%.</span>
+</div>
+<span class="font-label-sm text-label-sm uppercase font-semibold text-on-surface">Cierre Mensual: Octubre OK</span>
+</div>
+</div>
+</div>
+<!-- Table Section: Facturas y Movimientos de Proveedores -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden flex flex-col">
+<!-- Table Header Bar with Filter Tools -->
+<div class="p-space-lg flex flex-col sm:flex-row sm:items-center justify-between gap-space-md border-b border-surface-container-low">
+<div>
+<h2 class="font-headline-md text-headline-md text-on-surface">Libro de Facturas y Proveedores</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Registro cronológico inmutable de gastos abonados y facturas en revisión contable.
+          </p>
+</div>
+<div class="flex items-center gap-space-sm">
+<div class="relative">
+<input class="bg-surface-container-low text-on-surface placeholder:text-on-surface-variant font-body-sm text-body-sm pl-9 pr-space-md py-2 rounded-lg focus:outline-none w-64" id="table-search" oninput="filterTable()" placeholder="Filtrar por proveedor o concepto..." type="text"/>
+<span class="material-symbols-outlined absolute left-2.5 top-1/2 -translate-y-1/2 text-on-surface-variant text-[18px]">search</span>
+</div>
+<button class="p-2 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface transition-colors" title="Filtros avanzados" type="button">
+<span class="material-symbols-outlined text-[20px]">filter_list</span>
+</button>
+</div>
+</div>
+<!-- Responsive Table View -->
+<div class="overflow-x-auto w-full">
+<table class="w-full text-left border-collapse" id="invoices-table">
+<thead>
+<tr class="bg-surface-container-low text-on-surface-variant font-label-md text-label-md uppercase tracking-wider">
+<th class="py-3 px-space-lg font-semibold">Fecha</th>
+<th class="py-3 px-space-md font-semibold">Concepto / Descripción</th>
+<th class="py-3 px-space-md font-semibold">Proveedor</th>
+<th class="py-3 px-space-md font-semibold">Categoría</th>
+<th class="py-3 px-space-md font-semibold text-right">Importe</th>
+<th class="py-3 px-space-md font-semibold text-center">Estado</th>
+<th class="py-3 px-space-lg font-semibold text-right">Documento</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container-low font-body-md text-body-md text-on-surface">
+<!-- Row 1 -->
+<tr class="hover:bg-surface-container-low/60 transition-colors">
+<td class="py-3.5 px-space-lg font-label-md text-label-md text-on-surface-variant whitespace-nowrap">04/11/2024</td>
+<td class="py-3.5 px-space-md font-medium text-on-surface">
+                Mantenimiento bimensual motores y foso elevadores A y B
+              </td>
+<td class="py-3.5 px-space-md text-on-surface font-semibold whitespace-nowrap">Otis Mantenimiento</td>
+<td class="py-3.5 px-space-md whitespace-nowrap">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full font-label-sm text-label-sm bg-badge-navy-bg text-badge-navy-text">
+                  Ascensores
+                </span>
+</td>
+<td class="py-3.5 px-space-md text-right font-semibold whitespace-nowrap">
+                680,50 €
+              </td>
+<td class="py-3.5 px-space-md text-center whitespace-nowrap">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full font-label-sm text-label-sm bg-badge-emerald-bg text-badge-emerald-text font-bold">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                  Pagado
+                </span>
+</td>
+<td class="py-3.5 px-space-lg text-right whitespace-nowrap">
+<a class="inline-flex items-center gap-1 font-label-sm text-label-sm text-on-surface hover:text-secondary underline underline-offset-4 decoration-surface-variant" href="#factura-otis">
+<span class="material-symbols-outlined text-[16px]">description</span>
+<span>Ver Factura Oficial (PDF)</span>
+</a>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-surface-container-low/60 transition-colors">
+<td class="py-3.5 px-space-lg font-label-md text-label-md text-on-surface-variant whitespace-nowrap">28/10/2024</td>
+<td class="py-3.5 px-space-md font-medium text-on-surface">
+                Consumo eléctrico zonas comunes, garaje y piscina climatizada
+              </td>
+<td class="py-3.5 px-space-md text-on-surface font-semibold whitespace-nowrap">Iberdrola Clientes</td>
+<td class="py-3.5 px-space-md whitespace-nowrap">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full font-label-sm text-label-sm bg-badge-emerald-bg text-secondary">
+                  Suministros
+                </span>
+</td>
+<td class="py-3.5 px-space-md text-right font-semibold whitespace-nowrap">
+                1.425,80 €
+              </td>
+<td class="py-3.5 px-space-md text-center whitespace-nowrap">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full font-label-sm text-label-sm bg-badge-emerald-bg text-badge-emerald-text font-bold">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                  Pagado
+                </span>
+</td>
+<td class="py-3.5 px-space-lg text-right whitespace-nowrap">
+<a class="inline-flex items-center gap-1 font-label-sm text-label-sm text-on-surface hover:text-secondary underline underline-offset-4 decoration-surface-variant" href="#factura-iberdrola">
+<span class="material-symbols-outlined text-[16px]">description</span>
+<span>Ver Factura Oficial (PDF)</span>
+</a>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-surface-container-low/60 transition-colors">
+<td class="py-3.5 px-space-lg font-label-md text-label-md text-on-surface-variant whitespace-nowrap">24/10/2024</td>
+<td class="py-3.5 px-space-md font-medium text-on-surface">
+                Servicio integral de limpieza portales, cristaleras y jardinería
+              </td>
+<td class="py-3.5 px-space-md text-on-surface font-semibold whitespace-nowrap">Limpiezas Brillo S.L.</td>
+<td class="py-3.5 px-space-md whitespace-nowrap">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full font-label-sm text-label-sm bg-badge-navy-bg text-badge-navy-text">
+                  Limpieza y Jardinería
+                </span>
+</td>
+<td class="py-3.5 px-space-md text-right font-semibold whitespace-nowrap">
+                1.120,00 €
+              </td>
+<td class="py-3.5 px-space-md text-center whitespace-nowrap">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full font-label-sm text-label-sm bg-badge-emerald-bg text-badge-emerald-text font-bold">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                  Pagado
+                </span>
+</td>
+<td class="py-3.5 px-space-lg text-right whitespace-nowrap">
+<a class="inline-flex items-center gap-1 font-label-sm text-label-sm text-on-surface hover:text-secondary underline underline-offset-4 decoration-surface-variant" href="#factura-brillo">
+<span class="material-symbols-outlined text-[16px]">description</span>
+<span>Ver Factura Oficial (PDF)</span>
+</a>
+</td>
+</tr>
+<!-- Row 4 (Pending approval) -->
+<tr class="hover:bg-surface-container-low/60 transition-colors">
+<td class="py-3.5 px-space-lg font-label-md text-label-md text-on-surface-variant whitespace-nowrap">18/10/2024</td>
+<td class="py-3.5 px-space-md font-medium text-on-surface">
+                Reparación fuga bajante pluvial garaje sótano -2
+              </td>
+<td class="py-3.5 px-space-md text-on-surface font-semibold whitespace-nowrap">Fontanería y Desatascos Norte</td>
+<td class="py-3.5 px-space-md whitespace-nowrap">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full font-label-sm text-label-sm bg-badge-coral-bg text-badge-coral-text">
+                  Imprevistos
+                </span>
+</td>
+<td class="py-3.5 px-space-md text-right font-semibold whitespace-nowrap">
+                430,00 €
+              </td>
+<td class="py-3.5 px-space-md text-center whitespace-nowrap">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full font-label-sm text-label-sm bg-badge-amber-bg text-badge-amber-text font-bold">
+<span class="w-1.5 h-1.5 rounded-full bg-badge-amber-text"></span>
+                  Pendiente de aprobación
+                </span>
+</td>
+<td class="py-3.5 px-space-lg text-right whitespace-nowrap">
+<a class="inline-flex items-center gap-1 font-label-sm text-label-sm text-on-surface hover:text-secondary underline underline-offset-4 decoration-surface-variant" href="#factura-fontaneria">
+<span class="material-symbols-outlined text-[16px]">description</span>
+<span>Ver Factura Oficial (PDF)</span>
+</a>
+</td>
+</tr>
+<!-- Row 5 -->
+<tr class="hover:bg-surface-container-low/60 transition-colors">
+<td class="py-3.5 px-space-lg font-label-md text-label-md text-on-surface-variant whitespace-nowrap">10/10/2024</td>
+<td class="py-3.5 px-space-md font-medium text-on-surface">
+                Fracción trimestral póliza multirriesgo edificación
+              </td>
+<td class="py-3.5 px-space-md text-on-surface font-semibold whitespace-nowrap">Mapfre Seguros</td>
+<td class="py-3.5 px-space-md whitespace-nowrap">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full font-label-sm text-label-sm bg-badge-amber-bg text-badge-amber-text">
+                  Seguro Multirriesgo
+                </span>
+</td>
+<td class="py-3.5 px-space-md text-right font-semibold whitespace-nowrap">
+                1.450,00 €
+              </td>
+<td class="py-3.5 px-space-md text-center whitespace-nowrap">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full font-label-sm text-label-sm bg-badge-emerald-bg text-badge-emerald-text font-bold">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                  Pagado
+                </span>
+</td>
+<td class="py-3.5 px-space-lg text-right whitespace-nowrap">
+<a class="inline-flex items-center gap-1 font-label-sm text-label-sm text-on-surface hover:text-secondary underline underline-offset-4 decoration-surface-variant" href="#factura-mapfre">
+<span class="material-symbols-outlined text-[16px]">description</span>
+<span>Ver Factura Oficial (PDF)</span>
+</a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Table Footer / Pagination Metadata -->
+<div class="px-space-lg py-space-md bg-surface-container-low flex flex-col sm:flex-row items-center justify-between gap-space-sm text-body-sm text-on-surface-variant">
+<span>Mostrando 5 de 64 movimientos contables del ejercicio</span>
+<div class="flex items-center gap-space-xs">
+<button class="px-3 py-1 rounded bg-surface-container-lowest font-label-sm text-label-sm text-on-surface shadow-sm disabled:opacity-50" disabled="">Anterior</button>
+<span class="px-2 font-label-sm text-label-sm text-on-surface">1 / 13</span>
+<button class="px-3 py-1 rounded bg-surface-container-lowest font-label-sm text-label-sm text-on-surface shadow-sm hover:bg-surface-container">Siguiente</button>
+</div>
+</div>
+</div>
+<!-- Legal Compliance & Community Audit Note -->
+<div class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm flex flex-col md:flex-row items-start md:items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-secondary text-[24px]">gavel</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface">Cumplimiento de la Ley 49/1960 de Propiedad Horizontal</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Todas las facturas cuentan con firma del administrador y están a disposición de los propietarios para cotejo físico previa solicitud.</span>
+</div>
+</div>
+<a class="font-label-md text-label-md text-secondary hover:underline whitespace-nowrap" href="mailto:administracion@lossauces14.com">
+        Contactar con Administración →
+      </a>
+</div>
+</div>
+</div>
+<script>
+  function triggerExportNotice() {
+    const toast = document.getElementById('toast-export');
+    if (toast) {
+      toast.classList.remove('hidden');
+      setTimeout(() => {
+        dismissExportNotice();
+      }, 5000);
+    }
+  }
+
+  function dismissExportNotice() {
+    const toast = document.getElementById('toast-export');
+    if (toast) {
+      toast.classList.add('hidden');
+    }
+  }
+
+  function filterTable() {
+    const query = document.getElementById('table-search').value.toLowerCase();
+    const rows = document.querySelectorAll('#invoices-table tbody tr');
+    rows.forEach(row => {
+      const text = row.textContent.toLowerCase();
+      row.style.display = text.includes(query) ? '' : 'none';
+    });
+  }
+</script></main></div></body></html>

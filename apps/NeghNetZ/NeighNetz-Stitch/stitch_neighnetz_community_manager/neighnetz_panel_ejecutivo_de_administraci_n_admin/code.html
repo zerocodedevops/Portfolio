@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+
+<html lang="es"><head><link rel="stylesheet" href="/fonts/fonts.css"/><link rel="stylesheet" href="/stitch-tailwind.css"/><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/>
+<style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style></head><body class="bg-surface font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-72 bg-surface-container-lowest z-50 flex flex-col shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-space-lg flex items-center justify-between"><div class="flex items-center gap-space-sm"><img alt="NeighNetZ Logo" class="h-8 w-auto object-contain" src="/images/demo-placeholder.svg"/><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight">NeighNetZ</span></div></div><div class="px-space-md py-space-sm"><div class="bg-surface-container-low rounded-lg p-space-sm flex items-center justify-between cursor-pointer hover:bg-surface-container transition-colors"><div class="flex items-center gap-space-sm overflow-hidden"><span class="material-symbols-outlined text-secondary text-[20px]">apartment</span><div class="flex flex-col truncate"><span class="font-label-sm text-label-sm text-on-surface-variant uppercase truncate">Comunidad Activa</span><span class="font-label-md text-label-md text-on-surface truncate">Residencial Los Sauces 14</span></div></div><span class="material-symbols-outlined text-on-surface-variant text-[18px]">unfold_more</span></div></div><nav class="flex-1 overflow-y-auto px-space-md py-space-sm flex flex-col gap-space-xs" data-active-classes="bg-primary-container text-on-primary font-bold rounded-lg"><div class="px-space-sm pt-space-sm pb-space-xs"><span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Área del Vecino</span></div><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container hover:text-on-surface transition-all" data-path="dashboard" href="#"><span class="material-symbols-outlined text-[20px]">home</span><span>Inicio / Tablón</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container hover:text-on-surface transition-all" data-path="dashboard-incidencias" href="#"><span class="material-symbols-outlined text-[20px]">report_problem</span><span>Incidencias</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container hover:text-on-surface transition-all" data-path="dashboard-reservas" href="#"><span class="material-symbols-outlined text-[20px]">event_available</span><span>Reservas</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container hover:text-on-surface transition-all" data-path="dashboard-votaciones" href="#"><span class="material-symbols-outlined text-[20px]">how_to_vote</span><span>Votaciones</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container hover:text-on-surface transition-all" data-path="dashboard-documentos" href="#"><span class="material-symbols-outlined text-[20px]">folder_shared</span><span>Documentos</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container hover:text-on-surface transition-all" data-path="dashboard-vecinos" href="#"><span class="material-symbols-outlined text-[20px]">groups</span><span>Directorio de Vecinos</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container hover:text-on-surface transition-all" data-path="dashboard-gastos" href="#"><span class="material-symbols-outlined text-[20px]">account_balance_wallet</span><span>Cuentas y Gastos</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container hover:text-on-surface transition-all" data-path="dashboard-perfil" href="#"><span class="material-symbols-outlined text-[20px]">person</span><span>Mi Perfil</span></a><div class="px-space-sm pt-space-md pb-space-xs"><span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Panel de Administración</span></div><a aria-current="page" class="flex items-center gap-space-sm px-space-sm py-space-sm transition-all bg-primary-container text-on-primary font-bold rounded-lg" data-path="admin" href="#"><span class="material-symbols-outlined text-[20px]">monitoring</span><span>Panel Ejecutivo</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container hover:text-on-surface transition-all" data-path="admin-usuarios" href="#"><span class="material-symbols-outlined text-[20px]">verified_user</span><span>Validar Vecinos</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container hover:text-on-surface transition-all" data-path="admin-incidencias" href="#"><span class="material-symbols-outlined text-[20px]">assignment_late</span><span>Gestión de Incidencias</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container hover:text-on-surface transition-all" data-path="admin-reservas" href="#"><span class="material-symbols-outlined text-[20px]">book_online</span><span>Gestión de Reservas</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container hover:text-on-surface transition-all" data-path="admin-documentos" href="#"><span class="material-symbols-outlined text-[20px]">file_copy</span><span>Gestión Documental</span></a></nav><div class="p-space-md mt-auto"><div class="bg-surface-container-low rounded-lg p-space-sm flex items-center justify-between"><div class="flex items-center gap-space-sm"><span class="h-2 w-2 rounded-full bg-secondary"></span><span class="font-label-sm text-label-sm text-on-surface-variant">Servicios Operativos</span></div><span class="font-label-sm text-label-sm text-secondary font-bold">v2.4</span></div></div></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 h-16 bg-surface-container-lowest/80 backdrop-blur-xl z-40 flex items-center justify-between px-space-lg shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex items-center w-96"><div class="relative w-full flex items-center"><span class="material-symbols-outlined absolute left-space-sm text-on-surface-variant text-[20px]">search</span><input class="w-full bg-surface-container-low text-on-surface placeholder:text-on-surface-variant font-body-sm text-body-sm pl-9 pr-space-md py-space-xs rounded-lg outline-none focus:bg-surface-container-lowest transition-colors" placeholder="Buscar acuerdos, actas, reservas o incidencias..." type="text"/></div></div><div class="flex items-center gap-space-md"><div class="hidden sm:flex items-center gap-space-xs px-space-sm py-space-xs rounded-full bg-badge-emerald-bg"><span class="h-2 w-2 rounded-full bg-secondary animate-pulse"></span><span class="font-label-sm text-label-sm text-badge-emerald-text">Firebase Online</span></div><button aria-label="Notificaciones" class="relative p-space-xs rounded-full hover:bg-surface-container transition-colors text-on-surface-variant hover:text-on-surface" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-1 right-1 h-2 w-2 rounded-full bg-urgent-coral"></span></button><div class="flex items-center gap-space-sm pl-space-sm"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="/images/demo-placeholder.svg"/><div class="flex flex-col text-left"><span class="font-label-md text-label-md text-on-surface">Elena Morales</span><span class="font-label-sm text-label-sm text-on-surface-variant">Propietaria / Vicepresidenta</span></div></div></div></header><main class="relative pt-16 bg-surface min-h-screen"><div class="flex flex-col w-full">
+<div class="p-space-lg lg:p-space-xl flex flex-col gap-space-lg max-w-[1440px] mx-auto w-full">
+<!-- Top Action & Context Header -->
+<div class="flex flex-col xl:flex-row xl:items-end justify-between gap-space-md">
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center gap-space-sm flex-wrap">
+<span class="inline-flex items-center gap-space-xs px-space-sm py-1 rounded-full bg-badge-emerald-bg text-badge-emerald-text font-label-sm text-label-sm uppercase tracking-wider">
+<span class="h-1.5 w-1.5 rounded-full bg-secondary animate-ping"></span>
+            Cloud Firestore en directo
+          </span>
+<span class="text-on-surface-variant font-label-sm text-label-sm">• Sincronizado hace 12s</span>
+</div>
+<h1 class="font-headline-xl text-headline-xl text-on-surface tracking-tight mt-1">
+          Panel Ejecutivo de Administración
+        </h1>
+<div class="flex items-center gap-space-xs text-on-surface-variant font-body-md text-body-md">
+<span>Comunidad activa:</span>
+<button class="inline-flex items-center gap-1 font-label-lg text-label-lg text-on-surface hover:text-secondary transition-colors cursor-pointer group" type="button">
+<span class="underline decoration-slate-300 underline-offset-4 group-hover:decoration-secondary">Residencial Los Sauces 14</span>
+<span class="material-symbols-outlined text-[18px]">expand_more</span>
+</button>
+<span class="text-slate-300 px-1">/</span>
+<span class="font-label-md text-label-md text-on-surface-variant">CIF: H-84920193</span>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="flex items-center gap-space-sm flex-wrap sm:flex-nowrap">
+<button class="flex-1 sm:flex-none inline-flex items-center justify-center gap-space-xs px-space-md py-2.5 rounded-xl bg-surface-container-lowest text-on-surface font-label-lg text-label-lg shadow-sm hover:bg-surface-container-low active:scale-[0.98] transition-all" id="btn-informe" type="button">
+<span class="material-symbols-outlined text-[20px] text-on-surface-variant">description</span>
+<span>Generar Informe Mensual</span>
+</button>
+<button class="flex-1 sm:flex-none inline-flex items-center justify-center gap-space-xs px-space-md py-2.5 rounded-xl bg-primary-container text-on-primary font-label-lg text-label-lg shadow-sm hover:opacity-90 active:scale-[0.98] transition-all" id="btn-comunicado" type="button">
+<span class="material-symbols-outlined text-[20px]">campaign</span>
+<span>+ Nuevo Comunicado Masivo</span>
+</button>
+</div>
+</div>
+<!-- 4 KPIs Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-md">
+<!-- KPI 1: Vecinos pendientes -->
+<div class="relative bg-surface-container-lowest rounded-xl p-space-md shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between overflow-hidden group">
+<div class="absolute -right-6 -bottom-6 w-24 h-24 bg-badge-amber-bg rounded-full opacity-60 group-hover:scale-125 transition-transform pointer-events-none"></div>
+<div>
+<div class="flex items-center justify-between gap-space-xs">
+<span class="font-label-md text-label-md text-on-surface-variant">Vecinos Pendientes</span>
+<div class="w-8 h-8 rounded-lg bg-badge-amber-bg flex items-center justify-center text-badge-amber-text">
+<span class="material-symbols-outlined text-[20px]">how_to_reg</span>
+</div>
+</div>
+<div class="flex items-baseline gap-space-xs mt-space-sm">
+<span class="font-headline-xl text-headline-xl text-on-surface tracking-tight">4</span>
+<span class="font-label-md text-label-md text-on-surface-variant">solicitudes</span>
+</div>
+</div>
+<div class="mt-space-md pt-space-xs">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-badge-amber-bg text-badge-amber-text font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px]">id_card</span>
+            Requiere revisión DNI / Vivienda
+          </span>
+</div>
+</div>
+<!-- KPI 2: Incidencias abiertas -->
+<div class="relative bg-surface-container-lowest rounded-xl p-space-md shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between overflow-hidden group">
+<div class="absolute -right-6 -bottom-6 w-24 h-24 bg-badge-coral-bg rounded-full opacity-60 group-hover:scale-125 transition-transform pointer-events-none"></div>
+<div>
+<div class="flex items-center justify-between gap-space-xs">
+<span class="font-label-md text-label-md text-on-surface-variant">Incidencias Abiertas</span>
+<div class="w-8 h-8 rounded-lg bg-badge-coral-bg flex items-center justify-center text-badge-coral-text">
+<span class="material-symbols-outlined text-[20px]">report_problem</span>
+</div>
+</div>
+<div class="flex items-baseline gap-space-xs mt-space-sm">
+<span class="font-headline-xl text-headline-xl text-on-surface tracking-tight">9</span>
+<span class="font-label-md text-label-md text-on-surface-variant">activas</span>
+</div>
+</div>
+<div class="mt-space-md pt-space-xs">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-badge-coral-bg text-badge-coral-text font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px]">error</span>
+            2 Urgente / Prioridad Alta
+          </span>
+</div>
+</div>
+<!-- KPI 3: Reservas Hoy -->
+<div class="relative bg-surface-container-lowest rounded-xl p-space-md shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between overflow-hidden group">
+<div class="absolute -right-6 -bottom-6 w-24 h-24 bg-badge-emerald-bg rounded-full opacity-60 group-hover:scale-125 transition-transform pointer-events-none"></div>
+<div>
+<div class="flex items-center justify-between gap-space-xs">
+<span class="font-label-md text-label-md text-on-surface-variant">Reservas Hoy</span>
+<div class="w-8 h-8 rounded-lg bg-badge-emerald-bg flex items-center justify-center text-badge-emerald-text">
+<span class="material-symbols-outlined text-[20px]">sports_tennis</span>
+</div>
+</div>
+<div class="flex items-baseline gap-space-xs mt-space-sm">
+<span class="font-headline-xl text-headline-xl text-on-surface tracking-tight">12</span>
+<span class="font-label-md text-label-md text-on-surface-variant">turnos programados</span>
+</div>
+</div>
+<div class="mt-space-md pt-space-xs">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-badge-emerald-bg text-badge-emerald-text font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+            Pádel 100% • Salón Libre
+          </span>
+</div>
+</div>
+<!-- KPI 4: Saldo y Tesorería -->
+<div class="relative bg-surface-container-lowest rounded-xl p-space-md shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between overflow-hidden group">
+<div class="absolute -right-6 -bottom-6 w-24 h-24 bg-surface-container-high rounded-full opacity-50 group-hover:scale-125 transition-transform pointer-events-none"></div>
+<div>
+<div class="flex items-center justify-between gap-space-xs">
+<span class="font-label-md text-label-md text-on-surface-variant">Saldo &amp; Tesorería</span>
+<div class="w-8 h-8 rounded-lg bg-badge-navy-bg flex items-center justify-center text-badge-navy-text">
+<span class="material-symbols-outlined text-[20px]">account_balance</span>
+</div>
+</div>
+<div class="flex items-baseline gap-space-xs mt-space-sm">
+<span class="font-headline-lg text-headline-lg text-on-surface tracking-tight">14.850,20 €</span>
+</div>
+</div>
+<div class="mt-space-md pt-space-xs flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Tasa de morosidad:</span>
+<span class="inline-flex items-center px-2 py-0.5 rounded-full bg-surface-container text-on-surface font-label-sm text-label-sm font-semibold">2.1% (Excelente)</span>
+</div>
+</div>
+</div>
+<!-- Main 2-Column Content Split -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-start">
+<!-- Left Column (8 / 12) -->
+<div class="lg:col-span-8 flex flex-col gap-space-lg">
+<!-- Urgent Tasks Queue -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="p-2 rounded-lg bg-surface-container-low text-on-surface">
+<span class="material-symbols-outlined text-[22px]">checklist</span>
+</div>
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface tracking-tight">
+                  Cola de Tareas Urgentes de Administración
+                </h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Requieren visto bueno o acción ejecutiva directa</p>
+</div>
+</div>
+<span class="px-2.5 py-1 rounded-full bg-badge-navy-bg text-badge-navy-text font-label-sm text-label-sm">3 pendientes</span>
+</div>
+<!-- Tasks List -->
+<div class="flex flex-col gap-space-sm mt-space-xs" id="task-queue">
+<!-- Task 1 -->
+<div class="flex flex-col sm:flex-row sm:items-center justify-between p-space-md rounded-xl bg-surface-container-low hover:bg-surface-container transition-colors gap-space-md" id="task-item-1">
+<div class="flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-badge-amber-text text-[22px] mt-0.5">person_add</span>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-lg text-label-lg text-on-surface">Aprobar registro vecinal</span>
+<span class="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-bold uppercase bg-badge-amber-bg text-badge-amber-text">Nuevo Alta</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Laura Valdés • Residencia: Portal 3, 2ºA (Propietaria)</span>
+<span class="font-label-sm text-label-sm text-slate-400 mt-1">Escrituras aportadas y cotejadas</span>
+</div>
+</div>
+<div class="flex items-center gap-space-xs self-end sm:self-center">
+<button class="px-3 py-1.5 rounded-lg text-on-surface-variant hover:text-error hover:bg-error-container/40 font-label-md text-label-md transition-colors" onclick="rejectTask(1)" type="button">
+                  Revisar
+                </button>
+<button class="inline-flex items-center gap-1 px-3.5 py-1.5 rounded-lg bg-secondary text-on-secondary font-label-md text-label-md shadow-sm hover:opacity-90 active:scale-95 transition-all" onclick="resolveTask(1)" type="button">
+<span class="material-symbols-outlined text-[16px]">check</span>
+<span>Aprobar</span>
+</button>
+</div>
+</div>
+<!-- Task 2 -->
+<div class="flex flex-col sm:flex-row sm:items-center justify-between p-space-md rounded-xl bg-surface-container-low hover:bg-surface-container transition-colors gap-space-md" id="task-item-2">
+<div class="flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-badge-coral-text text-[22px] mt-0.5">request_quote</span>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-lg text-label-lg text-on-surface">Autorizar pago urgente de reparación</span>
+<span class="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-bold uppercase bg-badge-coral-bg text-badge-coral-text">Factura 430,00 €</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Fontanería Urgente S.L. • Sustitución válvula grupo de presión bloque norte</span>
+<span class="font-label-sm text-label-sm text-slate-400 mt-1">Vía fondo de provisión ordinario</span>
+</div>
+</div>
+<div class="flex items-center gap-space-xs self-end sm:self-center">
+<button class="px-3 py-1.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container font-label-md text-label-md transition-colors" onclick="rejectTask(2)" type="button">
+                  Detalles
+                </button>
+<button class="inline-flex items-center gap-1 px-3.5 py-1.5 rounded-lg bg-primary-container text-on-primary font-label-md text-label-md shadow-sm hover:opacity-90 active:scale-95 transition-all" onclick="resolveTask(2)" type="button">
+<span class="material-symbols-outlined text-[16px]">verified</span>
+<span>Autorizar</span>
+</button>
+</div>
+</div>
+<!-- Task 3 -->
+<div class="flex flex-col sm:flex-row sm:items-center justify-between p-space-md rounded-xl bg-surface-container-low hover:bg-surface-container transition-colors gap-space-md" id="task-item-3">
+<div class="flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-on-surface-variant text-[22px] mt-0.5">history_edu</span>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-lg text-label-lg text-on-surface">Renovación de contrato anual</span>
+<span class="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-bold uppercase bg-surface-container text-on-surface">Vence en 14d</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Automatismos Portón Norte • Mantenimiento preventivo bimensual</span>
+<span class="font-label-sm text-label-sm text-slate-400 mt-1">Precio congelado sin IPC según acuerdo 2023</span>
+</div>
+</div>
+<div class="flex items-center gap-space-xs self-end sm:self-center">
+<button class="inline-flex items-center gap-1 px-3.5 py-1.5 rounded-lg bg-surface-container-lowest text-on-surface font-label-md text-label-md shadow-sm hover:bg-surface-container active:scale-95 transition-all" onclick="resolveTask(3)" type="button">
+<span class="material-symbols-outlined text-[16px]">autorenew</span>
+<span>Renovar</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Comparative Incident Chart by Trades -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col gap-space-md">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-xs">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface tracking-tight">
+                Incidencias del Mes por Gremios &amp; Rendimiento
+              </h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Volumen acumulado y tiempo medio de resolución técnica (MTTR)</p>
+</div>
+<div class="flex items-center gap-space-xs text-badge-navy-text bg-surface-container-low px-space-sm py-1 rounded-lg">
+<span class="material-symbols-outlined text-[16px]">calendar_month</span>
+<span class="font-label-sm text-label-sm">Últimos 30 días</span>
+</div>
+</div>
+<!-- Trade Breakdown Visual Metric Bars -->
+<div class="flex flex-col gap-space-md mt-space-sm">
+<!-- Fontanería -->
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[18px]">water_damage</span>
+<span class="font-label-lg text-label-lg text-on-surface">Fontanería y Grupos de Bombeo</span>
+</div>
+<div class="flex items-center gap-space-md">
+<span class="font-label-sm text-label-sm text-on-surface-variant">MTTR: <strong class="text-on-surface font-semibold">14 horas</strong></span>
+<span class="font-label-lg text-label-lg text-on-surface font-bold">11 casos</span>
+</div>
+</div>
+<div class="w-full bg-surface-container-low h-3 rounded-full overflow-hidden flex">
+<div class="bg-secondary h-full rounded-full transition-all duration-500" style="width: 48%"></div>
+</div>
+</div>
+<!-- Electricidad -->
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-badge-amber-text text-[18px]">bolt</span>
+<span class="font-label-lg text-label-lg text-on-surface">Electricidad &amp; Alumbrado Led Común</span>
+</div>
+<div class="flex items-center gap-space-md">
+<span class="font-label-sm text-label-sm text-on-surface-variant">MTTR: <strong class="text-on-surface font-semibold">6 horas</strong></span>
+<span class="font-label-lg text-label-lg text-on-surface font-bold">7 casos</span>
+</div>
+</div>
+<div class="w-full bg-surface-container-low h-3 rounded-full overflow-hidden flex">
+<div class="bg-badge-amber-text h-full rounded-full transition-all duration-500" style="width: 30%"></div>
+</div>
+</div>
+<!-- Ascensores -->
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-badge-coral-text text-[18px]">elevator</span>
+<span class="font-label-lg text-label-lg text-on-surface">Ascensores y Salvaescaleras</span>
+</div>
+<div class="flex items-center gap-space-md">
+<span class="font-label-sm text-label-sm text-on-surface-variant">MTTR: <strong class="text-on-surface font-semibold">2,5 horas</strong></span>
+<span class="font-label-lg text-label-lg text-on-surface font-bold">3 casos</span>
+</div>
+</div>
+<div class="w-full bg-surface-container-low h-3 rounded-full overflow-hidden flex">
+<div class="bg-urgent-coral h-full rounded-full transition-all duration-500" style="width: 15%"></div>
+</div>
+</div>
+<!-- Limpieza y Zonas Verdes -->
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-on-surface-variant text-[18px]">yard</span>
+<span class="font-label-lg text-label-lg text-on-surface">Limpieza, Jardines &amp; Residuos</span>
+</div>
+<div class="flex items-center gap-space-md">
+<span class="font-label-sm text-label-sm text-on-surface-variant">MTTR: <strong class="text-on-surface font-semibold">24 horas</strong></span>
+<span class="font-label-lg text-label-lg text-on-surface font-bold">2 casos</span>
+</div>
+</div>
+<div class="w-full bg-surface-container-low h-3 rounded-full overflow-hidden flex">
+<div class="bg-on-surface-variant h-full rounded-full transition-all duration-500" style="width: 9%"></div>
+</div>
+</div>
+</div>
+<!-- Synthetic Graphic Footer Metrics -->
+<div class="grid grid-cols-3 gap-space-sm pt-space-md mt-space-sm border-t border-slate-100">
+<div class="flex flex-col items-center justify-center p-space-sm bg-surface-container-low rounded-xl">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Total Resueltas</span>
+<span class="font-headline-md text-headline-md text-on-surface font-bold">23 / 32</span>
+</div>
+<div class="flex flex-col items-center justify-center p-space-sm bg-surface-container-low rounded-xl">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">MTTR Promedio</span>
+<span class="font-headline-md text-headline-md text-secondary font-bold">11,6 hrs</span>
+</div>
+<div class="flex flex-col items-center justify-center p-space-sm bg-surface-container-low rounded-xl">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Satisfacción Vecinal</span>
+<span class="font-headline-md text-headline-md text-on-surface font-bold">4.8 / 5</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column (4 / 12) -->
+<div class="lg:col-span-4 flex flex-col gap-space-lg">
+<!-- Common Areas Daily Status -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<div class="p-2 rounded-lg bg-surface-container-low text-on-surface">
+<span class="material-symbols-outlined text-[20px]">meeting_room</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface tracking-tight">
+                Instalaciones Comunes
+              </h2>
+</div>
+<span class="h-2.5 w-2.5 rounded-full bg-secondary"></span>
+</div>
+<!-- Status List -->
+<div class="flex flex-col gap-space-sm">
+<!-- Pista de Pádel -->
+<div class="p-space-sm bg-surface-container-low rounded-xl flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded-lg bg-badge-emerald-bg flex items-center justify-center text-badge-emerald-text">
+<span class="material-symbols-outlined text-[20px]">sports_tennis</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface">Pista de Pádel Cristal</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Luz operativa • Ocupada</span>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-badge-emerald-bg text-badge-emerald-text font-label-sm text-label-sm">
+                100% Lleno
+              </span>
+</div>
+<!-- Piscina Exterior -->
+<div class="p-space-sm bg-surface-container-low rounded-xl flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded-lg bg-surface-container-high flex items-center justify-center text-badge-navy-text">
+<span class="material-symbols-outlined text-[20px]">pool</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface">Piscina Comunitaria</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Cloro 1.4ppm • pH 7.2</span>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-badge-emerald-bg text-badge-emerald-text font-label-sm text-label-sm">
+                Abierta
+              </span>
+</div>
+<!-- Salón Social -->
+<div class="p-space-sm bg-surface-container-low rounded-xl flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded-lg bg-surface-container flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined text-[20px]">chair</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface">Salón Social &amp; Eventos</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Sin reservas para hoy</span>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-badge-navy-bg text-badge-navy-text font-label-sm text-label-sm">
+                Libre
+              </span>
+</div>
+</div>
+<!-- Emergency Lock Button -->
+<button class="w-full mt-space-xs inline-flex items-center justify-center gap-space-xs px-space-md py-2.5 rounded-xl bg-badge-coral-bg text-badge-coral-text hover:bg-red-100 font-label-md text-label-md transition-colors" id="btn-lockdown" type="button">
+<span class="material-symbols-outlined text-[18px]">lock</span>
+<span>Bloquear Franjas por Emergencia</span>
+</button>
+</div>
+<!-- Authorized Service Contractors -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<div class="p-2 rounded-lg bg-surface-container-low text-on-surface">
+<span class="material-symbols-outlined text-[20px]">contact_phone</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface tracking-tight">
+                Proveedores Homologados
+              </h2>
+</div>
+<span class="font-label-sm text-label-sm text-secondary font-bold">24/7 ACTIVO</span>
+</div>
+<!-- Contact items with immediate action -->
+<div class="flex flex-col gap-space-sm">
+<!-- Cerrajero -->
+<div class="p-space-sm bg-surface-container-low rounded-xl flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-on-surface">
+<span class="material-symbols-outlined text-[18px]">key</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface">Cerrajería Rápida 24h</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Contrato VIP #4029</span>
+</div>
+</div>
+<a class="w-8 h-8 rounded-lg bg-surface-container-lowest text-on-surface flex items-center justify-center shadow-sm hover:bg-secondary hover:text-on-secondary transition-colors" href="tel:900112233" title="Llamar proveedor">
+<span class="material-symbols-outlined text-[18px]">call</span>
+</a>
+</div>
+<!-- Otis Ascensores -->
+<div class="p-space-sm bg-surface-container-low rounded-xl flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-on-surface">
+<span class="material-symbols-outlined text-[18px]">elevator</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface">Otis Línea Directa</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Técnico de zona: Javier M.</span>
+</div>
+</div>
+<a class="w-8 h-8 rounded-lg bg-surface-container-lowest text-on-surface flex items-center justify-center shadow-sm hover:bg-secondary hover:text-on-secondary transition-colors" href="tel:900223344" title="Llamar proveedor">
+<span class="material-symbols-outlined text-[18px]">call</span>
+</a>
+</div>
+<!-- Fontanería Urgente -->
+<div class="p-space-sm bg-surface-container-low rounded-xl flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-on-surface">
+<span class="material-symbols-outlined text-[18px]">plumbing</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface">Fontanería Urgente S.L.</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Grupo de presión y bajantes</span>
+</div>
+</div>
+<a class="w-8 h-8 rounded-lg bg-surface-container-lowest text-on-surface flex items-center justify-center shadow-sm hover:bg-secondary hover:text-on-secondary transition-colors" href="tel:900334455" title="Llamar proveedor">
+<span class="material-symbols-outlined text-[18px]">call</span>
+</a>
+</div>
+</div>
+<div class="pt-space-xs">
+<button class="w-full text-center font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface transition-colors" type="button">
+              Ver directorio completo de mantenimiento (14 empresas) →
+            </button>
+</div>
+</div>
+<!-- Finca Summary Card with Image Context -->
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm flex flex-col">
+<div class="relative h-32 w-full bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Modern upscale residential building courtyard in Madrid with contemporary architectural lines, neat manicured green lawns, solar panels on clean flat roofs, bright sunny day, architectural photography style." src="/images/demo-placeholder.svg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+<div class="absolute bottom-2 left-3 text-white">
+<span class="font-label-sm text-label-sm uppercase tracking-wider block opacity-80">Inspección Técnica</span>
+<span class="font-label-md text-label-md font-bold">ITE Favorable hasta Nov 2028</span>
+</div>
+</div>
+<div class="p-space-md flex items-center justify-between text-on-surface-variant font-body-sm text-body-sm">
+<span>Póliza multirriesgo: <strong class="text-on-surface">Mapfre Hogar #994</strong></span>
+<span class="material-symbols-outlined text-secondary text-[20px]">verified</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Notification Toast Container -->
+<div class="fixed bottom-6 right-6 z-50 transform translate-y-24 opacity-0 transition-all duration-300 pointer-events-none" id="toast">
+<div class="bg-primary-container text-on-primary px-space-md py-space-sm rounded-xl shadow-xl flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-secondary text-[20px]" id="toast-icon">check_circle</span>
+<span class="font-label-md text-label-md" id="toast-msg">Acción completada con éxito</span>
+</div>
+</div>
+</div>
+<script>
+  function showToast(message, icon = 'check_circle') {
+    const toast = document.getElementById('toast');
+    const toastMsg = document.getElementById('toast-msg');
+    const toastIcon = document.getElementById('toast-icon');
+    if (!toast || !toastMsg) return;
+
+    toastMsg.textContent = message;
+    if (toastIcon) toastIcon.textContent = icon;
+    toast.classList.remove('translate-y-24', 'opacity-0');
+    toast.classList.add('translate-y-0', 'opacity-100');
+
+    setTimeout(() => {
+      toast.classList.add('translate-y-24', 'opacity-0');
+      toast.classList.remove('translate-y-0', 'opacity-100');
+    }, 3200);
+  }
+
+  function resolveTask(id) {
+    const el = document.getElementById('task-item-' + id);
+    if (el) {
+      el.style.opacity = '0.4';
+      el.style.pointerEvents = 'none';
+      setTimeout(() => {
+        el.style.display = 'none';
+      }, 400);
+      showToast('Tarea procesada y validada en Firestore');
+    }
+  }
+
+  function rejectTask(id) {
+    showToast('Abriendo expediente para revisión detallada...', 'visibility');
+  }
+
+  const btnLockdown = document.getElementById('btn-lockdown');
+  if (btnLockdown) {
+    btnLockdown.addEventListener('click', () => {
+      showToast('Modo de bloqueo temporal activado para padel y piscina', 'lock');
+    });
+  }
+
+  const btnComunicado = document.getElementById('btn-comunicado');
+  if (btnComunicado) {
+    btnComunicado.addEventListener('click', () => {
+      showToast('Abriendo editor masivo para 48 vecinos...', 'campaign');
+    });
+  }
+
+  const btnInforme = document.getElementById('btn-informe');
+  if (btnInforme) {
+    btnInforme.addEventListener('click', () => {
+      showToast('Generando balance PDF consolidado...', 'download');
+    });
+  }
+</script></main></div></body></html>

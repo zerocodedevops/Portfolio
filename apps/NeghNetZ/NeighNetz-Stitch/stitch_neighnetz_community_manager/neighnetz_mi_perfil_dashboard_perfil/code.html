@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+
+<html lang="es"><head><link rel="stylesheet" href="/fonts/fonts.css"/><link rel="stylesheet" href="/stitch-tailwind.css"/><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/>
+<style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style></head><body class="bg-surface font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-72 bg-surface-container-lowest z-50 flex flex-col shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-space-lg flex items-center justify-between"><div class="flex items-center gap-space-sm"><img alt="NeighNetZ Logo" class="h-8 w-auto object-contain" src="/images/demo-placeholder.svg"/><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight">NeighNetZ</span></div></div><div class="px-space-md py-space-sm"><div class="bg-surface-container-low rounded-lg p-space-sm flex items-center justify-between cursor-pointer hover:bg-surface-container transition-colors"><div class="flex items-center gap-space-sm overflow-hidden"><span class="material-symbols-outlined text-secondary text-[20px]">apartment</span><div class="flex flex-col truncate"><span class="font-label-sm text-label-sm text-on-surface-variant uppercase truncate">Comunidad Activa</span><span class="font-label-md text-label-md text-on-surface truncate">Residencial Los Sauces 14</span></div></div><span class="material-symbols-outlined text-on-surface-variant text-[18px]">unfold_more</span></div></div><nav class="flex-1 overflow-y-auto px-space-md py-space-sm flex flex-col gap-space-xs" data-active-classes="bg-primary-container text-on-primary font-bold rounded-lg"><div class="px-space-sm pt-space-sm pb-space-xs"><span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Área del Vecino</span></div><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container hover:text-on-surface transition-all" data-path="dashboard" href="#"><span class="material-symbols-outlined text-[20px]">home</span><span>Inicio / Tablón</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container hover:text-on-surface transition-all" data-path="dashboard-incidencias" href="#"><span class="material-symbols-outlined text-[20px]">report_problem</span><span>Incidencias</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container hover:text-on-surface transition-all" data-path="dashboard-reservas" href="#"><span class="material-symbols-outlined text-[20px]">event_available</span><span>Reservas</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container hover:text-on-surface transition-all" data-path="dashboard-votaciones" href="#"><span class="material-symbols-outlined text-[20px]">how_to_vote</span><span>Votaciones</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container hover:text-on-surface transition-all" data-path="dashboard-documentos" href="#"><span class="material-symbols-outlined text-[20px]">folder_shared</span><span>Documentos</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container hover:text-on-surface transition-all" data-path="dashboard-vecinos" href="#"><span class="material-symbols-outlined text-[20px]">groups</span><span>Directorio de Vecinos</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container hover:text-on-surface transition-all" data-path="dashboard-gastos" href="#"><span class="material-symbols-outlined text-[20px]">account_balance_wallet</span><span>Cuentas y Gastos</span></a><a aria-current="page" class="flex items-center gap-space-sm px-space-sm py-space-sm transition-all bg-primary-container text-on-primary font-bold rounded-lg" data-path="dashboard-perfil" href="#"><span class="material-symbols-outlined text-[20px]">person</span><span>Mi Perfil</span></a><div class="px-space-sm pt-space-md pb-space-xs"><span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Panel de Administración</span></div><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container hover:text-on-surface transition-all" data-path="admin" href="#"><span class="material-symbols-outlined text-[20px]">monitoring</span><span>Panel Ejecutivo</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container hover:text-on-surface transition-all" data-path="admin-usuarios" href="#"><span class="material-symbols-outlined text-[20px]">verified_user</span><span>Validar Vecinos</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container hover:text-on-surface transition-all" data-path="admin-incidencias" href="#"><span class="material-symbols-outlined text-[20px]">assignment_late</span><span>Gestión de Incidencias</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container hover:text-on-surface transition-all" data-path="admin-reservas" href="#"><span class="material-symbols-outlined text-[20px]">book_online</span><span>Gestión de Reservas</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container hover:text-on-surface transition-all" data-path="admin-documentos" href="#"><span class="material-symbols-outlined text-[20px]">file_copy</span><span>Gestión Documental</span></a></nav><div class="p-space-md mt-auto"><div class="bg-surface-container-low rounded-lg p-space-sm flex items-center justify-between"><div class="flex items-center gap-space-sm"><span class="h-2 w-2 rounded-full bg-secondary"></span><span class="font-label-sm text-label-sm text-on-surface-variant">Servicios Operativos</span></div><span class="font-label-sm text-label-sm text-secondary font-bold">v2.4</span></div></div></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 h-16 bg-surface-container-lowest/80 backdrop-blur-xl z-40 flex items-center justify-between px-space-lg shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex items-center w-96"><div class="relative w-full flex items-center"><span class="material-symbols-outlined absolute left-space-sm text-on-surface-variant text-[20px]">search</span><input class="w-full bg-surface-container-low text-on-surface placeholder:text-on-surface-variant font-body-sm text-body-sm pl-9 pr-space-md py-space-xs rounded-lg outline-none focus:bg-surface-container-lowest transition-colors" placeholder="Buscar acuerdos, actas, reservas o incidencias..." type="text"/></div></div><div class="flex items-center gap-space-md"><div class="hidden sm:flex items-center gap-space-xs px-space-sm py-space-xs rounded-full bg-badge-emerald-bg"><span class="h-2 w-2 rounded-full bg-secondary animate-pulse"></span><span class="font-label-sm text-label-sm text-badge-emerald-text">Firebase Online</span></div><button aria-label="Notificaciones" class="relative p-space-xs rounded-full hover:bg-surface-container transition-colors text-on-surface-variant hover:text-on-surface" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-1 right-1 h-2 w-2 rounded-full bg-urgent-coral"></span></button><div class="flex items-center gap-space-sm pl-space-sm"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="/images/demo-placeholder.svg"/><div class="flex flex-col text-left"><span class="font-label-md text-label-md text-on-surface">Elena Morales</span><span class="font-label-sm text-label-sm text-on-surface-variant">Propietaria / Vicepresidenta</span></div></div></div></header><main class="relative pt-16 bg-surface min-h-screen"><div class="flex flex-col w-full">
+<div class="p-space-lg space-y-space-lg max-w-7xl mx-auto w-full">
+<!-- Header Section with Decorative Metric Highlights -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-space-md">
+<div class="space-y-space-xs">
+<div class="flex items-center gap-space-xs">
+<span class="inline-flex items-center px-space-sm py-0.5 rounded-full bg-badge-navy-bg text-badge-navy-text font-label-sm text-label-sm uppercase tracking-wider">
+            Portal del Vecino
+          </span>
+<span class="inline-flex items-center gap-1.5 px-space-sm py-0.5 rounded-full bg-badge-emerald-bg text-badge-emerald-text font-label-sm text-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+            ID: VEC-2024-884
+          </span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface">Perfil de Usuario y Datos de Vivienda</h1>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl">
+          Gestiona tu información de contacto, preferencias y credenciales de acceso seguro a la plataforma comunitaria.
+        </p>
+</div>
+<div class="flex items-center gap-space-sm self-start md:self-auto shrink-0">
+<div class="hidden xl:flex items-center gap-space-sm bg-surface-container-low px-space-md py-space-sm rounded-lg">
+<span class="material-symbols-outlined text-secondary text-[26px]">verified</span>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Estatus Legal</span>
+<span class="font-label-md text-label-md text-on-surface font-semibold">Propietario Acreditado</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Main Content Layout (1/3 and 2/3) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-start">
+<!-- Left Column (1/3 -> 4 cols on desktop): Identity & Residence Data -->
+<div class="lg:col-span-4 flex flex-col gap-space-lg">
+<!-- Avatar & Basic Identity Card -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col items-center text-center relative overflow-hidden">
+<div class="absolute top-0 left-0 right-0 h-24 bg-gradient-to-r from-surface-container to-surface-container-high"></div>
+<!-- Avatar Container with client-side crop mention -->
+<div class="relative mt-6 mb-space-sm">
+<div class="w-28 h-28 rounded-full overflow-hidden shadow-md bg-surface-container-lowest p-1">
+<img class="w-full h-full rounded-full object-cover" data-alt="Close-up professional portrait of Elena Morales, a confident female homeowner with warm expression, high-contrast natural lighting, clean architectural background in soft slate and modern neutral tones" id="avatar-preview" src="/images/demo-placeholder.svg"/>
+</div>
+<label class="absolute bottom-0 right-0 w-9 h-9 rounded-full bg-primary text-on-primary flex items-center justify-center cursor-pointer shadow-md hover:bg-on-primary-fixed-variant transition-colors" for="avatar-input" title="Cambiar fotografía">
+<span class="material-symbols-outlined text-[18px]">photo_camera</span>
+<input accept="image/*" class="hidden" id="avatar-input" onchange="previewImage(event)" type="file"/>
+</label>
+</div>
+<div class="space-y-1 w-full">
+<h2 class="font-headline-md text-headline-md text-on-surface">Elena Morales Gómez</h2>
+<p class="font-label-md text-label-md text-on-surface-variant font-medium">Propietaria / Vicepresidenta de la Comunidad</p>
+</div>
+<!-- Cloud Sync Badge -->
+<div class="mt-space-sm w-full">
+<div class="inline-flex items-center gap-space-xs px-space-sm py-1 rounded-full bg-badge-emerald-bg text-badge-emerald-text font-label-sm text-label-sm font-semibold w-full justify-center">
+<span class="material-symbols-outlined text-[16px] text-secondary">cloud_done</span>
+<span>Cuenta Validada y Activa (Sincronizada con Firestore)</span>
+</div>
+</div>
+<!-- Client-side Compression Hint -->
+<div class="mt-space-md p-space-xs rounded-lg bg-surface-container-low text-on-surface-variant font-body-sm text-body-sm flex items-center gap-space-xs w-full text-left">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant shrink-0">auto_fix_high</span>
+<span class="leading-tight">Recorte circular inteligente y compresión automática WebP en cliente (máx 350KB).</span>
+</div>
+<!-- Quick Actions / Community Role Metadata -->
+<div class="mt-space-md pt-space-md border-t border-transparent w-full grid grid-cols-2 gap-space-xs text-left">
+<div class="bg-surface-container-low p-space-sm rounded-lg">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase block">Miembro desde</span>
+<span class="font-label-md text-label-md text-on-surface font-semibold">Marzo 2021</span>
+</div>
+<div class="bg-surface-container-low p-space-sm rounded-lg">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase block">Asambleas</span>
+<span class="font-label-md text-label-md text-on-surface font-semibold">100% Asistencia</span>
+</div>
+</div>
+</div>
+<!-- Property / Inmueble Assigned Details Card -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm space-y-space-md">
+<div class="flex items-center justify-between pb-space-xs">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[22px]">domain</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Inmueble Asignado</h3>
+</div>
+<span class="font-label-sm text-label-sm bg-badge-navy-bg text-badge-navy-text px-space-xs py-0.5 rounded uppercase">Oficial</span>
+</div>
+<!-- Primary Unit Pill Grid -->
+<div class="p-space-md rounded-xl bg-surface-container-low space-y-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Unidad Principal</span>
+<span class="font-label-md text-label-md text-secondary font-bold">Portal 2 · 3º B</span>
+</div>
+<div class="grid grid-cols-3 gap-space-xs pt-space-xs text-center">
+<div class="bg-surface-container-lowest p-space-xs rounded">
+<span class="font-label-sm text-label-sm text-on-surface-variant block">Portal</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">2</span>
+</div>
+<div class="bg-surface-container-lowest p-space-xs rounded">
+<span class="font-label-sm text-label-sm text-on-surface-variant block">Planta</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">3ª</span>
+</div>
+<div class="bg-surface-container-lowest p-space-xs rounded">
+<span class="font-label-sm text-label-sm text-on-surface-variant block">Puerta</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">B</span>
+</div>
+</div>
+</div>
+<!-- Coeficiente Participación Graphic -->
+<div class="space-y-space-xs">
+<div class="flex justify-between items-center">
+<span class="font-label-md text-label-md text-on-surface-variant">Coeficiente de participación:</span>
+<span class="font-label-lg text-label-lg font-bold text-on-surface">2.850%</span>
+</div>
+<div class="w-full bg-surface-container rounded-full h-2 overflow-hidden">
+<div class="bg-secondary h-2 rounded-full" style="width: 28.5%"></div>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant block">Regulado según Título Constitutivo Registral</span>
+</div>
+<!-- Ancillary Units List (Garage, Storage) -->
+<div class="space-y-space-xs pt-space-xs">
+<div class="flex items-center justify-between p-space-sm rounded-lg bg-surface-container-low hover:bg-surface-container transition-colors">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-lg bg-surface-container-lowest flex items-center justify-center text-on-surface">
+<span class="material-symbols-outlined text-[18px]">directions_car</span>
+</div>
+<div>
+<span class="font-label-md text-label-md text-on-surface block font-medium">Plaza de Garaje</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Plaza nº 14 (Sótano -1)</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-[18px] text-secondary">check_circle</span>
+</div>
+<div class="flex items-center justify-between p-space-sm rounded-lg bg-surface-container-low hover:bg-surface-container transition-colors">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-lg bg-surface-container-lowest flex items-center justify-center text-on-surface">
+<span class="material-symbols-outlined text-[18px]">inventory_2</span>
+</div>
+<div>
+<span class="font-label-md text-label-md text-on-surface block font-medium">Trastero</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Espacio T-08 (Planta Cubierta)</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-[18px] text-secondary">check_circle</span>
+</div>
+</div>
+<div class="p-space-sm rounded-lg bg-badge-amber-bg text-badge-amber-text font-body-sm text-body-sm flex items-start gap-space-xs">
+<span class="material-symbols-outlined text-[18px] shrink-0 mt-0.5">info</span>
+<span>Para modificaciones de titularidad registral o coeficientes comuníquese formalmente con la Administración de Fincas.</span>
+</div>
+</div>
+</div>
+<!-- Right Column (2/3 -> 8 cols on desktop): Settings Forms & Preference Panels -->
+<div class="lg:col-span-8 flex flex-col gap-space-lg">
+<!-- Card 1: Datos Personales y de Contacto -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm">
+<div class="flex items-center justify-between mb-space-md pb-space-xs">
+<div class="flex items-center gap-space-xs">
+<div class="w-9 h-9 rounded-lg bg-surface-container-low flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">badge</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Datos Personales y de Contacto</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Información oficial utilizada para notificaciones estatutarias y avisos vecinales.</p>
+</div>
+</div>
+<span class="font-label-sm text-label-sm text-secondary font-semibold bg-badge-emerald-bg px-space-xs py-0.5 rounded">Verificado</span>
+</div>
+<form class="space-y-space-md" id="profile-form" onsubmit="handleProfileSubmit(event)">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<div class="space-y-space-xs">
+<label class="font-label-md text-label-md text-on-surface block" for="first_name">Nombre</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-2.5 text-on-surface-variant text-[18px]">person</span>
+<input class="w-full bg-surface-container-low text-on-surface font-body-md text-body-md pl-10 pr-space-md py-2 rounded-lg outline-none focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary transition-all" id="first_name" name="first_name" required="" type="text" value="Elena"/>
+</div>
+</div>
+<div class="space-y-space-xs">
+<label class="font-label-md text-label-md text-on-surface block" for="last_name">Apellidos</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-2.5 text-on-surface-variant text-[18px]">badge</span>
+<input class="w-full bg-surface-container-low text-on-surface font-body-md text-body-md pl-10 pr-space-md py-2 rounded-lg outline-none focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary transition-all" id="last_name" name="last_name" required="" type="text" value="Morales Gómez"/>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md">
+<div class="space-y-space-xs">
+<label class="font-label-md text-label-md text-on-surface block" for="document_id">DNI / NIE</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-2.5 text-on-surface-variant text-[18px]">fingerprint</span>
+<input class="w-full bg-surface-container text-on-surface-variant font-body-md text-body-md pl-10 pr-space-md py-2 rounded-lg cursor-not-allowed" id="document_id" name="document_id" readonly="" type="text" value="48291044-K"/>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Dato certificado e inmutable</span>
+</div>
+<div class="space-y-space-xs md:col-span-2">
+<label class="font-label-md text-label-md text-on-surface block" for="phone_number">Teléfono Móvil de Contacto</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-2.5 text-on-surface-variant text-[18px]">call</span>
+<input class="w-full bg-surface-container-low text-on-surface font-body-md text-body-md pl-10 pr-space-md py-2 rounded-lg outline-none focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary transition-all" id="phone_number" name="phone_number" required="" type="tel" value="+34 612 890 411"/>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Para alertas SMS prioritarias y contacto de conserjería</span>
+</div>
+</div>
+<div class="space-y-space-xs">
+<label class="font-label-md text-label-md text-on-surface block" for="email_address">Correo Electrónico (Acceso a la plataforma)</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-2.5 text-on-surface-variant text-[18px]">mail</span>
+<input class="w-full bg-surface-container-low text-on-surface font-body-md text-body-md pl-10 pr-space-md py-2 rounded-lg outline-none focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary transition-all" id="email_address" name="email_address" required="" type="email" value="elena.morales@sauces14.org"/>
+</div>
+</div>
+<!-- Privacy Directory Checkbox -->
+<div class="p-space-md rounded-xl bg-surface-container-low flex items-start gap-space-sm cursor-pointer hover:bg-surface-container transition-colors" onclick="toggleCheckbox('dir-consent')">
+<input class="mt-1 w-4 h-4 rounded text-secondary focus:ring-secondary accent-secondary cursor-pointer" id="dir-consent" name="dir-consent" type="checkbox"/>
+<div class="flex flex-col">
+<label class="font-label-md text-label-md text-on-surface font-semibold cursor-pointer" for="dir-consent">
+                  Autorizo mostrar mi teléfono en el directorio vecinal solo para urgencias comunitarias
+                </label>
+<span class="font-body-sm text-body-sm text-on-surface-variant">
+                  Otros propietarios verificados podrán contactarte únicamente en casos de filtraciones, averías de garaje o incidencias que comprometan tu inmueble.
+                </span>
+</div>
+</div>
+</form>
+</div>
+<!-- Card 2: Seguridad y Contraseña -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm">
+<div class="flex items-center justify-between mb-space-md pb-space-xs">
+<div class="flex items-center gap-space-xs">
+<div class="w-9 h-9 rounded-lg bg-surface-container-low flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">lock_reset</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Seguridad y Contraseña</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Actualiza tu clave de paso para mantener protegidas tus votaciones y actas.</p>
+</div>
+</div>
+<span class="font-label-sm text-label-sm bg-badge-navy-bg text-badge-navy-text px-space-xs py-0.5 rounded">2FA Activo</span>
+</div>
+<form class="space-y-space-md" id="password-form" onsubmit="handlePasswordSubmit(event)">
+<div class="space-y-space-xs">
+<label class="font-label-md text-label-md text-on-surface block" for="current_password">Contraseña Actual</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-2.5 text-on-surface-variant text-[18px]">key</span>
+<input class="w-full bg-surface-container-low text-on-surface font-body-md text-body-md pl-10 pr-space-md py-2 rounded-lg outline-none focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary transition-all" id="current_password" name="current_password" placeholder="••••••••••••" required="" type="password"/>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<div class="space-y-space-xs">
+<label class="font-label-md text-label-md text-on-surface block" for="new_password">Nueva Contraseña</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-2.5 text-on-surface-variant text-[18px]">lock</span>
+<input class="w-full bg-surface-container-low text-on-surface font-body-md text-body-md pl-10 pr-space-md py-2 rounded-lg outline-none focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary transition-all" id="new_password" minlength="8" name="new_password" placeholder="Mínimo 8 caracteres" required="" type="password"/>
+</div>
+</div>
+<div class="space-y-space-xs">
+<label class="font-label-md text-label-md text-on-surface block" for="confirm_password">Confirmar Contraseña</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-2.5 text-on-surface-variant text-[18px]">check</span>
+<input class="w-full bg-surface-container-low text-on-surface font-body-md text-body-md pl-10 pr-space-md py-2 rounded-lg outline-none focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary transition-all" id="confirm_password" minlength="8" name="confirm_password" placeholder="Repite la contraseña" required="" type="password"/>
+</div>
+</div>
+</div>
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm pt-space-xs">
+<button class="inline-flex items-center gap-space-xs text-secondary font-label-md text-label-md hover:underline cursor-pointer" data-forgot-password type="button">
+<span class="material-symbols-outlined text-[18px]">mail</span>
+<span>He olvidado mi contraseña</span>
+</button>
+<button class="inline-flex items-center gap-space-xs text-urgent-coral font-label-md text-label-md hover:underline cursor-pointer" onclick="alert('Sesión cerrada de forma segura en 3 dispositivos adicionales.')" type="button">
+<span class="material-symbols-outlined text-[18px]">logout</span>
+<span>Cerrar sesión en todos los dispositivos</span>
+</button>
+<button class="flex items-center justify-center gap-space-xs px-space-lg py-2.5 bg-primary text-on-primary rounded-lg font-label-lg text-label-lg hover:bg-on-primary-fixed-variant active:scale-[0.98] transition-all shadow-sm" type="submit">
+<span class="material-symbols-outlined text-[18px]">security</span>
+<span>Actualizar Contraseña</span>
+</button>
+</div>
+</form>
+</div>
+<!-- Card 3: Preferencias de Notificaciones -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm space-y-space-md">
+<div class="flex items-center justify-between pb-space-xs">
+<div class="flex items-center gap-space-xs">
+<div class="w-9 h-9 rounded-lg bg-surface-container-low flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">mark_email_read</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Preferencias de Notificaciones</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Elige qué información comunitaria deseas recibir directamente en tu correo electrónico.</p>
+</div>
+</div>
+<span class="font-label-sm text-label-sm bg-badge-emerald-bg text-badge-emerald-text px-space-xs py-0.5 rounded">Filtros Activos</span>
+</div>
+<!-- Notification Toggles Group -->
+<div class="space-y-space-sm">
+<!-- Toggle 1: Incidencias -->
+<div class="p-space-md rounded-xl bg-surface-container-low flex items-center justify-between gap-space-md hover:bg-surface-container transition-colors">
+<div class="flex items-start gap-space-sm">
+<div class="w-8 h-8 rounded-lg bg-surface-container-lowest flex items-center justify-center text-badge-amber-text shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[18px]">report_problem</span>
+</div>
+<div>
+<h4 class="font-label-lg text-label-lg text-on-surface">Notificaciones por email de nuevas incidencias</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Alertas sobre fallos en ascensores, mantenimiento de piscina, y partes técnicos en zonas comunes.</p>
+</div>
+</div>
+<label class="relative inline-flex items-center cursor-pointer shrink-0">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-container rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-surface-container-lowest after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-secondary"></div>
+</label>
+</div>
+<!-- Toggle 2: Avisos urgentes conserje -->
+<div class="p-space-md rounded-xl bg-surface-container-low flex items-center justify-between gap-space-md hover:bg-surface-container transition-colors">
+<div class="flex items-start gap-space-sm">
+<div class="w-8 h-8 rounded-lg bg-surface-container-lowest flex items-center justify-center text-urgent-coral shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[18px]">notification_important</span>
+</div>
+<div>
+<h4 class="font-label-lg text-label-lg text-on-surface">Avisos urgentes del conserje</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Mensajería prioritaria en tiempo real: cortes de suministro programados, paquetería crítica o emergencias en garaje.</p>
+</div>
+</div>
+<label class="relative inline-flex items-center cursor-pointer shrink-0">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-container rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-surface-container-lowest after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-secondary"></div>
+</label>
+</div>
+<!-- Toggle 3: Votaciones telemáticas -->
+<div class="p-space-md rounded-xl bg-surface-container-low flex items-center justify-between gap-space-md hover:bg-surface-container transition-colors">
+<div class="flex items-start gap-space-sm">
+<div class="w-8 h-8 rounded-lg bg-surface-container-lowest flex items-center justify-center text-on-surface shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[18px]">how_to_vote</span>
+</div>
+<div>
+<h4 class="font-label-lg text-label-lg text-on-surface">Alertas de nuevas votaciones telemáticas</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Avisos sobre apertura y cierre de votaciones ordinarias o extraordinarias conforme a la LPH.</p>
+</div>
+</div>
+<label class="relative inline-flex items-center cursor-pointer shrink-0">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-container rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-surface-container-lowest after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-secondary"></div>
+</label>
+</div>
+</div>
+<div class="pt-space-xs flex items-center justify-between">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Los cambios se aplican automáticamente en tu buzón asociado.</span>
+<span class="font-label-sm text-label-sm text-secondary font-semibold flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-secondary"></span> Sincronizado
+            </span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  function previewImage(event) {
+    const input = event.target;
+    if (input.files && input.files[0]) {
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        const preview = document.getElementById('avatar-preview');
+        if (preview) {
+          preview.src = e.target.result;
+        }
+      }
+      reader.readAsDataURL(input.files[0]);
+    }
+  }
+
+  function toggleCheckbox(id) {
+    const cb = document.getElementById(id);
+    if (cb && event.target !== cb) {
+      cb.checked = !cb.checked;
+    }
+  }
+
+  function handleProfileSubmit(e) {
+    e.preventDefault();
+    const feedback = document.getElementById('save-feedback');
+    if (feedback) {
+      feedback.classList.remove('hidden');
+      setTimeout(() => {
+        feedback.classList.add('hidden');
+      }, 4000);
+    }
+  }
+
+  function handlePasswordSubmit(e) {
+    e.preventDefault();
+    const p1 = document.getElementById('new_password').value;
+    const p2 = document.getElementById('confirm_password').value;
+    if (p1 !== p2) {
+      alert('Las contraseñas nuevas no coinciden. Por favor, verifica.');
+      return;
+    }
+    alert('Contraseña actualizada con éxito en la bóveda de seguridad.');
+    e.target.reset();
+  }
+</script></main></div></body></html>

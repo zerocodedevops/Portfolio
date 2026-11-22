@@ -28,6 +28,7 @@ function generateSitemap() {
     { url: '/proyectos/zero-breakdown/fontaneria' },
     { url: '/proyectos/zero-breakdown/electricidad' },
     { url: '/proyectos/zero-breakdown/climatizacion' },
+    { url: '/proyectos/neighnet' },
   ];
 
   const sitemapXml = `<?xml version="1.0" encoding="UTF-8"?>

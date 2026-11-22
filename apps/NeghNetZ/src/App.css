@@ -1,0 +1,88 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+/* Stitch references are complete HTML documents. The iframe preserves their
+   original viewport, CDN-generated utility classes and in-document assets. */
+#root { width: 100%; max-width: none; min-height: 100vh; margin: 0; padding: 0; text-align: left; }
+.stitch-layout {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  min-height: 0;
+  overflow: hidden;
+  background: #f8f9ff;
+}
+.stitch-layout .app-header { position: relative; z-index: 10; width: 100%; flex: 0 0 64px; min-height: 64px; }
+.stitch-layout > div { width: 100%; flex: 1 1 auto; min-width: 0; min-height: 0; }
+.stitch-layout main { display: flex; flex: 1 1 auto; min-width: 0; min-height: 0; overflow: hidden; padding: 0 !important; }
+.stitch-layout main:has(.reservas-page) { overflow-y: auto; overflow-x: hidden; overscroll-behavior-y: contain; }
+.stitch-layout main > div { width: 100%; height: 100%; min-height: 0; }
+.stitch-layout main:has(.reservas-page) > div { height: auto; min-height: 100%; }
+.stitch-page { width: 100%; height: 100%; min-height: 0; overflow: hidden; background: #f8f9ff; }
+.stitch-page-login { width: 100%; height: 100vh; min-height: 100vh; }
+.stitch-frame { display: block; width: 100%; height: 100%; min-height: 0; border: 0; background: #f8f9ff; }
+.stitch-frame-header-hidden #root header { display: none !important; }
+.stitch-workflow-backdrop { position: fixed; inset: 0; z-index: 1000; display: grid; place-items: center; padding: 3vh 3vw; background: rgb(11 28 48 / 42%); backdrop-filter: blur(3px); }
+.stitch-workflow-window { position: relative; display: flex; width: min(1120px, 96vw); max-height: 94vh; min-height: min(520px, 88vh); flex-direction: column; overflow: hidden; border: 1px solid #dce4ef; border-radius: 14px; background: #f8f9ff; box-shadow: 0 24px 80px rgb(11 28 48 / 24%); }
+.stitch-workflow-close { position: absolute; top: 10px; right: 10px; z-index: 2; display: grid; width: 36px; height: 36px; place-items: center; border: 0; border-radius: 999px; background: rgb(255 255 255 / 92%); color: #0b1c30; font-size: 24px; cursor: pointer; box-shadow: 0 1px 4px rgb(0 0 0 / 15%); }
+.stitch-workflow-close:focus-visible { outline: 2px solid #006c4a; outline-offset: 2px; }
+.stitch-workflow-content { min-height: 0; overflow: auto; padding: 12px; }
+html.dark .stitch-layout,
+html.dark .stitch-page { background: #000; }
+html.dark .stitch-frame { background: #000; }
+html.dark .stitch-workflow-backdrop { background: rgb(0 0 0 / 78%); }
+html.dark .stitch-workflow-window { border-color: #27272a; background: #09090b; box-shadow: 0 24px 80px rgb(0 0 0 / 70%); }
+html.dark .stitch-workflow-close { background: #18181b; color: #f4f4f5; }
+@media (max-width: 767px) {
+  .stitch-page-login { height: 100dvh; min-height: 100dvh; }
+  .stitch-layout { height: 100dvh; }
+  .stitch-layout > div { width: 100%; padding-bottom: 0; }
+  .stitch-layout .app-header { flex-basis: 56px; min-height: 56px; padding-left: 1rem; padding-right: 1rem; }
+  .stitch-layout main { height: auto; }
+  .stitch-layout main:has(.reservas-page) { overflow-y: auto; }
+  .stitch-page, .stitch-frame { min-height: 0; }
+  .stitch-workflow-backdrop { padding: 0; }
+  .stitch-workflow-window { width: 100%; height: 100%; max-height: 100%; min-height: 0; border-radius: 0; }
+  .stitch-workflow-content { padding: 8px; }
+}

@@ -75,6 +75,13 @@ const demoProjects = [
 		href: "/proyectos/zeroplague/index.html",
 		image: "/assets/projects/thumbnails/project-zeroplague-gallery.jpg",
 	},
+	{
+		name: "NeighNet",
+		sector: "Comunidades de propietarios",
+		note: "Plataforma demo para gestión de comunidades con acceso como vecino o administrador, reservas, votaciones, incidencias y cuentas simuladas.",
+		href: "/proyectos/neighnet",
+		image: "/assets/projects/thumbnails/project-neighnet-gallery.webp",
+	},
 ];
 
 type DemoProject = (typeof demoProjects)[number];
@@ -143,7 +150,7 @@ function DemoProjectCard({ project, index }: DemoCardProps) {
 						rotateY: smoothTiltY,
 						scale: imageScale,
 					}}
-				className="aspect-[5/4] w-full overflow-hidden bg-[#111114]"
+				className="aspect-5/4 w-full overflow-hidden bg-[#111114]"
 				>
 					<img
 						src={project.image}
@@ -276,7 +283,7 @@ export function HomeProjectGallery() {
 							target="_blank"
 							rel="noopener noreferrer"
 							data-cursor="VISITAR WEB ↗"
-							className="block aspect-[5/4] max-w-xl overflow-hidden rounded-2xl border border-white/15 bg-[#141418] transition-colors hover:border-[#0077CC] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#0077CC] lg:ml-auto"
+							className="block aspect-5/4 max-w-xl overflow-hidden rounded-2xl border border-white/15 bg-[#141418] transition-colors hover:border-[#0077CC] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#0077CC] lg:ml-auto"
 						>
 							<img
 								src={realProject.image}
@@ -295,7 +302,7 @@ export function HomeProjectGallery() {
 					</p>
 				</div>
 
-				<div className="grid gap-x-6 gap-y-12 sm:grid-cols-2 lg:grid-cols-4">
+				<div className="grid gap-x-6 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
 					{demoProjects.map((project, index) => (
 						<DemoProjectCard
 							key={project.name}

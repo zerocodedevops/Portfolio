@@ -40,6 +40,31 @@ for (const htmlFile of htmlFiles) {
 
     const digest = createHash('sha256').update(body, 'utf8').digest('base64');
     inlineScriptHashes.add(`'sha256-${digest}'`);
+    const lfBody = body.replace(/\r\n/g, '\n');
+    if (lfBody !== body) {
+      const lfDigest = createHash('sha256').update(lfBody, 'utf8').digest('base64');
+      inlineScriptHashes.add(`'sha256-${lfDigest}'`);
+    }
+  }
+}
+
+if (htmlDirectoryArgument === 'dist') {
+  const loginStitchPath = resolve(
+    repositoryRoot,
+    'apps/NeghNetZ/NeighNetz-Stitch/stitch_neighnetz_community_manager/neighnetz_inicio_de_sesi_n_y_registro_login/code.html',
+  );
+  try {
+    const stitchHtml = await readFile(loginStitchPath, 'utf8');
+    for (const scriptTag of stitchHtml.matchAll(scriptTagPattern)) {
+      const body = scriptTag.groups.body;
+      if (!body.includes('shader-canvas-ANIMATION_31')) continue;
+      for (const candidate of [body, body.replace(/\r\n/g, '\n')]) {
+        const digest = createHash('sha256').update(candidate, 'utf8').digest('base64');
+        inlineScriptHashes.add(`'sha256-${digest}'`);
+      }
+    }
+  } catch {
+    // Optional if NeghNetZ is not present
   }
 }
 

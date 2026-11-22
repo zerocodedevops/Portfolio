@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+
+<html lang="es"><head><link rel="stylesheet" href="/fonts/fonts.css"/><link rel="stylesheet" href="/stitch-tailwind.css"/><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/>
+<style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style></head><body class="bg-surface font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-72 bg-surface-container-lowest z-50 flex flex-col shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-space-lg flex items-center justify-between"><div class="flex items-center gap-space-sm"><img alt="NeighNetZ Logo" class="h-8 w-auto object-contain" src="/images/demo-placeholder.svg"/><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight">NeighNetZ</span></div></div><div class="px-space-md py-space-sm"><div class="bg-surface-container-low rounded-lg p-space-sm flex items-center justify-between cursor-pointer hover:bg-surface-container transition-colors"><div class="flex items-center gap-space-sm overflow-hidden"><span class="material-symbols-outlined text-secondary text-[20px]">apartment</span><div class="flex flex-col truncate"><span class="font-label-sm text-label-sm text-on-surface-variant uppercase truncate">Comunidad Activa</span><span class="font-label-md text-label-md text-on-surface truncate">Residencial Los Sauces 14</span></div></div><span class="material-symbols-outlined text-on-surface-variant text-[18px]">unfold_more</span></div></div><nav class="flex-1 overflow-y-auto px-space-md py-space-sm flex flex-col gap-space-xs" data-active-classes="bg-primary-container text-on-primary font-bold rounded-lg"><div class="px-space-sm pt-space-sm pb-space-xs"><span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Área del Vecino</span></div><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container hover:text-on-surface transition-all" data-path="dashboard" href="#"><span class="material-symbols-outlined text-[20px]">home</span><span>Inicio / Tablón</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container hover:text-on-surface transition-all" data-path="dashboard-incidencias" href="#"><span class="material-symbols-outlined text-[20px]">report_problem</span><span>Incidencias</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container hover:text-on-surface transition-all" data-path="dashboard-reservas" href="#"><span class="material-symbols-outlined text-[20px]">event_available</span><span>Reservas</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container hover:text-on-surface transition-all" data-path="dashboard-votaciones" href="#"><span class="material-symbols-outlined text-[20px]">how_to_vote</span><span>Votaciones</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container hover:text-on-surface transition-all" data-path="dashboard-documentos" href="#"><span class="material-symbols-outlined text-[20px]">folder_shared</span><span>Documentos</span></a><a aria-current="page" class="flex items-center gap-space-sm px-space-sm py-space-sm transition-all bg-primary-container text-on-primary font-bold rounded-lg" data-path="dashboard-vecinos" href="#"><span class="material-symbols-outlined text-[20px]">groups</span><span>Directorio de Vecinos</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container hover:text-on-surface transition-all" data-path="dashboard-gastos" href="#"><span class="material-symbols-outlined text-[20px]">account_balance_wallet</span><span>Cuentas y Gastos</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container hover:text-on-surface transition-all" data-path="dashboard-perfil" href="#"><span class="material-symbols-outlined text-[20px]">person</span><span>Mi Perfil</span></a><div class="px-space-sm pt-space-md pb-space-xs"><span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Panel de Administración</span></div><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container hover:text-on-surface transition-all" data-path="admin" href="#"><span class="material-symbols-outlined text-[20px]">monitoring</span><span>Panel Ejecutivo</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container hover:text-on-surface transition-all" data-path="admin-usuarios" href="#"><span class="material-symbols-outlined text-[20px]">verified_user</span><span>Validar Vecinos</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container hover:text-on-surface transition-all" data-path="admin-incidencias" href="#"><span class="material-symbols-outlined text-[20px]">assignment_late</span><span>Gestión de Incidencias</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container hover:text-on-surface transition-all" data-path="admin-reservas" href="#"><span class="material-symbols-outlined text-[20px]">book_online</span><span>Gestión de Reservas</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container hover:text-on-surface transition-all" data-path="admin-documentos" href="#"><span class="material-symbols-outlined text-[20px]">file_copy</span><span>Gestión Documental</span></a></nav><div class="p-space-md mt-auto"><div class="bg-surface-container-low rounded-lg p-space-sm flex items-center justify-between"><div class="flex items-center gap-space-sm"><span class="h-2 w-2 rounded-full bg-secondary"></span><span class="font-label-sm text-label-sm text-on-surface-variant">Servicios Operativos</span></div><span class="font-label-sm text-label-sm text-secondary font-bold">v2.4</span></div></div></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 h-16 bg-surface-container-lowest/80 backdrop-blur-xl z-40 flex items-center justify-between px-space-lg shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex items-center w-96"><div class="relative w-full flex items-center"><span class="material-symbols-outlined absolute left-space-sm text-on-surface-variant text-[20px]">search</span><input class="w-full bg-surface-container-low text-on-surface placeholder:text-on-surface-variant font-body-sm text-body-sm pl-9 pr-space-md py-space-xs rounded-lg outline-none focus:bg-surface-container-lowest transition-colors" placeholder="Buscar acuerdos, actas, reservas o incidencias..." type="text"/></div></div><div class="flex items-center gap-space-md"><div class="hidden sm:flex items-center gap-space-xs px-space-sm py-space-xs rounded-full bg-badge-emerald-bg"><span class="h-2 w-2 rounded-full bg-secondary animate-pulse"></span><span class="font-label-sm text-label-sm text-badge-emerald-text">Firebase Online</span></div><button aria-label="Notificaciones" class="relative p-space-xs rounded-full hover:bg-surface-container transition-colors text-on-surface-variant hover:text-on-surface" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-1 right-1 h-2 w-2 rounded-full bg-urgent-coral"></span></button><div class="flex items-center gap-space-sm pl-space-sm"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="/images/demo-placeholder.svg"/><div class="flex flex-col text-left"><span class="font-label-md text-label-md text-on-surface">Elena Morales</span><span class="font-label-sm text-label-sm text-on-surface-variant">Propietaria / Vicepresidenta</span></div></div></div></header><main class="relative pt-16 bg-surface min-h-screen"><div class="flex flex-col w-full">
+<div class="p-space-lg lg:p-space-xl flex flex-col gap-space-lg">
+<!-- Header Block: Context, Title & Quick Stats -->
+<div class="flex flex-col lg:flex-row lg:items-end justify-between gap-space-md">
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary font-bold">Comunidad Verificada</span>
+<span class="h-1 w-1 rounded-full bg-outline-variant"></span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">48 Fincas Registradas</span>
+</div>
+<h1 class="font-headline-xl text-headline-xl text-on-surface tracking-tight">Directorio de Residentes y Finca</h1>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl">
+          Censo de copropietarios, residentes autorizados y órganos de gobierno de Residencial Los Sauces 14 para coordinación interna y emergencias.
+        </p>
+</div>
+<!-- Quick Metrics Pill Grid -->
+<div class="flex items-center gap-space-sm bg-surface-container-lowest p-space-xs rounded-xl shadow-sm">
+<button aria-label="Filtrar miembros de la Junta de Gobierno" aria-pressed="false" class="px-space-md py-space-xs flex flex-col text-left rounded-lg transition-colors hover:bg-surface-container focus-visible:outline focus-visible:outline-2 focus-visible:outline-secondary" id="filter-board-members" type="button">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Junta de Gobierno</span>
+<span class="font-headline-sm text-headline-sm text-secondary font-bold" id="board-member-count">0 Miembros</span>
+</button>
+<div class="w-px h-8 bg-surface-container"></div>
+<div class="px-space-md py-space-xs flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Viviendas</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold" id="directory-housing-count">0</span>
+</div>
+<div class="w-px h-8 bg-surface-container"></div>
+<div class="px-space-md py-space-xs flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Garajes vinculados</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold" id="directory-garage-count">0</span>
+</div>
+</div>
+</div>
+<!-- Filter & Portal Navigation Toolbar -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-space-md">
+<!-- Portal Selector -->
+<div class="flex items-center gap-space-xs bg-surface-container-low p-1 rounded-lg">
+<button class="portal-tab px-space-md py-space-xs rounded-md font-label-md text-label-md text-on-surface-variant transition-all hover:text-on-surface" id="btn-portal-1" onclick="filterPortal('1')" type="button">
+          Portal 1
+        </button>
+<button class="portal-tab px-space-md py-space-xs rounded-md font-label-md text-label-md bg-surface-container-lowest text-on-surface shadow-sm font-bold transition-all" id="btn-portal-2" onclick="filterPortal('2')" type="button">
+          Portal 2 (Principal)
+        </button>
+<button class="portal-tab px-space-md py-space-xs rounded-md font-label-md text-label-md text-on-surface-variant transition-all hover:text-on-surface" id="btn-portal-3" onclick="filterPortal('3')" type="button">
+          Portal 3
+        </button>
+</div>
+<!-- Search & Quick Filters -->
+<div class="flex items-center gap-space-sm flex-1 md:max-w-md">
+<div class="relative w-full flex items-center">
+<span class="material-symbols-outlined absolute left-space-sm text-on-surface-variant text-[20px]">search</span>
+<input class="w-full bg-surface-container-low text-on-surface placeholder:text-on-surface-variant font-body-sm text-body-sm pl-9 pr-space-md py-2 rounded-lg outline-none focus:bg-surface-container transition-colors" id="directory-search" oninput="handleSearch(this.value)" placeholder="Buscar por vecino, piso o letra..." type="text"/>
+</div>
+<div class="relative flex items-center gap-space-xs">
+<button aria-label="Cambiar vista de viviendas (actual: Cuadrícula, siguiente: Lista)" class="p-2 rounded-lg bg-surface-container-low text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" id="toggle-resident-view" title="Vista: Cuadrícula · Cambiar a Lista" type="button">
+<span class="material-symbols-outlined text-[20px]">grid_view</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Main Content Area: Directory Grid + Resident Detail Flyout -->
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-space-lg items-start">
+<!-- Directory Left Column (Cards ordered by floor & letter) -->
+<div class="xl:col-span-8 flex flex-col gap-space-md" id="residents-list">
+<!-- Planta 3 (Your residence highlighted) -->
+<div class="flex items-center gap-space-sm pt-space-xs">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase font-bold tracking-widest">3ª Planta</span>
+<div class="h-px bg-surface-container flex-1"></div>
+</div>
+<!-- Portal 2 - 3º B (TÚ - Elena Morales) -->
+<div class="resident-card cursor-pointer group bg-surface-container-lowest p-space-md rounded-xl shadow-sm hover:shadow-md transition-all relative overflow-hidden" data-name="Elena Morales" data-portal="2" data-unit="3º B" onclick="selectResident('elena')">
+<div class="absolute left-0 top-0 bottom-0 w-1.5 bg-secondary"></div>
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-md pl-space-xs">
+<div class="flex items-center gap-space-md">
+<div class="relative">
+<img class="w-14 h-14 rounded-full object-cover" data-alt="High resolution studio portrait of Elena Morales, a professional woman in her forties with calm confident expression, wearing a tailored navy blazer, soft neutral studio lighting, cinematic editorial quality" src="/images/demo-placeholder.svg"/>
+<span class="absolute -bottom-1 -right-1 bg-secondary text-on-secondary rounded-full p-0.5 flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-[14px]">shield_person</span>
+</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs flex-wrap">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold group-hover:text-secondary transition-colors">Elena Morales</span>
+<span class="px-space-xs py-0.5 rounded-full bg-secondary text-on-secondary font-label-sm text-label-sm font-bold tracking-wider uppercase">TÚ</span>
+<span class="px-space-xs py-0.5 rounded-full bg-badge-emerald-bg text-badge-emerald-text font-label-sm text-label-sm font-bold">Vicepresidenta</span>
+</div>
+<div class="flex items-center gap-space-xs mt-1 text-on-surface-variant font-body-sm text-body-sm">
+<span class="font-bold text-on-surface">Portal 2 · 3º B</span>
+<span>•</span>
+<span>Propietaria</span>
+<span>•</span>
+<span>Cuota 2.85%</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-space-sm sm:self-center">
+<div class="flex items-center gap-1 text-on-surface-variant text-body-sm font-body-sm bg-surface-container-low px-space-sm py-1 rounded-md">
+<span class="material-symbols-outlined text-[16px] text-secondary">phone</span>
+<span>+34 612 890 •••</span>
+</div>
+<button class="p-2 rounded-lg bg-surface-container-low text-on-surface hover:bg-surface-container transition-all" onclick="event.stopPropagation(); openQuickMessage('Elena Morales')" title="Mensaje interno">
+<span class="material-symbols-outlined text-[18px]">chat</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Planta 2 -->
+<div class="flex items-center gap-space-sm pt-space-sm">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase font-bold tracking-widest">2ª Planta</span>
+<div class="h-px bg-surface-container flex-1"></div>
+</div>
+<!-- Portal 2 - 2º A (Carmen Ortiz) -->
+<div class="resident-card cursor-pointer group bg-surface-container-lowest p-space-md rounded-xl shadow-sm hover:shadow-md transition-all relative overflow-hidden" data-name="Carmen Ortiz" data-portal="2" data-unit="2º A" onclick="selectResident('carmen')">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-md">
+<div class="relative">
+<img class="w-14 h-14 rounded-full object-cover" data-alt="Portrait of Carmen Ortiz, an elegant mature woman in her late fifties with silver hair, warm gentle smile, natural daylight through apartment window, realistic editorial photography" src="/images/demo-placeholder.svg"/>
+<span class="absolute -bottom-1 -right-1 bg-badge-amber-bg text-badge-amber-text rounded-full p-0.5 flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-[14px]">record_voice_over</span>
+</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs flex-wrap">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold group-hover:text-secondary transition-colors">Carmen Ortiz</span>
+<span class="px-space-xs py-0.5 rounded-full bg-badge-amber-bg text-badge-amber-text font-label-sm text-label-sm font-bold">Vocal de Escalera</span>
+</div>
+<div class="flex items-center gap-space-xs mt-1 text-on-surface-variant font-body-sm text-body-sm">
+<span class="font-bold text-on-surface">Portal 2 · 2º A</span>
+<span>•</span>
+<span>Propietaria</span>
+<span>•</span>
+<span>Cuota 2.70%</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-space-sm sm:self-center">
+<div class="flex items-center gap-1 text-on-surface-variant text-body-sm font-body-sm bg-surface-container-low px-space-sm py-1 rounded-md">
+<span class="material-symbols-outlined text-[16px] text-on-surface">phone_iphone</span>
+<span>+34 655 412 901</span>
+</div>
+<button class="px-space-sm py-1.5 rounded-lg bg-surface-container-low text-on-surface hover:bg-surface-container transition-all font-label-md text-label-md flex items-center gap-1" onclick="event.stopPropagation(); openQuickMessage('Carmen Ortiz')">
+<span class="material-symbols-outlined text-[16px]">chat_bubble_outline</span>
+<span class="hidden sm:inline">Contactar</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Planta 1 -->
+<div class="flex items-center gap-space-sm pt-space-sm">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase font-bold tracking-widest">1ª Planta</span>
+<div class="h-px bg-surface-container flex-1"></div>
+</div>
+<!-- Portal 2 - 1º A (Marta y Javier Gómez) -->
+<div class="resident-card cursor-pointer group bg-surface-container-lowest p-space-md rounded-xl shadow-sm hover:shadow-md transition-all relative overflow-hidden" data-name="Marta y Javier Gómez" data-portal="2" data-unit="1º A" onclick="selectResident('marta_javier')">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-md">
+<div class="relative flex -space-x-4">
+<img class="w-12 h-12 rounded-full object-cover" data-alt="Portrait of Marta Gomez, friendly cheerful brunette woman in her early thirties, modern residential living room setting with soft architectural lighting" src="/images/demo-placeholder.svg"/>
+<img class="w-12 h-12 rounded-full object-cover ring-2 ring-surface-container-lowest" data-alt="Portrait of Javier Gomez, young professional man with trimmed beard and spectacles, warm natural daylight, editorial candid style" src="/images/demo-placeholder.svg"/>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs flex-wrap">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold group-hover:text-secondary transition-colors">Marta y Javier Gómez</span>
+<span class="px-space-xs py-0.5 rounded-full bg-badge-navy-bg text-badge-navy-text font-label-sm text-label-sm">Propietarios</span>
+</div>
+<div class="flex items-center gap-space-xs mt-1 text-on-surface-variant font-body-sm text-body-sm">
+<span class="font-bold text-on-surface">Portal 2 · 1º A</span>
+<span>•</span>
+<span>Garaje Pl. 18</span>
+<span>•</span>
+<span>Cuota 2.70%</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-space-sm sm:self-center">
+<div class="flex items-center gap-1 text-on-surface-variant text-body-sm font-body-sm bg-surface-container-low px-space-sm py-1 rounded-md">
+<span class="material-symbols-outlined text-[16px] text-on-surface">mail</span>
+<span class="truncate max-w-[140px] sm:max-w-none">gomez.sauces@comunidad.es</span>
+</div>
+<button class="px-space-sm py-1.5 rounded-lg bg-surface-container-low text-on-surface hover:bg-surface-container transition-all font-label-md text-label-md flex items-center gap-1" onclick="event.stopPropagation(); openQuickMessage('Marta y Javier Gómez')">
+<span class="material-symbols-outlined text-[16px]">chat_bubble_outline</span>
+<span class="hidden sm:inline">Contactar</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Portal 2 - 1º B (David Quintana) -->
+<div class="resident-card cursor-pointer group bg-surface-container-lowest p-space-md rounded-xl shadow-sm hover:shadow-md transition-all relative overflow-hidden" data-name="David Quintana" data-portal="2" data-unit="1º B" onclick="selectResident('david')">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-md">
+<div class="relative">
+<img class="w-14 h-14 rounded-full object-cover" data-alt="Portrait of David Quintana, tech consultant in his late twenties, relaxed natural posture, casual denim shirt, soft background blur of warm interior" src="/images/demo-placeholder.svg"/>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs flex-wrap">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold group-hover:text-secondary transition-colors">David Quintana</span>
+<span class="px-space-xs py-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm">Inquilino</span>
+</div>
+<div class="flex items-center gap-space-xs mt-1 text-on-surface-variant font-body-sm text-body-sm">
+<span class="font-bold text-on-surface">Portal 2 · 1º B</span>
+<span>•</span>
+<span>Contrato validado</span>
+<span>•</span>
+<span>Contacto autorizado</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-space-sm sm:self-center">
+<div class="flex items-center gap-1 text-on-surface-variant text-body-sm font-body-sm bg-surface-container-low px-space-sm py-1 rounded-md">
+<span class="material-symbols-outlined text-[16px] text-secondary">check_circle</span>
+<span>Contacto disponible</span>
+</div>
+<button class="px-space-sm py-1.5 rounded-lg bg-surface-container-low text-on-surface hover:bg-surface-container transition-all font-label-md text-label-md flex items-center gap-1" onclick="event.stopPropagation(); openQuickMessage('David Quintana')">
+<span class="material-symbols-outlined text-[16px]">chat_bubble_outline</span>
+<span class="hidden sm:inline">Contactar</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Planta Baja -->
+<div class="flex items-center gap-space-sm pt-space-sm">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase font-bold tracking-widest">Planta Baja</span>
+<div class="h-px bg-surface-container flex-1"></div>
+</div>
+<!-- Portal 2 - Bajo A (Ignacio Serrat) -->
+<div class="resident-card cursor-pointer group bg-surface-container-lowest p-space-md rounded-xl shadow-sm hover:shadow-md transition-all relative overflow-hidden" data-name="Ignacio Serrat" data-portal="2" data-unit="Bajo A" onclick="selectResident('ignacio')">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-md">
+<div class="relative">
+<img class="w-14 h-14 rounded-full object-cover" data-alt="Portrait of Ignacio Serrat, an architect in his late forties, confident look, wearing a high-neck dark sweater, crisp modern lighting and refined composition" src="/images/demo-placeholder.svg"/>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs flex-wrap">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold group-hover:text-secondary transition-colors">Ignacio Serrat</span>
+<span class="px-space-xs py-0.5 rounded-full bg-badge-navy-bg text-badge-navy-text font-label-sm text-label-sm">Propietario</span>
+</div>
+<div class="flex items-center gap-space-xs mt-1 text-on-surface-variant font-body-sm text-body-sm">
+<span class="font-bold text-on-surface">Portal 2 · Bajo A</span>
+<span>•</span>
+<span>Jardín Privativo</span>
+<span>•</span>
+<span>Cuota 3.10%</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-space-sm sm:self-center">
+<div class="flex items-center gap-1 text-on-surface-variant text-body-sm font-body-sm bg-surface-container-low px-space-sm py-1 rounded-md">
+<span class="material-symbols-outlined text-[16px] text-on-surface">call</span>
+<span>+34 609 332 118</span>
+</div>
+<button class="px-space-md py-1.5 rounded-lg bg-primary text-on-primary hover:bg-slate-800 transition-all font-label-md text-label-md flex items-center gap-1.5 shadow-sm" onclick="event.stopPropagation(); openQuickMessage('Ignacio Serrat')">
+<span class="material-symbols-outlined text-[16px]">send</span>
+<span>Contactar por mensaje</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Detail Panel: Ficha del Vecino (FichaVecino.jsx representation) -->
+<div class="xl:col-span-4 sticky top-20 flex flex-col gap-space-md">
+<div class="bg-surface-container-lowest rounded-2xl p-space-lg shadow-md flex flex-col gap-space-lg" id="ficha-vecino-container">
+<!-- Top Card Meta -->
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant font-bold flex items-center gap-1.5">
+<span class="h-2 w-2 rounded-full bg-secondary"></span>
+              Ficha del Vecino
+            </span>
+<div class="flex items-center gap-space-xs">
+<span class="px-space-xs py-0.5 rounded-full bg-badge-emerald-bg text-badge-emerald-text font-label-sm text-label-sm font-bold">Activo</span>
+<button class="p-1 rounded-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</div>
+<!-- Resident Hero Summary -->
+<div class="flex flex-col items-center text-center pb-space-sm">
+<div class="relative mb-space-sm">
+<img class="w-24 h-24 rounded-2xl object-cover shadow-sm" data-alt="Close-up detailed portrait of Elena Morales, confident leadership expression, warm soft natural office lighting, premium editorial portrait" id="ficha-avatar" src="/images/demo-placeholder.svg"/>
+<span class="absolute -bottom-2 -right-2 bg-secondary text-on-secondary p-1.5 rounded-xl shadow-md flex items-center justify-center" id="ficha-role-icon">
+<span class="material-symbols-outlined text-[18px]">gavel</span>
+</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface" id="ficha-name">Elena Morales</h2>
+<div class="flex items-center gap-space-xs mt-1">
+<span class="font-label-md text-label-md text-secondary font-bold" id="ficha-unit">Portal 2, 3º B</span>
+<span class="text-on-surface-variant">•</span>
+<span class="font-label-md text-label-md text-on-surface-variant" id="ficha-type">Propietaria</span>
+</div>
+<div class="mt-space-xs" id="ficha-board-role">
+<span class="px-space-sm py-1 rounded-full bg-badge-emerald-bg text-badge-emerald-text font-label-sm text-label-sm font-bold uppercase tracking-wider inline-flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">stars</span>
+                Vicepresidenta de la Comunidad
+              </span>
+</div>
+</div>
+<!-- Structured Property & Community Attributes Bento -->
+<div class="grid grid-cols-2 gap-space-sm">
+<div class="bg-surface-container-low p-space-sm rounded-xl flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase font-medium">Cuota de participación</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold mt-0.5" id="ficha-coefficient">2.85%</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant text-[11px] mt-0.5">Según el título constitutivo</span>
+</div>
+<div class="bg-surface-container-low p-space-sm rounded-xl flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase font-medium">Estado Cuotas</span>
+<span class="font-headline-sm text-headline-sm text-secondary font-bold mt-0.5">Al Corriente</span>
+<span class="font-body-sm text-body-sm text-badge-emerald-text text-[11px] mt-0.5">Sin deuda pendiente</span>
+</div>
+</div>
+<!-- Registered Assets (Parking & Vehicles) -->
+<div class="bg-surface-container-low p-space-md rounded-xl flex flex-col gap-space-sm">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase font-bold tracking-wider">Garaje y Trastero</span>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="h-9 w-9 rounded-lg bg-surface-container-lowest flex items-center justify-center text-on-surface shadow-sm">
+<span class="material-symbols-outlined text-[20px]">directions_car</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-bold" id="ficha-parking">Plaza Garaje nº 14 (Sótano -1)</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant" id="ficha-plate">Matrícula: 4821-KMN</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-[18px] text-secondary">check_circle</span>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="h-9 w-9 rounded-lg bg-surface-container-lowest flex items-center justify-center text-on-surface shadow-sm">
+<span class="material-symbols-outlined text-[20px]">inventory_2</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-bold">Trastero</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant" id="ficha-storage">No registrado</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-[18px] text-secondary">check_circle</span>
+</div>
+</div>
+<!-- Registered Contact Channels -->
+<div class="flex flex-col gap-space-xs">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase font-bold tracking-wider">Canales de Notificación</span>
+<div class="flex items-center justify-between p-space-sm rounded-lg hover:bg-surface-container-low transition-colors">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-on-surface-variant text-[18px]">call</span>
+<span class="font-body-sm text-body-sm text-on-surface" id="ficha-phone">+34 612 890 411</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant bg-surface-container px-2 py-0.5 rounded">Móvil</span>
+</div>
+<div class="flex items-center justify-between p-space-sm rounded-lg hover:bg-surface-container-low transition-colors">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-on-surface-variant text-[18px]">mail</span>
+<span class="font-body-sm text-body-sm text-on-surface truncate max-w-[210px]" id="ficha-email">elena.morales@sauces14.org</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant bg-surface-container px-2 py-0.5 rounded">Email</span>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="flex flex-col gap-space-xs pt-space-xs">
+<button class="w-full bg-urgent-coral hover:bg-red-600 text-on-error py-2.5 px-space-md rounded-lg font-label-lg text-label-lg font-bold flex items-center justify-center gap-space-xs shadow-sm transition-all active:scale-[0.99]" onclick="triggerEmergencyAlert()">
+<span class="material-symbols-outlined text-[18px]">warning</span>
+<span>Enviar Aviso Urgente</span>
+</button>
+<button class="w-full bg-surface-container-low hover:bg-surface-container text-on-surface py-2.5 px-space-md rounded-lg font-label-lg text-label-lg font-bold flex items-center justify-center gap-space-xs transition-all" onclick="openResidentChat()">
+<span class="material-symbols-outlined text-[18px]">chat</span>
+<span>Mensaje Comunitario Privado</span>
+</button>
+</div>
+</div>
+<!-- Building Info Snippet Card -->
+<div class="bg-surface-container-low p-space-md rounded-2xl flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase font-bold">Conserjería y Mantenimiento</span>
+<span class="font-label-sm text-label-sm text-secondary font-bold">En Servicio</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            El conserje Pablo atiende todos los portales.<br/>Horario: lunes a jueves, 09:00–14:00 y 15:00–18:30; viernes, 09:00–14:30.
+          </p>
+<div class="flex items-center gap-space-sm mt-1">
+<a class="text-on-surface font-label-sm text-label-sm underline flex items-center gap-1" href="tel:+34910000000">
+<span class="material-symbols-outlined text-[14px]">support_agent</span>
+              Llamar a garita
+            </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Interactive Modal for Quick Urgent Alerts -->
+<div class="hidden fixed inset-0 z-50 overflow-y-auto bg-slate-900/40 backdrop-blur-sm" id="urgent-modal">
+<div class="flex min-h-full items-center justify-center p-4">
+<div class="bg-surface-container-lowest w-full max-w-lg rounded-2xl p-space-lg shadow-xl flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-urgent-coral text-[24px]">crisis_alert</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">Enviar Aviso Urgente</span>
+</div>
+<button class="p-1 rounded-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container" onclick="closeModal()">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+        Estás a punto de emitir una notificación prioritaria con acuse de recibo inmediato a <strong class="text-on-surface font-bold" id="modal-target-resident">Elena Morales</strong> (Portal 2, 3º B).
+      </p>
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-md text-label-md text-on-surface font-semibold">Motivo del aviso</label>
+<select class="w-full bg-surface-container-low p-space-sm rounded-lg text-body-md text-on-surface outline-none">
+<option>Fuga de agua o incidencia urgente en vivienda</option>
+<option>Vehículo mal estacionado impidiendo maniobra</option>
+<option>Ruido anómalo o alarma de seguridad activada</option>
+<option>Requerimiento de la Junta de Gobierno</option>
+</select>
+</div>
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-md text-label-md text-on-surface font-semibold">Detalle de la emergencia</label>
+<textarea class="w-full bg-surface-container-low p-space-sm rounded-lg text-body-sm text-on-surface outline-none placeholder:text-on-surface-variant" placeholder="Describe brevemente el incidente para que el residente pueda actuar de inmediato..." rows="3"></textarea>
+</div>
+<div class="flex items-center justify-end gap-space-sm pt-space-xs">
+<button class="px-space-md py-2 rounded-lg bg-surface-container-low text-on-surface font-label-md text-label-md hover:bg-surface-container transition-all" onclick="closeModal()">
+          Cancelar
+        </button>
+<button class="px-space-md py-2 rounded-lg bg-urgent-coral text-on-error font-label-md text-label-md font-bold hover:bg-red-600 transition-all shadow-sm" onclick="confirmAlertSent()">
+          Transmitir Aviso Push &amp; SMS
+        </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Notification Toast -->
+<div class="fixed bottom-6 right-6 z-50 hidden bg-on-surface text-surface-bright px-space-md py-space-sm rounded-xl shadow-xl" id="toast-alert">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-secondary text-[20px]">check_circle</span>
+<span class="font-label-md text-label-md" id="toast-message">Acción completada con éxito</span>
+</div>
+</div>
+<!-- Client-side Logic for Directory and Detail Drawer -->
+<script>
+    const residentData = {
+      elena: {
+        name: "Elena Morales",
+        unit: "Portal 2, 3º B",
+        type: "Propietaria",
+        boardRole: "Vicepresidenta de la Comunidad",
+        boardIcon: "gavel",
+        coefficient: "2.85%",
+        votes: "28.5",
+        parking: "Plaza Garaje nº 14 (Sótano -1)",
+        plate: "Matrícula: 4821-KMN",
+        phone: "+34 612 890 411",
+        email: "elena.morales@sauces14.org"
+      },
+      carmen: {
+        name: "Carmen Ortiz",
+        unit: "Portal 2, 2º A",
+        type: "Propietaria",
+        boardRole: "Vocal de Escalera - Portal 2",
+        boardIcon: "record_voice_over",
+        coefficient: "2.70%",
+        votes: "27.0",
+        parking: "Plaza Garaje nº 22 (Sótano -1)",
+        plate: "Matrícula: 9012-LRP",
+        phone: "+34 655 412 901",
+        email: "carmen.ortiz@sauces14.org"
+      },
+      marta_javier: {
+        name: "Marta y Javier Gómez",
+        unit: "Portal 2, 1º A",
+        type: "Propietarios",
+        boardRole: "Sin cargo activo en Junta",
+        boardIcon: "group",
+        coefficient: "2.70%",
+        votes: "27.0",
+        parking: "Plaza Garaje nº 18 (Sótano -1)",
+        plate: "Matrícula: 3314-JZX",
+        phone: "+34 633 998 012",
+        email: "gomez.sauces@comunidad.es"
+      },
+      david: {
+        name: "David Quintana",
+        unit: "Portal 2, 1º B",
+        type: "Inquilino Autorizado",
+        boardRole: "Sin voto representativo",
+        boardIcon: "person",
+        coefficient: "2.70%",
+        votes: "0.0 (Propietario delegado)",
+        parking: "Sin plaza asignada",
+        plate: "Vehículo ocasional en rotación",
+        phone: "+34 644 110 932",
+        email: "david.quintana@gmail.com"
+      },
+      ignacio: {
+        name: "Ignacio Serrat",
+        unit: "Portal 2, Bajo A",
+        type: "Propietario",
+        boardRole: "Comisión de Obras y Jardinería",
+        boardIcon: "architecture",
+        coefficient: "3.10%",
+        votes: "31.0",
+        parking: "Plaza Garaje nº 03 (Sótano -1)",
+        plate: "Matrícula: 1544-BKL",
+        phone: "+34 609 332 118",
+        email: "ignacio.serrat@estudioarq.es"
+      }
+    };
+
+    let currentSelected = 'elena';
+
+    function selectResident(id) {
+      currentSelected = id;
+      const data = residentData[id];
+      if (!data) return;
+
+      document.getElementById('ficha-name').textContent = data.name;
+      document.getElementById('ficha-unit').textContent = data.unit;
+      document.getElementById('ficha-type').textContent = data.type;
+      document.getElementById('ficha-coefficient').textContent = data.coefficient;
+      document.getElementById('ficha-parking').textContent = data.parking;
+      document.getElementById('ficha-plate').textContent = data.plate;
+      document.getElementById('ficha-phone').textContent = data.phone;
+      document.getElementById('ficha-email').textContent = data.email;
+      
+      const roleBadge = document.getElementById('ficha-board-role');
+      if (data.boardRole.includes("Sin cargo") || data.boardRole.includes("Sin voto")) {
+        roleBadge.innerHTML = `<span class="px-space-sm py-1 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm font-semibold">${data.boardRole}</span>`;
+      } else {
+        roleBadge.innerHTML = `<span class="px-space-sm py-1 rounded-full bg-badge-emerald-bg text-badge-emerald-text font-label-sm text-label-sm font-bold uppercase tracking-wider inline-flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">stars</span>${data.boardRole}</span>`;
+      }
+
+      showToast(`Ficha cargada: ${data.name}`);
+    }
+
+    function handleSearch(term) {
+      const q = term.toLowerCase().trim();
+      const cards = document.querySelectorAll('.resident-card');
+      cards.forEach(card => {
+        const name = card.getAttribute('data-name').toLowerCase();
+        const unit = card.getAttribute('data-unit').toLowerCase();
+        if (name.includes(q) || unit.includes(q)) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    function filterPortal(portalNum) {
+      document.querySelectorAll('.portal-tab').forEach(b => {
+        b.classList.remove('bg-surface-container-lowest', 'text-on-surface', 'shadow-sm', 'font-bold');
+        b.classList.add('text-on-surface-variant');
+      });
+      const activeBtn = document.getElementById(`btn-portal-${portalNum}`);
+      if (activeBtn) {
+        activeBtn.classList.add('bg-surface-container-lowest', 'text-on-surface', 'shadow-sm', 'font-bold');
+        activeBtn.classList.remove('text-on-surface-variant');
+      }
+
+      if (portalNum !== '2') {
+        showToast(`Portal ${portalNum}: Mostrando 12 vecinos registrados`);
+      } else {
+        showToast(`Portal 2: Directorio activo principal`);
+      }
+    }
+
+    function triggerEmergencyAlert() {
+      const res = residentData[currentSelected];
+      document.getElementById('modal-target-resident').textContent = `${res.name} (${res.unit})`;
+      document.getElementById('urgent-modal').classList.remove('hidden');
+    }
+
+    function closeModal() {
+      document.getElementById('urgent-modal').classList.add('hidden');
+    }
+
+    function confirmAlertSent() {
+      closeModal();
+      showToast('Aviso de emergencia despachado vía Push/SMS');
+    }
+
+    function openResidentChat() {
+      const res = residentData[currentSelected];
+      showToast(`Abriendo chat seguro con ${res.name}...`);
+    }
+
+    function openQuickMessage(name) {
+      showToast(`Abriendo mensajería con ${name}`);
+    }
+
+    function showToast(msg) {
+      const toast = document.getElementById('toast-alert');
+      const text = document.getElementById('toast-message');
+      text.textContent = msg;
+      toast.classList.remove('hidden');
+      setTimeout(() => {
+        toast.classList.add('hidden');
+      }, 3200);
+    }
+  </script>
+</div></main></div></body></html>
