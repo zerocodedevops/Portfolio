@@ -43,15 +43,15 @@ function HeaderClient() {
   };
 
   return (
-    <header className="bg-brand-blue text-white shadow-md relative">
+    <header className="bg-brand-blue text-white shadow-md relative z-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
         <Link to="/client" className="shrink-0 relative z-50">
           <img
-            className="h-12 w-auto"
+            className="h-20 w-auto translate-y-8 cursor-pointer drop-shadow-md"
             src={logoSrc}
             alt="J.Barranco Logo"
             width={160}
-            height={40}
+            height={80}
           />
         </Link>
 

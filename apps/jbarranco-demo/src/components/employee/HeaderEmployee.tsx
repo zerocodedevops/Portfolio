@@ -23,11 +23,11 @@ function HeaderEmployee() {
         <div className="flex items-center w-1/3">
           <Link to="/employee" className="shrink-0 relative z-50">
             <img
-              className="h-25 w-auto translate-y-7.25 cursor-pointer"
+              className="h-20 w-auto translate-y-8 cursor-pointer drop-shadow-md"
               src={logoSrc}
               alt="J.Barranco Logo"
               width={160}
-              height={40}
+              height={80}
             />
           </Link>
         </div>
