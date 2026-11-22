@@ -9,7 +9,7 @@ function SubHeaderClient() {
     <div className="bg-white border-b border-gray-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16 gap-4">
         <nav
-          className="hidden lg:flex space-x-6 overflow-x-auto pb-4 sm:pb-0"
+          className="hidden lg:flex space-x-6 overflow-x-auto pl-28"
           aria-label="Tabs"
         >
           {clientNavigation.map((item) => {

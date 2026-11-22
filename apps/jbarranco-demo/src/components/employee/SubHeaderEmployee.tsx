@@ -20,13 +20,13 @@ function SubHeaderEmployee() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16 gap-4">
         {/* Mobile Title (Right/Center) */}
         {title && (
-          <h1 className="text-lg font-semibold text-gray-800 lg:hidden mr-auto">
+          <h1 className="text-lg font-semibold text-gray-800 lg:hidden pl-24 mr-auto">
             {title}
           </h1>
         )}
 
         {/* Desktop Navigation */}
-        <nav className="hidden lg:flex items-center space-x-6">
+        <nav className="hidden lg:flex items-center space-x-6 pl-28">
           <Link
             to="/employee"
             className={`text-sm font-medium hover:text-brand-blue ${

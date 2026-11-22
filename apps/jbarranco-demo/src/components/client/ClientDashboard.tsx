@@ -62,7 +62,7 @@ function ClientDashboard() {
     return (
         <div className="space-y-8 animate-fade-in">
             {/* Header de Bienvenida con Fondo Decorativo */}
-            <div className="relative overflow-hidden rounded-2xl bg-linear-to-r from-brand-blue to-blue-400 p-8 text-white shadow-xl">
+            <div className="relative overflow-hidden rounded-2xl bg-linear-to-r from-brand-blue via-brand-blue/85 to-gray-100 p-8 text-white shadow-xl">
                 <div className="relative z-10">
                     <h1 className="text-3xl md:text-4xl font-bold flex items-center gap-3">
                         {greeting}, {user?.displayName || "Cliente"}!
@@ -161,25 +161,23 @@ function ClientDashboard() {
                 </div>
             </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-                <Link
-                    to="/client/history"
-                    className="lg:col-start-3 group relative overflow-hidden rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg bg-linear-to-br from-indigo-50 to-purple-50 border border-indigo-100 flex flex-col items-center justify-center text-center h-full"
-                >
-                    <div className="w-14 h-14 bg-white rounded-2xl shadow-sm flex items-center justify-center mb-4 text-2xl group-hover:scale-110 transition-transform">
-                        ⭐
-                    </div>
-                    <h3 className="text-lg font-bold text-gray-900 group-hover:text-indigo-600 transition-colors">
-                        Tu Opinión Importa
-                    </h3>
-                    <p className="text-sm text-gray-500 mt-1">
-                        Valora los servicios completados
-                    </p>
-                    <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity text-indigo-300">
-                        →
-                    </div>
-                </Link>
-            </div>
+            <Link
+                to="/client/history"
+                className="group relative overflow-hidden rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg bg-white border border-gray-800 flex flex-col items-center justify-center text-center w-full"
+            >
+                <div className="w-14 h-14 bg-white rounded-2xl shadow-sm flex items-center justify-center mb-4 text-2xl group-hover:scale-110 transition-transform">
+                    ⭐
+                </div>
+                <h3 className="text-lg font-bold text-gray-900 group-hover:text-indigo-600 transition-colors">
+                    Tu Opinión Importa
+                </h3>
+                <p className="text-sm text-gray-500 mt-1">
+                    Valora los servicios completados
+                </p>
+                <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity text-indigo-300">
+                    →
+                </div>
+            </Link>
         </div>
     );
 }

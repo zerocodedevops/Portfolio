@@ -35,20 +35,20 @@ export default function DemoHeaderToolbar() {
       role="region"
       aria-label="Control de entorno de demostración"
       data-testid="demo-floating-toolbar"
-      className="inline-flex items-center gap-1.5 sm:gap-2.5 rounded-full border border-slate-700/60 bg-slate-900/95 px-3 py-1 text-xs text-slate-100 shadow-md backdrop-blur-md"
+      className="inline-flex shrink-0 whitespace-nowrap items-center gap-1.5 sm:gap-2.5 rounded-full border border-gray-200 bg-white px-3 py-1 text-xs text-gray-600 shadow-xs"
     >
       <a
         href="/#projects"
-        className="font-medium text-amber-300 underline underline-offset-2 transition-colors hover:text-white"
+        className="font-medium text-gray-500 transition-colors hover:text-brand-blue"
       >
         ← Portfolio
       </a>
 
-      <span className="text-slate-600 hidden sm:inline" aria-hidden="true">
+      <span className="text-gray-300 hidden sm:inline" aria-hidden="true">
         |
       </span>
 
-      <span className="font-medium text-slate-300 hidden md:inline">
+      <span className="font-medium text-gray-400 hidden md:inline">
         Vista:
       </span>
 
@@ -57,10 +57,10 @@ export default function DemoHeaderToolbar() {
           type="button"
           data-testid="demo-switch-admin"
           onClick={() => handleSwitchProfile("admin")}
-          className={`px-2 py-0.5 rounded-full font-semibold transition-all text-[11px] sm:text-xs ${
+          className={`px-2.5 py-0.5 rounded-full font-medium transition-all text-[11px] sm:text-xs ${
             user && userRole === "admin"
-              ? "bg-amber-400 text-slate-950 shadow-xs"
-              : "text-slate-300 hover:text-white hover:bg-slate-800"
+              ? "bg-brand-blue text-white font-semibold shadow-xs"
+              : "text-gray-600 hover:text-gray-900 hover:bg-gray-100"
           }`}
         >
           Admin
@@ -69,10 +69,10 @@ export default function DemoHeaderToolbar() {
           type="button"
           data-testid="demo-switch-cliente"
           onClick={() => handleSwitchProfile("cliente")}
-          className={`px-2 py-0.5 rounded-full font-semibold transition-all text-[11px] sm:text-xs ${
+          className={`px-2.5 py-0.5 rounded-full font-medium transition-all text-[11px] sm:text-xs ${
             user && userRole === "cliente"
-              ? "bg-amber-400 text-slate-950 shadow-xs"
-              : "text-slate-300 hover:text-white hover:bg-slate-800"
+              ? "bg-brand-blue text-white font-semibold shadow-xs"
+              : "text-gray-600 hover:text-gray-900 hover:bg-gray-100"
           }`}
         >
           Cliente
@@ -81,17 +81,17 @@ export default function DemoHeaderToolbar() {
           type="button"
           data-testid="demo-switch-empleado"
           onClick={() => handleSwitchProfile("empleado")}
-          className={`px-2 py-0.5 rounded-full font-semibold transition-all text-[11px] sm:text-xs ${
+          className={`px-2.5 py-0.5 rounded-full font-medium transition-all text-[11px] sm:text-xs ${
             user && userRole === "empleado"
-              ? "bg-amber-400 text-slate-950 shadow-xs"
-              : "text-slate-300 hover:text-white hover:bg-slate-800"
+              ? "bg-brand-blue text-white font-semibold shadow-xs"
+              : "text-gray-600 hover:text-gray-900 hover:bg-gray-100"
           }`}
         >
           Empleado
         </button>
       </div>
 
-      <span className="text-slate-600" aria-hidden="true">
+      <span className="text-gray-300" aria-hidden="true">
         |
       </span>
 
@@ -99,7 +99,7 @@ export default function DemoHeaderToolbar() {
         type="button"
         data-testid="demo-reset-button"
         onClick={handleResetDemo}
-        className="rounded-full bg-red-950/60 border border-red-800/40 px-2 py-0.5 font-medium text-red-200 hover:bg-red-900/80 hover:text-white transition-colors text-[11px] sm:text-xs"
+        className="rounded-full px-2 py-0.5 font-medium text-gray-500 hover:bg-red-50 hover:text-red-600 transition-colors text-[11px] sm:text-xs"
         title="Restaurar todos los datos, cuentas y sesión al estado inicial"
       >
         ↺ Reiniciar Demo
