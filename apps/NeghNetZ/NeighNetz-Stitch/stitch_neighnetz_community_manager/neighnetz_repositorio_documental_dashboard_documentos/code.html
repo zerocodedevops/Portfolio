@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+
+<html lang="es"><head><link rel="stylesheet" href="/fonts/fonts.css"/><link rel="stylesheet" href="/stitch-tailwind.css"/><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/>
+<style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style></head><body class="bg-surface font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-72 bg-surface-container-lowest z-50 flex flex-col shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-space-lg flex items-center justify-between"><div class="flex items-center gap-space-sm"><img alt="NeighNetZ Logo" class="h-8 w-auto object-contain" src="/images/demo-placeholder.svg"/><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight">NeighNetZ</span></div></div><div class="px-space-md py-space-sm"><div class="bg-surface-container-low rounded-lg p-space-sm flex items-center justify-between cursor-pointer hover:bg-surface-container transition-colors"><div class="flex items-center gap-space-sm overflow-hidden"><span class="material-symbols-outlined text-secondary text-[20px]">apartment</span><div class="flex flex-col truncate"><span class="font-label-sm text-label-sm text-on-surface-variant uppercase truncate">Comunidad Activa</span><span class="font-label-md text-label-md text-on-surface truncate">Residencial Los Sauces 14</span></div></div><span class="material-symbols-outlined text-on-surface-variant text-[18px]">unfold_more</span></div></div><nav class="flex-1 overflow-y-auto px-space-md py-space-sm flex flex-col gap-space-xs" data-active-classes="bg-primary-container text-on-primary font-bold rounded-lg"><div class="px-space-sm pt-space-sm pb-space-xs"><span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Área del Vecino</span></div><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container hover:text-on-surface transition-all" data-path="dashboard" href="#"><span class="material-symbols-outlined text-[20px]">home</span><span>Inicio / Tablón</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container hover:text-on-surface transition-all" data-path="dashboard-incidencias" href="#"><span class="material-symbols-outlined text-[20px]">report_problem</span><span>Incidencias</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container hover:text-on-surface transition-all" data-path="dashboard-reservas" href="#"><span class="material-symbols-outlined text-[20px]">event_available</span><span>Reservas</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container hover:text-on-surface transition-all" data-path="dashboard-votaciones" href="#"><span class="material-symbols-outlined text-[20px]">how_to_vote</span><span>Votaciones</span></a><a aria-current="page" class="flex items-center gap-space-sm px-space-sm py-space-sm transition-all bg-primary-container text-on-primary font-bold rounded-lg" data-path="dashboard-documentos" href="#"><span class="material-symbols-outlined text-[20px]">folder_shared</span><span>Documentos</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container hover:text-on-surface transition-all" data-path="dashboard-vecinos" href="#"><span class="material-symbols-outlined text-[20px]">groups</span><span>Directorio de Vecinos</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container hover:text-on-surface transition-all" data-path="dashboard-gastos" href="#"><span class="material-symbols-outlined text-[20px]">account_balance_wallet</span><span>Cuentas y Gastos</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container hover:text-on-surface transition-all" data-path="dashboard-perfil" href="#"><span class="material-symbols-outlined text-[20px]">person</span><span>Mi Perfil</span></a><div class="px-space-sm pt-space-md pb-space-xs"><span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Panel de Administración</span></div><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container hover:text-on-surface transition-all" data-path="admin" href="#"><span class="material-symbols-outlined text-[20px]">monitoring</span><span>Panel Ejecutivo</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container hover:text-on-surface transition-all" data-path="admin-usuarios" href="#"><span class="material-symbols-outlined text-[20px]">verified_user</span><span>Validar Vecinos</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container hover:text-on-surface transition-all" data-path="admin-incidencias" href="#"><span class="material-symbols-outlined text-[20px]">assignment_late</span><span>Gestión de Incidencias</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container hover:text-on-surface transition-all" data-path="admin-reservas" href="#"><span class="material-symbols-outlined text-[20px]">book_online</span><span>Gestión de Reservas</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container hover:text-on-surface transition-all" data-path="admin-documentos" href="#"><span class="material-symbols-outlined text-[20px]">file_copy</span><span>Gestión Documental</span></a></nav><div class="p-space-md mt-auto"><div class="bg-surface-container-low rounded-lg p-space-sm flex items-center justify-between"><div class="flex items-center gap-space-sm"><span class="h-2 w-2 rounded-full bg-secondary"></span><span class="font-label-sm text-label-sm text-on-surface-variant">Servicios Operativos</span></div><span class="font-label-sm text-label-sm text-secondary font-bold">v2.4</span></div></div></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 h-16 bg-surface-container-lowest/80 backdrop-blur-xl z-40 flex items-center justify-between px-space-lg shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex items-center w-96"><div class="relative w-full flex items-center"><span class="material-symbols-outlined absolute left-space-sm text-on-surface-variant text-[20px]">search</span><input class="w-full bg-surface-container-low text-on-surface placeholder:text-on-surface-variant font-body-sm text-body-sm pl-9 pr-space-md py-space-xs rounded-lg outline-none focus:bg-surface-container-lowest transition-colors" placeholder="Buscar acuerdos, actas, reservas o incidencias..." type="text"/></div></div><div class="flex items-center gap-space-md"><div class="hidden sm:flex items-center gap-space-xs px-space-sm py-space-xs rounded-full bg-badge-emerald-bg"><span class="h-2 w-2 rounded-full bg-secondary animate-pulse"></span><span class="font-label-sm text-label-sm text-badge-emerald-text">Firebase Online</span></div><button aria-label="Notificaciones" class="relative p-space-xs rounded-full hover:bg-surface-container transition-colors text-on-surface-variant hover:text-on-surface" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-1 right-1 h-2 w-2 rounded-full bg-urgent-coral"></span></button><div class="flex items-center gap-space-sm pl-space-sm"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="/images/demo-placeholder.svg"/><div class="flex flex-col text-left"><span class="font-label-md text-label-md text-on-surface">Elena Morales</span><span class="font-label-sm text-label-sm text-on-surface-variant">Propietaria / Vicepresidenta</span></div></div></div></header><main class="relative pt-16 bg-surface min-h-screen"><div class="flex flex-col w-full">
+<div class="px-space-lg py-space-xl max-w-[1440px] mx-auto w-full flex flex-col gap-space-lg">
+<!-- Top Action Bar & Editorial Header -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-md">
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center gap-space-xs text-on-surface-variant font-label-sm text-label-sm uppercase tracking-wider">
+<span class="inline-block w-2 h-2 rounded-full bg-secondary"></span>
+<span>Portal de Transparencia &amp; Custodia Digital</span>
+</div>
+<h1 class="font-headline-xl text-headline-xl text-on-surface tracking-tight">Repositorio Documental de la Comunidad</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">Consulta oficial, actas legalizadas y contratos vigentes de Residencial Los Sauces 14.</p>
+</div>
+<!-- Live Storage Status & Action Pill -->
+<div class="flex items-center gap-space-sm bg-surface-container-lowest shadow-sm rounded-xl p-space-sm self-start md:self-auto">
+<div class="flex items-center gap-space-xs px-space-sm py-space-xs rounded-lg bg-badge-emerald-bg">
+<span class="material-symbols-outlined text-[18px] text-badge-emerald-text">lock</span>
+<span class="font-label-sm text-label-sm text-badge-emerald-text font-bold">AES-256</span>
+</div>
+<div class="flex flex-col pr-space-sm">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-sm text-label-sm text-on-surface font-semibold">Firebase Cloud Storage</span>
+<span class="h-1.5 w-1.5 rounded-full bg-secondary"></span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">1.4 GB / 10 GB utilizados (14%)</span>
+</div>
+</div>
+</div>
+<!-- Storage Visual Progress Strip & Security Banner -->
+<div class="grid grid-cols-1 lg:grid-cols-4 gap-space-md">
+<div class="lg:col-span-3 bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col justify-between gap-space-sm">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-xs">
+<div class="flex items-center gap-space-xs text-on-surface">
+<span class="material-symbols-outlined text-secondary text-[20px]">cloud_done</span>
+<span class="font-label-md text-label-md">Sincronización Notarial Inmutable</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Último volcado administrativo: Hoy a las 09:32</span>
+</div>
+<!-- Interactive storage meter -->
+<div class="flex flex-col gap-space-xs">
+<div class="w-full bg-surface-container-low h-2.5 rounded-full overflow-hidden flex">
+<div class="bg-primary h-full transition-all duration-500" style="width: 45%;" title="Actas y Legal"></div>
+<div class="bg-secondary h-full transition-all duration-500" style="width: 28%;" title="Presupuestos"></div>
+<div class="bg-badge-amber-text h-full transition-all duration-500" style="width: 17%;" title="Contratos y Seguros"></div>
+<div class="bg-surface-tint h-full transition-all duration-500" style="width: 10%;" title="Otros"></div>
+</div>
+<div class="flex flex-wrap items-center justify-between text-on-surface-variant font-label-sm text-label-sm pt-space-xs">
+<span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-primary"></span> Actas (630 MB)</span>
+<span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-secondary"></span> Contabilidad (392 MB)</span>
+<span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-badge-amber-text"></span> Pólizas &amp; Contratos (238 MB)</span>
+<span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-surface-tint"></span> ITE e Informes (140 MB)</span>
+</div>
+</div>
+</div>
+<!-- Quick Trust Metric Card -->
+<div class="bg-primary-container text-on-primary rounded-xl p-space-md shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-primary-container">Auditoría Legal</span>
+<span class="material-symbols-outlined text-[20px] text-secondary-fixed">verified</span>
+</div>
+<div class="my-space-xs">
+<div class="font-headline-lg text-headline-lg tracking-tight">33 Archivos</div>
+<p class="font-body-sm text-body-sm text-primary-fixed-dim">Cotejados por Administrador Colegiado nº 4.821</p>
+</div>
+<div class="font-label-sm text-label-sm text-secondary-fixed flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">history</span>
+<span>Histórico completo desde 2018</span>
+</div>
+</div>
+</div>
+<!-- Filter & Breadcrumbs Control Bar -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-md bg-surface-container-lowest p-space-md rounded-xl shadow-sm">
+<!-- Breadcrumb Path -->
+<nav aria-label="Navegación de carpetas" class="flex items-center gap-space-xs font-label-md text-label-md">
+<button class="flex items-center gap-space-xs text-on-surface-variant hover:text-on-surface transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">folder_special</span>
+<span>Documentos</span>
+</button>
+<span class="material-symbols-outlined text-on-surface-variant text-[16px]">chevron_right</span>
+<div class="flex items-center gap-space-xs px-space-xs py-0.5 rounded bg-surface-container-low text-on-surface font-bold">
+<span class="material-symbols-outlined text-[16px] text-primary">folder_open</span>
+<span>Actas de Juntas Ordinarias y Extraordinarias</span>
+</div>
+</nav>
+<!-- Search & Year Filters -->
+<div class="flex flex-wrap items-center gap-space-sm">
+<div class="relative min-w-[240px] flex-1 sm:flex-initial">
+<span class="material-symbols-outlined absolute left-space-sm top-1/2 -translate-y-1/2 text-on-surface-variant text-[18px]">search</span>
+<input class="w-full bg-surface-container-low text-on-surface placeholder:text-on-surface-variant font-body-sm text-body-sm pl-9 pr-space-md py-2 rounded-lg outline-none focus:bg-surface-container-lowest transition-all" id="docSearchInput" placeholder="Buscar por acta, nº convocatoria o fecha..." type="text"/>
+</div>
+<!-- Year Switcher Pills -->
+<div class="flex items-center bg-surface-container-low p-1 rounded-lg" id="yearSelector">
+<button class="year-pill px-space-sm py-1 rounded-md text-on-primary bg-primary font-label-sm text-label-sm shadow-sm transition-all" data-year="2024" type="button">2024</button>
+<button class="year-pill px-space-sm py-1 rounded-md text-on-surface-variant hover:text-on-surface font-label-sm text-label-sm transition-all" data-year="2023" type="button">2023</button>
+<button class="year-pill px-space-sm py-1 rounded-md text-on-surface-variant hover:text-on-surface font-label-sm text-label-sm transition-all" data-year="2022" type="button">2022</button>
+<button class="year-pill px-space-sm py-1 rounded-md text-on-surface-variant hover:text-on-surface font-label-sm text-label-sm transition-all" data-year="all" type="button">Todos</button>
+</div>
+</div>
+</div>
+<!-- Official Community Folders (Bento Grid Style) -->
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">Carpetas Oficiales de la Comunidad</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">5 directorios con firma telemática</span>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-space-md">
+<!-- Folder 1: Actas (Active) -->
+<div class="cursor-pointer group bg-surface-container-lowest p-space-md rounded-xl shadow-md transition-all transform hover:-translate-y-1 relative overflow-hidden flex flex-col justify-between">
+<div class="absolute top-0 left-0 right-0 h-1 bg-primary"></div>
+<div>
+<div class="flex items-start justify-between mb-space-sm">
+<div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[24px]">gavel</span>
+</div>
+<span class="px-space-xs py-0.5 rounded-full bg-badge-navy-bg text-badge-navy-text font-label-sm text-label-sm">Seleccionada</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface mb-1 group-hover:text-primary transition-colors">Actas de Juntas</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">Ordinarias y extraordinarias firmadas</p>
+</div>
+<div class="flex items-center justify-between pt-space-md mt-space-sm bg-surface-container-lowest">
+<span class="font-label-md text-label-md text-on-surface font-bold">12 documentos</span>
+<span class="material-symbols-outlined text-primary text-[20px]">arrow_forward</span>
+</div>
+</div>
+<!-- Folder 2: Estatutos -->
+<div class="cursor-pointer group bg-surface-container-lowest p-space-md rounded-xl shadow-sm hover:shadow-md transition-all transform hover:-translate-y-1 flex flex-col justify-between">
+<div>
+<div class="flex items-start justify-between mb-space-sm">
+<div class="w-10 h-10 rounded-lg bg-badge-emerald-bg flex items-center justify-center text-badge-emerald-text">
+<span class="material-symbols-outlined text-[24px]">menu_book</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant text-[18px]">verified</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface mb-1 group-hover:text-secondary transition-colors">Estatutos y Normas</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">Régimen interno y títulos constitutivos</p>
+</div>
+<div class="flex items-center justify-between pt-space-md mt-space-sm">
+<span class="font-label-md text-label-md text-on-surface font-bold">3 documentos</span>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-on-surface text-[20px]">chevron_right</span>
+</div>
+</div>
+<!-- Folder 3: Presupuestos -->
+<div class="cursor-pointer group bg-surface-container-lowest p-space-md rounded-xl shadow-sm hover:shadow-md transition-all transform hover:-translate-y-1 flex flex-col justify-between">
+<div>
+<div class="flex items-start justify-between mb-space-sm">
+<div class="w-10 h-10 rounded-lg bg-badge-amber-bg flex items-center justify-center text-badge-amber-text">
+<span class="material-symbols-outlined text-[24px]">payments</span>
+</div>
+<span class="px-space-xs py-0.5 rounded-full bg-badge-amber-bg text-badge-amber-text font-label-sm text-label-sm">Auditado</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface mb-1 group-hover:text-badge-amber-text transition-colors">Cuentas Anuales</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">Presupuestos aprobados y balances trimestrales</p>
+</div>
+<div class="flex items-center justify-between pt-space-md mt-space-sm">
+<span class="font-label-md text-label-md text-on-surface font-bold">8 documentos</span>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-on-surface text-[20px]">chevron_right</span>
+</div>
+</div>
+<!-- Folder 4: Contratos y Seguros -->
+<div class="cursor-pointer group bg-surface-container-lowest p-space-md rounded-xl shadow-sm hover:shadow-md transition-all transform hover:-translate-y-1 flex flex-col justify-between">
+<div>
+<div class="flex items-start justify-between mb-space-sm">
+<div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined text-[24px]">handshake</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant text-[18px]">shield</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface mb-1 group-hover:text-primary transition-colors">Contratos y Seguros</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">Ascensores Otis, Limpieza, Póliza Mapfre</p>
+</div>
+<div class="flex items-center justify-between pt-space-md mt-space-sm">
+<span class="font-label-md text-label-md text-on-surface font-bold">6 documentos</span>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-on-surface text-[20px]">chevron_right</span>
+</div>
+</div>
+<!-- Folder 5: Informes Técnicos -->
+<div class="cursor-pointer group bg-surface-container-lowest p-space-md rounded-xl shadow-sm hover:shadow-md transition-all transform hover:-translate-y-1 flex flex-col justify-between">
+<div>
+<div class="flex items-start justify-between mb-space-sm">
+<div class="w-10 h-10 rounded-lg bg-badge-coral-bg flex items-center justify-center text-badge-coral-text">
+<span class="material-symbols-outlined text-[24px]">domain_verification</span>
+</div>
+<span class="px-space-xs py-0.5 rounded-full bg-badge-emerald-bg text-badge-emerald-text font-label-sm text-label-sm">Favorable</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface mb-1 group-hover:text-badge-coral-text transition-colors">Informes e ITE</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">Inspección Técnica de Edificios y Calefacción</p>
+</div>
+<div class="flex items-center justify-between pt-space-md mt-space-sm">
+<span class="font-label-md text-label-md text-on-surface font-bold">4 documentos</span>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-on-surface text-[20px]">chevron_right</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Editorial Contextual Visual & Administrative Stamp -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-space-lg items-stretch">
+<!-- High Aesthetic Document Header Visual -->
+<div class="relative rounded-xl overflow-hidden shadow-sm bg-surface-container-lowest flex flex-col justify-between p-space-lg group">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="Modern architectural close up of contemporary residential brick building facades with sunlit balconies, clean geometry, minimalist slate and glass textures in soft natural lighting, conveying high standard property management" style="background-image: url('/images/demo-placeholder.svg')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-primary-container via-primary-container/70 to-transparent"></div>
+<div class="relative z-10 flex items-center justify-between text-on-primary">
+<span class="px-space-sm py-1 rounded bg-surface-container-lowest/20 backdrop-blur-md font-label-sm text-label-sm uppercase tracking-wider">Acta Destacada</span>
+<span class="material-symbols-outlined text-[20px]">verified_user</span>
+</div>
+<div class="relative z-10 flex flex-col gap-space-xs text-on-primary pt-space-xl">
+<span class="font-label-sm text-label-sm text-secondary-fixed">Última Sesión General</span>
+<h3 class="font-headline-md text-headline-md leading-tight">Junta General Ordinaria de Propietarios - Marzo 2024</h3>
+<p class="font-body-sm text-body-sm text-primary-fixed-dim line-clamp-2">Aprobación de liquidación de cuentas 2023, adjudicación de impermeabilización y renovación de cargos de gobierno.</p>
+<div class="pt-space-xs flex items-center gap-space-sm">
+<button class="px-space-md py-2 rounded-lg bg-surface-container-lowest text-on-surface font-label-md text-label-md hover:bg-surface-container transition-all flex items-center gap-1 shadow-sm" onclick="openPreviewModal('Acta Junta Ordinaria Marzo 2024', 'ACT-2024-03-JGO.pdf', '3.8 MB', '18 Mar 2024', 'Administración Fincas Gómez')" type="button">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+<span>Leer Resumen</span>
+</button>
+<button class="px-space-sm py-2 rounded-lg bg-surface-container-lowest/20 backdrop-blur-md text-on-primary hover:bg-surface-container-lowest/30 transition-all font-label-sm text-label-sm flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-[18px]">download</span>
+<span>3.8 MB</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Quick Guidance & Protocol Cards (2 cols) -->
+<div class="lg:col-span-2 bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col justify-between gap-space-md">
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Garantía Jurídica Ley de Propiedad Horizontal</span>
+<span class="flex items-center gap-1 font-label-sm text-label-sm text-secondary font-semibold">
+<span class="material-symbols-outlined text-[16px]">security</span>
+<span>Cotejo Criptográfico OK</span>
+</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface">Validez Legal de las Copias Digitales</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+            Todos los ficheros disponibles en este gestor documental contienen el sello de tiempo digital expedido por la secretaría de la comunidad y la firma electrónica cualificada del Administrador Colegiado, gozando de plena validez probatoria conforme al Art. 19 de la LPH.
+          </p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-space-sm pt-space-sm bg-surface-container-low p-space-md rounded-lg">
+<div class="flex flex-col gap-1">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Custodia</span>
+<span class="font-label-md text-label-md text-on-surface font-bold">5 años obligatorios</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Libro de actas físico custodiado</span>
+</div>
+<div class="flex flex-col gap-1">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Privacidad</span>
+<span class="font-label-md text-label-md text-on-surface font-bold">RGPD Anonimizado</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Datos bancarios enmascarados</span>
+</div>
+<div class="flex flex-col gap-1">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Descarga Masiva</span>
+<span class="font-label-md text-label-md text-on-surface font-bold">Exportación ZIP</span>
+<button class="text-left font-label-sm text-label-sm text-secondary font-bold hover:underline flex items-center gap-0.5" type="button">
+<span>Descargar ejercicio 2023</span>
+<span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Active Folder Listing: Actas de Juntas -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden flex flex-col">
+<!-- Table Header Bar -->
+<div class="px-space-lg py-space-md bg-surface-container-lowest flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<div class="p-2 rounded-lg bg-surface-container-low text-on-surface">
+<span class="material-symbols-outlined text-[20px]">folder</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Archivos en 'Actas de Juntas'</h3>
+<span class="px-space-xs py-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm" id="itemCounterBadge">6 documentos visibles</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Expedientes digitalizados, transcripciones y votaciones desglosadas</span>
+</div>
+</div>
+<div class="flex items-center gap-space-xs">
+<button class="px-space-sm py-1.5 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface font-label-md text-label-md transition-colors flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-[18px]">sort</span>
+<span>Fecha (más reciente)</span>
+</button>
+<button class="px-space-md py-1.5 rounded-lg bg-primary text-on-primary font-label-md text-label-md hover:bg-slate-800 transition-all flex items-center gap-1 shadow-sm" onclick="alert('Solicitando paquete comprimido al servidor... Se enviará enlace a su correo.');" type="button">
+<span class="material-symbols-outlined text-[18px]">folder_zip</span>
+<span class="hidden md:inline">Descargar Carpeta</span>
+</button>
+</div>
+</div>
+<!-- File Table -->
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse" id="filesTable">
+<thead>
+<tr class="bg-surface-container-low text-on-surface-variant font-label-sm text-label-sm uppercase tracking-wider">
+<th class="py-space-sm px-space-lg" scope="col">Documento</th>
+<th class="py-space-sm px-space-md" scope="col">Categoría</th>
+<th class="py-space-sm px-space-md" scope="col">Tamaño</th>
+<th class="py-space-sm px-space-md" scope="col">Fecha de Subida</th>
+<th class="py-space-sm px-space-md" scope="col">Subido por</th>
+<th class="py-space-sm px-space-lg text-right" scope="col">Acciones</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container-low text-on-surface font-body-sm text-body-sm">
+<!-- Row 1: PDF -->
+<tr class="file-row hover:bg-surface-container-low/60 transition-colors" data-title="Acta Junta General Ordinaria - Marzo 2024" data-year="2024">
+<td class="py-space-md px-space-lg">
+<div class="flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded-lg bg-badge-coral-bg flex items-center justify-center text-badge-coral-text flex-shrink-0">
+<span class="material-symbols-outlined text-[22px]">picture_as_pdf</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md text-on-surface font-bold truncate">Acta Junta General Ordinaria - Convocatoria 2024</span>
+<span class="text-on-surface-variant text-[11px] font-mono">ACT-2024-03-JGO-FINAL.pdf</span>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<span class="inline-flex px-space-xs py-0.5 rounded-full bg-badge-navy-bg text-badge-navy-text font-label-sm text-label-sm">Ordinaria</span>
+</td>
+<td class="py-space-md px-space-md font-mono text-on-surface-variant">2.4 MB</td>
+<td class="py-space-md px-space-md">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface">22 Mar 2024</span>
+<span class="text-on-surface-variant text-[11px]">11:20 AM</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-secondary">verified</span>
+<span class="font-label-sm text-label-sm text-on-surface">Admin. Fincas Gómez</span>
+</div>
+</td>
+<td class="py-space-md px-space-lg text-right">
+<div class="flex items-center justify-end gap-space-xs">
+<button class="p-2 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface transition-colors" onclick="openPreviewModal('Acta Junta General Ordinaria - Convocatoria 2024', 'ACT-2024-03-JGO-FINAL.pdf', '2.4 MB', '22 Mar 2024', 'Administración Fincas Gómez')" title="Vista Previa Rápida" type="button">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+<a class="p-2 rounded-lg bg-surface-container-low hover:bg-primary hover:text-on-primary text-on-surface transition-colors" download="" href="#download" onclick="triggerDownloadToast('ACT-2024-03-JGO-FINAL.pdf')" title="Descargar archivo">
+<span class="material-symbols-outlined text-[18px]">download</span>
+</a>
+</div>
+</td>
+</tr>
+<!-- Row 2: XLS -->
+<tr class="file-row hover:bg-surface-container-low/60 transition-colors" data-title="Desglose de Votaciones y Coeficientes - Junta 2024" data-year="2024">
+<td class="py-space-md px-space-lg">
+<div class="flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded-lg bg-badge-emerald-bg flex items-center justify-center text-badge-emerald-text flex-shrink-0">
+<span class="material-symbols-outlined text-[22px]">table_chart</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md text-on-surface font-bold truncate">Desglose de Coeficientes y Votaciones Registradas</span>
+<span class="text-on-surface-variant text-[11px] font-mono">VOT-2024-CUOTAS-RESIDENCIAL.xlsx</span>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<span class="inline-flex px-space-xs py-0.5 rounded-full bg-badge-emerald-bg text-badge-emerald-text font-label-sm text-label-sm">Escrutinio</span>
+</td>
+<td class="py-space-md px-space-md font-mono text-on-surface-variant">860 KB</td>
+<td class="py-space-md px-space-md">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface">22 Mar 2024</span>
+<span class="text-on-surface-variant text-[11px]">11:22 AM</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-secondary">verified</span>
+<span class="font-label-sm text-label-sm text-on-surface">Admin. Fincas Gómez</span>
+</div>
+</td>
+<td class="py-space-md px-space-lg text-right">
+<div class="flex items-center justify-end gap-space-xs">
+<button class="p-2 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface transition-colors" onclick="openPreviewModal('Desglose de Coeficientes y Votaciones Registradas', 'VOT-2024-CUOTAS-RESIDENCIAL.xlsx', '860 KB', '22 Mar 2024', 'Administración Fincas Gómez')" title="Vista Previa Rápida" type="button">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+<a class="p-2 rounded-lg bg-surface-container-low hover:bg-primary hover:text-on-primary text-on-surface transition-colors" download="" href="#download" onclick="triggerDownloadToast('VOT-2024-CUOTAS-RESIDENCIAL.xlsx')" title="Descargar archivo">
+<span class="material-symbols-outlined text-[18px]">download</span>
+</a>
+</div>
+</td>
+</tr>
+<!-- Row 3: PDF -->
+<tr class="file-row hover:bg-surface-container-low/60 transition-colors" data-title="Acta Extraordinaria - Renovación de Calderas Centrales" data-year="2023">
+<td class="py-space-md px-space-lg">
+<div class="flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded-lg bg-badge-coral-bg flex items-center justify-center text-badge-coral-text flex-shrink-0">
+<span class="material-symbols-outlined text-[22px]">picture_as_pdf</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md text-on-surface font-bold truncate">Acta Extraordinaria - Sustitución Caldera Sala Térmica</span>
+<span class="text-on-surface-variant text-[11px] font-mono">ACT-2023-11-EXTRA-CALDERA.pdf</span>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<span class="inline-flex px-space-xs py-0.5 rounded-full bg-badge-amber-bg text-badge-amber-text font-label-sm text-label-sm">Extraordinaria</span>
+</td>
+<td class="py-space-md px-space-md font-mono text-on-surface-variant">3.1 MB</td>
+<td class="py-space-md px-space-md">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface">14 Nov 2023</span>
+<span class="text-on-surface-variant text-[11px]">18:45 PM</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-secondary">verified</span>
+<span class="font-label-sm text-label-sm text-on-surface">Admin. Fincas Gómez</span>
+</div>
+</td>
+<td class="py-space-md px-space-lg text-right">
+<div class="flex items-center justify-end gap-space-xs">
+<button class="p-2 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface transition-colors" onclick="openPreviewModal('Acta Extraordinaria - Sustitución Caldera Sala Térmica', 'ACT-2023-11-EXTRA-CALDERA.pdf', '3.1 MB', '14 Nov 2023', 'Administración Fincas Gómez')" title="Vista Previa Rápida" type="button">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+<a class="p-2 rounded-lg bg-surface-container-low hover:bg-primary hover:text-on-primary text-on-surface transition-colors" download="" href="#download" onclick="triggerDownloadToast('ACT-2023-11-EXTRA-CALDERA.pdf')" title="Descargar archivo">
+<span class="material-symbols-outlined text-[18px]">download</span>
+</a>
+</div>
+</td>
+</tr>
+<!-- Row 4: PDF -->
+<tr class="file-row hover:bg-surface-container-low/60 transition-colors" data-title="Acta Junta General Ordinaria - Convocatoria 2023" data-year="2023">
+<td class="py-space-md px-space-lg">
+<div class="flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded-lg bg-badge-coral-bg flex items-center justify-center text-badge-coral-text flex-shrink-0">
+<span class="material-symbols-outlined text-[22px]">picture_as_pdf</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md text-on-surface font-bold truncate">Acta Junta General Ordinaria - Ejercicio 2023</span>
+<span class="text-on-surface-variant text-[11px] font-mono">ACT-2023-04-JGO-PROTOCOLO.pdf</span>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<span class="inline-flex px-space-xs py-0.5 rounded-full bg-badge-navy-bg text-badge-navy-text font-label-sm text-label-sm">Ordinaria</span>
+</td>
+<td class="py-space-md px-space-md font-mono text-on-surface-variant">4.6 MB</td>
+<td class="py-space-md px-space-md">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface">19 Abr 2023</span>
+<span class="text-on-surface-variant text-[11px]">09:15 AM</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-secondary">verified</span>
+<span class="font-label-sm text-label-sm text-on-surface">Admin. Fincas Gómez</span>
+</div>
+</td>
+<td class="py-space-md px-space-lg text-right">
+<div class="flex items-center justify-end gap-space-xs">
+<button class="p-2 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface transition-colors" onclick="openPreviewModal('Acta Junta General Ordinaria - Ejercicio 2023', 'ACT-2023-04-JGO-PROTOCOLO.pdf', '4.6 MB', '19 Abr 2023', 'Administración Fincas Gómez')" title="Vista Previa Rápida" type="button">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+<a class="p-2 rounded-lg bg-surface-container-low hover:bg-primary hover:text-on-primary text-on-surface transition-colors" download="" href="#download" onclick="triggerDownloadToast('ACT-2023-04-JGO-PROTOCOLO.pdf')" title="Descargar archivo">
+<span class="material-symbols-outlined text-[18px]">download</span>
+</a>
+</div>
+</td>
+</tr>
+<!-- Row 5: PDF -->
+<tr class="file-row hover:bg-surface-container-low/60 transition-colors" data-title="Acta Extraordinaria - Aprobación Instalación Cámaras Seguridad" data-year="2022">
+<td class="py-space-md px-space-lg">
+<div class="flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded-lg bg-badge-coral-bg flex items-center justify-center text-badge-coral-text flex-shrink-0">
+<span class="material-symbols-outlined text-[22px]">picture_as_pdf</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md text-on-surface font-bold truncate">Acta Extraordinaria - Circuito Cerrado CCTV Garajes</span>
+<span class="text-on-surface-variant text-[11px] font-mono">ACT-2022-09-EXTRA-CCTV.pdf</span>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<span class="inline-flex px-space-xs py-0.5 rounded-full bg-badge-amber-bg text-badge-amber-text font-label-sm text-label-sm">Extraordinaria</span>
+</td>
+<td class="py-space-md px-space-md font-mono text-on-surface-variant">1.9 MB</td>
+<td class="py-space-md px-space-md">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface">28 Sep 2022</span>
+<span class="text-on-surface-variant text-[11px]">17:30 PM</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-secondary">verified</span>
+<span class="font-label-sm text-label-sm text-on-surface">Admin. Fincas Gómez</span>
+</div>
+</td>
+<td class="py-space-md px-space-lg text-right">
+<div class="flex items-center justify-end gap-space-xs">
+<button class="p-2 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface transition-colors" onclick="openPreviewModal('Acta Extraordinaria - Circuito Cerrado CCTV Garajes', 'ACT-2022-09-EXTRA-CCTV.pdf', '1.9 MB', '28 Sep 2022', 'Administración Fincas Gómez')" title="Vista Previa Rápida" type="button">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+<a class="p-2 rounded-lg bg-surface-container-low hover:bg-primary hover:text-on-primary text-on-surface transition-colors" download="" href="#download" onclick="triggerDownloadToast('ACT-2022-09-EXTRA-CCTV.pdf')" title="Descargar archivo">
+<span class="material-symbols-outlined text-[18px]">download</span>
+</a>
+</div>
+</td>
+</tr>
+<!-- Row 6: XLS -->
+<tr class="file-row hover:bg-surface-container-low/60 transition-colors" data-title="Liquidación Cuentas Anuales Ejercicio 2022" data-year="2022">
+<td class="py-space-md px-space-lg">
+<div class="flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded-lg bg-badge-emerald-bg flex items-center justify-center text-badge-emerald-text flex-shrink-0">
+<span class="material-symbols-outlined text-[22px]">table_chart</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md text-on-surface font-bold truncate">Anexo Contable Liquidación y Balance Ejercicio 2022</span>
+<span class="text-on-surface-variant text-[11px] font-mono">LIQ-2022-RESIDENCIAL-SAUCES.xlsx</span>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<span class="inline-flex px-space-xs py-0.5 rounded-full bg-badge-emerald-bg text-badge-emerald-text font-label-sm text-label-sm">Liquidación</span>
+</td>
+<td class="py-space-md px-space-md font-mono text-on-surface-variant">1.1 MB</td>
+<td class="py-space-md px-space-md">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface">15 Mar 2022</span>
+<span class="text-on-surface-variant text-[11px]">10:05 AM</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-secondary">verified</span>
+<span class="font-label-sm text-label-sm text-on-surface">Admin. Fincas Gómez</span>
+</div>
+</td>
+<td class="py-space-md px-space-lg text-right">
+<div class="flex items-center justify-end gap-space-xs">
+<button class="p-2 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface transition-colors" onclick="openPreviewModal('Anexo Contable Liquidación y Balance Ejercicio 2022', 'LIQ-2022-RESIDENCIAL-SAUCES.xlsx', '1.1 MB', '15 Mar 2022', 'Administración Fincas Gómez')" title="Vista Previa Rápida" type="button">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+<a class="p-2 rounded-lg bg-surface-container-low hover:bg-primary hover:text-on-primary text-on-surface transition-colors" download="" href="#download" onclick="triggerDownloadToast('LIQ-2022-RESIDENCIAL-SAUCES.xlsx')" title="Descargar archivo">
+<span class="material-symbols-outlined text-[18px]">download</span>
+</a>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Empty State container (hidden by default) -->
+<div class="hidden p-space-xl flex-col items-center justify-center text-center" id="noResults">
+<span class="material-symbols-outlined text-[48px] text-on-surface-variant mb-space-sm">folder_off</span>
+<h4 class="font-headline-sm text-headline-sm text-on-surface">No se han encontrado actas coincidentes</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant max-w-sm mt-1">Pruebe a cambiar el año seleccionado o restablecer el filtro del buscador superior.</p>
+<button class="mt-space-md px-space-md py-2 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface font-label-md text-label-md transition-colors" onclick="resetFilters()" type="button">
+          Restablecer Filtros
+        </button>
+</div>
+<!-- Pagination / Footer Info -->
+<div class="px-space-lg py-space-sm bg-surface-container-low flex flex-col sm:flex-row items-center justify-between gap-space-xs">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Mostrando documentos correspondientes a la custodia legal certificada</span>
+<div class="flex items-center gap-space-xs">
+<button class="px-space-xs py-1 rounded text-on-surface-variant hover:text-on-surface font-label-sm text-label-sm" disabled="" type="button">Anterior</button>
+<span class="px-space-sm py-0.5 rounded bg-surface-container-lowest text-on-surface font-label-sm text-label-sm shadow-xs font-bold">1</span>
+<button class="px-space-xs py-1 rounded text-on-surface-variant hover:text-on-surface font-label-sm text-label-sm" type="button">Siguiente</button>
+</div>
+</div>
+</div>
+<!-- Security, Hash & Compliance Bottom Ledger -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col md:flex-row items-start md:items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-md">
+<div class="w-10 h-10 rounded-full bg-badge-emerald-bg flex items-center justify-center text-badge-emerald-text flex-shrink-0">
+<span class="material-symbols-outlined text-[20px]">enhanced_encryption</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface">Custodia de Integridad SHA-256 Activa</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Cada fichero posee una huella digital verificable ante Notaría o Registro de la Propiedad en caso de litigio civil.</span>
+</div>
+</div>
+<div class="flex items-center gap-space-sm self-end md:self-auto">
+<span class="font-mono text-[11px] text-on-surface-variant bg-surface-container-low px-space-sm py-1.5 rounded-lg select-all cursor-copy" title="Click para copiar hash del último bloque">0x8f2a...c391eb</span>
+<button class="p-1.5 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface transition-colors" onclick="navigator.clipboard.writeText('0x8f2a991c0b34de45aa701c391eb'); alert('Hash de custodia copiado al portapapeles.');" title="Copiar Hash" type="button">
+<span class="material-symbols-outlined text-[16px]">content_copy</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Interactive Quick Preview Modal Overlay (Layer 3) -->
+<div class="fixed inset-0 z-50 hidden items-center justify-center bg-inverse-surface/40 backdrop-blur-sm p-space-md" id="previewModal">
+<div class="bg-surface-container-lowest rounded-xl max-w-2xl w-full shadow-xl overflow-hidden flex flex-col transform transition-all">
+<!-- Modal Header -->
+<div class="px-space-lg py-space-md bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[22px]">quick_reference</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">Visor Previo Certificado</span>
+</div>
+<button class="p-1 rounded-full text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors" onclick="closePreviewModal()" type="button">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<!-- Modal Body -->
+<div class="p-space-lg flex flex-col gap-space-md">
+<div class="flex items-start gap-space-md p-space-md rounded-lg bg-surface-container-low">
+<div class="w-12 h-12 rounded-lg bg-badge-coral-bg text-badge-coral-text flex items-center justify-center flex-shrink-0" id="modalDocIcon">
+<span class="material-symbols-outlined text-[28px]">description</span>
+</div>
+<div class="flex flex-col min-w-0 flex-1">
+<h4 class="font-headline-sm text-headline-sm text-on-surface truncate" id="modalDocTitle">Documento Seleccionado</h4>
+<span class="font-mono text-body-sm text-on-surface-variant" id="modalDocFilename">archivo.pdf</span>
+<div class="flex flex-wrap items-center gap-space-sm mt-space-xs text-on-surface-variant font-label-sm text-label-sm">
+<span id="modalDocSize">-- MB</span>
+<span>•</span>
+<span id="modalDocDate">-- --- ----</span>
+<span>•</span>
+<span class="text-secondary font-bold" id="modalDocAuthor">--</span>
+</div>
+</div>
+</div>
+<!-- Simulated Document Summary Content -->
+<div class="bg-surface p-space-md rounded-lg flex flex-col gap-space-xs">
+<div class="flex items-center justify-between border-b border-surface-container pb-space-xs">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">Extracto de Firma Electrónica</span>
+<span class="px-space-xs py-0.5 rounded bg-badge-emerald-bg text-badge-emerald-text font-label-sm text-label-sm font-semibold">Válida y Vigente</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface pt-1 leading-relaxed">
+            Se certifica que el presente documento ha sido rubricado mediante certificado cualificado por el Administrador Colegiado don Javier Gómez (Colegio de AA.FF. de Madrid nº 4.821). Los puntos acordados en orden del día adquirieron eficacia jurídica plena según el plazo de subsanación de 30 días naturales.
+          </p>
+</div>
+<div class="p-space-sm rounded-lg bg-badge-navy-bg flex items-center gap-space-sm text-badge-navy-text">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+<span class="font-label-sm text-label-sm">Almacenado de forma redundante en servidores de Europa Occidental (Google Cloud Firestore / Storage).</span>
+</div>
+</div>
+<!-- Modal Footer Actions -->
+<div class="px-space-lg py-space-md bg-surface-container-low flex items-center justify-end gap-space-sm">
+<button class="px-space-md py-2 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md transition-colors" onclick="closePreviewModal()" type="button">
+          Cerrar
+        </button>
+<button class="px-space-md py-2 rounded-lg bg-primary hover:bg-slate-800 text-on-primary font-label-md text-label-md transition-all flex items-center gap-1 shadow-sm" onclick="triggerDownloadFromModal()" type="button">
+<span class="material-symbols-outlined text-[18px]">download</span>
+<span>Descargar Copia Certificada</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Micro-notification Toast -->
+<div class="fixed bottom-6 right-6 z-50 hidden items-center gap-space-sm bg-primary text-on-primary px-space-md py-space-sm rounded-xl shadow-xl transition-all" id="toastNotification">
+<span class="material-symbols-outlined text-secondary-fixed text-[20px]">file_download_done</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md">Descarga iniciada</span>
+<span class="font-body-sm text-body-sm text-primary-fixed-dim" id="toastMessage">Iniciando transferencia segura...</span>
+</div>
+</div>
+<script>
+    // Document Search & Year Filter Behavior
+    const searchInput = document.getElementById('docSearchInput');
+    const yearButtons = document.querySelectorAll('.year-pill');
+    const rows = document.querySelectorAll('.file-row');
+    const noResults = document.getElementById('noResults');
+    const itemCounter = document.getElementById('itemCounterBadge');
+
+    let currentYear = '2024';
+    let searchQuery = '';
+
+    function filterFiles() {
+      let visibleCount = 0;
+
+      rows.forEach(row => {
+        const rowYear = row.getAttribute('data-year');
+        const rowTitle = row.getAttribute('data-title').toLowerCase();
+        
+        const matchesYear = (currentYear === 'all' || rowYear === currentYear);
+        const matchesSearch = rowTitle.includes(searchQuery.toLowerCase());
+
+        if (matchesYear && matchesSearch) {
+          row.classList.remove('hidden');
+          visibleCount++;
+        } else {
+          row.classList.add('hidden');
+        }
+      });
+
+      if (visibleCount === 0) {
+        noResults.classList.remove('hidden');
+        noResults.classList.add('flex');
+      } else {
+        noResults.classList.add('hidden');
+        noResults.classList.remove('flex');
+      }
+
+      if (itemCounter) {
+        itemCounter.textContent = visibleCount + (visibleCount === 1 ? ' documento visible' : ' documentos visibles');
+      }
+    }
+
+    if (searchInput) {
+      searchInput.addEventListener('input', (e) => {
+        searchQuery = e.target.value.trim();
+        filterFiles();
+      });
+    }
+
+    yearButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        yearButtons.forEach(b => {
+          b.classList.remove('bg-primary', 'text-on-primary', 'shadow-sm');
+          b.classList.add('text-on-surface-variant');
+        });
+        btn.classList.add('bg-primary', 'text-on-primary', 'shadow-sm');
+        btn.classList.remove('text-on-surface-variant');
+
+        currentYear = btn.getAttribute('data-year');
+        filterFiles();
+      });
+    });
+
+    function resetFilters() {
+      if (searchInput) searchInput.value = '';
+      searchQuery = '';
+      currentYear = 'all';
+      yearButtons.forEach(b => {
+        if (b.getAttribute('data-year') === 'all') {
+          b.classList.add('bg-primary', 'text-on-primary', 'shadow-sm');
+          b.classList.remove('text-on-surface-variant');
+        } else {
+          b.classList.remove('bg-primary', 'text-on-primary', 'shadow-sm');
+          b.classList.add('text-on-surface-variant');
+        }
+      });
+      filterFiles();
+    }
+
+    // Modal Quick Preview Logic
+    const modal = document.getElementById('previewModal');
+    let activeModalFilename = '';
+
+    function openPreviewModal(title, filename, size, date, author) {
+      document.getElementById('modalDocTitle').textContent = title;
+      document.getElementById('modalDocFilename').textContent = filename;
+      document.getElementById('modalDocSize').textContent = size;
+      document.getElementById('modalDocDate').textContent = date;
+      document.getElementById('modalDocAuthor').textContent = author;
+      activeModalFilename = filename;
+
+      const iconBox = document.getElementById('modalDocIcon');
+      if (filename.endsWith('.xlsx')) {
+        iconBox.className = 'w-12 h-12 rounded-lg bg-badge-emerald-bg text-badge-emerald-text flex items-center justify-center flex-shrink-0';
+        iconBox.innerHTML = '<span class="material-symbols-outlined text-[28px]">table_chart</span>';
+      } else {
+        iconBox.className = 'w-12 h-12 rounded-lg bg-badge-coral-bg text-badge-coral-text flex items-center justify-center flex-shrink-0';
+        iconBox.innerHTML = '<span class="material-symbols-outlined text-[28px]">picture_as_pdf</span>';
+      }
+
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    }
+
+    function closePreviewModal() {
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        closePreviewModal();
+      }
+    });
+
+    // Toast Download Feedback
+    function triggerDownloadToast(filename) {
+      const toast = document.getElementById('toastNotification');
+      const msg = document.getElementById('toastMessage');
+      if (msg) msg.textContent = 'Descargando: ' + filename;
+      
+      toast.classList.remove('hidden');
+      toast.classList.add('flex');
+
+      setTimeout(() => {
+        toast.classList.add('hidden');
+        toast.classList.remove('flex');
+      }, 3500);
+    }
+
+    function triggerDownloadFromModal() {
+      closePreviewModal();
+      triggerDownloadToast(activeModalFilename || 'documento-comunidad.pdf');
+    }
+
+    // Initialize default filter state
+    filterFiles();
+  </script>
+</div></main></div></body></html>

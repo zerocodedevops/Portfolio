@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+
+<html lang="es"><head><link rel="stylesheet" href="/fonts/fonts.css"/><link rel="stylesheet" href="/stitch-tailwind.css"/><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/>
+<style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style></head><body class="bg-surface font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-72 bg-surface-container-lowest z-50 flex flex-col shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-space-lg flex items-center justify-between"><div class="flex items-center gap-space-sm"><img alt="NeighNetZ Logo" class="h-8 w-auto object-contain" src="/images/demo-placeholder.svg"/><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight">NeighNetZ</span></div></div><div class="px-space-md py-space-sm"><div class="bg-surface-container-low rounded-lg p-space-sm flex items-center justify-between cursor-pointer hover:bg-surface-container transition-colors"><div class="flex items-center gap-space-sm overflow-hidden"><span class="material-symbols-outlined text-secondary text-[20px]">apartment</span><div class="flex flex-col truncate"><span class="font-label-sm text-label-sm text-on-surface-variant uppercase truncate">Comunidad Activa</span><span class="font-label-md text-label-md text-on-surface truncate">Residencial Los Sauces 14</span></div></div><span class="material-symbols-outlined text-on-surface-variant text-[18px]">unfold_more</span></div></div><nav class="flex-1 overflow-y-auto px-space-md py-space-sm flex flex-col gap-space-xs" data-active-classes="bg-primary-container text-on-primary font-bold rounded-lg"><div class="px-space-sm pt-space-sm pb-space-xs"><span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Área del Vecino</span></div><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container hover:text-on-surface transition-all" data-path="dashboard" href="#"><span class="material-symbols-outlined text-[20px]">home</span><span>Inicio / Tablón</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container hover:text-on-surface transition-all" data-path="dashboard-incidencias" href="#"><span class="material-symbols-outlined text-[20px]">report_problem</span><span>Incidencias</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container hover:text-on-surface transition-all" data-path="dashboard-reservas" href="#"><span class="material-symbols-outlined text-[20px]">event_available</span><span>Reservas</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container hover:text-on-surface transition-all" data-path="dashboard-votaciones" href="#"><span class="material-symbols-outlined text-[20px]">how_to_vote</span><span>Votaciones</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container hover:text-on-surface transition-all" data-path="dashboard-documentos" href="#"><span class="material-symbols-outlined text-[20px]">folder_shared</span><span>Documentos</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container hover:text-on-surface transition-all" data-path="dashboard-vecinos" href="#"><span class="material-symbols-outlined text-[20px]">groups</span><span>Directorio de Vecinos</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container hover:text-on-surface transition-all" data-path="dashboard-gastos" href="#"><span class="material-symbols-outlined text-[20px]">account_balance_wallet</span><span>Cuentas y Gastos</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container hover:text-on-surface transition-all" data-path="dashboard-perfil" href="#"><span class="material-symbols-outlined text-[20px]">person</span><span>Mi Perfil</span></a><div class="px-space-sm pt-space-md pb-space-xs"><span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Panel de Administración</span></div><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container hover:text-on-surface transition-all" data-path="admin" href="#"><span class="material-symbols-outlined text-[20px]">monitoring</span><span>Panel Ejecutivo</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container hover:text-on-surface transition-all" data-path="admin-usuarios" href="#"><span class="material-symbols-outlined text-[20px]">verified_user</span><span>Validar Vecinos</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container hover:text-on-surface transition-all" data-path="admin-incidencias" href="#"><span class="material-symbols-outlined text-[20px]">assignment_late</span><span>Gestión de Incidencias</span></a><a aria-current="page" class="flex items-center gap-space-sm px-space-sm py-space-sm transition-all bg-primary-container text-on-primary font-bold rounded-lg" data-path="admin-reservas" href="#"><span class="material-symbols-outlined text-[20px]">book_online</span><span>Gestión de Reservas</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container hover:text-on-surface transition-all" data-path="admin-documentos" href="#"><span class="material-symbols-outlined text-[20px]">file_copy</span><span>Gestión Documental</span></a></nav><div class="p-space-md mt-auto"><div class="bg-surface-container-low rounded-lg p-space-sm flex items-center justify-between"><div class="flex items-center gap-space-sm"><span class="h-2 w-2 rounded-full bg-secondary"></span><span class="font-label-sm text-label-sm text-on-surface-variant">Servicios Operativos</span></div><span class="font-label-sm text-label-sm text-secondary font-bold">v2.4</span></div></div></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 h-16 bg-surface-container-lowest/80 backdrop-blur-xl z-40 flex items-center justify-between px-space-lg shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex items-center w-96"><div class="relative w-full flex items-center"><span class="material-symbols-outlined absolute left-space-sm text-on-surface-variant text-[20px]">search</span><input class="w-full bg-surface-container-low text-on-surface placeholder:text-on-surface-variant font-body-sm text-body-sm pl-9 pr-space-md py-space-xs rounded-lg outline-none focus:bg-surface-container-lowest transition-colors" placeholder="Buscar acuerdos, actas, reservas o incidencias..." type="text"/></div></div><div class="flex items-center gap-space-md"><div class="hidden sm:flex items-center gap-space-xs px-space-sm py-space-xs rounded-full bg-badge-emerald-bg"><span class="h-2 w-2 rounded-full bg-secondary animate-pulse"></span><span class="font-label-sm text-label-sm text-badge-emerald-text">Firebase Online</span></div><button aria-label="Notificaciones" class="relative p-space-xs rounded-full hover:bg-surface-container transition-colors text-on-surface-variant hover:text-on-surface" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-1 right-1 h-2 w-2 rounded-full bg-urgent-coral"></span></button><div class="flex items-center gap-space-sm pl-space-sm"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="/images/demo-placeholder.svg"/><div class="flex flex-col text-left"><span class="font-label-md text-label-md text-on-surface">Elena Morales</span><span class="font-label-sm text-label-sm text-on-surface-variant">Propietaria / Vicepresidenta</span></div></div></div></header><main class="relative pt-16 bg-surface min-h-screen"><div class="flex flex-col w-full">
+<div class="px-gutter py-space-lg flex flex-col gap-space-lg max-w-[1440px] mx-auto w-full">
+<!-- Header Contextual & Actions -->
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md">
+<div>
+<div class="flex items-center gap-space-xs text-on-surface-variant font-label-sm text-label-sm uppercase tracking-wider mb-space-xs">
+<span>Administración Central</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="text-secondary font-bold">Instalaciones &amp; Asignaciones</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface">Control y Supervisión de Reservas de Zonas Comunes</h1>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">Supervise cupos, valide credenciales de acceso físico y configure paradas técnicas operativas.</p>
+</div>
+<div class="flex items-center gap-space-sm flex-wrap">
+<button class="flex items-center gap-space-xs px-space-md py-space-sm rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-label-lg text-label-lg transition-colors shadow-sm" type="button">
+<span class="material-symbols-outlined text-[20px]">tune</span>
+<span>Configuración de Reglas</span>
+</button>
+<button class="flex items-center gap-space-xs px-space-md py-space-sm rounded-lg bg-primary hover:bg-slate-800 text-on-primary font-label-lg text-label-lg transition-all shadow-md active:scale-[0.98]" onclick="document.getElementById('modal-bloqueo').classList.remove('hidden')" type="button">
+<span class="material-symbols-outlined text-[20px]">block</span>
+<span>+ Bloquear Franja por Mantenimiento</span>
+</button>
+</div>
+</div>
+<!-- Facility Quick-Select Ribbon & Metrics Snapshot -->
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-space-md">
+<!-- Facility Filter Tabs -->
+<div class="xl:col-span-8 bg-surface-container-lowest rounded-xl p-space-sm shadow-sm flex flex-wrap items-center gap-space-xs">
+<button class="facility-pill flex items-center gap-space-xs px-space-md py-space-sm rounded-lg bg-primary text-on-primary font-label-md text-label-md transition-colors" data-zone="all" type="button">
+<span class="material-symbols-outlined text-[18px]">apps</span>
+<span>Todas las Zonas</span>
+<span class="ml-space-xs px-space-xs py-0.5 rounded-full bg-slate-800 text-badge-emerald-bg font-label-sm text-label-sm">48</span>
+</button>
+<button class="facility-pill flex items-center gap-space-xs px-space-md py-space-sm rounded-lg bg-surface-container-low text-on-surface-variant hover:text-on-surface hover:bg-surface-container font-label-md text-label-md transition-colors" data-zone="padel" type="button">
+<span class="material-symbols-outlined text-[18px]">sports_tennis</span>
+<span>Pista de Pádel</span>
+<span class="ml-space-xs px-space-xs py-0.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm">14</span>
+</button>
+<button class="facility-pill flex items-center gap-space-xs px-space-md py-space-sm rounded-lg bg-surface-container-low text-on-surface-variant hover:text-on-surface hover:bg-surface-container font-label-md text-label-md transition-colors" data-zone="pool" type="button">
+<span class="material-symbols-outlined text-[18px]">pool</span>
+<span>Piscina Comunitaria</span>
+<span class="ml-space-xs px-space-xs py-0.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm">22</span>
+</button>
+<button class="facility-pill flex items-center gap-space-xs px-space-md py-space-sm rounded-lg bg-surface-container-low text-on-surface-variant hover:text-on-surface hover:bg-surface-container font-label-md text-label-md transition-colors" data-zone="social" type="button">
+<span class="material-symbols-outlined text-[18px]">meeting_room</span>
+<span>Salón Social</span>
+<span class="ml-space-xs px-space-xs py-0.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm">4</span>
+</button>
+<button class="facility-pill flex items-center gap-space-xs px-space-md py-space-sm rounded-lg bg-surface-container-low text-on-surface-variant hover:text-on-surface hover:bg-surface-container font-label-md text-label-md transition-colors" data-zone="gym" type="button">
+<span class="material-symbols-outlined text-[18px]">fitness_center</span>
+<span>Gimnasio &amp; Sauna</span>
+<span class="ml-space-xs px-space-xs py-0.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm">8</span>
+</button>
+</div>
+<!-- Quick Operational Metrics -->
+<div class="xl:col-span-4 grid grid-cols-2 gap-space-sm">
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Ocupación Diaria</span>
+<span class="font-headline-md text-headline-md text-on-surface font-bold">84.2%</span>
+<span class="font-body-sm text-body-sm text-secondary font-semibold">+6% vs semana pasada</span>
+</div>
+<div class="h-10 w-10 rounded-full bg-badge-emerald-bg text-secondary flex items-center justify-center">
+<span class="material-symbols-outlined text-[22px]">speed</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Pases QR por Validar</span>
+<span class="font-headline-md text-headline-md text-on-surface font-bold">11</span>
+<span class="font-body-sm text-body-sm text-badge-amber-text font-semibold">Tornos operativos</span>
+</div>
+<div class="h-10 w-10 rounded-full bg-badge-amber-bg text-badge-amber-text flex items-center justify-center">
+<span class="material-symbols-outlined text-[22px]">qr_code_scanner</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Interactive Daily Timeline / Schedule Matrix -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden flex flex-col">
+<div class="px-space-lg py-space-md bg-surface-container-low flex flex-col md:flex-row md:items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-md">
+<div class="flex items-center gap-space-xs">
+<button class="h-8 w-8 rounded-lg bg-surface-container-lowest hover:bg-surface-container flex items-center justify-center text-on-surface shadow-sm" type="button">
+<span class="material-symbols-outlined text-[18px]">chevron_left</span>
+</button>
+<span class="font-headline-sm text-headline-sm text-on-surface px-space-xs">Jueves, 24 de Octubre de 2024</span>
+<button class="h-8 w-8 rounded-lg bg-surface-container-lowest hover:bg-surface-container flex items-center justify-center text-on-surface shadow-sm" type="button">
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</button>
+</div>
+<span class="px-space-sm py-0.5 rounded-full bg-badge-emerald-bg text-badge-emerald-text font-label-sm text-label-sm font-bold">HOY EN TIEMPO REAL</span>
+</div>
+<!-- Legend -->
+<div class="flex items-center gap-space-md flex-wrap text-on-surface-variant font-label-sm text-label-sm">
+<div class="flex items-center gap-space-xs">
+<span class="h-3 w-3 rounded-sm bg-badge-emerald-bg"></span>
+<span>Reserva Activa / QR</span>
+</div>
+<div class="flex items-center gap-space-xs">
+<span class="h-3 w-3 rounded-sm bg-badge-amber-bg"></span>
+<span>Pre-reserva Pendiente</span>
+</div>
+<div class="flex items-center gap-space-xs">
+<span class="h-3 w-3 rounded-sm bg-surface-container-highest"></span>
+<span>Bloqueo Mantenimiento</span>
+</div>
+<div class="flex items-center gap-space-xs">
+<span class="h-3 w-3 rounded-sm bg-surface-container-low"></span>
+<span>Libre / Disponible</span>
+</div>
+</div>
+</div>
+<!-- Schedule Matrix Table Container -->
+<div class="overflow-x-auto w-full">
+<div class="min-w-[980px] p-space-md">
+<div class="grid grid-cols-5 gap-space-md">
+<!-- Column: Pista de Pádel -->
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between bg-surface-container-low p-space-sm rounded-lg">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[20px]">sports_tennis</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">Pádel Panorámica</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Luz LED Activa</span>
+</div>
+<!-- Time Slots -->
+<div class="flex flex-col gap-space-xs">
+<!-- Slot 1 -->
+<div class="p-space-sm rounded-lg bg-surface-container-low flex flex-col gap-1 hover:bg-surface-container transition-colors">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant font-bold">08:00 - 09:30</span>
+<span class="font-label-sm text-label-sm text-secondary font-bold">Libre</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Sin ocupación registrada</span>
+</div>
+<!-- Slot 2 - Active booking -->
+<div class="p-space-sm rounded-lg bg-badge-emerald-bg shadow-sm flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-badge-emerald-text font-bold">10:00 - 11:30</span>
+<span class="flex items-center gap-0.5 text-badge-emerald-text font-label-sm text-label-sm font-bold">
+<span class="material-symbols-outlined text-[14px]">qr_code_2</span> QR Emitido
+                    </span>
+</div>
+<span class="font-label-md text-label-md text-on-surface font-semibold">Carlos Alarcón</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Portal 1, 4ºA • Entrada Validada</span>
+</div>
+<!-- Slot 3 - Maintenance Blocked Striped -->
+<div class="relative overflow-hidden p-space-sm rounded-lg bg-surface-container-high shadow-sm flex flex-col gap-1">
+<div class="absolute inset-0 opacity-15 pointer-events-none bg-[radial-gradient(#000_1px,transparent_1px)] [background-size:6px_6px]"></div>
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-urgent-coral font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">construction</span> 15:00 - 16:30
+                    </span>
+<span class="px-space-xs py-0.5 rounded bg-urgent-coral/10 text-urgent-coral font-label-sm text-label-sm font-bold uppercase">Bloqueo Técnico</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface font-semibold">Limpieza y mantenimiento químico de fondo</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Servicio Técnico HidroSur • Orden #M-109</span>
+</div>
+<!-- Slot 4 - Active booking (Elena Morales) -->
+<div class="p-space-sm rounded-lg bg-badge-emerald-bg shadow-sm flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-badge-emerald-text font-bold">18:00 - 19:30</span>
+<span class="flex items-center gap-0.5 text-badge-emerald-text font-label-sm text-label-sm font-bold">
+<span class="material-symbols-outlined text-[14px]">verified</span> QR Emitido
+                    </span>
+</div>
+<span class="font-label-md text-label-md text-on-surface font-semibold">Elena Morales</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Portal 2, 3ºB • 4 Jugadores acreditados</span>
+</div>
+<!-- Slot 5 -->
+<div class="p-space-sm rounded-lg bg-badge-amber-bg flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-badge-amber-text font-bold">20:00 - 21:30</span>
+<span class="font-label-sm text-label-sm text-badge-amber-text font-bold">Pre-reserva</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface font-semibold">David Menéndez</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Portal 3, Bajo C • Pendiente fianza</span>
+</div>
+</div>
+</div>
+<!-- Column: Piscina Comunitaria -->
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between bg-surface-container-low p-space-sm rounded-lg">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[20px]">pool</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">Piscina Principal</span>
+</div>
+<span class="font-label-sm text-label-sm text-secondary font-bold">Aforo 45/80</span>
+</div>
+<div class="flex flex-col gap-space-xs">
+<div class="p-space-sm rounded-lg bg-surface-container-low flex flex-col gap-1">
+<span class="font-label-sm text-label-sm text-on-surface-variant font-bold">10:00 - 13:00</span>
+<span class="font-label-md text-label-md text-on-surface">Franja de Mañana Libre</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Entrada continua sin reserva previa</span>
+</div>
+<div class="p-space-sm rounded-lg bg-badge-emerald-bg flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-badge-emerald-text font-bold">13:30 - 15:30</span>
+<span class="font-label-sm text-label-sm text-badge-emerald-text font-bold">Carriles Natación</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface font-semibold">Club Natación Vecinal</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">12 Vecinos asignados</span>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container-low flex flex-col gap-1">
+<span class="font-label-sm text-label-sm text-on-surface-variant font-bold">16:00 - 20:00</span>
+<span class="font-label-md text-label-md text-on-surface">Turno General Tarde</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Socorrista titular en puesto</span>
+</div>
+</div>
+</div>
+<!-- Column: Salón Social / Multiusos -->
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between bg-surface-container-low p-space-sm rounded-lg">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[20px]">celebration</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">Salón Social</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Fianza 100€</span>
+</div>
+<div class="flex flex-col gap-space-xs">
+<div class="p-space-sm rounded-lg bg-surface-container-low flex flex-col gap-1">
+<span class="font-label-sm text-label-sm text-on-surface-variant font-bold">Mañana</span>
+<span class="font-label-md text-label-md text-on-surface">Disponible para eventos</span>
+</div>
+<!-- Event booking -->
+<div class="p-space-sm rounded-lg bg-badge-emerald-bg flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-badge-emerald-text font-bold">17:00 - 22:00</span>
+<span class="font-label-sm text-label-sm text-secondary font-bold">Fianza Retenida</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface font-semibold">Marcos Varela</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Portal 4, 1ºD • Cumpleaños infantil</span>
+</div>
+</div>
+</div>
+<!-- Column: Gimnasio -->
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between bg-surface-container-low p-space-sm rounded-lg">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[20px]">fitness_center</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">Fitness &amp; Cardio</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Max 10 pax</span>
+</div>
+<div class="flex flex-col gap-space-xs">
+<div class="p-space-sm rounded-lg bg-badge-emerald-bg flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-badge-emerald-text font-bold">07:00 - 08:30</span>
+<span class="font-label-sm text-label-sm text-badge-emerald-text font-bold">Completo (10/10)</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface font-semibold">Grupo Matinal</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Lectores biométricos OK</span>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container-low flex flex-col gap-1">
+<span class="font-label-sm text-label-sm text-on-surface-variant font-bold">12:00 - 17:00</span>
+<span class="font-label-md text-label-md text-on-surface">Baja afluencia (3 reservas)</span>
+</div>
+<div class="p-space-sm rounded-lg bg-badge-emerald-bg flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-badge-emerald-text font-bold">19:00 - 20:30</span>
+<span class="font-label-sm text-label-sm text-badge-emerald-text font-bold">Completo (10/10)</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface font-semibold">Turno Cardio Tarde</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Vigilancia remota</span>
+</div>
+</div>
+</div>
+<!-- Column: Sauna & Wellness -->
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between bg-surface-container-low p-space-sm rounded-lg">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[20px]">spa</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">Sauna Seca</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Por tramos 45m</span>
+</div>
+<div class="flex flex-col gap-space-xs">
+<!-- Blocked -->
+<div class="relative overflow-hidden p-space-sm rounded-lg bg-surface-container-high shadow-sm flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-urgent-coral font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">warning</span> Todo el día
+                    </span>
+<span class="px-space-xs py-0.5 rounded bg-urgent-coral/10 text-urgent-coral font-label-sm text-label-sm font-bold uppercase">Reparación</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface font-semibold">Sustitución de termostato</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Cálculo estimado: 48h</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Management & Audit Table Section -->
+<div class="flex flex-col bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden">
+<!-- Table Filter Header -->
+<div class="px-space-lg py-space-md bg-surface-container-low flex flex-col md:flex-row items-center justify-between gap-space-md">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Auditoría y Gestión Detallada de Reservas</h2>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Histórico de reservas activas, cobros, fianzas y acreditaciones de seguridad física.</span>
+</div>
+<div class="flex items-center gap-space-sm w-full md:w-auto">
+<div class="relative flex-1 md:w-64">
+<span class="material-symbols-outlined absolute left-space-sm top-2.5 text-on-surface-variant text-[18px]">filter_alt</span>
+<input class="w-full bg-surface-container-lowest text-on-surface text-body-sm font-body-sm pl-9 pr-space-md py-1.5 rounded-lg outline-none focus:ring-2 focus:ring-primary focus:bg-surface-container-lowest transition-all" placeholder="Filtrar por vecino, portal..." type="text"/>
+</div>
+<button class="flex items-center gap-space-xs px-space-md py-1.5 rounded-lg bg-surface-container-lowest hover:bg-surface-container text-on-surface font-label-md text-label-md shadow-sm" type="button">
+<span class="material-symbols-outlined text-[18px]">download</span>
+<span>Exportar CSV</span>
+</button>
+</div>
+</div>
+<!-- Table Body -->
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead>
+<tr class="bg-surface-container-low text-on-surface-variant font-label-sm text-label-sm uppercase tracking-wider">
+<th class="py-space-sm px-space-md">Fecha &amp; Tramo Horario</th>
+<th class="py-space-sm px-space-md">Instalación</th>
+<th class="py-space-sm px-space-md">Vecino Solicitante</th>
+<th class="py-space-sm px-space-md">Fianza / Coste</th>
+<th class="py-space-sm px-space-md">Estado Actual</th>
+<th class="py-space-sm px-space-md text-right">Acciones de Administrador</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container-low font-body-md text-body-md text-on-surface">
+<!-- Row 1 -->
+<tr class="hover:bg-surface-container-low/60 transition-colors">
+<td class="py-space-md px-space-md">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-bold text-on-surface">Hoy, 24 Oct • 18:00 - 19:30</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Reserva #RES-8921</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[20px]">sports_tennis</span>
+<span class="font-label-md text-label-md font-semibold">Pista Pádel (Cristal)</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-space-sm">
+<img class="w-8 h-8 rounded-full object-cover shadow-sm" data-alt="Close up photographic corporate portrait of a smiling middle-aged woman named Elena Morales with dark brown hair wearing a dark navy blazer with soft daylight reflections" src="/images/demo-placeholder.svg"/>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-semibold text-on-surface">Elena Morales</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Portal 2, 3ºB • Vicepresidencia</span>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-bold text-on-surface">4,50 €</span>
+<span class="font-body-sm text-body-sm text-badge-emerald-text font-semibold">Luz 90min abonada</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<span class="inline-flex items-center gap-1 px-space-sm py-0.5 rounded-full bg-badge-emerald-bg text-badge-emerald-text font-label-sm text-label-sm font-bold uppercase">
+<span class="h-1.5 w-1.5 rounded-full bg-secondary"></span> Confirmada
+                </span>
+</td>
+<td class="py-space-md px-space-md text-right">
+<div class="flex items-center justify-end gap-space-xs">
+<button class="px-space-sm py-1 rounded bg-secondary hover:bg-emerald-700 text-on-secondary font-label-sm text-label-sm flex items-center gap-1 transition-colors" title="Validar Acceso Manualmente" type="button">
+<span class="material-symbols-outlined text-[16px]">qr_code_scanner</span>
+<span>Validar Acceso</span>
+</button>
+<button class="px-space-sm py-1 rounded bg-surface-container hover:bg-surface-container-high text-urgent-coral font-label-sm text-label-sm transition-colors" title="Anular Reserva" type="button">
+                    Anular
+                  </button>
+</div>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-surface-container-low/60 transition-colors">
+<td class="py-space-md px-space-md">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-bold text-on-surface">Hoy, 24 Oct • 20:00 - 21:30</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Reserva #RES-8924</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[20px]">sports_tennis</span>
+<span class="font-label-md text-label-md font-semibold">Pista Pádel (Cristal)</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-space-sm">
+<img class="w-8 h-8 rounded-full object-cover shadow-sm" data-alt="Photographic candid studio portrait of a young man named David Menendez in his early thirties with short cropped hair and a grey crew neck sweater against clean daylight" src="/images/demo-placeholder.svg"/>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-semibold text-on-surface">David Menéndez</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Portal 3, Bajo C • Residente</span>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-bold text-badge-amber-text">Pendiente</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Cargo en pasarela Stripe</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<span class="inline-flex items-center gap-1 px-space-sm py-0.5 rounded-full bg-badge-amber-bg text-badge-amber-text font-label-sm text-label-sm font-bold uppercase">
+<span class="h-1.5 w-1.5 rounded-full bg-badge-amber-text"></span> Pre-reservada
+                </span>
+</td>
+<td class="py-space-md px-space-md text-right">
+<div class="flex items-center justify-end gap-space-xs">
+<button class="px-space-sm py-1 rounded bg-surface-container hover:bg-surface-container-high text-on-surface font-label-sm text-label-sm flex items-center gap-1 transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px]">notifications</span>
+<span>Reclamar Pago</span>
+</button>
+<button class="px-space-sm py-1 rounded bg-urgent-coral hover:bg-red-700 text-on-primary font-label-sm text-label-sm transition-colors" type="button">
+                    Liberar Franja
+                  </button>
+</div>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-surface-container-low/60 transition-colors">
+<td class="py-space-md px-space-md">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-bold text-on-surface">Viernes, 25 Oct • 17:00 - 22:00</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Reserva #RES-8919</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[20px]">celebration</span>
+<span class="font-label-md text-label-md font-semibold">Salón Social Multiusos</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-space-sm">
+<img class="w-8 h-8 rounded-full object-cover shadow-sm" data-alt="Portrait photography of Marcos Varela, a middle-aged resident man with glasses and a warm expression wearing casual denim shirt under subtle interior lighting" src="/images/demo-placeholder.svg"/>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-semibold text-on-surface">Marcos Varela</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Portal 4, 1ºD • Propietario</span>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-bold text-on-surface">100,00 € (Fianza)</span>
+<span class="font-body-sm text-body-sm text-secondary font-semibold">Bloqueo preventivo bancario</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<span class="inline-flex items-center gap-1 px-space-sm py-0.5 rounded-full bg-badge-emerald-bg text-badge-emerald-text font-label-sm text-label-sm font-bold uppercase">
+<span class="h-1.5 w-1.5 rounded-full bg-secondary"></span> Confirmada
+                </span>
+</td>
+<td class="py-space-md px-space-md text-right">
+<div class="flex items-center justify-end gap-space-xs">
+<button class="px-space-sm py-1 rounded bg-surface-container hover:bg-surface-container-high text-on-surface font-label-sm text-label-sm flex items-center gap-1 transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px]">receipt_long</span>
+<span>Acta Entrega</span>
+</button>
+<button class="px-space-sm py-1 rounded bg-badge-emerald-bg hover:bg-secondary-fixed text-badge-emerald-text font-label-sm text-label-sm transition-colors" type="button">
+                    Reembolsar fianza
+                  </button>
+</div>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-surface-container-low/60 transition-colors">
+<td class="py-space-md px-space-md">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-bold text-on-surface">Ayer, 23 Oct • 08:00 - 09:30</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Reserva #RES-8910</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[20px]">sports_tennis</span>
+<span class="font-label-md text-label-md font-semibold">Pista Pádel (Cristal)</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-full bg-surface-container-high text-on-surface font-label-md text-label-md font-bold flex items-center justify-center">
+                    SL
+                  </div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-semibold text-on-surface">Sara Lozano</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Portal 1, 2ºA • Propietaria</span>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-bold text-on-surface">3,00 €</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Liquidado en cuota</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<span class="inline-flex items-center gap-1 px-space-sm py-0.5 rounded-full bg-surface-container text-on-surface font-label-sm text-label-sm font-bold uppercase">
+<span class="material-symbols-outlined text-[14px]">done_all</span> Completada
+                </span>
+</td>
+<td class="py-space-md px-space-md text-right">
+<div class="flex items-center justify-end gap-space-xs">
+<button class="px-space-sm py-1 rounded bg-surface-container hover:bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm" type="button">
+                    Ver Registro
+                  </button>
+</div>
+</td>
+</tr>
+<!-- Row 5 -->
+<tr class="hover:bg-surface-container-low/60 transition-colors">
+<td class="py-space-md px-space-md">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-bold text-on-surface">Ayer, 23 Oct • 19:30 - 21:00</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Reserva #RES-8899</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[20px]">fitness_center</span>
+<span class="font-label-md text-label-md font-semibold">Gimnasio Cardiovascular</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-full bg-surface-container-high text-on-surface font-label-md text-label-md font-bold flex items-center justify-center">
+                    JR
+                  </div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-semibold text-on-surface">Javier Ramos</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Portal 2, Bajo B • Inquilino</span>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-bold text-on-surface">0,00 €</span>
+<span class="font-body-sm text-body-sm text-badge-coral-text font-semibold">Penalización 5,00 €</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<span class="inline-flex items-center gap-1 px-space-sm py-0.5 rounded-full bg-badge-coral-bg text-badge-coral-text font-label-sm text-label-sm font-bold uppercase">
+<span class="material-symbols-outlined text-[14px]">cancel</span> Cancelada (No show)
+                </span>
+</td>
+<td class="py-space-md px-space-md text-right">
+<div class="flex items-center justify-end gap-space-xs">
+<button class="px-space-sm py-1 rounded bg-badge-coral-bg hover:bg-error-container text-badge-coral-text font-label-sm text-label-sm font-bold transition-colors" type="button">
+                    Reclamar Cargo
+                  </button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Pagination & Summary -->
+<div class="px-space-lg py-space-md bg-surface-container-lowest flex flex-col sm:flex-row items-center justify-between gap-space-sm">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Mostrando 5 de 142 registros auditados este mes</span>
+<div class="flex items-center gap-space-xs">
+<button class="px-space-sm py-1 rounded bg-surface-container-low hover:bg-surface-container text-on-surface font-label-sm text-label-sm transition-colors" type="button">Anterior</button>
+<span class="px-space-sm py-1 rounded bg-primary text-on-primary font-label-sm text-label-sm">1</span>
+<button class="px-space-sm py-1 rounded bg-surface-container-low hover:bg-surface-container text-on-surface font-label-sm text-label-sm transition-colors" type="button">2</button>
+<button class="px-space-sm py-1 rounded bg-surface-container-low hover:bg-surface-container text-on-surface font-label-sm text-label-sm transition-colors" type="button">3</button>
+<button class="px-space-sm py-1 rounded bg-surface-container-low hover:bg-surface-container text-on-surface font-label-sm text-label-sm transition-colors" type="button">Siguiente</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Modal Desplegable para Bloqueo Administrativo -->
+<div class="fixed inset-0 z-50 flex items-center justify-center p-space-md hidden backdrop-blur-sm bg-slate-900/40" id="modal-bloqueo">
+<div class="bg-surface-container-lowest rounded-xl max-w-xl w-full p-space-lg shadow-xl relative animate-in fade-in zoom-in-95 duration-150 flex flex-col gap-space-md">
+<!-- Modal Header -->
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="h-10 w-10 rounded-full bg-badge-coral-bg text-urgent-coral flex items-center justify-center">
+<span class="material-symbols-outlined text-[24px]">construction</span>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface">Bloqueo Técnico por Mantenimiento</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Inhabilite tramos de reserva e informe automáticamente a los vecinos.</p>
+</div>
+</div>
+<button class="p-space-xs text-on-surface-variant hover:text-on-surface rounded-full hover:bg-surface-container" onclick="document.getElementById('modal-bloqueo').classList.add('hidden')" type="button">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<!-- Modal Form -->
+<form class="flex flex-col gap-space-md" onsubmit="event.preventDefault(); document.getElementById('modal-bloqueo').classList.add('hidden');">
+<!-- Field 1: Facility Select -->
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-md text-label-md text-on-surface font-semibold">Zona Común Afectada</label>
+<div class="relative">
+<select class="w-full bg-surface-container-low text-on-surface text-body-md font-body-md p-space-sm rounded-lg outline-none focus:ring-2 focus:ring-primary appearance-none cursor-pointer">
+<option value="padel">Pista de Pádel Cristal</option>
+<option value="piscina">Piscina Comunitaria (Vaso y Zona Césped)</option>
+<option value="salon">Salón Social y Terraza Anexa</option>
+<option value="gimnasio">Gimnasio y Maquinaria Cardiovascular</option>
+<option value="sauna">Sauna Seca y Vestuarios</option>
+</select>
+<span class="material-symbols-outlined absolute right-space-sm top-2.5 text-on-surface-variant pointer-events-none text-[20px]">expand_more</span>
+</div>
+</div>
+<!-- Field 2: Date and Time Range -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-sm">
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-md text-label-md text-on-surface font-semibold">Fecha de Inicio</label>
+<input class="w-full bg-surface-container-low text-on-surface text-body-md font-body-md p-space-sm rounded-lg outline-none focus:ring-2 focus:ring-primary" type="date" value="2024-10-25"/>
+</div>
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-md text-label-md text-on-surface font-semibold">Fecha de Finalización</label>
+<input class="w-full bg-surface-container-low text-on-surface text-body-md font-body-md p-space-sm rounded-lg outline-none focus:ring-2 focus:ring-primary" type="date" value="2024-10-25"/>
+</div>
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-md text-label-md text-on-surface font-semibold">Hora de Inicio</label>
+<input class="w-full bg-surface-container-low text-on-surface text-body-md font-body-md p-space-sm rounded-lg outline-none focus:ring-2 focus:ring-primary" type="time" value="08:00"/>
+</div>
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-md text-label-md text-on-surface font-semibold">Hora de Apertura Estimada</label>
+<input class="w-full bg-surface-container-low text-on-surface text-body-md font-body-md p-space-sm rounded-lg outline-none focus:ring-2 focus:ring-primary" type="time" value="14:00"/>
+</div>
+</div>
+<!-- Field 3: Reason -->
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-md text-label-md text-on-surface font-semibold">Motivo del Bloqueo / Detalle de los Trabajos</label>
+<input class="w-full bg-surface-container-low text-on-surface text-body-md font-body-md p-space-sm rounded-lg outline-none focus:ring-2 focus:ring-primary" placeholder="Ej. Reparación de tensado de red y repintado de líneas" type="text"/>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Este mensaje se mostrará a los propietarios en la app cuando intenten reservar esta franja.</span>
+</div>
+<!-- Checkbox notification -->
+<div class="flex items-center gap-space-sm p-space-sm bg-surface-container-low rounded-lg">
+<input checked="" class="h-4 w-4 rounded text-primary focus:ring-primary" id="notify-check" type="checkbox"/>
+<label class="font-body-sm text-body-sm text-on-surface cursor-pointer select-none" for="notify-check">
+            Notificar automáticamente por push y correo a los vecinos con reservas previas en este tramo.
+          </label>
+</div>
+<!-- Actions -->
+<div class="flex items-center justify-end gap-space-sm pt-space-xs">
+<button class="px-space-md py-space-sm rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-label-lg text-label-lg transition-colors" onclick="document.getElementById('modal-bloqueo').classList.add('hidden')" type="button">
+            Cancelar
+          </button>
+<button class="px-space-md py-space-sm rounded-lg bg-urgent-coral hover:bg-red-700 text-on-primary font-label-lg text-label-lg shadow-md transition-all active:scale-[0.98]" type="submit">
+            Confirmar Bloqueo de Franja
+          </button>
+</div>
+</form>
+</div>
+</div>
+</div>
+<script>
+  // Simple interactive tab selection for facilities ribbon
+  document.querySelectorAll('.facility-pill').forEach(pill => {
+    pill.addEventListener('click', () => {
+      document.querySelectorAll('.facility-pill').forEach(p => {
+        p.classList.remove('bg-primary', 'text-on-primary');
+        p.classList.add('bg-surface-container-low', 'text-on-surface-variant');
+      });
+      pill.classList.remove('bg-surface-container-low', 'text-on-surface-variant');
+      pill.classList.add('bg-primary', 'text-on-primary');
+    });
+  });
+</script></main></div></body></html>

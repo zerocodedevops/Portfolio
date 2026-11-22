@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+
+<html lang="es"><head><link rel="stylesheet" href="/fonts/fonts.css"/><link rel="stylesheet" href="/stitch-tailwind.css"/><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/>
+<style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style></head><body class="bg-surface font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-72 bg-surface-container-lowest z-50 flex flex-col shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-space-lg flex items-center justify-between"><div class="flex items-center gap-space-sm"><img alt="NeighNetZ Logo" class="h-8 w-auto object-contain" src="/images/demo-placeholder.svg"/><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight">NeighNetZ</span></div></div><div class="px-space-md py-space-sm"><div class="bg-surface-container-low rounded-lg p-space-sm flex items-center justify-between cursor-pointer hover:bg-surface-container transition-colors"><div class="flex items-center gap-space-sm overflow-hidden"><span class="material-symbols-outlined text-secondary text-[20px]">apartment</span><div class="flex flex-col truncate"><span class="font-label-sm text-label-sm text-on-surface-variant uppercase truncate">Comunidad Activa</span><span class="font-label-md text-label-md text-on-surface truncate">Residencial Los Sauces 14</span></div></div><span class="material-symbols-outlined text-on-surface-variant text-[18px]">unfold_more</span></div></div><nav class="flex-1 overflow-y-auto px-space-md py-space-sm flex flex-col gap-space-xs" data-active-classes="bg-primary-container text-on-primary font-bold rounded-lg"><div class="px-space-sm pt-space-sm pb-space-xs"><span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Área del Vecino</span></div><a aria-current="page" class="flex items-center gap-space-sm px-space-sm py-space-sm transition-all bg-primary-container text-on-primary font-bold rounded-lg" data-path="dashboard" href="#"><span class="material-symbols-outlined text-[20px]">home</span><span>Inicio / Tablón</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container hover:text-on-surface transition-all" data-path="dashboard-incidencias" href="#"><span class="material-symbols-outlined text-[20px]">report_problem</span><span>Incidencias</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container hover:text-on-surface transition-all" data-path="dashboard-reservas" href="#"><span class="material-symbols-outlined text-[20px]">event_available</span><span>Reservas</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container hover:text-on-surface transition-all" data-path="dashboard-votaciones" href="#"><span class="material-symbols-outlined text-[20px]">how_to_vote</span><span>Votaciones</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container hover:text-on-surface transition-all" data-path="dashboard-documentos" href="#"><span class="material-symbols-outlined text-[20px]">folder_shared</span><span>Documentos</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container hover:text-on-surface transition-all" data-path="dashboard-vecinos" href="#"><span class="material-symbols-outlined text-[20px]">groups</span><span>Directorio de Vecinos</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container hover:text-on-surface transition-all" data-path="dashboard-gastos" href="#"><span class="material-symbols-outlined text-[20px]">account_balance_wallet</span><span>Cuentas y Gastos</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container hover:text-on-surface transition-all" data-path="dashboard-perfil" href="#"><span class="material-symbols-outlined text-[20px]">person</span><span>Mi Perfil</span></a><div class="px-space-sm pt-space-md pb-space-xs"><span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Panel de Administración</span></div><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container hover:text-on-surface transition-all" data-path="admin" href="#"><span class="material-symbols-outlined text-[20px]">monitoring</span><span>Panel Ejecutivo</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container hover:text-on-surface transition-all" data-path="admin-usuarios" href="#"><span class="material-symbols-outlined text-[20px]">verified_user</span><span>Validar Vecinos</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container hover:text-on-surface transition-all" data-path="admin-incidencias" href="#"><span class="material-symbols-outlined text-[20px]">assignment_late</span><span>Gestión de Incidencias</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container hover:text-on-surface transition-all" data-path="admin-reservas" href="#"><span class="material-symbols-outlined text-[20px]">book_online</span><span>Gestión de Reservas</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container hover:text-on-surface transition-all" data-path="admin-documentos" href="#"><span class="material-symbols-outlined text-[20px]">file_copy</span><span>Gestión Documental</span></a></nav><div class="p-space-md mt-auto"><div class="bg-surface-container-low rounded-lg p-space-sm flex items-center justify-between"><div class="flex items-center gap-space-sm"><span class="h-2 w-2 rounded-full bg-secondary"></span><span class="font-label-sm text-label-sm text-on-surface-variant">Servicios Operativos</span></div><span class="font-label-sm text-label-sm text-secondary font-bold">v2.4</span></div></div></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 h-16 bg-surface-container-lowest/80 backdrop-blur-xl z-40 flex items-center justify-between px-space-lg shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex items-center w-96"><div class="relative w-full flex items-center"><span class="material-symbols-outlined absolute left-space-sm text-on-surface-variant text-[20px]">search</span><input class="w-full bg-surface-container-low text-on-surface placeholder:text-on-surface-variant font-body-sm text-body-sm pl-9 pr-space-md py-space-xs rounded-lg outline-none focus:bg-surface-container-lowest transition-colors" placeholder="Buscar acuerdos, actas, reservas o incidencias..." type="text"/></div></div><div class="flex items-center gap-space-md"><div class="hidden sm:flex items-center gap-space-xs px-space-sm py-space-xs rounded-full bg-badge-emerald-bg"><span class="h-2 w-2 rounded-full bg-secondary animate-pulse"></span><span class="font-label-sm text-label-sm text-badge-emerald-text">Firebase Online</span></div><button aria-label="Notificaciones" class="relative p-space-xs rounded-full hover:bg-surface-container transition-colors text-on-surface-variant hover:text-on-surface" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-1 right-1 h-2 w-2 rounded-full bg-urgent-coral"></span></button><div class="flex items-center gap-space-sm pl-space-sm"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="/images/demo-placeholder.svg"/><div class="flex flex-col text-left"><span class="font-label-md text-label-md text-on-surface">Elena Morales</span><span class="font-label-sm text-label-sm text-on-surface-variant">Propietaria / Vicepresidenta</span></div></div></div></header><main class="relative pt-16 bg-surface min-h-screen"><div class="flex flex-col w-full">
+<div class="w-full max-w-7xl mx-auto px-space-md lg:px-space-lg py-space-md flex flex-col gap-space-lg">
+<!-- Top Profile & Quick Actions Banner -->
+<div class="relative bg-surface-container-lowest rounded-xl p-space-md lg:p-space-lg shadow-sm overflow-hidden flex flex-col md:flex-row items-start md:items-center justify-between gap-space-md">
+<div class="absolute -right-12 -top-12 w-48 h-48 bg-secondary/5 rounded-full blur-2xl pointer-events-none"></div>
+<div class="flex items-center gap-space-md min-w-0 z-10">
+<div class="relative flex-shrink-0">
+<img class="w-14 h-14 rounded-full object-cover shadow-sm" data-alt="Warm natural portrait of Elena Morales, a confident Mediterranean woman resident in her late 30s smiling gently in bright morning daylight against a clean modern architectural backdrop with emerald green accents." src="/images/demo-placeholder.svg"/>
+<span class="absolute bottom-0 right-0 w-3.5 h-3.5 bg-secondary rounded-full ring-2 ring-surface-container-lowest"></span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-space-xs flex-wrap">
+<span class="font-headline-lg text-headline-lg text-on-surface">¡Hola, Elena Morales!</span>
+<span class="inline-flex items-center px-space-xs py-0.5 rounded-full bg-badge-emerald-bg text-badge-emerald-text font-label-sm text-label-sm uppercase tracking-wider">Al corriente de pago</span>
+</div>
+<div class="flex items-center gap-space-sm text-on-surface-variant font-body-md text-body-md mt-0.5">
+<span class="material-symbols-outlined text-[18px] text-secondary">home_pin</span>
+<span class="truncate">Portal 2, 3º B • <strong class="text-on-surface font-label-md">Propietaria</strong> • Cuota ord.: 74,50€/mes</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-space-sm w-full md:w-auto z-10 flex-shrink-0">
+<button class="flex-1 md:flex-initial inline-flex items-center justify-center gap-space-xs px-space-md py-space-sm rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface font-label-lg text-label-lg transition-colors" type="button">
+<span class="material-symbols-outlined text-[20px]">calendar_add_on</span>
+<span>+ Nueva Reserva</span>
+</button>
+<button class="flex-1 md:flex-initial inline-flex items-center justify-center gap-space-xs px-space-md py-space-sm rounded-lg bg-primary hover:bg-on-primary-fixed text-on-primary font-label-lg text-label-lg shadow-sm transition-all active:scale-[0.98]" type="button">
+<span class="material-symbols-outlined text-[20px]">add_alert</span>
+<span>+ Reportar Incidencia</span>
+</button>
+</div>
+</div>
+<!-- 4 Metric Summaries (KPIs) -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-md">
+<!-- KPI 1 -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface-variant">Incidencias activas</span>
+<div class="w-9 h-9 rounded-lg bg-badge-amber-bg text-badge-amber-text flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">build</span>
+</div>
+</div>
+<div class="mt-space-md">
+<div class="flex items-baseline gap-space-xs">
+<span class="font-headline-xl text-headline-xl text-on-surface">3</span>
+<span class="font-label-md text-label-md text-badge-amber-text font-semibold">en curso</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-urgent-coral"></span> 1 de tu vivienda • 2 comunitarias
+          </p>
+</div>
+</div>
+<!-- KPI 2 -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface-variant">Próximas reservas</span>
+<div class="w-9 h-9 rounded-lg bg-badge-emerald-bg text-badge-emerald-text flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">sports_tennis</span>
+</div>
+</div>
+<div class="mt-space-md">
+<div class="flex items-baseline gap-space-xs">
+<span class="font-headline-xl text-headline-xl text-on-surface">1</span>
+<span class="font-label-md text-label-md text-secondary font-semibold">confirmada</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 truncate">
+            Pista de Pádel • <strong class="text-on-surface">Hoy 18:00h</strong>
+</p>
+</div>
+</div>
+<!-- KPI 3 -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between relative overflow-hidden">
+<div class="absolute top-0 right-0 w-16 h-16 bg-badge-coral-bg rounded-bl-full -z-0 opacity-40"></div>
+<div class="flex items-center justify-between relative z-10">
+<span class="font-label-md text-label-md text-on-surface-variant">Votaciones abiertas</span>
+<div class="w-9 h-9 rounded-lg bg-surface-container-low text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">how_to_vote</span>
+</div>
+</div>
+<div class="mt-space-md relative z-10">
+<div class="flex items-baseline gap-space-xs">
+<span class="font-headline-xl text-headline-xl text-on-surface">1</span>
+<span class="font-label-sm text-label-sm px-1.5 py-0.5 rounded bg-badge-coral-bg text-badge-coral-text font-bold">¡Tu voto pendiente!</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 truncate">
+            Instalación de placas solares
+          </p>
+</div>
+</div>
+<!-- KPI 4 -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface-variant">Documentos recientes</span>
+<div class="w-9 h-9 rounded-lg bg-surface-container text-on-primary-fixed flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">description</span>
+</div>
+</div>
+<div class="mt-space-md">
+<div class="flex items-baseline gap-space-xs">
+<span class="font-headline-xl text-headline-xl text-on-surface">2</span>
+<span class="font-label-md text-label-md text-on-surface-variant">nuevas actas</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+            Subidas esta semana • Junta Ord. Mayo
+          </p>
+</div>
+</div>
+</div>
+<!-- Main Content Layout (2/3 Left & 1/3 Right) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-start">
+<!-- Left Column (8 cols): Charts & Community Notices -->
+<div class="lg:col-span-8 flex flex-col gap-space-lg min-w-0">
+<!-- Monthly Incidents Status Chart Card -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md lg:p-space-lg shadow-sm">
+<div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-space-sm mb-space-md">
+<div>
+<div class="flex items-center gap-space-xs">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Métricas de Convivencia</span>
+</div>
+<h2 class="font-headline-md text-headline-md text-on-surface mt-0.5">Estado Mensual de Incidencias</h2>
+</div>
+<div class="flex items-center gap-space-xs bg-surface-container-low p-1 rounded-lg">
+<button class="px-space-sm py-0.5 rounded text-on-surface font-label-md text-label-md bg-surface-container-lowest shadow-sm">2025 (Año actual)</button>
+<button class="px-space-sm py-0.5 rounded text-on-surface-variant font-label-md text-label-md hover:text-on-surface">Histórico</button>
+</div>
+</div>
+<!-- Chart & Summary Split -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-space-md items-center pt-space-xs">
+<!-- Left Chart visualization (SVG Recharts-style Bar & Trend layout) -->
+<div class="md:col-span-8 flex flex-col gap-space-sm">
+<div class="h-48 w-full flex items-end justify-between gap-space-xs px-2 pt-6">
+<!-- Ene -->
+<div class="flex-1 flex flex-col items-center gap-1 group">
+<div class="w-full max-w-[28px] bg-surface-container-low rounded-t flex flex-col justify-end h-28 overflow-hidden relative">
+<div class="w-full bg-secondary" style="height: 60%"></div>
+<div class="w-full bg-badge-amber-text" style="height: 25%"></div>
+<div class="w-full bg-urgent-coral" style="height: 15%"></div>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Ene</span>
+</div>
+<!-- Feb -->
+<div class="flex-1 flex flex-col items-center gap-1 group">
+<div class="w-full max-w-[28px] bg-surface-container-low rounded-t flex flex-col justify-end h-36 overflow-hidden">
+<div class="w-full bg-secondary" style="height: 70%"></div>
+<div class="w-full bg-badge-amber-text" style="height: 20%"></div>
+<div class="w-full bg-urgent-coral" style="height: 10%"></div>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Feb</span>
+</div>
+<!-- Mar -->
+<div class="flex-1 flex flex-col items-center gap-1 group">
+<div class="w-full max-w-[28px] bg-surface-container-low rounded-t flex flex-col justify-end h-32 overflow-hidden">
+<div class="w-full bg-secondary" style="height: 65%"></div>
+<div class="w-full bg-badge-amber-text" style="height: 25%"></div>
+<div class="w-full bg-urgent-coral" style="height: 10%"></div>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Mar</span>
+</div>
+<!-- Abr -->
+<div class="flex-1 flex flex-col items-center gap-1 group">
+<div class="w-full max-w-[28px] bg-surface-container-low rounded-t flex flex-col justify-end h-40 overflow-hidden">
+<div class="w-full bg-secondary" style="height: 75%"></div>
+<div class="w-full bg-badge-amber-text" style="height: 15%"></div>
+<div class="w-full bg-urgent-coral" style="height: 10%"></div>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Abr</span>
+</div>
+<!-- May (Actual) -->
+<div class="flex-1 flex flex-col items-center gap-1 group">
+<div class="w-full max-w-[28px] bg-surface-container rounded-t flex flex-col justify-end h-44 shadow-sm overflow-hidden">
+<div class="w-full bg-secondary" style="height: 55%"></div>
+<div class="w-full bg-badge-amber-text" style="height: 30%"></div>
+<div class="w-full bg-urgent-coral" style="height: 15%"></div>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface font-bold">Mayo</span>
+</div>
+<!-- Jun (Proy) -->
+<div class="flex-1 flex flex-col items-center gap-1 group opacity-40">
+<div class="w-full max-w-[28px] bg-surface-container-low rounded-t flex flex-col justify-end h-20 border-dashed">
+<div class="w-full bg-secondary/50" style="height: 50%"></div>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Jun</span>
+</div>
+</div>
+<!-- Legend -->
+<div class="flex items-center justify-center gap-space-md pt-space-xs text-on-surface-variant font-body-sm text-body-sm">
+<div class="flex items-center gap-1.5">
+<span class="w-2.5 h-2.5 rounded-sm bg-urgent-coral"></span>
+<span>Recibidas (2)</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="w-2.5 h-2.5 rounded-sm bg-badge-amber-text"></span>
+<span>En Trámite (3)</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="w-2.5 h-2.5 rounded-sm bg-secondary"></span>
+<span>Resueltas (14)</span>
+</div>
+</div>
+</div>
+<!-- Right Mini Metrics & Efficiency Donut Indicator -->
+<div class="md:col-span-4 bg-surface-container-low rounded-xl p-space-md flex flex-col items-center text-center justify-center gap-space-sm">
+<!-- Inline Donut SVG -->
+<div class="relative w-24 h-24 flex items-center justify-center">
+<svg class="w-24 h-24 -rotate-90 transform" viewbox="0 0 36 36">
+<!-- Background circle -->
+<path class="text-surface-container" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-width="3.5"></path>
+<!-- Secondary (Resolved) 74% -->
+<path class="text-secondary" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-dasharray="74, 100" stroke-linecap="round" stroke-width="3.5"></path>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">74%</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Eficacia</span>
+</div>
+</div>
+<div>
+<span class="font-label-md text-label-md text-on-surface font-semibold">Resolución media</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">2,4 días hábiles de respuesta por administración</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Priority Community Bulletin Board (Tablón de Avisos Prioritarios) -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md lg:p-space-lg shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-lg bg-surface-container text-on-surface flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">campaign</span>
+</div>
+<h2 class="font-headline-md text-headline-md text-on-surface">Tablón de Avisos de la Comunidad</h2>
+</div>
+<a class="font-label-md text-label-md text-secondary hover:underline flex items-center gap-0.5" href="#">
+              Ver todos (8) <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</a>
+</div>
+<!-- Notice List -->
+<div class="flex flex-col gap-space-sm">
+<!-- Notice 1: Elevator Maintenance (Urgent/Service) -->
+<div class="bg-surface-container-low hover:bg-surface-container rounded-lg p-space-md transition-colors flex flex-col sm:flex-row items-start gap-space-md">
+<div class="w-10 h-10 rounded-lg bg-badge-coral-bg text-badge-coral-text flex-shrink-0 flex items-center justify-center">
+<span class="material-symbols-outlined text-[22px]">elevator</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center gap-space-xs flex-wrap">
+<span class="inline-flex items-center px-1.5 py-0.5 rounded bg-badge-coral-bg text-badge-coral-text font-label-sm text-label-sm font-bold">SERVICIO TÉCNICO</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Publicado hace 3 horas por Administración</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mt-1">Mantenimiento preventivo de Ascensor 1 (Portal 2) previsto para el jueves 14</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">
+                  La empresa Otis realizará la inspección reglamentaria cuatrimestral entre las 09:30 y las 13:30h. Durante este intervalo rogamos empleen el ascensor auxiliar o las escaleras comunitarias.
+                </p>
+<div class="flex items-center gap-space-md mt-space-sm pt-space-xs text-on-surface-variant font-label-md text-label-md">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">schedule</span> 14 Mayo • 09:30 - 13:30</span>
+<span class="flex items-center gap-1 text-secondary"><span class="material-symbols-outlined text-[16px]">check_circle</span> Técnico asignado</span>
+</div>
+</div>
+</div>
+<!-- Notice 2: Swimming Pool Season Opening -->
+<div class="bg-surface-container-low hover:bg-surface-container rounded-lg p-space-md transition-colors flex flex-col sm:flex-row items-start gap-space-md">
+<div class="w-10 h-10 rounded-lg bg-badge-emerald-bg text-secondary flex-shrink-0 flex items-center justify-center">
+<span class="material-symbols-outlined text-[22px]">pool</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center gap-space-xs flex-wrap">
+<span class="inline-flex items-center px-1.5 py-0.5 rounded bg-badge-emerald-bg text-badge-emerald-text font-label-sm text-label-sm font-bold">INSTALACIONES</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Aprobado en última Junta</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mt-1">Horario y normas de la temporada de verano en piscina comunitaria</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">
+                  Apertura oficial programada para el próximo 1 de Junio. Horario continuo de 10:30h a 21:00h con socorrista presencial. Ya están disponibles los carnés digitales en Mi Perfil.
+                </p>
+<div class="flex items-center gap-space-md mt-space-sm pt-space-xs text-on-surface-variant font-label-md text-label-md">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">calendar_month</span> Temporada: 1 Jun - 15 Sep</span>
+<span class="text-on-surface font-semibold cursor-pointer hover:underline">Ver reglamento en PDF</span>
+</div>
+</div>
+</div>
+<!-- Notice 3: Garage Cleaning -->
+<div class="bg-surface-container-low hover:bg-surface-container rounded-lg p-space-md transition-colors flex flex-col sm:flex-row items-start gap-space-md">
+<div class="w-10 h-10 rounded-lg bg-surface-container text-on-primary-fixed flex-shrink-0 flex items-center justify-center">
+<span class="material-symbols-outlined text-[22px]">local_car_wash</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center gap-space-xs flex-wrap">
+<span class="inline-flex items-center px-1.5 py-0.5 rounded bg-surface-container text-on-surface font-label-sm text-label-sm font-bold">LIMPIEZA GENERAL</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Sótano -1 y Sótano -2</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mt-1">Desalojo temporal de vehículos por desinfección de soleras</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">
+                  Rogamos desalojar los vehículos de las plazas impares antes del lunes 18 a las 08:00h para facilitar el paso de maquinaria rotativa.
+                </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column (4 cols): Active Reservation QR & Quick Actions -->
+<div class="lg:col-span-4 flex flex-col gap-space-lg min-w-0">
+<!-- Interactive Booking Widget with Real-time QR -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-space-md relative overflow-hidden">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary font-bold flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span> Reserva Activa
+            </span>
+<span class="inline-flex items-center px-2 py-0.5 rounded-full bg-badge-emerald-bg text-badge-emerald-text font-label-sm text-label-sm font-semibold">
+              Hoy
+            </span>
+</div>
+<!-- Court Detail Card -->
+<div class="relative rounded-lg overflow-hidden h-36 flex flex-col justify-end p-space-md text-on-primary">
+<img class="absolute inset-0 w-full h-full object-cover" data-alt="High-angle shot of a pristine panoramic crystal padel court with bright blue turf and sharp white court lines inside an upscale gated residential complex, warm evening sunlight." src="/images/demo-placeholder.svg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-transparent"></div>
+<div class="relative z-10">
+<span class="font-label-sm text-label-sm text-secondary-fixed uppercase tracking-wider">Pista de Pádel Principal</span>
+<h3 class="font-headline-md text-headline-md font-bold">18:00 - 19:30</h3>
+<p class="font-body-sm text-body-sm text-surface-container-high">Reserva #PAD-2025-8842</p>
+</div>
+</div>
+<!-- Digital Access Pass with QR Code Representation -->
+<div class="bg-surface-container-low rounded-lg p-space-md flex flex-col items-center text-center gap-space-sm">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Código de Apertura de Torniquete</span>
+<!-- High contrast QR simulated SVG -->
+<div class="p-2 bg-surface-container-lowest rounded-lg shadow-sm">
+<svg class="w-32 h-32" fill="currentColor" viewbox="0 0 100 100">
+<!-- Top-Left Corner Box -->
+<rect class="text-on-surface" height="28" rx="2" width="28" x="10" y="10"></rect>
+<rect class="text-surface-container-lowest" height="18" width="18" x="15" y="15"></rect>
+<rect class="text-on-surface" height="8" width="8" x="20" y="20"></rect>
+<!-- Top-Right Corner Box -->
+<rect class="text-on-surface" height="28" rx="2" width="28" x="62" y="10"></rect>
+<rect class="text-surface-container-lowest" height="18" width="18" x="67" y="15"></rect>
+<rect class="text-on-surface" height="8" width="8" x="72" y="20"></rect>
+<!-- Bottom-Left Corner Box -->
+<rect class="text-on-surface" height="28" rx="2" width="28" x="10" y="62"></rect>
+<rect class="text-surface-container-lowest" height="18" width="18" x="15" y="67"></rect>
+<rect class="text-on-surface" height="8" width="8" x="20" y="72"></rect>
+<!-- Data Matrices Dots -->
+<rect class="text-on-surface" height="6" width="6" x="44" y="12"></rect>
+<rect class="text-on-surface" height="10" width="5" x="52" y="12"></rect>
+<rect class="text-on-surface" height="6" width="12" x="44" y="24"></rect>
+<rect class="text-on-surface" height="8" width="8" x="12" y="44"></rect>
+<rect class="text-on-surface" height="6" width="6" x="26" y="46"></rect>
+<rect class="text-secondary" height="8" width="8" x="36" y="40"></rect>
+<rect class="text-on-surface" height="14" width="10" x="48" y="42"></rect>
+<rect class="text-on-surface" height="6" width="14" x="64" y="46"></rect>
+<rect class="text-on-surface" height="12" width="8" x="82" y="44"></rect>
+<rect class="text-on-surface" height="14" width="8" x="44" y="64"></rect>
+<rect class="text-on-surface" height="6" width="12" x="56" y="62"></rect>
+<rect class="text-on-surface" height="12" width="6" x="72" y="66"></rect>
+<rect class="text-on-surface" height="8" width="8" x="82" y="62"></rect>
+<rect class="text-on-surface" height="14" width="10" x="54" y="76"></rect>
+<rect class="text-on-surface" height="8" width="16" x="70" y="82"></rect>
+<rect class="text-on-surface" height="6" width="6" x="44" y="84"></rect>
+</svg>
+</div>
+<div class="flex items-center gap-space-xs text-on-surface font-label-md text-label-md">
+<span class="material-symbols-outlined text-[16px] text-secondary">pin</span>
+<span>PIN Bluetooth: <strong class="tracking-widest">7419</strong></span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              Aproxima el teléfono al sensor de la pista 5 min antes del inicio.
+            </p>
+</div>
+<div class="flex items-center gap-space-xs">
+<button class="flex-1 py-space-sm px-space-sm rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface font-label-md text-label-md text-center transition-colors" type="button">
+              Modificar
+            </button>
+<button class="py-space-sm px-space-md rounded-lg bg-badge-coral-bg hover:bg-error-container text-badge-coral-text font-label-md text-label-md text-center transition-colors" type="button">
+              Cancelar
+            </button>
+</div>
+</div>
+<!-- Direct Action Shortcuts (Accesos Rápidos) -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Accesos Rápidos</h3>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Gestión Frecuente</span>
+</div>
+<div class="flex flex-col gap-space-xs">
+<!-- Quick Item 1: Actas oficiales -->
+<a class="flex items-center justify-between p-space-sm rounded-lg bg-surface-container-low hover:bg-surface-container transition-colors group" href="#">
+<div class="flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded-lg bg-surface-container text-on-surface flex items-center justify-center group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-[20px]">verified</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface">Actas Oficiales</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Descargar última junta ord.</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:translate-x-1 transition-transform text-[18px]">arrow_forward</span>
+</a>
+<!-- Quick Item 2: Conserje Contact -->
+<div class="flex items-center justify-between p-space-sm rounded-lg bg-surface-container-low hover:bg-surface-container transition-colors">
+<div class="flex items-center gap-space-sm">
+<div class="relative">
+<img class="w-9 h-9 rounded-lg object-cover" data-alt="Close-up portrait of Marcos Díaz, an approachable Spanish concierge wearing a neat dark navy uniform polo shirt standing in an apartment reception lobby." src="/images/demo-placeholder.svg"/>
+<span class="absolute -bottom-0.5 -right-0.5 w-2.5 h-2.5 bg-secondary rounded-full ring-2 ring-surface-container-lowest"></span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface">Conserje: Marcos Díaz</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">L–J: 09:00–14:00 y 15:00–18:30 • V: 09:00–14:30</span>
+</div>
+</div>
+<a class="p-2 rounded-lg bg-surface-container-lowest text-secondary hover:bg-secondary hover:text-on-secondary transition-colors" href="tel:+34912345678" title="Llamar a conserjería">
+<span class="material-symbols-outlined text-[18px]">phone</span>
+</a>
+</div>
+<!-- Quick Item 3: Enlace Pago de Recibos -->
+<a class="flex items-center justify-between p-space-sm rounded-lg bg-surface-container-low hover:bg-surface-container transition-colors group" href="#">
+<div class="flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded-lg bg-badge-emerald-bg text-badge-emerald-text flex items-center justify-center group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-[20px]">credit_card</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface">Pasarela de Pagos</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Historial de recibos domiciliados</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:translate-x-1 transition-transform text-[18px]">arrow_forward</span>
+</a>
+<!-- Quick Item 4: Emergency Community Contact -->
+<div class="mt-space-xs p-space-sm rounded-lg bg-badge-coral-bg flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-urgent-coral text-[20px]">emergency</span>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-badge-coral-text font-bold uppercase">Urgencias Comunitarias 24h</span>
+<span class="font-label-md text-label-md text-on-surface">900 820 114 (Averías Agua/Luz)</span>
+</div>
+</div>
+<a class="px-space-sm py-1 rounded bg-urgent-coral text-on-primary font-label-sm text-label-sm uppercase font-bold hover:bg-badge-coral-text transition-colors" href="tel:900820114">
+                Llamar
+              </a>
+</div>
+</div>
+</div>
+<!-- Open Voting Teaser Card -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<span class="inline-flex items-center px-2 py-0.5 rounded bg-badge-amber-bg text-badge-amber-text font-label-sm text-label-sm font-bold">
+              Votación en Curso
+            </span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Quedan 3 días</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface">Instalación de Paneles Solares en Cubierta</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Proyecto presentado por EnerSol con subvención NextGenEU del 40%. Ahorro estimado de 32% en factura eléctrica común.
+          </p>
+<!-- Participation progress bar -->
+<div class="flex flex-col gap-1 mt-space-xs">
+<div class="flex justify-between font-label-sm text-label-sm text-on-surface-variant">
+<span>Quórum alcanzado: 68%</span>
+<span class="font-bold text-on-surface">34 / 50 vecinos</span>
+</div>
+<div class="w-full bg-surface-container-low h-2 rounded-full overflow-hidden">
+<div class="bg-secondary h-full rounded-full" style="width: 68%"></div>
+</div>
+</div>
+<div class="flex items-center gap-space-sm mt-space-xs">
+<button class="flex-1 py-space-sm rounded-lg bg-primary hover:bg-on-primary-fixed text-on-primary font-label-md text-label-md text-center transition-all" type="button">
+              Emitir mi Voto
+            </button>
+<button class="py-space-sm px-space-md rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface font-label-md text-label-md transition-colors" title="Ver memoria técnica" type="button">
+              Memoria PDF
+            </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div></main></div></body></html>

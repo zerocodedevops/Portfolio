@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+
+<html lang="es"><head><link rel="stylesheet" href="/fonts/fonts.css"/><link rel="stylesheet" href="/stitch-tailwind.css"/><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/>
+<style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style></head><body class="bg-surface font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-72 bg-surface-container-lowest z-50 flex flex-col shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-space-lg flex items-center justify-between"><div class="flex items-center gap-space-sm"><img alt="NeighNetZ Logo" class="h-8 w-auto object-contain" src="/images/demo-placeholder.svg"/><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight">NeighNetZ</span></div></div><div class="px-space-md py-space-sm"><div class="bg-surface-container-low rounded-lg p-space-sm flex items-center justify-between cursor-pointer hover:bg-surface-container transition-colors"><div class="flex items-center gap-space-sm overflow-hidden"><span class="material-symbols-outlined text-secondary text-[20px]">apartment</span><div class="flex flex-col truncate"><span class="font-label-sm text-label-sm text-on-surface-variant uppercase truncate">Comunidad Activa</span><span class="font-label-md text-label-md text-on-surface truncate">Residencial Los Sauces 14</span></div></div><span class="material-symbols-outlined text-on-surface-variant text-[18px]">unfold_more</span></div></div><nav class="flex-1 overflow-y-auto px-space-md py-space-sm flex flex-col gap-space-xs" data-active-classes="bg-primary-container text-on-primary font-bold rounded-lg"><div class="px-space-sm pt-space-sm pb-space-xs"><span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Área del Vecino</span></div><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container hover:text-on-surface transition-all" data-path="dashboard" href="#"><span class="material-symbols-outlined text-[20px]">home</span><span>Inicio / Tablón</span></a><a aria-current="page" class="flex items-center gap-space-sm px-space-sm py-space-sm transition-all bg-primary-container text-on-primary font-bold rounded-lg" data-path="dashboard-incidencias" href="#"><span class="material-symbols-outlined text-[20px]">report_problem</span><span>Incidencias</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container hover:text-on-surface transition-all" data-path="dashboard-reservas" href="#"><span class="material-symbols-outlined text-[20px]">event_available</span><span>Reservas</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container hover:text-on-surface transition-all" data-path="dashboard-votaciones" href="#"><span class="material-symbols-outlined text-[20px]">how_to_vote</span><span>Votaciones</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container hover:text-on-surface transition-all" data-path="dashboard-documentos" href="#"><span class="material-symbols-outlined text-[20px]">folder_shared</span><span>Documentos</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container hover:text-on-surface transition-all" data-path="dashboard-vecinos" href="#"><span class="material-symbols-outlined text-[20px]">groups</span><span>Directorio de Vecinos</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container hover:text-on-surface transition-all" data-path="dashboard-gastos" href="#"><span class="material-symbols-outlined text-[20px]">account_balance_wallet</span><span>Cuentas y Gastos</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container hover:text-on-surface transition-all" data-path="dashboard-perfil" href="#"><span class="material-symbols-outlined text-[20px]">person</span><span>Mi Perfil</span></a><div class="px-space-sm pt-space-md pb-space-xs"><span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Panel de Administración</span></div><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container hover:text-on-surface transition-all" data-path="admin" href="#"><span class="material-symbols-outlined text-[20px]">monitoring</span><span>Panel Ejecutivo</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container hover:text-on-surface transition-all" data-path="admin-usuarios" href="#"><span class="material-symbols-outlined text-[20px]">verified_user</span><span>Validar Vecinos</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container hover:text-on-surface transition-all" data-path="admin-incidencias" href="#"><span class="material-symbols-outlined text-[20px]">assignment_late</span><span>Gestión de Incidencias</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container hover:text-on-surface transition-all" data-path="admin-reservas" href="#"><span class="material-symbols-outlined text-[20px]">book_online</span><span>Gestión de Reservas</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container hover:text-on-surface transition-all" data-path="admin-documentos" href="#"><span class="material-symbols-outlined text-[20px]">file_copy</span><span>Gestión Documental</span></a></nav><div class="p-space-md mt-auto"><div class="bg-surface-container-low rounded-lg p-space-sm flex items-center justify-between"><div class="flex items-center gap-space-sm"><span class="h-2 w-2 rounded-full bg-secondary"></span><span class="font-label-sm text-label-sm text-on-surface-variant">Servicios Operativos</span></div><span class="font-label-sm text-label-sm text-secondary font-bold">v2.4</span></div></div></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 h-16 bg-surface-container-lowest/80 backdrop-blur-xl z-40 flex items-center justify-between px-space-lg shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex items-center w-96"><div class="relative w-full flex items-center"><span class="material-symbols-outlined absolute left-space-sm text-on-surface-variant text-[20px]">search</span><input class="w-full bg-surface-container-low text-on-surface placeholder:text-on-surface-variant font-body-sm text-body-sm pl-9 pr-space-md py-space-xs rounded-lg outline-none focus:bg-surface-container-lowest transition-colors" placeholder="Buscar acuerdos, actas, reservas o incidencias..." type="text"/></div></div><div class="flex items-center gap-space-md"><div class="hidden sm:flex items-center gap-space-xs px-space-sm py-space-xs rounded-full bg-badge-emerald-bg"><span class="h-2 w-2 rounded-full bg-secondary animate-pulse"></span><span class="font-label-sm text-label-sm text-badge-emerald-text">Firebase Online</span></div><button aria-label="Notificaciones" class="relative p-space-xs rounded-full hover:bg-surface-container transition-colors text-on-surface-variant hover:text-on-surface" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-1 right-1 h-2 w-2 rounded-full bg-urgent-coral"></span></button><div class="flex items-center gap-space-sm pl-space-sm"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="/images/demo-placeholder.svg"/><div class="flex flex-col text-left"><span class="font-label-md text-label-md text-on-surface">Elena Morales</span><span class="font-label-sm text-label-sm text-on-surface-variant">Propietaria / Vicepresidenta</span></div></div></div></header><main class="relative pt-16 bg-surface min-h-screen"><div class="flex flex-col w-full">
+<div class="px-space-md sm:px-space-lg lg:px-space-xl py-space-lg flex flex-col gap-space-lg max-w-[1400px] mx-auto w-full">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-md bg-surface-container-lowest p-space-lg rounded-xl shadow-sm relative overflow-hidden">
+<div class="absolute -right-16 -top-16 w-56 h-56 bg-surface-container-high/40 rounded-full blur-3xl pointer-events-none"></div>
+<div class="flex flex-col gap-space-xs z-10 max-w-2xl">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest">Portal de Mantenimiento</span>
+<span class="h-1 w-1 rounded-full bg-outline-variant"></span>
+<span class="font-label-sm text-label-sm text-secondary font-bold">Tiempo respuesta medio: 4.2h</span>
+</div>
+<h1 class="font-headline-xl text-headline-xl text-on-surface tracking-tight">Incidencias y Averías</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">
+          Supervisión centralizada de desperfectos, averías técnicas y tareas de mantenimiento activo en <span class="font-bold text-on-surface">Residencial Los Sauces 14</span>.
+        </p>
+</div>
+<div class="flex items-center gap-space-sm z-10 flex-wrap sm:flex-nowrap">
+<div class="hidden xl:flex items-center gap-space-md px-space-md py-space-sm bg-surface-container-low rounded-lg">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Eficacia Cierre</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">92.8%</span>
+</div>
+<svg class="w-12 h-6 text-secondary" fill="none" viewbox="0 0 48 24">
+<path d="M2 20L14 14L24 17L36 7L46 11" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path>
+</svg>
+</div>
+<button class="inline-flex items-center justify-center gap-space-xs bg-primary text-on-primary hover:bg-slate-800 transition-all px-space-md py-space-sm rounded-lg font-label-lg text-label-lg shadow-sm hover:shadow active:scale-[0.98]" id="open-modal-btn" type="button">
+<span class="material-symbols-outlined text-[20px]">add_circle</span>
+<span>Reportar Nueva Incidencia</span>
+</button>
+</div>
+</div>
+<div class="grid grid-cols-2 lg:grid-cols-4 gap-space-md">
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Total Registradas</span>
+<span class="font-headline-lg text-headline-lg text-on-surface font-bold">14</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Mes en curso</span>
+</div>
+<div class="w-12 h-12 rounded-full bg-surface-container-low flex items-center justify-center text-on-surface">
+<span class="material-symbols-outlined text-[24px]">dataset</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-badge-amber-text uppercase">En Reparación</span>
+<span class="font-headline-lg text-headline-lg text-badge-amber-text font-bold">5</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Proveedores asignados</span>
+</div>
+<div class="w-12 h-12 rounded-full bg-badge-amber-bg flex items-center justify-center text-badge-amber-text">
+<span class="material-symbols-outlined text-[24px]">engineering</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-badge-coral-text uppercase">Alta Prioridad</span>
+<span class="font-headline-lg text-headline-lg text-badge-coral-text font-bold">2</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Requieren atención hoy</span>
+</div>
+<div class="w-12 h-12 rounded-full bg-badge-coral-bg flex items-center justify-center text-badge-coral-text">
+<span class="material-symbols-outlined text-[24px]">warning</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-badge-emerald-text uppercase">Cerradas con Éxito</span>
+<span class="font-headline-lg text-headline-lg text-badge-emerald-text font-bold">5</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Conforme por vecinos</span>
+</div>
+<div class="w-12 h-12 rounded-full bg-badge-emerald-bg flex items-center justify-center text-badge-emerald-text">
+<span class="material-symbols-outlined text-[24px]">check_circle</span>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-lowest rounded-xl shadow-sm p-space-md flex flex-col gap-space-md">
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md pb-space-xs">
+<div class="flex items-center gap-space-xs overflow-x-auto py-1">
+<button class="px-space-md py-space-xs rounded-full bg-primary text-on-primary font-label-md text-label-md shrink-0 flex items-center gap-space-xs shadow-sm" type="button">
+<span>Todas</span>
+<span class="bg-surface-container-lowest/20 px-1.5 py-0.5 rounded-full text-[10px]">14</span>
+</button>
+<button class="px-space-md py-space-xs rounded-full bg-surface-container-low text-on-surface-variant hover:text-on-surface hover:bg-surface-container font-label-md text-label-md shrink-0 flex items-center gap-space-xs transition-colors" type="button">
+<span>Pendientes / Recibidas</span>
+<span class="bg-surface-container-highest px-1.5 py-0.5 rounded-full text-[10px] text-on-surface">4</span>
+</button>
+<button class="px-space-md py-space-xs rounded-full bg-surface-container-low text-on-surface-variant hover:text-on-surface hover:bg-surface-container font-label-md text-label-md shrink-0 flex items-center gap-space-xs transition-colors" type="button">
+<span>En Proceso</span>
+<span class="bg-badge-amber-bg text-badge-amber-text px-1.5 py-0.5 rounded-full text-[10px] font-bold">5</span>
+</button>
+<button class="px-space-md py-space-xs rounded-full bg-surface-container-low text-on-surface-variant hover:text-on-surface hover:bg-surface-container font-label-md text-label-md shrink-0 flex items-center gap-space-xs transition-colors" type="button">
+<span>Resueltas</span>
+<span class="bg-badge-emerald-bg text-badge-emerald-text px-1.5 py-0.5 rounded-full text-[10px] font-bold">5</span>
+</button>
+</div>
+<div class="flex items-center bg-surface-container-low p-1 rounded-lg shrink-0 self-start lg:self-auto">
+<button class="px-space-sm py-1 rounded-md bg-surface-container-lowest text-on-surface font-label-sm text-label-sm shadow-sm flex items-center gap-space-xs font-bold" type="button">
+<span class="material-symbols-outlined text-[16px]">domain</span>
+<span>Toda la comunidad</span>
+</button>
+<button class="px-space-sm py-1 rounded-md text-on-surface-variant hover:text-on-surface font-label-sm text-label-sm flex items-center gap-space-xs transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px]">person</span>
+<span>Solo mis incidencias (3)</span>
+</button>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-space-sm pt-space-xs">
+<div class="md:col-span-6 lg:col-span-7 relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-[20px]">search</span>
+<input class="w-full bg-surface-container-low pl-10 pr-space-md py-2.5 rounded-lg text-body-md font-body-md text-on-surface placeholder:text-on-surface-variant focus:bg-surface-container-lowest outline-none transition-all shadow-inner" placeholder="Buscar por título, técnico asignado, zona o número de ticket..." type="text"/>
+</div>
+<div class="md:col-span-3 lg:col-span-3 flex items-center bg-surface-container-low rounded-lg px-space-sm">
+<span class="material-symbols-outlined text-on-surface-variant text-[20px] mr-2">flag</span>
+<select class="w-full bg-transparent font-label-md text-label-md text-on-surface outline-none py-2.5 cursor-pointer">
+<option value="">Todas las prioridades</option>
+<option value="high">Prioridad Alta</option>
+<option value="medium">Prioridad Media</option>
+<option value="low">Prioridad Baja</option>
+</select>
+</div>
+<div class="md:col-span-3 lg:col-span-2 flex items-center bg-surface-container-low rounded-lg px-space-sm">
+<span class="material-symbols-outlined text-on-surface-variant text-[20px] mr-2">sort</span>
+<select class="w-full bg-transparent font-label-md text-label-md text-on-surface outline-none py-2.5 cursor-pointer">
+<option value="recent">Más recientes</option>
+<option value="urgency">Mayor urgencia</option>
+<option value="updated">Última actualización</option>
+</select>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-2 gap-space-lg">
+<div class="bg-surface-container-lowest rounded-xl shadow-sm p-space-lg flex flex-col justify-between hover:shadow-md transition-all group">
+<div class="flex flex-col gap-space-md">
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex flex-wrap items-center gap-space-xs">
+<span class="px-space-sm py-0.5 rounded-full bg-badge-coral-bg text-badge-coral-text font-label-sm text-label-sm uppercase font-bold flex items-center gap-1">
+<span class="h-1.5 w-1.5 rounded-full bg-urgent-coral animate-ping"></span>
+                Prioridad Alta
+              </span>
+<span class="px-space-sm py-0.5 rounded-full bg-badge-amber-bg text-badge-amber-text font-label-sm text-label-sm uppercase font-bold">
+                En Proceso
+              </span>
+<span class="px-space-sm py-0.5 rounded-full bg-surface-container-low text-on-surface-variant font-label-sm text-label-sm">
+                #INC-2024-089
+              </span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant whitespace-nowrap">Hace 2 horas</span>
+</div>
+<div class="flex flex-col gap-space-xs">
+<h2 class="font-headline-md text-headline-md text-on-surface font-bold group-hover:text-primary transition-colors">
+              Fuga de agua en el garaje sótano -1
+            </h2>
+<div class="flex items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]">location_on</span>
+<span class="font-body-sm text-body-sm font-bold text-on-surface">Garaje - Plaza 42 y pasillo distribuidor</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant pt-space-xs">
+              Se detecta goteo persistente en bajante principal del techo afectando vehículos estacionados. Se ha colocado cubo de contención preventivo.
+            </p>
+</div>
+<div class="grid grid-cols-2 gap-space-sm pt-space-xs">
+<div class="h-28 rounded-lg overflow-hidden relative shadow-inner">
+<img class="w-full h-full object-cover" data-alt="Underground residential garage concrete floor showing fresh water puddle under exposed overhead utility pipes with dim fluorescent lighting and car parked nearby" src="/images/demo-placeholder.svg"/>
+<div class="absolute bottom-1 left-1 bg-primary/70 backdrop-blur-xs text-on-primary px-1.5 py-0.5 rounded text-[10px] font-label-sm">Foto 1: Bajante</div>
+</div>
+<div class="h-28 rounded-lg overflow-hidden relative shadow-inner">
+<img class="w-full h-full object-cover" data-alt="Close up shot of cracked cast iron ceiling pipe in garage with dripping water droplet captured sharp against dark grey industrial ceiling background" src="/images/demo-placeholder.svg"/>
+<div class="absolute bottom-1 left-1 bg-primary/70 backdrop-blur-xs text-on-primary px-1.5 py-0.5 rounded text-[10px] font-label-sm">Foto 2: Detalle grieta</div>
+</div>
+</div>
+<div class="p-space-sm bg-badge-amber-bg/50 rounded-lg flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-badge-amber-text text-[20px]">handyman</span>
+<span class="font-label-md text-label-md text-on-surface"><span class="font-bold">Desatascos &amp; Fontanería Madrid:</span> Unidad móvil en ruta</span>
+</div>
+<span class="font-label-sm text-label-sm text-badge-amber-text font-bold uppercase">Llegada ~17:30</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-space-md mt-space-md bg-surface-container-low/40 -mx-space-lg -mb-space-lg px-space-lg py-space-sm rounded-b-xl">
+<div class="flex items-center gap-space-xs">
+<span class="w-6 h-6 rounded-full bg-surface-container-high flex items-center justify-center font-label-sm text-on-surface font-bold">CM</span>
+<span class="font-label-sm text-label-sm text-on-surface">Carlos M. (Plaza 42)</span>
+</div>
+<button class="inline-flex items-center gap-space-xs text-primary font-label-md text-label-md font-bold hover:underline" type="button">
+<span>Ver seguimiento</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+</div>
+<div class="bg-surface-container-lowest rounded-xl shadow-sm p-space-lg flex flex-col justify-between hover:shadow-md transition-all group">
+<div class="flex flex-col gap-space-md">
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex flex-wrap items-center gap-space-xs">
+<span class="px-space-sm py-0.5 rounded-full bg-badge-navy-bg text-badge-navy-text font-label-sm text-label-sm uppercase font-bold">
+                Prioridad Baja
+              </span>
+<span class="px-space-sm py-0.5 rounded-full bg-surface-container-low text-on-surface font-label-sm text-label-sm uppercase font-bold">
+                Recibida / Evaluación
+              </span>
+<span class="px-space-sm py-0.5 rounded-full bg-surface-container-high text-on-surface font-label-sm text-label-sm font-bold">
+                Tu reporte
+              </span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant whitespace-nowrap">Hoy, 10:15</span>
+</div>
+<div class="flex flex-col gap-space-xs">
+<h2 class="font-headline-md text-headline-md text-on-surface font-bold group-hover:text-primary transition-colors">
+              Luz parpadeante descansillo Planta 3
+            </h2>
+<div class="flex items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]">location_on</span>
+<span class="font-body-sm text-body-sm font-bold text-on-surface">Portal 2 - Planta 3, frente al ascensor</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant pt-space-xs">
+              El tubo LED del plafón central parpadea continuamente provocando molestia visual a los vecinos al salir del ascensor. Requiere sustitución de reactancia o tubo.
+            </p>
+</div>
+<div class="p-space-md bg-surface-container-low rounded-lg flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-on-surface-variant text-[22px] mt-0.5">info</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-bold">En cola de revisión semanal</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">El conserje sustituirá la luminaria en su ronda de mantenimiento programada del jueves por la mañana.</span>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between pt-space-md mt-space-md bg-surface-container-low/40 -mx-space-lg -mb-space-lg px-space-lg py-space-sm rounded-b-xl">
+<div class="flex items-center gap-space-xs">
+<img alt="Elena Morales" class="w-6 h-6 rounded-full object-cover" src="/images/demo-placeholder.svg"/>
+<span class="font-label-sm text-label-sm text-on-surface">Elena Morales (P3-B)</span>
+</div>
+<button class="inline-flex items-center gap-space-xs text-on-surface-variant hover:text-on-surface font-label-md text-label-md font-bold" type="button">
+<span>Ver detalles</span>
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</button>
+</div>
+</div>
+<div class="bg-surface-container-lowest rounded-xl shadow-sm p-space-lg flex flex-col justify-between hover:shadow-md transition-all group">
+<div class="flex flex-col gap-space-md">
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex flex-wrap items-center gap-space-xs">
+<span class="px-space-sm py-0.5 rounded-full bg-badge-amber-bg text-badge-amber-text font-label-sm text-label-sm uppercase font-bold">
+                Prioridad Media
+              </span>
+<span class="px-space-sm py-0.5 rounded-full bg-badge-amber-bg text-badge-amber-text font-label-sm text-label-sm uppercase font-bold">
+                En Proceso
+              </span>
+<span class="px-space-sm py-0.5 rounded-full bg-surface-container-low text-on-surface-variant font-label-sm text-label-sm">
+                #INC-2024-082
+              </span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant whitespace-nowrap">Ayer, 16:40</span>
+</div>
+<div class="flex flex-col gap-space-xs">
+<h2 class="font-headline-md text-headline-md text-on-surface font-bold group-hover:text-primary transition-colors">
+              Avería cerradura puerta acceso piscina
+            </h2>
+<div class="flex items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]">location_on</span>
+<span class="font-body-sm text-body-sm font-bold text-on-surface">Jardín Central - Cancel Oeste</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant pt-space-xs">
+              El bombín ha quedado encallado con una llave rota en su interior. La cancela permanece cerrada por motivos de seguridad infantil comunitaria.
+            </p>
+</div>
+<div class="p-space-sm bg-surface-container-low rounded-lg flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[20px]">lock_reset</span>
+<span class="font-label-md text-label-md font-bold text-on-surface">Cerrajería Hnos. Gómez</span>
+</div>
+<span class="px-2 py-0.5 rounded bg-badge-emerald-bg text-badge-emerald-text font-label-sm text-label-sm font-bold">Presupuesto Aprobado</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant pl-6">
+              Nota técnica: "Bombín amaestrado original pedido a fábrica. Instalación coordinada para mañana a las 11:00h."
+            </p>
+</div>
+</div>
+<div class="flex items-center justify-between pt-space-md mt-space-md bg-surface-container-low/40 -mx-space-lg -mb-space-lg px-space-lg py-space-sm rounded-b-xl">
+<div class="flex items-center gap-space-xs">
+<span class="w-6 h-6 rounded-full bg-surface-container-high flex items-center justify-center font-label-sm text-on-surface font-bold">JG</span>
+<span class="font-label-sm text-label-sm text-on-surface">Javier G. (Vocal Jardín)</span>
+</div>
+<button class="inline-flex items-center gap-space-xs text-primary font-label-md text-label-md font-bold hover:underline" type="button">
+<span>Ver seguimiento</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+</div>
+<div class="bg-surface-container-lowest rounded-xl shadow-sm p-space-lg flex flex-col justify-between hover:shadow-md transition-all group opacity-90 hover:opacity-100">
+<div class="flex flex-col gap-space-md">
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex flex-wrap items-center gap-space-xs">
+<span class="px-space-sm py-0.5 rounded-full bg-badge-emerald-bg text-badge-emerald-text font-label-sm text-label-sm uppercase font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">check_circle</span>
+                Resuelta
+              </span>
+<span class="px-space-sm py-0.5 rounded-full bg-surface-container-low text-on-surface-variant font-label-sm text-label-sm">
+                #INC-2024-079
+              </span>
+</div>
+<span class="font-label-sm text-label-sm text-badge-emerald-text font-bold whitespace-nowrap">Finalizada ayer</span>
+</div>
+<div class="flex flex-col gap-space-xs">
+<h2 class="font-headline-md text-headline-md text-on-surface font-bold">
+              Reparación telefonillo Portal 1
+            </h2>
+<div class="flex items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]">location_on</span>
+<span class="font-body-sm text-body-sm font-bold text-on-surface">Zaguán Portal 1 - Panel de pulsadores</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant pt-space-xs">
+              Fallo de audio bidireccional en las viviendas 1-A a 1-D. Se reemplazó la placa de amplificación analógica y se verificó señal en todas las terminales.
+            </p>
+</div>
+<div class="p-space-sm bg-badge-emerald-bg/50 rounded-lg flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-badge-emerald-text text-[20px]">verified</span>
+<span class="font-body-sm text-body-sm text-badge-emerald-text font-medium">Validado por Administración Fincas Norte. Garantía oficial de 12 meses.</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-space-md mt-space-md bg-surface-container-low/40 -mx-space-lg -mb-space-lg px-space-lg py-space-sm rounded-b-xl">
+<div class="flex items-center gap-space-xs">
+<span class="w-6 h-6 rounded-full bg-secondary text-on-secondary flex items-center justify-center font-label-sm font-bold">AD</span>
+<span class="font-label-sm text-label-sm text-on-surface">Administración</span>
+</div>
+<button class="inline-flex items-center gap-space-xs text-on-surface-variant hover:text-on-surface font-label-md text-label-md font-bold" type="button">
+<span>Ver acta de cierre</span>
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between py-space-md border-t-0 bg-surface-container-lowest px-space-lg rounded-xl shadow-sm">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Mostrando <span class="font-bold text-on-surface">4</span> de <span class="font-bold text-on-surface">14</span> incidencias activas</span>
+<div class="flex items-center gap-space-xs">
+<button class="w-9 h-9 rounded-lg bg-surface-container-low flex items-center justify-center text-on-surface-variant hover:text-on-surface transition-colors" disabled="" type="button">
+<span class="material-symbols-outlined text-[20px]">chevron_left</span>
+</button>
+<button class="w-9 h-9 rounded-lg bg-primary text-on-primary font-label-md text-label-md font-bold flex items-center justify-center" type="button">1</button>
+<button class="w-9 h-9 rounded-lg bg-surface-container-low hover:bg-surface-container font-label-md text-label-md text-on-surface flex items-center justify-center transition-colors" type="button">2</button>
+<button class="w-9 h-9 rounded-lg bg-surface-container-low flex items-center justify-center text-on-surface-variant hover:text-on-surface transition-colors" type="button">
+<span class="material-symbols-outlined text-[20px]">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+<div class="fixed inset-0 z-50 flex items-center justify-center p-space-md sm:p-space-lg bg-inverse-surface/60 backdrop-blur-sm hidden transition-opacity duration-200" id="new-incident-modal">
+<div class="bg-surface-container-lowest w-full max-w-2xl rounded-xl shadow-xl overflow-hidden flex flex-col max-h-[90vh] animate-in fade-in zoom-in-95 duration-150">
+<div class="px-space-lg py-space-md bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded-full bg-primary text-on-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">assignment_add</span>
+</div>
+<div class="flex flex-col">
+<h3 class="font-headline-md text-headline-md text-on-surface font-bold">Reportar Nueva Incidencia</h3>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Residencial Los Sauces 14 • Notificación a Administrador</span>
+</div>
+</div>
+<button class="p-space-xs rounded-full hover:bg-surface-container transition-colors text-on-surface-variant hover:text-on-surface" id="close-modal-btn" type="button">
+<span class="material-symbols-outlined text-[22px]">close</span>
+</button>
+</div>
+<div class="p-space-lg overflow-y-auto flex flex-col gap-space-md">
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-md text-label-md text-on-surface font-bold">Título de la incidencia *</label>
+<input class="w-full bg-surface-container-low p-space-sm rounded-lg text-body-md font-body-md text-on-surface placeholder:text-on-surface-variant outline-none focus:bg-surface-container-lowest shadow-inner" placeholder="Ej: Ruido excesivo en extractor de garaje, cerradura rota..." type="text"/>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md">
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-md text-label-md text-on-surface font-bold">Categoría *</label>
+<select class="w-full bg-surface-container-low p-space-sm rounded-lg text-body-md font-body-md text-on-surface outline-none cursor-pointer">
+<option value="">Selecciona categoría</option>
+<option value="fontaneria">Fontanería y Desagües</option>
+<option value="electricidad">Electricidad e Iluminación</option>
+<option value="cerrajeria">Cerrajería y Accesos</option>
+<option value="zonas_comunes">Zonas Comunes y Jardines</option>
+<option value="ascensores">Ascensores</option>
+<option value="limpieza">Limpieza e Higiene</option>
+</select>
+</div>
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-md text-label-md text-on-surface font-bold">Nivel de Prioridad *</label>
+<select class="w-full bg-surface-container-low p-space-sm rounded-lg text-body-md font-body-md text-on-surface outline-none cursor-pointer">
+<option value="baja">Baja (No impide el uso común)</option>
+<option selected="" value="media">Media (Afecta parcialmente)</option>
+<option value="alta">Alta (Riesgo o corte de suministros)</option>
+</select>
+</div>
+</div>
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-md text-label-md text-on-surface font-bold">Ubicación física exacta *</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-[18px]">pin_drop</span>
+<input class="w-full bg-surface-container-low pl-10 pr-space-sm py-space-sm rounded-lg text-body-md font-body-md text-on-surface placeholder:text-on-surface-variant outline-none focus:bg-surface-container-lowest shadow-inner" placeholder="Ej: Portal 1, escalera entre 2ª y 3ª planta, junto a extintor" type="text"/>
+</div>
+</div>
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-md text-label-md text-on-surface font-bold">Descripción detallada *</label>
+<textarea class="w-full bg-surface-container-low p-space-sm rounded-lg text-body-md font-body-md text-on-surface placeholder:text-on-surface-variant outline-none focus:bg-surface-container-lowest shadow-inner" placeholder="Describe qué ocurre, cuándo comenzó y cualquier detalle relevante para los técnicos..." rows="3"></textarea>
+</div>
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-md text-label-md text-on-surface font-bold">Fotografías de apoyo (opcional pero recomendado)</label>
+<div class="p-space-lg rounded-xl bg-surface-container-low hover:bg-surface-container/60 transition-colors cursor-pointer flex flex-col items-center justify-center text-center gap-space-xs" id="drop-zone">
+<div class="w-12 h-12 rounded-full bg-surface-container-lowest flex items-center justify-center text-primary shadow-sm">
+<span class="material-symbols-outlined text-[24px]">cloud_upload</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-bold">Arrastra tus fotos aquí o haz clic para explorar</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">PNG, JPG o HEIC (Máximo 3 archivos de hasta 10MB)</span>
+</div>
+</div>
+</div>
+</div>
+<div class="p-space-md bg-surface-container-low flex items-center justify-end gap-space-sm">
+<button class="px-space-md py-space-sm rounded-lg font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors" id="cancel-modal-btn" type="button">
+          Cancelar
+        </button>
+<button class="px-space-lg py-space-sm rounded-lg font-label-lg text-label-lg bg-primary text-on-primary hover:bg-slate-800 transition-all shadow-sm" id="submit-incident-btn" type="button">
+          Registrar Incidencia
+        </button>
+</div>
+</div>
+</div>
+<script>
+    (function() {
+      const openBtn = document.getElementById('open-modal-btn');
+      const closeBtn = document.getElementById('close-modal-btn');
+      const cancelBtn = document.getElementById('cancel-modal-btn');
+      const modal = document.getElementById('new-incident-modal');
+      const submitBtn = document.getElementById('submit-incident-btn');
+
+      function openModal() {
+        modal.classList.remove('hidden');
+      }
+
+      function closeModal() {
+        modal.classList.add('hidden');
+      }
+
+      if (openBtn) openBtn.addEventListener('click', openModal);
+      if (closeBtn) closeBtn.addEventListener('click', closeModal);
+      if (cancelBtn) cancelBtn.addEventListener('click', closeModal);
+
+      modal.addEventListener('click', function(e) {
+        if (e.target === modal) {
+          closeModal();
+        }
+      });
+
+      if (submitBtn) {
+        submitBtn.addEventListener('click', function() {
+          submitBtn.textContent = 'Enviando...';
+          setTimeout(function() {
+            closeModal();
+            submitBtn.textContent = 'Registrar Incidencia';
+          }, 600);
+        });
+      }
+    })();
+  </script>
+</div></main></div></body></html>

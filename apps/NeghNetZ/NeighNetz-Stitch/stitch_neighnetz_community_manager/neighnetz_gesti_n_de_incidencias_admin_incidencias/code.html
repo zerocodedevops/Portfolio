@@ -1,0 +1,1047 @@
+<!DOCTYPE html>
+
+<html lang="es"><head><link rel="stylesheet" href="/fonts/fonts.css"/><link rel="stylesheet" href="/stitch-tailwind.css"/><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/>
+<style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style></head><body class="bg-surface font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-72 bg-surface-container-lowest z-50 flex flex-col shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-space-lg flex items-center justify-between"><div class="flex items-center gap-space-sm"><img alt="NeighNetZ Logo" class="h-8 w-auto object-contain" src="/images/demo-placeholder.svg"/><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight">NeighNetZ</span></div></div><div class="px-space-md py-space-sm"><div class="bg-surface-container-low rounded-lg p-space-sm flex items-center justify-between cursor-pointer hover:bg-surface-container transition-colors"><div class="flex items-center gap-space-sm overflow-hidden"><span class="material-symbols-outlined text-secondary text-[20px]">apartment</span><div class="flex flex-col truncate"><span class="font-label-sm text-label-sm text-on-surface-variant uppercase truncate">Comunidad Activa</span><span class="font-label-md text-label-md text-on-surface truncate">Residencial Los Sauces 14</span></div></div><span class="material-symbols-outlined text-on-surface-variant text-[18px]">unfold_more</span></div></div><nav class="flex-1 overflow-y-auto px-space-md py-space-sm flex flex-col gap-space-xs" data-active-classes="bg-primary-container text-on-primary font-bold rounded-lg"><div class="px-space-sm pt-space-sm pb-space-xs"><span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Área del Vecino</span></div><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container hover:text-on-surface transition-all" data-path="dashboard" href="#"><span class="material-symbols-outlined text-[20px]">home</span><span>Inicio / Tablón</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container hover:text-on-surface transition-all" data-path="dashboard-incidencias" href="#"><span class="material-symbols-outlined text-[20px]">report_problem</span><span>Incidencias</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container hover:text-on-surface transition-all" data-path="dashboard-reservas" href="#"><span class="material-symbols-outlined text-[20px]">event_available</span><span>Reservas</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container hover:text-on-surface transition-all" data-path="dashboard-votaciones" href="#"><span class="material-symbols-outlined text-[20px]">how_to_vote</span><span>Votaciones</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container hover:text-on-surface transition-all" data-path="dashboard-documentos" href="#"><span class="material-symbols-outlined text-[20px]">folder_shared</span><span>Documentos</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container hover:text-on-surface transition-all" data-path="dashboard-vecinos" href="#"><span class="material-symbols-outlined text-[20px]">groups</span><span>Directorio de Vecinos</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container hover:text-on-surface transition-all" data-path="dashboard-gastos" href="#"><span class="material-symbols-outlined text-[20px]">account_balance_wallet</span><span>Cuentas y Gastos</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container hover:text-on-surface transition-all" data-path="dashboard-perfil" href="#"><span class="material-symbols-outlined text-[20px]">person</span><span>Mi Perfil</span></a><div class="px-space-sm pt-space-md pb-space-xs"><span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Panel de Administración</span></div><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container hover:text-on-surface transition-all" data-path="admin" href="#"><span class="material-symbols-outlined text-[20px]">monitoring</span><span>Panel Ejecutivo</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container hover:text-on-surface transition-all" data-path="admin-usuarios" href="#"><span class="material-symbols-outlined text-[20px]">verified_user</span><span>Validar Vecinos</span></a><a aria-current="page" class="flex items-center gap-space-sm px-space-sm py-space-sm transition-all bg-primary-container text-on-primary font-bold rounded-lg" data-path="admin-incidencias" href="#"><span class="material-symbols-outlined text-[20px]">assignment_late</span><span>Gestión de Incidencias</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container hover:text-on-surface transition-all" data-path="admin-reservas" href="#"><span class="material-symbols-outlined text-[20px]">book_online</span><span>Gestión de Reservas</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container hover:text-on-surface transition-all" data-path="admin-documentos" href="#"><span class="material-symbols-outlined text-[20px]">file_copy</span><span>Gestión Documental</span></a></nav><div class="p-space-md mt-auto"><div class="bg-surface-container-low rounded-lg p-space-sm flex items-center justify-between"><div class="flex items-center gap-space-sm"><span class="h-2 w-2 rounded-full bg-secondary"></span><span class="font-label-sm text-label-sm text-on-surface-variant">Servicios Operativos</span></div><span class="font-label-sm text-label-sm text-secondary font-bold">v2.4</span></div></div></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 h-16 bg-surface-container-lowest/80 backdrop-blur-xl z-40 flex items-center justify-between px-space-lg shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex items-center w-96"><div class="relative w-full flex items-center"><span class="material-symbols-outlined absolute left-space-sm text-on-surface-variant text-[20px]">search</span><input class="w-full bg-surface-container-low text-on-surface placeholder:text-on-surface-variant font-body-sm text-body-sm pl-9 pr-space-md py-space-xs rounded-lg outline-none focus:bg-surface-container-lowest transition-colors" placeholder="Buscar acuerdos, actas, reservas o incidencias..." type="text"/></div></div><div class="flex items-center gap-space-md"><div class="hidden sm:flex items-center gap-space-xs px-space-sm py-space-xs rounded-full bg-badge-emerald-bg"><span class="h-2 w-2 rounded-full bg-secondary animate-pulse"></span><span class="font-label-sm text-label-sm text-badge-emerald-text">Firebase Online</span></div><button aria-label="Notificaciones" class="relative p-space-xs rounded-full hover:bg-surface-container transition-colors text-on-surface-variant hover:text-on-surface" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-1 right-1 h-2 w-2 rounded-full bg-urgent-coral"></span></button><div class="flex items-center gap-space-sm pl-space-sm"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="/images/demo-placeholder.svg"/><div class="flex flex-col text-left"><span class="font-label-md text-label-md text-on-surface">Elena Morales</span><span class="font-label-sm text-label-sm text-on-surface-variant">Propietaria / Vicepresidenta</span></div></div></div></header><main class="relative pt-16 bg-surface min-h-screen"><div class="flex flex-col w-full">
+<div class="px-space-lg py-space-lg flex flex-col gap-space-lg">
+<div class="flex flex-col xl:flex-row xl:items-center justify-between gap-space-md">
+<div>
+<div class="flex items-center gap-space-xs text-on-surface-variant font-label-sm uppercase tracking-wider mb-1">
+<span>Administración de Fincas</span>
+<span>/</span>
+<span class="text-secondary font-bold">Mantenimiento Correctivo</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">Gestión Integral de Incidencias, Averías y Mantenimiento</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">Supervisión operativa, control de subcontratas y registro de siniestros de la comunidad.</p>
+</div>
+<div class="flex flex-wrap items-center gap-space-sm">
+<div class="flex items-center gap-space-xs bg-surface-container px-space-sm py-space-xs rounded-lg shadow-sm">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant">filter_list</span>
+<select class="bg-transparent font-label-md text-label-md text-on-surface outline-none cursor-pointer" id="filterGlobalState">
+<option value="all">Ver: Todos los Estados (13)</option>
+<option value="nuevas">Recibidas / Nuevas (3)</option>
+<option value="proceso">En Proceso / Con Proveedor (5)</option>
+<option value="resueltas">Resueltas / Pendiente Cierre (4)</option>
+<option value="canceladas">Canceladas (1)</option>
+</select>
+</div>
+<button class="flex items-center gap-space-xs bg-surface-card hover:bg-surface-container-low text-on-surface font-label-lg text-label-lg px-space-md py-space-xs rounded-lg shadow-sm transition-all" onclick="exportIncidentReport()" type="button">
+<span class="material-symbols-outlined text-[18px]">download_for_offline</span>
+<span>Exportar informe siniestralidad</span>
+</button>
+<button class="flex items-center gap-space-xs bg-primary text-on-primary hover:bg-primary-container font-label-lg text-label-lg px-space-md py-space-xs rounded-lg shadow-sm active:scale-95 transition-all" onclick="openNewIncidentModal()" type="button">
+<span class="material-symbols-outlined text-[18px]">add_circle</span>
+<span>+ Dar de alta avería técnica</span>
+</button>
+</div>
+</div>
+<!-- Pipeline Stages Summary Cards -->
+<div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-space-md">
+<div class="cursor-pointer bg-surface-card p-space-md rounded-xl shadow-sm hover:shadow-md transition-shadow relative overflow-hidden group" onclick="filterByStage('nuevas')">
+<div class="absolute top-0 left-0 right-0 h-1 bg-amber-500"></div>
+<div class="flex items-center justify-between mb-space-xs">
+<span class="font-label-md text-label-md text-on-surface-variant">Recibidas / Nuevas</span>
+<span class="px-space-xs py-0.5 rounded-full bg-badge-amber-bg text-badge-amber-text font-label-sm text-label-sm font-bold">3 activas</span>
+</div>
+<div class="flex items-baseline justify-between">
+<span class="font-headline-xl text-headline-xl text-on-surface">3</span>
+<span class="font-body-sm text-body-sm text-urgent-coral flex items-center gap-1 font-semibold">
+<span class="material-symbols-outlined text-[16px]">priority_high</span> 2 sin peritar
+          </span>
+</div>
+<div class="w-full bg-surface-container h-1.5 rounded-full mt-3 overflow-hidden">
+<div class="bg-amber-500 h-full rounded-full" style="width: 25%"></div>
+</div>
+</div>
+<div class="cursor-pointer bg-surface-card p-space-md rounded-xl shadow-sm hover:shadow-md transition-shadow relative overflow-hidden group" onclick="filterByStage('proceso')">
+<div class="absolute top-0 left-0 right-0 h-1 bg-blue-600"></div>
+<div class="flex items-center justify-between mb-space-xs">
+<span class="font-label-md text-label-md text-on-surface-variant">En Proceso / Con Proveedor</span>
+<span class="px-space-xs py-0.5 rounded-full bg-badge-navy-bg text-badge-navy-text font-label-sm text-label-sm font-bold">5 en curso</span>
+</div>
+<div class="flex items-baseline justify-between">
+<span class="font-headline-xl text-headline-xl text-on-surface">5</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">€2.840 en ejecución</span>
+</div>
+<div class="w-full bg-surface-container h-1.5 rounded-full mt-3 overflow-hidden">
+<div class="bg-blue-600 h-full rounded-full" style="width: 50%"></div>
+</div>
+</div>
+<div class="cursor-pointer bg-surface-card p-space-md rounded-xl shadow-sm hover:shadow-md transition-shadow relative overflow-hidden group" onclick="filterByStage('resueltas')">
+<div class="absolute top-0 left-0 right-0 h-1 bg-secondary"></div>
+<div class="flex items-center justify-between mb-space-xs">
+<span class="font-label-md text-label-md text-on-surface-variant">Resueltas / Cierre Pendiente</span>
+<span class="px-space-xs py-0.5 rounded-full bg-badge-emerald-bg text-badge-emerald-text font-label-sm text-label-sm font-bold">4 cerrando</span>
+</div>
+<div class="flex items-baseline justify-between">
+<span class="font-headline-xl text-headline-xl text-on-surface">4</span>
+<span class="font-body-sm text-body-sm text-badge-emerald-text font-semibold">Tasa éxito 92%</span>
+</div>
+<div class="w-full bg-surface-container h-1.5 rounded-full mt-3 overflow-hidden">
+<div class="bg-secondary h-full rounded-full" style="width: 80%"></div>
+</div>
+</div>
+<div class="cursor-pointer bg-surface-card p-space-md rounded-xl shadow-sm hover:shadow-md transition-shadow relative overflow-hidden group" onclick="filterByStage('canceladas')">
+<div class="absolute top-0 left-0 right-0 h-1 bg-outline-variant"></div>
+<div class="flex items-center justify-between mb-space-xs">
+<span class="font-label-md text-label-md text-on-surface-variant">Canceladas / Duplicadas</span>
+<span class="px-space-xs py-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm font-bold">1 archivada</span>
+</div>
+<div class="flex items-baseline justify-between">
+<span class="font-headline-xl text-headline-xl text-on-surface">1</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Duplicado resuelto</span>
+</div>
+<div class="w-full bg-surface-container h-1.5 rounded-full mt-3 overflow-hidden">
+<div class="bg-outline h-full rounded-full" style="width: 10%"></div>
+</div>
+</div>
+</div>
+<!-- Main Workspace: Interactive Table & Right Details Flyout Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-start">
+<!-- Table Container -->
+<div class="lg:col-span-8 flex flex-col gap-space-md">
+<!-- Search and Fast Filters -->
+<div class="bg-surface-card p-space-sm rounded-xl shadow-sm flex flex-wrap items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-xs bg-surface-container-low px-space-sm py-1.5 rounded-lg w-full sm:w-72">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant">search</span>
+<input class="bg-transparent font-body-sm text-body-sm text-on-surface placeholder:text-on-surface-variant outline-none w-full" id="incidentSearchInput" oninput="filterIncidentsTable()" placeholder="Filtrar por ticket, calle, proveedor..." type="text"/>
+</div>
+<div class="flex items-center gap-space-xs">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Prioridad:</span>
+<button class="priority-btn active px-2.5 py-1 rounded-md text-on-primary bg-primary font-label-sm text-label-sm" onclick="filterPriority('all')">Todas</button>
+<button class="priority-btn px-2.5 py-1 rounded-md bg-surface-container text-on-surface font-label-sm text-label-sm hover:bg-badge-coral-bg hover:text-urgent-coral" onclick="filterPriority('Urgente')">Urgente</button>
+<button class="priority-btn px-2.5 py-1 rounded-md bg-surface-container text-on-surface font-label-sm text-label-sm hover:bg-badge-amber-bg" onclick="filterPriority('Media')">Media</button>
+<button class="priority-btn px-2.5 py-1 rounded-md bg-surface-container text-on-surface font-label-sm text-label-sm hover:bg-badge-emerald-bg" onclick="filterPriority('Baja')">Baja</button>
+</div>
+</div>
+<!-- Incident Master Table -->
+<div class="bg-surface-card rounded-xl shadow-sm overflow-hidden">
+<div class="overflow-x-auto">
+<table class="w-full text-left" id="incidentsTable">
+<thead>
+<tr class="bg-surface-container-low text-on-surface-variant font-label-sm text-label-sm uppercase tracking-wider">
+<th class="py-3 px-space-md">Ticket &amp; Ubicación</th>
+<th class="py-3 px-space-sm">Prioridad</th>
+<th class="py-3 px-space-sm">Reportante</th>
+<th class="py-3 px-space-sm">Proveedor Asignado</th>
+<th class="py-3 px-space-sm">Presupuesto</th>
+<th class="py-3 px-space-sm">Estado Ciclo</th>
+<th class="py-3 px-space-sm text-right pr-space-md">Acciones</th>
+</tr>
+</thead>
+<tbody class="font-body-sm text-body-sm text-on-surface" id="incidentsTbody">
+<!-- Row 1 (Selected by default) -->
+<tr class="incident-row cursor-pointer bg-surface-container-low transition-colors" id="row-INC-2024-089" onclick="selectIncidentRow('INC-2024-089')">
+<td class="py-3 px-space-md">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-bold">#INC-2024-089</span>
+<span class="text-on-surface font-medium truncate max-w-[210px]">Rotura bajante aguas pluviales</span>
+<span class="text-on-surface-variant text-[11px] flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[13px]">location_on</span> Garaje Sótano -2 (Plaza 41)
+                      </span>
+</div>
+</td>
+<td class="py-3 px-space-sm">
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-badge-coral-bg text-badge-coral-text font-label-sm text-label-sm font-bold">
+<span class="h-2 w-2 rounded-full bg-urgent-coral animate-ping"></span>
+                      Urgente
+                    </span>
+</td>
+<td class="py-3 px-space-sm">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface">Javier S.</span>
+<span class="text-on-surface-variant text-[11px]">Portal 2, 4ºB</span>
+</div>
+</td>
+<td class="py-3 px-space-sm">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-secondary text-[16px]">plumbing</span>
+<span class="font-label-md text-label-md font-medium text-on-surface">Desatascos Madrid Express</span>
+</div>
+</td>
+<td class="py-3 px-space-sm font-label-md text-label-md font-semibold text-on-surface">
+                    450,00 €
+                  </td>
+<td class="py-3 px-space-sm" onclick="event.stopPropagation()">
+<select class="bg-badge-navy-bg text-badge-navy-text font-label-sm text-label-sm px-2 py-1 rounded-md outline-none cursor-pointer" onchange="updateTicketStatus('INC-2024-089', this.value)">
+<option value="Recibida">Recibida</option>
+<option selected="" value="En Proceso">En Proceso</option>
+<option value="Resuelta">Resuelta</option>
+<option value="Cancelada">Cancelada</option>
+</select>
+</td>
+<td class="py-3 px-space-sm text-right pr-space-md" onclick="event.stopPropagation()">
+<button class="p-1 hover:bg-surface-container rounded text-on-surface-variant hover:text-on-surface" onclick="quickNotify('INC-2024-089')" title="Contactar con técnico" type="button">
+<span class="material-symbols-outlined text-[18px]">forward_to_inbox</span>
+</button>
+<button class="p-1 hover:bg-surface-container rounded text-on-surface-variant hover:text-on-surface" onclick="selectIncidentRow('INC-2024-089')" title="Ver Ficha" type="button">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="incident-row cursor-pointer hover:bg-surface-container-low transition-colors" id="row-INC-2024-092" onclick="selectIncidentRow('INC-2024-092')">
+<td class="py-3 px-space-md">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-bold">#INC-2024-092</span>
+<span class="text-on-surface font-medium truncate max-w-[210px]">Cerradura magnética bloqueada</span>
+<span class="text-on-surface-variant text-[11px] flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[13px]">location_on</span> Portal Principal Bloque A
+                      </span>
+</div>
+</td>
+<td class="py-3 px-space-sm">
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-badge-coral-bg text-badge-coral-text font-label-sm text-label-sm font-bold">
+<span class="h-1.5 w-1.5 rounded-full bg-urgent-coral"></span>
+                      Alta
+                    </span>
+</td>
+<td class="py-3 px-space-sm">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface">Conserjería</span>
+<span class="text-on-surface-variant text-[11px]">Turno Mañana</span>
+</div>
+</td>
+<td class="py-3 px-space-sm">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-on-surface-variant text-[16px]">lock_clock</span>
+<span class="font-label-md text-label-md font-medium text-on-surface">Cerrajería Hnos. Gómez</span>
+</div>
+</td>
+<td class="py-3 px-space-sm font-label-md text-label-md font-semibold text-on-surface">
+                    185,00 €
+                  </td>
+<td class="py-3 px-space-sm" onclick="event.stopPropagation()">
+<select class="bg-badge-amber-bg text-badge-amber-text font-label-sm text-label-sm px-2 py-1 rounded-md outline-none cursor-pointer" onchange="updateTicketStatus('INC-2024-092', this.value)">
+<option selected="" value="Recibida">Recibida</option>
+<option value="En Proceso">En Proceso</option>
+<option value="Resuelta">Resuelta</option>
+<option value="Cancelada">Cancelada</option>
+</select>
+</td>
+<td class="py-3 px-space-sm text-right pr-space-md" onclick="event.stopPropagation()">
+<button class="p-1 hover:bg-surface-container rounded text-on-surface-variant hover:text-on-surface" onclick="quickNotify('INC-2024-092')" type="button">
+<span class="material-symbols-outlined text-[18px]">forward_to_inbox</span>
+</button>
+<button class="p-1 hover:bg-surface-container rounded text-on-surface-variant hover:text-on-surface" onclick="selectIncidentRow('INC-2024-092')" type="button">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="incident-row cursor-pointer hover:bg-surface-container-low transition-colors" id="row-INC-2024-085" onclick="selectIncidentRow('INC-2024-085')">
+<td class="py-3 px-space-md">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-bold">#INC-2024-085</span>
+<span class="text-on-surface font-medium truncate max-w-[210px]">Revisión cuatrimestral y ruido</span>
+<span class="text-on-surface-variant text-[11px] flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[13px]">location_on</span> Ascensor 2 (Escalera Izquierda)
+                      </span>
+</div>
+</td>
+<td class="py-3 px-space-sm">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full bg-badge-amber-bg text-badge-amber-text font-label-sm text-label-sm font-bold">
+                      Media
+                    </span>
+</td>
+<td class="py-3 px-space-sm">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface">Marta Vidal</span>
+<span class="text-on-surface-variant text-[11px]">Portal 1, 6ºA</span>
+</div>
+</td>
+<td class="py-3 px-space-sm">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-secondary text-[16px]">elevator</span>
+<span class="font-label-md text-label-md font-medium text-on-surface">Otis Mobility S.A.</span>
+</div>
+</td>
+<td class="py-3 px-space-sm font-label-md text-label-md font-semibold text-on-surface">
+                    1.200,00 €
+                  </td>
+<td class="py-3 px-space-sm" onclick="event.stopPropagation()">
+<select class="bg-badge-navy-bg text-badge-navy-text font-label-sm text-label-sm px-2 py-1 rounded-md outline-none cursor-pointer" onchange="updateTicketStatus('INC-2024-085', this.value)">
+<option value="Recibida">Recibida</option>
+<option selected="" value="En Proceso">En Proceso</option>
+<option value="Resuelta">Resuelta</option>
+<option value="Cancelada">Cancelada</option>
+</select>
+</td>
+<td class="py-3 px-space-sm text-right pr-space-md" onclick="event.stopPropagation()">
+<button class="p-1 hover:bg-surface-container rounded text-on-surface-variant hover:text-on-surface" onclick="quickNotify('INC-2024-085')" type="button">
+<span class="material-symbols-outlined text-[18px]">forward_to_inbox</span>
+</button>
+<button class="p-1 hover:bg-surface-container rounded text-on-surface-variant hover:text-on-surface" onclick="selectIncidentRow('INC-2024-085')" type="button">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="incident-row cursor-pointer hover:bg-surface-container-low transition-colors" id="row-INC-2024-078" onclick="selectIncidentRow('INC-2024-078')">
+<td class="py-3 px-space-md">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-bold">#INC-2024-078</span>
+<span class="text-on-surface font-medium truncate max-w-[210px]">Sustitución luminarias LED fundidas</span>
+<span class="text-on-surface-variant text-[11px] flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[13px]">location_on</span> Pasillo Rampa Trasteros
+                      </span>
+</div>
+</td>
+<td class="py-3 px-space-sm">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full bg-badge-emerald-bg text-badge-emerald-text font-label-sm text-label-sm font-bold">
+                      Baja
+                    </span>
+</td>
+<td class="py-3 px-space-sm">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface">Raúl Méndez</span>
+<span class="text-on-surface-variant text-[11px]">Portal 3, 1ºC</span>
+</div>
+</td>
+<td class="py-3 px-space-sm">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-on-surface-variant text-[16px]">electric_bolt</span>
+<span class="font-label-md text-label-md font-medium text-on-surface">Instalaciones Lucerna</span>
+</div>
+</td>
+<td class="py-3 px-space-sm font-label-md text-label-md font-semibold text-on-surface">
+                    95,00 €
+                  </td>
+<td class="py-3 px-space-sm" onclick="event.stopPropagation()">
+<select class="bg-badge-emerald-bg text-badge-emerald-text font-label-sm text-label-sm px-2 py-1 rounded-md outline-none cursor-pointer" onchange="updateTicketStatus('INC-2024-078', this.value)">
+<option value="Recibida">Recibida</option>
+<option value="En Proceso">En Proceso</option>
+<option selected="" value="Resuelta">Resuelta</option>
+<option value="Cancelada">Cancelada</option>
+</select>
+</td>
+<td class="py-3 px-space-sm text-right pr-space-md" onclick="event.stopPropagation()">
+<button class="p-1 hover:bg-surface-container rounded text-on-surface-variant hover:text-on-surface" onclick="quickNotify('INC-2024-078')" type="button">
+<span class="material-symbols-outlined text-[18px]">forward_to_inbox</span>
+</button>
+<button class="p-1 hover:bg-surface-container rounded text-on-surface-variant hover:text-on-surface" onclick="selectIncidentRow('INC-2024-078')" type="button">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+</td>
+</tr>
+<!-- Row 5 -->
+<tr class="incident-row cursor-pointer hover:bg-surface-container-low transition-colors" id="row-INC-2024-071" onclick="selectIncidentRow('INC-2024-071')">
+<td class="py-3 px-space-md">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-bold">#INC-2024-071</span>
+<span class="text-on-surface font-medium truncate max-w-[210px]">Avería bomba recirculación piscina</span>
+<span class="text-on-surface-variant text-[11px] flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[13px]">location_on</span> Caseta de Depuración Jardín
+                      </span>
+</div>
+</td>
+<td class="py-3 px-space-sm">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full bg-badge-amber-bg text-badge-amber-text font-label-sm text-label-sm font-bold">
+                      Media
+                    </span>
+</td>
+<td class="py-3 px-space-sm">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface">Elena Morales</span>
+<span class="text-on-surface-variant text-[11px]">Vicepresidenta</span>
+</div>
+</td>
+<td class="py-3 px-space-sm">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-secondary text-[16px]">pool</span>
+<span class="font-label-md text-label-md font-medium text-on-surface">Aguas y Cloro SL</span>
+</div>
+</td>
+<td class="py-3 px-space-sm font-label-md text-label-md font-semibold text-on-surface">
+                    910,00 €
+                  </td>
+<td class="py-3 px-space-sm" onclick="event.stopPropagation()">
+<select class="bg-badge-navy-bg text-badge-navy-text font-label-sm text-label-sm px-2 py-1 rounded-md outline-none cursor-pointer" onchange="updateTicketStatus('INC-2024-071', this.value)">
+<option value="Recibida">Recibida</option>
+<option selected="" value="En Proceso">En Proceso</option>
+<option value="Resuelta">Resuelta</option>
+<option value="Cancelada">Cancelada</option>
+</select>
+</td>
+<td class="py-3 px-space-sm text-right pr-space-md" onclick="event.stopPropagation()">
+<button class="p-1 hover:bg-surface-container rounded text-on-surface-variant hover:text-on-surface" onclick="quickNotify('INC-2024-071')" type="button">
+<span class="material-symbols-outlined text-[18px]">forward_to_inbox</span>
+</button>
+<button class="p-1 hover:bg-surface-container rounded text-on-surface-variant hover:text-on-surface" onclick="selectIncidentRow('INC-2024-071')" type="button">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="p-space-sm bg-surface-container-low flex items-center justify-between font-label-sm text-label-sm text-on-surface-variant">
+<span>Mostrando 5 de 13 incidencias computadas en el ejercicio</span>
+<div class="flex items-center gap-1">
+<button class="px-2 py-1 rounded bg-surface-card text-on-surface shadow-sm font-semibold">1</button>
+<button class="px-2 py-1 rounded hover:bg-surface-container text-on-surface-variant">2</button>
+<button class="px-2 py-1 rounded hover:bg-surface-container text-on-surface-variant">3</button>
+</div>
+</div>
+</div>
+<!-- Quick Summary Metrics Widget -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md">
+<div class="bg-surface-card p-space-md rounded-xl shadow-sm flex items-center gap-space-md">
+<div class="h-12 w-12 rounded-xl bg-badge-emerald-bg flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[26px]">timer</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Tiempo medio respuesta</span>
+<span class="font-headline-md text-headline-md text-on-surface">4h 15m</span>
+<span class="font-body-sm text-body-sm text-secondary font-medium">-35m vs mes anterior</span>
+</div>
+</div>
+<div class="bg-surface-card p-space-md rounded-xl shadow-sm flex items-center gap-space-md">
+<div class="h-12 w-12 rounded-xl bg-badge-coral-bg flex items-center justify-center text-urgent-coral">
+<span class="material-symbols-outlined text-[26px]">receipt_long</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Gasto acumulado mes</span>
+<span class="font-headline-md text-headline-md text-on-surface">3.290 €</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Partida manten. ordinario</span>
+</div>
+</div>
+<div class="bg-surface-card p-space-md rounded-xl shadow-sm flex items-center gap-space-md">
+<div class="h-12 w-12 rounded-xl bg-badge-navy-bg flex items-center justify-center text-on-surface">
+<span class="material-symbols-outlined text-[26px]">handshake</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Subcontratas activas</span>
+<span class="font-headline-md text-headline-md text-on-surface">4 Empresas</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">SLAs vigentes auditados</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Detail Side Panel (Ficha Técnica) -->
+<div class="lg:col-span-4 bg-surface-card rounded-xl shadow-sm p-space-md flex flex-col gap-space-md" id="sidePanel">
+<!-- Header of Inspector -->
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs mb-1">
+<span class="font-label-md text-label-md text-secondary font-bold uppercase tracking-wider" id="panelTicketCode">#INC-2024-089</span>
+<span class="px-2 py-0.5 rounded-full bg-badge-coral-bg text-badge-coral-text font-label-sm text-label-sm font-bold flex items-center gap-1" id="panelBadgePriority">
+<span class="h-1.5 w-1.5 rounded-full bg-urgent-coral"></span> Urgente
+              </span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-bold leading-tight" id="panelTitle">Rotura bajante aguas pluviales</h2>
+<span class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-1 mt-0.5" id="panelLocation">
+<span class="material-symbols-outlined text-[14px]">pin_drop</span> Garaje Sótano -2 (Plaza 41)
+            </span>
+</div>
+<button class="p-1.5 hover:bg-surface-container rounded-lg text-on-surface-variant hover:text-on-surface" onclick="printIncidentSheet()" title="Imprimir parte" type="button">
+<span class="material-symbols-outlined text-[20px]">print</span>
+</button>
+</div>
+<!-- Resident Submitter Meta -->
+<div class="bg-surface-container-low p-space-sm rounded-lg flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="h-9 w-9 rounded-full bg-surface-container-high flex items-center justify-center font-bold text-on-surface">
+              JS
+            </div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-semibold" id="panelReporter">Javier Sanz</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant" id="panelUnit">Propietario · Portal 2, 4ºB</span>
+</div>
+</div>
+<button class="p-1.5 rounded-full hover:bg-surface-container text-on-surface-variant hover:text-on-surface" onclick="contactResident()" title="Llamar / Enviar SMS" type="button">
+<span class="material-symbols-outlined text-[18px]">phone</span>
+</button>
+</div>
+<!-- Evidencias Fotográficas -->
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Evidencias Fotográficas (2)</span>
+<button class="font-label-sm text-label-sm text-secondary hover:underline flex items-center gap-0.5" onclick="document.getElementById('fileUploadInput').click()">
+<span class="material-symbols-outlined text-[14px]">add_a_photo</span> Subir parte
+            </button>
+<input class="hidden" id="fileUploadInput" onchange="handleImageUpload(event)" type="file"/>
+</div>
+<div class="grid grid-cols-2 gap-space-sm" id="galleryContainer">
+<div class="group relative rounded-lg overflow-hidden h-28 bg-surface-container shadow-sm cursor-pointer" onclick="openPhotoModal(1)">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Close up photograph of a cracked PVC rainwater drain pipe leaking onto a dark concrete garage basement wall with wet pavement reflections and architectural structural pillars." src="/images/demo-placeholder.svg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-1.5 text-white font-label-sm text-[10px]">
+<span>Tubería bajante rajada</span>
+</div>
+</div>
+<div class="group relative rounded-lg overflow-hidden h-28 bg-surface-container shadow-sm cursor-pointer" onclick="openPhotoModal(2)">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Wide shot of a residential underground garage showing wet concrete floor with water puddle near parking slot 41 and overhead utility pipes under fluorescent light." src="/images/demo-placeholder.svg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-1.5 text-white font-label-sm text-[10px]">
+<span>Encharcamiento plaza 41</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Technical Assignment Info Box -->
+<div class="p-space-sm bg-surface-container-low rounded-lg flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Proveedor adjudicado</span>
+<span class="font-label-sm text-label-sm font-bold text-on-surface">Partida Siniestro #9928</span>
+</div>
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface font-semibold" id="panelProvider">Desatascos Madrid Express</span>
+<span class="font-label-lg text-label-lg font-bold text-secondary" id="panelBudget">450,00 €</span>
+</div>
+<div class="flex items-center gap-space-xs text-on-surface-variant font-body-sm text-[11px]">
+<span class="material-symbols-outlined text-[14px]">verified</span> Seguro SegurCaixa Comunidades notificado
+          </div>
+</div>
+<!-- Timeline of Technical Notes & Chronological Observations -->
+<div class="flex flex-col gap-space-xs">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Historial Técnico &amp; Observaciones</span>
+<div class="flex flex-col gap-space-sm max-h-56 overflow-y-auto pr-1" id="timelineContainer">
+<div class="flex items-start gap-space-sm">
+<div class="mt-1 h-2 w-2 rounded-full bg-secondary flex-shrink-0"></div>
+<div class="flex flex-col">
+<span class="font-body-sm text-[11px] text-on-surface-variant font-medium">Hoy, 14:15h · Elena Morales (Admin)</span>
+<p class="font-body-sm text-body-sm text-on-surface">Técnico especialista acudirá mañana a primera hora (09:00h) con tramo de sustitución de PVC 110mm.</p>
+</div>
+</div>
+<div class="flex items-start gap-space-sm">
+<div class="mt-1 h-2 w-2 rounded-full bg-outline flex-shrink-0"></div>
+<div class="flex flex-col">
+<span class="font-body-sm text-[11px] text-on-surface-variant font-medium">Hoy, 12:40h · Presidencia</span>
+<p class="font-body-sm text-body-sm text-on-surface">Presupuesto de 450€ aprobado formalmente por presidente de la comunidad por vía de urgencia.</p>
+</div>
+</div>
+<div class="flex items-start gap-space-sm">
+<div class="mt-1 h-2 w-2 rounded-full bg-outline flex-shrink-0"></div>
+<div class="flex flex-col">
+<span class="font-body-sm text-[11px] text-on-surface-variant font-medium">Hoy, 11:30h · Manuel (Conserje)</span>
+<p class="font-body-sm text-body-sm text-on-surface">Conserje visitó la zona afectada en Sótano -2. Se colocaron conos de seguridad delimitando la plaza 41.</p>
+</div>
+</div>
+<div class="flex items-start gap-space-sm">
+<div class="mt-1 h-2 w-2 rounded-full bg-urgent-coral flex-shrink-0"></div>
+<div class="flex flex-col">
+<span class="font-body-sm text-[11px] text-on-surface-variant font-medium">Hoy, 09:12h · Sistema NeighNetZ</span>
+<p class="font-body-sm text-body-sm text-on-surface">Ticket creado vía app móvil con prioridad Urgente por filtración continua de agua.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Add note / message to resident form -->
+<div class="flex flex-col gap-space-xs bg-surface-container-low p-space-sm rounded-lg">
+<label class="font-label-sm text-label-sm text-on-surface-variant uppercase" for="newNoteInput">Añadir observación o nota al vecino</label>
+<textarea class="w-full bg-surface-card rounded p-space-xs font-body-sm text-body-sm text-on-surface placeholder:text-on-surface-variant outline-none focus:ring-1 focus:ring-primary" id="newNoteInput" placeholder="Escribe detalles del peritaje o aviso al propietario..." rows="2"></textarea>
+<div class="flex items-center justify-between pt-1">
+<label class="flex items-center gap-1.5 cursor-pointer">
+<input checked="" class="rounded text-primary accent-primary" id="notifyNeighborCheck" type="checkbox"/>
+<span class="font-body-sm text-[11px] text-on-surface-variant">Notificar por push a Javier S.</span>
+</label>
+<button class="bg-primary text-on-primary hover:bg-primary-container px-space-sm py-1 rounded font-label-sm text-label-sm font-semibold transition-colors" onclick="submitInternalNote()" type="button">
+              Guardar nota
+            </button>
+</div>
+</div>
+<!-- Close Out Resolution Action Button -->
+<div class="pt-space-xs flex flex-col gap-space-xs">
+<button class="w-full py-2.5 px-space-md rounded-lg bg-secondary text-on-secondary hover:bg-opacity-95 font-label-lg text-label-lg font-bold flex items-center justify-center gap-space-xs shadow-sm transition-all active:scale-[0.99]" onclick="openResolveModal()" type="button">
+<span class="material-symbols-outlined text-[20px]">task_alt</span>
+<span>Cambiar a Resuelta con Parte de Trabajo</span>
+</button>
+<span class="text-center font-body-sm text-[11px] text-on-surface-variant">El cierre definitivo solicitará conformidad y firma digital de recepción.</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Modal: Dar de Alta Avería Técnica -->
+<div class="fixed inset-0 z-50 bg-slate-900/50 backdrop-blur-sm hidden items-center justify-center p-space-md" id="modalNewIncident">
+<div class="bg-surface-card rounded-xl max-w-xl w-full p-space-lg shadow-xl flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[24px]">build_circle</span>
+<h3 class="font-headline-md text-headline-md text-on-surface">Dar de Alta Avería Técnica</h3>
+</div>
+<button class="text-on-surface-variant hover:text-on-surface" onclick="closeNewIncidentModal()">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md">
+<div class="flex flex-col gap-1 sm:col-span-2">
+<label class="font-label-sm text-label-sm text-on-surface-variant uppercase">Título descriptivo del problema *</label>
+<input class="bg-surface-container-low p-2 rounded-lg font-body-md text-body-md text-on-surface outline-none focus:ring-1 focus:ring-primary" id="newIncTitle" placeholder="Ej. Fuga en llave general de paso" type="text"/>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm text-on-surface-variant uppercase">Ubicación exacta *</label>
+<input class="bg-surface-container-low p-2 rounded-lg font-body-md text-body-md text-on-surface outline-none focus:ring-1 focus:ring-primary" id="newIncLocation" placeholder="Ej. Cuarto de calderas Bloque 1" type="text"/>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm text-on-surface-variant uppercase">Nivel de Prioridad *</label>
+<select class="bg-surface-container-low p-2 rounded-lg font-body-md text-body-md text-on-surface outline-none" id="newIncPriority">
+<option value="Urgente">Urgente (Riesgo inhabitabilidad/agua)</option>
+<option value="Alta">Alta</option>
+<option selected="" value="Media">Media</option>
+<option value="Baja">Baja</option>
+</select>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm text-on-surface-variant uppercase">Proveedor / Gremio sugerido</label>
+<select class="bg-surface-container-low p-2 rounded-lg font-body-md text-body-md text-on-surface outline-none" id="newIncProvider">
+<option value="Desatascos Madrid Express">Desatascos Madrid Express</option>
+<option value="Cerrajería Hnos. Gómez">Cerrajería Hnos. Gómez</option>
+<option value="Otis Mobility S.A.">Otis Mobility S.A.</option>
+<option value="Instalaciones Lucerna">Instalaciones Lucerna</option>
+<option value="Sin asignar por el momento">Asignar tras peritaje</option>
+</select>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm text-on-surface-variant uppercase">Presupuesto inicial estimado (€)</label>
+<input class="bg-surface-container-low p-2 rounded-lg font-body-md text-body-md text-on-surface outline-none focus:ring-1 focus:ring-primary" id="newIncBudget" placeholder="0.00" type="number"/>
+</div>
+<div class="flex flex-col gap-1 sm:col-span-2">
+<label class="font-label-sm text-label-sm text-on-surface-variant uppercase">Detalle y observaciones iniciales</label>
+<textarea class="bg-surface-container-low p-2 rounded-lg font-body-md text-body-md text-on-surface outline-none focus:ring-1 focus:ring-primary" id="newIncNotes" placeholder="Añada notas para el técnico de guardia..." rows="3"></textarea>
+</div>
+</div>
+<div class="flex items-center justify-end gap-space-sm pt-space-xs">
+<button class="px-space-md py-2 rounded-lg bg-surface-container text-on-surface font-label-lg text-label-lg hover:bg-surface-container-high transition-colors" onclick="closeNewIncidentModal()" type="button">
+          Cancelar
+        </button>
+<button class="px-space-md py-2 rounded-lg bg-primary text-on-primary font-label-lg text-label-lg hover:bg-primary-container transition-colors" onclick="saveNewIncident()" type="button">
+          Registrar en el libro de incidencias
+        </button>
+</div>
+</div>
+</div>
+<!-- Modal: Resolución con Carga de Parte de Trabajo -->
+<div class="fixed inset-0 z-50 bg-slate-900/50 backdrop-blur-sm hidden items-center justify-center p-space-md" id="modalResolveWorkOrder">
+<div class="bg-surface-card rounded-xl max-w-lg w-full p-space-lg shadow-xl flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[24px]">verified</span>
+<h3 class="font-headline-md text-headline-md text-on-surface">Cierre Técnico de Incidencia</h3>
+</div>
+<button class="text-on-surface-variant hover:text-on-surface" onclick="closeResolveModal()">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+        Adjunte la liquidación y el parte oficial firmado por el técnico y conserje para dar por resuelta la avería <strong class="text-on-surface" id="resolveTicketCode">#INC-2024-089</strong>.
+      </p>
+<div class="flex flex-col gap-space-sm">
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm text-on-surface-variant uppercase">Coste Definitivo Liquidado (€)</label>
+<input class="bg-surface-container-low p-2 rounded-lg font-body-md text-body-md text-on-surface outline-none" id="finalCostInput" type="number" value="450.00"/>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm text-on-surface-variant uppercase">Parte de Trabajo / Albarán Firmado (PDF/JPG)</label>
+<div class="border-2 border-dashed border-outline-variant rounded-xl p-space-md flex flex-col items-center justify-center text-center bg-surface-container-low cursor-pointer hover:bg-surface-container transition-colors" onclick="document.getElementById('workOrderDoc').click()">
+<span class="material-symbols-outlined text-[32px] text-secondary">cloud_upload</span>
+<span class="font-label-md text-label-md text-on-surface mt-1">Haga clic para subir el documento</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Formatos soportados: PDF, JPG, PNG (hasta 15MB)</span>
+<input class="hidden" id="workOrderDoc" onchange="previewWorkOrderDoc(event)" type="file"/>
+<span class="font-label-sm text-label-sm text-secondary font-bold mt-2 hidden" id="uploadedDocName"></span>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm text-on-surface-variant uppercase">Conclusiones del técnico</label>
+<textarea class="bg-surface-container-low p-2 rounded-lg font-body-md text-body-md text-on-surface outline-none" id="resolveRemarks" placeholder="Ej. Tubería sustituida con éxito y comprobada estanqueidad con agua a presión." rows="2"></textarea>
+</div>
+</div>
+<div class="flex items-center justify-end gap-space-sm pt-space-xs">
+<button class="px-space-md py-2 rounded-lg bg-surface-container text-on-surface font-label-lg text-label-lg hover:bg-surface-container-high transition-colors" onclick="closeResolveModal()" type="button">
+          Volver
+        </button>
+<button class="px-space-md py-2 rounded-lg bg-secondary text-on-secondary font-label-lg text-label-lg hover:bg-opacity-90 transition-colors" onclick="confirmResolution()" type="button">
+          Confirmar y Cerrar Incidencia
+        </button>
+</div>
+</div>
+</div>
+<!-- Notification Toast Container -->
+<div class="fixed bottom-6 right-6 z-50 bg-primary text-on-primary px-space-md py-space-sm rounded-lg shadow-xl transform translate-y-24 opacity-0 transition-all duration-300 flex items-center gap-space-sm" id="toastNotification">
+<span class="material-symbols-outlined text-secondary text-[20px]" id="toastIcon">check_circle</span>
+<span class="font-label-md text-label-md" id="toastMessage">Acción completada</span>
+</div>
+</div>
+<script>
+  // In-memory Incident Details Database for dynamic panel inspection
+  const incidentsDb = {
+    'INC-2024-089': {
+      code: '#INC-2024-089',
+      title: 'Rotura bajante aguas pluviales',
+      location: 'Garaje Sótano -2 (Plaza 41)',
+      priority: 'Urgente',
+      reporter: 'Javier Sanz',
+      unit: 'Propietario · Portal 2, 4ºB',
+      provider: 'Desatascos Madrid Express',
+      budget: '450,00 €',
+      status: 'En Proceso',
+      notes: [
+        { time: 'Hoy, 14:15h', author: 'Elena Morales (Admin)', text: 'Técnico especialista acudirá mañana a primera hora (09:00h) con tramo de sustitución de PVC 110mm.' },
+        { time: 'Hoy, 12:40h', author: 'Presidencia', text: 'Presupuesto de 450€ aprobado formalmente por presidente de la comunidad por vía de urgencia.' },
+        { time: 'Hoy, 11:30h', author: 'Manuel (Conserje)', text: 'Conserje visitó la zona afectada en Sótano -2. Se colocaron conos de seguridad delimitando la plaza 41.' },
+        { time: 'Hoy, 09:12h', author: 'Sistema NeighNetZ', text: 'Ticket creado vía app móvil con prioridad Urgente por filtración continua de agua.' }
+      ]
+    },
+    'INC-2024-092': {
+      code: '#INC-2024-092',
+      title: 'Cerradura magnética bloqueada',
+      location: 'Portal Principal Bloque A',
+      priority: 'Alta',
+      reporter: 'Conserjería',
+      unit: 'Personal · Turno Mañana',
+      provider: 'Cerrajería Hnos. Gómez',
+      budget: '185,00 €',
+      status: 'Recibida',
+      notes: [
+        { time: 'Hoy, 08:30h', author: 'Conserjería', text: 'El electroimán de la puerta peatonal no desbloquea al pulsar el botón de salida.' },
+        { time: 'Hoy, 09:00h', author: 'Elena Morales', text: 'Se ha solicitado visita urgente para reprogramar cuadro de acceso.' }
+      ]
+    },
+    'INC-2024-085': {
+      code: '#INC-2024-085',
+      title: 'Revisión cuatrimestral y ruido',
+      location: 'Ascensor 2 (Escalera Izquierda)',
+      priority: 'Media',
+      reporter: 'Marta Vidal',
+      unit: 'Propietaria · Portal 1, 6ºA',
+      provider: 'Otis Mobility S.A.',
+      budget: '1.200,00 €',
+      status: 'En Proceso',
+      notes: [
+        { time: 'Ayer, 18:20h', author: 'Marta Vidal', text: 'Al frenar en la planta 4 produce un chirrido metálico notorio.' },
+        { time: 'Hoy, 10:15h', author: 'Otis Asistencia', text: 'Avería catalogada como revisión de guías y patines de tracción.' }
+      ]
+    },
+    'INC-2024-078': {
+      code: '#INC-2024-078',
+      title: 'Sustitución luminarias LED fundidas',
+      location: 'Pasillo Rampa Trasteros',
+      priority: 'Baja',
+      reporter: 'Raúl Méndez',
+      unit: 'Propietario · Portal 3, 1ºC',
+      provider: 'Instalaciones Lucerna',
+      budget: '95,00 €',
+      status: 'Resuelta',
+      notes: [
+        { time: '12 Nov, 16:00h', author: 'Instalaciones Lucerna', text: 'Sustituidas 3 regletas LED por modelos estancos IP65 de bajo consumo. Comprobado encendido por detector de presencia.' }
+      ]
+    },
+    'INC-2024-071': {
+      code: '#INC-2024-071',
+      title: 'Avería bomba recirculación piscina',
+      location: 'Caseta de Depuración Jardín',
+      priority: 'Media',
+      reporter: 'Elena Morales',
+      unit: 'Vicepresidenta',
+      provider: 'Aguas y Cloro SL',
+      budget: '910,00 €',
+      status: 'En Proceso',
+      notes: [
+        { time: '10 Nov, 11:00h', author: 'Elena Morales', text: 'La bomba de filtrado de invierno pierde presión en el prefiltro.' }
+      ]
+    }
+  };
+
+  let currentActiveTicket = 'INC-2024-089';
+
+  function showToast(message, icon = 'check_circle') {
+    const toast = document.getElementById('toastNotification');
+    const toastMsg = document.getElementById('toastMessage');
+    const toastIcon = document.getElementById('toastIcon');
+    toastMsg.textContent = message;
+    toastIcon.textContent = icon;
+    toast.classList.remove('translate-y-24', 'opacity-0');
+    setTimeout(() => {
+      toast.classList.add('translate-y-24', 'opacity-0');
+    }, 3200);
+  }
+
+  function selectIncidentRow(ticketKey) {
+    currentActiveTicket = ticketKey;
+    const data = incidentsDb[ticketKey];
+    if (!data) return;
+
+    // Highlight row
+    document.querySelectorAll('.incident-row').forEach(row => {
+      row.classList.remove('bg-surface-container-low', 'border-l-4', 'border-l-secondary');
+    });
+    const selectedRow = document.getElementById('row-' + ticketKey);
+    if (selectedRow) {
+      selectedRow.classList.add('bg-surface-container-low');
+    }
+
+    // Populate Side Panel
+    document.getElementById('panelTicketCode').innerText = data.code;
+    document.getElementById('panelTitle').innerText = data.title;
+    document.getElementById('panelLocation').innerHTML = `<span class="material-symbols-outlined text-[14px]">pin_drop</span> ` + data.location;
+    document.getElementById('panelReporter').innerText = data.reporter;
+    document.getElementById('panelUnit').innerText = data.unit;
+    document.getElementById('panelProvider').innerText = data.provider;
+    document.getElementById('panelBudget').innerText = data.budget;
+    
+    // Priority badge
+    const badgeContainer = document.getElementById('panelBadgePriority');
+    let colorClass = 'bg-badge-coral-bg text-badge-coral-text';
+    let dotColor = 'bg-urgent-coral';
+    if (data.priority === 'Media') {
+      colorClass = 'bg-badge-amber-bg text-badge-amber-text';
+      dotColor = 'bg-amber-500';
+    } else if (data.priority === 'Baja') {
+      colorClass = 'bg-badge-emerald-bg text-badge-emerald-text';
+      dotColor = 'bg-secondary';
+    }
+    badgeContainer.className = `px-2 py-0.5 rounded-full font-label-sm text-label-sm font-bold flex items-center gap-1 ${colorClass}`;
+    badgeContainer.innerHTML = `<span class="h-1.5 w-1.5 rounded-full ${dotColor}"></span> ${data.priority}`;
+
+    // Render Timeline
+    const timeline = document.getElementById('timelineContainer');
+    timeline.innerHTML = '';
+    data.notes.forEach((item, index) => {
+      const dotBg = index === 0 ? 'bg-secondary' : 'bg-outline';
+      const entry = document.createElement('div');
+      entry.className = 'flex items-start gap-space-sm';
+      entry.innerHTML = `
+        <div class="mt-1 h-2 w-2 rounded-full ${dotBg} flex-shrink-0"></div>
+        <div class="flex flex-col">
+          <span class="font-body-sm text-[11px] text-on-surface-variant font-medium">${item.time} · ${item.author}</span>
+          <p class="font-body-sm text-body-sm text-on-surface">${item.text}</p>
+        </div>
+      `;
+      timeline.appendChild(entry);
+    });
+  }
+
+  function submitInternalNote() {
+    const input = document.getElementById('newNoteInput');
+    const text = input.value.trim();
+    if (!text) {
+      showToast('Escriba una observación antes de guardar', 'error');
+      return;
+    }
+
+    const isNotified = document.getElementById('notifyNeighborCheck').checked;
+    const item = {
+      time: 'Ahora mismo',
+      author: 'Elena Morales (Admin)',
+      text: text
+    };
+
+    if (!incidentsDb[currentActiveTicket].notes) {
+      incidentsDb[currentActiveTicket].notes = [];
+    }
+    incidentsDb[currentActiveTicket].notes.unshift(item);
+    selectIncidentRow(currentActiveTicket);
+    input.value = '';
+
+    if (isNotified) {
+      showToast('Nota registrada y notificación push enviada al vecino');
+    } else {
+      showToast('Observación interna guardada en el expediente');
+    }
+  }
+
+  function updateTicketStatus(ticketKey, newStatus) {
+    if (incidentsDb[ticketKey]) {
+      incidentsDb[ticketKey].status = newStatus;
+      showToast(`Estado de ${ticketKey} actualizado a '${newStatus}'`);
+    }
+  }
+
+  function filterByStage(stage) {
+    const select = document.getElementById('filterGlobalState');
+    select.value = stage;
+    showToast(`Filtrando incidencias por etapa: ${stage}`);
+  }
+
+  function filterPriority(priority) {
+    document.querySelectorAll('.priority-btn').forEach(btn => {
+      btn.classList.remove('bg-primary', 'text-on-primary', 'active');
+      btn.classList.add('bg-surface-container', 'text-on-surface');
+    });
+    event.currentTarget.classList.remove('bg-surface-container', 'text-on-surface');
+    event.currentTarget.classList.add('bg-primary', 'text-on-primary', 'active');
+
+    const rows = document.querySelectorAll('#incidentsTbody tr');
+    rows.forEach(row => {
+      if (priority === 'all') {
+        row.style.display = '';
+      } else {
+        const text = row.innerText;
+        row.style.display = text.includes(priority) ? '' : 'none';
+      }
+    });
+  }
+
+  function filterIncidentsTable() {
+    const query = document.getElementById('incidentSearchInput').value.toLowerCase();
+    const rows = document.querySelectorAll('#incidentsTbody tr');
+    rows.forEach(row => {
+      const match = row.innerText.toLowerCase().includes(query);
+      row.style.display = match ? '' : 'none';
+    });
+  }
+
+  function exportIncidentReport() {
+    showToast('Generando informe forense y balance de siniestralidad (PDF)...', 'download');
+    setTimeout(() => {
+      showToast('Informe exportado con éxito a su carpeta de descargas');
+    }, 1400);
+  }
+
+  function printIncidentSheet() {
+    window.print();
+  }
+
+  function contactResident() {
+    showToast('Iniciando llamada segura a través de centralita virtual');
+  }
+
+  function quickNotify(ticketId) {
+    showToast(`Recordatorio de urgencia remitido al proveedor de ${ticketId}`);
+  }
+
+  // Modal Dialogs Control
+  function openNewIncidentModal() {
+    document.getElementById('modalNewIncident').classList.remove('hidden');
+    document.getElementById('modalNewIncident').classList.add('flex');
+  }
+
+  function closeNewIncidentModal() {
+    document.getElementById('modalNewIncident').classList.add('hidden');
+    document.getElementById('modalNewIncident').classList.remove('flex');
+  }
+
+  function saveNewIncident() {
+    const title = document.getElementById('newIncTitle').value.trim();
+    const location = document.getElementById('newIncLocation').value.trim();
+    const priority = document.getElementById('newIncPriority').value;
+    const provider = document.getElementById('newIncProvider').value;
+    const budget = document.getElementById('newIncBudget').value || '0.00';
+    const notes = document.getElementById('newIncNotes').value.trim();
+
+    if (!title || !location) {
+      showToast('Por favor cumplimente título y ubicación', 'error');
+      return;
+    }
+
+    const randomNum = Math.floor(100 + Math.random() * 900);
+    const newId = `INC-2024-${randomNum}`;
+
+    incidentsDb[newId] = {
+      code: `#${newId}`,
+      title: title,
+      location: location,
+      priority: priority,
+      reporter: 'Elena Morales (Admin)',
+      unit: 'Oficina Virtual',
+      provider: provider,
+      budget: `${parseFloat(budget).toFixed(2)} €`,
+      status: 'Recibida',
+      notes: [
+        { time: 'Ahora mismo', author: 'Elena Morales', text: notes || 'Avería dada de alta desde el panel administrativo.' }
+      ]
+    };
+
+    // Prepend to Table
+    const tbody = document.getElementById('incidentsTbody');
+    const tr = document.createElement('tr');
+    tr.id = `row-${newId}`;
+    tr.className = 'incident-row cursor-pointer hover:bg-surface-container-low transition-colors';
+    tr.onclick = () => selectIncidentRow(newId);
+    tr.innerHTML = `
+      <td class="py-3 px-space-md">
+        <div class="flex flex-col">
+          <span class="font-label-md text-label-md text-on-surface font-bold">#${newId}</span>
+          <span class="text-on-surface font-medium truncate max-w-[210px]">${title}</span>
+          <span class="text-on-surface-variant text-[11px] flex items-center gap-0.5">
+            <span class="material-symbols-outlined text-[13px]">location_on</span> ${location}
+          </span>
+        </div>
+      </td>
+      <td class="py-3 px-space-sm">
+        <span class="inline-flex items-center px-2 py-0.5 rounded-full ${priority === 'Urgente' ? 'bg-badge-coral-bg text-badge-coral-text font-bold' : 'bg-badge-amber-bg text-badge-amber-text'} font-label-sm text-label-sm">
+          ${priority}
+        </span>
+      </td>
+      <td class="py-3 px-space-sm">
+        <div class="flex flex-col">
+          <span class="font-label-md text-label-md text-on-surface">Elena Morales</span>
+          <span class="text-on-surface-variant text-[11px]">Administración</span>
+        </div>
+      </td>
+      <td class="py-3 px-space-sm">
+        <div class="flex items-center gap-1.5">
+          <span class="material-symbols-outlined text-secondary text-[16px]">construction</span>
+          <span class="font-label-md text-label-md font-medium text-on-surface">${provider}</span>
+        </div>
+      </td>
+      <td class="py-3 px-space-sm font-label-md text-label-md font-semibold text-on-surface">
+        ${parseFloat(budget).toFixed(2)} €
+      </td>
+      <td class="py-3 px-space-sm" onclick="event.stopPropagation()">
+        <select onchange="updateTicketStatus('${newId}', this.value)" class="bg-badge-amber-bg text-badge-amber-text font-label-sm text-label-sm px-2 py-1 rounded-md outline-none cursor-pointer">
+          <option value="Recibida" selected>Recibida</option>
+          <option value="En Proceso">En Proceso</option>
+          <option value="Resuelta">Resuelta</option>
+          <option value="Cancelada">Cancelada</option>
+        </select>
+      </td>
+      <td class="py-3 px-space-sm text-right pr-space-md" onclick="event.stopPropagation()">
+        <button type="button" onclick="quickNotify('${newId}')" class="p-1 hover:bg-surface-container rounded text-on-surface-variant hover:text-on-surface">
+          <span class="material-symbols-outlined text-[18px]">forward_to_inbox</span>
+        </button>
+      </td>
+    `;
+    tbody.prepend(tr);
+
+    closeNewIncidentModal();
+    selectIncidentRow(newId);
+    showToast(`Incidencia #${newId} dada de alta con éxito`);
+  }
+
+  function openResolveModal() {
+    document.getElementById('resolveTicketCode').innerText = incidentsDb[currentActiveTicket]?.code || '#INC-ACTIVE';
+    document.getElementById('modalResolveWorkOrder').classList.remove('hidden');
+    document.getElementById('modalResolveWorkOrder').classList.add('flex');
+  }
+
+  function closeResolveModal() {
+    document.getElementById('modalResolveWorkOrder').classList.add('hidden');
+    document.getElementById('modalResolveWorkOrder').classList.remove('flex');
+  }
+
+  function previewWorkOrderDoc(event) {
+    const file = event.target.files[0];
+    if (file) {
+      const label = document.getElementById('uploadedDocName');
+      label.innerText = `Archivo adjunto: ${file.name}`;
+      label.classList.remove('hidden');
+      showToast('Parte de trabajo adjuntado');
+    }
+  }
+
+  function confirmResolution() {
+    const remarks = document.getElementById('resolveRemarks').value;
+    updateTicketStatus(currentActiveTicket, 'Resuelta');
+    
+    // Add note to timeline
+    if (incidentsDb[currentActiveTicket]) {
+      incidentsDb[currentActiveTicket].notes.unshift({
+        time: 'Hace un instante',
+        author: 'Elena Morales (Cierre Técnico)',
+        text: `Incidencia cerrada formalmente con parte de trabajo firmado. ${remarks}`
+      });
+      selectIncidentRow(currentActiveTicket);
+    }
+
+    closeResolveModal();
+    showToast('Incidencia resuelta satisfactoriamente y archivada', 'task_alt');
+  }
+
+  function handleImageUpload(e) {
+    if (e.target.files && e.target.files[0]) {
+      showToast('Fotografía técnica anexada al expediente');
+    }
+  }
+
+  function openPhotoModal(photoId) {
+    showToast(`Visualizando evidencia fotográfica #${photoId} en alta resolución`, 'zoom_in');
+  }
+</script></main></div></body></html>
