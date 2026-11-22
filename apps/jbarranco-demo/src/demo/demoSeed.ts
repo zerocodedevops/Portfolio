@@ -23,10 +23,10 @@ export function createInitialDemoState(): DemoSeedCollections {
       id: DEMO_ADMIN_UID,
       uid: DEMO_ADMIN_UID,
       email: "admin@jbarranco-demo.local",
-      nombre: "Carlos Mendoza",
+      nombre: "Administrador Empresa",
       rol: "admin",
       telefono: "600 100 100",
-      urlImagenPerfil: buildLocalAvatarSvg("Carlos Mendoza"),
+      urlImagenPerfil: buildLocalAvatarSvg("Administrador Empresa"),
       fechaCreacion: relTs(-180),
       activo: true,
       terminosAceptados: true,
@@ -857,9 +857,9 @@ export function createInitialDemoState(): DemoSeedCollections {
         },
         {
           autorId: DEMO_ADMIN_UID,
-          autorNombre: "Carlos Mendoza (Administración)",
+          autorNombre: "Administrador Empresa (Administración)",
           mensaje: "Recibido Javier. Laura Gómez lo tiene incluido en su parte de hoy.",
-          fecha: relTs(-1, 11, 0),
+          fecha: relTs(-1, 10, 15),
           esAdmin: true,
         },
       ],
@@ -879,7 +879,7 @@ export function createInitialDemoState(): DemoSeedCollections {
       mensajes: [
         {
           autorId: DEMO_ADMIN_UID,
-          autorNombre: "Carlos Mendoza (Administración)",
+          autorNombre: "Administrador Empresa (Administración)",
           mensaje: "Ya hemos asignado el nuevo lote neutro en el stock de vuestra comunidad.",
           fecha: relTs(-3, 9, 45),
           esAdmin: true,
