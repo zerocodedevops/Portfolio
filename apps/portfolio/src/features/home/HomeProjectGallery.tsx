@@ -120,7 +120,7 @@ const demoProjects = [
 		image: "/assets/projects/thumbnails/project-zeroplague-gallery.jpg",
 	},
 	{
-		name: "Neigh Net",
+		name: "NeighNet",
 		sector: "Comunidades de propietarios",
 		note: "Plataforma demo para gestión de comunidades con acceso como vecino o administrador, reservas, votaciones, incidencias y cuentas simuladas.",
 		href: "/proyectos/neighnet",
